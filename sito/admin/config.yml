@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "."
-public_folder: "/"
+media_folder: "foto-homepage"
+public_folder: "/foto-homepage"
 
 locale: it
 
@@ -36,18 +36,10 @@ collections:
   - name: "testi"
     label: "✏️ Testi"
     files:
-      - label: "Descrizione La Dimora"
-        name: "dimora"
-        file: "testi/descrizione-la-dimora.txt"
+      - label: "Testi camere e chi siamo"
+        name: "testi"
+        file: "sito/_data/testi.json"
         fields:
-          - { label: "Testo", name: "body", widget: "text" }
-      - label: "Descrizione La Bottega"
-        name: "bottega"
-        file: "testi/descrizione-la-bottega.txt"
-        fields:
-          - { label: "Testo", name: "body", widget: "text" }
-      - label: "Chi siamo"
-        name: "chi-siamo"
-        file: "testi/testo-chi-siamo.txt"
-        fields:
-          - { label: "Testo", name: "body", widget: "text" }
+          - { label: "Descrizione La Dimora", name: "dimora", widget: "text" }
+          - { label: "Descrizione La Bottega", name: "bottega", widget: "text" }
+          - { label: "Chi siamo", name: "chi_siamo", widget: "text" }
