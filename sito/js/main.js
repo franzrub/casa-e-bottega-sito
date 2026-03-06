@@ -20,22 +20,30 @@ const MANUAL_BLOCKED = {
 
 /* ============================================
    PRICING CONFIGURATION
-   Edit prices here — OTA prices auto-calculated at +20%
+   I prezzi vengono caricati da /_data/prezzi.json
+   (modificabile dal pannello admin senza toccare il codice)
    ============================================ */
-const PRICING = {
-  dimora: {
-    high: 100,  // Luglio, Agosto, Settembre
-    low: 60     // Resto dell'anno
-  },
-  bottega: {
-    high: 90,
-    low: 50
-  },
-  otaMarkup: 1.20,        // 20% in più sulle OTA
-  weeklyDiscount: 0.10,   // -10% per 7+ notti
-  monthlyDiscount: 0.20,  // -20% per 30+ notti
-  highSeasonMonths: [6, 7, 8]  // Luglio=6, Agosto=7, Settembre=8 (0-indexed)
+let PRICING = {
+  dimora: { high: 100, low: 60 },
+  bottega: { high: 90, low: 50 },
+  otaMarkup: 1.20,
+  weeklyDiscount: 0.10,
+  monthlyDiscount: 0.20,
+  highSeasonMonths: [6, 7, 8]
 };
+
+// Carica prezzi aggiornati da _data/prezzi.json (gestito dal CMS)
+fetch('/_data/prezzi.json')
+  .then(r => r.ok ? r.json() : null)
+  .then(data => {
+    if (!data) return;
+    PRICING.dimora   = { high: data.alta.dimora,   low: data.bassa.dimora };
+    PRICING.bottega  = { high: data.alta.bottega,  low: data.bassa.bottega };
+    PRICING.otaMarkup        = data.ota_markup       || PRICING.otaMarkup;
+    PRICING.weeklyDiscount   = data.weekly_discount  || PRICING.weeklyDiscount;
+    PRICING.monthlyDiscount  = data.monthly_discount || PRICING.monthlyDiscount;
+  })
+  .catch(() => { /* usa prezzi di default */ });
 
 function getSeasonPrice(room, month) {
   const r = PRICING[room] || PRICING.dimora;

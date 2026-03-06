@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "foto-homepage"
+public_folder: "/foto-homepage"
+
+locale: it
+
+collections:
+  - name: "prezzi"
+    label: "💶 Prezzi"
+    files:
+      - label: "Prezzi camere"
+        name: "prezzi"
+        file: "sito/_data/prezzi.json"
+        fields:
+          - label: "Alta stagione (Lug–Set)"
+            name: "alta"
+            widget: "object"
+            fields:
+              - { label: "Etichetta periodo", name: "label", widget: "string" }
+              - { label: "La Dimora — prezzo/notte (€)", name: "dimora", widget: "number", value_type: "int" }
+              - { label: "La Bottega — prezzo/notte (€)", name: "bottega", widget: "number", value_type: "int" }
+          - label: "Bassa stagione (Ott–Giu)"
+            name: "bassa"
+            widget: "object"
+            fields:
+              - { label: "Etichetta periodo", name: "label", widget: "string" }
+              - { label: "La Dimora — prezzo/notte (€)", name: "dimora", widget: "number", value_type: "int" }
+              - { label: "La Bottega — prezzo/notte (€)", name: "bottega", widget: "number", value_type: "int" }
+          - { label: "Maggiorazione OTA (es. 1.20 = +20%)", name: "ota_markup", widget: "number", value_type: "float" }
+          - { label: "Sconto 7+ notti (es. 0.10 = 10%)", name: "weekly_discount", widget: "number", value_type: "float" }
+          - { label: "Sconto 30+ notti (es. 0.20 = 20%)", name: "monthly_discount", widget: "number", value_type: "float" }
+
+  - name: "testi"
+    label: "✏️ Testi"
+    files:
+      - label: "Descrizione La Dimora"
+        name: "dimora"
+        file: "testi/descrizione-la-dimora.txt"
+        fields:
+          - { label: "Testo", name: "body", widget: "text" }
+      - label: "Descrizione La Bottega"
+        name: "bottega"
+        file: "testi/descrizione-la-bottega.txt"
+        fields:
+          - { label: "Testo", name: "body", widget: "text" }
+      - label: "Chi siamo"
+        name: "chi-siamo"
+        file: "testi/testo-chi-siamo.txt"
+        fields:
+          - { label: "Testo", name: "body", widget: "text" }

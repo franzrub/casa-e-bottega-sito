@@ -1,0 +1,15 @@
+{
+  "alta": {
+    "label": "Lug–Set",
+    "dimora": 100,
+    "bottega": 90
+  },
+  "bassa": {
+    "label": "Ott–Giu",
+    "dimora": 60,
+    "bottega": 50
+  },
+  "ota_markup": 1.20,
+  "weekly_discount": 0.10,
+  "monthly_discount": 0.20
+}
