@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "foto-homepage"
-public_folder: "/foto-homepage"
+media_folder: "."
+public_folder: "/"
 
 locale: it
 

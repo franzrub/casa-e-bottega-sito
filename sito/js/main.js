@@ -479,11 +479,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let lbImages = [];
     let lbIndex = 0;
 
-    document.querySelectorAll('[data-lightbox]').forEach((img, i) => {
-      lbImages.push(img.src);
+    document.querySelectorAll('[data-lightbox]').forEach((img) => {
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => {
-        lbIndex = i;
+        // Scope lightbox to parent .room-gallery if available, otherwise whole page
+        const parentGallery = img.closest('.room-gallery');
+        const scope = parentGallery || document;
+        lbImages = Array.from(scope.querySelectorAll('[data-lightbox]')).map(i => i.src);
+        lbIndex = lbImages.indexOf(img.src);
+        if (lbIndex === -1) lbIndex = 0;
         lbImg.src = lbImages[lbIndex];
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
