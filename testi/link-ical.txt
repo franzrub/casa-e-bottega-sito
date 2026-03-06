@@ -1,0 +1,4 @@
+Airbnb iCal La Dimora: https://www.airbnb.it/calendar/ical/1138415603108313561.ics?t=948d119c86634a1ca2246dc4705089ab
+Airbnb iCal La Bottega: https://www.airbnb.it/calendar/ical/1116637938226303262.ics?t=7bb16c4c0c7142b2bbf43ea12cafd400
+Booking iCal La Dimora: https://ical.booking.com/v1/export?t=12e665bb-ba43-4b72-93d9-ea4c791e9824
+Booking iCal La Bottega: https://ical.booking.com/v1/export?t=b9b2884e-11f8-4164-984e-584c2e8e20b8

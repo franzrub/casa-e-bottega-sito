@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posizione | Casa e Bottega Manfredonia</title>
+  <meta name="description" content="Casa e Bottega nel centro storico di Manfredonia: come trovarci, parcheggio e contatti.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-wrapper">
+      <a href="index.html" class="nav-logo">Casa <span>e</span> Bottega</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+        <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
+        <li><a href="contatti.html" class="active" data-i18n="nav_contact">Contatti</a></li>
+        <li>
+          <div class="lang-switcher">
+            <button data-lang="it" class="active">IT</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="fr">FR</button>
+            <button data-lang="de">DE</button>
+            <button data-lang="nl">NL</button>
+            <button data-lang="es">ES</button>
+          </div>
+        </li>
+      </ul>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle" data-i18n="nav_contact">Posizione</p>
+      <h1 data-i18n="contact_page_title">Come trovarci</h1>
+      <p data-i18n="contact_page_desc">A 300 metri dalla spiaggia e dal mare.</p>
+    </div>
+  </div>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Colonna sinistra: subgrid info | descrizione + mappa -->
+        <div class="contact-left-col">
+          <div class="contact-info-with-desc">
+
+            <!-- Colonnina sinistra: indirizzo, telefono, email, piattaforme -->
+            <div class="contact-info-column">
+              <div class="contact-info-item">
+                <div class="contact-icon">⌂</div>
+                <div>
+                  <h4 data-i18n="contact_address_label">Indirizzo</h4>
+                  <p data-i18n="contact_address">Via Gargano 13, Manfredonia (FG), Puglia</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon">✆</div>
+                <div>
+                  <h4 data-i18n="contact_phone_label">WhatsApp</h4>
+                  <p><a href="https://wa.me/393334705574">+39 333 470 5574</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon">✉</div>
+                <div>
+                  <h4 data-i18n="contact_email_label">Email</h4>
+                  <p><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Descrizione quartiere (a fianco dell'info) -->
+            <p class="contact-location-text" data-i18n="contact_location_text">Casa e Bottega si trova appena fuori le vie strette del centro storico, in una delle vie commerciali principali di Manfredonia. Di giorno hai tutto a portata di mano: alimentari, farmacia, bar, negozi di ogni tipo. Nel pomeriggio e la sera, quando le serrande scendono, la strada diventa silenziosa e perfetta per riposarsi dopo una giornata al mare o in giro per il Gargano. Il parcheggio non è un problema: si può lasciare l'auto comodamente nelle vicinanze, a pochi passi dall'ingresso.</p>
+
+          </div>
+
+          <!-- Piattaforme OTA — larghezza piena della colonna sinistra -->
+          <div class="contact-platforms-section">
+            <p class="contact-platforms-label-small" data-i18n="contact_platforms_label">Ci trovi anche su</p>
+            <div class="contact-platforms">
+              <a href="https://www.booking.com/Share-5rpSCP" class="platform-link" target="_blank" rel="noopener">Booking.com</a>
+              <a href="https://www.airbnb.it/h/casaebottega" class="platform-link" target="_blank" rel="noopener">Airbnb · La Dimora</a>
+              <a href="https://www.airbnb.it/h/casaebottega2" class="platform-link" target="_blank" rel="noopener">Airbnb · La Bottega</a>
+            </div>
+          </div>
+
+          <!-- Mappa: larghezza piena della colonna sinistra, si allunga fino al fondo del widget -->
+          <div class="contact-map-wrapper">
+            <iframe
+              src="https://www.google.com/maps?q=Casa+e+Bottega+Manfredonia&output=embed"
+              style="width:100%; height:100%; min-height:200px; border:none;"
+              loading="lazy"
+              title="Casa e Bottega, Mappa">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Colonna destra: form contatti (widget ridotto) -->
+        <div class="form-card form-card-compact">
+          <h3 data-i18n="contact_form_title">Scrivici</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label data-i18n="contact_form_name">Nome</label>
+              <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="contact_form_email">Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="contact_form_phone">Telefono</label>
+              <input type="tel" name="phone">
+            </div>
+            <div class="form-group">
+              <label data-i18n="contact_form_dates">Date soggiorno</label>
+              <input type="text" name="dates" placeholder="es. 15-20 luglio">
+            </div>
+            <div class="form-group">
+              <label data-i18n="contact_form_message">Messaggio</label>
+              <textarea name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-i18n="contact_form_submit">Invia messaggio</button>
+          </form>
+          <div style="text-align:center; margin-top:0.75rem;">
+            <a href="https://wa.me/393334705574" class="btn btn-whatsapp" style="width:100%; justify-content:center;">WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
+          <p data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_pages">Pagine</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+            <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+            <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+
+          <h4 data-i18n="footer_follow">Seguici</h4>
+
+          <ul>
+            <li><a href="#">Airbnb</a></li>
+            <li><a href="#">Booking.com</a></li>
+            <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+          
+          </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h4 data-i18n="footer_contact">Contatti</h4>
+
+          <ul>
+            <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+
+            <li><a href="contatti.html">bookings@casaebottegapuglia.it</a></li>
+          
+          </ul>
+
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Casa e Bottega, Manfredonia — IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+[build]
+  command = "bash prepara-deploy.sh"
+  publish = "deploy"
+
+[functions]
+  directory = "deploy/netlify/functions"
+
+[[headers]]
+  for = "/netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
