@@ -52,9 +52,8 @@ echo "$JSON" > images.json
 echo "   Trovate $(echo "$FILES" | wc -l | tr -d ' ') immagini"
 cd ..
 
-# 7. Copia Netlify config e functions
+# 7. Copia Netlify functions (netlify.toml è ora nella root del repo)
 mkdir -p netlify/functions
-cp ../deploy-extras/netlify.toml . 2>/dev/null || true
 cp ../deploy-extras/netlify/functions/*.js netlify/functions/ 2>/dev/null || true
 
 cd ..
