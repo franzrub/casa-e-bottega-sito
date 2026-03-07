@@ -43,3 +43,22 @@ collections:
           - { label: "Descrizione La Dimora", name: "dimora", widget: "text" }
           - { label: "Descrizione La Bottega", name: "bottega", widget: "text" }
           - { label: "Chi siamo", name: "chi_siamo", widget: "text" }
+
+  - name: "blog"
+    label: "📝 Articoli Blog"
+    folder: "sito/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Itinerari", "Borghi", "Mare", "Cibo e Vino", "Tradizioni", "Esperienze"]
+      - { label: "Descrizione breve (SEO)", name: "description", widget: "text" }
+      - { label: "Immagine di copertina", name: "image", widget: "image", required: false }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }

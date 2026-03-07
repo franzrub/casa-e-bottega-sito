@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Racconti | Casa e Bottega</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .blog-article img { width: 100%; border-radius: 6px; margin: 1.5rem 0; }
+    .blog-article h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--blu); margin: 2rem 0 0.8rem; }
+    .blog-article h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--blu); margin: 1.5rem 0 0.6rem; }
+    .blog-article p { line-height: 1.8; margin-bottom: 1.2rem; color: #333; }
+    .blog-article hr { border: none; border-top: 1px solid #e0d9cc; margin: 2.5rem 0; }
+    .blog-article ul { margin: 0 0 1.2rem 1.5rem; }
+    .blog-article li { line-height: 1.8; margin-bottom: 0.4rem; }
+    .article-cta { margin-top: 3rem; padding: 2rem; background: rgba(200,169,110,0.1); border-radius: 4px; text-align: center; }
+    .article-cta p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--blu); margin-bottom: 1rem; }
+    .article-loading { text-align: center; padding: 4rem; color: #888; }
+    .article-error { text-align: center; padding: 4rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-wrapper">
+      <a href="index.html" class="nav-logo">Casa <span>e</span> Bottega</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+        <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+        <li><a href="blog.html" class="active" data-i18n="nav_blog">Racconti</a></li>
+        <li><a href="contatti.html" data-i18n="nav_contact">Contatti</a></li>
+        <li>
+          <div class="lang-switcher">
+            <button data-lang="it" class="active">IT</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="fr">FR</button>
+            <button data-lang="de">DE</button>
+            <button data-lang="nl">NL</button>
+            <button data-lang="es">ES</button>
+          </div>
+        </li>
+      </ul>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="page-header" id="article-header">
+    <div class="container">
+      <p class="section-subtitle" id="article-category">—</p>
+      <h1 id="article-title">Caricamento…</h1>
+      <p id="article-date"></p>
+    </div>
+  </div>
+
+  <div class="section section-light">
+    <div class="blog-article" id="article-body">
+      <div class="article-loading">Caricamento articolo…</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
+          <p data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_pages">Pagine</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="camere.html">Le Camere</a></li>
+            <li><a href="prenota.html">Prenota</a></li>
+            <li><a href="blog.html">Racconti</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_follow">Seguici</h4>
+          <ul>
+            <li><a href="#">Airbnb</a></li>
+            <li><a href="#">Booking.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact">Contatti</h4>
+          <ul>
+            <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+            <li><a href="contatti.html">bookings@casaebottegapuglia.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Casa e Bottega, Manfredonia — IT071029C200088044</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      if (!slug) {
+        document.getElementById('article-title').textContent = 'Articolo non trovato';
+        document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Slug mancante. <a href="blog.html">Torna ai Racconti</a></p></div>';
+        return;
+      }
+
+      fetch('blog/' + slug + '.md')
+        .then(r => {
+          if (!r.ok) throw new Error('not found');
+          return r.text();
+        })
+        .then(text => {
+          // Parse frontmatter
+          const fm = {};
+          const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+          let body = text;
+          if (fmMatch) {
+            fmMatch[1].split('\n').forEach(line => {
+              const m = line.match(/^(\w+):\s*"?([^"]*)"?$/);
+              if (m) fm[m[1]] = m[2];
+            });
+            body = fmMatch[2];
+          }
+
+          // Update page header
+          if (fm.title) {
+            document.title = fm.title + ' | Casa e Bottega';
+            document.getElementById('article-title').textContent = fm.title;
+          }
+          if (fm.category) document.getElementById('article-category').textContent = fm.category;
+          if (fm.date) {
+            const d = new Date(fm.date);
+            document.getElementById('article-date').textContent = d.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
+          }
+          if (fm.description) {
+            document.querySelector('meta[name="description"]').setAttribute('content', fm.description);
+          }
+
+          // Render markdown
+          const html = marked.parse(body);
+
+          // Add CTA at end
+          const cta = `<div class="article-cta">
+            <p>Vi aspettiamo a Casa e Bottega.</p>
+            <a href="prenota.html" class="btn btn-primary">Prenota il tuo soggiorno</a>
+          </div>`;
+
+          document.getElementById('article-body').innerHTML = html + cta;
+        })
+        .catch(() => {
+          document.getElementById('article-title').textContent = 'Articolo non trovato';
+          document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Articolo non disponibile. <a href="blog.html">Torna ai Racconti</a></p></div>';
+        });
+    })();
+  </script>
+</body>
+</html>
