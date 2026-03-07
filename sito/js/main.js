@@ -42,6 +42,8 @@ fetch('/_data/prezzi.json')
     PRICING.otaMarkup        = data.ota_markup       || PRICING.otaMarkup;
     PRICING.weeklyDiscount   = data.weekly_discount  || PRICING.weeklyDiscount;
     PRICING.monthlyDiscount  = data.monthly_discount || PRICING.monthlyDiscount;
+    // Aggiorna le card prezzi con i nuovi valori
+    if (typeof window.updatePricingCards === 'function') window.updatePricingCards();
   })
   .catch(() => { /* usa prezzi di default */ });
 
