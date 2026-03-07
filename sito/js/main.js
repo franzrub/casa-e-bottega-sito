@@ -725,21 +725,33 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const data = new FormData(contactForm);
-      const waMsg = encodeURIComponent(
-        `Ciao! Scrivo dal sito:\n` +
-        `Nome: ${data.get('name')}\n` +
-        `Email: ${data.get('email')}\n` +
-        `Date: ${data.get('dates')}\n` +
-        `Messaggio: ${data.get('message')}`
-      );
-      window.open(`https://wa.me/393334705574?text=${waMsg}`, '_blank');
-
       const btn = contactForm.querySelector('button[type="submit"]');
-      const origText = btn.textContent;
-      btn.textContent = '\u2713 Messaggio inviato!';
-      btn.style.background = '#5C6B3A';
-      setTimeout(() => { btn.textContent = origText; btn.style.background = ''; }, 3000);
+      btn.textContent = 'Invio in corso…';
+      btn.disabled = true;
+
+      const formData = new FormData(contactForm);
+      const encoded = new URLSearchParams(formData).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encoded
+      })
+      .then(() => {
+        // Mostra messaggio di successo
+        contactForm.innerHTML = `
+          <div style="text-align:center; padding:2rem 0;">
+            <p style="font-size:2rem; margin-bottom:0.5rem;">✅</p>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--blu); margin-bottom:0.5rem;">Messaggio ricevuto!</p>
+            <p style="color:#555;">Ti risponderemo entro 24 ore a <strong>${formData.get('email')}</strong>.</p>
+          </div>`;
+      })
+      .catch(() => {
+        btn.textContent = 'Errore — riprova';
+        btn.disabled = false;
+        btn.style.background = '#c0392b';
+        setTimeout(() => { btn.style.background = ''; }, 3000);
+      });
     });
   }
 
