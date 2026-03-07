@@ -44,7 +44,7 @@ function fetchUrl(url, redirectCount = 0) {
     const lib = url.startsWith('https') ? https : http;
     const req = lib.get(url, {
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; CasaEBottega/1.0)' },
-      timeout: 8000
+      timeout: 4000
     }, (res) => {
       if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
         return fetchUrl(res.headers.location, redirectCount + 1).then(resolve).catch(reject);
@@ -112,30 +112,38 @@ exports.handler = async function(event, context) {
   try {
     const result = { dimora: new Set(), bottega: new Set() };
 
-    // 1. Fetch iCal feeds (Airbnb + Booking)
+    // 1. Fetch tutti i feed iCal IN PARALLELO (evita timeout su Netlify)
+    const icalTasks = [];
     for (const room of ['dimora', 'bottega']) {
       for (const url of FEEDS[room]) {
-        try {
-          const icsText = await fetchUrl(url);
-          parseICS(icsText).forEach(d => result[room].add(d));
-          console.log(`[ical] ${room}/${url.includes('airbnb') ? 'airbnb' : 'booking'}: ok`);
-        } catch (err) {
-          console.warn(`[ical] ${room} feed failed: ${err.message}`);
-        }
+        icalTasks.push(
+          fetchUrl(url)
+            .then(icsText => {
+              const dates = parseICS(icsText);
+              dates.forEach(d => result[room].add(d));
+              console.log(`[ical] ${room}/${url.includes('airbnb') ? 'airbnb' : 'booking'}: ${dates.length} dates`);
+            })
+            .catch(err => {
+              console.warn(`[ical] ${room}/${url.includes('airbnb') ? 'airbnb' : 'booking'} failed: ${err.message}`);
+            })
+        );
       }
     }
 
-    // 2. Fetch manual dates from Google Sheets
-    try {
-      const csvText = await fetchUrl(SHEETS_CSV_URL);
-      const manual  = parseSheetCSV(csvText);
-      manual.dimora.forEach(d  => result.dimora.add(d));
-      manual.bottega.forEach(d => result.bottega.add(d));
-      console.log(`[sheets] dimora:${manual.dimora.length} bottega:${manual.bottega.length} manual dates loaded`);
-    } catch (err) {
-      console.warn(`[sheets] Google Sheets fetch failed: ${err.message}`);
-      // Non-fatal: iCal dates still work
-    }
+    // 2. Fetch Google Sheets IN PARALLELO con i feed iCal
+    const sheetTask = fetchUrl(SHEETS_CSV_URL)
+      .then(csvText => {
+        const manual = parseSheetCSV(csvText);
+        manual.dimora.forEach(d  => result.dimora.add(d));
+        manual.bottega.forEach(d => result.bottega.add(d));
+        console.log(`[sheets] dimora:${manual.dimora.length} bottega:${manual.bottega.length} manual dates loaded`);
+      })
+      .catch(err => {
+        console.warn(`[sheets] Google Sheets fetch failed: ${err.message}`);
+      });
+
+    // Aspetta che tutti i fetch completino (o falliscano) entro il timeout
+    await Promise.allSettled([...icalTasks, sheetTask]);
 
     return {
       statusCode: 200,

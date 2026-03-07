@@ -855,6 +855,8 @@ async function loadCalendarData() {
     searchBtn.disabled = false;
   }
 
+  // Notifica a qualsiasi calendar sulla pagina che i dati sono pronti
+  document.dispatchEvent(new CustomEvent('calendarDataReady'));
   if (typeof renderCalendar === 'function') renderCalendar();
 }
 
@@ -943,7 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  if (document.getElementById('calendar-grid')) {
+  if (document.getElementById('calendar-grid') || document.getElementById('mini-cal-grid')) {
     loadCalendarData();
   }
 

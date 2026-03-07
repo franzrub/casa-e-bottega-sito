@@ -1787,19 +1787,18 @@
       });
     }
 
-    // Wait for iCal data to load, then render
-    const waitForCalData = setInterval(() => {
-      if (typeof bookedDates !== 'undefined' && (bookedDates.dimora.size > 0 || bookedDates.bottega.size > 0)) {
-        renderMiniCal();
-        clearInterval(waitForCalData);
-      }
-    }, 500);
+    // Render iniziale (struttura vuota)
+    renderMiniCal();
 
-    // Fallback: render after 3s even without data
+    // Ascolta l'evento lanciato da main.js quando i dati iCal sono pronti
+    document.addEventListener('calendarDataReady', () => {
+      renderMiniCal();
+    });
+
+    // Fallback: ri-renderizza dopo 8s nel caso l'evento non arrivi
     setTimeout(() => {
       renderMiniCal();
-      clearInterval(waitForCalData);
-    }, 3000);
+    }, 8000);
 
   })();
   </script>
