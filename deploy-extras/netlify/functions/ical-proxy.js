@@ -106,7 +106,7 @@ exports.handler = async function(event, context) {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
-    'Cache-Control': 'public, max-age=900' // 15 min CDN cache
+    'Cache-Control': 'public, max-age=300' // 5 min CDN cache
   };
 
   try {

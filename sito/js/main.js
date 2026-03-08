@@ -767,7 +767,9 @@ function parseICS(icsText) {
 async function loadCalendarData() {
   // Primary: Netlify Function (server-side, no CORS issues)
   try {
-    const resp = await fetch('/.netlify/functions/ical-proxy');
+    // Aggiunge un parametro che cambia ogni 5 minuti per evitare cache obsoleta del browser
+    const cacheBust = Math.floor(Date.now() / 300000);
+    const resp = await fetch(`/.netlify/functions/ical-proxy?v=${cacheBust}`);
     if (resp.ok) {
       const data = await resp.json();
       if (data.dimora) data.dimora.forEach(d => bookedDates.dimora.add(d));
