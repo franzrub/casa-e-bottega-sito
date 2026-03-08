@@ -1,0 +1,45 @@
+{
+  "sections": [
+    {
+      "icon": "🕐",
+      "title": "Check-in e Check-out",
+      "text": "Il check-in è previsto dalle 15:00 alle 20:00. Per orari diversi è necessario concordarlo preventivamente con i gestori. Il check-out deve avvenire entro le 10:30."
+    },
+    {
+      "icon": "👥",
+      "title": "Ospiti",
+      "text": "Il numero di ospiti non può superare quello indicato in fase di prenotazione. Non sono ammessi visitatori esterni senza comunicazione preventiva ai gestori."
+    },
+    {
+      "icon": "🤫",
+      "title": "Silenzio e rispetto dei vicini",
+      "text": "Si prega di mantenere un tono di voce moderato dopo le 22:00 e prima delle 8:00, in rispetto degli altri ospiti e dei residenti della zona."
+    },
+    {
+      "icon": "🚬",
+      "title": "Fumo",
+      "text": "È severamente vietato fumare all'interno degli appartamenti. È consentito fumare esclusivamente negli spazi esterni designati."
+    },
+    {
+      "icon": "🐾",
+      "title": "Animali domestici",
+      "text": "Non sono ammessi animali domestici, salvo accordo preventivo scritto con i gestori."
+    },
+    {
+      "icon": "🧹",
+      "title": "Pulizia e cura degli spazi",
+      "text": "Gli ospiti sono pregati di lasciare gli ambienti in ordine al momento del check-out. Eventuali danni agli arredi o agli oggetti presenti nella struttura saranno addebitati al responsabile della prenotazione."
+    },
+    {
+      "icon": "🎉",
+      "title": "Feste ed eventi",
+      "text": "Non sono consentite feste, eventi o riunioni di persone esterne all'interno della struttura."
+    },
+    {
+      "icon": "❌",
+      "title": "Cancellazione",
+      "text": "La cancellazione è gratuita fino a 7 giorni prima del check-in. Oltre tale termine, verrà trattenuta la caparra versata. In caso di no-show verrà addebitato l'intero importo del soggiorno."
+    }
+  ],
+  "contatti_emergenza": "Per qualsiasi necessità durante il soggiorno contattaci a bookings@casaebottegapuglia.it oppure su WhatsApp al +39 333 470 5574."
+}

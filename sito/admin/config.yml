@@ -44,6 +44,23 @@ collections:
           - { label: "Descrizione La Bottega", name: "bottega", widget: "text" }
           - { label: "Chi siamo", name: "chi_siamo", widget: "text" }
 
+  - name: "regole"
+    label: "📋 Regole della Casa"
+    files:
+      - label: "Regole della Casa"
+        name: "regole"
+        file: "sito/_data/regole.json"
+        fields:
+          - label: "Sezioni regole"
+            name: "sections"
+            widget: "list"
+            label_singular: "Regola"
+            fields:
+              - { label: "Icona (emoji)", name: "icon", widget: "string", default: "📌" }
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Testo", name: "text", widget: "text" }
+          - { label: "Testo contatti emergenza", name: "contatti_emergenza", widget: "text" }
+
   - name: "blog"
     label: "📝 Articoli Blog"
     folder: "sito/blog"
