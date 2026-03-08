@@ -1301,10 +1301,27 @@
       }
     ];
 
-    const OTA_MARKUP = 1.20;
+    let OTA_MARKUP = 1.20;
     const HIGH_MONTHS = [6, 7, 8]; // 0-indexed: Jul, Aug, Sep
-    const WEEKLY_DISCOUNT = 0.10;
-    const MONTHLY_DISCOUNT = 0.20;
+    let WEEKLY_DISCOUNT = 0.10;
+    let MONTHLY_DISCOUNT = 0.20;
+
+    // Sincronizza prezzi da _data/prezzi.json (aggiornabile via CMS)
+    fetch('/_data/prezzi.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return;
+        OTA_MARKUP      = data.ota_markup       || OTA_MARKUP;
+        WEEKLY_DISCOUNT = data.weekly_discount   || WEEKLY_DISCOUNT;
+        MONTHLY_DISCOUNT = data.monthly_discount || MONTHLY_DISCOUNT;
+        // Aggiorna prezzi delle camere
+        const dimora  = ROOMS.find(r => r.id === 'dimora');
+        const bottega = ROOMS.find(r => r.id === 'bottega');
+        if (dimora)  dimora.prices  = { high: data.alta.dimora,  low: data.bassa.dimora };
+        if (bottega) bottega.prices = { high: data.alta.bottega, low: data.bassa.bottega };
+        console.log('[prenota] Prezzi aggiornati da CMS: OTA markup', OTA_MARKUP);
+      })
+      .catch(() => { /* usa prezzi di default */ });
 
     /* ============================================
        BOOKING STATE
