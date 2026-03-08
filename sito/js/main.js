@@ -681,44 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  // Listen for form changes to update estimate
-  const bookingForm = document.getElementById('booking-form');
-  if (bookingForm) {
-    ['room', 'checkin', 'checkout'].forEach(name => {
-      const el = bookingForm.querySelector(`[name="${name}"]`);
-      if (el) el.addEventListener('change', updateBookingEstimate);
-    });
-
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(bookingForm);
-      const room = data.get('room');
-      const checkin = data.get('checkin');
-      const checkout = data.get('checkout');
-      const guests = data.get('guests');
-      const name = data.get('name');
-      const email = data.get('email');
-      const message = data.get('message');
-
-      const waMsg = encodeURIComponent(
-        `Ciao! Vorrei prenotare:\n` +
-        `Camera: ${room}\n` +
-        `Check-in: ${checkin}\n` +
-        `Check-out: ${checkout}\n` +
-        `Ospiti: ${guests}\n` +
-        `Nome: ${name}\n` +
-        `Email: ${email}\n` +
-        `${message ? 'Note: ' + message : ''}`
-      );
-      window.open(`https://wa.me/393334705574?text=${waMsg}`, '_blank');
-
-      const btn = bookingForm.querySelector('button[type="submit"]');
-      const origText = btn.textContent;
-      btn.textContent = '\u2713 Richiesta inviata!';
-      btn.style.background = '#5C6B3A';
-      setTimeout(() => { btn.textContent = origText; btn.style.background = ''; }, 3000);
-    });
-  }
+  // (booking form submit handled by prenota.html inline script)
 
   // --- Contact Form Submission ---
   const contactForm = document.getElementById('contact-form');

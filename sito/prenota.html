@@ -1124,13 +1124,18 @@
                 <input type="text" id="guest-name" name="name" required>
               </div>
               <div class="form-group">
-                <label for="guest-phone" class="required" data-i18n="book_phone">Telefono</label>
-                <input type="tel" id="guest-phone" name="phone" required>
+                <label for="guest-phone" class="required" data-i18n="book_phone">Telefono / WhatsApp</label>
+                <input type="tel" id="guest-phone" name="phone" required
+                  inputmode="numeric"
+                  pattern="[+\d\s\-\(\)]{6,20}"
+                  title="Inserisci un numero di telefono valido (solo cifre, spazi, +, -, parentesi)">
               </div>
             </div>
             <div class="form-group">
               <label for="guest-email" class="required" data-i18n="book_email">Email</label>
-              <input type="email" id="guest-email" name="email" required>
+              <input type="email" id="guest-email" name="email" required
+                autocomplete="email"
+                title="Inserisci un indirizzo email valido (es. nome@esempio.it)">
             </div>
             <div class="form-group">
               <label for="guest-message" data-i18n="book_message">Note o richieste</label>
@@ -1598,38 +1603,43 @@
     document.getElementById('booking-form').addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const name = document.getElementById('guest-name').value;
-      const phone = document.getElementById('guest-phone').value;
-      const email = document.getElementById('guest-email').value;
-      const message = document.getElementById('guest-message').value;
+      const name  = document.getElementById('guest-name').value.trim();
+      const phone = document.getElementById('guest-phone').value.trim();
+      const email = document.getElementById('guest-email').value.trim();
+      const message = document.getElementById('guest-message').value.trim();
       const method = document.querySelector('input[name="pay-method"]:checked').value;
+
+      // --- Validazione telefono ---
+      const phoneClean = phone.replace(/[\s\-\(\)]/g, '');
+      if (!/^[+\d]{6,20}$/.test(phoneClean)) {
+        document.getElementById('guest-phone').setCustomValidity('Inserisci un numero di telefono valido (solo cifre).');
+        document.getElementById('guest-phone').reportValidity();
+        return;
+      }
+      document.getElementById('guest-phone').setCustomValidity('');
+
+      // --- Validazione email ---
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById('guest-email').setCustomValidity('Inserisci un indirizzo email valido (es. nome@esempio.it).');
+        document.getElementById('guest-email').reportValidity();
+        return;
+      }
+      document.getElementById('guest-email').setCustomValidity('');
 
       const room = ROOMS.find(r => r.id === state.selectedRoom);
       const roomName = t(room.nameKey) || room.name;
 
-      const bookingText =
-        `*Nuova Prenotazione, Casa e Bottega*\n\n` +
-        `*Camera:* ${roomName}\n` +
-        `*Check-in:* ${formatDate(state.checkin)}\n` +
-        `*Check-out:* ${formatDate(state.checkout)}\n` +
-        `*Notti:* ${state.nights}\n` +
-        `*Ospiti:* ${state.guests}\n` +
-        `*Totale:* €${state.totalDirect}\n` +
-        `${state.discountLabel ? '*Sconto:* ' + state.discountLabel + '\n' : ''}\n` +
-        `*Ospite:* ${name}\n` +
-        `*Tel:* ${phone}\n` +
-        `*Email:* ${email}\n` +
-        `${message ? '*Note:* ' + message : ''}`;
-
-      // Send booking email via Netlify Function
+      // Disabilita il bottone durante l'invio
       const submitBtn = document.querySelector('.booking-submit-area button.active');
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Invio in corso...';
       }
 
+      // Invia a Netlify Function (notifica email all'host)
       try {
-        const resp = await fetch('/.netlify/functions/send-booking', {
+        await fetch('/.netlify/functions/send-booking', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1640,26 +1650,16 @@
             guests: state.guests,
             total: state.totalDirect,
             discount: state.discountLabel || '',
-            name: name,
-            phone: phone,
-            email: email,
-            message: message,
-            method: method
+            name, phone, email, message, method
           })
         });
-
-        if (resp.ok) {
-          showSuccess();
-        } else {
-          // Fallback: apri WhatsApp se l'email fallisce
-          window.open(`https://wa.me/393334705574?text=${encodeURIComponent(bookingText + '\n\n*Metodo:* ' + (method === 'paypal' ? 'PayPal' : 'Pagamento offline'))}`, '_blank');
-          showSuccess();
-        }
       } catch (err) {
-        // Fallback: apri WhatsApp se la function non è raggiungibile
-        window.open(`https://wa.me/393334705574?text=${encodeURIComponent(bookingText + '\n\n*Metodo:* ' + (method === 'paypal' ? 'PayPal' : 'Pagamento offline'))}`, '_blank');
-        showSuccess();
+        // Non bloccare l'esperienza utente se la function fallisce
+        console.warn('[booking] send-booking function error:', err.message);
       }
+
+      // Mostra sempre il messaggio di conferma
+      showSuccess();
     });
 
     function showSuccess() {
