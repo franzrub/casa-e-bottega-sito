@@ -129,7 +129,9 @@ exports.handler = async function(event) {
   const ricevuta = formatTs(new Date().toISOString());
 
   const subjectHost  = `🛎 Nuova prenotazione da ${name} — Casa e Bottega`;
-  const subjectGuest = `✅ Richiesta ricevuta — Casa e Bottega, Manfredonia`;
+  const subjectGuest = method === 'paypal'
+    ? `✅ Richiesta ricevuta — ti invieremo il link PayPal | Casa e Bottega`
+    : `✅ Richiesta ricevuta — ti contatteremo presto | Casa e Bottega`;
 
   // ─── Email all'ospite ─────────────────────────────────────────────
   const htmlGuest = `
@@ -171,8 +173,10 @@ exports.handler = async function(event) {
     <p class="intro">
       Caro/a <strong>${name}</strong>, grazie per aver scelto Casa e Bottega.<br>
       La tua richiesta di soggiorno è stata ricevuta correttamente.
-      Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità
-      e fornirti tutte le informazioni necessarie.
+      ${method === 'paypal'
+        ? `Ti invieremo a breve un <strong>link PayPal</strong> per completare il pagamento e confermare definitivamente la prenotazione.`
+        : `Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità e accordarci sul pagamento.`
+      }
     </p>
 
     <div class="section">

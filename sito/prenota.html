@@ -1181,8 +1181,8 @@
       <!-- Success Message -->
       <div class="booking-success-msg" id="booking-success">
         <div class="success-icon">✓</div>
-        <h3 data-i18n="book_success_title">Richiesta inviata!</h3>
-        <p data-i18n="book_success_message">Ti contatteremo entro poche ore per confermare la prenotazione.</p>
+        <h3 id="success-title">Richiesta inviata!</h3>
+        <p id="success-message">Ti contatteremo entro poche ore per confermare la prenotazione.</p>
         <a href="index.html" class="btn btn-primary" data-i18n="book_back_home">Torna alla home</a>
       </div>
     </div>
@@ -1675,11 +1675,20 @@
         console.warn('[booking] send-booking function error:', err.message);
       }
 
-      // Mostra sempre il messaggio di conferma
-      showSuccess();
+      // Mostra messaggio di conferma personalizzato per metodo pagamento
+      showSuccess(method);
     });
 
-    function showSuccess() {
+    function showSuccess(method) {
+      if (method === 'paypal') {
+        document.getElementById('success-title').textContent = 'Richiesta inviata!';
+        document.getElementById('success-message').innerHTML =
+          'Abbiamo ricevuto la tua richiesta. Ti invieremo via email un <strong>link PayPal</strong> per completare il pagamento e confermare la prenotazione.';
+      } else {
+        document.getElementById('success-title').textContent = 'Richiesta inviata!';
+        document.getElementById('success-message').innerHTML =
+          'Abbiamo ricevuto la tua richiesta. Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità e accordarci sul pagamento.';
+      }
       document.getElementById('booking-form-section').style.display = 'none';
       document.getElementById('booking-success').classList.add('active');
       document.getElementById('booking-success').style.display = 'block';
