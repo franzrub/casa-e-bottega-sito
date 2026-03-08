@@ -1018,6 +1018,10 @@
           </select>
         </div>
       </div>
+      <!-- Messaggio limite 29 notti -->
+      <div id="max-nights-error" style="display:none; margin-top:12px; padding:12px 16px; background:#fff3cd; border:1px solid #ffc107; border-radius:6px; color:#856404; font-size:0.9rem; text-align:center;">
+        ⚠️ Per legge, il soggiorno massimo è di <strong>29 notti</strong>. Per soggiorni più lunghi <a href="contatti.html" style="color:#856404;">contattaci direttamente</a>.
+      </div>
     </div>
   </section>
 
@@ -1349,10 +1353,7 @@
       let totalOTA = Math.round(totalDirect * OTA_MARKUP);
       let discountLabel = '';
 
-      if (nights >= 30) {
-        discountLabel = `-${Math.round(MONTHLY_DISCOUNT * 100)}% ${t('price_monthly')}`;
-        totalDirect = Math.round(totalDirect * (1 - MONTHLY_DISCOUNT));
-      } else if (nights >= 7) {
+      if (nights >= 7) {
         discountLabel = `-${Math.round(WEEKLY_DISCOUNT * 100)}% ${t('price_weekly')}`;
         totalDirect = Math.round(totalDirect * (1 - WEEKLY_DISCOUNT));
       }
@@ -1388,6 +1389,14 @@
 
     checkinEl.addEventListener('change', () => {
       checkoutEl.min = checkinEl.value;
+      // Limite legale: massimo 29 notti (soggiorno breve < 30 giorni)
+      if (checkinEl.value) {
+        const maxCo = new Date(checkinEl.value);
+        maxCo.setDate(maxCo.getDate() + 29);
+        checkoutEl.max = maxCo.toISOString().split('T')[0];
+      } else {
+        checkoutEl.max = '';
+      }
       if (checkoutEl.value && checkoutEl.value <= checkinEl.value) checkoutEl.value = '';
       tryAutoSearch();
     });
@@ -1406,6 +1415,17 @@
       const co = checkoutEl.value;
       if (!ci || !co) return;
       if (new Date(co) <= new Date(ci)) return;
+
+      // Limite legale: massimo 29 notti (affitto breve < 30 giorni)
+      const nights = Math.ceil((new Date(co) - new Date(ci)) / (1000 * 60 * 60 * 24));
+      const errEl = document.getElementById('max-nights-error');
+      if (nights > 29) {
+        if (errEl) errEl.style.display = 'block';
+        document.getElementById('results-container').style.display = 'none';
+        document.getElementById('results-placeholder').style.display = 'block';
+        return;
+      }
+      if (errEl) errEl.style.display = 'none';
 
       state.checkin = ci;
       state.checkout = co;
@@ -1727,7 +1747,16 @@
             miniCalCheckout = null;
           } else if (date > miniCalCheckin) {
             // Secondo click dopo check-in: imposta check-out
-            miniCalCheckout = date;
+            // Limite legale: massimo 29 notti
+            const nightsSel = Math.ceil((new Date(date) - new Date(miniCalCheckin)) / (1000 * 60 * 60 * 24));
+            if (nightsSel > 29) {
+              // Imposta automaticamente il massimo consentito
+              const maxCo = new Date(miniCalCheckin);
+              maxCo.setDate(maxCo.getDate() + 29);
+              miniCalCheckout = maxCo.toISOString().slice(0, 10);
+            } else {
+              miniCalCheckout = date;
+            }
             // Sincronizza con i campi di ricerca
             if (ciInput) ciInput.value = miniCalCheckin;
             if (coInput) coInput.value = miniCalCheckout;
