@@ -224,18 +224,18 @@
             </div>
             <div class="pct-row pct-ota-row">
               <div class="pct-row-label">Booking · Airbnb</div>
-              <div class="pct-price-cell"><span class="pct-amount">€120<small>/notte</small></span></div>
-              <div class="pct-price-cell"><span class="pct-amount">€78<small>/notte</small></span></div>
+              <div class="pct-price-cell"><span class="pct-amount" id="dimora-ota-high">€120<small>/notte</small></span></div>
+              <div class="pct-price-cell"><span class="pct-amount" id="dimora-ota-low">€78<small>/notte</small></span></div>
             </div>
             <div class="pct-row pct-direct-row">
               <div class="pct-row-label" data-i18n="price_direct_col">🏠 Prenota diretto</div>
               <div class="pct-price-cell">
-                <span class="pct-amount">€100<small>/notte</small></span>
-                <span class="pct-saving">–€20</span>
+                <span class="pct-amount" id="dimora-direct-high">€100<small>/notte</small></span>
+                <span class="pct-saving" id="dimora-saving-high">–€20</span>
               </div>
               <div class="pct-price-cell">
-                <span class="pct-amount">€60<small>/notte</small></span>
-                <span class="pct-saving">–€18</span>
+                <span class="pct-amount" id="dimora-direct-low">€60<small>/notte</small></span>
+                <span class="pct-saving" id="dimora-saving-low">–€18</span>
               </div>
             </div>
           </div>
@@ -420,18 +420,18 @@
             </div>
             <div class="pct-row pct-ota-row">
               <div class="pct-row-label">Booking · Airbnb</div>
-              <div class="pct-price-cell"><span class="pct-amount">€108<small>/notte</small></span></div>
-              <div class="pct-price-cell"><span class="pct-amount">€68<small>/notte</small></span></div>
+              <div class="pct-price-cell"><span class="pct-amount" id="bottega-ota-high">€108<small>/notte</small></span></div>
+              <div class="pct-price-cell"><span class="pct-amount" id="bottega-ota-low">€68<small>/notte</small></span></div>
             </div>
             <div class="pct-row pct-direct-row">
               <div class="pct-row-label" data-i18n="price_direct_col">🏠 Prenota diretto</div>
               <div class="pct-price-cell">
-                <span class="pct-amount">€90<small>/notte</small></span>
-                <span class="pct-saving">–€18</span>
+                <span class="pct-amount" id="bottega-direct-high">€90<small>/notte</small></span>
+                <span class="pct-saving" id="bottega-saving-high">–€18</span>
               </div>
               <div class="pct-price-cell">
-                <span class="pct-amount">€50<small>/notte</small></span>
-                <span class="pct-saving">–€18</span>
+                <span class="pct-amount" id="bottega-direct-low">€50<small>/notte</small></span>
+                <span class="pct-saving" id="bottega-saving-low">–€18</span>
               </div>
             </div>
           </div>
@@ -502,5 +502,32 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  // Aggiorna tabelle prezzi camere da _data/prezzi.json
+  fetch('/_data/prezzi.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (!data) return;
+      const m = data.ota_markup || 1.20;
+      const rooms = {
+        dimora:  { high: data.alta.dimora,  low: data.bassa.dimora },
+        bottega: { high: data.alta.bottega, low: data.bassa.bottega }
+      };
+      ['dimora', 'bottega'].forEach(room => {
+        ['high', 'low'].forEach(season => {
+          const direct = rooms[room][season];
+          const ota = Math.round(direct * m);
+          const saving = ota - direct;
+          const elOta    = document.getElementById(`${room}-ota-${season}`);
+          const elDirect = document.getElementById(`${room}-direct-${season}`);
+          const elSaving = document.getElementById(`${room}-saving-${season}`);
+          if (elOta)    elOta.innerHTML    = `€${ota}<small>/notte</small>`;
+          if (elDirect) elDirect.innerHTML = `€${direct}<small>/notte</small>`;
+          if (elSaving) elSaving.textContent = `–€${saving}`;
+        });
+      });
+    })
+    .catch(() => {});
+  </script>
 </body>
 </html>
