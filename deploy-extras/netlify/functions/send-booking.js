@@ -128,8 +128,80 @@ exports.handler = async function(event) {
   const methodLabel = method === 'paypal' ? '💳 PayPal' : '🏦 Pagamento offline';
   const ricevuta = formatTs(new Date().toISOString());
 
-  const subject = `🛎 Nuova prenotazione da ${name} — Casa e Bottega`;
+  const subjectHost  = `🛎 Nuova prenotazione da ${name} — Casa e Bottega`;
+  const subjectGuest = `✅ Richiesta ricevuta — Casa e Bottega, Manfredonia`;
 
+  // ─── Email all'ospite ─────────────────────────────────────────────
+  const htmlGuest = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: Georgia, serif; background: #F5F0E8; margin: 0; padding: 20px; }
+    .card { max-width: 560px; margin: 0 auto; background: white; border-radius: 8px;
+            padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .logo { font-size: 1.1rem; font-weight: bold; color: #C8A96E; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-bottom: 4px; }
+    h2 { color: #1B4F72; font-size: 1.4rem; margin: 0 0 8px; }
+    .subtitle { color: #999; font-size: 0.85rem; margin: 0 0 24px;
+                border-bottom: 2px solid #C8A96E; padding-bottom: 12px; }
+    .intro { font-size: 0.98rem; color: #444; line-height: 1.6; margin-bottom: 24px; }
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+                     color: #C8A96E; margin-bottom: 10px; font-weight: bold; }
+    .field { margin-bottom: 10px; display: flex; gap: 8px; }
+    .label { font-size: 0.8rem; color: #999; min-width: 100px; flex-shrink: 0; }
+    .value { font-size: 0.95rem; color: #333; }
+    .value.big { font-size: 1.3rem; font-weight: bold; color: #1B4F72; }
+    .info-box { background: #f9f7f2; border-left: 3px solid #C8A96E;
+                padding: 12px 16px; border-radius: 0 4px 4px 0;
+                font-size: 0.9rem; color: #555; line-height: 1.6; margin-bottom: 24px; }
+    .footer { margin-top: 24px; font-size: 0.78rem; color: #bbb; text-align: center;
+              border-top: 1px solid #f0ebe0; padding-top: 16px; }
+    a { color: #1B4F72; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Casa e Bottega</div>
+    <h2>Abbiamo ricevuto la tua richiesta!</h2>
+    <p class="subtitle">Manfredonia, Puglia · ${ricevuta}</p>
+
+    <p class="intro">
+      Caro/a <strong>${name}</strong>, grazie per aver scelto Casa e Bottega.<br>
+      La tua richiesta di soggiorno è stata ricevuta correttamente.
+      Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità
+      e fornirti tutte le informazioni necessarie.
+    </p>
+
+    <div class="section">
+      <div class="section-title">🛏 Riepilogo richiesta</div>
+      <div class="field"><span class="label">Camera</span><span class="value">${room}</span></div>
+      <div class="field"><span class="label">Check-in</span><span class="value">${checkin}</span></div>
+      <div class="field"><span class="label">Check-out</span><span class="value">${checkout}</span></div>
+      <div class="field"><span class="label">Notti</span><span class="value">${nights}</span></div>
+      <div class="field"><span class="label">Ospiti</span><span class="value">${guests}</span></div>
+      ${discount ? `<div class="field"><span class="label">Sconto</span><span class="value">${discount}</span></div>` : ''}
+      <div class="field"><span class="label">Totale stimato</span><span class="value big">€${total}</span></div>
+      <div class="field"><span class="label">Pagamento</span><span class="value">${methodLabel}</span></div>
+    </div>
+
+    <div class="info-box">
+      📍 <strong>Dove siamo:</strong> Manfredonia (FG), Puglia<br>
+      📧 <a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a><br>
+      🌐 <a href="https://casaebottegapuglia.it">casaebottegapuglia.it</a>
+    </div>
+
+    <div class="footer">
+      Hai inviato questa richiesta dal sito casaebottegapuglia.it.<br>
+      Se non sei stato tu, ignora questa email.
+    </div>
+  </div>
+</body>
+</html>`;
+
+  // ─── Email all'host ────────────────────────────────────────────────
   const html = `
 <!DOCTYPE html>
 <html>
@@ -189,22 +261,26 @@ exports.handler = async function(event) {
 </body>
 </html>`;
 
-  try {
-    await smtpSend({
-      host: 'smtp.gmail.com',
-      port: 465,
-      user: GMAIL_USER,
-      pass: GMAIL_APP_PASSWORD,
-      from: GMAIL_USER,
-      to:   NOTIFY_EMAIL,
-      subject,
-      html
-    });
-    console.log(`[send-booking] Email inviata per prenotazione di ${name}`);
-  } catch (err) {
-    console.error('[send-booking] Errore invio email:', err.message);
-    // Non restituire errore al client: la prenotazione è comunque registrata
-  }
+  // Invia entrambe le email (host + ospite) in parallelo
+  const emailTasks = [
+    smtpSend({
+      host: 'smtp.gmail.com', port: 465,
+      user: GMAIL_USER, pass: GMAIL_APP_PASSWORD,
+      from: GMAIL_USER, to: NOTIFY_EMAIL,
+      subject: subjectHost, html
+    }).then(() => console.log(`[send-booking] Email host inviata per ${name}`))
+      .catch(err => console.error('[send-booking] Errore email host:', err.message)),
+
+    smtpSend({
+      host: 'smtp.gmail.com', port: 465,
+      user: GMAIL_USER, pass: GMAIL_APP_PASSWORD,
+      from: GMAIL_USER, to: email,
+      subject: subjectGuest, html: htmlGuest
+    }).then(() => console.log(`[send-booking] Email conferma inviata a ${email}`))
+      .catch(err => console.error('[send-booking] Errore email ospite:', err.message))
+  ];
+
+  await Promise.allSettled(emailTasks);
 
   return {
     statusCode: 200,
