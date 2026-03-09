@@ -3,7 +3,7 @@
     {
       "icon": "🕐",
       "title": "Check-in e Check-out",
-      "text": "Il check-in è previsto dalle 15:00 alle 20:00. Per orari diversi è necessario concordarlo preventivamente con i gestori. Il check-out deve avvenire entro le 10:30."
+      "text": "Il check-in è previsto dalle 15:00 in poi. Il check-out deve avvenire entro le 11:30."
     },
     {
       "icon": "👥",
@@ -13,7 +13,7 @@
     {
       "icon": "🤫",
       "title": "Silenzio e rispetto dei vicini",
-      "text": "Si prega di mantenere un tono di voce moderato dopo le 22:00 e prima delle 8:00, in rispetto degli altri ospiti e dei residenti della zona."
+      "text": "Si prega di mantenere un tono di voce moderato dopo le 23:00 e prima delle 8:00, in rispetto degli altri ospiti e dei residenti della zona."
     },
     {
       "icon": "🚬",
@@ -24,16 +24,6 @@
       "icon": "🐾",
       "title": "Animali domestici",
       "text": "Non sono ammessi animali domestici, salvo accordo preventivo scritto con i gestori."
-    },
-    {
-      "icon": "🧹",
-      "title": "Pulizia e cura degli spazi",
-      "text": "Gli ospiti sono pregati di lasciare gli ambienti in ordine al momento del check-out. Eventuali danni agli arredi o agli oggetti presenti nella struttura saranno addebitati al responsabile della prenotazione."
-    },
-    {
-      "icon": "🎉",
-      "title": "Feste ed eventi",
-      "text": "Non sono consentite feste, eventi o riunioni di persone esterne all'interno della struttura."
     },
     {
       "icon": "❌",
