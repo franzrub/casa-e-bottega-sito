@@ -1,17 +1,53 @@
 {
   "mesi_prezzi": {
-    "gennaio":   { "dimora": 60, "bottega": 50 },
-    "febbraio":  { "dimora": 60, "bottega": 50 },
-    "marzo":     { "dimora": 60, "bottega": 50 },
-    "aprile":    { "dimora": 60, "bottega": 50 },
-    "maggio":    { "dimora": 60, "bottega": 50 },
-    "giugno":    { "dimora": 60, "bottega": 50 },
-    "luglio":    { "dimora": 100, "bottega": 90 },
-    "agosto":    { "dimora": 100, "bottega": 90 },
-    "settembre": { "dimora": 100, "bottega": 90 },
-    "ottobre":   { "dimora": 60, "bottega": 50 },
-    "novembre":  { "dimora": 60, "bottega": 50 },
-    "dicembre":  { "dimora": 60, "bottega": 50 }
+    "agosto": {
+      "dimora": 110,
+      "bottega": 97
+    },
+    "gennaio": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "dicembre": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "marzo": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "febbraio": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "luglio": {
+      "dimora": 100,
+      "bottega": 90
+    },
+    "ottobre": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "giugno": {
+      "dimora": 80,
+      "bottega": 74
+    },
+    "novembre": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "maggio": {
+      "dimora": 60,
+      "bottega": 50
+    },
+    "settembre": {
+      "dimora": 100,
+      "bottega": 90
+    },
+    "aprile": {
+      "dimora": 60,
+      "bottega": 50
+    }
   },
   "ota_markup": 1.3,
   "weekly_discount": 0.1,
