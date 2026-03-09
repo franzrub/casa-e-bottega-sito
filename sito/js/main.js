@@ -23,13 +23,31 @@ const MANUAL_BLOCKED = {
    I prezzi vengono caricati da /_data/prezzi.json
    (modificabile dal pannello admin senza toccare il codice)
    ============================================ */
+
+// Chiavi dei mesi in italiano (indice 0 = gennaio)
+const MONTH_KEYS = ['gennaio','febbraio','marzo','aprile','maggio','giugno',
+                    'luglio','agosto','settembre','ottobre','novembre','dicembre'];
+const MONTH_NAMES_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+                        'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
 let PRICING = {
-  dimora: { high: 100, low: 60 },
-  bottega: { high: 90, low: 50 },
-  otaMarkup: 1.20,
+  mesiPrezzi: {
+    gennaio:   { dimora: 60, bottega: 50 },
+    febbraio:  { dimora: 60, bottega: 50 },
+    marzo:     { dimora: 60, bottega: 50 },
+    aprile:    { dimora: 60, bottega: 50 },
+    maggio:    { dimora: 60, bottega: 50 },
+    giugno:    { dimora: 60, bottega: 50 },
+    luglio:    { dimora: 100, bottega: 90 },
+    agosto:    { dimora: 100, bottega: 90 },
+    settembre: { dimora: 100, bottega: 90 },
+    ottobre:   { dimora: 60, bottega: 50 },
+    novembre:  { dimora: 60, bottega: 50 },
+    dicembre:  { dimora: 60, bottega: 50 }
+  },
+  otaMarkup: 1.30,        // allineato al valore in prezzi.json
   weeklyDiscount: 0.10,
-  monthlyDiscount: 0.20,
-  highSeasonMonths: [6, 7, 8]
+  monthlyDiscount: 0.20
 };
 
 // Carica prezzi aggiornati da _data/prezzi.json (gestito dal CMS)
@@ -37,20 +55,21 @@ fetch('/_data/prezzi.json')
   .then(r => r.ok ? r.json() : null)
   .then(data => {
     if (!data) return;
-    PRICING.dimora   = { high: data.alta.dimora,   low: data.bassa.dimora };
-    PRICING.bottega  = { high: data.alta.bottega,  low: data.bassa.bottega };
-    PRICING.otaMarkup        = data.ota_markup       || PRICING.otaMarkup;
-    PRICING.weeklyDiscount   = data.weekly_discount  || PRICING.weeklyDiscount;
-    PRICING.monthlyDiscount  = data.monthly_discount || PRICING.monthlyDiscount;
+    if (data.mesi_prezzi) PRICING.mesiPrezzi = data.mesi_prezzi;
+    PRICING.otaMarkup       = data.ota_markup       || PRICING.otaMarkup;
+    PRICING.weeklyDiscount  = data.weekly_discount  || PRICING.weeklyDiscount;
+    PRICING.monthlyDiscount = data.monthly_discount || PRICING.monthlyDiscount;
     // Aggiorna le card prezzi con i nuovi valori
     if (typeof window.updatePricingCards === 'function') window.updatePricingCards();
   })
   .catch(() => { /* usa prezzi di default */ });
 
 function getSeasonPrice(room, month) {
-  const r = PRICING[room] || PRICING.dimora;
-  const isHigh = PRICING.highSeasonMonths.includes(month);
-  return isHigh ? r.high : r.low;
+  // month è 0-indexed (0 = gennaio, 11 = dicembre)
+  const key = MONTH_KEYS[month];
+  const mese = PRICING.mesiPrezzi && PRICING.mesiPrezzi[key];
+  if (mese && mese[room] !== undefined) return mese[room];
+  return room === 'dimora' ? 60 : 50; // fallback
 }
 
 function getOTAPrice(directPrice) {
@@ -58,7 +77,10 @@ function getOTAPrice(directPrice) {
 }
 
 function isHighSeason(month) {
-  return PRICING.highSeasonMonths.includes(month);
+  // "Alta stagione" = mesi con il prezzo massimo per La Dimora
+  const allPrices = MONTH_KEYS.map(k => (PRICING.mesiPrezzi[k] || {dimora: 0}).dimora);
+  const maxPrice = Math.max(...allPrices);
+  return getSeasonPrice('dimora', month) >= maxPrice;
 }
 
 /* ============================================
@@ -623,19 +645,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ['dimora', 'bottega'].forEach(room => {
       const el = document.getElementById('pricing-' + room);
       if (!el) return;
-      const highPrice = getSeasonPrice(room, 7); // August
-      const lowPrice = getSeasonPrice(room, 0);  // January
+      const allPrices = MONTH_KEYS.map(k => (PRICING.mesiPrezzi[k] || {})[room] || 0);
+      const highPrice = Math.max(...allPrices);
+      const lowPrice  = Math.min(...allPrices);
       const highOTA = getOTAPrice(highPrice);
-      const lowOTA = getOTAPrice(lowPrice);
+      const lowOTA  = getOTAPrice(lowPrice);
 
       el.innerHTML = `
         <div class="price-line">
-          <span class="price-season">Lug–Set</span>
+          <span class="price-season">Alta stagione</span>
           <span class="price-ota-inline">€${highOTA}</span>
           <span class="price-direct-inline">€${highPrice}/notte</span>
         </div>
         <div class="price-line">
-          <span class="price-season">Ott–Giu</span>
+          <span class="price-season">Bassa stagione</span>
           <span class="price-ota-inline">€${lowOTA}</span>
           <span class="price-direct-inline">€${lowPrice}/notte</span>
         </div>
@@ -870,11 +893,11 @@ function renderCalendar() {
   if (priceIndicator) {
     const price = getSeasonPrice(selectedRoom, calMonth);
     const otaPrice = getOTAPrice(price);
-    const seasonLabel = isHighSeason(calMonth) ? 'Lug–Set' : 'Ott–Giu';
+    const monthLabel = MONTH_NAMES_IT[calMonth] || '';
     const roomName = selectedRoom === 'dimora' ? 'La Dimora' : 'La Bottega';
 
     priceIndicator.innerHTML = `
-      ${roomName} · ${seasonLabel}:
+      ${roomName} · ${monthLabel}:
       <span class="cal-price-ota">€${otaPrice}</span>
       <span class="cal-price-amount">€${price}/notte</span>
     `;
