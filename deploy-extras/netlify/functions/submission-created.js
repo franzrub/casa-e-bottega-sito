@@ -186,11 +186,11 @@ exports.handler = async function(event) {
   }
 
   const data     = payload.data || {};
-  const nome     = data.nome     || '(non specificato)';
+  const nome     = data.name     || '(non specificato)';
   const email    = data.email    || '(non specificata)';
-  const telefono = data.telefono || '(non specificato)';
-  const camera   = data.camera   || '(non specificata)';
-  const messaggio = data.messaggio || '(vuoto)';
+  const telefono = data.phone    || '(non specificato)';
+  const date     = data.dates    || '(non specificate)';
+  const messaggio = data.message || '(vuoto)';
   const quando   = formatDate(payload.created_at || new Date().toISOString());
 
   const subject = `📬 Nuovo messaggio da ${nome} — Casa e Bottega`;
@@ -235,8 +235,8 @@ exports.handler = async function(event) {
     </div>
 
     <div class="field">
-      <div class="label">🛏 Camera di interesse</div>
-      <div class="value">${camera}</div>
+      <div class="label">📅 Date soggiorno</div>
+      <div class="value">${date}</div>
     </div>
 
     <div class="field">
