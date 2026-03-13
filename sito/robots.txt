@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /regole.html
+Disallow: /ISTRUZIONI-HOST.html
+
+Sitemap: https://www.casaebottegapuglia.it/sitemap.xml
