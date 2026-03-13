@@ -1,92 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Pagine principali -->
+  <!-- ── ITALIANO (root) ── -->
   <url>
     <loc>https://www.casaebottegapuglia.it/</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/"/>
   </url>
   <url>
     <loc>https://www.casaebottegapuglia.it/camere.html</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/camere.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/camere.html"/>
   </url>
   <url>
     <loc>https://www.casaebottegapuglia.it/prenota.html</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/prenota.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/prenota.html"/>
   </url>
   <url>
     <loc>https://www.casaebottegapuglia.it/contatti.html</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/contatti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/contatti.html"/>
   </url>
   <url>
     <loc>https://www.casaebottegapuglia.it/blog.html</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog.html"/>
   </url>
 
-  <!-- Articoli del blog -->
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-1.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-2.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-3.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-4.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-5.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-6.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-7.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-8.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.casaebottegapuglia.it/blog-articolo-9.html</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- ── LINGUE ── -->
+  <url><loc>https://www.casaebottegapuglia.it/en/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/en/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/en/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/en/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/en/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.casaebottegapuglia.it/fr/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/fr/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/fr/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/fr/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/fr/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.casaebottegapuglia.it/de/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/de/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/de/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/de/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/de/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.casaebottegapuglia.it/nl/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/nl/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/nl/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/nl/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/nl/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.casaebottegapuglia.it/es/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/es/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/es/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/es/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/es/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- ── ARTICOLI BLOG (solo IT) ── -->
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-1.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-2.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-3.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-4.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-5.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-6.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-7.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-8.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-9.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 
 </urlset>
