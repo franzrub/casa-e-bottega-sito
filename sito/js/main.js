@@ -396,8 +396,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.querySelectorAll('.lang-switcher button').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+    document.querySelectorAll('.lang-switcher button, .lang-switcher a.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang || btn.getAttribute('hreflang') === lang);
     });
 
     if (typeof renderCalendar === 'function') renderCalendar();
@@ -414,6 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
+  // lang-btn anchors navigate directly — no JS listener needed
 
   setLang(currentLang);
 
@@ -950,10 +951,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fallback images if manifest is not available
     const fallbackImages = [
-      '1.jpeg',
-      '2.jpeg',
-      '3.jpeg',
-      '4.jpeg'
+      '1.webp',
+      '2.webp',
+      '3.webp',
+      '4.webp'
     ];
 
     function initCarousel(imageFiles) {

@@ -151,7 +151,8 @@ h4 { font-size: 1.2rem; }
   margin-left: 1rem;
 }
 
-.lang-switcher button {
+.lang-switcher button,
+.lang-switcher a.lang-btn {
   background: none;
   border: 1.5px solid transparent;
   border-radius: 50%;
@@ -164,9 +165,12 @@ h4 { font-size: 1.2rem; }
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .lang-switcher button:hover,
-.lang-switcher button.active {
+.lang-switcher button.active,
+.lang-switcher a.lang-btn:hover,
+.lang-switcher a.lang-btn.active {
   border-color: var(--ocra);
   color: var(--blu-dark);
   background: rgba(200,169,110,0.1);
@@ -1822,7 +1826,8 @@ h4 { font-size: 1.2rem; }
 @media (max-width: 480px) {
   .container { padding: 0 1rem; }
 
-  .lang-switcher button { width: 24px; height: 24px; font-size: 0.65rem; }
+  .lang-switcher button,
+  .lang-switcher a.lang-btn { width: 24px; height: 24px; font-size: 0.65rem; }
   .trust-strip-inner { flex-direction: column; gap: 0.5rem; }
 
   /* Page header */
@@ -1924,8 +1929,8 @@ h4 { font-size: 1.2rem; }
 }
 
 .amenity-detail-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.8rem, 1fr));
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -1935,7 +1940,6 @@ h4 { font-size: 1.2rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.8rem;
   height: 2.8rem;
   background: var(--calce);
   border-radius: 6px;
@@ -1998,8 +2002,7 @@ h4 { font-size: 1.2rem; }
 
 /* Extra bed full-width item — La Dimora only */
 .amenity-detail-item--extra-bed {
-  flex: 0 0 100%;
-  width: 100%;
+  grid-column: 1 / -1;
   height: auto;
   min-height: 2.8rem;
   background: rgba(90,130,60,0.1);
