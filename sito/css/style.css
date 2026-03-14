@@ -299,6 +299,23 @@ h4 { font-size: 1.2rem; }
   font-weight: 300;
 }
 
+.hero-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 1.6rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.88);
+  font-family: var(--font-body);
+}
+.hero-badges-sep {
+  opacity: 0.45;
+  font-weight: 300;
+}
+
 .hero-ctas {
   display: flex;
   gap: 1rem;
@@ -518,7 +535,23 @@ h4 { font-size: 1.2rem; }
 .room-card-body p {
   color: var(--testo-light);
   font-size: 0.95rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.room-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+}
+.room-features li {
+  font-size: 0.85rem;
+  color: var(--testo-light);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 /* --- Reviews Section --- */
@@ -677,7 +710,36 @@ h4 { font-size: 1.2rem; }
   border: none;
   border-radius: var(--radius);
   box-shadow: 0 4px 20px var(--ombra);
+  display: block;
 }
+
+/* Map fallback — visibile di default, nascosto quando l'iframe carica */
+.map-fallback {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  margin-top: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: var(--crema, #F5F0E8);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--testo, #2C3E50);
+}
+.map-fallback-icon { font-size: 1.1rem; }
+.map-fallback-address { flex: 1 1 auto; }
+.map-fallback-link {
+  color: var(--oro, #C8A96E);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.map-fallback-link:hover { opacity: 0.75; }
+
+/* Nasconde il fallback quando la mappa è caricata correttamente */
+.map-loaded .map-fallback { display: none; }
 
 /* --- Footer --- */
 .site-footer {
@@ -716,6 +778,11 @@ h4 { font-size: 1.2rem; }
   font-size: 0.88rem;
 }
 .footer-col a:hover { color: var(--ocra); }
+.footer-phone {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.85);
+}
 
 .footer-social {
   display: flex;

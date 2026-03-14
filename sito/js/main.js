@@ -950,11 +950,12 @@ document.addEventListener('DOMContentLoaded', () => {
       : '../foto-homepage/';
 
     // Fallback images if manifest is not available
+    // Nota: 1.webp (TV con Netflix) spostata in ultima posizione
     const fallbackImages = [
-      '1.webp',
       '2.webp',
       '3.webp',
-      '4.webp'
+      '4.webp',
+      '1.webp'
     ];
 
     function initCarousel(imageFiles) {

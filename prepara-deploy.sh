@@ -33,23 +33,26 @@ sed -i.bak "s|\.\./foto-homepage/|./foto-homepage/|g" js/main.js
 rm -f js/main.js.bak
 
 # 6. Genera manifesto immagini hero
-echo "📸 Scansione foto-homepage..."
+# Ordine manuale: 1.webp (TV/Netflix) spostata in ultima posizione per prima impressione elegante
+echo "📸 Generazione manifest foto-homepage (ordine personalizzato)..."
 cd foto-homepage
-# Trova tutti i file immagine (jpeg, jpg, png, webp) e genera JSON
-FILES=$(ls -1 *.jpeg *.jpg *.png *.webp 2>/dev/null | sort)
+# Ordine fisso: inizia con le immagini evocative, la TV (1.*) va per ultima
+ORDERED_FILES="2.webp 3.webp 4.webp 1.webp"
 JSON="["
 FIRST=true
-for f in $FILES; do
-  if [ "$FIRST" = true ]; then
-    JSON="$JSON\"$f\""
-    FIRST=false
-  else
-    JSON="$JSON,\"$f\""
+for f in $ORDERED_FILES; do
+  if [ -f "$f" ]; then
+    if [ "$FIRST" = true ]; then
+      JSON="$JSON\"$f\""
+      FIRST=false
+    else
+      JSON="$JSON,\"$f\""
+    fi
   fi
 done
 JSON="$JSON]"
 echo "$JSON" > images.json
-echo "   Trovate $(echo "$FILES" | wc -l | tr -d ' ') immagini"
+echo "   Manifest generato: $JSON"
 cd ..
 
 # 7. Copia Netlify functions (netlify.toml è ora nella root del repo)
