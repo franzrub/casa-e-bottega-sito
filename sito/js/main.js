@@ -45,7 +45,7 @@ let PRICING = {
     novembre:  { dimora: 60, bottega: 50 },
     dicembre:  { dimora: 60, bottega: 50 }
   },
-  otaMarkup: 1.30,        // allineato al valore in prezzi.json
+  otaMarkup: 1.25,        // allineato al valore in prezzi.json
   weeklyDiscount: 0.10,
   monthlyDiscount: 0.20
 };
@@ -372,7 +372,14 @@ function renderBookingSummary() {
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Language System ---
-  let currentLang = localStorage.getItem('ceb_lang') || 'it';
+  // Rileva la lingua dal percorso URL (es. /de/ → 'de') per garantire
+  // che ogni pagina mostri sempre la lingua corretta indipendentemente
+  // dal localStorage (risolve: contenuti non tradotti + lingua bloccata).
+  const _pathLang = (() => {
+    const match = window.location.pathname.match(/\/(en|fr|de|nl|es)\//);
+    return match ? match[1] : null;
+  })();
+  let currentLang = _pathLang || localStorage.getItem('ceb_lang') || 'it';
 
   function t(key) {
     const lang = translations[currentLang] || translations.it;
