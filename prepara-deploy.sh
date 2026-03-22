@@ -24,9 +24,18 @@ cp -r loghi-e-badge deploy/
 
 # 4. Correggi percorsi relativi
 cd deploy
+# Root HTML (IT): ../foto- → ./foto-
 sed -i.bak 's|\.\./foto-|./foto-|g' *.html
 sed -i.bak 's|\.\./loghi-|./loghi-|g' *.html
 rm -f *.bak
+# Sottocartelle lingue (EN/FR/DE/NL/ES): ../../foto- → ../foto-
+for lang in en fr de nl es; do
+  if [ -d "$lang" ]; then
+    sed -i.bak 's|\.\./\.\./foto-|../foto-|g' "$lang"/*.html
+    sed -i.bak 's|\.\./\.\./loghi-|../loghi-|g' "$lang"/*.html
+    rm -f "$lang"/*.bak
+  fi
+done
 
 # 5. Correggi percorsi nel main.js per deploy
 sed -i.bak "s|\.\./foto-homepage/|./foto-homepage/|g" js/main.js
