@@ -106,7 +106,22 @@
   <script>
     (function() {
       const params = new URLSearchParams(window.location.search);
-      const slug = params.get('slug');
+      const slug   = params.get('slug');
+      const lang   = params.get('lang'); // passed by multilingual blog pages
+
+      // Apply language ASAP so nav/ui is translated before article loads
+      if (lang && typeof setLang === 'function') {
+        setLang(lang);
+      }
+
+      // Update lang-switcher buttons to preserve the current slug
+      if (slug) {
+        document.querySelectorAll('.lang-switcher button[data-lang]').forEach(btn => {
+          const l = btn.dataset.lang;
+          // IT stays as button (no separate article page), others too — all point here
+          // We just update active state; setLang handles the display
+        });
+      }
 
       if (!slug) {
         document.getElementById('article-title').textContent = 'Articolo non trovato';
@@ -140,7 +155,9 @@
           if (fm.category) document.getElementById('article-category').textContent = fm.category;
           if (fm.date) {
             const d = new Date(fm.date);
-            document.getElementById('article-date').textContent = d.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
+            // Use current lang for date locale
+            const locale = (lang || 'it') + '-' + (lang || 'it').toUpperCase();
+            document.getElementById('article-date').textContent = d.toLocaleDateString(locale, { month: 'long', year: 'numeric' });
           }
           if (fm.description) {
             document.querySelector('meta[name="description"]').setAttribute('content', fm.description);
@@ -149,10 +166,12 @@
           // Render markdown
           const html = marked.parse(body);
 
-          // Add CTA at end
+          // Add CTA at end — use translated text if available
+          const ctaText   = (typeof t === 'function') ? t('article_cta_text')   : 'Vi aspettiamo a Casa e Bottega.';
+          const ctaButton = (typeof t === 'function') ? t('article_cta_button') : 'Prenota il tuo soggiorno';
           const cta = `<div class="article-cta">
-            <p>Vi aspettiamo a Casa e Bottega.</p>
-            <a href="prenota.html" class="btn btn-primary">Prenota il tuo soggiorno</a>
+            <p>${ctaText}</p>
+            <a href="prenota.html" class="btn btn-primary">${ctaButton}</a>
           </div>`;
 
           document.getElementById('article-body').innerHTML = html + cta;

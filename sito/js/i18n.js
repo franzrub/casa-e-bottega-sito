@@ -111,6 +111,8 @@ const translations = {
     amenity_first_aid: "Kit di primo soccorso",
     amenity_extra_bed: "Letto aggiuntivo su richiesta",
     amenity_extra_bed_desc: "Disponibile su richiesta, solo per La Dimora",
+    article_cta_text: "Vi aspettiamo a Casa e Bottega.",
+    article_cta_button: "Prenota il tuo soggiorno",
     room_from: "Da",
     room_per_night: "/ notte",
     room_check_avail: "Verifica disponibilità",
@@ -331,6 +333,8 @@ const translations = {
     amenity_first_aid: "First aid kit",
     amenity_extra_bed: "Extra bed on request",
     amenity_extra_bed_desc: "Available on request, La Dimora only",
+    article_cta_text: "We look forward to welcoming you at Casa e Bottega.",
+    article_cta_button: "Book your stay",
     room_from: "From",
     room_per_night: "/ night",
     room_check_avail: "Check availability",
@@ -662,6 +666,8 @@ const translations = {
     amenity_first_aid: "Trousse de premiers secours",
     amenity_extra_bed: "Lit supplémentaire sur demande",
     amenity_extra_bed_desc: "Disponible sur demande, uniquement pour La Dimora",
+    article_cta_text: "Nous vous attendons à Casa e Bottega.",
+    article_cta_button: "Réservez votre séjour",
   },
 
   de: {
@@ -878,6 +884,8 @@ const translations = {
     amenity_first_aid: "Erste-Hilfe-Set",
     amenity_extra_bed: "Zusatzbett auf Anfrage",
     amenity_extra_bed_desc: "Auf Anfrage verfügbar, nur für La Dimora",
+    article_cta_text: "Wir freuen uns auf Sie in Casa e Bottega.",
+    article_cta_button: "Ihren Aufenthalt buchen",
   },
 
   nl: {
@@ -1094,6 +1102,8 @@ const translations = {
     amenity_first_aid: "Eerste-hulpkit",
     amenity_extra_bed: "Extra bed op aanvraag",
     amenity_extra_bed_desc: "Beschikbaar op aanvraag, alleen voor La Dimora",
+    article_cta_text: "We verwelkomen u graag in Casa e Bottega.",
+    article_cta_button: "Boek uw verblijf",
   },
 
   es: {
@@ -1310,5 +1320,7 @@ const translations = {
     amenity_first_aid: "Kit de primeros auxilios",
     amenity_extra_bed: "Cama adicional bajo petición",
     amenity_extra_bed_desc: "Disponible bajo petición, solo para La Dimora",
+    article_cta_text: "Os esperamos en Casa e Bottega.",
+    article_cta_button: "Reserva tu estancia",
   }
 };
