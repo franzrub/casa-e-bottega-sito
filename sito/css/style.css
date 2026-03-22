@@ -2310,10 +2310,12 @@ h4 { font-size: 1.2rem; }
   .hero-content .hero-tagline { font-size: 1rem; }
 
   /* Hero nuova — mobile */
-  .hero-body { padding: 0 2rem 4rem; grid-template-columns: 1fr; }
+  .hero-body { padding: 0 2rem 3rem; grid-template-columns: 1fr; }
   .hero-rating-card { display: none; }
   .hero-carousel-dots { right: 1rem; }
-  .hero-title { font-size: clamp(3.2rem, 14vw, 5.5rem); }
+  .hero-title { font-size: clamp(2.8rem, 11vw, 4.2rem); }
+  /* Nasconde scroll indicator su tablet/mobile: altrimenti si sovrappone ai CTA */
+  .hero-scroll-indicator { display: none; }
 
   /* Sections */
   .section { padding: 2.5rem 0; }
@@ -2386,9 +2388,18 @@ h4 { font-size: 1.2rem; }
   /* Hero */
   .hero-content h1 { font-size: 1.75rem; }
   .hero-content .hero-tagline { font-size: 0.92rem; }
-  .hero-body { padding: 0 1.5rem 3.5rem; }
-  .hero-title { font-size: clamp(2.8rem, 17vw, 4.5rem); }
-  .hero-title-line2 { padding-left: 1.25rem; }
+  .hero-body { padding: 0 1.5rem 2.8rem; }
+  .hero-title { font-size: clamp(2.4rem, 13vw, 3.6rem); }
+  .hero-title-line2 { padding-left: 1rem; }
+  /* Award pill nascosta su schermi piccoli: troppo affollato */
+  .hero-award-pill { display: none; }
+  /* Tagline: meno lettera-spacing così non va a capo */
+  .hero-tagline { letter-spacing: 0.06em; font-size: 0.7rem; }
+  /* CTA: gap ridotto, bottone più compatto */
+  .hero-ctas { gap: 0.9rem; }
+  .btn-hero-primary { padding: 0.85rem 1.6rem; font-size: 0.82rem; }
+  .hero-savings-badge { font-size: 0.7rem; padding: 0.2rem 0.5rem; }
+  .btn-hero-ghost { font-size: 0.78rem; }
   .trust-strip-inner { flex-wrap: wrap; gap: 0.6rem 1.25rem; }
 
   /* Gallery: single column on very small screens */
