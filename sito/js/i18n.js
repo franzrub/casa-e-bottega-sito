@@ -12,7 +12,7 @@ const translations = {
     nav_contact: "Posizione",
     // Hero
     hero_title: "Casa e Bottega",
-    hero_tagline: "Cuoio & ragù · 300 m dal mare Adriatico",
+    hero_tagline: "300 m dal mare Adriatico",
     hero_cta_rooms: "Scopri le camere",
     hero_cta_book: "Prenota ora",
     // Trust
