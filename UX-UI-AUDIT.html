@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UX/UI Audit — Casa e Bottega</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --calce: #F5F0E8;
+    --ocra: #C8A96E;
+    --blu: #1B4F72;
+    --terracotta: #C07040;
+    --verde: #3A6B3A;
+    --rosso: #A83232;
+    --testo: #2C2C2C;
+    --muted: #6A6A6A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FAFAF8;
+    color: var(--testo);
+    line-height: 1.75;
+  }
+
+  /* ---- COVER ---- */
+  .cover {
+    background: var(--blu);
+    color: #F5F0E8;
+    padding: 5rem 4rem;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 30%, rgba(200,169,110,0.18) 0%, transparent 60%);
+  }
+  .cover-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ocra);
+    margin-bottom: 1rem;
+  }
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.6);
+    margin-top: 1.5rem;
+    display: flex; gap: 2rem;
+  }
+  .cover-line {
+    width: 60px; height: 2px;
+    background: var(--ocra);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ---- LAYOUT ---- */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 4rem 2rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+
+  /* ---- HEADING SYSTEM ---- */
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ocra);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--blu);
+    margin-bottom: 0.5rem;
+  }
+  .section-intro {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid var(--ocra);
+    padding-left: 1rem;
+  }
+
+  /* ---- SCORE OVERVIEW ---- */
+  .scores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+  }
+  .score-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-top: 3px solid var(--ocra);
+  }
+  .score-card .area { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .score-card .val { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; line-height: 1; }
+  .score-card .val.good { color: var(--verde); }
+  .score-card .val.mid { color: var(--terracotta); }
+  .score-card .val.bad { color: var(--rosso); }
+  .score-card .note { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+  /* ---- ISSUE CARDS ---- */
+  .issues-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .issue {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    border-left: 4px solid transparent;
+  }
+  .issue.critical { border-left-color: var(--rosso); }
+  .issue.medium { border-left-color: var(--terracotta); }
+  .issue.low { border-left-color: var(--verde); }
+  .issue-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #DDD;
+    font-weight: 600;
+    line-height: 1;
+    min-width: 2rem;
+  }
+  .issue-body h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--testo); }
+  .issue-body p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.6; }
+  .issue-area { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ocra); font-weight: 600; }
+  .badge-priority {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 99px;
+    white-space: nowrap;
+    align-self: start;
+  }
+  .badge-priority.critical { background: #FEE2E2; color: var(--rosso); }
+  .badge-priority.medium { background: #FEF3E2; color: #8B5E27; }
+  .badge-priority.low { background: #E8F5E8; color: var(--verde); }
+
+  /* ---- BEFORE/AFTER ---- */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 640px) { .before-after { grid-template-columns: 1fr; } }
+  .ba-card {
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .ba-card.before { background: #FFF5F5; border: 1px solid #FCA5A5; }
+  .ba-card.after { background: #F0F9F0; border: 1px solid #86EFAC; }
+  .ba-card h4 { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.75rem; }
+  .ba-card.before h4 { color: var(--rosso); }
+  .ba-card.after h4 { color: var(--verde); }
+  .ba-card p, .ba-card li { color: var(--muted); line-height: 1.7; }
+  .ba-card ul { padding-left: 1.2rem; }
+  .ba-card code {
+    display: block;
+    background: rgba(0,0,0,0.06);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    margin: 0.5rem 0;
+    color: var(--testo);
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #DDD, transparent);
+    margin: 3rem 0;
+  }
+
+  /* ---- INSIGHTS ---- */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .insight-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .insight-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .insight-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .insight-card p { font-size: 0.85rem; color: var(--muted); }
+
+  /* ---- HERO WIREFRAME ---- */
+  .wireframe-box {
+    background: var(--blu);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .wireframe-box::after {
+    content: 'NUOVA HERO — CONCEPT';
+    position: absolute; top: 1rem; right: 1rem;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .wf-badge { display: inline-block; background: rgba(200,169,110,0.25); color: var(--ocra); border: 1px solid rgba(200,169,110,0.4); border-radius: 4px; padding: 0.2rem 0.6rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .wf-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-style: italic; font-weight: 300; line-height: 1.05; margin-bottom: 1.5rem; }
+  .wf-title em { color: var(--ocra); font-style: normal; }
+  .wf-tagline { font-size: 0.9rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); margin-bottom: 2rem; text-transform: uppercase; }
+  .wf-ctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .wf-btn-primary { background: var(--ocra); color: var(--blu); padding: 0.75rem 2rem; border-radius: 2px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; display: inline-block; }
+  .wf-btn-ghost { color: rgba(255,255,255,0.7); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; letter-spacing: 0.05em; display: inline-block; }
+  .wf-rating { position: absolute; bottom: 2rem; right: 2rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 1rem 1.25rem; text-align: right; }
+  .wf-rating-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--ocra); line-height: 1; }
+  .wf-rating-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+  .wf-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.4rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .wf-scroll-line { width: 1px; height: 30px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); }
+
+  /* ---- PRIORITY TABLE ---- */
+  .priority-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.88rem; }
+  .priority-table th { background: var(--blu); color: white; padding: 0.75rem 1rem; text-align: left; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .priority-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #EEE; vertical-align: top; }
+  .priority-table tr:last-child td { border-bottom: none; }
+  .priority-table tr:hover td { background: #FAFAF8; }
+  .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .tag.alta { background: #FEE2E2; color: var(--rosso); }
+  .tag.media { background: #FEF3E2; color: #8B5E27; }
+  .tag.bassa { background: #E8F5E8; color: var(--verde); }
+
+  /* ---- FOOTER ---- */
+  .doc-footer { background: var(--blu); color: rgba(245,240,232,0.5); text-align: center; padding: 2rem; font-size: 0.8rem; }
+  .doc-footer span { color: var(--ocra); }
+
+  /* ---- UTIL ---- */
+  .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+  .text-ocra { color: var(--ocra); }
+  strong { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p class="cover-kicker">Analisi UX/UI · Marzo 2026</p>
+  <div class="cover-line"></div>
+  <h1>Casa e Bottega<br><em style="font-style:italic; font-weight:300; font-size:0.65em; opacity:0.7">Audit del sito web e proposta Hero rinnovata</em></h1>
+  <div class="cover-meta">
+    <span>casaebottegapuglia.it</span>
+    <span>Manfredonia, Puglia</span>
+    <span>B&B · 2 camere</span>
+  </div>
+</div>
+
+<!-- PANORAMICA PUNTEGGI -->
+<section class="section" style="background: white; border-bottom: 1px solid #EEE;">
+  <div class="section-inner">
+    <p class="section-label">Valutazione complessiva</p>
+    <h2>Panoramica del sito</h2>
+    <p class="section-intro">Il sito è solido, ben strutturato e tecnicamente corretto. Manca però di quella scintilla emotiva che trasforma un visitatore in un ospite. Ecco i punteggi per area.</p>
+    <div class="scores-grid">
+      <div class="score-card">
+        <div class="area">Struttura</div>
+        <div class="val good">8/10</div>
+        <div class="note">SEO, multilingue, sitemap: eccellenti</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Tecnologia</div>
+        <div class="val good">8/10</div>
+        <div class="note">Calendar iCal, booking flow, CMS</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Brand Identity</div>
+        <div class="val mid">7/10</div>
+        <div class="note">Palette coerente, font giusti, manca anima visiva</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Hero / First Impact</div>
+        <div class="val bad">5/10</div>
+        <div class="note">Generico, non emoziona, layout prevedibile</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Storytelling</div>
+        <div class="val mid">6/10</div>
+        <div class="note">Bello il testo "Chi siamo", non valorizzato visivamente</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Conversione</div>
+        <div class="val mid">6/10</div>
+        <div class="note">CTA duplicati, trust strip ridondante</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Mobile</div>
+        <div class="val good">7/10</div>
+        <div class="note">Responsive, touch-friendly, menu ok</div>
+      </div>
+      <div class="score-card">
+        <div class="area">Accessibilità</div>
+        <div class="val mid">6/10</div>
+        <div class="note">Alt presenti, manca skip-link e focus visible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMI CRITICI -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Problemi identificati</p>
+    <h2>Analisi dettagliata per area</h2>
+    <p class="section-intro">23 osservazioni raccolte, ordinate per impatto sul visitatore e sulla conversione. Le prime sono le più urgenti.</p>
+
+    <div class="issues-list">
+
+      <!-- 1 -->
+      <div class="issue critical">
+        <div class="issue-num">01</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Emozione</div>
+          <h3>La Hero non racconta nulla di speciale</h3>
+          <p>Il visitatore vede: titolo centrato, tagline generica, due bottoni, carousel. È lo stesso schema di migliaia di B&B. Non comunica l'anima della casa — i nonni, il cuoio, il ragù, la Puglia vera. <strong>Il primo fotogramma deve far sognare, non solo informare.</strong></p>
+          <div class="before-after">
+            <div class="ba-card before">
+              <h4>❌ Attuale</h4>
+              <code>H1: "Casa e Bottega" (centrato)<br>Tagline: "A due passi dal mare…"<br>Badge: ⭐ emoji + testo<br>2 CTA di pari peso</code>
+            </div>
+            <div class="ba-card after">
+              <h4>✅ Proposta</h4>
+              <ul>
+                <li>Titolo grande, italic, asimmetrico (sinistra-basso)</li>
+                <li>Tagline sensoriale: un'immagine, un odore, una sensazione</li>
+                <li>Un solo CTA principale + link secondario</li>
+                <li>Rating in floating card elegante</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <span class="badge-priority critical">Critico</span>
+      </div>
+
+      <!-- 2 -->
+      <div class="issue critical">
+        <div class="issue-num">02</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Layout</div>
+          <h3>Layout centrato = anonimato</h3>
+          <p>L'allineamento centrale è il default di ogni template. Posizionare il testo in basso a sinistra, con il titolo che "poggia" sull'immagine, crea profondità e direzione visiva. La composizione asimmetrica guida l'occhio e dà carattere. Vedi la proposta nella sezione dedicata.</p>
+        </div>
+        <span class="badge-priority critical">Critico</span>
+      </div>
+
+      <!-- 3 -->
+      <div class="issue critical">
+        <div class="issue-num">03</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Tipografia</div>
+          <h3>Il titolo è troppo piccolo per l'emozione</h3>
+          <p>Cormorant Garamond è una scelta eccellente, ma viene usato a dimensioni timide. Un display serif a 80–120px, in italic, crea la sensazione di lusso artigianale che il brand merita. Il font è già lì — va solo liberato.</p>
+          <div class="before-after">
+            <div class="ba-card before">
+              <h4>❌ Attuale</h4>
+              <code>font-size: ~2.5rem<br>font-weight: bold<br>text-align: center</code>
+            </div>
+            <div class="ba-card after">
+              <h4>✅ Proposta</h4>
+              <code>font-size: clamp(4rem, 9vw, 9rem)<br>font-style: italic<br>font-weight: 300<br>text-align: left, bottom</code>
+            </div>
+          </div>
+        </div>
+        <span class="badge-priority critical">Critico</span>
+      </div>
+
+      <!-- 4 -->
+      <div class="issue critical">
+        <div class="issue-num">04</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Immagine</div>
+          <h3>Nessun effetto cinematico sull'immagine di sfondo</h3>
+          <p>Le 4 foto si alternano con una semplice dissolvenza ogni 6 secondi. Aggiungere un lento <strong>Ken Burns</strong> (zoom da 100% a 108% in 8s con CSS) trasforma il carousel da slideshow in esperienza visiva. Costa zero lato server, è puro CSS.</p>
+          <div class="ba-card after mt-2">
+            <h4>✅ Soluzione CSS (una riga)</h4>
+            <code>.hero-bg.active { animation: kenburns 8s ease-out forwards; }<br>@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.08); } }</code>
+          </div>
+        </div>
+        <span class="badge-priority critical">Critico</span>
+      </div>
+
+      <!-- 5 -->
+      <div class="issue medium">
+        <div class="issue-num">05</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Overlay</div>
+          <h3>L'overlay è piatto — manca atmosfera</h3>
+          <p>Il dark overlay uniforme spegne le foto. Un gradiente warm (dal basso) che sfuma verso trasparente in alto mantiene la luminosità dell'immagine in cielo e scurisce solo dove serve per leggere il testo.</p>
+          <div class="before-after">
+            <div class="ba-card before">
+              <h4>❌ Attuale</h4>
+              <code>background: rgba(0,0,0,0.4)</code>
+            </div>
+            <div class="ba-card after">
+              <h4>✅ Proposta</h4>
+              <code>background: linear-gradient(<br>  to top,<br>  rgba(15,25,40,0.85) 0%,<br>  rgba(15,25,40,0.35) 50%,<br>  rgba(15,25,40,0.1) 100%<br>)</code>
+            </div>
+          </div>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 6 -->
+      <div class="issue medium">
+        <div class="issue-num">06</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Badge</div>
+          <h3>Le emoji nei badge appaiono cheap</h3>
+          <p>⭐ e 🏆 sono incompatibili con un'estetica luxury/artigianale. Vanno sostituiti con testo puro su sfondo sottile, o con un'icona SVG custom minimale. Il punteggio 9,8 è un asset fortissimo — merita una presentazione da numeri.</p>
+          <div class="before-after">
+            <div class="ba-card before">
+              <h4>❌ Attuale</h4>
+              <code>⭐ 9,8/10 Booking.com | 🏆 Airbnb Superhost</code>
+            </div>
+            <div class="ba-card after">
+              <h4>✅ Proposta (floating card)</h4>
+              <code>9,8 / 10<br>Booking.com · 50+ recensioni<br>(card in vetro/blur, angolo in basso a destra)</code>
+            </div>
+          </div>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 7 -->
+      <div class="issue medium">
+        <div class="issue-num">07</div>
+        <div class="issue-body">
+          <div class="issue-area">CTA · Gerarchia</div>
+          <h3>Due CTA di pari peso si annullano a vicenda</h3>
+          <p>Avere "Scopri le camere" e "Prenota ora" con visibilità simile crea paralisi della scelta. Chi è già convinto vuole prenotare; chi no, vuole esplorare. Soluzione: un solo pulsante principale ("Prenota ora") + link ghost discreto per chi vuole saperne di più.</p>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 8 -->
+      <div class="issue medium">
+        <div class="issue-num">08</div>
+        <div class="issue-body">
+          <div class="issue-area">Trust Strip · Ridondanza</div>
+          <h3>La Trust Strip è ridondante con la Hero</h3>
+          <p>I badge Booking e Airbnb appaiono nella Hero E nella Trust Strip immediatamente sotto. Questo diluisce il valore percepito. La Trust Strip dovrebbe aggiungere qualcosa di diverso: ad esempio un claim testuale ("300 metri dal mare · Centro storico · 2 camere esclusive") o sparire del tutto.</p>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 9 -->
+      <div class="issue medium">
+        <div class="issue-num">09</div>
+        <div class="issue-body">
+          <div class="issue-area">Chi Siamo · Gerarchia Visiva</div>
+          <h3>La storia dei nonni è sepolta nel testo</h3>
+          <p>Il copy della sezione "Chi siamo" è bellissimo — emozionante, autentico, raro. Ma viene servito come un blocco di paragrafi anonimi. Va valorizzato: pull quote con Cormorant Garamond grande, o la prima frase come titolo visivo. <em>"Questa casa apparteneva ai nostri nonni"</em> merita di essere grande quanto un poster.</p>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 10 -->
+      <div class="issue medium">
+        <div class="issue-num">10</div>
+        <div class="issue-body">
+          <div class="issue-area">Camere · Card Design</div>
+          <h3>Le card delle camere sono troppo simmetriche</h3>
+          <p>Entrambe le card hanno la stessa struttura: foto, titolo, testo, lista feature, bottone. L'effetto è da catalogo hotel generico. Dare a "La Dimora" e "La Bottega" una personalità visiva diversa (font size, proporzioni, colore accent) racconta meglio la loro differenza.</p>
+        </div>
+        <span class="badge-priority medium">Medio</span>
+      </div>
+
+      <!-- 11 -->
+      <div class="issue low">
+        <div class="issue-num">11</div>
+        <div class="issue-body">
+          <div class="issue-area">Hero · Scroll indicator</div>
+          <h3>Manca un invito visivo a scorrere</h3>
+          <p>La Hero occupa l'intera viewport. Senza un indicatore di scroll (freccia animata, testo "Scopri", linea che scende) alcuni utenti potrebbero non intuire che c'è contenuto sotto. Semplice da aggiungere, alto impatto sul bounce rate.</p>
+        </div>
+        <span class="badge-priority low">Bassa</span>
+      </div>
+
+      <!-- 12 -->
+      <div class="issue low">
+        <div class="issue-num">12</div>
+        <div class="issue-body">
+          <div class="issue-area">Nav · Language Switcher</div>
+          <h3>Il language switcher con 6 lingue in header è invasivo su mobile</h3>
+          <p>IT / EN / FR / DE / NL / ES su una singola riga comprime il menu. In mobile si potrebbe collassare in un menu a tendina con bandierine, liberando spazio prezioso per i link di navigazione.</p>
+        </div>
+        <span class="badge-priority low">Bassa</span>
+      </div>
+
+      <!-- 13 -->
+      <div class="issue low">
+        <div class="issue-num">13</div>
+        <div class="issue-body">
+          <div class="issue-area">Accessibilità</div>
+          <h3>Manca il "skip to content" link</h3>
+          <p>Gli utenti che navigano da tastiera o screen reader devono poter saltare la navigazione. È una riga di HTML/CSS. Richiesto dalle WCAG 2.1 AA — e aiuta l'indicizzazione.</p>
+        </div>
+        <span class="badge-priority low">Bassa</span>
+      </div>
+
+      <!-- 14 -->
+      <div class="issue low">
+        <div class="issue-num">14</div>
+        <div class="issue-body">
+          <div class="issue-area">Performance</div>
+          <h3>Le 4 immagini hero vengono caricate simultaneamente</h3>
+          <p>Il JS carica tutte le immagini del carousel in background dal primo caricamento. Sarebbe preferibile un lazy load progressivo: prima immagine subito, le altre solo quando servono. Migliora il LCP (Largest Contentful Paint) e quindi il SEO.</p>
+        </div>
+        <span class="badge-priority low">Bassa</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROPOSTA HERO CONCEPT -->
+<section class="section" style="background: white;">
+  <div class="section-inner">
+    <p class="section-label">Redesign Hero</p>
+    <h2>Concept visivo proposto</h2>
+    <p class="section-intro">La nuova Hero si ispira all'estetica delle masserie di lusso e delle riviste di viaggio italiane. Il principio guida: <strong>fare sognare prima di convincere</strong>. Poche parole, grandissime. L'immagine respira. Il rating fa il suo lavoro in silenzio.</p>
+
+    <!-- Wireframe simulato -->
+    <div class="wireframe-box">
+      <div class="wf-badge">⭐ 9,8 · Booking.com Traveller Award 2026</div>
+      <div class="wf-title">
+        Casa<br>
+        <em>e</em> Bottega
+      </div>
+      <div class="wf-tagline">Cuoio e ragù · Centro storico · 300 m dal mare Adriatico</div>
+      <div class="wf-ctas">
+        <a class="wf-btn-primary" href="#">Prenota ora · -20% diretto</a>
+        <a class="wf-btn-ghost" href="#">Scopri le camere →</a>
+      </div>
+      <div class="wf-rating">
+        <div class="wf-rating-num">9,8</div>
+        <div class="wf-rating-label">Booking.com</div>
+        <div class="wf-rating-label" style="color: rgba(255,255,255,0.3); font-size:0.6rem; margin-top:0.3rem;">50+ recensioni verificate</div>
+      </div>
+      <div class="wf-scroll">
+        <div class="wf-scroll-line"></div>
+        Scopri
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-icon">🎬</div>
+        <h4>Ken Burns sull'immagine</h4>
+        <p>Slow zoom CSS da 100% a 108% in 8 secondi. L'immagine "respira" e attrae l'attenzione senza distrarre dal testo.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">📐</div>
+        <h4>Testo ancorato in basso a sinistra</h4>
+        <p>Segue la logica di come guardiamo le foto: il soggetto in alto, la didascalia in basso. Più naturale, più cinematico.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">✍️</div>
+        <h4>Titolo a 9 rem, italic, peso 300</h4>
+        <p>Cormorant Garamond in italic light è straordinario. Va usato grande, senza timore. Il carattere è già nel CSS.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">🔢</div>
+        <h4>9,8 come architettura visiva</h4>
+        <p>Il punteggio non è un badge — è una prova. Una card floating con il numero grande in ocra dice tutto senza urlare.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">🌡️</div>
+        <h4>Overlay warm dal basso</h4>
+        <p>Gradiente che scurisce solo la zona del testo. Il cielo e i dettagli in alto rimangono luminosi, come un tramonto sul Gargano.</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">💬</div>
+        <h4>Tagline sensoriale</h4>
+        <p>"Cuoio e ragù · Centro storico · 300 m dal mare" dice chi siete, dove siete, cosa si sente. Non "A due passi dal mare".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TABELLA PRIORITÀ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Piano d'azione</p>
+    <h2>Priorità di intervento</h2>
+    <p class="section-intro">Ogni modifica richiede risorse diverse. Ecco cosa fare subito, cosa pianificare, cosa rimandare.</p>
+
+    <table class="priority-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Intervento</th>
+          <th>Area</th>
+          <th>Priorità</th>
+          <th>Effort</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Ken Burns effect sull'immagine Hero</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>10 min · CSS</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Overlay gradiente warm al posto del flat dark</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>5 min · CSS</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Titolo Hero: grande, italic, ancorato in basso a sinistra</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>30 min · CSS</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Tagline sensoriale: "Cuoio e ragù · …"</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>5 min · Testo</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>CTA: un solo pulsante primario + link ghost</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>15 min · HTML/CSS</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Badge rating come floating card elegante (no emoji)</strong></td>
+          <td>Hero</td>
+          <td><span class="tag alta">Alta</span></td>
+          <td>20 min · HTML/CSS</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Scroll indicator animato</td>
+          <td>Hero</td>
+          <td><span class="tag media">Media</span></td>
+          <td>20 min · CSS</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Trust Strip: rimuovere badge duplicati, aggiungere claim posizione</td>
+          <td>Post-Hero</td>
+          <td><span class="tag media">Media</span></td>
+          <td>15 min · HTML</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Pull quote grande nella sezione "Chi siamo"</td>
+          <td>Chi siamo</td>
+          <td><span class="tag media">Media</span></td>
+          <td>30 min · CSS</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Differenziare visivamente le card delle due camere</td>
+          <td>Camere</td>
+          <td><span class="tag media">Media</span></td>
+          <td>1h · CSS</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Language switcher dropdown su mobile</td>
+          <td>Nav</td>
+          <td><span class="tag bassa">Bassa</span></td>
+          <td>1h · JS/CSS</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Skip-to-content link per accessibilità</td>
+          <td>Accessibilità</td>
+          <td><span class="tag bassa">Bassa</span></td>
+          <td>10 min · HTML/CSS</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Lazy load progressivo immagini hero carousel</td>
+          <td>Performance</td>
+          <td><span class="tag bassa">Bassa</span></td>
+          <td>45 min · JS</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- NOTA FINALE -->
+<section class="section" style="background: white;">
+  <div class="section-inner" style="max-width: 680px;">
+    <p class="section-label">Nota conclusiva</p>
+    <h2>Il sito ha tutto — manca solo la magia</h2>
+    <p style="color: var(--muted); line-height:1.8; margin-bottom: 1rem;">
+      Casa e Bottega ha qualcosa di rarissimo nel mondo dei B&B: una storia vera, autentica, commovente. I nonni calzolai. La casa che profumava di cuoio. L'anima che non è cambiata nonostante il restyling. Questo racconto è nascosto nel testo della sezione "Chi siamo" e non arriva mai a chi fa una ricerca veloce su Booking.
+    </p>
+    <p style="color: var(--muted); line-height:1.8; margin-bottom: 1rem;">
+      Il sito attuale è <strong>funzionale e onesto</strong>. Ma un B&B 9,8/10 merita un sito che faccia pensare: <em>"voglio stare qui."</em> non <em>"sembra ok."</em>
+    </p>
+    <p style="color: var(--muted); line-height:1.8;">
+      Gli interventi prioritari sulla Hero (punti 1–6 in tabella) richiedono meno di 2 ore di lavoro e possono trasformare completamente la prima impressione. Il prototipo HTML allegato mostra esattamente come potrebbe apparire.
+    </p>
+    <p style="margin-top: 1.5rem;">
+      <strong>→ Vedi il file <span class="text-ocra">hero-prototype.html</span> per il prototipo interattivo completo.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  Audit UX/UI · <span>Casa e Bottega</span> · casaebottegapuglia.it · Marzo 2026
+</div>
+
+</body>
+</html>
