@@ -773,6 +773,188 @@
       gap: 1rem;
     }
 
+/* Cancellation policy */
+    .cancellation-policy {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(92,107,58,0.07);
+      border: 1px solid rgba(92,107,58,0.25);
+      border-radius: 6px;
+      padding: 0.65rem 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--verde);
+      font-weight: 500;
+    }
+
+    .cancel-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Payment section */
+    .payment-section {
+      margin-top: 1.5rem;
+    }
+
+    .payment-section h4 {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--testo);
+      margin-bottom: 0.8rem;
+    }
+
+    .payment-option-card {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--calce-light);
+      border: 2px solid rgba(200,169,110,0.2);
+      border-radius: 6px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .payment-option-card:hover,
+    .payment-option-card.selected {
+      border-color: var(--ocra);
+      background: rgba(200,169,110,0.06);
+    }
+
+    .payment-option-card input[type="radio"] {
+      width: 18px; height: 18px;
+      accent-color: var(--ocra);
+      cursor: pointer;
+    }
+
+    .payment-option-info {
+      flex: 1;
+    }
+
+    .payment-option-info .pay-title {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--testo);
+    }
+
+    .payment-option-info .pay-desc {
+      font-size: 0.78rem;
+      color: var(--testo-light);
+    }
+
+    .payment-icon {
+      font-size: 1.5rem;
+      opacity: 0.6;
+    }
+
+    /* Submit buttons */
+    .booking-submit-area {
+      margin-top: 1.5rem;
+    }
+
+    .btn-book-paypal {
+      display: none;
+      width: 100%;
+      padding: 0.85rem;
+      background: #0070ba;
+      color: var(--bianco);
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-book-paypal.active { display: block; }
+    .btn-book-paypal:hover { background: #005a94; transform: translateY(-1px); }
+
+    .btn-book-offline {
+      display: none;
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--ocra);
+      color: var(--bianco);
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-book-offline.active { display: block; }
+    .btn-book-offline:hover { background: var(--ocra-dark); transform: translateY(-1px); }
+
+    .booking-trust-mini {
+      text-align: center;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.78rem;
+      color: var(--testo-light);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+      background: rgba(200,169,110,0.05);
+    }
+
+    /* Booking success */
+    .booking-success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .booking-success-msg.active { display: block; }
+
+    .booking-success-msg .success-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .booking-success-msg h3 {
+      color: var(--verde);
+      margin-bottom: 0.5rem;
+    }
+
+    .booking-success-msg p {
+      font-size: 0.9rem;
+      color: var(--testo-light);
+      margin-bottom: 1.2rem;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-success-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.6rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .btn-success-wa:hover {
+      background: #1ebe59;
+      transform: translateY(-1px);
+    }
+
     /* Payment section */
     .payment-section {
       margin-top: 1.5rem;
@@ -1003,8 +1185,8 @@
 <!-- PAGE HEADER -->
 <div class="page-header">
 <div class="container">
-<h1 data-i18n="book_page_title">Beschikbaarheid &amp; Tarieven</h1>
-<p data-i18n="book_page_desc">Controleer de beschikbaarheid en boek rechtstreeks, bespaar en ontmoet ons meteen.</p>
+<h1 data-i18n="book_page_title">Verifica disponibilità</h1>
+<p data-i18n="book_page_desc">Da €60/notte — prenota diretto e risparmi il 20% rispetto a Booking e Airbnb.</p>
 </div>
 </div>
 <!-- SEARCH BAR -->
@@ -1026,6 +1208,7 @@
 <option selected="" value="2">2</option>
 </select>
 </div>
+<button class="search-btn" data-i18n="book_search_btn" id="search-btn" type="button">Cerca</button>
 </div>
 <!-- Messaggio limite 29 notti -->
 <div id="max-nights-error" style="display:none; margin-top:12px; padding:12px 16px; background:#fff3cd; border:1px solid #ffc107; border-radius:6px; color:#856404; font-size:0.9rem; text-align:center;">
@@ -1137,6 +1320,11 @@
 <label data-i18n="book_message" for="guest-message">Opmerkingen of verzoeken</label>
 <textarea id="guest-message" name="message" placeholder="Orario di arrivo, richieste speciali..."></textarea>
 </div>
+<!-- Cancellation policy -->
+<div class="cancellation-policy">
+  <span class="cancel-icon">✓</span>
+  <span data-i18n="book_cancel_policy">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo.</span>
+</div>
 <!-- Payment Options -->
 <div class="payment-section">
 <h4 data-i18n="book_payment_title">Betalingsinformatie:</h4>
@@ -1144,7 +1332,7 @@
 <input checked="" name="pay-method" type="radio" value="paypal"/>
 <div class="payment-option-info">
 <div class="pay-title" data-i18n="book_pay_paypal">PayPal</div>
-<div class="pay-desc" data-i18n="book_pay_paypal_desc">Na het plaatsen van de bestelling wordt u doorgestuurd naar PayPal om de betaling te voltooien.</div>
+<div class="pay-desc" data-i18n="book_pay_paypal_desc">Verrai reindirizzato a PayPal per il pagamento sicuro.</div>
 </div>
 <span class="payment-icon">💳</span>
 </label>
@@ -1159,21 +1347,26 @@
 </div>
 <!-- Submit -->
 <div class="booking-submit-area">
+<div class="booking-trust-mini">
+  ⭐ 9,8/10 Booking.com · 🏆 Airbnb Superhost · <span data-i18n="book_trust_text">Een van de best beoordeelde accommodaties in Manfredonia</span>
+</div>
 <button class="btn-book-paypal active" data-i18n="book_send_paypal" id="btn-submit-paypal" type="submit">Doorgaan naar PayPal-betaling</button>
 <button class="btn-book-offline" data-i18n="book_send_offline" id="btn-submit-offline" type="submit">Boeking voltooien</button>
 </div>
 </form>
-<div class="booking-trust-mini">
-            ⭐ 9,8/10 Booking.com · 🏆 Airbnb Superhost · <span data-i18n="book_trust_text">Een van de best beoordeelde accommodaties in Manfredonia</span>
-</div>
+
 </div>
 </div>
 <!-- Success Message -->
 <div class="booking-success-msg" id="booking-success">
-<div class="success-icon">✓</div>
-<h3 id="success-title">Richiesta inviata!</h3>
-<p id="success-message">Ti contatteremo entro poche ore per confermare la prenotazione.</p>
-<a class="btn btn-primary" data-i18n="book_back_home" href="index.html">Terug naar home</a>
+<div class="success-icon">✅</div>
+<h3 data-i18n="book_success_title" id="success-title">Richiesta inviata!</h3>
+<p data-i18n="book_success_msg" id="success-message">Riceverai una conferma via email entro poche ore. Per qualsiasi necessità siamo subito disponibili su WhatsApp.</p>
+<a class="btn btn-success-wa" href="https://wa.me/393334705574?text=Ciao%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.4rem"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span data-i18n="book_success_wa">Scrivici su WhatsApp</span>
+</a>
+<a class="btn btn-primary" data-i18n="book_back_home" href="index.html" style="margin-top:0.5rem;">Torna alla home</a>
 </div>
 </div>
 </div>
@@ -1375,7 +1568,8 @@
     const checkinEl = document.getElementById('search-checkin');
     const checkoutEl = document.getElementById('search-checkout');
     const guestsEl = document.getElementById('search-guests');
-    // searchBtn removed — auto-search on date selection
+    const searchBtnEl = document.getElementById('search-btn');
+      if (searchBtnEl) searchBtnEl.addEventListener('click', tryAutoSearch);
 
     // Set min dates — today allowed until 21:00, then tomorrow only
     const _now = new Date();
