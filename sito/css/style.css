@@ -1442,6 +1442,7 @@ h4 { font-size: 1.2rem; }
   border-top: 1px solid rgba(200,169,110,0.2);
 }
 .pct-ota-row { background: rgba(0,0,0,0.02); }
+.pct-ota-row .pct-row-label { font-size: 0.78rem; }
 .pct-direct-row { background: rgba(90,130,60,0.07); }
 .pct-row-label {
   padding: 0.8rem 0.75rem;
