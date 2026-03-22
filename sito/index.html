@@ -129,6 +129,7 @@
   </script>
 </head>
 <body>
+<a class="skip-to-content" href="#site-main">Vai al contenuto principale</a>
 <!-- HEADER -->
 <header class="site-header">
 <nav class="nav-wrapper">
@@ -156,34 +157,109 @@
 </nav>
 </header>
 <!-- HERO CAROUSEL -->
-<section class="hero">
-<div class="hero-carousel" id="hero-carousel">
-<!-- Slides generate dynamicamente dal JS, fallback statico: -->
-<div class="hero-bg active" style="background-image: url('../foto-homepage/1.webp')"></div>
-</div>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 data-i18n="hero_title">Casa e Bottega</h1>
-<p class="hero-tagline" data-i18n="hero_tagline">A due passi dal mare, nel cuore del Gargano.</p>
-<div class="hero-badges">
-  <span>⭐ 9,8/10 Booking.com</span>
-  <span class="hero-badges-sep">|</span>
-  <span>🏆 Airbnb Superhost</span>
-</div>
-<div class="hero-ctas">
-<a class="btn btn-primary" data-i18n="hero_cta_rooms" href="camere.html">Scopri le camere</a>
-<a class="btn btn-outline" data-i18n="hero_cta_book" href="prenota.html">Prenota ora</a>
-</div>
-</div>
-<div class="hero-carousel-dots" id="hero-dots"></div>
+<section class="hero" aria-label="Benvenuti a Casa e Bottega">
+
+  <!-- Slides (gestite da main.js — struttura invariata) -->
+  <div class="hero-carousel" id="hero-carousel">
+    <div class="hero-bg active" style="background-image: url('../foto-homepage/2.webp')"></div>
+  </div>
+
+  <!-- Overlay warm dal basso -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Grain sottile -->
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <!-- Linea oro sinistra -->
+  <div class="hero-accent-line" aria-hidden="true"></div>
+
+  <!-- Corpo: testo in basso a sinistra + rating card a destra -->
+  <div class="hero-body">
+
+    <div class="hero-text">
+
+      <!-- Award pill -->
+      <div class="hero-award-pill">
+        <span class="award-dot" aria-hidden="true"></span>
+        <span class="award-text">Traveller Review Award 2026 · Booking.com</span>
+      </div>
+
+      <!-- Titolo grande, italic -->
+      <h1 class="hero-title">
+        Casa<span class="hero-title-line2"><span class="hero-title-e">e</span> Bottega</span>
+      </h1>
+
+      <!-- Tagline sensoriale -->
+      <p class="hero-tagline">
+        <span class="hero-tagline-sep" aria-hidden="true"></span>
+        <span data-i18n="hero_tagline">Nel cuore del Gargano, a pochi passi dal mare.</span>
+      </p>
+
+      <!-- CTA: un primario + link ghost -->
+      <div class="hero-ctas">
+        <a class="btn-hero-primary" href="prenota.html">
+          <span data-i18n="hero_cta_book">Prenota ora</span>
+          <span class="hero-savings-badge">–20%</span>
+        </a>
+        <a class="btn-hero-ghost" href="camere.html">
+          <span data-i18n="hero_cta_rooms">Scopri le camere</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Rating card (solo desktop) -->
+    <div class="hero-rating-card" role="complementary" aria-label="Valutazione ospiti">
+      <div class="rating-num">9,8</div>
+      <div class="rating-denom">/10</div>
+      <div class="rating-stars" aria-label="Cinque stelle">★★★★★</div>
+      <div class="rating-source">Booking.com</div>
+      <div class="rating-reviews">50+ recensioni</div>
+      <div class="rating-superhost">Superhost Airbnb</div>
+    </div>
+
+  </div>
+
+  <!-- Dots verticali (JS crea .hero-dot, CSS aggiornato) -->
+  <div class="hero-carousel-dots" id="hero-dots"></div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <span class="scroll-label">Scopri</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="hero-progress-bar" aria-hidden="true">
+    <div class="hero-progress-fill"></div>
+  </div>
+
 </section>
+<!-- MAIN CONTENT anchor for skip-to-content -->
+<div id="site-main"></div>
 <!-- TRUST STRIP -->
 <div class="trust-strip">
-<div class="trust-strip-inner container">
-<img alt="Booking.com Traveller Review Award 2026" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
-<span class="trust-badge">⭐ 9,8/10 Booking.com</span>
-<span class="trust-badge">🏆 Airbnb Superhost</span>
-<span class="trust-text" data-i18n="trust_text">Tra le strutture più apprezzate di Manfredonia</span>
+<div class="trust-strip-inner">
+  <img alt="Booking.com Traveller Review Award 2026" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span><strong>9,8 / 10</strong> · Booking.com · 50+ ospiti</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span><strong>Superhost Airbnb</strong> · 4,9 / 5</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span>300 m dal mare Adriatico · Manfredonia, Puglia</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span><strong>–20%</strong> prenotando direttamente</span>
+  </div>
 </div>
 </div>
 <!-- CHI SIAMO -->
@@ -194,6 +270,9 @@
 <h2 data-i18n="about_title">Chi siamo</h2>
 <div class="deco-line"></div>
 </div>
+<blockquote class="chi-siamo-pull-quote fade-in">
+"Questa casa apparteneva ai nostri nonni, lui <em>calzolaio</em>,<br>lei custode di un focolare che profumava di cuoio e ragù."
+</blockquote>
 <div class="chi-siamo-grid fade-in">
 <div class="chi-siamo-text">
 <p data-i18n="about_p1">Questa casa apparteneva ai nostri nonni, lui calzolaio, lei custode di un focolare che profumava di cuoio e ragù. Hanno lavorato fino a quasi ottant'anni, con le mani e con il cuore, abitando la stanza accanto a quella in cui oggi dormono i nostri ospiti.</p>
@@ -217,33 +296,35 @@
 </div>
 <div class="rooms-grid fade-in">
 <!-- La Dimora -->
-<div class="room-card">
+<div class="room-card room-card--dimora">
 <div class="room-card-img">
+<span class="room-card-badge">La Dimora</span>
 <img alt="La Dimora, Camera" loading="lazy" src="../foto-la-dimora/dimora-01-foto-principale.webp"/>
 </div>
 <div class="room-card-body">
 <h3 data-i18n="room_dimora_name">La Dimora</h3>
 <p data-i18n="room_dimora_short">Spaziosa, silenziosa, avvolta da luce morbida, la camera in cui ci si sente a casa.</p>
 <ul class="room-features">
-  <li>🚿 Bagno privato</li>
-  <li>🛏 Letto matrimoniale king</li>
-  <li>📶 WiFi veloce</li>
+  <li>Bagno privato</li>
+  <li>Letto king size</li>
+  <li>WiFi fibra</li>
 </ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="camere.html#dimora">Scopri</a>
 </div>
 </div>
 <!-- La Bottega -->
-<div class="room-card">
+<div class="room-card room-card--bottega">
 <div class="room-card-img">
+<span class="room-card-badge">La Bottega</span>
 <img alt="La Bottega, Camera" loading="lazy" src="../foto-la-bottega/bottega-01-foto principale.webp"/>
 </div>
 <div class="room-card-body">
 <h3 data-i18n="room_bottega_name">La Bottega</h3>
 <p data-i18n="room_bottega_short">Parete blu petrolio, cura dei dettagli, ospitalità attesa, il mare del Gargano senza mostrarlo.</p>
 <ul class="room-features">
-  <li>🚿 Bagno privato</li>
-  <li>🛏 Letto matrimoniale king</li>
-  <li>🎨 Design esclusivo</li>
+  <li>Bagno privato en suite</li>
+  <li>Letto king size</li>
+  <li>Design esclusivo</li>
 </ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="camere.html#bottega">Scopri</a>
 </div>

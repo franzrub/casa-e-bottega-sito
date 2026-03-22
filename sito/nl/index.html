@@ -71,6 +71,7 @@
   </script>
 </head>
 <body>
+<a class="skip-to-content" href="#site-main">Vai al contenuto principale</a>
 <!-- HEADER -->
 <header class="site-header">
 <nav class="nav-wrapper">
@@ -98,29 +99,109 @@
 </nav>
 </header>
 <!-- HERO CAROUSEL -->
-<section class="hero">
-<div class="hero-carousel" id="hero-carousel">
-<!-- Slides generate dynamicamente dal JS, fallback statico: -->
-<div class="hero-bg active" style="background-image: url('../foto-homepage/1.webp')"></div>
-</div>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 data-i18n="hero_title">Casa e Bottega</h1>
-<p class="hero-tagline" data-i18n="hero_tagline">In het hart van de Gargano, op een steenworp van de zee.</p>
-<div class="hero-ctas">
-<a class="btn btn-primary" data-i18n="hero_cta_rooms" href="../camere.html">Ontdek de kamers</a>
-<a class="btn btn-outline" data-i18n="hero_cta_book" href="../prenota.html">Boek nu</a>
-</div>
-</div>
-<div class="hero-carousel-dots" id="hero-dots"></div>
+<section class="hero" aria-label="Casa e Bottega">
+
+  <!-- Slides (gestite da main.js — struttura invariata) -->
+  <div class="hero-carousel" id="hero-carousel">
+    <div class="hero-bg active" style="background-image: url('../foto-homepage/2.webp')"></div>
+  </div>
+
+  <!-- Overlay warm dal basso -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Grain sottile -->
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <!-- Linea oro sinistra -->
+  <div class="hero-accent-line" aria-hidden="true"></div>
+
+  <!-- Corpo: testo in basso a sinistra + rating card a destra -->
+  <div class="hero-body">
+
+    <div class="hero-text">
+
+      <!-- Award pill -->
+      <div class="hero-award-pill">
+        <span class="award-dot" aria-hidden="true"></span>
+        <span class="award-text">Traveller Review Award 2026 · Booking.com</span>
+      </div>
+
+      <!-- Titolo grande, italic -->
+      <h1 class="hero-title">
+        Casa<span class="hero-title-line2"><span class="hero-title-e">e</span> Bottega</span>
+      </h1>
+
+      <!-- Tagline sensoriale -->
+      <p class="hero-tagline">
+        <span class="hero-tagline-sep" aria-hidden="true"></span>
+        <span data-i18n="hero_tagline">Leer &amp; ragù · 300&thinsp;m van de Adriatische Zee</span>
+      </p>
+
+      <!-- CTA: un primario + link ghost -->
+      <div class="hero-ctas">
+        <a class="btn-hero-primary" href="../prenota.html">
+          <span data-i18n="hero_cta_book">Boek nu</span>
+          <span class="hero-savings-badge">–20%</span>
+        </a>
+        <a class="btn-hero-ghost" href="../camere.html">
+          <span data-i18n="hero_cta_rooms">Ontdek de kamers</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Rating card (solo desktop) -->
+    <div class="hero-rating-card" role="complementary">
+      <div class="rating-num">9,8</div>
+      <div class="rating-denom">/10</div>
+      <div class="rating-stars" aria-label="5 stars">★★★★★</div>
+      <div class="rating-source">Booking.com</div>
+      <div class="rating-reviews">50+ recensies</div>
+      <div class="rating-superhost">Airbnb Superhost</div>
+    </div>
+
+  </div>
+
+  <!-- Dots verticali (JS crea .hero-dot, CSS aggiornato) -->
+  <div class="hero-carousel-dots" id="hero-dots"></div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <span class="scroll-label">Ontdekken</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="hero-progress-bar" aria-hidden="true">
+    <div class="hero-progress-fill"></div>
+  </div>
+
 </section>
+<!-- MAIN CONTENT anchor -->
+<div id="site-main"></div>
 <!-- TRUST STRIP -->
 <div class="trust-strip">
-<div class="trust-strip-inner container">
-<img alt="Booking.com Traveller Review Award 2026" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
-<span class="trust-badge">⭐ 9,8/10 Booking.com</span>
-<span class="trust-badge">🏆 Airbnb Superhost</span>
-<span class="trust-text" data-i18n="trust_text">Een van de best beoordeelde accommodaties in Manfredonia</span>
+<div class="trust-strip-inner">
+  <img alt="Booking.com Traveller Review Award 2026" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span><strong>9,8 / 10</strong> · Booking.com · 50+ gasten</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span>Airbnb Superhost · 4,9 / 5</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span>300 m van de Adriatische Zee · Manfredonia, Puglia</span>
+  </div>
+  <div class="trust-item-new">
+    <span class="trust-item-dot" aria-hidden="true"></span>
+    <span><strong>–20% bij directe boeking</strong></span>
+  </div>
 </div>
 </div>
 <!-- CHI SIAMO -->
@@ -154,24 +235,36 @@
 </div>
 <div class="rooms-grid fade-in">
 <!-- La Dimora -->
-<div class="room-card">
+<div class="room-card room-card--dimora">
 <div class="room-card-img">
+<span class="room-card-badge">La Dimora</span>
 <img alt="La Dimora, Camera" loading="lazy" src="../foto-la-dimora/dimora-01-foto-principale.webp"/>
 </div>
 <div class="room-card-body">
 <h3 data-i18n="room_dimora_name">La Dimora</h3>
 <p data-i18n="room_dimora_short">Ruim, stil, gehuld in zacht licht, de kamer waar je je thuis voelt.</p>
+<ul class="room-features">
+  <li>Bagno privato</li>
+  <li>Letto king size</li>
+  <li>WiFi fibra</li>
+</ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="../camere.html#dimora">Ontdek</a>
 </div>
 </div>
 <!-- La Bottega -->
-<div class="room-card">
+<div class="room-card room-card--bottega">
 <div class="room-card-img">
+<span class="room-card-badge">La Bottega</span>
 <img alt="La Bottega, Camera" loading="lazy" src="../foto-la-bottega/bottega-01-foto principale.webp"/>
 </div>
 <div class="room-card-body">
 <h3 data-i18n="room_bottega_name">La Bottega</h3>
 <p data-i18n="room_bottega_short">Petrolblauwe muur, oog voor detail, verwacht gastvrijheid, de Gargano-zee zonder haar te tonen.</p>
+<ul class="room-features">
+  <li>Bagno privato en suite</li>
+  <li>Letto king size</li>
+  <li>Design esclusivo</li>
+</ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="../camere.html#bottega">Ontdek</a>
 </div>
 </div>

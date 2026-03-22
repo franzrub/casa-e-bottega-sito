@@ -21,7 +21,7 @@ Tutto comincia al porto, alle cinque e mezzo del mattino, quando i pescherecci t
 ## Polpo alla pignata e le ricette di una volta
 
 
-![Spiaggia di Manfredonia](foto-zona/Foto spiaggia.jpeg)
+![Spiaggia di Manfredonia](foto-zona/Foto%20spiaggia.jpeg)
 
 Una pignata è una pentola di terracotta. Il polpo alla pignata è polpo tagliato a pezzi, cotto lentamente in quella pentola con pomodori, aglio, vino, solo questo. La cottura lenta rende la carne tenerissima, e i succhi della pentola in terracotta trasformano il pomodoro in una salsa che non potete rifare a casa con le vostre pentole moderne, non importa quanto ci proviate. Questo piatto è il simbolo di Manfredonia: non è complicato, non ha ingredienti stravaganti, è gentilezza cucinata nel tempo. Se lo ordinate in una trattoria, vedrete che la signora che lo prepara lo fa come se lo preparasse per suo marito, nessun'altra fretta che quella del cuore.
 

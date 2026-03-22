@@ -21,7 +21,7 @@ Le scogliere del Gargano sono fatte di calcare, lo stesso materiale che forma i 
 ## Le grotte marine e i covi nascosti
 
 
-![Spiaggia del Gargano](foto-zona/Foto spiaggia.jpeg)
+![Spiaggia del Gargano](foto-zona/Foto%20spiaggia.jpeg)
 
 La Grotta Smeralda, la Grotta Campana, l'Architiello di San Felice: questi non sono nomi di fantasia, sono indirizzi geografici dove il mare cela tesori. La Grotta Smeralda è una caverna marina raggiungibile in barca, dove l'acqua è così trasparente e il calcare delle mura riflette il colore del mare in modo tale che sembra di stare dentro uno smeraldo liquido. L'Architiello di San Felice è un arco naturale di roccia che il mare ha scavato nel corso di milioni di anni, e quando il sole è dalla parte giusta, vedrete la luce che passa attraverso l'arco illuminando l'acqua sottostante. La Baia delle Zagare è una insenatura selvaggia circondata da scogliere, dove potete nuotare sapendo che non c'è nessun altro a chilometri di distanza, solamente voi, il mare, le rocce, i gabbiani che vi sorvegliano dal cielo.
 

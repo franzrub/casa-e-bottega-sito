@@ -372,14 +372,20 @@ function renderBookingSummary() {
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Language System ---
-  // Rileva la lingua dal percorso URL (es. /de/ → 'de') per garantire
-  // che ogni pagina mostri sempre la lingua corretta indipendentemente
-  // dal localStorage (risolve: contenuti non tradotti + lingua bloccata).
+  // La lingua è determinata ESCLUSIVAMENTE dall'URL:
+  //   /en/, /fr/, /de/, /nl/, /es/ → lingua rilevata
+  //   root (nessun prefisso) → sempre 'it'
+  // Il localStorage NON viene usato per inizializzare la lingua,
+  // evitando il blocco su una lingua dopo la navigazione.
+  //
+  // NOTA: il regex richiede che il codice lingua sia l'ULTIMO segmento
+  // di cartella prima del file (es. /fr/index.html), così da non
+  // matchare nomi utente macOS come /Users/fr/Documents/...
   const _pathLang = (() => {
-    const match = window.location.pathname.match(/\/(en|fr|de|nl|es)\//);
-    return match ? match[1] : null;
+    const match = window.location.pathname.match(/\/(en|fr|de|nl|es)\/[^/]*$/);
+    return match ? match[1] : 'it';
   })();
-  let currentLang = _pathLang || localStorage.getItem('ceb_lang') || 'it';
+  let currentLang = _pathLang;
 
   function t(key) {
     const lang = translations[currentLang] || translations.it;
@@ -966,12 +972,16 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function initCarousel(imageFiles) {
-      // Build slides
+      // Build slides — first slide loads immediately, others lazy via data-bg
       heroCarousel.innerHTML = '';
       imageFiles.forEach((file, i) => {
         const slide = document.createElement('div');
         slide.className = 'hero-bg' + (i === 0 ? ' active' : '');
-        slide.style.backgroundImage = `url('${basePath}${file}')`;
+        if (i === 0) {
+          slide.style.backgroundImage = `url('${basePath}${file}')`;
+        } else {
+          slide.dataset.bg = `${basePath}${file}`;
+        }
         heroCarousel.appendChild(slide);
       });
 
@@ -992,9 +1002,22 @@ document.addEventListener('DOMContentLoaded', () => {
       let currentSlide = 0;
       let heroInterval = null;
 
+      // Lazy-load a slide by resolving its data-bg into a real background-image
+      function loadSlide(idx) {
+        const slides = heroCarousel.querySelectorAll('.hero-bg');
+        const s = slides[idx];
+        if (s && s.dataset.bg) {
+          s.style.backgroundImage = `url('${s.dataset.bg}')`;
+          delete s.dataset.bg;
+        }
+      }
+
       function goToSlide(index) {
         const slides = heroCarousel.querySelectorAll('.hero-bg');
         const dots = heroDots ? heroDots.querySelectorAll('.hero-dot') : [];
+        // Load current slide and pre-fetch the next one
+        loadSlide(index);
+        loadSlide((index + 1) % slides.length);
         slides.forEach(s => s.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
         currentSlide = index;
@@ -1025,4 +1048,48 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(files => initCarousel(files))
       .catch(() => initCarousel(fallbackImages));
   }
+
+  /* ============================================
+     MOBILE LANGUAGE DROPDOWN
+     Collapses 6 lang buttons into a compact dropdown on small screens
+     ============================================ */
+  function initLangDropdown() {
+    const switcher = document.querySelector('.lang-switcher');
+    if (!switcher) return;
+
+    // Build trigger button showing active language
+    const activeBtn = switcher.querySelector('.lang-btn.active') || switcher.querySelector('.lang-btn');
+    const currentLang = activeBtn ? activeBtn.textContent.trim() : 'IT';
+
+    const trigger = document.createElement('button');
+    trigger.className = 'lang-dropdown-trigger';
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-label', 'Cambia lingua');
+    trigger.innerHTML =
+      `<span>${currentLang}</span>` +
+      `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">` +
+      `<path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+      `</svg>`;
+
+    switcher.insertBefore(trigger, switcher.firstChild);
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = switcher.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', function () {
+      switcher.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  initLangDropdown();
+
+  /* ============================================
+     HERO CAROUSEL — LAZY LOAD (Point 13)
+     Already handled inside initCarousel: slides after index 0
+     use data-bg and load on demand
+     ============================================ */
 });

@@ -7,7 +7,7 @@ image: "foto-zona/Monte S.Angelo- basilica-santuario-san-michele.jpeg"
 slug: "monte-santangelo"
 ---
 
-![Monte Sant'Angelo, il borgo UNESCO del Gargano](foto-zona/Monte S.Angelo- basilica-santuario-san-michele.jpeg)
+![Monte Sant'Angelo, il borgo UNESCO del Gargano](foto-zona/Monte%20S.Angelo-%20basilica-santuario-san-michele.jpeg)
 
 
 A venti minuti di auto da Casa e Bottega, arrampicato su una collina come un nido di aquila, c'è Monte Sant'Angelo. Uno di quei posti che vi trasforma il modo di stare nel mondo. Non è solo un borgo. È una stratificazione di storia, fede, pietra bianca e voci sussurrate nei caruggi. È anche il luogo dove la spiritualità e il profano si abbracciano in modo perfetto, come solo il Meridione sa fare.

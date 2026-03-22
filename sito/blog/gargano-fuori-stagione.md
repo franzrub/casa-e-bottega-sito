@@ -7,7 +7,7 @@ image: "foto-zona/Foto spiaggia.jpeg"
 slug: "gargano-fuori-stagione"
 ---
 
-![Spiaggia del Gargano d'inverno](foto-zona/Foto spiaggia.jpeg)
+![Spiaggia del Gargano d'inverno](foto-zona/Foto%20spiaggia.jpeg)
 
 
 La maggior parte dei viaggiatori pensa che il Gargano esista solo tra giugno e settembre, quando le spiagge sono affollate e il sole picchia forte. Noi di Casa e Bottega vi dico una cosa: vi state perdendo il meglio. Ottobre, novembre, febbraio, marzo: questi sono i mesi in cui il Gargano mostra il suo vero volto. Non quello da cartolina turistica, ma quello autentico, respirato, illuminato da una luce che l'estate non conosce.
