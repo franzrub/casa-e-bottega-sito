@@ -413,6 +413,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active', btn.dataset.lang === lang || btn.getAttribute('hreflang') === lang);
     });
 
+    // Update mobile dropdown trigger label
+    const trigger = document.querySelector('.lang-dropdown-trigger span');
+    if (trigger) trigger.textContent = lang.toUpperCase();
+
     if (typeof renderCalendar === 'function') renderCalendar();
     if (typeof updatePricingCards === 'function') updatePricingCards();
     if (typeof updateBookingEstimate === 'function') updateBookingEstimate();
