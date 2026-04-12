@@ -2,7 +2,7 @@
   "mesi_prezzi": {
     "agosto": {
       "dimora": 110,
-      "bottega": 97
+      "bottega": 100
     },
     "gennaio": {
       "dimora": 60,
@@ -41,8 +41,8 @@
       "bottega": 50
     },
     "settembre": {
-      "dimora": 100,
-      "bottega": 90
+      "dimora": 110,
+      "bottega": 100
     },
     "aprile": {
       "dimora": 60,
