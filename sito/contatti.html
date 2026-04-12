@@ -3,21 +3,38 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
+<!-- ═══════════════════════════════════════════════
+     Google Analytics 4 — ATTIVAZIONE TRACKING
+     1. Vai su analytics.google.com
+     2. Admin → Data Streams → Web → copia il Measurement ID (G-XXXXXXXXXX)
+     3. Sostituisci G-XXXXXXXXXX qui sotto in TUTTI i file HTML
+     4. Decommenta (rimuovi <!-- e -->) per attivare
+     ═══════════════════════════════════════════════ -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script> -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Come raggiungerci | Casa e Bottega Manfredonia</title>
-<meta content="Casa e Bottega nel centro storico di Manfredonia: Via Gargano 13. Come raggiungerci, parcheggio e contatti." name="description"/>
+<title>Dove Siamo | B&B Manfredonia Centro Storico – Casa e Bottega</title>
+<meta content="Casa e Bottega è in Via Gargano 13, Manfredonia (FG) — centro storico, a 300 m dal mare. Parcheggio gratuito in strada. Scrivici su WhatsApp o email." name="description"/>
 <meta content="contatti Casa e Bottega, Via Gargano Manfredonia, come arrivare Manfredonia, parcheggio centro storico Manfredonia" name="keywords"/>
-<meta content="Come raggiungerci | Casa e Bottega Manfredonia" property="og:title"/>
-<meta content="Casa e Bottega nel centro storico di Manfredonia: Via Gargano 13. Come raggiungerci, parcheggio e contatti." property="og:description"/>
+<meta content="Dove Siamo | B&B Manfredonia Centro Storico – Casa e Bottega" property="og:title"/>
+<meta content="Casa e Bottega è in Via Gargano 13, Manfredonia (FG) — centro storico, a 300 m dal mare. Parcheggio gratuito in strada. Scrivici su WhatsApp o email." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-spazi-comuni/esterno.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/contatti.html" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Come raggiungerci | Casa e Bottega Manfredonia" name="twitter:title"/>
-<meta content="Casa e Bottega in Via Gargano 13, nel centro storico di Manfredonia." name="twitter:description"/>
+<meta content="Dove Siamo | B&B Manfredonia Centro Storico – Casa e Bottega" name="twitter:title"/>
+<meta content="Casa e Bottega, Via Gargano 13, Manfredonia — centro storico, 300 m dal mare. Parcheggio gratuito." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-spazi-comuni/esterno.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/contatti.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/contatti.html" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/contatti.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/contatti.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/contatti.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/contatti.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/contatti.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/contatti.html" hreflang="x-default" rel="alternate"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap"/>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -171,7 +188,30 @@
 </div>
 </div>
 </footer>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
+
+<!-- ══ STICKY TOUCHPOINTS ══════════════════════════════════ -->
+<a class="wa-float"
+   href="https://wa.me/393334705574?text=Ciao!%20Vorrei%20informazioni%20su%20Casa%20e%20Bottega%20a%20Manfredonia.%20Potete%20aiutarmi%3F"
+   target="_blank" rel="noopener"
+   aria-label="Scrivici su WhatsApp">
+  <svg class="wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-float-label">Scrivi su WhatsApp</span>
+</a>
+<div class="sticky-mobile-bar" role="complementary" aria-label="Contatto rapido">
+  <a class="smb-wa"
+     href="https://wa.me/393334705574?text=Ciao!%20Vorrei%20informazioni%20su%20Casa%20e%20Bottega%20a%20Manfredonia.%20Potete%20aiutarmi%3F"
+     target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Scrivi, ti rispondiamo subito
+  </a>
+  <a class="smb-book" href="prenota.html">
+    Prenota — risparmi il 20%
+  </a>
+</div>
+<!-- ══ END STICKY TOUCHPOINTS ══════════════════════════════ -->
 </body>
 </html>

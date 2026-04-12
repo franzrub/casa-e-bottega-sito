@@ -9,3 +9,54 @@
   for = "/netlify/functions/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+# Cache-Control — static assets (immutable, 1 anno)
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/foto-la-dimora/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/foto-la-bottega/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/foto-zona/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache-Control — pagine HTML (rivalidate ogni ora)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Redirect 301 — vecchio slug blog articolo 6 → nuova URL keyword-rich
+# (preserva il ranking eventuale di blog-articolo.html?slug=settimana-nel-gargano)
+[[redirects]]
+  from = "/blog-articolo.html?slug=settimana-nel-gargano"
+  to = "/blog-articolo-6.html"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog-articolo.html?slug=settimana-nel-gargano&lang=*"
+  to = "/blog-articolo-6.html"
+  status = 301
+  force = false

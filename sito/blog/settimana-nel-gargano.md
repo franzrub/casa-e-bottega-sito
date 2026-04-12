@@ -1,10 +1,11 @@
 ---
-title: "Una settimana nel Gargano: itinerario completo da Manfredonia"
+title: "Cosa Vedere nel Gargano in 7 Giorni: Itinerario Completo"
 date: "2025-10-01"
+lastModified: "2026-04-11"
 category: "Itinerari"
-description: "Itinerario completo per esplorare il Gargano in una settimana partendo da Manfredonia."
+description: "Cosa vedere nel Gargano in 7 giorni: da Manfredonia a Vieste, Monte Sant'Angelo, Foresta Umbra e Mattinata. Itinerario completo con consigli pratici scritti da chi vive qui."
 image: "foto-zona/Gargano_dallo_spazio.jpeg"
-slug: "settimana-nel-gargano"
+slug: "cosa-vedere-gargano-7-giorni"
 ---
 
 ![Il Gargano visto dall'alto](foto-zona/Gargano_dallo_spazio.jpeg)

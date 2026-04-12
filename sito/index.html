@@ -3,24 +3,44 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
+<!-- ═══════════════════════════════════════════════
+     Google Analytics 4 — ATTIVAZIONE TRACKING
+     1. Vai su analytics.google.com
+     2. Admin → Data Streams → Web → copia il Measurement ID (G-XXXXXXXXXX)
+     3. Sostituisci G-XXXXXXXXXX qui sotto in TUTTI i file HTML
+     4. Decommenta (rimuovi <!-- e -->) per attivare
+     ═══════════════════════════════════════════════ -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script> -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Casa e Bottega Manfredonia | Prenota Diretto –20% | Gargano</title>
-<meta content="B&B nel centro storico di Manfredonia, a 300 m dal mare. Prenota direttamente e risparmi il 20% sui portali. 9,8/10 — Porta del Gargano, Puglia." name="description"/>
+<title>B&B Manfredonia | Casa e Bottega – 300 m dal Mare | Gargano</title>
+<meta content="B&B nel centro storico di Manfredonia, porta del Gargano. 300 m dal mare, 9,8/10. Prenota diretto e risparmi il 20%. Due camere con anima, disponibili subito." name="description"/>
 <meta content="B&amp;B Manfredonia, affittacamere Manfredonia centro storico, prenotazione diretta Gargano, casa vacanze Gargano, bed and breakfast Manfredonia Puglia" name="keywords"/>
-<meta content="Casa e Bottega Manfredonia | Prenota Diretto –20% | Gargano" property="og:title"/>
-<meta content="B&B nel centro storico di Manfredonia, a 300 m dal mare. Prenota direttamente e risparmi il 20% sui portali. 9,8/10 — Porta del Gargano, Puglia." property="og:description"/>
+<meta content="B&B Manfredonia | Casa e Bottega – 300 m dal Mare | Gargano" property="og:title"/>
+<meta content="B&B nel centro storico di Manfredonia, porta del Gargano. 300 m dal mare, 9,8/10. Prenota diretto e risparmi il 20%. Due camere con anima, disponibili subito." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Casa e Bottega Manfredonia | Prenota Diretto –20% | Gargano" name="twitter:title"/>
-<meta content="Prenota diretto e risparmi il 20%. B&B a 300 m dal mare, centro storico di Manfredonia, Gargano. 9,8/10." name="twitter:description"/>
+<meta content="B&B Manfredonia | Casa e Bottega – 300 m dal Mare | Gargano" name="twitter:title"/>
+<meta content="B&B nel centro storico di Manfredonia. 300 m dal mare, 9,8/10. Prenota diretto –20% rispetto ai portali." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
+<!-- ▶ CWV FIX: preload hero LCP image (browser la scarica prima del CSS) -->
+<link rel="preload" href="../foto-homepage/2.webp" as="image" fetchpriority="high"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- ▶ CWV FIX: font trim 11→6 varianti (rimossi pesi rari 300/700 italic) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"/>
 <link href="css/style.css" rel="stylesheet"/>
 <!-- Netlify Identity Widget (per pannello admin) -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -341,7 +361,7 @@
 <div class="deco-line"></div>
 </div>
 <div class="reviews-header-award fade-in">
-<img alt="Booking.com Traveller Review Award 2026" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
+<img alt="Booking.com Traveller Review Award 2026" loading="lazy" src="../loghi-e-badge/Digital-Award_RA-2026.webp"/>
 <p data-i18n="reviews_award_text">Tra le strutture più apprezzate d'Italia su Booking.com, 9,8/10 · Traveller Review Awards 2026</p>
 </div>
 <div class="reviews-scores fade-in">
@@ -358,7 +378,7 @@
 <div class="review-card">
 <div class="review-card-inner">
 <div class="review-stars">★★★★★</div>
-<p class="review-text">"Esperienza molto positiva. La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. La signora Nicoletta si è mostrata molto cortese, così come Francesco. Consigliatissimo."</p>
+<p class="review-text">"Esperienza molto positiva. La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. La signora <mark class="review-highlight">Nicoletta</mark> si è mostrata molto cortese, così come Francesco. Consigliatissimo."</p>
 <div class="review-author">
 <div>
 <div class="review-author-name">Luca</div>
@@ -414,7 +434,7 @@
 <div class="review-card">
 <div class="review-card-inner">
 <div class="review-stars">★★★★★</div>
-<p class="review-text">"L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons, vous ne le regretterez pas!"</p>
+<p class="review-text">"L'accueil a été fait par <mark class="review-highlight">Nicoletta</mark>, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons, vous ne le regretterez pas!"</p>
 <div class="review-author">
 <div>
 <div class="review-author-name">Céline et François</div>
@@ -457,6 +477,44 @@
 <button aria-label="Precedente" class="carousel-btn carousel-prev">‹</button>
 <button aria-label="Successivo" class="carousel-btn carousel-next">›</button>
 </div>
+</div>
+
+<!-- BOX: Incontra i tuoi host -->
+<div class="host-box fade-in">
+  <div class="host-box-avatars">
+    <div class="host-avatar" aria-label="Nicoletta">N</div>
+    <div class="host-avatar" aria-label="Francesco">F</div>
+  </div>
+  <div class="host-box-content">
+    <p class="host-box-label">Chi risponde quando scrivi</p>
+    <p class="host-box-title">Incontra i tuoi host</p>
+    <!-- Nicoletta stat badge -->
+    <div class="host-nicoletta-stat" aria-label="Nicoletta citata nelle recensioni">
+      <span class="host-stat-dot" aria-hidden="true"></span>
+      <span><strong>Nicoletta</strong> è citata per nome in molte recensioni su Booking e Airbnb</span>
+    </div>
+    <div class="host-profiles">
+      <div>
+        <div class="host-profile-name">Nicoletta</div>
+        <div class="host-profile-role">Accoglienza · risponde su WhatsApp · "una signora charmante"</div>
+      </div>
+      <div>
+        <div class="host-profile-name">Francesco</div>
+        <div class="host-profile-role">Esperto locale · consigli autentici sul Gargano</div>
+      </div>
+    </div>
+    <blockquote class="host-box-quote">
+      "Siamo di Manfredonia. Viviamo a pochi passi da voi. Non siamo un call center — siamo la famiglia che vi apre la porta, quella che ha ereditato questa casa dai nonni artigiani."
+    </blockquote>
+    <a class="host-box-wa"
+       href="https://wa.me/393334705574?text=Ciao%20Nicoletta!%20Ho%20visto%20le%20vostre%20recensioni%20e%20vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!"
+       target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivi a Nicoletta
+    </a>
+  </div>
+</div>
+
 </div>
 </div>
 </section>
@@ -520,7 +578,33 @@
 </div>
 </div>
 </footer>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
+
+<!-- ══ STICKY TOUCHPOINTS ══════════════════════════════════ -->
+<!-- Desktop: WhatsApp floating pill -->
+<a class="wa-float"
+   href="https://wa.me/393334705574?text=Ciao!%20Ho%20visitato%20il%20sito%20di%20Casa%20e%20Bottega%20%E2%80%94%20vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!%20%F0%9F%99%8F"
+   target="_blank" rel="noopener"
+   aria-label="Scrivici su WhatsApp">
+  <svg class="wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-float-label">Scrivi su WhatsApp</span>
+</a>
+
+<!-- Mobile: sticky bottom bar -->
+<div class="sticky-mobile-bar" role="complementary" aria-label="Contatto rapido">
+  <a class="smb-wa"
+     href="https://wa.me/393334705574?text=Ciao!%20Ho%20visitato%20il%20sito%20di%20Casa%20e%20Bottega%20%E2%80%94%20vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!%20%F0%9F%99%8F"
+     target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Scrivi, ti rispondiamo subito
+  </a>
+  <a class="smb-book" href="prenota.html">
+    Prenota — risparmi il 20%
+  </a>
+</div>
+<!-- ══ END STICKY TOUCHPOINTS ══════════════════════════════ -->
 </body>
 </html>
