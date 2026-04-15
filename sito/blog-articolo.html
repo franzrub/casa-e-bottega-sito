@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Racconti | Casa e Bottega</title>
   <meta name="description" content="">
+  <!-- base href garantisce che tutti i path relativi dell'header/footer
+       funzionino correttamente anche quando la pagina è servita tramite
+       Netlify rewrite da /blog/:slug (invece che da /blog-articolo.html) -->
+  <base href="/">
   <link rel="stylesheet" href="css/style.css">
   <!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
   <style>
@@ -95,7 +99,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Casa e Bottega, Manfredonia — IT071029C200088044</p>
+        <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044</p>
       </div>
     </div>
   </footer>
@@ -105,37 +109,42 @@
   <script src="js/main.js"></script>
   <script>
     (function() {
-      const params = new URLSearchParams(window.location.search);
-      const slug   = params.get('slug');
-      const lang   = params.get('lang'); // passed by multilingual blog pages
-
-      // Apply language ASAP so nav/ui is translated before article loads
-      if (lang && typeof setLang === 'function') {
-        setLang(lang);
+      // -------------------------------------------------------
+      // SLUG DETECTION — supporta sia URL pulite che query string
+      //
+      //  URL pulita  : /blog/cinque-cose-manfredonia
+      //                  → Netlify rewrite a 200 serve questo file
+      //                  → leggiamo lo slug dal pathname
+      //
+      //  URL legacy  : /blog-articolo.html?slug=cinque-cose-manfredonia
+      //                  → Netlify 301 la redirige alla URL pulita,
+      //                    ma la gestiamo anche qui per robustezza
+      // -------------------------------------------------------
+      function getSlug() {
+        // 1. Prova dal path: /blog/nome-slug
+        const pathMatch = window.location.pathname.match(/\/blog\/([^\/]+)$/);
+        if (pathMatch && pathMatch[1]) return decodeURIComponent(pathMatch[1]);
+        // 2. Fallback: ?slug= (compatibilità durante la transizione)
+        return new URLSearchParams(window.location.search).get('slug');
       }
 
-      // Update lang-switcher buttons to preserve the current slug
-      if (slug) {
-        document.querySelectorAll('.lang-switcher button[data-lang]').forEach(btn => {
-          const l = btn.dataset.lang;
-          // IT stays as button (no separate article page), others too — all point here
-          // We just update active state; setLang handles the display
-        });
-      }
+      const slug = getSlug();
 
       if (!slug) {
         document.getElementById('article-title').textContent = 'Articolo non trovato';
-        document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Slug mancante. <a href="blog.html">Torna ai Racconti</a></p></div>';
+        document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Slug mancante. <a href="/blog.html">Torna ai Racconti</a></p></div>';
         return;
       }
 
-      fetch('blog/' + slug + '.md')
+      // Percorso assoluto: funziona sia da /blog-articolo.html
+      // che da /blog/:slug (via Netlify rewrite)
+      fetch('/blog/' + slug + '.md')
         .then(r => {
           if (!r.ok) throw new Error('not found');
           return r.text();
         })
         .then(text => {
-          // Parse frontmatter
+          // Parse frontmatter YAML
           const fm = {};
           const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
           let body = text;
@@ -147,7 +156,7 @@
             body = fmMatch[2];
           }
 
-          // Update page header
+          // Aggiorna title, meta description e canonical dinamicamente
           if (fm.title) {
             document.title = fm.title + ' | Casa e Bottega';
             document.getElementById('article-title').textContent = fm.title;
@@ -155,30 +164,46 @@
           if (fm.category) document.getElementById('article-category').textContent = fm.category;
           if (fm.date) {
             const d = new Date(fm.date);
-            // Use current lang for date locale
-            const locale = (lang || 'it') + '-' + (lang || 'it').toUpperCase();
-            document.getElementById('article-date').textContent = d.toLocaleDateString(locale, { month: 'long', year: 'numeric' });
+            document.getElementById('article-date').textContent = d.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
           }
           if (fm.description) {
             document.querySelector('meta[name="description"]').setAttribute('content', fm.description);
           }
 
+          // Imposta canonical all'URL pulita
+          const canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) {
+            canonical.setAttribute('href', 'https://www.casaebottegapuglia.it/blog/' + slug);
+          } else {
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = 'https://www.casaebottegapuglia.it/blog/' + slug;
+            document.head.appendChild(link);
+          }
+
           // Render markdown
           const html = marked.parse(body);
 
-          // Add CTA at end — use translated text if available
-          const ctaText   = (typeof t === 'function') ? t('article_cta_text')   : 'Vi aspettiamo a Casa e Bottega.';
-          const ctaButton = (typeof t === 'function') ? t('article_cta_button') : 'Prenota il tuo soggiorno';
-          const cta = `<div class="article-cta">
-            <p>${ctaText}</p>
-            <a href="prenota.html" class="btn btn-primary">${ctaButton}</a>
+          // CTA — blocco di conversione verso le camere
+          const cta = `
+          <div class="article-cta">
+            <p>Stai programmando il tuo viaggio nel Gargano?<br>
+            Scopri l'accoglienza artigianale di Casa e Bottega nel cuore di Manfredonia.</p>
+            <p style="margin-bottom: 1.5rem; font-size: 1rem; font-family: var(--font-body); color: var(--testo-light);">
+              Esplora le nostre stanze e prenota al miglior prezzo diretto:
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="/camere/la-dimora.html" class="btn btn-dark"><strong>La Dimora</strong></a>
+              <a href="/camere/la-bottega.html" class="btn btn-dark"><strong>La Bottega</strong></a>
+              <a href="/prenota.html" class="btn btn-primary">Prenota ora</a>
+            </div>
           </div>`;
 
           document.getElementById('article-body').innerHTML = html + cta;
         })
         .catch(() => {
           document.getElementById('article-title').textContent = 'Articolo non trovato';
-          document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Articolo non disponibile. <a href="blog.html">Torna ai Racconti</a></p></div>';
+          document.getElementById('article-body').innerHTML = '<div class="article-error"><p>Articolo non disponibile. <a href="/blog.html">Torna ai Racconti</a></p></div>';
         });
     })();
   </script>

@@ -751,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>`;
       })
       .catch(() => {
-        btn.textContent = 'Errore — riprova';
+        btn.textContent = 'Errore, riprova';
         btn.disabled = false;
         btn.style.background = '#c0392b';
         setTimeout(() => { btn.style.background = ''; }, 3000);
