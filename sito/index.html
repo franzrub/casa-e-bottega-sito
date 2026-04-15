@@ -39,19 +39,7 @@
 <!-- ▶ CWV FIX: font trim 11→6 varianti (rimossi pesi rari 300/700 italic) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"/>
 <link href="css/style.css" rel="stylesheet"/>
-<!-- Netlify Identity Widget (per pannello admin) -->
-<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+<!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
 <!-- Structured Data -->
 <script type="application/ld+json">
   {

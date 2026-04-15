@@ -47,16 +47,49 @@
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
 
-# Redirect 301 — vecchio slug blog articolo 6 → nuova URL keyword-rich
-# (preserva il ranking eventuale di blog-articolo.html?slug=settimana-nel-gargano)
+# ============================================================
+# BLOG — URL REWRITING & REDIRECT 301
+# ============================================================
+# STEP 1 — Rewrite: /blog/:slug → /blog-articolo.html (200, URL pulita nel browser)
+# Netlify serve il file esistente prima di applicare la regola:
+# /blog/slug.md viene servito direttamente; /blog/slug (senza estensione)
+# non esiste → cade qui e viene servito il template JS.
 [[redirects]]
-  from = "/blog-articolo.html?slug=settimana-nel-gargano"
-  to = "/blog-articolo-6.html"
+  from   = "/blog/:slug"
+  to     = "/blog-articolo.html"
+  status = 200
+
+# STEP 2 — Redirect 301 universale: vecchi URL parametrici → nuovi URL puliti
+# Cattura tutti i ?slug= indipendentemente dal valore
+[[redirects]]
+  from   = "/blog-articolo.html"
+  to     = "/blog/:slug"
   status = 301
-  force = false
+  query  = {slug = ":slug"}
+
+# Compatibilità legacy: se qualcuno accedesse direttamente al vecchio
+# blog-articolo-6.html numerico → redirect alla URL clean
+[[redirects]]
+  from   = "/blog-articolo-6.html"
+  to     = "/blog/settimana-nel-gargano"
+  status = 301
+  force  = false
+
+# Redirect articoli 10-12 → URL pulite
+[[redirects]]
+  from   = "/blog-articolo-10.html"
+  to     = "/blog/dove-mangiano-i-locali-manfredonia"
+  status = 301
+  force  = false
 
 [[redirects]]
-  from = "/blog-articolo.html?slug=settimana-nel-gargano&lang=*"
-  to = "/blog-articolo-6.html"
+  from   = "/blog-articolo-11.html"
+  to     = "/blog/borghi-nascosti-gargano"
   status = 301
-  force = false
+  force  = false
+
+[[redirects]]
+  from   = "/blog-articolo-12.html"
+  to     = "/blog/muoversi-nel-gargano"
+  status = 301
+  force  = false
