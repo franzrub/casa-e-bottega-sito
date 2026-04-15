@@ -3,6 +3,10 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- ▶ CWV FIX: font trim 11→6 varianti (rimossi pesi rari 300/700 italic) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Casa e Bottega, Manfredonia | B&amp;B im Herzen des Gargano</title>
 <meta content="Casa e Bottega: Gästehaus im historischen Zentrum von Manfredonia, Tor zum Gargano. Zwei Zimmer mit Seele, wenige Schritte vom Adriatischen Meer. Bewertet 9,8/10 auf Booking.com." name="description"/>
@@ -18,6 +22,7 @@
 <meta content="A due passi dal mare, nel cuore del Gargano. Due camere con anima nel centro storico di Manfredonia." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/de/index.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
+<link rel="preload" href="../../foto-homepage/2.webp" as="image" fetchpriority="high"/>
 <link href="../css/style.css" rel="stylesheet"/>
 <!-- Netlify Identity Widget (per pannello admin) -->
 <script>
@@ -60,7 +65,7 @@
   </script>
 </head>
 <body>
-<a class="skip-to-content" href="#site-main">Vai al contenuto principale</a>
+<a class="skip-to-content" href="#site-main">Zum Hauptinhalt springen</a>
 <!-- HEADER -->
 <header class="site-header">
 <nav class="nav-wrapper">
@@ -201,6 +206,9 @@
 <h2 data-i18n="about_title">Über uns</h2>
 <div class="deco-line"></div>
 </div>
+<blockquote class="chi-siamo-pull-quote fade-in">
+„Dieses Haus gehörte unseren Großeltern — er <em>Schuhmacher</em>,<br>sie Hüterin eines Herdfeuers, das nach Leder und Ragù duftete.“
+</blockquote>
 <div class="chi-siamo-grid fade-in">
 <div class="chi-siamo-text">
 <p data-i18n="about_p1">Dieses Haus gehörte unseren Großeltern, er Schuhmacher, sie Hüterin eines Herdes, der nach Leder und Ragù duftete. Sie arbeiteten bis fast achtzig, mit Händen und Herz, und bewohnten das Zimmer neben dem, in dem heute unsere Gäste schlafen.</p>
@@ -233,9 +241,9 @@
 <h3 data-i18n="room_dimora_name">La Dimora</h3>
 <p data-i18n="room_dimora_short">Geräumig, still, in weiches Licht gehüllt, das Zimmer, in dem man sich zu Hause fühlt.</p>
 <ul class="room-features">
-  <li>Bagno privato</li>
-  <li>Letto king size</li>
-  <li>WiFi fibra</li>
+  <li>Privates Bad</li>
+  <li>Kingsize-Bett</li>
+  <li>Glasfaser-WLAN</li>
 </ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="camere.html#dimora">Entdecken</a>
 </div>
@@ -250,9 +258,9 @@
 <h3 data-i18n="room_bottega_name">La Bottega</h3>
 <p data-i18n="room_bottega_short">Petrolblaue Wand, Liebe zum Detail, erwartete Gastfreundschaft, das Gargano-Meer ohne es zu zeigen.</p>
 <ul class="room-features">
-  <li>Bagno privato en suite</li>
-  <li>Letto king size</li>
-  <li>Design esclusivo</li>
+  <li>Privates En-suite-Bad</li>
+  <li>Kingsize-Bett</li>
+  <li>Exklusives Design</li>
 </ul>
 <a class="btn btn-dark" data-i18n="room_discover" href="camere.html#bottega">Entdecken</a>
 </div>
@@ -385,6 +393,41 @@
 <button aria-label="Precedente" class="carousel-btn carousel-prev">‹</button>
 <button aria-label="Successivo" class="carousel-btn carousel-next">›</button>
 </div>
+
+<!-- BOX: Meet your hosts -->
+<div class="host-box fade-in">
+  <div class="host-box-avatars">
+    <div class="host-avatar" aria-label="Nicoletta">N</div>
+    <div class="host-avatar" aria-label="Francesco">F</div>
+  </div>
+  <div class="host-box-content">
+    <p class="host-box-label">Wer antwortet, wenn Sie schreiben</p>
+    <p class="host-box-title">Lernen Sie Ihre Gastgeber kennen</p>
+    <div class="host-nicoletta-stat" aria-label="Nicoletta cited in reviews">
+      <span class="host-stat-dot" aria-hidden="true"></span>
+      <span><strong>Nicoletta</strong> wird in vielen Bewertungen auf Booking und Airbnb namentlich erwähnt</span>
+    </div>
+    <div class="host-profiles">
+      <div>
+        <div class="host-profile-name">Nicoletta</div>
+        <div class="host-profile-role">Empfang · antwortet auf WhatsApp · „eine charmante Dame“</div>
+      </div>
+      <div>
+        <div class="host-profile-name">Francesco</div>
+        <div class="host-profile-role">Ortskundiger Experte · authentische Tipps zum Gargano</div>
+      </div>
+    </div>
+    <blockquote class="host-box-quote">
+      „Wir kommen aus Manfredonia. Wir leben nur wenige Schritte von Ihnen entfernt. Wir sind kein Callcenter — wir sind die Familie, die Ihnen die Tür öffnet, die dieses Haus von ihren Handwerker-Großeltern geerbt hat.“
+    </blockquote>
+    <a class="host-box-wa"
+       href="https://wa.me/393334705574?text=Hallo%20Nicoletta!%20Ich%20habe%20Ihre%20Bewertungen%20gesehen%20und%20m%C3%B6chte%20wissen%2C%20ob%20Sie%20Verf%C3%BCgbarkeit%20haben.%20Danke!"
+       target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Nicoletta schreiben
+    </a>
+  </div>
+</div>
 </div>
 </div>
 </section>
@@ -397,8 +440,15 @@
 <div class="deco-line"></div>
 </div>
 <div class="fade-in">
-<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casa+e+Bottega+Manfredonia&amp;output=embed" title="Casa e Bottega, Manfredonia, mappa">
+<div class="map-wrapper" id="map-wrapper">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casa+e+Bottega+Manfredonia&amp;output=embed" title="Casa e Bottega, Manfredonia, mappa" onload="this.closest('.map-wrapper').classList.add('map-loaded')">
 </iframe>
+<div class="map-fallback">
+  <span class="map-fallback-icon">📍</span>
+  <span class="map-fallback-address">Via Gargano, 13, Manfredonia (FG), Puglia</span>
+  <a class="map-fallback-link" href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">In Google Maps öffnen →</a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -441,7 +491,31 @@
 </div>
 </div>
 </footer>
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<!-- ══ STICKY TOUCHPOINTS ════════════════════════════════════════════════════════ -->
+<!-- Desktop: WhatsApp floating pill -->
+<a class="wa-float"
+   href="https://wa.me/393334705574?text=Hallo!%20Ich%20habe%20die%20Website%20von%20Casa%20e%20Bottega%20besucht%20%E2%80%94%20ich%20m%C3%B6chte%20wissen%2C%20ob%20Sie%20Verf%C3%BCgbarkeit%20haben.%20Danke!%20%F0%9F%99%8F"
+   target="_blank" rel="noopener"
+   aria-label="Schreiben Sie uns auf WhatsApp">
+  <svg class="wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-float-label">Auf WhatsApp schreiben</span>
+</a>
+
+<!-- Mobile: sticky bottom bar -->
+<div class="sticky-mobile-bar" role="complementary" aria-label="Quick contact">
+  <a class="smb-wa"
+     href="https://wa.me/393334705574?text=Hallo!%20Ich%20habe%20die%20Website%20von%20Casa%20e%20Bottega%20besucht%20%E2%80%94%20ich%20m%C3%B6chte%20wissen%2C%20ob%20Sie%20Verf%C3%BCgbarkeit%20haben.%20Danke!%20%F0%9F%99%8F"
+     target="_blank" rel="noopener" aria-label="Schreiben Sie uns auf WhatsApp">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Schreiben Sie, wir antworten sofort
+  </a>
+  <a class="smb-book" href="prenota.html">
+    Direkt buchen – 20 % sparen
+  </a>
+</div>
+<!-- ══ END STICKY TOUCHPOINTS ════════════════════════════════════════════════════════ -->
 </body>
 </html>
