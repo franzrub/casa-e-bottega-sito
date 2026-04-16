@@ -3,32 +3,18 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
-<!-- ═══════════════════════════════════════════════
-     Google Analytics 4 — ATTIVAZIONE TRACKING
-     1. Vai su analytics.google.com
-     2. Admin → Data Streams → Web → copia il Measurement ID (G-XXXXXXXXXX)
-     3. Sostituisci G-XXXXXXXXXX qui sotto in TUTTI i file HTML
-     4. Decommenta (rimuovi <!-- e -->) per attivare
-     ═══════════════════════════════════════════════ -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script> -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Prenota il tuo B&B a Manfredonia | –20% Rispetto ad Airbnb</title>
-<meta content="Prenota direttamente e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." name="description"/>
-<meta content="prenota B&amp;B Manfredonia, prenotazione Gargano, camera centro storico Manfredonia, soggiorno Puglia" name="keywords"/>
-<meta content="Prenota il tuo B&B a Manfredonia | –20% Rispetto ad Airbnb" property="og:title"/>
-<meta content="Prenota direttamente e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." property="og:description"/>
+<title>Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%</title>
+<meta content="Prenota direttamente Casa e Bottega e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." name="description"/>
+<meta content="prenota casa vacanze Manfredonia, prenotazione Gargano, camera centro storico Manfredonia, soggiorno Puglia, locazione turistica" name="keywords"/>
+<meta content="Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%" property="og:title"/>
+<meta content="Prenota direttamente Casa e Bottega e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/prenota.html" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Prenota il tuo B&B a Manfredonia | –20% Rispetto ad Airbnb" name="twitter:title"/>
+<meta content="Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%" name="twitter:title"/>
 <meta content="Prenota diretto e risparmi il 20% su Booking e Airbnb. 300 m dal mare, Manfredonia, Gargano." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/prenota.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/prenota.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/prenota.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/prenota.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/prenota.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/prenota.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="x-default" rel="alternate"/>
@@ -1382,11 +1368,11 @@
         <div class="vs-cell vs-cell--ota">❌ Commissioni incluse</div>
 
         <div class="vs-row-label">Assistenza</div>
-        <div class="vs-cell vs-cell--direct">✅ Nicoletta su WhatsApp</div>
+        <div class="vs-cell vs-cell--direct">✅ su WhatsApp</div>
         <div class="vs-cell vs-cell--ota">❌ Call center / bot</div>
 
         <div class="vs-row-label">Cancellazione</div>
-        <div class="vs-cell vs-cell--direct">✅ Regole chiare, scritte in italiano</div>
+        <div class="vs-cell vs-cell--direct">✅ <a href="/regole.html">Regole chiare</a></div>
         <div class="vs-cell vs-cell--ota">⚠️ Dipende dalla tariffa scelta</div>
 
         <div class="vs-row-label">Chi sei per noi</div>
@@ -2186,6 +2172,20 @@
             // Primo click o reset: imposta check-in
             miniCalCheckin = date;
             miniCalCheckout = null;
+            // Sincronizza con i campi di ricerca
+            if (ciInput) ciInput.value = miniCalCheckin;
+            if (coInput) coInput.value = '';
+            // Aggiorna min/max del checkout field
+            if (checkinEl) {
+              checkinEl.value = miniCalCheckin;
+              const maxCo = new Date(miniCalCheckin);
+              maxCo.setDate(maxCo.getDate() + 29);
+              if (checkoutEl) {
+                checkoutEl.min = miniCalCheckin;
+                checkoutEl.max = maxCo.toISOString().split('T')[0];
+                checkoutEl.value = '';
+              }
+            }
           } else if (date > miniCalCheckin) {
             // Secondo click dopo check-in: imposta check-out
             // Limite legale: massimo 29 notti
@@ -2218,6 +2218,20 @@
             // Click prima del check-in: ricomincia
             miniCalCheckin = date;
             miniCalCheckout = null;
+            // Sincronizza con i campi di ricerca
+            if (ciInput) ciInput.value = miniCalCheckin;
+            if (coInput) coInput.value = '';
+            // Aggiorna min/max del checkout field
+            if (checkinEl) {
+              checkinEl.value = miniCalCheckin;
+              const maxCo = new Date(miniCalCheckin);
+              maxCo.setDate(maxCo.getDate() + 29);
+              if (checkoutEl) {
+                checkoutEl.min = miniCalCheckin;
+                checkoutEl.max = maxCo.toISOString().split('T')[0];
+                checkoutEl.value = '';
+              }
+            }
           }
           renderMiniCal();
         });
@@ -2264,7 +2278,20 @@
     }
     if (coInput) {
       coInput.addEventListener('change', () => {
-        miniCalCheckout = coInput.value || null;
+        const newCheckout = coInput.value || null;
+        // Valida che checkout sia dopo checkin
+        if (newCheckout && miniCalCheckin && newCheckout <= miniCalCheckin) {
+          // Se l'utente imposta un checkout prima del checkin, inverti le date
+          miniCalCheckout = null;
+          coInput.value = '';
+          alert('La data di checkout deve essere dopo il check-in');
+        } else {
+          miniCalCheckout = newCheckout;
+          // Trigger auto-search se entrambe le date sono valide
+          if (miniCalCheckin && miniCalCheckout) {
+            tryAutoSearch();
+          }
+        }
         renderMiniCal();
       });
     }

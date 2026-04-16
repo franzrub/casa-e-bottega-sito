@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Règles de la Maison | Casa e Bottega Manfredonia</title>
+  <meta name="description" content="Règles de la maison et conditions de séjour à Casa e Bottega, Manfredonia.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .rule-card {
+      background: white;
+      border-radius: 10px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 3px solid #C8A96E;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .rule-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .rule-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .rule-title {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #1B4F72;
+      margin-bottom: 10px;
+      font-family: Georgia, serif;
+    }
+    .rule-text {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .emergency-box {
+      background: #1B4F72;
+      color: white;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .emergency-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+    .emergency-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .emergency-text a {
+      color: #C8A96E;
+      text-decoration: none;
+    }
+    .emergency-text a:hover { text-decoration: underline; }
+    .rules-loading {
+      text-align: center;
+      color: #999;
+      padding: 60px 0;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      .emergency-box { flex-direction: column; text-align: center; }
+      .rules-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-wrapper">
+      <a href="index.html" class="nav-logo">Casa <span>e</span> Bottega</a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="camere.html" data-i18n="nav_rooms">Chambres</a></li>
+        <li><a href="prenota.html" data-i18n="nav_book">Réserver</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Récits</a></li>
+        <li><a href="contatti.html" data-i18n="nav_contact">Localisation</a></li>
+        <li>
+          <div class="lang-switcher">
+            <a class="lang-btn" href="../regole.html" hreflang="it" title="Italiano">IT</a>
+            <a class="lang-btn" href="../en/regole.html" hreflang="en" title="English">EN</a>
+            <a class="lang-btn active" href="../fr/regole.html" hreflang="fr" title="Français">FR</a>
+            <a class="lang-btn" href="../de/regole.html" hreflang="de" title="Deutsch">DE</a>
+            <a class="lang-btn" href="../nl/regole.html" hreflang="nl" title="Nederlands">NL</a>
+            <a class="lang-btn" href="../es/regole.html" hreflang="es" title="Español">ES</a>
+          </div>
+        </li>
+      </ul>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Séjour</p>
+      <h1>Règles de la Maison</h1>
+      <p>Tout ce qu'il faut savoir pour un séjour serein et respectueux.</p>
+    </div>
+  </div>
+
+  <section class="section section-light">
+    <div class="container">
+
+      <div id="rules-container">
+        <div class="rules-loading">Chargement des règles…</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
+          <p data-i18n="footer_desc">À deux pas de la mer, au cœur du Gargano.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_pages">Pages</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="camere.html" data-i18n="nav_rooms">Chambres</a></li>
+            <li><a href="prenota.html" data-i18n="nav_book">Réserver</a></li>
+            <li><a href="blog.html" data-i18n="nav_blog">Récits</a></li>
+            <li><a href="regole.html">Règles de la Maison</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_follow">Nous suivre</h4>
+          <ul>
+            <li><a href="#">Airbnb</a></li>
+            <li><a href="#">Booking.com</a></li>
+            <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact">Contacts</h4>
+          <ul>
+            <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+            <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    fetch('/../_data/regole_fr.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) {
+          document.getElementById('rules-container').innerHTML =
+            '<p style="color:#999;text-align:center;">Règles non disponibles pour le moment.</p>';
+          return;
+        }
+
+        const sections = data.sections || [];
+        const emergenza = data.contatti_emergenza || '';
+
+        let html = '<div class="rules-grid">';
+        sections.forEach(s => {
+          html += `
+            <div class="rule-card">
+              <span class="rule-icon">${s.icon || '📌'}</span>
+              <div class="rule-title">${s.title}</div>
+              <div class="rule-text">${s.text.replace(/\n/g, '<br>')}</div>
+            </div>`;
+        });
+        html += '</div>';
+
+        if (emergenza) {
+          // Rendre les e-mails et téléphones cliquables dans le texte d'urgence
+          const linkified = emergenza
+            .replace(/(bookings@[\w.]+)/g, '<a href="mailto:$1">$1</a>')
+            .replace(/(\+39[\s\d]+)/g, '<a href="tel:$1">$1</a>');
+          html += `
+            <div class="emergency-box">
+              <div class="emergency-icon">📞</div>
+              <div class="emergency-text">${linkified}</div>
+            </div>`;
+        }
+
+        document.getElementById('rules-container').innerHTML = html;
+      })
+      .catch(() => {
+        document.getElementById('rules-container').innerHTML =
+          '<p style="color:#999;text-align:center;">Erreur lors du chargement des règles.</p>';
+      });
+  </script>
+
+</body>
+</html>
