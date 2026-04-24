@@ -1,1506 +1,734 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<!-- ▶ CWV FIX: font trim 11→6 varianti (rimossi pesi rari 300/700 italic) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Book | Casa e Bottega Manfredonia</title>
-<meta content="Book your room at Casa e Bottega: guesthouse in the historic centre of Manfredonia, steps from the Adriatic Sea. Save 20% booking direct." name="description"/>
-<meta content="prenota casa vacanze Manfredonia, prenotazione Gargano, camera centro storico Manfredonia, soggiorno Puglia, holiday home booking" name="keywords"/>
-<meta content="Book | Casa e Bottega Manfredonia" property="og:title"/>
-<meta content="Book your room at Casa e Bottega: guesthouse in the historic centre of Manfredonia, steps from the Adriatic Sea. Save 20% booking direct." property="og:description"/>
+<title>Book Your Holiday Home in Manfredonia | Direct Discount –20%</title>
+<meta content="Book directly with Casa e Bottega and save 20% compared to Booking and Airbnb. Self check-in, 300 m from the sea, Gargano. Immediate availability — no commission fees." name="description"/>
+<meta content="book holiday home Manfredonia, booking Gargano, room historic center Manfredonia, stay Puglia" name="keywords"/>
+<meta content="Book Your Holiday Home in Manfredonia | Direct Discount –20%" property="og:title"/>
+<meta content="Book directly with Casa e Bottega and save 20% compared to Booking and Airbnb. Self check-in, 300 m from the sea, Gargano. Immediate availability — no commission fees." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/en/prenota.html" property="og:url"/>
-<meta content="it_IT" property="og:locale"/>
+<meta content="en_GB" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Prenota | Casa e Bottega Manfredonia" name="twitter:title"/>
-<meta content="Prenota La Dimora o La Bottega nel centro storico di Manfredonia, Gargano." name="twitter:description"/>
+<meta content="Book Your Holiday Home in Manfredonia | Direct Discount –20%" name="twitter:title"/>
+<meta content="Book direct and save 20% on Booking and Airbnb. 300 m from the sea, Manfredonia, Gargano." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
-<link href="https://www.casaebottegapuglia.it/en/prenota.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/prenota.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/prenota.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/prenota.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/prenota.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/prenota.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="x-default" rel="alternate"/>
-<link href="../css/style.css" rel="stylesheet"/>
-<style>
-    /* ============================================
-       PRENOTA PAGE, OTA-Style Booking
-       ============================================ */
-
-    /* --- Search Bar Section --- */
-    .search-section {
-      background: var(--blu-dark);
-      padding: 2rem 0;
-      position: relative;
-    }
-
-    .search-section::after {
-      content: '';
-      position: absolute;
-      bottom: -30px;
-      left: 0; right: 0;
-      height: 30px;
-      background: linear-gradient(180deg, rgba(21,67,96,0.06) 0%, transparent 100%);
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: flex-end;
-      gap: 1rem;
-      background: var(--bianco);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      flex-wrap: wrap;
-    }
-
-    .search-field {
-      flex: 1;
-      min-width: 140px;
-    }
-
-    .search-field label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--testo-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .search-field input,
-    .search-field select {
-      width: 100%;
-      padding: 0.65rem 0.8rem;
-      border: 2px solid rgba(200,169,110,0.3);
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--testo);
-      background: var(--calce-light);
-      transition: border-color var(--transition);
-    }
-
-    .search-field input:focus,
-    .search-field select:focus {
-      outline: none;
-      border-color: var(--ocra);
-      background: var(--bianco);
-    }
-
-    .search-btn {
-      padding: 0.65rem 2rem;
-      background: var(--ocra);
-      color: var(--bianco);
-      border: none;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      white-space: nowrap;
-      letter-spacing: 0.5px;
-    }
-
-    .search-btn:hover {
-      background: var(--ocra-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(200,169,110,0.4);
-    }
-
-    /* --- Results Section --- */
-    .results-section {
-      padding: 2.5rem 0 4rem;
-      min-height: 400px;
-    }
-
-    .results-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .results-header h2 {
-      font-size: 1.6rem;
-      margin-bottom: 0;
-    }
-
-    .results-dates-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(200,169,110,0.12);
-      border: 1px solid rgba(200,169,110,0.3);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--testo-light);
-    }
-
-    .results-dates-badge strong {
-      color: var(--testo);
-    }
-
-    .results-placeholder {
-      text-align: center;
-      padding: 5rem 2rem;
-      color: var(--testo-muted);
-    }
-
-    .results-placeholder h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      color: var(--testo-light);
-    }
-
-    .results-placeholder p {
-      font-size: 1rem;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    /* --- Room Result Card (OTA style) --- */
-    .room-result-card {
-      display: grid;
-      grid-template-columns: 280px 1fr auto;
-      gap: 0;
-      background: var(--bianco);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px var(--ombra);
-      margin-bottom: 1.5rem;
-      transition: box-shadow var(--transition), transform var(--transition);
-      border: 1px solid rgba(200,169,110,0.15);
-    }
-
-    .room-result-card:hover {
-      box-shadow: 0 6px 25px var(--ombra-forte);
-      transform: translateY(-2px);
-    }
-
-    .room-result-card.unavailable {
-      opacity: 0.55;
-      pointer-events: none;
-    }
-
-    .room-result-img {
-      height: 100%;
-      min-height: 240px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .room-result-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .room-result-card:hover .room-result-img img {
-      transform: scale(1.05);
-    }
-
-    .room-result-img .room-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--verde);
-      color: var(--bianco);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .room-result-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .room-result-body h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.2rem;
-      color: var(--blu-dark);
-    }
-
-    .room-result-body .room-tagline {
-      font-family: var(--font-heading);
-      font-style: italic;
-      color: var(--ocra);
-      font-size: 0.92rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .room-result-body .room-short-desc {
-      font-size: 0.88rem;
-      color: var(--testo-light);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .room-result-amenities {
-      display: grid;
-      grid-template-columns: repeat(5, 2.4rem);
-      gap: 0.45rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .room-result-amenities .amenity-tag {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.4rem;
-      height: 2.4rem;
-      background: var(--calce);
-      border-radius: 6px;
-      border: 1px solid rgba(200,169,110,0.18);
-      cursor: default;
-      transition: border-color 0.15s;
-    }
-
-    .room-result-amenities .amenity-tag:hover {
-      border-color: rgba(200,169,110,0.5);
-    }
-
-    .room-result-amenities .amenity-tag .amenity-icon {
-      font-size: 1.1rem;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blu);
-    }
-
-    .room-result-amenities .amenity-tag .amenity-icon svg {
-      width: 22px;
-      height: 22px;
-      display: block;
-    }
-
-    .room-result-amenities .amenity-tag::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: calc(100% + 7px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(27,79,114,0.93);
-      color: #fff;
-      padding: 0.25rem 0.55rem;
-      border-radius: 4px;
-      font-size: 0.72rem;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.15s;
-      z-index: 30;
-      font-weight: 400;
-    }
-
-    .room-result-amenities .amenity-tag:hover::after {
-      opacity: 1;
-    }
-
-    .room-extra-bed {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.78rem;
-      color: var(--verde);
-      background: rgba(92,107,58,0.08);
-      border: 1px solid rgba(92,107,58,0.2);
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-      font-weight: 500;
-    }
-
-    .room-details-link {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--oro);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color var(--transition), gap var(--transition);
-    }
-    .room-details-link:hover {
-      color: var(--blu-dark);
-      text-decoration: underline;
-    }
-
-    /* Right price column */
-    .room-result-pricing {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      padding: 1.5rem 1.8rem;
-      min-width: 200px;
-      border-left: 1px solid rgba(200,169,110,0.15);
-      background: rgba(245,240,232,0.3);
-      text-align: right;
-    }
-
-    .room-result-pricing .pricing-nights {
-      font-size: 0.8rem;
-      color: var(--testo-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .room-result-pricing .pricing-ota {
-      text-decoration: line-through;
-      color: var(--terracotta);
-      font-size: 0.9rem;
-      opacity: 0.75;
-    }
-
-    .room-result-pricing .pricing-direct {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--verde);
-      line-height: 1.1;
-    }
-
-    .room-result-pricing .pricing-per-night {
-      font-size: 0.78rem;
-      color: var(--testo-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .room-result-pricing .pricing-savings {
-      font-size: 0.78rem;
-      color: var(--verde);
-      font-weight: 600;
-      margin-bottom: 1rem;
-      background: rgba(92,107,58,0.08);
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-    }
-
-    .room-result-pricing .pricing-discount {
-      font-size: 0.75rem;
-      color: var(--ocra-dark);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .room-result-pricing .btn-select-room {
-      padding: 0.7rem 1.5rem;
-      background: var(--blu);
-      color: var(--bianco);
-      border: none;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      white-space: nowrap;
-      width: 100%;
-    }
-
-    .room-result-pricing .btn-select-room:hover {
-      background: var(--blu-light);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(27,79,114,0.3);
-    }
-
-    .room-unavailable-msg {
-      font-size: 0.88rem;
-      color: var(--terracotta);
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    /* --- Calendar Full-Width + Stacked Layout --- */
-
-    /* Sezione calendario: full-width, centrata */
-    .calendar-section {
-      padding: 2.5rem 0 0;
-    }
-
-    .booking-calendar-panel {
-      background: var(--bianco);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px var(--ombra);
-      border: 1px solid rgba(200,169,110,0.18);
-      max-width: 900px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .booking-calendar-panel h4 {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--testo-muted);
-      margin-bottom: 1.2rem;
-      text-align: center;
-    }
-
-    /* Hint selezione date */
-    .cal-selection-hint {
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--ocra-dark);
-      font-weight: 500;
-      margin-bottom: 1rem;
-      min-height: 1.4em;
-      transition: color 0.2s;
-    }
-
-    /* Sezione rooms: griglia 2 colonne su desktop */
-    .rooms-section {
-      padding: 0 0 4rem;
-    }
-
-    .rooms-section .results-header {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .rooms-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* Le room card sono ora verticali (stacked) */
-    .room-result-card {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 240px auto auto;
-      gap: 0;
-      background: var(--bianco);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px var(--ombra);
-      margin-bottom: 0;
-      transition: box-shadow var(--transition), transform var(--transition);
-      border: 1px solid rgba(200,169,110,0.15);
-    }
-
-    .room-result-card:hover {
-      box-shadow: 0 6px 25px var(--ombra-forte);
-      transform: translateY(-2px);
-    }
-
-    .room-result-card.unavailable {
-      opacity: 0.55;
-      pointer-events: none;
-    }
-
-    .room-result-img {
-      height: 240px;
-      min-height: unset;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .room-result-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .room-result-card:hover .room-result-img img {
-      transform: scale(1.05);
-    }
-
-    .room-result-img .room-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--verde);
-      color: var(--bianco);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .room-result-body {
-      padding: 1.3rem 1.5rem 0.8rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .room-result-pricing {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem 1.3rem;
-      border-top: 1px solid rgba(200,169,110,0.15);
-      background: rgba(245,240,232,0.3);
-      text-align: left;
-      min-width: unset;
-    }
-
-    /* Pricing text block */
-    .pricing-text-block {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Right price column */
-    .room-result-pricing .pricing-nights {
-      font-size: 0.8rem;
-      color: var(--testo-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .room-result-pricing .pricing-ota {
-      text-decoration: line-through;
-      color: var(--terracotta);
-      font-size: 0.9rem;
-      opacity: 0.75;
-    }
-
-    .room-result-pricing .pricing-direct {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--verde);
-      line-height: 1.1;
-    }
-
-    .room-result-pricing .pricing-per-night {
-      font-size: 0.78rem;
-      color: var(--testo-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .room-result-pricing .pricing-savings {
-      font-size: 0.78rem;
-      color: var(--verde);
-      font-weight: 600;
-      background: rgba(92,107,58,0.08);
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-      display: inline-block;
-      margin-top: 0.2rem;
-    }
-
-    .room-result-pricing .pricing-discount {
-      font-size: 0.75rem;
-      color: var(--ocra-dark);
-      font-weight: 500;
-      margin-top: 0.2rem;
-    }
-
-    .room-result-pricing .btn-select-room {
-      padding: 0.75rem 1.5rem;
-      background: var(--blu);
-      color: var(--bianco);
-      border: none;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .room-result-pricing .btn-select-room:hover {
-      background: var(--blu-light);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(27,79,114,0.3);
-    }
-
-    .room-unavailable-msg {
-      font-size: 0.88rem;
-      color: var(--terracotta);
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    /* --- Calendar (now full-width, interactive) --- */
-    .mini-cal-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.2rem;
-      justify-content: center;
-    }
-
-    .mini-cal-tab {
-      padding: 0.5rem 1.5rem;
-      border: 1.5px solid rgba(200,169,110,0.3);
-      border-radius: 20px;
-      background: none;
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      color: var(--testo-light);
-      text-align: center;
-    }
-
-    .mini-cal-tab.active,
-    .mini-cal-tab:hover {
-      background: var(--ocra);
-      color: var(--bianco);
-      border-color: var(--ocra);
-    }
-
-    .mini-cal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .mini-cal-header span {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--blu-dark);
-    }
-
-    .mini-cal-nav {
-      width: 36px; height: 36px;
-      border: 1px solid var(--ocra);
-      border-radius: 50%;
-      background: none;
-      color: var(--ocra-dark);
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition);
-    }
-
-    .mini-cal-nav:hover {
-      background: var(--ocra);
-      color: var(--bianco);
-    }
-
-    .mini-cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 3px;
-      text-align: center;
-    }
-
-    .mini-cal-day-name {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--testo-muted);
-      text-transform: uppercase;
-      padding: 0.4rem 0;
-    }
-
-    /* Celle calendario con padding maggiore per tap mobile */
-    .mini-cal-day {
-      padding: 0.6rem 0.2rem;
-      font-size: 0.88rem;
-      border-radius: 6px;
-      cursor: default;
-      transition: background 0.12s, color 0.12s;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .mini-cal-day.available {
-      background: rgba(92,107,58,0.10);
-      color: var(--verde);
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    .mini-cal-day.available:hover {
-      background: rgba(92,107,58,0.25);
-      transform: scale(1.05);
-    }
-
-    /* Selezione check-in / check-out */
-    .mini-cal-day.cal-checkin,
-    .mini-cal-day.cal-checkout {
-      background: var(--ocra) !important;
-      color: #fff !important;
-      font-weight: 700;
-      border-radius: 6px;
-    }
-
-    /* Range tra i due estremi */
-    .mini-cal-day.cal-range {
-      background: rgba(200,169,110,0.22) !important;
-      color: var(--testo);
-      border-radius: 0;
-    }
-
-    /* Etichette check-in/out */
-    .mini-cal-day.cal-checkin::after  { content: 'IN'; display: block; font-size: 0.52rem; line-height: 1; opacity: 0.85; margin-top: 1px; }
-    .mini-cal-day.cal-checkout::after { content: 'OUT'; display: block; font-size: 0.52rem; line-height: 1; opacity: 0.85; margin-top: 1px; }
-
-    /* Giorni disabilitati dopo il check-in (precedenti al checkout) */
-    .mini-cal-day.cal-disabled-before-checkin {
-      background: rgba(200,169,110,0.05) !important;
-      color: var(--testo-muted) !important;
-      cursor: not-allowed !important;
-      opacity: 0.4;
-    }
-
-    .mini-cal-day.booked {
-      background: rgba(192,112,64,0.10);
-      color: var(--terracotta);
-      text-decoration: line-through;
-      font-size: 0.78rem;
-    }
-
-    .mini-cal-day.today {
-      border: 2px solid var(--ocra) !important;
-      font-weight: 700;
-    }
-
-    .mini-cal-day.empty {
-      visibility: hidden;
-    }
-
-    .mini-cal-legend {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.8rem;
-      font-size: 0.7rem;
-      color: var(--testo-muted);
-      justify-content: center;
-    }
-
-    .mini-cal-legend-dot {
-      display: inline-block;
-      width: 10px; height: 10px;
-      border-radius: 2px;
-      margin-right: 0.3rem;
-      vertical-align: middle;
-    }
-
-    .mini-cal-legend-dot.avail { background: rgba(92,107,58,0.35); }
-    .mini-cal-legend-dot.booked { background: rgba(192,112,64,0.35); }
-
-
-    /* --- Booking Form Modal/Step --- */
-    .booking-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9000;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-
-    .booking-overlay.active {
-      display: flex;
-    }
-
-    .booking-modal {
-      background: var(--bianco);
-      border-radius: 12px;
-      max-width: 600px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: modalSlideIn 0.35s ease;
-    }
-
-    @keyframes modalSlideIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(200,169,110,0.15);
-    }
-
-    .modal-header h2 {
-      font-size: 1.4rem;
-      margin: 0;
-    }
-
-    .modal-close {
-      width: 36px; height: 36px;
-      border: none;
-      background: var(--calce);
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--testo);
-      transition: all var(--transition);
-    }
-
-    .modal-close:hover {
-      background: var(--terracotta);
-      color: var(--bianco);
-    }
-
-    .modal-body {
-      padding: 2rem;
-    }
-
-    /* Summary in modal */
-    .booking-summary-strip {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.5rem;
-      background: var(--calce);
-      border-radius: 6px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .summary-item {
-      font-size: 0.82rem;
-      color: var(--testo-light);
-    }
-
-    .summary-item strong {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--testo);
-    }
-
-    .booking-total-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(92,107,58,0.08);
-      border: 1px solid rgba(92,107,58,0.2);
-      border-radius: 6px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .booking-total-strip .total-label {
-      font-size: 0.9rem;
-      color: var(--testo-light);
-    }
-
-    .booking-total-strip .total-ota {
-      text-decoration: line-through;
-      color: var(--terracotta);
-      font-size: 0.85rem;
-      opacity: 0.7;
-      margin-right: 0.5rem;
-    }
-
-    .booking-total-strip .total-direct {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--verde);
-    }
-
-    .booking-total-strip .total-savings {
-      font-size: 0.78rem;
-      color: var(--verde);
-      font-weight: 500;
-    }
-
-    /* Form in modal */
-    .modal-form .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .modal-form .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--testo);
-      margin-bottom: 0.3rem;
-    }
-
-    .modal-form .form-group label.required::after {
-      content: ' *';
-      color: var(--terracotta);
-    }
-
-    .modal-form .form-group input,
-    .modal-form .form-group textarea {
-      width: 100%;
-      padding: 0.65rem 0.8rem;
-      border: 2px solid rgba(200,169,110,0.3);
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--testo);
-      background: var(--calce-light);
-      transition: border-color var(--transition);
-      box-sizing: border-box;
-    }
-
-    .modal-form .form-group input:focus,
-    .modal-form .form-group textarea:focus {
-      outline: none;
-      border-color: var(--ocra);
-      background: var(--bianco);
-    }
-
-    .modal-form .form-group textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    .modal-form .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    /* Cancellation policy */
-    .cancellation-policy {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(92,107,58,0.07);
-      border: 1px solid rgba(92,107,58,0.25);
-      border-radius: 6px;
-      padding: 0.65rem 1rem;
-      margin-bottom: 1.2rem;
-      font-size: 0.82rem;
-      color: var(--verde);
-      font-weight: 500;
-    }
-
-    .cancel-icon {
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    /* Payment section */
-    .payment-section {
-      margin-top: 1.5rem;
-    }
-
-    .payment-section h4 {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--testo);
-      margin-bottom: 0.8rem;
-    }
-
-    .payment-option-card {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: var(--calce-light);
-      border: 2px solid rgba(200,169,110,0.2);
-      border-radius: 6px;
-      padding: 0.9rem 1rem;
-      margin-bottom: 0.6rem;
-      cursor: pointer;
-      transition: all var(--transition);
-    }
-
-    .payment-option-card:hover,
-    .payment-option-card.selected {
-      border-color: var(--ocra);
-      background: rgba(200,169,110,0.06);
-    }
-
-    .payment-option-card input[type="radio"] {
-      width: 18px; height: 18px;
-      accent-color: var(--ocra);
-      cursor: pointer;
-    }
-
-    .payment-option-info {
-      flex: 1;
-    }
-
-    .payment-option-info .pay-title {
-      font-weight: 600;
-      font-size: 0.88rem;
-      color: var(--testo);
-    }
-
-    .payment-option-info .pay-desc {
-      font-size: 0.78rem;
-      color: var(--testo-light);
-    }
-
-    .payment-icon {
-      font-size: 1.5rem;
-      opacity: 0.6;
-    }
-
-    /* Submit buttons */
-    .booking-submit-area {
-      margin-top: 1.5rem;
-    }
-
-    .btn-book-paypal {
-      display: none;
-      width: 100%;
-      padding: 0.85rem;
-      background: #0070ba;
-      color: var(--bianco);
-      border: none;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      margin-bottom: 0.5rem;
-    }
-
-    .btn-book-paypal.active { display: block; }
-    .btn-book-paypal:hover { background: #005a94; transform: translateY(-1px); }
-
-    .btn-book-offline {
-      display: none;
-      width: 100%;
-      padding: 0.85rem;
-      background: var(--ocra);
-      color: var(--bianco);
-      border: none;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition);
-      margin-bottom: 0.5rem;
-    }
-
-    .btn-book-offline.active { display: block; }
-    .btn-book-offline:hover { background: var(--ocra-dark); transform: translateY(-1px); }
-
-    .booking-trust-mini {
-      text-align: center;
-      padding: 0.7rem 0.8rem;
-      font-size: 0.78rem;
-      color: var(--testo-light);
-      border: 1px solid rgba(200,169,110,0.2);
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
-      background: rgba(200,169,110,0.05);
-    }
-
-    /* Booking success */
-    .booking-success-msg {
-      display: none;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .booking-success-msg.active { display: block; }
-
-    .booking-success-msg .success-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .booking-success-msg h3 {
-      color: var(--verde);
-      margin-bottom: 0.5rem;
-    }
-
-    .booking-success-msg p {
-      font-size: 0.9rem;
-      color: var(--testo-light);
-      margin-bottom: 1.2rem;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-success-wa {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1.6rem;
-      background: #25D366;
-      color: #fff;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      width: 100%;
-      margin-bottom: 0;
-    }
-
-    .btn-success-wa:hover {
-      background: #1ebe59;
-      transform: translateY(-1px);
-    }
-
-    /* --- Responsive --- */
-    @media (max-width: 900px) {
-      .rooms-grid {
-        grid-template-columns: 1fr;
-      }
-      .booking-calendar-panel {
-        padding: 1.5rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .search-bar {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      .search-field {
-        min-width: 100%;
-      }
-      .search-btn {
-        width: 100%;
-        padding: 0.8rem;
-      }
-      .room-result-img {
-        height: 200px;
-      }
-      .room-result-pricing {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-      }
-      .room-result-pricing .btn-select-room {
-        width: 100%;
-      }
-      .modal-form .form-row {
-        grid-template-columns: 1fr;
-      }
-      .booking-summary-strip {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-      .modal-body {
-        padding: 1.5rem;
-      }
-      .mini-cal-day {
-        padding: 0.5rem 0.1rem;
-        min-height: 40px;
-        font-size: 0.82rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .search-section {
-        padding: 1.5rem 0;
-      }
-      .search-bar {
-        padding: 1rem;
-      }
-      .booking-calendar-panel {
-        padding: 1rem;
-      }
-      .mini-cal-grid {
-        gap: 2px;
-      }
-    }
-  </style>
+<link href="https://www.casaebottegapuglia.it/en/prenota.html" rel="canonical"/>
+<link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="it" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/en/prenota.html" hreflang="en" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/fr/prenota.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/de/prenota.html" hreflang="de" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/nl/prenota.html" hreflang="nl" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/es/prenota.html" hreflang="es" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="x-default" rel="alternate"/>
+<link rel="preload" href="../../foto-la-bottega/bottega-01-foto principale.webp" as="image" fetchpriority="high"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link href="../css/style-v2.css" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
 </head>
 <body>
-<!-- HEADER -->
-<header class="site-header">
-<nav class="nav-wrapper">
-<a class="nav-logo" href="index.html">Casa <span>e</span> Bottega</a>
-<ul class="nav-links">
-<li><a data-i18n="nav_home" href="index.html">Home</a></li>
-<li><a data-i18n="nav_rooms" href="camere.html">Rooms</a></li>
-<li><a class="active" data-i18n="nav_book" href="prenota.html">Book</a></li>
-<li><a data-i18n="nav_blog" href="blog.html">Stories</a></li>
-<li><a data-i18n="nav_contact" href="contatti.html">Location</a></li>
-<li>
-<div class="lang-switcher">
-<a class="lang-btn" href="../prenota.html" hreflang="it" title="Italiano">IT</a>
-<a class="lang-btn active" href="../en/prenota.html" hreflang="en" title="English">EN</a>
-<a class="lang-btn" href="../fr/prenota.html" hreflang="fr" title="Français">FR</a>
-<a class="lang-btn" href="../de/prenota.html" hreflang="de" title="Deutsch">DE</a>
-<a class="lang-btn" href="../nl/prenota.html" hreflang="nl" title="Nederlands">NL</a>
-<a class="lang-btn" href="../es/prenota.html" hreflang="es" title="Español">ES</a>
-</div>
-</li>
-</ul>
-<button aria-label="Menu" class="menu-toggle">
-<span></span><span></span><span></span>
-</button>
-</nav>
-</header>
-<!-- PAGE HEADER -->
-<div class="page-header">
-<div class="container">
-<h1 data-i18n="book_page_title">Verifica disponibilità</h1>
-<p data-i18n="book_page_desc">Da €60/notte — prenota diretto e risparmi il 20% rispetto a Booking e Airbnb.</p>
-</div>
-</div>
-<!-- SEARCH BAR -->
-<section class="search-section">
-<div class="container">
-<div class="search-bar">
-<div class="search-field">
-<label data-i18n="book_checkin" for="search-checkin">Check-in</label>
-<input id="search-checkin" required="" type="date"/>
-</div>
-<div class="search-field">
-<label data-i18n="book_checkout" for="search-checkout">Check-out</label>
-<input id="search-checkout" required="" type="date"/>
-</div>
-<div class="search-field" style="max-width: 130px;">
-<label data-i18n="book_guests" for="search-guests">Guests</label>
-<select id="search-guests">
-<option value="1">1</option>
-<option selected="" value="2">2</option>
-</select>
-</div>
-<button class="search-btn" data-i18n="book_search_btn" id="search-btn" type="button">Cerca</button>
-</div>
-<!-- Messaggio limite 29 notti -->
-<div id="max-nights-error" style="display:none; margin-top:12px; padding:12px 16px; background:#fff3cd; border:1px solid #ffc107; border-radius:6px; color:#856404; font-size:0.9rem; text-align:center;">
-        Il soggiorno massimo consentito come locazione turistica è di 29 giorni. Per soggiorni più lunghi <a href="contatti.html" style="color:#856404;">contattaci direttamente</a>.
+
+<!-- ══ NAV v2 ══════════════════════════════════════════════════════ -->
+<header>
+  <nav class="v2-nav" role="navigation" aria-label="Main navigation">
+    <div class="v2-nav-inner">
+
+      <!-- Left: nav links (desktop) -->
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a href="../index.html" data-i18n="nav_home">Home</a>
+        <a href="../camere.html" data-i18n="nav_rooms">Le Camere</a>
+        <a class="active" href="../prenota.html" data-i18n="nav_book">Prenota</a>
+        <a href="../blog.html" data-i18n="nav_blog">Racconti</a>
+        <a href="../contatti.html" data-i18n="nav_contact">Posizione</a>
       </div>
+
+      <!-- Centre: brand -->
+      <a class="v2-nav-brand" href="../index.html" aria-label="Casa e Bottega — Home">
+        Casa <em>e</em> Bottega
+      </a>
+
+      <!-- Right: lang + CTA (desktop) + hamburger -->
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Select language">
+          <a href="../../prenota.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a class="on" href="../prenota.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="../../fr/prenota.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a href="../../de/prenota.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../../nl/prenota.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="../../es/prenota.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="../prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile nav panel — lives OUTSIDE <nav> so backdrop-filter doesn't trap position:fixed -->
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobile menu" aria-hidden="true">
+        <a href="../index.html" data-i18n="nav_home">Home</a>
+        <a href="../camere.html" data-i18n="nav_rooms">Le Camere</a>
+        <a class="active" href="../prenota.html" data-i18n="nav_book">Prenota</a>
+        <a href="../blog.html" data-i18n="nav_blog">Racconti</a>
+        <a href="../contatti.html" data-i18n="nav_contact">Posizione</a>
+  <!-- Language switcher -->
+  <div class="v2-nav-lang" role="list" aria-label="Select language">
+    <a href="../../prenota.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a class="on" href="../prenota.html" hreflang="en" title="English" role="listitem">EN</a>
+    <a href="../../fr/prenota.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a href="../../de/prenota.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="../../nl/prenota.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a href="../../es/prenota.html" hreflang="es" title="Español" role="listitem">ES</a>
+  </div>
 </div>
-</section>
-<!-- CALENDARIO DISPONIBILITÀ (full-width, interattivo) -->
-<section class="calendar-section">
-<div class="container">
-<div class="booking-calendar-panel">
-<h4 data-i18n="book_calendar_title">Calendario disponibilità — clicca per selezionare le date</h4>
-<div class="mini-cal-tabs">
-<button class="mini-cal-tab active" data-room="dimora">La Dimora</button>
-<button class="mini-cal-tab" data-room="bottega">La Bottega</button>
-</div>
-<!-- Hint visivo per guidare l'utente -->
-<div class="cal-selection-hint" id="cal-hint">Clicca un giorno per impostare il check-in</div>
-<div class="mini-cal-header">
-<button class="mini-cal-nav" id="mini-cal-prev">‹</button>
-<span id="mini-cal-title">Aprile 2026</span>
-<button class="mini-cal-nav" id="mini-cal-next">›</button>
-</div>
-<div class="mini-cal-grid" id="mini-cal-grid">
-<!-- Calendar grid injected here -->
-</div>
-<div class="mini-cal-legend">
-<span><span class="mini-cal-legend-dot avail"></span> <span data-i18n="cal_available">Disponibile</span></span>
-<span><span class="mini-cal-legend-dot booked"></span> <span data-i18n="cal_booked">Occupato</span></span>
-</div>
-</div>
-</div>
+
+<!-- ══ HERO ════════════════════════════════════════════════════════ -->
+<section class="pren-hero">
+  <div class="v2-container">
+    <div class="pren-hero-inner">
+      <span class="pren-hero-label">Prenotazione diretta — nessuna commissione</span>
+      <h1>Prenota<br/><em>il tuo soggiorno.</em></h1>
+      <p class="pren-hero-sub">Da €50/notte, con il 20% di sconto rispetto a Booking e Airbnb. Tre passi: date, camera, conferma.</p>
+      <div class="pren-hero-badges">
+        <span class="pren-hero-badge"><strong>9,8</strong> / 10 Booking</span>
+        <span class="pren-hero-badge">·</span>
+        <span class="pren-hero-badge">Airbnb <strong>Superhost</strong></span>
+        <span class="pren-hero-badge">·</span>
+        <span class="pren-hero-badge"><strong>300 m</strong> dal mare</span>
+      </div>
+      <button class="v2-btn v2-btn--primary" id="v2-open-booking" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
+        Inizia la prenotazione →
+      </button>
+    </div>
+  </div>
 </section>
 
-<!-- RISULTATI CAMERE (sotto il calendario) -->
-<section class="rooms-section">
-<div class="container">
-<!-- Placeholder (before search) -->
-<div class="results-placeholder" id="results-placeholder" style="text-align:center; padding:3rem 2rem; color:var(--testo-muted);">
-<h3 data-i18n="book_placeholder_title">Seleziona le date per vedere le camere disponibili</h3>
-<p data-i18n="book_placeholder_desc">Clicca sul calendario sopra per scegliere check-in e check-out.</p>
-</div>
-<!-- Results (after search) -->
-<div id="results-container" style="display: none;">
-<div class="results-header">
-<h2 data-i18n="book_results_title">Camere disponibili</h2>
-<div class="results-dates-badge">
-<span id="results-dates-text"></span>
-<strong id="results-nights-text"></strong>
-</div>
-</div>
-<div class="rooms-grid" id="room-cards-container">
-<!-- Room cards injected here -->
-</div>
-</div>
-</div>
+<!-- ══ GUARANTEES ══════════════════════════════════════════════════ -->
+<section class="pren-guarantees">
+  <div class="v2-container">
+    <span class="pren-section-label">Perché prenotare direttamente</span>
+    <h2 class="pren-section-title">Le garanzie<br/><em style="font-style:italic; font-weight:300;">Casa e Bottega.</em></h2>
+    <div class="pren-guarantees-grid">
+      <div class="pren-guarantee-item">
+        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <div class="pren-guarantee-title">Pagamento sicuro</div>
+        <p class="pren-guarantee-body">PayPal certificato o accordo diretto con il proprietario. I tuoi dati non passano da piattaforme terze. Zero commissioni nascoste.</p>
+      </div>
+      <div class="pren-guarantee-item">
+        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+        <div class="pren-guarantee-title">Assistenza diretta</div>
+        <p class="pren-guarantee-body">Scrivi a Nicoletta su WhatsApp e ricevi risposta entro pochi minuti — non ore. Una persona reale che conosce la tua camera.</p>
+      </div>
+      <div class="pren-guarantee-item">
+        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+        <div class="pren-guarantee-title">Miglior prezzo garantito</div>
+        <p class="pren-guarantee-body">Il prezzo diretto è sempre almeno il 20% in meno rispetto a Booking.com e Airbnb. Se trovi un prezzo inferiore, adeguiamo.</p>
+      </div>
+      <div class="pren-guarantee-item">
+        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <div class="pren-guarantee-title">Cancellazione chiara</div>
+        <p class="pren-guarantee-body">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo. Nessuna sorpresa, nessuna penale nascosta.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- BOOKING MODAL -->
-<div class="booking-overlay" id="booking-overlay">
-<div class="booking-modal">
-<!-- Modal Content: Form -->
-<div id="booking-form-section">
-<div class="modal-header">
-<h2 data-i18n="book_complete_title">Complete your booking</h2>
-<button class="modal-close" id="modal-close">×</button>
-</div>
-<div class="modal-body">
-<!-- Summary strip -->
-<div class="booking-summary-strip">
-<div class="summary-item">
-<span data-i18n="book_room_summary">Room</span>
-<strong id="modal-room-name">—</strong>
-</div>
-<div class="summary-item">
-<span data-i18n="book_dates_summary">Dates</span>
-<strong id="modal-dates">—</strong>
-</div>
-<div class="summary-item">
-<span data-i18n="book_nights_summary">Nights</span>
-<strong id="modal-nights">—</strong>
-</div>
-</div>
-<!-- Total -->
-<div class="booking-total-strip">
-<div>
-<div class="total-label" data-i18n="book_total_price">Total</div>
-<div class="total-savings" id="modal-savings"></div>
-</div>
-<div style="text-align: right;">
-<span class="total-ota" id="modal-total-ota"></span>
-<span class="total-direct" id="modal-total-direct"></span>
-</div>
-</div>
-<!-- Guest Form -->
-<form class="modal-form" id="booking-form">
-<div class="form-row">
-<div class="form-group">
-<label class="required" data-i18n="book_name" for="guest-name">Name</label>
-<input id="guest-name" name="name" required="" type="text"/>
-</div>
-<div class="form-group">
-<label class="required" data-i18n="book_phone" for="guest-phone">Phone</label>
-<input id="guest-phone" inputmode="numeric" name="phone" pattern="[+\d\s\-\(\)]{6,20}" required="" title="Inserisci un numero di telefono valido (solo cifre, spazi, +, -, parentesi)" type="tel"/>
-</div>
-</div>
-<div class="form-group">
-<label class="required" data-i18n="book_email" for="guest-email">Email</label>
-<input autocomplete="email" id="guest-email" name="email" required="" title="Inserisci un indirizzo email valido (es. nome@esempio.it)" type="email"/>
-</div>
-<div class="form-group">
-<label data-i18n="book_message" for="guest-message">Notes or requests</label>
-<textarea id="guest-message" name="message" placeholder="Orario di arrivo, richieste speciali..."></textarea>
-</div>
-<!-- Cancellation policy -->
-<div class="cancellation-policy">
-  <span class="cancel-icon">✓</span>
-  <span data-i18n="book_cancel_policy">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo.</span>
-</div>
-<!-- Payment Options -->
-<div class="payment-section">
-<h4 data-i18n="book_payment_title">Payment info:</h4>
-<label class="payment-option-card selected" id="pay-card-paypal">
-<input checked="" name="pay-method" type="radio" value="paypal"/>
-<div class="payment-option-info">
-<div class="pay-title" data-i18n="book_pay_paypal">PayPal</div>
-<div class="pay-desc" data-i18n="book_pay_paypal_desc">Verrai reindirizzato a PayPal per il pagamento sicuro.</div>
-</div>
-<span class="payment-icon">💳</span>
-</label>
-<label class="payment-option-card" id="pay-card-offline">
-<input name="pay-method" type="radio" value="offline"/>
-<div class="payment-option-info">
-<div class="pay-title" data-i18n="book_pay_offline">Offline payment</div>
-<div class="pay-desc" data-i18n="book_pay_offline_desc">By selecting this payment method, you will arrange the payment with the owner offline, after booking.</div>
-</div>
-<span class="payment-icon">🏦</span>
-</label>
-</div>
-<!-- Submit -->
-<div class="booking-submit-area">
-<div class="booking-trust-mini">
-  ⭐ 9,8/10 Booking.com · 🏆 Airbnb Superhost · <span data-i18n="book_trust_text">Among the top-rated properties in Manfredonia</span>
-</div>
-<button class="btn-book-paypal active" data-i18n="book_send_paypal" id="btn-submit-paypal" type="submit">Proceed to PayPal payment</button>
-<button class="btn-book-offline" data-i18n="book_send_offline" id="btn-submit-offline" type="submit">Complete booking</button>
-</div>
-</form>
 
+<!-- ══ COME FUNZIONA ═══════════════════════════════════════════════ -->
+<section class="pren-how">
+  <div class="v2-container">
+    <span class="pren-section-label">Il processo</span>
+    <h2 class="pren-section-title">Come funziona</h2>
+    <div class="pren-how-steps">
+      <div class="pren-how-step">
+        <div class="pren-how-num">01</div>
+        <div class="pren-how-step-title">Scegli le date</div>
+        <p class="pren-how-step-body">Apri il calendario, clicca il giorno di arrivo poi quello di partenza. I giorni occupati sono sbarrati — solo le date libere sono cliccabili. Puoi scegliere anche la camera di riferimento per verificare la disponibilità.</p>
+      </div>
+      <div class="pren-how-step">
+        <div class="pren-how-num">02</div>
+        <div class="pren-how-step-title">Scegli la camera</div>
+        <p class="pren-how-step-body">Vedi le camere disponibili nel periodo scelto con il prezzo diretto e il confronto con Booking e Airbnb. Scegli quella che fa per te — La Dimora o La Bottega.</p>
+      </div>
+      <div class="pren-how-step">
+        <div class="pren-how-num">03</div>
+        <div class="pren-how-step-title">Conferma e paga</div>
+        <p class="pren-how-step-body">Inserisci i tuoi dati, scegli il metodo di pagamento (PayPal o diretto con l'host) e invia. Ricevi una conferma entro poche ore — o scrivi a Nicoletta su WhatsApp se preferisci parlare con una persona.</p>
+      </div>
+    </div>
+    <div style="margin-top: 3rem; text-align: center;">
+      <button class="v2-btn v2-btn--primary" id="v2-open-booking-2" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
+        Inizia la prenotazione →
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HIDDEN INPUTS (JS compatibility) ═══════════════════════════ -->
+<input id="search-checkin" type="date" aria-hidden="true"/>
+<input id="search-checkout" type="date" aria-hidden="true"/>
+<select id="search-guests" aria-hidden="true">
+  <option value="1">1</option>
+  <option value="2" selected>2</option>
+</select>
+<div id="max-nights-error" aria-hidden="true"></div>
+
+<!-- ══ BOOKING MODAL v2 ════════════════════════════════════════════ -->
+<div class="v2-bm-overlay" id="v2-bm-overlay" role="dialog" aria-modal="true" aria-label="Booking">
+  <div class="v2-bm-card">
+
+    <!-- Header -->
+    <div class="v2-bm-header">
+      <span class="v2-bm-header-title">Prenota il tuo soggiorno</span>
+      <button class="v2-bm-close" id="v2-bm-close" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Step rail -->
+    <div class="v2-bm-rail">
+      <div class="v2-bm-rail-step active" id="rail-1">
+        <div class="v2-bm-rail-circle" id="rail-circle-1">1</div>
+        <div class="v2-bm-rail-label-wrap">
+          <span class="v2-bm-rail-sublabel">Step 01</span>
+          <span class="v2-bm-rail-label">Date</span>
+        </div>
+      </div>
+      <div class="v2-bm-rail-step" id="rail-2">
+        <div class="v2-bm-rail-circle" id="rail-circle-2">2</div>
+        <div class="v2-bm-rail-label-wrap">
+          <span class="v2-bm-rail-sublabel">Step 02</span>
+          <span class="v2-bm-rail-label">Camera</span>
+        </div>
+      </div>
+      <div class="v2-bm-rail-step" id="rail-3">
+        <div class="v2-bm-rail-circle" id="rail-circle-3">3</div>
+        <div class="v2-bm-rail-label-wrap">
+          <span class="v2-bm-rail-sublabel">Step 03</span>
+          <span class="v2-bm-rail-label">Dati</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── STEP 1: DATE ──────────────────────────────────────────── -->
+    <div class="v2-bm-step active v2-bm-body" id="v2-step-1">
+      <div class="v2-bm-step1-grid">
+
+        <!-- Calendar (no tabs — tabs are in step 2) -->
+        <div class="v2-bm-cal-wrap">
+          <span class="v2-bm-cal-section-label">Scegli le date</span>
+          <!-- hidden tabs kept for JS compat -->
+          <div class="mini-cal-tabs" style="display:none">
+            <button class="mini-cal-tab active" data-room="dimora">La Dimora</button>
+            <button class="mini-cal-tab" data-room="bottega">La Bottega</button>
+          </div>
+          <div class="cal-selection-hint" id="cal-hint">Clicca un giorno per impostare il check-in</div>
+          <div class="mini-cal-header">
+            <button class="mini-cal-nav" id="mini-cal-prev">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span id="mini-cal-title">Aprile 2026</span>
+            <button class="mini-cal-nav" id="mini-cal-next">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+          <div class="mini-cal-grid" id="mini-cal-grid"></div>
+          <div class="mini-cal-legend">
+            <span><span class="mini-cal-legend-dot avail"></span><span data-i18n="cal_available">Disponibile</span></span>
+            <span><span class="mini-cal-legend-dot booked"></span><span data-i18n="cal_booked">Occupato</span></span>
+          </div>
+        </div>
+
+        <!-- Stay summary panel (light) -->
+        <div class="v2-bm-stay-panel">
+          <span class="v2-bm-stay-label">Il tuo soggiorno</span>
+          <div class="v2-bm-date-row">
+            <div class="v2-bm-date-box">
+              <span class="v2-bm-date-box-lbl">Check-in</span>
+              <span class="v2-bm-date-box-val" id="v2-display-checkin">—</span>
+              <span class="v2-bm-date-box-sub" id="v2-sub-checkin">from 3 pm</span>
+            </div>
+            <div class="v2-bm-date-box">
+              <span class="v2-bm-date-box-lbl">Check-out</span>
+              <span class="v2-bm-date-box-val" id="v2-display-checkout">—</span>
+              <span class="v2-bm-date-box-sub" id="v2-sub-checkout">by 11 am</span>
+            </div>
+          </div>
+          <div class="v2-bm-nights-row">
+            <span class="v2-bm-nights-label">Notti</span>
+            <span class="v2-bm-nights-val" id="v2-display-nights">—</span>
+          </div>
+          <div class="v2-bm-guests-row">
+            <span class="v2-bm-guests-lbl">Ospiti</span>
+            <div class="v2-bm-guests-ctrl">
+              <button class="v2-bm-guests-btn" id="v2-guests-minus" aria-label="Reduce guests">−</button>
+              <span class="v2-bm-guests-count" id="v2-guests-count">2</span>
+              <button class="v2-bm-guests-btn" id="v2-guests-plus" aria-label="Add guests">+</button>
+              <span class="v2-bm-guests-word">guests</span>
+            </div>
+          </div>
+          <p id="v2-step1-error" class="v2-bm-error-panel">Seleziona check-in e check-out per continuare.</p>
+          <button class="v2-bm-stay-cta" id="v2-step1-next-panel">
+            Avanti: scegli camera →
+          </button>
+          <p class="v2-bm-stay-note">Soggiorno massimo 29 giorni (locazione turistica). Per soggiorni più lunghi <a href="../contatti.html" style="color:var(--petrolio)">contattaci</a>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── STEP 2: CAMERA ────────────────────────────────────────── -->
+    <div class="v2-bm-step v2-bm-body" id="v2-step-2">
+      <div class="v2-bm-rooms-grid" id="v2-rooms-grid">
+        <!-- injected by JS -->
+      </div>
+    </div>
+
+    <!-- ─── STEP 3: DATI ──────────────────────────────────────────── -->
+    <div class="v2-bm-step v2-bm-body" id="v2-step-3">
+      <div id="booking-form-section">
+        <div class="v2-bm-step3-grid">
+
+          <!-- Form -->
+          <div class="v2-bm-form-side">
+            <form class="v2-modal-form" id="booking-form">
+              <p style="font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin:0 0 1.2rem; opacity:0.7;">I tuoi dati</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="required" data-i18n="book_name" for="guest-name">Nome e Cognome</label>
+                  <input id="guest-name" name="name" required type="text" autocomplete="name" placeholder="Maria Rossi"/>
+                </div>
+                <div class="form-group">
+                  <label class="required" data-i18n="book_phone" for="guest-phone">Telefono · WhatsApp</label>
+                  <input id="guest-phone" inputmode="numeric" name="phone" required type="tel" autocomplete="tel" placeholder="+39 333 000 0000"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="required" data-i18n="book_email" for="guest-email">Email</label>
+                <input id="guest-email" name="email" required type="email" autocomplete="email" placeholder="you@email.com"/>
+              </div>
+              <div class="form-group">
+                <label data-i18n="book_message" for="guest-message">Note o richieste (opzionale)</label>
+                <textarea id="guest-message" name="message" placeholder="Late arrival, restaurant tips…"></textarea>
+              </div>
+
+              <!-- Payment -->
+              <div class="v2-payment-section">
+                <span class="v2-payment-label" data-i18n="book_payment_title">Metodo di pagamento</span>
+                <div class="payment-cards-grid">
+                  <label class="payment-option-card selected" id="pay-card-paypal">
+                    <input checked name="pay-method" type="radio" value="paypal"/>
+                    <div class="pay-card-inner">
+                      <div class="pay-card-text">
+                        <div class="pay-title" data-i18n="book_pay_paypal">PayPal</div>
+                        <div class="pay-desc" data-i18n="book_pay_paypal_desc">Pagamento sicuro online</div>
+                      </div>
+                      <svg class="pay-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="payment-option-card" id="pay-card-offline">
+                    <input name="pay-method" type="radio" value="offline"/>
+                    <div class="pay-card-inner">
+                      <div class="pay-card-text">
+                        <div class="pay-title" data-i18n="book_pay_offline">Offline</div>
+                        <div class="pay-desc" data-i18n="book_pay_offline_desc">Bonifico · accordo diretto</div>
+                      </div>
+                      <svg class="pay-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Cancellation note -->
+              <div class="v2-cancel-note" style="margin-top:1.2rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/></svg>
+                <span data-i18n="book_cancel_policy">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo. Nessuna penale nascosta.</span>
+              </div>
+
+              <!-- Submit (hidden — button lives in sidebar) -->
+              <div class="v2-bm-submit-area">
+                <button class="btn-book-paypal active" data-i18n="book_send_paypal" id="btn-submit-paypal" type="submit">Procedi al pagamento PayPal</button>
+                <button class="btn-book-offline" data-i18n="book_send_offline" id="btn-submit-offline" type="submit">Completa prenotazione</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Summary sidebar -->
+          <div class="v2-bm-summary-side">
+            <span class="v2-bm-summary-overtitle">Riepilogo</span>
+            <div class="v2-bm-summary-room" id="modal-room-name">—</div>
+            <div class="v2-bm-summary-meta" id="modal-meta">—</div>
+            <div class="v2-bm-summary-line">
+              <span id="modal-rate-label">—</span>
+              <span id="modal-nights-total">—</span>
+            </div>
+            <div class="v2-bm-summary-line">
+              <span>Pulizie finali</span>
+              <span>€25</span>
+            </div>
+            <div class="v2-bm-summary-total">
+              <div class="v2-bm-summary-total-label">Totale</div>
+              <div class="v2-bm-summary-ota" id="modal-total-ota"></div>
+              <div class="v2-bm-summary-direct" id="modal-total-direct">—</div>
+              <span class="v2-bm-summary-savings" id="modal-savings"></span>
+            </div>
+            <!-- Sidebar CTA -->
+            <div class="v2-bm-sidebar-cta">
+              <button class="btn-sidebar-confirm" id="btn-sidebar-confirm" type="button">
+                CONFERMA RICHIESTA
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <button class="btn-sidebar-back" id="btn-sidebar-back" type="button">← Torna alla camera</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div class="booking-success-msg" id="booking-success">
+        <div class="success-icon">✓</div>
+        <h3 data-i18n="book_success_title" id="success-title">Richiesta inviata!</h3>
+        <p data-i18n="book_success_msg" id="success-message">Riceverai una conferma via email entro poche ore. Per qualsiasi necessità siamo subito disponibili su WhatsApp.</p>
+        <a class="btn-success-wa" href="https://wa.me/393334705574?text=Ciao%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="book_success_wa">Scrivici su WhatsApp</span>
+        </a>
+        <a class="v2-btn" data-i18n="book_back_home" href="../index.html" style="display:inline-block; margin-top:0.5rem; width:100%; max-width:340px; text-align:center; text-decoration:none; background:transparent; border:1px solid rgba(154,143,128,0.5); color:var(--ink);">Torna alla home</a>
+      </div>
+    </div>
+
+    <!-- Modal nav bar (bottom) -->
+    <div class="v2-bm-nav" id="v2-bm-nav">
+      <a class="v2-bm-nav-wa" href="https://wa.me/393334705574?text=Ciao!%20Vorrei%20prenotare%20Casa%20e%20Bottega." target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Prenota via WhatsApp
+      </a>
+      <div style="display:flex; gap:0.6rem; align-items:center;">
+        <button class="v2-bm-nav-back" id="v2-bm-back" style="display:none;">← Back</button>
+        <button class="v2-bm-nav-next" id="v2-bm-next">Avanti →</button>
+      </div>
+    </div>
+
+  </div>
 </div>
-</div>
-<!-- Success Message -->
-<div class="booking-success-msg" id="booking-success">
-<div class="success-icon">✅</div>
-<h3 data-i18n="book_success_title" id="success-title">Richiesta inviata!</h3>
-<p data-i18n="book_success_msg" id="success-message">Riceverai una conferma via email entro poche ore. Per qualsiasi necessità siamo subito disponibili su WhatsApp.</p>
-<a class="btn btn-success-wa" href="https://wa.me/393334705574?text=Ciao%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.4rem"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span data-i18n="book_success_wa">Scrivici su WhatsApp</span>
-</a>
-<a class="btn btn-primary" data-i18n="book_back_home" href="index.html" style="margin-top:0.5rem;">Torna alla home</a>
-</div>
-</div>
-</div>
-<!-- FOOTER -->
-<footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a class="nav-logo" href="index.html" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
-<p data-i18n="footer_desc">Steps from the sea, in the heart of Gargano.</p>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_pages">Pages</h4>
-<ul>
-<li><a data-i18n="nav_home" href="index.html">Home</a></li>
-<li><a data-i18n="nav_rooms" href="camere.html">Rooms</a></li>
-<li><a data-i18n="nav_book" href="prenota.html">Book</a></li>
-<li><a data-i18n="nav_blog" href="blog.html">Stories</a></li>
-<li><a href="../regole.html">Regole della Casa</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_follow">Follow us</h4>
-<ul>
-<li><a href="#">Airbnb</a></li>
-<li><a href="#">Booking.com</a></li>
-<li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_contact">Contact</h4>
-<ul>
-<li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-<li><a href="https://wa.me/393334705574">WhatsApp</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">All rights reserved.</span></p>
-</div>
-</div>
+<!-- END MODAL -->
+
+<!-- ══ FOOTER v2 ══════════════════════════════════════════════════ -->
+<footer class="v2-footer">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+      <div class="v2-footer-brand">
+        <a class="v2-nav-logo" href="../index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
+        <p data-i18n="footer_desc" style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;">A due passi dal mare, nel cuore del Gargano.</p>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_pages">Pagine</h4>
+        <ul>
+          <li><a data-i18n="nav_home" href="../index.html">Home</a></li>
+          <li><a data-i18n="nav_rooms" href="../camere.html">Le Camere</a></li>
+          <li><a data-i18n="nav_book" href="../prenota.html">Prenota</a></li>
+          <li><a data-i18n="nav_blog" href="../blog.html">Racconti</a></li>
+          <li><a href="../regole.html">Regole della Casa</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_follow">Seguici</h4>
+        <ul>
+          <li><a href="#">Airbnb</a></li>
+          <li><a href="#">Booking.com</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_contact">Contatti</h4>
+        <ul>
+          <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">
+      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
+    </div>
+  </div>
 </footer>
-<!-- SCRIPTS -->
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
+
+<!-- ══ STICKY TOUCHPOINTS ══════════════════════════════════════════ -->
+<a class="v2-wa-pill"
+   href="https://wa.me/393334705574?text=Ciao!%20Sto%20cercando%20di%20completare%20una%20prenotazione%20sul%20vostro%20sito.%20Potete%20aiutarmi%3F"
+   target="_blank" rel="noopener" aria-label="Write on WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Any questions? Write here</span>
+</a>
+
+<!-- ══ SCRIPTS ═════════════════════════════════════════════════════ -->
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+/* ============================================================
+   v2 BOOKING MODAL CONTROLLER
+   Runs before the IIFE below so _selectRoom can be overridden.
+   ============================================================ */
+(function() {
+  'use strict';
+
+  var currentStep = 1;
+  var v2GuestsCount = 2;
+
+  /* ── open / close ── */
+  function openModal(step) {
+    document.getElementById('v2-bm-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    gotoStep(step || 1);
+  }
+  function closeModal() {
+    document.getElementById('v2-bm-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── step navigation ── */
+  function gotoStep(n) {
+    currentStep = n;
+    // panels
+    [1,2,3].forEach(function(i) {
+      var el = document.getElementById('v2-step-' + i);
+      if (el) el.classList.toggle('active', i === n);
+    });
+    // rail
+    [1,2,3].forEach(function(i) {
+      var rail = document.getElementById('rail-' + i);
+      var circle = document.getElementById('rail-circle-' + i);
+      if (!rail) return;
+      rail.classList.remove('active','done');
+      if (i === n) { rail.classList.add('active'); circle.textContent = i; }
+      else if (i < n) {
+        rail.classList.add('done');
+        circle.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      } else {
+        circle.textContent = i;
+      }
+    });
+    // back/next buttons
+    var backBtn = document.getElementById('v2-bm-back');
+    var nextBtn = document.getElementById('v2-bm-next');
+    var navBar  = document.getElementById('v2-bm-nav');
+    if (backBtn) backBtn.style.display = n > 1 ? 'block' : 'none';
+    if (nextBtn) nextBtn.style.display = 'none'; // always hidden — each step has its own CTA
+    // Step 1: nav bar hidden (CTA inside panel). Step 2: show back only. Step 3: hidden (submit inside form).
+    if (navBar) navBar.style.display = (n === 2) ? 'flex' : 'none';
+    // scroll to top of modal
+    var card = document.querySelector('.v2-bm-card');
+    if (card) card.scrollTop = 0;
+    // render rooms on step 2
+    if (n === 2) renderV2Rooms();
+  }
+
+  /* ── step 2: render room cards ── */
+  function renderV2Rooms() {
+    var grid = document.getElementById('v2-rooms-grid');
+    if (!grid) return;
+    var ci = document.getElementById('search-checkin').value;
+    var co = document.getElementById('search-checkout').value;
+    if (typeof ROOMS === 'undefined' || !ci || !co) {
+      grid.innerHTML = '<p style="font-family:Inter,sans-serif;color:var(--stone);padding:1rem;">Seleziona prima le date.</p>';
+      return;
+    }
+    var html = '';
+    ROOMS.forEach(function(room) {
+      var avail = (typeof checkAvailability === 'function') ? checkAvailability(room.id, ci, co) : true;
+      var pricing = (typeof calcPricing === 'function') ? calcPricing(room, ci, co) : null;
+      var totalDirect = pricing ? pricing.totalDirect : '—';
+      var totalOTA    = pricing ? pricing.totalOTA : null;
+      var savings     = pricing ? pricing.savings : null;
+      var nights      = pricing ? pricing.nights : '—';
+      var imgSrc      = room.id === 'dimora'
+        ? '../foto-la-dimora/dimora-01-foto-principale.jpeg'
+        : '../foto-la-bottega/bottega-01-foto%20principale.webp';
+      var selectBtn = avail
+        ? '<button class="v2-bm-select-btn" onclick="window._selectRoom(\'' + room.id + '\')">' +
+          (typeof t === 'function' ? t('book_select') : 'Seleziona') + '</button>'
+        : '<span class="v2-bm-room-unavail">Non disponibile in queste date</span>';
+      html += '<div class="v2-bm-room-card' + (avail ? '' : ' unavailable') + '">' +
+        '<div class="v2-bm-room-img"><img src="' + imgSrc + '" alt="' + room.name + '" loading="lazy"/></div>' +
+        '<div class="v2-bm-room-body">' +
+          '<div class="v2-bm-room-name">' + room.name + '</div>' +
+          '<div class="v2-bm-room-tagline">' + room.tagline + '</div>' +
+          '<div class="v2-bm-room-pricing">' +
+            '<div class="v2-bm-room-price-block">' +
+              (totalOTA ? '<div class="v2-bm-room-ota">Booking: €' + totalOTA + '</div>' : '') +
+              '<div class="v2-bm-room-direct">€' + totalDirect + '</div>' +
+              '<div class="v2-bm-room-direct-sub">' + nights + ' ' + (nights === 1 ? 'night' : 'nights') + '</div>' +
+              (savings ? '<div class="v2-bm-room-savings-badge">risparmi €' + savings + '</div>' : '') +
+            '</div>' +
+            selectBtn +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    grid.innerHTML = html;
+  }
+
+  /* ── guests counter ── */
+  function syncGuestsToInput() {
+    var el = document.getElementById('search-guests');
+    if (el) el.value = v2GuestsCount;
+    var cnt = document.getElementById('v2-guests-count');
+    if (cnt) cnt.textContent = v2GuestsCount;
+  }
+
+  /* ── display dates in stay panel ── */
+  function updateStayPanel() {
+    var ci = document.getElementById('search-checkin').value;
+    var co = document.getElementById('search-checkout').value;
+    var ciEl = document.getElementById('v2-display-checkin');
+    var coEl = document.getElementById('v2-display-checkout');
+    var nightsEl = document.getElementById('v2-display-nights');
+    function fmtShort(s) {
+      if (!s) return '—';
+      var d = new Date(s);
+      return d.toLocaleDateString('it-IT', { day:'numeric', month:'short' });
+    }
+    if (ciEl) ciEl.textContent = ci ? fmtShort(ci) : '—';
+    if (coEl) coEl.textContent = co ? fmtShort(co) : '—';
+    if (nightsEl) {
+      if (ci && co) {
+        var n = Math.ceil((new Date(co) - new Date(ci)) / 86400000);
+        nightsEl.textContent = n;
+      } else {
+        nightsEl.textContent = '—';
+      }
+    }
+  }
+
+  /* ── wire CTAs ── */
+  document.addEventListener('DOMContentLoaded', function() {
+    var openBtn    = document.getElementById('v2-open-booking');
+    var openBtn2   = document.getElementById('v2-open-booking-2');
+    var openBtnNav = document.getElementById('v2-open-booking-nav');
+    var closeBtn   = document.getElementById('v2-bm-close');
+    var overlay  = document.getElementById('v2-bm-overlay');
+    var backBtn  = document.getElementById('v2-bm-back');
+    var nextBtn  = document.getElementById('v2-bm-next');
+
+    if (openBtn)    openBtn.addEventListener('click',    function() { openModal(1); });
+    if (openBtn2)   openBtn2.addEventListener('click',   function() { openModal(1); });
+    if (openBtnNav) openBtnNav.addEventListener('click', function() { openModal(1); });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay)  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+    // Back
+    if (backBtn) backBtn.addEventListener('click', function() { gotoStep(currentStep - 1); });
+
+    // Step 1 → 2 logic (shared by bottom next btn and panel CTA)
+    function advanceStep1() {
+      var ci = document.getElementById('search-checkin').value;
+      var co = document.getElementById('search-checkout').value;
+      var errEl = document.getElementById('v2-step1-error');
+      if (!ci || !co || new Date(co) <= new Date(ci)) {
+        if (errEl) errEl.classList.add('show');
+        return;
+      }
+      if (errEl) errEl.classList.remove('show');
+      gotoStep(2);
+    }
+    // Bottom nav Next
+    if (nextBtn) nextBtn.addEventListener('click', function() {
+      if (currentStep === 1) advanceStep1();
+    });
+    // Panel CTA inside stay panel
+    var panelCta = document.getElementById('v2-step1-next-panel');
+    if (panelCta) panelCta.addEventListener('click', advanceStep1);
+
+    // Guests ± buttons
+    var minusBtn = document.getElementById('v2-guests-minus');
+    var plusBtn  = document.getElementById('v2-guests-plus');
+    if (minusBtn) minusBtn.addEventListener('click', function() {
+      if (v2GuestsCount > 1) { v2GuestsCount--; syncGuestsToInput(); }
+    });
+    if (plusBtn) plusBtn.addEventListener('click', function() {
+      if (v2GuestsCount < 4) { v2GuestsCount++; syncGuestsToInput(); }
+    });
+    syncGuestsToInput();
+
+    // Observe checkin/checkout changes (from calendar clicks) to update stay panel
+    var ci = document.getElementById('search-checkin');
+    var co = document.getElementById('search-checkout');
+    if (ci) ci.addEventListener('change', updateStayPanel);
+    if (co) co.addEventListener('change', updateStayPanel);
+
+    // Payment option cards
+    var payCards = document.querySelectorAll('.payment-option-card');
+    var btnPaypal = document.getElementById('btn-submit-paypal');
+    var btnOffline = document.getElementById('btn-submit-offline');
+    payCards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        payCards.forEach(function(c) { c.classList.remove('selected'); });
+        card.classList.add('selected');
+        var val = card.querySelector('input[type="radio"]').value;
+        if (btnPaypal)  btnPaypal.classList.toggle('active',  val === 'paypal');
+        if (btnOffline) btnOffline.classList.toggle('active', val === 'offline');
+      });
+    });
+
+    // Sidebar confirm button — triggers form submission
+    var btnSidebarConfirm = document.getElementById('btn-sidebar-confirm');
+    if (btnSidebarConfirm) {
+      btnSidebarConfirm.addEventListener('click', function() {
+        var form = document.getElementById('booking-form');
+        if (form) form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+      });
+    }
+
+    // Sidebar back button — go back to step 2 (camera)
+    var btnSidebarBack = document.getElementById('btn-sidebar-back');
+    if (btnSidebarBack) {
+      btnSidebarBack.addEventListener('click', function() {
+        if (typeof window.v2GotoStep === 'function') window.v2GotoStep(2);
+      });
+    }
+
+    // Also update stay panel when calendar renders (MutationObserver on cal-hint)
+    var hint = document.getElementById('cal-hint');
+    if (hint) {
+      var mo = new MutationObserver(updateStayPanel);
+      mo.observe(hint, { characterData: true, subtree: true, childList: true });
+    }
+  });
+
+  /* ── expose openModal globally so other code can call it ── */
+  window.v2OpenBooking = openModal;
+  window.v2CloseBooking = closeModal;
+  window.v2GotoStep = gotoStep;
+
+})();
+</script>
+
 <script>
   (function() {
     'use strict';
@@ -1519,18 +747,7 @@
         desc: 'Spaziosa, silenziosa, avvolta da luce morbida, la camera in cui ci si sente a casa.',
         image: '../foto-la-dimora/dimora-01-foto-principale.jpeg',
         extraBed: true,
-        amenities: [
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>`, key: 'amenity_king' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0116 0"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/><line x1="10" y1="15" x2="10" y2="17"/><line x1="14" y1="15" x2="14" y2="17"/></svg>`, key: 'amenity_bath' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8.5a15 15 0 0121 0"/><path d="M5 12a11 11 0 0114 0"/><path d="M8.5 15.5a7 7 0 017 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>`, key: 'amenity_wifi' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>`, key: 'amenity_ac' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8"/><path d="M12 18v2"/></svg>`, key: 'amenity_tv' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M1 19h22"/><path d="M9 19l1.5-2h3L15 19"/></svg>`, key: 'amenity_desk' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2z"/><path d="M18 22v-3"/></svg>`, key: 'amenity_kitchen' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6"/><path d="M15.5 7.5l3 3L22 7l-3-3"/></svg>`, key: 'amenity_checkin' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h13.93a2 2 0 011.66.9l2.25 3.37A2 2 0 0122 12.5V15a2 2 0 01-2 2h-1"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>`, key: 'amenity_parking' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 7h20"/><circle cx="12" cy="14" r="4"/><path d="M9.5 11.5a4 4 0 015 0"/><circle cx="6" cy="4.5" r=".5" fill="currentColor"/><circle cx="9" cy="4.5" r=".5" fill="currentColor"/></svg>`, key: 'amenity_washer' }
-        ],
+        amenities: [],
         prices: { high: 100, low: 60 }
       },
       {
@@ -1543,43 +760,29 @@
         desc: 'Parete blu petrolio, cura dei dettagli, ospitalità attesa, il mare del Gargano senza mostrarlo.',
         image: '../foto-la-bottega/bottega-01-foto principale.webp',
         extraBed: false,
-        amenities: [
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>`, key: 'amenity_king' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0116 0"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/><line x1="10" y1="15" x2="10" y2="17"/><line x1="14" y1="15" x2="14" y2="17"/></svg>`, key: 'amenity_bath_ensuite' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8.5a15 15 0 0121 0"/><path d="M5 12a11 11 0 0114 0"/><path d="M8.5 15.5a7 7 0 017 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>`, key: 'amenity_wifi' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>`, key: 'amenity_ac' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8"/><path d="M12 18v2"/></svg>`, key: 'amenity_tv' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2z"/><path d="M18 22v-3"/></svg>`, key: 'amenity_kitchen' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`, key: 'amenity_coffee' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/><path d="M12 16v2"/></svg>`, key: 'amenity_safe' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6"/><path d="M15.5 7.5l3 3L22 7l-3-3"/></svg>`, key: 'amenity_checkin' },
-          { icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h13.93a2 2 0 011.66.9l2.25 3.37A2 2 0 0122 12.5V15a2 2 0 01-2 2h-1"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>`, key: 'amenity_parking' }
-        ],
+        amenities: [],
         prices: { high: 90, low: 50 }
       }
     ];
 
     let OTA_MARKUP = 1.20;
-    const HIGH_MONTHS = [6, 7, 8]; // 0-indexed: Jul, Aug, Sep
+    const HIGH_MONTHS = [6, 7, 8];
     let WEEKLY_DISCOUNT = 0.10;
     let MONTHLY_DISCOUNT = 0.20;
 
-    // Sincronizza prezzi da _data/prezzi.json (aggiornabile via CMS)
     fetch('/_data/prezzi.json')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data) return;
-        OTA_MARKUP      = data.ota_markup       || OTA_MARKUP;
-        WEEKLY_DISCOUNT = data.weekly_discount   || WEEKLY_DISCOUNT;
-        MONTHLY_DISCOUNT = data.monthly_discount || MONTHLY_DISCOUNT;
-        // Aggiorna prezzi delle camere
+        OTA_MARKUP       = data.ota_markup       || OTA_MARKUP;
+        WEEKLY_DISCOUNT  = data.weekly_discount   || WEEKLY_DISCOUNT;
+        MONTHLY_DISCOUNT = data.monthly_discount  || MONTHLY_DISCOUNT;
         const dimora  = ROOMS.find(r => r.id === 'dimora');
         const bottega = ROOMS.find(r => r.id === 'bottega');
         if (dimora)  dimora.prices  = { high: data.alta.dimora,  low: data.bassa.dimora };
         if (bottega) bottega.prices = { high: data.alta.bottega, low: data.bassa.bottega };
-        console.log('[prenota] Prezzi aggiornati da CMS: OTA markup', OTA_MARKUP);
       })
-      .catch(() => { /* usa prezzi di default */ });
+      .catch(() => {});
 
     /* ============================================
        BOOKING STATE
@@ -1600,6 +803,7 @@
        ============================================ */
     function t(key) {
       const lang = localStorage.getItem('ceb_lang') || 'it';
+      if (typeof translations === 'undefined') return key;
       const tr = translations[lang] || translations.it;
       return tr[key] || translations.it[key] || key;
     }
@@ -1611,9 +815,7 @@
       });
     }
 
-    function isHigh(month) {
-      return HIGH_MONTHS.includes(month);
-    }
+    function isHigh(month) { return HIGH_MONTHS.includes(month); }
 
     function getPrice(room, month) {
       return isHigh(month) ? room.prices.high : room.prices.low;
@@ -1621,29 +823,26 @@
 
     function calcPricing(room, checkinStr, checkoutStr) {
       const start = new Date(checkinStr);
-      const end = new Date(checkoutStr);
+      const end   = new Date(checkoutStr);
       const nights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
       if (nights <= 0) return null;
-
       let totalDirect = 0;
       for (let d = new Date(start); d < end; d.setDate(d.getDate() + 1)) {
         totalDirect += getPrice(room, d.getMonth());
       }
-
       let totalOTA = Math.round(totalDirect * OTA_MARKUP);
       let discountLabel = '';
-
       if (nights >= 7) {
         discountLabel = `-${Math.round(WEEKLY_DISCOUNT * 100)}% ${t('price_weekly')}`;
         totalDirect = Math.round(totalDirect * (1 - WEEKLY_DISCOUNT));
       }
-
       return { nights, totalDirect, totalOTA, savings: totalOTA - totalDirect, discountLabel };
     }
 
     function checkAvailability(roomId, checkinStr, checkoutStr) {
+      if (typeof bookedDates === 'undefined') return true;
       const start = new Date(checkinStr);
-      const end = new Date(checkoutStr);
+      const end   = new Date(checkoutStr);
       for (let d = new Date(start); d < end; d.setDate(d.getDate() + 1)) {
         const ds = d.toISOString().slice(0, 10);
         if (bookedDates[roomId] && bookedDates[roomId].has(ds)) return false;
@@ -1652,225 +851,56 @@
     }
 
     /* ============================================
-       SEARCH & RESULTS
+       EXPOSE helpers for v2 modal controller
        ============================================ */
-    const checkinEl = document.getElementById('search-checkin');
-    const checkoutEl = document.getElementById('search-checkout');
-    const guestsEl = document.getElementById('search-guests');
-    const searchBtnEl = document.getElementById('search-btn');
-      if (searchBtnEl) searchBtnEl.addEventListener('click', tryAutoSearch);
-
-    // Set min dates — today allowed until 21:00, then tomorrow only
-    const _now = new Date();
-    const _minCheckin = new Date(_now);
-    if (_now.getHours() >= 21) _minCheckin.setDate(_minCheckin.getDate() + 1);
-    const minCheckinStr = _minCheckin.toISOString().split('T')[0];
-    checkinEl.min = minCheckinStr;
-    checkoutEl.min = minCheckinStr;
-
-    checkinEl.addEventListener('change', () => {
-      checkoutEl.min = checkinEl.value;
-      // Limite legale: massimo 29 notti (soggiorno breve < 30 giorni)
-      if (checkinEl.value) {
-        const maxCo = new Date(checkinEl.value);
-        maxCo.setDate(maxCo.getDate() + 29);
-        checkoutEl.max = maxCo.toISOString().split('T')[0];
-      } else {
-        checkoutEl.max = '';
-      }
-      if (checkoutEl.value && checkoutEl.value <= checkinEl.value) checkoutEl.value = '';
-      tryAutoSearch();
-    });
-
-    checkoutEl.addEventListener('change', () => {
-      tryAutoSearch();
-    });
-
-    guestsEl.addEventListener('change', () => {
-      tryAutoSearch();
-    });
-
-    // Auto-search: appena entrambe le date sono valide, mostra i risultati
-    function tryAutoSearch() {
-      const ci = checkinEl.value;
-      const co = checkoutEl.value;
-      if (!ci || !co) return;
-      if (new Date(co) <= new Date(ci)) return;
-
-      // Limite legale: massimo 29 notti (affitto breve < 30 giorni)
-      const nights = Math.ceil((new Date(co) - new Date(ci)) / (1000 * 60 * 60 * 24));
-      const errEl = document.getElementById('max-nights-error');
-      if (nights > 29) {
-        if (errEl) errEl.style.display = 'block';
-        document.getElementById('results-container').style.display = 'none';
-        document.getElementById('results-placeholder').style.display = 'block';
-        return;
-      }
-      if (errEl) errEl.style.display = 'none';
-
-      state.checkin = ci;
-      state.checkout = co;
-      state.guests = parseInt(guestsEl.value);
-
-      renderResults();
-
-      // Scroll ai risultati
-      const resultsEl = document.getElementById('results-container');
-      if (resultsEl) {
-        setTimeout(() => {
-          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-      }
-    }
-
-    function renderResults() {
-      const placeholder = document.getElementById('results-placeholder');
-      const container = document.getElementById('results-container');
-      const cardsContainer = document.getElementById('room-cards-container');
-
-      placeholder.style.display = 'none';
-      container.style.display = 'block';
-
-      // Update header
-      document.getElementById('results-dates-text').textContent =
-        `${formatDate(state.checkin)} → ${formatDate(state.checkout)}`;
-
-      const nightsCount = Math.ceil((new Date(state.checkout) - new Date(state.checkin)) / (1000 * 60 * 60 * 24));
-      const nightLabel = nightsCount === 1 ? (t('book_night') || 'notte') : (t('book_nights') || 'notti');
-      document.getElementById('results-nights-text').textContent = `${nightsCount} ${nightLabel}`;
-
-      // Render cards
-      let html = '';
-      ROOMS.forEach(room => {
-        const avail = checkAvailability(room.id, state.checkin, state.checkout);
-        const pricing = calcPricing(room, state.checkin, state.checkout);
-        if (!pricing) return;
-
-        const avgPerNight = Math.round(pricing.totalDirect / pricing.nights);
-        const avgOTA = Math.round(pricing.totalOTA / pricing.nights);
-        const extraBedHtml = room.extraBed
-          ? `<div class="room-extra-bed"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg> ${t('book_extra_bed') || 'Possibilità letto aggiuntivo su richiesta'}</div>`
-          : '';
-
-        const amenitiesHtml = room.amenities.map(a =>
-          `<span class="amenity-tag" data-tooltip="${t(a.key)}"><span class="amenity-icon">${a.icon}</span></span>`
-        ).join('');
-
-        if (avail) {
-          html += `
-            <div class="room-result-card" data-room="${room.id}">
-              <div class="room-result-img">
-                <img src="../${room.image}" alt="${room.name}" loading="lazy">
-                <div class="room-badge">${t('book_direct_save') || 'Risparmia il 20%'}</div>
-              </div>
-              <div class="room-result-body">
-                <h3>${t(room.nameKey) || room.name}</h3>
-                <p class="room-tagline">${t(room.taglineKey) || room.tagline}</p>
-                <p class="room-short-desc">${t(room.descKey) || room.desc}</p>
-                <div class="room-result-amenities">${amenitiesHtml}</div>
-                ${extraBedHtml}
-              </div>
-              <div class="room-result-pricing">
-                <div class="pricing-text-block">
-                  <div class="pricing-nights">${pricing.nights} ${nightLabel}</div>
-                  <div class="pricing-ota">Booking/Airbnb: €${pricing.totalOTA}</div>
-                  <div class="pricing-direct">€${pricing.totalDirect}</div>
-                  <div class="pricing-per-night">€${avgPerNight}/${t('book_night') || 'notte'}</div>
-                  ${pricing.discountLabel ? `<div class="pricing-discount">${pricing.discountLabel}</div>` : ''}
-                  <div class="pricing-savings">${t('book_you_save') || 'Risparmi'} €${pricing.savings}</div>
-                </div>
-                <button class="btn-select-room" data-room="${room.id}" onclick="window._selectRoom('${room.id}')">
-                  ${t('book_select') || 'Seleziona'}
-                </button>
-              </div>
-            </div>`;
-        } else {
-          html += `
-            <div class="room-result-card unavailable">
-              <div class="room-result-img">
-                <img src="../${room.image}" alt="${room.name}" loading="lazy">
-              </div>
-              <div class="room-result-body">
-                <h3>${t(room.nameKey) || room.name}</h3>
-                <p class="room-tagline">${t(room.taglineKey) || room.tagline}</p>
-                <p class="room-short-desc">${t(room.descKey) || room.desc}</p>
-                <div class="room-result-amenities">${amenitiesHtml}</div>
-              </div>
-              <div class="room-result-pricing" style="justify-content: center; text-align: center;">
-                <div class="room-unavailable-msg">${t('book_unavailable') || 'Purtroppo non ci sono disponibilità nel periodo richiesto'}</div>
-              </div>
-            </div>`;
-        }
-      });
-
-      cardsContainer.innerHTML = html;
-
-      // Scroll to results
-      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.calcPricing = calcPricing;
+    window.checkAvailability = checkAvailability;
+    window.ROOMS = ROOMS;
 
     /* ============================================
-       ROOM SELECTION → OPEN MODAL
+       ROOM SELECTION → step 3
        ============================================ */
     window._selectRoom = function(roomId) {
       const room = ROOMS.find(r => r.id === roomId);
       if (!room) return;
 
-      const pricing = calcPricing(room, state.checkin, state.checkout);
+      const ci = document.getElementById('search-checkin').value;
+      const co = document.getElementById('search-checkout').value;
+      const pricing = calcPricing(room, ci, co);
       if (!pricing) return;
 
+      state.checkin      = ci;
+      state.checkout     = co;
+      state.guests       = parseInt(document.getElementById('search-guests').value) || 2;
       state.selectedRoom = roomId;
-      state.nights = pricing.nights;
-      state.totalDirect = pricing.totalDirect;
-      state.totalOTA = pricing.totalOTA;
+      state.nights       = pricing.nights;
+      state.totalDirect  = pricing.totalDirect;
+      state.totalOTA     = pricing.totalOTA;
       state.discountLabel = pricing.discountLabel;
 
-      // Fill modal
-      document.getElementById('modal-room-name').textContent = t(room.nameKey) || room.name;
-      document.getElementById('modal-dates').textContent = `${formatDate(state.checkin)} → ${formatDate(state.checkout)}`;
-      document.getElementById('modal-nights').textContent = pricing.nights;
-      document.getElementById('modal-total-ota').textContent = `€${pricing.totalOTA}`;
-      document.getElementById('modal-total-direct').textContent = `€${pricing.totalDirect}`;
-      document.getElementById('modal-savings').textContent =
-        `${t('book_you_save') || 'Risparmi'} €${pricing.savings} ${pricing.discountLabel ? '(' + pricing.discountLabel + ')' : ''}`;
+      // Fill step-3 summary sidebar
+      const guestsCount = parseInt(document.getElementById('search-guests').value) || 2;
+      const pricePerNight = pricing.nights > 0 ? Math.round(pricing.totalDirect / pricing.nights) : 0;
+      document.getElementById('modal-room-name').textContent    = t(room.nameKey) || room.name;
+      document.getElementById('modal-meta').textContent         = `${formatDate(ci)} → ${formatDate(co)} · ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'} · ${guestsCount} ospit${guestsCount === 1 ? 'e' : 'i'}`;
+      document.getElementById('modal-rate-label').textContent   = `€${pricePerNight} × ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'}`;
+      document.getElementById('modal-nights-total').textContent = `€${pricing.totalDirect}`;
+      document.getElementById('modal-total-ota').textContent    = `€${pricing.totalOTA + 25}`;
+      document.getElementById('modal-total-direct').textContent = `€${pricing.totalDirect + 25}`;
+      document.getElementById('modal-savings').textContent      =
+        `Risparmi €${pricing.savings} rispetto a Booking`;
 
-      // Show modal
-      document.getElementById('booking-overlay').classList.add('active');
+      // Show form, hide success
       document.getElementById('booking-form-section').style.display = 'block';
       document.getElementById('booking-success').classList.remove('active');
-      document.body.style.overflow = 'hidden';
+
+      // Advance to step 3
+      if (typeof window.v2GotoStep === 'function') window.v2GotoStep(3);
     };
 
-    // Close modal
-    document.getElementById('modal-close').addEventListener('click', closeModal);
-    document.getElementById('booking-overlay').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('booking-overlay')) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    function closeModal() {
-      document.getElementById('booking-overlay').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    /* ============================================
-       PAYMENT METHOD TOGGLE
-       ============================================ */
-    const payCards = document.querySelectorAll('.payment-option-card');
-    const btnPaypal = document.getElementById('btn-submit-paypal');
-    const btnOffline = document.getElementById('btn-submit-offline');
-
-    payCards.forEach(card => {
-      card.addEventListener('click', () => {
-        payCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        const val = card.querySelector('input[type="radio"]').value;
-
-        btnPaypal.classList.toggle('active', val === 'paypal');
-        btnOffline.classList.toggle('active', val === 'offline');
-      });
+    // Close modal (also exposed via v2CloseBooking)
+    document.getElementById('v2-bm-close').addEventListener('click', function() {
+      if (typeof window.v2CloseBooking === 'function') window.v2CloseBooking();
     });
 
     /* ============================================
@@ -1879,25 +909,23 @@
     document.getElementById('booking-form').addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const name  = document.getElementById('guest-name').value.trim();
-      const phone = document.getElementById('guest-phone').value.trim();
-      const email = document.getElementById('guest-email').value.trim();
+      const name    = document.getElementById('guest-name').value.trim();
+      const phone   = document.getElementById('guest-phone').value.trim();
+      const email   = document.getElementById('guest-email').value.trim();
       const message = document.getElementById('guest-message').value.trim();
-      const method = document.querySelector('input[name="pay-method"]:checked').value;
+      const method  = document.querySelector('input[name="pay-method"]:checked').value;
 
-      // --- Validazione telefono ---
       const phoneClean = phone.replace(/[\s\-\(\)]/g, '');
       if (!/^[+\d]{6,20}$/.test(phoneClean)) {
-        document.getElementById('guest-phone').setCustomValidity('Inserisci un numero di telefono valido (solo cifre).');
+        document.getElementById('guest-phone').setCustomValidity('Inserisci un numero di telefono valido.');
         document.getElementById('guest-phone').reportValidity();
         return;
       }
       document.getElementById('guest-phone').setCustomValidity('');
 
-      // --- Validazione email ---
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if (!emailRegex.test(email)) {
-        document.getElementById('guest-email').setCustomValidity('Inserisci un indirizzo email valido (es. nome@esempio.it).');
+        document.getElementById('guest-email').setCustomValidity('Inserisci un indirizzo email valido.');
         document.getElementById('guest-email').reportValidity();
         return;
       }
@@ -1906,14 +934,17 @@
       const room = ROOMS.find(r => r.id === state.selectedRoom);
       const roomName = t(room.nameKey) || room.name;
 
-      // Disabilita il bottone durante l'invio
-      const submitBtn = document.querySelector('.booking-submit-area button.active');
+      const submitBtn = document.querySelector('.v2-bm-submit-area button.active');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Invio in corso...';
+        submitBtn.textContent = 'Invio in corso…';
+      }
+      const sidebarConfirmBtn = document.getElementById('btn-sidebar-confirm');
+      if (sidebarConfirmBtn) {
+        sidebarConfirmBtn.disabled = true;
+        sidebarConfirmBtn.textContent = 'Invio in corso…';
       }
 
-      // Invia a Netlify Function (notifica email all'host)
       try {
         await fetch('/.netlify/functions/send-booking', {
           method: 'POST',
@@ -1930,11 +961,9 @@
           })
         });
       } catch (err) {
-        // Non bloccare l'esperienza utente se la function fallisce
-        console.warn('[booking] send-booking function error:', err.message);
+        console.warn('[booking] send-booking error:', err.message);
       }
 
-      // Mostra messaggio di conferma personalizzato per metodo pagamento
       showSuccess(method);
     });
 
@@ -1954,83 +983,84 @@
     }
 
     /* ============================================
-       MINI CALENDAR (uses global iCal system from main.js)
+       MINI CALENDAR
        ============================================ */
     let miniCalMonth = new Date().getMonth();
-    let miniCalYear = new Date().getFullYear();
-    let miniCalRoom = 'dimora';
-
-    // Selezione date direttamente dal calendario
-    let miniCalCheckin = null;
+    let miniCalYear  = new Date().getFullYear();
+    let miniCalRoom  = 'dimora';
+    let miniCalCheckin  = null;
     let miniCalCheckout = null;
+
+    const checkinEl  = document.getElementById('search-checkin');
+    const checkoutEl = document.getElementById('search-checkout');
+    const guestsEl   = document.getElementById('search-guests');
+
+    const _now = new Date();
+    const _minCheckin = new Date(_now);
+    if (_now.getHours() >= 21) _minCheckin.setDate(_minCheckin.getDate() + 1);
+    const minCheckinStr = _minCheckin.toISOString().split('T')[0];
+    checkinEl.min  = minCheckinStr;
+    checkoutEl.min = minCheckinStr;
 
     function updateCalHint() {
       const hintEl = document.getElementById('cal-hint');
       if (!hintEl) return;
       const lang = localStorage.getItem('ceb_lang') || 'it';
       if (!miniCalCheckin && !miniCalCheckout) {
-        hintEl.textContent = lang === 'it' ? 'Clicca un giorno per impostare il check-in' : 'Click a day to set check-in';
-        hintEl.style.color = 'var(--ocra-dark)';
+        hintEl.textContent = 'Clicca un giorno per impostare il check-in';
+        hintEl.style.color = '';
       } else if (miniCalCheckin && !miniCalCheckout) {
         const d = new Date(miniCalCheckin);
-        const fmt = d.toLocaleDateString(lang === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long' });
-        hintEl.textContent = lang === 'it' ? `Check-in: ${fmt} — ora clicca il giorno di check-out` : `Check-in: ${fmt} — now click your check-out day`;
-        hintEl.style.color = 'var(--verde)';
+        const fmt = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
+        hintEl.textContent = `Check-in: ${fmt} — ora clicca il giorno di check-out`;
+        hintEl.style.color = 'var(--petrolio)';
       } else {
         const ci = new Date(miniCalCheckin);
         const co = new Date(miniCalCheckout);
         const nights = Math.ceil((co - ci) / (1000 * 60 * 60 * 24));
-        const fmtCI = ci.toLocaleDateString(lang === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long' });
-        const fmtCO = co.toLocaleDateString(lang === 'it' ? 'it-IT' : 'en-GB', { day: 'numeric', month: 'long' });
-        hintEl.textContent = lang === 'it' ? `${fmtCI} → ${fmtCO} · ${nights} notti selezionate ✓` : `${fmtCI} → ${fmtCO} · ${nights} nights selected ✓`;
-        hintEl.style.color = 'var(--verde)';
+        const fmtCI = ci.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
+        const fmtCO = co.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
+        hintEl.textContent = `${fmtCI} → ${fmtCO} · ${nights} nights selected ✓`;
+        hintEl.style.color = 'var(--petrolio)';
       }
     }
 
     function renderMiniCal() {
-      const grid = document.getElementById('mini-cal-grid');
+      const grid    = document.getElementById('mini-cal-grid');
       const titleEl = document.getElementById('mini-cal-title');
       if (!grid) return;
 
-      // Leggi i valori correnti dai campi di ricerca (sincronizzazione)
-      const ciInput = document.getElementById('search-checkin');
-      const coInput = document.getElementById('search-checkout');
-      if (ciInput && ciInput.value && !miniCalCheckin) miniCalCheckin = ciInput.value;
-      if (coInput && coInput.value && !miniCalCheckout) miniCalCheckout = coInput.value;
+      if (checkinEl  && checkinEl.value  && !miniCalCheckin)  miniCalCheckin  = checkinEl.value;
+      if (checkoutEl && checkoutEl.value && !miniCalCheckout) miniCalCheckout = checkoutEl.value;
 
       const lang = localStorage.getItem('ceb_lang') || 'it';
-      const tr = translations[lang] || translations.it;
+      const tr = (typeof translations !== 'undefined') ? (translations[lang] || translations.it) : null;
 
-      titleEl.textContent = `${tr.cal_months[miniCalMonth]} ${miniCalYear}`;
+      titleEl.textContent = tr
+        ? `${tr.cal_months[miniCalMonth]} ${miniCalYear}`
+        : `${miniCalMonth + 1}/${miniCalYear}`;
 
-      // Aggiorna hint selezione date
       updateCalHint();
 
       let html = '';
-      tr.cal_days.forEach(day => {
-        html += `<div class="mini-cal-day-name">${day}</div>`;
-      });
+      const dayNames = tr ? tr.cal_days : ['Lu','Ma','Me','Gi','Ve','Sa','Do'];
+      dayNames.forEach(day => { html += `<div class="mini-cal-day-name">${day}</div>`; });
 
-      const firstDay = new Date(miniCalYear, miniCalMonth, 1).getDay();
+      const firstDay   = new Date(miniCalYear, miniCalMonth, 1).getDay();
       const startOffset = (firstDay + 6) % 7;
-      for (let i = 0; i < startOffset; i++) {
-        html += '<div class="mini-cal-day empty"></div>';
-      }
+      for (let i = 0; i < startOffset; i++) html += '<div class="mini-cal-day empty"></div>';
 
       const daysInMonth = new Date(miniCalYear, miniCalMonth + 1, 0).getDate();
-      // Today allowed until 21:00; after that only tomorrow onwards
       const _nowCal = new Date();
       const _minCal = new Date(_nowCal);
       if (_nowCal.getHours() >= 21) _minCal.setDate(_minCal.getDate() + 1);
       const today = _minCal.toISOString().slice(0, 10);
 
       for (let d = 1; d <= daysInMonth; d++) {
-        const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-        const isBooked = bookedDates[miniCalRoom] && bookedDates[miniCalRoom].has(ds);
-        const isPast = ds < today;
-        const isToday = ds === today;
-
-        // Disabilita giorni <= check-in (quando si attende il checkout)
+        const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        const isBooked   = (typeof bookedDates !== 'undefined') && bookedDates[miniCalRoom] && bookedDates[miniCalRoom].has(ds);
+        const isPast     = ds < today;
+        const isToday    = ds === today;
         const isDisabledBeforeCheckin = miniCalCheckin && !miniCalCheckout && ds <= miniCalCheckin;
 
         let cls = 'mini-cal-day';
@@ -2040,66 +1070,53 @@
           cls += ' available cal-disabled-before-checkin';
         } else {
           cls += ' available';
-          // Evidenziazione selezione
-          if (ds === miniCalCheckin) cls += ' cal-checkin';
+          if (ds === miniCalCheckin)  cls += ' cal-checkin';
           else if (ds === miniCalCheckout) cls += ' cal-checkout';
           else if (miniCalCheckin && miniCalCheckout && ds > miniCalCheckin && ds < miniCalCheckout) cls += ' cal-range';
         }
         if (isToday) cls += ' today';
 
-        // data-date solo sui giorni cliccabili (non disabilitati)
         const isClickable = !isPast && !isBooked && !isDisabledBeforeCheckin;
-        const dataAttr = isClickable ? ` data-date="${ds}"` : '';
+        const dataAttr    = isClickable ? ` data-date="${ds}"` : '';
         html += `<div class="${cls}"${dataAttr}>${d}</div>`;
       }
 
       grid.innerHTML = html;
 
-      // Aggiunge click handler ai giorni disponibili e cliccabili
       grid.querySelectorAll('.mini-cal-day.available[data-date]').forEach(dayEl => {
         dayEl.addEventListener('click', () => {
           const date = dayEl.dataset.date;
           if (!miniCalCheckin || (miniCalCheckin && miniCalCheckout)) {
-            // Primo click o reset: imposta check-in
-            miniCalCheckin = date;
+            miniCalCheckin  = date;
             miniCalCheckout = null;
+            if (checkinEl)  { checkinEl.value = miniCalCheckin; checkinEl.dispatchEvent(new Event('change')); }
+            if (checkoutEl) { checkoutEl.value = ''; checkoutEl.dispatchEvent(new Event('change')); }
+            if (checkinEl) {
+              const maxCo = new Date(miniCalCheckin);
+              maxCo.setDate(maxCo.getDate() + 29);
+              checkoutEl.min = miniCalCheckin;
+              checkoutEl.max = maxCo.toISOString().split('T')[0];
+            }
           } else if (date > miniCalCheckin) {
-            // Secondo click dopo check-in: imposta check-out
-            // Limite legale: massimo 29 notti
-            const nightsSel = Math.ceil((new Date(date) - new Date(miniCalCheckin)) / (1000 * 60 * 60 * 24));
+            const nightsSel = Math.ceil((new Date(date) - new Date(miniCalCheckin)) / 86400000);
             if (nightsSel > 29) {
-              // Imposta automaticamente il massimo consentito
               const maxCo = new Date(miniCalCheckin);
               maxCo.setDate(maxCo.getDate() + 29);
               miniCalCheckout = maxCo.toISOString().slice(0, 10);
             } else {
               miniCalCheckout = date;
             }
-            // Sincronizza con i campi di ricerca
-            if (ciInput) ciInput.value = miniCalCheckin;
-            if (coInput) coInput.value = miniCalCheckout;
-            // Aggiorna min/max del checkout field
-            if (checkinEl) {
-              checkinEl.value = miniCalCheckin;
-              const maxCo2 = new Date(miniCalCheckin);
-              maxCo2.setDate(maxCo2.getDate() + 29);
-              if (checkoutEl) {
-                checkoutEl.min = miniCalCheckin;
-                checkoutEl.max = maxCo2.toISOString().split('T')[0];
-                checkoutEl.value = miniCalCheckout;
-              }
-            }
-            // Auto-search immediato
-            tryAutoSearch();
+            if (checkinEl)  { checkinEl.value  = miniCalCheckin;  checkinEl.dispatchEvent(new Event('change')); }
+            if (checkoutEl) { checkoutEl.value = miniCalCheckout; checkoutEl.dispatchEvent(new Event('change')); }
           } else {
-            // Click prima del check-in: ricomincia
-            miniCalCheckin = date;
+            miniCalCheckin  = date;
             miniCalCheckout = null;
+            if (checkinEl)  { checkinEl.value = miniCalCheckin; checkinEl.dispatchEvent(new Event('change')); }
+            if (checkoutEl) { checkoutEl.value = ''; checkoutEl.dispatchEvent(new Event('change')); }
           }
           renderMiniCal();
         });
       });
-
     }
 
     document.getElementById('mini-cal-prev').addEventListener('click', () => {
@@ -2107,13 +1124,11 @@
       if (miniCalMonth < 0) { miniCalMonth = 11; miniCalYear--; }
       renderMiniCal();
     });
-
     document.getElementById('mini-cal-next').addEventListener('click', () => {
       miniCalMonth++;
       if (miniCalMonth > 11) { miniCalMonth = 0; miniCalYear++; }
       renderMiniCal();
     });
-
     document.querySelectorAll('.mini-cal-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.mini-cal-tab').forEach(t => t.classList.remove('active'));
@@ -2123,43 +1138,51 @@
       });
     });
 
-    // Sincronizzazione inversa: campi data → calendario
-    const ciInput = document.getElementById('search-checkin');
-    const coInput = document.getElementById('search-checkout');
-    if (ciInput) {
-      ciInput.addEventListener('change', () => {
-        miniCalCheckin = ciInput.value || null;
-        miniCalCheckout = null; // reset checkout quando cambia checkin da input
-        // Se il mese cambia, naviga al mese del check-in
-        if (miniCalCheckin) {
-          const d = new Date(miniCalCheckin);
-          miniCalMonth = d.getMonth();
-          miniCalYear = d.getFullYear();
-        }
-        renderMiniCal();
-      });
-    }
-    if (coInput) {
-      coInput.addEventListener('change', () => {
-        miniCalCheckout = coInput.value || null;
-        renderMiniCal();
-      });
-    }
-
-    // Render iniziale (struttura vuota)
     renderMiniCal();
 
-    // Ascolta l'evento lanciato da main.js quando i dati iCal sono pronti
-    document.addEventListener('calendarDataReady', () => {
-      renderMiniCal();
-    });
-
-    // Fallback: ri-renderizza dopo 8s nel caso l'evento non arrivi
-    setTimeout(() => {
-      renderMiniCal();
-    }, 8000);
+    document.addEventListener('calendarDataReady', () => { renderMiniCal(); });
+    setTimeout(() => { renderMiniCal(); }, 8000);
 
   })();
-  </script>
+</script>
+
+
+<script>
+/* ---- Mobile nav toggle (standalone) ---- */
+(function () {
+  var toggle   = document.getElementById('v2-menu-toggle');
+  var navLinks = document.getElementById('v2-nav-links');
+  var navEl    = document.querySelector('.v2-nav');
+
+  function setNavHeight() {
+    if (navEl) {
+      var h = navEl.getBoundingClientRect().height;
+      if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+    }
+  }
+  requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
+  window.addEventListener('resize', setNavHeight);
+  window.addEventListener('load', setNavHeight);
+
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function () {
+      setNavHeight();
+      var open = navLinks.classList.toggle('v2-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
+      var spans = toggle.querySelectorAll('span');
+      if (open) {
+        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+        spans[1].style.opacity   = '0';
+        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity   = '';
+        spans[2].style.transform = '';
+      }
+    });
+  }
+}());
+</script>
 </body>
 </html>

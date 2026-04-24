@@ -3,29 +3,29 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<!-- ▶ CWV FIX: font trim 11→6 varianti (rimossi pesi rari 300/700 italic) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Maison de Vacances à Manfredonia | Casa e Bottega</title>
-<meta content="Séjournez à Casa e Bottega, une élégante maison de vacances au cœur du Gargano. Profitez du confort et de la liberté d'une hospitalité authentique." name="description"/>
+<meta content="Séjournez à Casa e Bottega, une élégante maison de vacances au cœur du Gargano. Profitez du confort et de la liberté d’une hospitalité authentique." name="description"/>
 <meta content="Maison de vacances Manfredonia, affittacamere Manfredonia centro storico, casa vacanze Gargano, locazione turistica Manfredonia Puglia, location touristique Manfredonia" name="keywords"/>
 <meta content="Maison de Vacances à Manfredonia | Casa e Bottega" property="og:title"/>
-<meta content="Séjournez à Casa e Bottega, une élégante maison de vacances au cœur du Gargano. Profitez du confort et de la liberté d'une hospitalité authentique." property="og:description"/>
+<meta content="Séjournez à Casa e Bottega, une élégante maison de vacances au cœur du Gargano. Profitez du confort et de la liberté d’une hospitalité authentique." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/fr/index.html" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Casa Vacanze a Manfredonia | Casa e Bottega" name="twitter:title"/>
-<meta content="A due passi dal mare, nel cuore del Gargano. Due camere con anima nel centro storico di Manfredonia." name="twitter:description"/>
+<meta content="Maison de Vacances à Manfredonia | Casa e Bottega" name="twitter:title"/>
+<meta content="Soggiorna a Casa e Bottega, un'elegante casa vacanze nel cuore del Gargano. Goditi il comfort e la libertà di un'accoglienza autentica." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/fr/index.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
+<!-- ▶ CWV FIX: preload hero LCP image (browser la scarica prima del CSS) -->
 <link rel="preload" href="../../foto-homepage/2.webp" as="image" fetchpriority="high"/>
-<link href="../css/style.css" rel="stylesheet"/>
-<!-- Netlify Identity Widget (per pannello admin) -->
-<script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- ▶ Design v2 fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (editorial labels) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link href="../css/style-v2.css" rel="stylesheet"/>
+<!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
 <!-- Structured Data -->
 <script type="application/ld+json">
   {
@@ -63,459 +63,832 @@
     "paymentAccepted": "Cash, Credit Card"
   }
   </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Dove si trova Casa e Bottega a Manfredonia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casa e Bottega si trova in Via Gargano 13, nel centro storico di Manfredonia (FG), Puglia, a soli 300 metri dal mare Adriatico e dal lungomare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quante camere ha Casa e Bottega?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casa e Bottega dispone di due camere: La Dimora, spaziosa e luminosa con letto king size, e La Bottega, caratterizzata dalla parete blu petrolio e bagno privato en suite. Entrambe sono nel centro storico di Manfredonia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Come si prenota una camera a Casa e Bottega?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puoi prenotare direttamente sul nostro sito su casaebottegapuglia.it/prenota.html risparmiando il 20% rispetto a Booking.com e Airbnb, oppure scrivendo a bookings@casaebottegapuglia.it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quali sono gli orari di check-in e check-out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il check-in è dalle 15:00 ed è autonomo tramite cassetta delle chiavi. Il check-out è entro le 11:00. La struttura offre deposito bagagli prima del check-in e dopo il check-out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "C'è parcheggio vicino a Casa e Bottega?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, il parcheggio è disponibile sulla strada pubblica nelle vicinanze della struttura, a pochi passi dall'ingresso, senza costi aggiuntivi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Casa e Bottega è vicina al mare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, Casa e Bottega si trova a soli 300 metri dal mare Adriatico e dal lungomare di Manfredonia, nel Gargano, Puglia."
+        }
+      }
+    ]
+  }
+  </script>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
 </head>
 <body>
-<a class="skip-to-content" href="#site-main">Aller au contenu principal</a>
-<!-- HEADER -->
-<header class="site-header">
-<nav class="nav-wrapper">
-<a class="nav-logo" href="index.html">Casa <span>e</span> Bottega</a>
-<ul class="nav-links">
-<li><a class="active" data-i18n="nav_home" href="index.html">Accueil</a></li>
-<li><a data-i18n="nav_rooms" href="camere.html">Chambres</a></li>
-<li><a data-i18n="nav_book" href="prenota.html">Réserver</a></li>
-<li><a data-i18n="nav_blog" href="blog.html">Récits</a></li>
-<li><a data-i18n="nav_contact" href="contatti.html">Localisation</a></li>
-<li>
-<div class="lang-switcher">
-<a class="lang-btn" href="../index.html" hreflang="it" title="Italiano">IT</a>
-<a class="lang-btn" href="../en/index.html" hreflang="en" title="English">EN</a>
-<a class="lang-btn active" href="../fr/index.html" hreflang="fr" title="Français">FR</a>
-<a class="lang-btn" href="../de/index.html" hreflang="de" title="Deutsch">DE</a>
-<a class="lang-btn" href="../nl/index.html" hreflang="nl" title="Nederlands">NL</a>
-<a class="lang-btn" href="../es/index.html" hreflang="es" title="Español">ES</a>
+
+<!-- Skip link -->
+<a class="v2-skip" href="#site-main">Vai al contenuto principale</a>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="v2-nav" role="navigation" aria-label="Main navigation">
+    <div class="v2-nav-inner">
+
+      <!-- Left: nav links (desktop) -->
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a class="active" href="index.html" data-i18n="nav_home">Home</a>
+        <a href="camere.html" data-i18n="nav_rooms">Le Camere</a>
+        <a href="prenota.html" data-i18n="nav_book">Prenota</a>
+        <a href="blog.html" data-i18n="nav_blog">Racconti</a>
+        <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
+      </div>
+
+<!-- Mobile nav panel -->
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobile menu" aria-hidden="true">
+  <a class="active" href="index.html" data-i18n="nav_home">Home</a>
+  <a href="camere.html" data-i18n="nav_rooms">Le Camere</a>
+  <a href="prenota.html" data-i18n="nav_book">Prenota</a>
+  <a href="blog.html" data-i18n="nav_blog">Racconti</a>
+  <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
+  <div class="v2-nav-lang" role="list" aria-label="Select language">
+    <a href="../index.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a href="../en/index.html" hreflang="en" title="English" role="listitem">EN</a>
+    <a class="on" href="../fr/index.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a href="../de/index.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="../nl/index.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
+  </div>
 </div>
-</li>
-</ul>
-<button aria-label="Menu" class="menu-toggle">
-<span></span><span></span><span></span>
-</button>
-</nav>
+
+      <!-- Centre: brand -->
+      <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
+        Casa <em>e</em> Bottega
+      </a>
+
+      <!-- Right: lang + CTA (desktop) + hamburger -->
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+          <a href="../index.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../en/index.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a class="on" href="../fr/index.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a href="../de/index.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../nl/index.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;" data-i18n="hero_cta_book">
+          Prenota · −20%
+        </a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
 </header>
-<!-- HERO CAROUSEL -->
-<section class="hero" aria-label="Casa e Bottega">
 
-  <!-- Slides (gestite da main.js — struttura invariata) -->
-  <div class="hero-carousel" id="hero-carousel">
-    <div class="hero-bg active" style="background-image: url('../../foto-homepage/2.webp')"></div>
-  </div>
+<!-- ══════════════════════════════════════════════════════════
+     HERO — two-column editorial
+     ══════════════════════════════════════════════════════════ -->
+<main id="site-main">
+<section class="v2-hero" aria-label="Benvenuti a Casa e Bottega">
 
-  <!-- Overlay warm dal basso -->
-  <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- Left: editorial text column -->
+  <div class="v2-hero-left">
 
-  <!-- Grain sottile -->
-  <div class="hero-grain" aria-hidden="true"></div>
-
-  <!-- Linea oro sinistra -->
-  <div class="hero-accent-line" aria-hidden="true"></div>
-
-  <!-- Corpo: testo in basso a sinistra + rating card a destra -->
-  <div class="hero-body">
-
-    <div class="hero-text">
-
-      <!-- Award pill -->
-      <div class="hero-award-pill">
-        <span class="award-dot" aria-hidden="true"></span>
-        <span class="award-text">Traveller Review Award 2026 · Booking.com</span>
-      </div>
-
-      <!-- Titolo grande, italic -->
-      <h1 class="hero-title">
-        Casa<span class="hero-title-line2"><span class="hero-title-e">e</span> Bottega</span>
+    <div>
+      <h1 class="v2-hero-title">
+        A due passi<br>
+        <em>dal mare.</em>
       </h1>
-
-      <!-- Tagline sensoriale -->
-      <p class="hero-tagline">
-        <span class="hero-tagline-sep" aria-hidden="true"></span>
-        <span data-i18n="hero_tagline">Cuir &amp; ragù · 300&thinsp;m de la mer Adriatique</span>
+      <p class="v2-hero-tagline">
+        300 m de la mer · Gargano · Pouilles
       </p>
-
-      <!-- CTA: un primario + link ghost -->
-      <div class="hero-ctas">
-        <a class="btn-hero-primary" href="prenota.html">
-          <span data-i18n="hero_cta_book">Réserver</span>
-          <span class="hero-savings-badge">–20%</span>
+      <div class="v2-hero-ctas">
+        <a href="prenota.html" class="v2-btn v2-btn--primary">
+          Verifica le date
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
-        <a class="btn-hero-ghost" href="camere.html">
-          <span data-i18n="hero_cta_rooms">Découvrir les chambres</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <a href="camere.html" class="v2-btn--ghost">
+          Scopri le camere
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
       </div>
-
     </div>
 
-    <!-- Rating card (solo desktop) -->
-    <div class="hero-rating-card" role="complementary">
-      <div class="rating-num">9,8</div>
-      <div class="rating-denom">/10</div>
-      <div class="rating-stars" aria-label="5 stars">★★★★★</div>
-      <div class="rating-source">Booking.com</div>
-      <div class="rating-reviews">50+ avis</div>
-      <div class="rating-superhost">Superhost Airbnb</div>
-    </div>
-
-  </div>
-
-  <!-- Dots verticali (JS crea .hero-dot, CSS aggiornato) -->
-  <div class="hero-carousel-dots" id="hero-dots"></div>
-
-  <!-- Scroll indicator -->
-  <div class="hero-scroll-indicator" aria-hidden="true">
-    <span class="scroll-label">Découvrir</span>
-    <div class="scroll-line"></div>
-  </div>
-
-  <!-- Progress bar -->
-  <div class="hero-progress-bar" aria-hidden="true">
-    <div class="hero-progress-fill"></div>
-  </div>
-
-</section>
-<!-- MAIN CONTENT anchor -->
-<div id="site-main"></div>
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-<div class="trust-strip-inner">
-  <img alt="Booking.com Traveller Review Award 2026" src="../../loghi-e-badge/Digital-Award_RA-2026.webp"/>
-  <div class="trust-item-new">
-    <span class="trust-item-dot" aria-hidden="true"></span>
-    <span><strong>9,8 / 10</strong> · Booking.com · 50+ hôtes</span>
-  </div>
-  <div class="trust-item-new">
-    <span class="trust-item-dot" aria-hidden="true"></span>
-    <span>Superhost Airbnb · 4,9 / 5</span>
-  </div>
-  <div class="trust-item-new">
-    <span class="trust-item-dot" aria-hidden="true"></span>
-    <span>300 m de la mer Adriatique · Manfredonia, Pouilles</span>
-  </div>
-  <div class="trust-item-new">
-    <span class="trust-item-dot" aria-hidden="true"></span>
-    <span><strong>–20% en réservant directement</strong></span>
-  </div>
-</div>
-</div>
-<!-- CHI SIAMO -->
-<section class="section section-light" id="chi-siamo">
-<div class="container">
-<div class="section-header fade-in">
-<p class="section-subtitle" data-i18n="about_subtitle">Notre histoire</p>
-<h2 data-i18n="about_title">Qui sommes-nous</h2>
-<div class="deco-line"></div>
-</div>
-<blockquote class="chi-siamo-pull-quote fade-in">
-“Cette maison appartenait à nos grands-parents — lui <em>cordonnier</em>,<br>elle gardienne d’un foyer qui sentait le cuir et le ragù.”
-</blockquote>
-<div class="chi-siamo-grid fade-in">
-<div class="chi-siamo-text">
-<p data-i18n="about_p1">Cette maison appartenait à nos grands-parents, lui cordonnier, elle gardienne d'un foyer qui sentait le cuir et le ragù. Ils ont travaillé jusqu'à près de quatre-vingts ans, avec leurs mains et leur cœur, vivant dans la chambre voisine de celle où dorment aujourd'hui nos hôtes.</p>
-<p data-i18n="about_p2">Nous avons tout rénové, mais nous avons laissé l'âme intacte.</p>
-<p data-i18n="about_p3">Nous sommes une famille de Manfredonia. Nous vivons ici, à quelques pas de vous. Si vous avez besoin de quoi que ce soit, un conseil sur où manger du poisson frais, comment rejoindre les grottes de Vieste, ou simplement un café le matin, nous sommes là.</p>
-<p class="firma" data-i18n="about_firma">Bienvenue à Casa e Bottega.</p>
-</div>
-<div class="chi-siamo-img">
-<img alt="Casa e Bottega, Esterno" loading="lazy" src="../../foto-spazi-comuni/esterno.webp"/>
-</div>
-</div>
-</div>
-</section>
-<!-- LE CAMERE PREVIEW -->
-<section class="section section-warm">
-<div class="container">
-<div class="section-header fade-in">
-<p class="section-subtitle" data-i18n="rooms_subtitle">Les chambres</p>
-<h2 data-i18n="rooms_title">Vos chambres</h2>
-<div class="deco-line"></div>
-</div>
-<div class="rooms-grid fade-in">
-<!-- La Dimora -->
-<div class="room-card room-card--dimora">
-<div class="room-card-img">
-<span class="room-card-badge">La Dimora</span>
-<img alt="La Dimora, Camera" loading="lazy" src="../../foto-la-dimora/dimora-01-foto-principale.webp"/>
-</div>
-<div class="room-card-body">
-<h3 data-i18n="room_dimora_name">La Dimora</h3>
-<p data-i18n="room_dimora_short">Spacieuse, silencieuse, baignée de lumière douce, la chambre où l'on se sent chez soi.</p>
-<ul class="room-features">
-  <li>Salle de bain privée</li>
-  <li>Lit king size</li>
-  <li>WiFi fibre</li>
-</ul>
-<a class="btn btn-dark" data-i18n="room_discover" href="camere.html#dimora">Découvrir</a>
-</div>
-</div>
-<!-- La Bottega -->
-<div class="room-card room-card--bottega">
-<div class="room-card-img">
-<span class="room-card-badge">La Bottega</span>
-<img alt="La Bottega, Camera" loading="lazy" src="../../foto-la-bottega/bottega-01-foto principale.webp"/>
-</div>
-<div class="room-card-body">
-<h3 data-i18n="room_bottega_name">La Bottega</h3>
-<p data-i18n="room_bottega_short">Mur bleu pétrole, soin du détail, hospitalité attendue, la mer du Gargano sans la montrer.</p>
-<ul class="room-features">
-  <li>Salle de bain privée en suite</li>
-  <li>Lit king size</li>
-  <li>Design exclusif</li>
-</ul>
-<a class="btn btn-dark" data-i18n="room_discover" href="camere.html#bottega">Découvrir</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- RECENSIONI -->
-<section class="section reviews-section">
-<div class="container">
-<div class="section-header fade-in">
-<p class="section-subtitle" data-i18n="reviews_subtitle">Nos hôtes</p>
-<h2 data-i18n="reviews_title">Ce qu'ils disent de nous</h2>
-<div class="deco-line"></div>
-</div>
-<div class="reviews-header-award fade-in">
-<img alt="Booking.com Traveller Review Award 2026" src="../../loghi-e-badge/Digital-Award_RA-2026.webp"/>
-<p data-i18n="reviews_award_text">Parmi les hébergements les plus appréciés d'Italie sur Booking.com, 9,8/10 · Traveller Review Awards 2026</p>
-</div>
-<div class="reviews-scores fade-in">
-<div class="score-badge">
-<span class="score-num">9,8</span>/10 <span data-i18n="reviews_booking">sur Booking</span>
-</div>
-<div class="score-badge">
-<span class="score-num">4,9</span>/5 <span data-i18n="reviews_airbnb">sur Airbnb</span>
-</div>
-</div>
-<div class="reviews-carousel fade-in">
-<div class="reviews-track">
-<!-- Review 1 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"Esperienza molto positiva. La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. La signora Nicoletta si è mostrata molto cortese, così come Francesco. Consigliatissimo."</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Luca</div>
-<div class="review-author-origin">Italia · Giugno</div>
-</div>
-<span class="review-platform booking">Booking</span>
-</div>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!"</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Giacomo</div>
-<div class="review-author-origin">Italia · Settembre</div>
-</div>
-<span class="review-platform booking">Booking</span>
-</div>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"Ci siamo trovati veramente bene, a partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente!"</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Molaro</div>
-<div class="review-author-origin">Italia · Luglio</div>
-</div>
-<span class="review-platform booking">Booking</span>
-</div>
-</div>
-</div>
-<!-- Review 4 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi."</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Valentina</div>
-<div class="review-author-origin">Italia · Novembre</div>
-</div>
-<span class="review-platform booking">Booking</span>
-</div>
-</div>
-</div>
-<!-- Review 5 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons, vous ne le regretterez pas!"</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Céline et François</div>
-<div class="review-author-origin">Francia · Agosto</div>
-</div>
-<span class="review-platform airbnb">Airbnb</span>
-</div>
-</div>
-</div>
-<!-- Review 6 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Unterkunft war sauber. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe."</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Moni</div>
-<div class="review-author-origin">Germania · Luglio</div>
-</div>
-<span class="review-platform airbnb">Airbnb</span>
-</div>
-</div>
-</div>
-<!-- Review 7 -->
-<div class="review-card">
-<div class="review-card-inner">
-<div class="review-stars">★★★★★</div>
-<p class="review-text">"L'appartamento curato e pulito. Il proprietario disponibile con l'aiuto del fratello Giovanni cordialissimo. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano."</p>
-<div class="review-author">
-<div>
-<div class="review-author-name">Bozidarka</div>
-<div class="review-author-origin">Italia · Giugno</div>
-</div>
-<span class="review-platform airbnb">Airbnb</span>
-</div>
-</div>
-</div>
-</div>
-<div class="carousel-controls">
-<button aria-label="Precedente" class="carousel-btn carousel-prev">‹</button>
-<button aria-label="Successivo" class="carousel-btn carousel-next">›</button>
-</div>
-
-<!-- BOX: Meet your hosts -->
-<div class="host-box fade-in">
-  <div class="host-box-avatars">
-    <div class="host-avatar" aria-label="Nicoletta">N</div>
-    <div class="host-avatar" aria-label="Francesco">F</div>
-  </div>
-  <div class="host-box-content">
-    <p class="host-box-label">Qui répond quand vous écrivez</p>
-    <p class="host-box-title">Rencontrez vos hôtes</p>
-    <div class="host-nicoletta-stat" aria-label="Nicoletta cited in reviews">
-      <span class="host-stat-dot" aria-hidden="true"></span>
-      <span><strong>Nicoletta</strong> est citée par son prénom dans de nombreux avis sur Booking et Airbnb</span>
-    </div>
-    <div class="host-profiles">
+    <!-- Proof strip -->
+    <div class="v2-hero-proof">
       <div>
-        <div class="host-profile-name">Nicoletta</div>
-        <div class="host-profile-role">Accueil · répond sur WhatsApp · « une dame charmante »</div>
+        <div class="v2-hero-proof-num v2-serif">9,8<sup>/10</sup></div>
+        <div class="v2-label" style="margin-top:8px;">Booking · 50+ ospiti</div>
       </div>
       <div>
-        <div class="host-profile-name">Francesco</div>
-        <div class="host-profile-role">Expert local · conseils authentiques sur le Gargano</div>
+        <div class="v2-hero-proof-num v2-serif">Superhost</div>
+        <div class="v2-label" style="margin-top:8px;">Airbnb · 4,9 ★</div>
+      </div>
+      <div>
+        <div class="v2-hero-proof-num v2-serif">300 m</div>
+        <div class="v2-label" style="margin-top:8px;">dal mare Adriatico</div>
       </div>
     </div>
-    <blockquote class="host-box-quote">
-      “Nous sommes de Manfredonia. Nous vivons à quelques pas de vous. Nous ne sommes pas un centre d’appels — nous sommes la famille qui vous ouvre la porte, celle qui a hérité cette maison de ses grands-parents artisans.”
-    </blockquote>
-    <a class="host-box-wa"
-       href="https://wa.me/393334705574?text=Bonjour%20Nicoletta!%20J%27ai%20vu%20vos%20avis%20et%20je%20voudrais%20savoir%20si%20vous%20avez%20des%20disponibilit%C3%A9s.%20Merci!"
-       target="_blank" rel="noopener">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Écrire à Nicoletta
-    </a>
+
   </div>
-</div>
-</div>
-</div>
+
+  <!-- Right: full-bleed image -->
+  <div class="v2-hero-right" aria-hidden="true">
+    <div class="v2-hero-right-img v2-grain">
+      <img
+        src="../../foto-homepage/2.webp"
+        alt="La Bottega — Casa e Bottega, Manfredonia"
+        fetchpriority="high"
+        width="900" height="1200"
+      />
+    </div>
+    <!-- Editorial vertical mark -->
+    <div class="v2-hero-editorial-mark">MMXXVI · N° 01 · MANFREDONIA</div>
+    <!-- Price tag -->
+    <div class="v2-hero-price-tag">
+      <div class="v2-hero-price-tag-label">Tariffa diretta</div>
+      <div class="v2-hero-price-tag-num v2-serif">da €50<span>/notte</span></div>
+      <div class="v2-hero-price-tag-note">−20% rispetto a Booking e Airbnb</div>
+    </div>
+  </div>
+
 </section>
-<!-- GOOGLE MAPS -->
-<section class="section section-light map-section">
-<div class="container">
-<div class="section-header fade-in">
-<p class="section-subtitle" data-i18n="map_subtitle">Localisation</p>
-<h2 data-i18n="map_title">À quelques pas de la mer</h2>
-<div class="deco-line"></div>
-</div>
-<div class="fade-in">
-<div class="map-wrapper" id="map-wrapper">
-<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Casa+e+Bottega+Manfredonia&amp;output=embed" title="Casa e Bottega, Manfredonia, mappa" onload="this.closest('.map-wrapper').classList.add('map-loaded')">
-</iframe>
-<div class="map-fallback">
-  <span class="map-fallback-icon">📍</span>
-  <span class="map-fallback-address">Via Gargano, 13, Manfredonia (FG), Puglia</span>
-  <a class="map-fallback-link" href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Ouvrir dans Google Maps →</a>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     STORY — La nostra storia
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-section" id="chi-siamo" aria-labelledby="v2-story-heading">
+  <div class="v2-container">
+    <div class="v2-story-grid v2-fade">
+
+      <!-- Image -->
+      <div>
+        <div class="v2-img-frame" style="aspect-ratio:4/5;">
+          <img
+            src="../../foto-la-bottega/bottega-01-foto principale.webp"
+            alt="Esterno Casa e Bottega, Via Gargano 13, Manfredonia"
+            loading="lazy"
+            width="800" height="1000"
+          />
+        </div>
+        <div class="v2-story-img-caption">L'esterno · Via Gargano, 13</div>
+      </div>
+
+      <!-- Text -->
+      <div class="v2-story-content">
+        <div class="v2-divider-label">
+          <span class="v2-label v2-label-dot" data-i18n="about_subtitle">La nostra storia</span>
+        </div>
+
+        <h2 class="v2-story-headline" id="v2-story-heading">
+          Era la bottega<br>
+          <em>di un calzolaio.</em><br>
+          È rimasta<br>quello che era.
+        </h2>
+
+        <div class="v2-story-body">
+          <p data-i18n="about_p1">
+            Questa casa apparteneva ai nostri nonni: lui <em>calzolaio</em>,
+            lei custode di un focolare che profumava di cuoio e ragù.
+            Hanno lavorato fino a quasi ottant'anni, con le mani e con il cuore,
+            abitando la stanza accanto a quella in cui oggi dormono i nostri ospiti.
+          </p>
+          <p data-i18n="about_p2">
+            Abbiamo rinnovato tutto, ma abbiamo lasciato intatta l'anima.
+          </p>
+          <p data-i18n="about_p3">
+            Siamo una famiglia di Manfredonia. Viviamo a pochi passi.
+            Se avete bisogno di qualcosa — un consiglio su dove mangiare il pesce fresco,
+            come arrivare alle grotte di Vieste — ci siamo.
+          </p>
+        </div>
+
+        <!-- Hosts -->
+        <div class="v2-story-hosts">
+          <div class="v2-host-avatars" aria-hidden="true">
+            <div class="v2-host-avatar">N</div>
+            <div class="v2-host-avatar">F</div>
+          </div>
+          <div>
+            <div class="v2-label">I vostri host</div>
+            <div class="v2-host-name">Nicoletta <span>&amp;</span> Francesco</div>
+          </div>
+          <a href="https://wa.me/393334705574?text=Ciao%20Nicoletta!%20Vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!"
+             class="v2-ulink"
+             style="margin-left:auto;"
+             target="_blank" rel="noopener"
+             aria-label="Scrivi a Nicoletta su WhatsApp">
+            Scrivi a Nicoletta
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-<!-- FOOTER -->
-<footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a class="nav-logo" href="index.html" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
-<p data-i18n="footer_desc">À deux pas de la mer, au cœur du Gargano.</p>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_pages">Pages</h4>
-<ul>
-<li><a data-i18n="nav_home" href="index.html">Accueil</a></li>
-<li><a data-i18n="nav_rooms" href="camere.html">Chambres</a></li>
-<li><a data-i18n="nav_book" href="prenota.html">Réserver</a></li>
-<li><a data-i18n="nav_blog" href="blog.html">Récits</a></li>
-<li><a href="../regole.html">Regole della Casa</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_follow">Suivez-nous</h4>
-<ul>
-<li><a href="#">Airbnb</a></li>
-<li><a href="#">Booking.com</a></li>
-<li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_contact">Contact</h4>
-<ul>
-<li><a href="https://wa.me/393334705574">WhatsApp</a></li>
-<li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tous droits réservés.</span></p>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ROOMS TEASER
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-section v2-rooms" aria-labelledby="v2-rooms-heading">
+  <div class="v2-container">
+
+    <div class="v2-rooms-header v2-fade">
+      <div>
+        <div class="v2-label v2-label-dot" style="margin-bottom:20px;" data-i18n="rooms_subtitle">Le camere</div>
+        <h2 class="v2-rooms-headline" id="v2-rooms-heading">
+          Due stanze,<br>
+          <em>un'anima sola.</em>
+        </h2>
+      </div>
+      <p class="v2-rooms-intro" data-i18n="rooms_intro">
+        Ogni dettaglio è scelto come il nonno sceglieva il cuoio: con intenzione.
+        Non un servizio standard — attenzione artigianale.
+      </p>
+    </div>
+
+    <div class="v2-rooms-grid">
+
+      <!-- La Dimora -->
+      <a class="v2-room-card v2-fade" href="camere.html#dimora" aria-label="Scopri La Dimora">
+        <div class="v2-room-card-img">
+          <img
+            src="../../foto-la-dimora/dimora-01-foto-principale.webp"
+            alt="La Dimora — Camera principale, Casa e Bottega"
+            loading="lazy"
+            width="800" height="1000"
+          />
+        </div>
+        <div class="v2-room-card-head">
+          <div>
+            <div class="v2-room-card-num">N° 01</div>
+            <div class="v2-room-card-name v2-serif" data-i18n="room_dimora_name">La Dimora</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="v2-room-card-price-label">da</div>
+            <div class="v2-room-card-price-num v2-serif">€60<span>/notte</span></div>
+          </div>
+        </div>
+        <p class="v2-room-card-desc" data-i18n="room_dimora_short">
+          Intima, silenziosa, ci si sente a casa.
+        </p>
+        <div class="v2-room-card-features">
+          <span>· Letto king size</span>
+          <span>· Bagno privato</span>
+          <span>· Cucinotto</span>
+        </div>
+        <span class="v2-ulink" style="color:#1a1613;">
+          Scopri La Dimora
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </span>
+      </a>
+
+      <!-- La Bottega -->
+      <a class="v2-room-card v2-fade" href="camere.html#bottega" aria-label="Scopri La Bottega">
+        <div class="v2-room-card-img">
+          <img
+            src="../../foto-homepage/2.webp"
+            alt="La Bottega — Camera design, Casa e Bottega"
+            loading="lazy"
+            width="800" height="1000"
+          />
+        </div>
+        <div class="v2-room-card-head">
+          <div>
+            <div class="v2-room-card-num">N° 02</div>
+            <div class="v2-room-card-name v2-serif" data-i18n="room_bottega_name">La Bottega</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="v2-room-card-price-label">da</div>
+            <div class="v2-room-card-price-num v2-serif">€50<span>/notte</span></div>
+          </div>
+        </div>
+        <p class="v2-room-card-desc" data-i18n="room_bottega_short">
+          Curata nei dettagli, artigianale.
+        </p>
+        <div class="v2-room-card-features">
+          <span>· Letto king size</span>
+          <span>· Bagno en suite</span>
+          <span>· Design esclusivo</span>
+        </div>
+        <span class="v2-ulink" style="color:#1a1613;">
+          Scopri La Bottega
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PLACE — Dove siamo
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-section" aria-labelledby="v2-place-heading">
+  <div class="v2-container">
+    <div class="v2-place-grid v2-fade">
+
+      <!-- Text + distances -->
+      <div>
+        <div class="v2-label v2-label-dot" style="margin-bottom:20px;" data-i18n="map_subtitle">Dove siamo</div>
+        <h2 class="v2-place-headline" id="v2-place-heading">
+          Il Gargano<br>
+          <em>a piedi.</em>
+        </h2>
+        <p class="v2-place-body" data-i18n="map_body">
+          Manfredonia è la porta d'ingresso al Gargano — lo sperone d'Italia.
+          Dal portone uscite in un vicolo del centro storico;
+          tre minuti e siete sul lungomare.
+        </p>
+
+        <div class="v2-place-distances" role="list" aria-label="Distanze dai principali punti di interesse">
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Spiaggia di Siponto</span>
+            <span class="v2-place-dist-time">4 min a piedi</span>
+          </div>
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Centro storico</span>
+            <span class="v2-place-dist-time">2 min a piedi</span>
+          </div>
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Porto turistico</span>
+            <span class="v2-place-dist-time">6 min a piedi</span>
+          </div>
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Grotte di Vieste</span>
+            <span class="v2-place-dist-time">55 min in auto</span>
+          </div>
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Foresta Umbra</span>
+            <span class="v2-place-dist-time">40 min in auto</span>
+          </div>
+          <div class="v2-place-dist-row" role="listitem">
+            <span class="v2-place-dist-name v2-serif">Isole Tremiti</span>
+            <span class="v2-place-dist-time">traghetto da Molo di Ponente - Manfredonia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stylised map -->
+      <div class="v2-map-container" role="img" aria-label="Mappa stilizzata di Manfredonia con posizione Casa e Bottega">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Background -->
+          <rect x="0" y="0" width="400" height="400" fill="#ede4d3"/>
+          <!-- Sea (north) -->
+          <path d="M0 130 Q 100 108 200 148 T 400 138 L 400 0 L 0 0 Z" fill="#1f4a4a" opacity="0.07"/>
+          <path d="M0 152 Q 100 132 200 168 T 400 160 L 400 0 L 0 0 Z" fill="#1f4a4a" opacity="0.11"/>
+          <!-- Street grid -->
+          <g stroke="#1a1613" stroke-width="0.5" fill="none" opacity="0.22">
+            <path d="M30 200 L 370 212"/>
+            <path d="M40 242 L 360 254"/>
+            <path d="M50 284 L 350 296"/>
+            <path d="M90 178 L 110 370"/>
+            <path d="M175 168 L 195 370"/>
+            <path d="M260 175 L 280 370"/>
+            <path d="M330 185 L 345 370"/>
+          </g>
+          <!-- Glow halo around pin -->
+          <circle cx="200" cy="215" r="44" fill="#b0553a" opacity="0.09"/>
+          <circle cx="200" cy="215" r="24" fill="#b0553a" opacity="0.16"/>
+          <!-- Pin dot -->
+          <circle cx="200" cy="215" r="7" fill="#b0553a"/>
+          <!-- Label -->
+          <text x="214" y="210" font-family="Cormorant Garamond, serif" font-style="italic" font-size="14" fill="#1a1613">Casa e Bottega</text>
+          <!-- Sea label -->
+          <text x="44" y="72" font-family="ui-monospace, monospace" font-size="8.5" fill="#1f4a4a" letter-spacing="2.5" text-transform="uppercase">MARE ADRIATICO</text>
+          <!-- Area labels -->
+          <text x="162" y="204" font-family="ui-monospace, monospace" font-size="7.5" fill="#9a8f80" letter-spacing="1.2">CENTRO STORICO</text>
+          <text x="24" y="185" font-family="ui-monospace, monospace" font-size="7.5" fill="#9a8f80" letter-spacing="1.2">LUNGOMARE</text>
+          <!-- Compass rose -->
+          <g transform="translate(356 52)">
+            <circle r="16" fill="none" stroke="#1a1613" stroke-width="0.7"/>
+            <path d="M0 -12 L 3 0 L 0 12 L -3 0 Z" fill="#1a1613"/>
+            <text x="0" y="-20" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1a1613">N</text>
+          </g>
+        </svg>
+        <a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9"
+           class="v2-map-link"
+           target="_blank"
+           rel="noopener"
+           aria-label="Apri Casa e Bottega in Google Maps">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Via Gargano 13 · Google Maps
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     REVIEWS
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-section v2-reviews" aria-labelledby="v2-reviews-heading">
+  <div class="v2-container">
+    <div class="v2-reviews-grid">
+
+      <!-- Left: scores -->
+      <div class="v2-fade">
+        <div class="v2-label v2-label-dot" style="color:rgba(245,239,230,0.7); margin-bottom:24px;" data-i18n="reviews_subtitle">Recensioni</div>
+        <div class="v2-reviews-score-num v2-serif" aria-label="9,8 su 10">
+          9,8<sup>/10</sup>
+        </div>
+        <div class="v2-reviews-score-meta">Booking.com · 50+ ospiti</div>
+        <div class="v2-reviews-score-num v2-serif" style="font-size:48px;" aria-label="4,9 su 5">
+          4,9<sup style="font-size:16px;">/5</sup>
+        </div>
+        <div class="v2-reviews-score-meta">Airbnb · Superhost</div>
+        <div class="v2-reviews-award" data-i18n="reviews_award_text">
+          Traveller Review Award 2026 · Booking.com
+        </div>
+      </div>
+
+      <!-- Right: review carousel -->
+      <div class="v2-fade" id="v2-reviews-carousel">
+        <div class="v2-review-quote-mark" aria-hidden="true">"</div>
+        <blockquote class="v2-review-text" id="v2-review-text" aria-live="polite">
+          La stanza è studiata nei minimi particolari per offrire tutti i comfort.
+          Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi.
+          Consigliatissimo.
+        </blockquote>
+        <div class="v2-review-footer">
+          <div>
+            <div class="v2-review-author-name" id="v2-review-author">Luca</div>
+            <div class="v2-review-author-meta" id="v2-review-meta">Italia · Giugno · Booking</div>
+          </div>
+          <div class="v2-review-controls" aria-label="Naviga tra le recensioni">
+            <span class="v2-review-count" id="v2-review-count" aria-hidden="true">01 / 07</span>
+            <button class="v2-review-btn" id="v2-review-prev" aria-label="Recensione precedente">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="transform:rotate(180deg);"><path d="M7 5l5 5-5 5"/></svg>
+            </button>
+            <button class="v2-review-btn" id="v2-review-next" aria-label="Recensione successiva">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 5l5 5-5 5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     DIRECT BOOKING
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-section v2-booking-cta" aria-labelledby="v2-booking-heading">
+  <div class="v2-container">
+
+    <div class="v2-booking-cta-header v2-fade">
+      <div class="v2-label v2-label-dot" style="display:inline-flex; margin-bottom:20px;">Prenotazione diretta</div>
+      <h2 class="v2-booking-cta-headline" id="v2-booking-heading">
+        Prenotando qui<br>
+        <em>risparmiate il 20%.</em>
+      </h2>
+      <p class="v2-booking-cta-body">
+        Nessuna commissione, nessun intermediario. Stai prenotando con la famiglia
+        che ti accoglierà alla porta.
+      </p>
+    </div>
+
+    <div class="v2-booking-table-wrap v2-fade">
+      <div class="v2-booking-table" role="table" aria-label="Confronto prenotazione diretta vs OTA">
+
+        <!-- Header row -->
+        <div role="columnheader" aria-label="Voce"></div>
+        <div class="v2-bt-col-head" role="columnheader">
+          <div class="v2-bt-col-label v2-bt-col-label--primary v2-mono">Qui · Diretto</div>
+          <div class="v2-bt-col-name v2-serif">Casa e Bottega</div>
+        </div>
+        <div class="v2-bt-col-head--alt" role="columnheader">
+          <div class="v2-bt-col-label v2-bt-col-label--alt v2-mono">Altrove</div>
+          <div class="v2-bt-col-name v2-bt-col-name--alt v2-serif">Booking · Airbnb</div>
+        </div>
+
+        <!-- Row: Prezzo -->
+        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+          <span class="v2-label">Prezzo</span>
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+          <span class="v2-bt-check">✓</span>−20% sempre garantito
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Commissioni incluse</div>
+
+        <!-- Row: Assistenza -->
+        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+          <span class="v2-label">Assistenza</span>
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+          <span class="v2-bt-check">✓</span>WhatsApp con Nicoletta
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Call center / bot</div>
+
+        <!-- Row: Cancellazione -->
+        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+          <span class="v2-label">Cancellazione</span>
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+          <span class="v2-bt-check">✓</span>Rimborso fino a 20 gg prima
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Dipende dalla tariffa</div>
+
+        <!-- Row: L'ospite -->
+        <div class="v2-bt-cell v2-bt-cell--label" role="rowheader">
+          <span class="v2-label">L'ospite</span>
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--primary" role="cell">
+          <span class="v2-bt-check">✓</span>Un nome, una storia
+        </div>
+        <div class="v2-bt-cell v2-bt-cell--alt" role="cell">Un numero di prenotazione</div>
+
+      </div>
+
+      <div class="v2-booking-table-cta">
+        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:18px 32px;">
+          Prenota ora · Risparmia 20%
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main><!-- /#site-main -->
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════ -->
+<footer class="v2-footer" role="contentinfo">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">
+          A due passi dal mare, nel cuore del Gargano.
+          Una casa, due camere, una famiglia che vi apre la porta.
+        </p>
+      </div>
+
+      <!-- Pagine -->
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
+          <li><a href="../regole.html">Regole della Casa</a></li>
+        </ul>
+      </div>
+
+      <!-- Seguici -->
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
+        <ul>
+          <li><a href="https://www.booking.com" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it" rel="noopener" target="_blank">Airbnb</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contatti -->
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
+        <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
+          <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="v2-footer-bottom">
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
+    </div>
+  </div>
 </footer>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCRIPTS (unchanged — i18n + main.js)
+     ══════════════════════════════════════════════════════════ -->
 <script src="../js/i18n.js" defer></script>
 <script src="../js/main.js" defer></script>
 
-<!-- ══ STICKY TOUCHPOINTS ════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════════════
+     STICKY TOUCHPOINTS
+     ══════════════════════════════════════════════════════════ -->
+
 <!-- Desktop: WhatsApp floating pill -->
-<a class="wa-float"
-   href="https://wa.me/393334705574?text=Bonjour!%20J%27ai%20visit%C3%A9%20le%20site%20de%20Casa%20e%20Bottega%20%E2%80%94%20je%20voudrais%20savoir%20si%20vous%20avez%20des%20disponibilit%C3%A9s.%20Merci!%20%F0%9F%99%8F"
-   target="_blank" rel="noopener"
-   aria-label="Écrivez-nous sur WhatsApp">
-  <svg class="wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span class="wa-float-label">Chat sur WhatsApp</span>
+<a class="v2-wa-pill"
+   href="https://wa.me/393334705574?text=Ciao!%20Ho%20visitato%20il%20sito%20di%20Casa%20e%20Bottega%20%E2%80%94%20vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!"
+   target="_blank"
+   rel="noopener"
+   aria-label="Scrivici su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  Scrivi su WhatsApp
 </a>
 
 <!-- Mobile: sticky bottom bar -->
-<div class="sticky-mobile-bar" role="complementary" aria-label="Quick contact">
-  <a class="smb-wa"
-     href="https://wa.me/393334705574?text=Bonjour!%20J%27ai%20visit%C3%A9%20le%20site%20de%20Casa%20e%20Bottega%20%E2%80%94%20je%20voudrais%20savoir%20si%20vous%20avez%20des%20disponibilit%C3%A9s.%20Merci!%20%F0%9F%99%8F"
-     target="_blank" rel="noopener" aria-label="Écrivez-nous sur WhatsApp">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Écrivez, nous répondons tout de suite
+<div class="v2-sticky-mobile" role="complementary" aria-label="Contatto rapido">
+  <a class="v2-smb-wa"
+     href="https://wa.me/393334705574?text=Ciao!%20Ho%20visitato%20il%20sito%20di%20Casa%20e%20Bottega%20%E2%80%94%20vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!"
+     target="_blank"
+     rel="noopener"
+     aria-label="Scrivici su WhatsApp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Scrivi, ti rispondiamo subito
   </a>
-  <a class="smb-book" href="prenota.html">
-    Réserver : économisez 20 %
+  <a class="v2-smb-book" href="prenota.html">
+    Prenota: risparmi il 20%
   </a>
 </div>
-<!-- ══ END STICKY TOUCHPOINTS ════════════════════════════════════════════════════════ -->
+
+<!-- ══════════════════════════════════════════════════════════
+     INLINE JS — Review carousel + Nav toggle + Fade-in
+     (No dependencies on external scripts — runs after DOM)
+     ══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Reviews carousel ---- */
+  var reviews = [
+    {
+      text: "La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi. Consigliatissimo.",
+      author: "Luca",
+      meta: "Italia · Giugno · Booking"
+    },
+    {
+      text: "L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons!",
+      author: "Céline & François",
+      meta: "Francia · Agosto · Airbnb"
+    },
+    {
+      text: "A partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente.",
+      author: "Molaro",
+      meta: "Italia · Luglio · Booking"
+    },
+    {
+      text: "Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe.",
+      author: "Moni",
+      meta: "Germania · Luglio · Airbnb"
+    },
+    {
+      text: "Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!",
+      author: "Giacomo",
+      meta: "Italia · Settembre · Booking"
+    },
+    {
+      text: "Appartamento curato e pulito. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano.",
+      author: "Bozidarka",
+      meta: "Italia · Giugno · Airbnb"
+    },
+    {
+      text: "Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.",
+      author: "Valentina",
+      meta: "Italia · Novembre · Booking"
+    }
+  ];
+
+  var idx = 0;
+  var textEl   = document.getElementById('v2-review-text');
+  var authorEl = document.getElementById('v2-review-author');
+  var metaEl   = document.getElementById('v2-review-meta');
+  var countEl  = document.getElementById('v2-review-count');
+  var prevBtn  = document.getElementById('v2-review-prev');
+  var nextBtn  = document.getElementById('v2-review-next');
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function showReview(i) {
+    idx = (i + reviews.length) % reviews.length;
+    if (!textEl) return;
+    textEl.style.opacity   = '0';
+    authorEl.style.opacity = '0';
+    setTimeout(function () {
+      textEl.textContent   = reviews[idx].text;
+      authorEl.textContent = reviews[idx].author;
+      metaEl.textContent   = reviews[idx].meta;
+      countEl.textContent  = pad(idx + 1) + ' / ' + pad(reviews.length);
+      textEl.style.opacity   = '1';
+      authorEl.style.opacity = '1';
+    }, 180);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { showReview(idx - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { showReview(idx + 1); });
+
+  // Auto-advance every 7s
+  var autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
+  var carousel = document.getElementById('v2-reviews-carousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+    carousel.addEventListener('mouseleave', function () {
+      autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
+    });
+  }
+
+  // Initialise count display
+  if (countEl) countEl.textContent = '01 / ' + pad(reviews.length);
+
+  /* ---- Mobile nav toggle ---- */
+  var toggle   = document.getElementById('v2-menu-toggle');
+  var navLinks = document.getElementById('v2-nav-links');
+
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('v2-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      // Animate hamburger to X
+      var spans = toggle.querySelectorAll('span');
+      if (open) {
+        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+        spans[1].style.opacity   = '0';
+        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity   = '';
+        spans[2].style.transform = '';
+      }
+    });
+  }
+
+  /* ---- Scroll fade-in ---- */
+  if ('IntersectionObserver' in window) {
+    var fadeEls = document.querySelectorAll('.v2-fade');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('v2-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    // Fallback: show all immediately
+    document.querySelectorAll('.v2-fade').forEach(function (el) {
+      el.classList.add('v2-visible');
+    });
+  }
+
+}());
+</script>
+
 </body>
 </html>
