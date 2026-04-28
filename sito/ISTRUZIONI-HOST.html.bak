@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Istruzioni per l'Host — Casa e Bottega</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; color: #2C2C2C; line-height: 1.8; background: #FAF8F4; }
+    h1 { color: #1B4F72; border-bottom: 2px solid #C8A96E; padding-bottom: 0.5rem; }
+    h2 { color: #1B4F72; margin-top: 2.5rem; }
+    h3 { color: #C07040; }
+    code { background: #e8e4dc; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+    pre { background: #2C2C2C; color: #F5F0E8; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85em; }
+    .warning { background: #FFF3CD; border-left: 4px solid #C8A96E; padding: 1rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    .tip { background: #D4EDDA; border-left: 4px solid #5C6B3A; padding: 1rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    .file-tree { background: #f0ece4; padding: 1rem; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.6rem; text-align: left; font-size: 0.9em; }
+    th { background: #1B4F72; color: white; }
+    ol > li { margin-bottom: 0.5rem; }
+    .step-img { display: block; margin: 0.5rem 0; font-style: italic; color: #666; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+
+<h1>Guida per l'Host — Casa e Bottega</h1>
+<p>Questa guida spiega come gestire, pubblicare e aggiornare il sito web senza competenze tecniche.</p>
+
+<!-- ============================================ -->
+<h2>1. Struttura dei file</h2>
+<div class="file-tree">
+casa-e-bottega-sito/<br>
+├── sito/<br>
+│&nbsp;&nbsp; ├── index.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Home page<br>
+│&nbsp;&nbsp; ├── camere.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Pagina Le Camere<br>
+│&nbsp;&nbsp; ├── prenota.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Disponibilità e Prenotazione<br>
+│&nbsp;&nbsp; ├── blog.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Racconti dal Gargano<br>
+│&nbsp;&nbsp; ├── blog-articolo-1.html &nbsp; ← Primo articolo blog<br>
+│&nbsp;&nbsp; ├── contatti.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Pagina Contatti<br>
+│&nbsp;&nbsp; ├── css/style.css &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Stile grafico<br>
+│&nbsp;&nbsp; ├── js/i18n.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Traduzioni multilingua<br>
+│&nbsp;&nbsp; └── js/main.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Funzionalità e prezzi<br>
+├── foto-la-dimora/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Foto camera La Dimora<br>
+├── foto-la-bottega/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Foto camera La Bottega<br>
+├── foto-spazi-comuni/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Ingresso, corridoio, esterno<br>
+├── foto-zona/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Foto Manfredonia e dintorni<br>
+└── loghi-e-badge/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Badge, loghi, recensioni<br>
+</div>
+
+<!-- ============================================ -->
+<h2>2. Pubblicare il sito online (deployment)</h2>
+<p>Il sito va pubblicato su un servizio di hosting. Ecco le due opzioni consigliate, entrambe gratuite per siti statici come il vostro.</p>
+
+<h3>Opzione A — Netlify (consigliato per semplicità)</h3>
+<ol>
+  <li>Vai su <a href="https://app.netlify.com/signup">app.netlify.com/signup</a> e crea un account (puoi usare l'email o Google)</li>
+  <li>Una volta dentro, clicca su <strong>"Add new site"</strong> → <strong>"Deploy manually"</strong></li>
+  <li>
+    <strong>Prepara la cartella da caricare:</strong> Il sito ha bisogno che tutti i file siano nella stessa cartella. Crea una cartella unica (es. <code>deploy/</code>) con questa struttura:
+    <div class="file-tree" style="margin: 0.5rem 0;">
+    deploy/<br>
+    ├── index.html<br>
+    ├── camere.html<br>
+    ├── prenota.html<br>
+    ├── blog.html<br>
+    ├── blog-articolo-1.html<br>
+    ├── contatti.html<br>
+    ├── css/<br>
+    ├── js/<br>
+    ├── foto-la-dimora/<br>
+    ├── foto-la-bottega/<br>
+    ├── foto-spazi-comuni/<br>
+    ├── foto-zona/<br>
+    └── loghi-e-badge/<br>
+    </div>
+    In pratica: copia il contenuto di <code>sito/</code> nella cartella, poi copia dentro anche tutte le cartelle foto. I file HTML usano <code>../foto-la-dimora/</code> come percorso — dovrai cambiare tutti i <code>../</code> in <code>./</code> nei file HTML (cerca e sostituisci <code>../foto-</code> con <code>./foto-</code> e <code>../loghi-</code> con <code>./loghi-</code>).
+  </li>
+  <li>Trascina la cartella <code>deploy/</code> nell'area di upload di Netlify. Il sito sarà online in pochi secondi con un URL tipo <code>casaebottega.netlify.app</code></li>
+  <li>Per collegare il dominio personalizzato: vai su <strong>Site settings → Domain management → Add custom domain</strong> e segui il punto 3 di questa guida</li>
+</ol>
+
+<h3>Opzione B — Vercel</h3>
+<ol>
+  <li>Vai su <a href="https://vercel.com/signup">vercel.com/signup</a> e crea un account</li>
+  <li>Clicca su <strong>"Add New…"</strong> → <strong>"Project"</strong></li>
+  <li>Se non usi Git, puoi usare la <strong>Vercel CLI</strong>:
+    <ol>
+      <li>Installa Node.js da <a href="https://nodejs.org">nodejs.org</a></li>
+      <li>Apri il Terminale (Mac) o Prompt dei comandi (Windows)</li>
+      <li>Scrivi: <code>npm install -g vercel</code></li>
+      <li>Entra nella cartella del sito: <code>cd percorso/alla/cartella/deploy</code></li>
+      <li>Scrivi: <code>vercel</code> e segui le istruzioni a schermo</li>
+    </ol>
+  </li>
+  <li>In alternativa, carica il progetto su <a href="https://github.com">GitHub</a> e collegalo a Vercel — ogni modifica su GitHub aggiornerà il sito automaticamente</li>
+  <li>Per il dominio personalizzato: vai su <strong>Settings → Domains</strong> e aggiungi <code>casaebottegapuglia.it</code></li>
+</ol>
+
+<div class="tip">
+  <strong>Consiglio:</strong> Netlify è l'opzione più semplice — basta trascinare una cartella. Vercel è più potente se in futuro vuoi automatizzare gli aggiornamenti con GitHub.
+</div>
+
+<!-- ============================================ -->
+<h2>3. Configurare il dominio personalizzato</h2>
+<p>Dopo aver acquistato i domini <code>casaebottegapuglia.it</code> e <code>casabottegapuglia.it</code>, segui questi passi.</p>
+
+<h3>a) Collegare casaebottegapuglia.it (dominio principale)</h3>
+<p>Il procedimento dipende da dove li acquisti. I registrar più comuni per domini .it sono Aruba, Register.it, OVH, Namecheap, Google Domains (ora Squarespace Domains).</p>
+
+<p><strong>Su Netlify:</strong></p>
+<ol>
+  <li>Nel pannello Netlify, vai su <strong>Site settings → Domain management → Add custom domain</strong></li>
+  <li>Inserisci <code>casaebottegapuglia.it</code> e conferma</li>
+  <li>Netlify ti mostrerà dei <strong>record DNS</strong> da configurare. Di solito sono:
+    <pre>Tipo: A     Host: @     Valore: 75.2.60.5
+Tipo: CNAME Host: www   Valore: tuo-sito.netlify.app</pre>
+    <em>(I valori esatti li troverai nel pannello Netlify — usa quelli.)</em>
+  </li>
+  <li>Vai nel pannello del tuo registrar (es. Aruba) → sezione <strong>DNS / Gestione DNS</strong></li>
+  <li>Aggiungi i record che Netlify ti ha indicato</li>
+  <li>Attendi da 10 minuti a 24 ore per la propagazione DNS</li>
+  <li>Torna su Netlify → clicca <strong>"Verify DNS"</strong> → attiva <strong>HTTPS automatico</strong> (certificato SSL gratuito via Let's Encrypt)</li>
+</ol>
+
+<p><strong>Su Vercel:</strong></p>
+<ol>
+  <li>Nel pannello Vercel, vai su <strong>Settings → Domains</strong></li>
+  <li>Aggiungi <code>casaebottegapuglia.it</code></li>
+  <li>Vercel ti mostrerà i record DNS da configurare (simile a Netlify)</li>
+  <li>Configura i DNS nel pannello del registrar</li>
+  <li>Vercel attiverà HTTPS automaticamente</li>
+</ol>
+
+<h3>b) Redirect da casabottegapuglia.it (dominio secondario)</h3>
+<p>Questo dominio deve reindirizzare automaticamente al dominio principale, così chi digita l'indirizzo sbagliato finisce comunque sul sito giusto.</p>
+
+<p><strong>Su Netlify:</strong></p>
+<ol>
+  <li>Aggiungi anche <code>casabottegapuglia.it</code> come "domain alias" nelle impostazioni del sito (Domain management → Add domain alias)</li>
+  <li>Configura i DNS del secondo dominio nello stesso modo (puntandoli a Netlify)</li>
+  <li>Crea un file chiamato <code>_redirects</code> (senza estensione) nella cartella principale del sito, con questo contenuto:
+    <pre># Redirect dominio secondario al principale
+https://casabottegapuglia.it/*    https://casaebottegapuglia.it/:splat    301!
+https://www.casabottegapuglia.it/*    https://casaebottegapuglia.it/:splat    301!</pre>
+  </li>
+  <li>Ricarica il sito su Netlify</li>
+</ol>
+
+<p><strong>Su Vercel:</strong></p>
+<ol>
+  <li>Aggiungi <code>casabottegapuglia.it</code> nel pannello Domains</li>
+  <li>Vercel ti chiederà se vuoi fare un redirect — scegli <strong>"Redirect to casaebottegapuglia.it"</strong></li>
+  <li>Configura i DNS del secondo dominio puntandoli a Vercel</li>
+</ol>
+
+<p><strong>Alternativa (dal registrar):</strong> Se preferisci, puoi configurare il redirect direttamente dal pannello del registrar dove hai comprato <code>casabottegapuglia.it</code>. Cerca l'opzione "Web forwarding" o "Redirect URL" e imposta: <code>casabottegapuglia.it → https://casaebottegapuglia.it</code> (redirect 301 permanente).</p>
+
+<div class="warning">
+  <strong>Importante:</strong> Il redirect deve essere di tipo <strong>301 (permanente)</strong>, non 302. Questo è fondamentale per la SEO — dice a Google che il dominio principale è <code>casaebottegapuglia.it</code>.
+</div>
+
+<!-- ============================================ -->
+<h2>4. Configurare la casella email bookings@casaebottegapuglia.it</h2>
+<p>Per avere un'email professionale con il vostro dominio, ci sono diverse opzioni.</p>
+
+<h3>Opzione A — Zoho Mail (gratuito fino a 5 utenti — consigliato)</h3>
+<ol>
+  <li>Vai su <a href="https://www.zoho.com/mail/zohomail-pricing.html">zoho.com/mail</a> e scegli il piano <strong>Free</strong> (gratuito, fino a 5 caselle, 5GB ciascuna)</li>
+  <li>Registrati e aggiungi il dominio <code>casaebottegapuglia.it</code></li>
+  <li>Zoho ti chiederà di <strong>verificare il dominio</strong> aggiungendo un record TXT nel pannello DNS del registrar:
+    <pre>Tipo: TXT   Host: @   Valore: zoho-verification=zb1234xxxx.zmverify.zoho.eu</pre>
+  </li>
+  <li>Dopo la verifica, configura i <strong>record MX</strong> (sempre nel pannello DNS del registrar):
+    <pre>Tipo: MX   Host: @   Valore: mx.zoho.eu       Priorità: 10
+Tipo: MX   Host: @   Valore: mx2.zoho.eu      Priorità: 20
+Tipo: MX   Host: @   Valore: mx3.zoho.eu      Priorità: 50</pre>
+  </li>
+  <li>Configura anche i record <strong>SPF</strong> e <strong>DKIM</strong> (Zoho ti guiderà passo passo) — servono a evitare che le email finiscano nello spam:
+    <pre>Tipo: TXT   Host: @   Valore: v=spf1 include:zoho.eu ~all</pre>
+  </li>
+  <li>Crea la casella <code>bookings@casaebottegapuglia.it</code> dal pannello di Zoho</li>
+  <li>Puoi accedere alla posta via web su <a href="https://mail.zoho.eu">mail.zoho.eu</a> o tramite l'app Zoho Mail (iPhone/Android)</li>
+</ol>
+
+<h3>Opzione B — Google Workspace (a pagamento, ~€6/mese)</h3>
+<ol>
+  <li>Vai su <a href="https://workspace.google.com">workspace.google.com</a> e scegli il piano Business Starter</li>
+  <li>Segui la procedura guidata per aggiungere il dominio e verificarlo</li>
+  <li>Configura i record MX di Google nel pannello DNS del registrar:
+    <pre>Tipo: MX   Host: @   Valore: ASPMX.L.GOOGLE.COM        Priorità: 1
+Tipo: MX   Host: @   Valore: ALT1.ASPMX.L.GOOGLE.COM   Priorità: 5
+Tipo: MX   Host: @   Valore: ALT2.ASPMX.L.GOOGLE.COM   Priorità: 5</pre>
+  </li>
+  <li>Crea la casella <code>bookings@casaebottegapuglia.it</code></li>
+  <li>Usi la stessa interfaccia di Gmail — con il tuo dominio personalizzato</li>
+</ol>
+
+<h3>Opzione C — Email del registrar (es. Aruba)</h3>
+<p>Se acquisti il dominio su Aruba o Register.it, di solito l'email è inclusa nel pacchetto dominio. Attiva la casella dal pannello di controllo del registrar e segui le istruzioni per configurarla nell'app di posta del telefono.</p>
+
+<div class="tip">
+  <strong>Consiglio:</strong> Zoho Mail è la scelta migliore rapporto qualità/prezzo: gratuito, professionale, con app mobile. Google Workspace costa di più ma se usate già Gmail è l'esperienza più familiare.
+</div>
+
+<div class="warning">
+  <strong>Configura anche l'inoltro:</strong> Se vuoi ricevere le email di <code>bookings@casaebottegapuglia.it</code> anche sulla tua casella personale, configura un inoltro automatico (forwarding) dal pannello di Zoho o Google. Così non ti perdi nessuna prenotazione.
+</div>
+
+<!-- ============================================ -->
+<h2>5. Come aggiornare i testi</h2>
+<p>I testi del sito sono in due posti:</p>
+
+<h3>a) Testi nelle pagine HTML</h3>
+<p>Apri il file HTML con un editor di testo (es. Notepad, TextEdit, Visual Studio Code). Cerca il testo che vuoi cambiare e modificalo direttamente tra i tag. Per esempio:</p>
+<pre>&lt;p&gt;Questo è il testo che vedi sul sito.&lt;/p&gt;</pre>
+<p>Cambialo in:</p>
+<pre>&lt;p&gt;Questo è il nuovo testo aggiornato.&lt;/p&gt;</pre>
+
+<h3>b) Testi multilingua (traduzioni)</h3>
+<p>Le traduzioni sono nel file <code>js/i18n.js</code>. Ogni lingua ha la sua sezione. Per aggiornare una traduzione:</p>
+<ol>
+  <li>Apri <code>js/i18n.js</code></li>
+  <li>Cerca la chiave del testo (es. <code>about_p1</code>)</li>
+  <li>Modifica il testo tra le virgolette per ogni lingua</li>
+  <li>Salva il file</li>
+</ol>
+
+<div class="warning">
+  <strong>Attenzione:</strong> Non eliminare le virgolette, le virgole o le parentesi graffe. Se il testo contiene un apostrofo ('), usa \' oppure racchiudi il testo tra virgolette doppie ".
+</div>
+
+<!-- ============================================ -->
+<h2>6. Come aggiornare i prezzi</h2>
+<p>I prezzi sono configurati nel file <code>js/main.js</code>, nella sezione <code>PRICING</code> in cima al file:</p>
+<pre>
+const PRICING = {
+  dimora: { high: 100, low: 60 },   // La Dimora: alta/bassa stagione
+  bottega: { high: 90, low: 50 },   // La Bottega: alta/bassa stagione
+  otaMarkup: 1.20,                   // +20% per Booking/Airbnb
+  weeklyDiscount: 0.10,              // -10% per soggiorni 7+ notti
+  monthlyDiscount: 0.20,             // -20% per soggiorni 30+ notti
+  highSeasonMonths: [6, 7, 8]        // Mesi alta stagione (0=Gen, 6=Lug)
+};
+</pre>
+<p>Per esempio, per portare La Dimora a €110 in alta stagione, cambia <code>high: 100</code> in <code>high: 110</code>. I prezzi OTA vengono calcolati automaticamente.</p>
+
+<div class="warning">
+  <strong>Attenzione:</strong> I prezzi nella pagina Camere (<code>camere.html</code>) sono scritti direttamente nell'HTML, quindi vanno aggiornati a mano in quel file se cambi i prezzi nel JS. Cerca <code>€100</code>, <code>€120</code>, ecc. e aggiornali di conseguenza.
+</div>
+
+<!-- ============================================ -->
+<h2>7. Come sostituire le foto</h2>
+<ol>
+  <li>Prepara la nuova foto in formato .jpeg o .jpg</li>
+  <li>Rinominala con lo <strong>stesso nome</strong> della foto che vuoi sostituire</li>
+  <li>Copiala nella stessa cartella, sovrascrivendo quella vecchia</li>
+</ol>
+
+<table>
+  <tr><th>Cartella</th><th>Contenuto</th></tr>
+  <tr><td><code>foto-la-dimora/</code></td><td>Foto della camera La Dimora (dimora-01 … dimora-06)</td></tr>
+  <tr><td><code>foto-la-bottega/</code></td><td>Foto della camera La Bottega (bottega-01 … bottega-07)</td></tr>
+  <tr><td><code>foto-spazi-comuni/</code></td><td>Ingresso, corridoio, lavanderia, esterno</td></tr>
+  <tr><td><code>foto-zona/</code></td><td>Foto di Manfredonia e dintorni</td></tr>
+  <tr><td><code>loghi-e-badge/</code></td><td>Badge, loghi, screenshot recensioni</td></tr>
+</table>
+
+<div class="tip">
+  <strong>Consiglio:</strong> Le foto dovrebbero essere larghe almeno 1200px. Comprimile con <a href="https://tinypng.com">TinyPNG</a> prima di caricarle per velocizzare il sito.
+</div>
+
+<!-- ============================================ -->
+<h2>8. Come pubblicare un nuovo articolo blog</h2>
+<ol>
+  <li>Copia il file <code>blog-articolo-1.html</code> e rinominalo (es. <code>blog-articolo-4.html</code>)</li>
+  <li>Apri il nuovo file e modifica:
+    <ul>
+      <li>Il titolo nel tag <code>&lt;title&gt;</code> e nel tag <code>&lt;h1&gt;</code></li>
+      <li>La data</li>
+      <li>Il testo dei paragrafi</li>
+      <li>Le immagini (metti le nuove foto nella cartella <code>foto-zona/</code>)</li>
+    </ul>
+  </li>
+  <li>Apri <code>blog.html</code> e copia uno dei blocchi <code>&lt;article class="blog-card"&gt;...&lt;/article&gt;</code></li>
+  <li>Incollalo sopra gli altri, aggiorna titolo, data, estratto, immagine e link al nuovo file</li>
+  <li>Cambia <code>data-cat="..."</code> con la categoria giusta: <code>mare</code>, <code>borghi</code>, <code>cibo</code>, <code>tradizioni</code>, <code>itinerari</code></li>
+</ol>
+
+<!-- ============================================ -->
+<h2>9. Come aggiornare i link iCal (calendario)</h2>
+<p>I link iCal servono per sincronizzare la disponibilità da Airbnb e Booking.com. Si trovano nel file <code>js/main.js</code>, nella sezione <code>icalFeeds</code>:</p>
+<pre>
+const icalFeeds = {
+  dimora: [
+    'https://www.airbnb.it/calendar/ical/...', // Link iCal Airbnb
+    'https://ical.booking.com/v1/export?t=...'  // Link iCal Booking
+  ],
+  bottega: [
+    'https://www.airbnb.it/calendar/ical/...', // Link iCal Airbnb
+    'https://ical.booking.com/v1/export?t=...'  // Link iCal Booking
+  ]
+};
+</pre>
+<p>Per aggiornarli:</p>
+<ol>
+  <li>Vai su Airbnb → Calendario → Esporta calendario → Copia il link .ics</li>
+  <li>Vai su Booking.com → Calendario → Esporta → Copia il link .ics</li>
+  <li>Sostituisci i link vecchi con quelli nuovi nel file <code>js/main.js</code></li>
+</ol>
+
+<!-- ============================================ -->
+<h2>10. Come aggiornare i contatti (WhatsApp, email)</h2>
+<p>I contatti attuali sono già configurati su tutto il sito:</p>
+<ul>
+  <li><strong>WhatsApp:</strong> 333 470 5574 (nei link: <code>393334705574</code>)</li>
+  <li><strong>Email:</strong> bookings@casaebottegapuglia.it</li>
+</ul>
+<p>Se in futuro dovessi cambiare numero o email, usa la funzione "Cerca e sostituisci" del tuo editor (Ctrl+H o Cmd+H) per sostituire in tutti i file in una volta.</p>
+
+<!-- ============================================ -->
+<h2>11. Come aggiornare i link social e profili</h2>
+<p>Cerca <code>href="#"</code> nei file HTML — questi sono i link placeholder per Instagram, Airbnb e Booking.com. Sostituiscili con gli URL reali dei tuoi profili.</p>
+
+<!-- ============================================ -->
+<h2>12. Checklist prima di pubblicare</h2>
+<ul>
+  <li>☐ Acquistare i domini <code>casaebottegapuglia.it</code> e <code>casabottegapuglia.it</code></li>
+  <li>☐ Creare account su Netlify o Vercel</li>
+  <li>☐ Caricare il sito e configurare i DNS del dominio principale</li>
+  <li>☐ Configurare il redirect 301 dal dominio secondario</li>
+  <li>☐ Attivare HTTPS (automatico su Netlify/Vercel)</li>
+  <li>☐ Configurare la casella email <code>bookings@casaebottegapuglia.it</code></li>
+  <li>☐ Configurare inoltro email alla casella personale</li>
+  <li>☐ Aggiornare i link <code>href="#"</code> con i profili Airbnb, Booking.com e Instagram</li>
+  <li>☐ Verificare che le foto si vedano correttamente</li>
+  <li>☐ Testare il sito su mobile (smartphone)</li>
+  <li>☐ Verificare che il calendario iCal carichi le date prenotate</li>
+  <li>☐ Aggiornare i link iCal con quelli reali di Airbnb e Booking.com</li>
+  <li>☐ Testare l'invio del form contatti e il pulsante WhatsApp</li>
+</ul>
+
+<!-- ============================================ -->
+<h2>Riepilogo DNS — tutti i record in un posto</h2>
+<p>Ecco un riepilogo di tutti i record DNS che dovrai configurare nel pannello del registrar per <code>casaebottegapuglia.it</code>:</p>
+
+<table>
+  <tr><th>Tipo</th><th>Host</th><th>Valore</th><th>Scopo</th></tr>
+  <tr><td>A</td><td>@</td><td><em>(fornito da Netlify/Vercel)</em></td><td>Collegare il dominio al sito</td></tr>
+  <tr><td>CNAME</td><td>www</td><td><em>(fornito da Netlify/Vercel)</em></td><td>Versione www del sito</td></tr>
+  <tr><td>MX</td><td>@</td><td><em>(fornito da Zoho/Google)</em></td><td>Ricevere email</td></tr>
+  <tr><td>TXT</td><td>@</td><td><em>v=spf1 include:...</em></td><td>Anti-spam (SPF)</td></tr>
+  <tr><td>TXT/CNAME</td><td><em>varia</em></td><td><em>(fornito da Zoho/Google)</em></td><td>Anti-spam (DKIM)</td></tr>
+</table>
+
+<div class="tip">
+  <strong>Nota:</strong> Non preoccuparti se sembra complicato — sia Netlify che Zoho/Google ti guidano passo passo con istruzioni chiare. In caso di dubbi, il supporto dei registrar italiani (Aruba, Register.it) risponde anche in italiano.
+</div>
+
+<hr style="margin-top: 3rem;">
+<p style="color: #888; font-size: 0.85em; text-align: center;">Guida creata per Casa e Bottega — Manfredonia, Marzo 2026</p>
+
+</body>
+</html>

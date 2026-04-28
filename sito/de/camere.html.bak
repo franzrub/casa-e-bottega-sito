@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zimmer | Casa e Bottega Manfredonia</title>
+<meta content="Die Zimmer von Casa e Bottega: La Dimora und La Bottega. Zwei Zimmer mit Seele im historischen Zentrum von Manfredonia, Gargano." name="description"/>
+<meta content="camere Manfredonia, La Dimora, La Bottega, casa vacanze Gargano, camera doppia centro storico Manfredonia, locazione turistica" name="keywords"/>
+<meta content="Zimmer | Casa e Bottega Manfredonia" property="og:title"/>
+<meta content="Die Zimmer von Casa e Bottega: La Dimora und La Bottega. Zwei Zimmer mit Seele im historischen Zentrum von Manfredonia, Gargano." property="og:description"/>
+<meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.casaebottegapuglia.it/de/camere.html" property="og:url"/>
+<meta content="it_IT" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Camere a Casa Vacanze Manfredonia | La Dimora e La Bottega" name="twitter:title"/>
+<meta content="La Dimora e La Bottega: due camere con anima nel centro storico di Manfredonia, 300 m dal mare." name="twitter:description"/>
+<meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
+<link href="https://www.casaebottegapuglia.it/de/camere.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/camere.html" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/camere.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/camere.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/camere.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/camere.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/camere.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/camere.html" hreflang="x-default" rel="alternate"/>
+<!-- ▶ CWV: preload hero LCP image -->
+<link rel="preload" href="../../foto-la-dimora/dimora-01-foto-principale.webp" as="image" fetchpriority="high"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- ▶ Design v2 fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link href="../css/style-v2.css" rel="stylesheet"/>
+<style>
+/* ── camere.html page-specific styles ───────────────────────── */
+
+/* Page intro */
+.v2-camere-intro {
+  text-align: center;
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--line);
+}
+.v2-camere-intro-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  margin-bottom: 28px;
+}
+.v2-camere-intro-headline em { font-style: italic; color: var(--terracotta); }
+.v2-camere-intro-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--ink-2);
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 0 auto 60px;
+}
+.v2-camere-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.v2-camere-pillar-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--petrolio);
+  margin-bottom: 10px;
+}
+.v2-camere-pillar-desc {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+
+/* Room section */
+.v2-room-section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--line);
+}
+.v2-room-section:nth-child(even) { background: var(--paper); }
+
+.v2-room-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.v2-room-grid--reversed {
+  grid-template-columns: 1fr 1.1fr;
+}
+.v2-room-grid--reversed .v2-room-gallery { order: 2; }
+.v2-room-grid--reversed .v2-room-info   { order: 1; }
+
+/* Gallery */
+.v2-room-gallery {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+}
+.v2-gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.v2-gallery-thumb {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper-2);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 180ms ease;
+  flex-shrink: 0;
+}
+.v2-gallery-thumb.active { border-color: var(--ink); }
+.v2-gallery-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+.v2-gallery-thumb:hover img { transform: scale(1.05); }
+
+.v2-gallery-main {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--paper-2);
+  position: relative;
+  cursor: zoom-in;
+}
+.v2-gallery-main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 300ms ease;
+}
+
+/* Room info */
+.v2-room-info { padding-top: 20px; }
+
+.v2-room-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+  margin-bottom: 12px;
+}
+.v2-room-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
+  font-size: clamp(56px, 7vw, 96px);
+  margin-bottom: 16px;
+}
+.v2-room-name em { font-style: italic; }
+.v2-room-name--bottega em { color: var(--petrolio); }
+.v2-room-name--dimora  em { color: var(--terracotta); }
+
+.v2-room-tagline {
+  font-size: 17px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.v2-room-desc {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+/* Stats strip */
+.v2-room-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.v2-room-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--stone-2);
+  margin-bottom: 4px;
+}
+.v2-room-stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Pricing block */
+.v2-room-pricing {
+  color: var(--bone);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.v2-room-pricing--dimora  { background: var(--ink); }
+.v2-room-pricing--bottega { background: var(--petrolio); }
+
+.v2-pricing-season-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+.v2-pricing-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  line-height: 1;
+}
+.v2-pricing-price span { font-size: 14px; opacity: 0.7; }
+.v2-pricing-ota {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 4px;
+  text-decoration: line-through;
+}
+.v2-pricing-divider {
+  border-left: 1px solid rgba(245,239,230,0.2);
+  padding-left: 24px;
+}
+
+/* Amenities */
+.v2-amenities-title {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--stone-2);
+  margin-bottom: 20px;
+}
+.v2-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  margin-bottom: 32px;
+}
+.v2-amenity-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.v2-amenity-icon {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  color: var(--stone-2);
+  flex-shrink: 0;
+}
+.v2-amenity-name {
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  line-height: 1.3;
+}
+.v2-amenity-desc {
+  font-size: 11px;
+  color: var(--stone-2);
+  margin-top: 2px;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Room CTA */
+.v2-room-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.v2-room-microcopy {
+  font-size: 12px;
+  color: var(--stone-2);
+  letter-spacing: 0.04em;
+}
+
+/* Lightbox */
+.v2-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,22,19,0.95);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.v2-lightbox.open { display: flex; }
+.v2-lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+}
+.v2-lightbox-close {
+  position: absolute;
+  top: 24px; right: 32px;
+  font-size: 32px;
+  color: var(--bone);
+  opacity: 0.7;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition: opacity 180ms ease;
+}
+.v2-lightbox-close:hover { opacity: 1; }
+.v2-lightbox-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  font-size: 40px;
+  color: var(--bone);
+  opacity: 0.6;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Cormorant Garamond', serif;
+  transition: opacity 180ms ease;
+  padding: 0 20px;
+}
+.v2-lightbox-nav:hover { opacity: 1; }
+.v2-lightbox-prev { left: 20px; }
+.v2-lightbox-next { right: 20px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .v2-room-grid,
+  .v2-room-grid--reversed { grid-template-columns: 1fr; gap: 40px; }
+  .v2-room-grid--reversed .v2-room-gallery { order: 1; }
+  .v2-room-grid--reversed .v2-room-info   { order: 2; }
+  .v2-room-gallery { grid-template-columns: 64px 1fr; }
+  .v2-room-pricing { grid-template-columns: 1fr 1fr; }
+  .v2-room-pricing .v2-btn { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 680px) {
+  .v2-camere-pillars { grid-template-columns: 1fr; gap: 32px; }
+  .v2-room-gallery { grid-template-columns: 1fr; }
+  .v2-gallery-thumbs { flex-direction: row; overflow-x: auto; }
+  .v2-gallery-thumb { width: 64px; flex-shrink: 0; }
+  .v2-amenities-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-room-stats { grid-template-columns: repeat(3, 1fr); }
+  .v2-room-pricing { grid-template-columns: 1fr; }
+  .v2-pricing-divider { border-left: none; padding-left: 0; border-top: 1px solid rgba(245,239,230,0.2); padding-top: 20px; }
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+</head>
+<body>
+
+<a class="v2-skip" href="#site-main">Vai al contenuto principale</a>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV
+     ══════════════════════════════════════════════════════════ -->
+<header>
+    <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
+    <div class="v2-nav-inner">
+
+      <!-- Left: nav links (desktop) -->
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a class="active" href="camere.html" data-i18n="nav_rooms">Le Camere</a>
+        <a href="prenota.html" data-i18n="nav_book">Prenota</a>
+        <a href="blog.html" data-i18n="nav_blog">Racconti</a>
+        <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
+      </div>
+
+      <!-- Centre: brand -->
+      <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
+        Casa <em>e</em> Bottega
+      </a>
+
+      <!-- Right: lang + CTA (desktop) + hamburger -->
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+          <a href="../camere.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../en/camere.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="../fr/camere.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a class="on" href="../de/camere.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../nl/camere.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="../es/camere.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile nav panel — lives OUTSIDE <nav> so backdrop-filter doesn't trap position:fixed -->
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a class="active" href="camere.html" data-i18n="nav_rooms">Le Camere</a>
+  <a href="prenota.html" data-i18n="nav_book">Prenota</a>
+  <a href="blog.html" data-i18n="nav_blog">Racconti</a>
+  <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
+  <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+    <a href="../camere.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a href="../en/camere.html" hreflang="en" title="English" role="listitem">EN</a>
+    <a href="../fr/camere.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a class="on" href="../de/camere.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="../nl/camere.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a href="../es/camere.html" hreflang="es" title="Español" role="listitem">ES</a>
+  </div>
+</div>
+
+<main id="site-main">
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE INTRO
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-camere-intro">
+  <div class="v2-container">
+    <div class="v2-label v2-label-dot" style="display:inline-flex;margin-bottom:24px;" data-i18n="rooms_subtitle">Le camere</div>
+    <h1 class="v2-camere-intro-headline" data-i18n="rooms_title">
+      Due stanze,<br><em>un'anima sola.</em>
+    </h1>
+    <p class="v2-camere-intro-quote">
+      "Casa e Bottega zu wählen bedeutet, eine handgefertigte Gastfreundschaft zu wählen.
+      Zwei Zimmer mit Liebe zum Detail, im Herzen des Gargano."
+    </p>
+    <div class="v2-camere-pillars">
+      <div>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_craft_name">Cura nei dettagli</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_craft_desc">Come la suola di una scarpa su misura, ogni elemento è scelto con intenzione.</p>
+      </div>
+      <div>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_people_name">Persone reali</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_people_desc">Nicoletta, Giovanni e Francesco vivono a pochi passi. Non un call center.</p>
+      </div>
+      <div>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_story_name">Storie vere</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_story_desc">Questa casa era la bottega del nonno calzolaio. L'anima è rimasta intatta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     LA DIMORA
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-room-section" id="dimora" aria-labelledby="v2-dimora-heading">
+  <div class="v2-container">
+    <div class="v2-room-grid v2-fade">
+
+      <!-- Gallery -->
+      <div class="v2-room-gallery" id="dimora-gallery">
+        <div class="v2-gallery-thumbs" role="list" aria-label="Miniature La Dimora">
+          <button class="v2-gallery-thumb active" data-src="../../foto-la-dimora/dimora-01-foto-principale.webp" aria-label="La Dimora, Vista principale" role="listitem">
+            <img src="../../foto-la-dimora/dimora-01-foto-principale.webp" alt="" loading="eager"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-dimora/dimora-02-letto.webp" aria-label="La Dimora, Letto" role="listitem">
+            <img src="../../foto-la-dimora/dimora-02-letto.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-dimora/dimora-03-letto.webp" aria-label="La Dimora, Camera" role="listitem">
+            <img src="../../foto-la-dimora/dimora-03-letto.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-dimora/dimora-04-letto.webp" aria-label="La Dimora, Dettaglio" role="listitem">
+            <img src="../../foto-la-dimora/dimora-04-letto.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-dimora/dimora-05-bagno.webp" aria-label="La Dimora, Bagno" role="listitem">
+            <img src="../../foto-la-dimora/dimora-05-bagno.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-dimora/dimora-06-cucinotto.webp" aria-label="La Dimora, Cucinotto" role="listitem">
+            <img src="../../foto-la-dimora/dimora-06-cucinotto.webp" alt="" loading="lazy"/>
+          </button>
+        </div>
+        <div class="v2-gallery-main" id="dimora-main" aria-label="Foto principale La Dimora" tabindex="0" role="img">
+          <img src="../../foto-la-dimora/dimora-01-foto-principale.webp" alt="La Dimora — Vista principale" fetchpriority="high"/>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="v2-room-info">
+        <div class="v2-room-num">Camera N° 01 · 28 m²</div>
+        <h2 class="v2-room-name v2-room-name--dimora" id="v2-dimora-heading">
+          La <em>Dimora</em>
+        </h2>
+        <p class="v2-room-tagline" data-i18n="room_dimora_tagline">Intima, silenziosa, ci si sente a casa.</p>
+        <p class="v2-room-desc" data-i18n="room_dimora_desc">
+          La Dimora è il cuore della casa, spaziosa, silenziosa, avvolta da una luce morbida che filtra dalla finestra sul vicolo antico di Manfredonia. Soffitti alti, letto matrimoniale king size con biancheria di qualità, smart TV con Netflix, angolo scrivania per chi non riesce a staccare del tutto. Tutto è essenziale, niente è superfluo. È la camera in cui ci si sente a casa, forse perché lo è davvero.
+        </p>
+
+        <!-- Stats -->
+        <div class="v2-room-stats">
+          <div>
+            <div class="v2-room-stat-label">Ospiti</div>
+            <div class="v2-room-stat-val v2-serif">2</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Superficie</div>
+            <div class="v2-room-stat-val v2-serif">28 m²</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Letto</div>
+            <div class="v2-room-stat-val v2-serif">King size</div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="v2-room-pricing v2-room-pricing--dimora" role="region" aria-label="Prezzi La Dimora">
+          <div>
+            <div class="v2-pricing-season-label v2-mono" data-i18n="price_low_season">OTT–GIU</div>
+            <div class="v2-pricing-price v2-serif"><span id="dimora-direct-low">€60</span><span>/notte</span></div>
+            <div class="v2-pricing-ota"><span id="dimora-ota-low">€78</span> su Booking <span id="dimora-saving-low" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
+          </div>
+          <div class="v2-pricing-divider">
+            <div class="v2-pricing-season-label v2-mono" data-i18n="price_high_season">LUG–SET</div>
+            <div class="v2-pricing-price v2-serif"><span id="dimora-direct-high">€100</span><span>/notte</span></div>
+            <div class="v2-pricing-ota"><span id="dimora-ota-high">€120</span> su Booking <span id="dimora-saving-high" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€20</span></div>
+          </div>
+          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Verifica date</a>
+        </div>
+
+        <!-- Amenities -->
+        <div class="v2-amenities-title v2-label" data-i18n="cosa_troverai_title">Cosa troverai</div>
+        <div class="v2-amenities-grid">
+          <!-- icons reused from existing SVGs, text preserved with data-i18n -->
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_king">Letto king size</span><span class="v2-amenity-desc" data-i18n="amenity_basics_desc">Asciugamani, lenzuola, sapone e carta igienica</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12a8 8 0 0116 0"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_bath">Bagno privato</span><span class="v2-amenity-desc" data-i18n="amenity_bath_desc">Doccia, asciugacapelli, sapone e shampoo inclusi</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_tv">Smart TV</span><span class="v2-amenity-desc" data-i18n="amenity_tv_desc">Connessa alle principali piattaforme streaming</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 8.5a15 15 0 0121 0"/><path d="M5 12a11 11 0 0114 0"/><path d="M8.5 15.5a7 7 0 017 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_wifi">WiFi veloce</span><span class="v2-amenity-desc" data-i18n="amenity_wifi_desc">Connessione fibra, gratuita e illimitata</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_ac">Aria condizionata</span><span class="v2-amenity-desc" data-i18n="amenity_ac_desc">Split ductless silenzioso, anche come riscaldamento</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2zM18 22v-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_kitchen">Cucinotto attrezzato</span><span class="v2-amenity-desc" data-i18n="amenity_kitchen_desc">Frigorifero, moka, piatti e posate inclusi</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M1 19h22M9 19l1.5-2h3L15 19"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_desk">Spazio di lavoro</span><span class="v2-amenity-desc" data-i18n="amenity_desk_desc">Perfetto per chi lavora da remoto</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_checkin">Self check-in</span><span class="v2-amenity-desc" data-i18n="amenity_checkin_desc">Cassetta per le chiavi, arrivo flessibile</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 7h20"/><circle cx="12" cy="14" r="4"/><circle cx="6" cy="4.5" r=".5" fill="currentColor"/><circle cx="9" cy="4.5" r=".5" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_washer">Lavatrice</span><span class="v2-amenity-desc" data-i18n="amenity_washer_desc">A uso degli ospiti della struttura</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_luggage">Deposito bagagli</span><span class="v2-amenity-desc" data-i18n="amenity_luggage_desc">Prima del check-in e dopo il check-out</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v18h16V4a2 2 0 00-2-2z"/><path d="M14 2v20"/><circle cx="16" cy="12" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_entrance">Ingresso privato</span><span class="v2-amenity-desc" data-i18n="amenity_entrance_desc">Accesso diretto dalla strada</span></div>
+          </div>
+          <!-- Dimora-only: extra bed -->
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_extra_bed">Letto aggiuntivo</span><span class="v2-amenity-desc" data-i18n="amenity_extra_bed_desc">Disponibile su richiesta, solo per La Dimora</span></div>
+          </div>
+        </div>
+
+        <div class="v2-room-cta">
+          <a href="prenota.html" class="v2-btn v2-btn--primary" data-i18n="room_check_avail">Verifica disponibilità</a>
+          <span class="v2-room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     LA BOTTEGA
+     ══════════════════════════════════════════════════════════ -->
+<section class="v2-room-section" id="bottega" aria-labelledby="v2-bottega-heading">
+  <div class="v2-container">
+    <div class="v2-room-grid v2-room-grid--reversed v2-fade">
+
+      <!-- Gallery -->
+      <div class="v2-room-gallery" id="bottega-gallery">
+        <div class="v2-gallery-thumbs" role="list" aria-label="Miniature La Bottega">
+          <button class="v2-gallery-thumb active" data-src="../../foto-la-bottega/bottega-01-foto%20principale.webp" aria-label="La Bottega, Vista principale" role="listitem">
+            <img src="../../foto-la-bottega/bottega-01-foto%20principale.webp" alt="" loading="eager"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-bottega/bottega-07-letto.webp" aria-label="La Bottega, Letto" role="listitem">
+            <img src="../../foto-la-bottega/bottega-07-letto.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-bottega/bottega-02-doccia.webp" aria-label="La Bottega, Doccia" role="listitem">
+            <img src="../../foto-la-bottega/bottega-02-doccia.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-bottega/bottega-03-bagno.webp" aria-label="La Bottega, Bagno" role="listitem">
+            <img src="../../foto-la-bottega/bottega-03-bagno.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" aria-label="La Bottega, Armadio" role="listitem">
+            <img src="../../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" alt="" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../../foto-la-bottega/bottega-05-cucinotto.webp" aria-label="La Bottega, Cucinotto" role="listitem">
+            <img src="../../foto-la-bottega/bottega-05-cucinotto.webp" alt="" loading="lazy"/>
+          </button>
+        </div>
+        <div class="v2-gallery-main" id="bottega-main" aria-label="Foto principale La Bottega" tabindex="0" role="img">
+          <img src="../../foto-la-bottega/bottega-01-foto%20principale.webp" alt="La Bottega — Vista principale" fetchpriority="high"/>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="v2-room-info">
+        <div class="v2-room-num">Camera N° 02 · 22 m²</div>
+        <h2 class="v2-room-name v2-room-name--bottega" id="v2-bottega-heading">
+          La <em>Bottega</em>
+        </h2>
+        <p class="v2-room-tagline" data-i18n="room_bottega_tagline">Curata nei dettagli, artigianale, ospitalità attesa.</p>
+        <p class="v2-room-desc" data-i18n="room_bottega_desc">
+          La Bottega prende il nome dall'anima di questa casa: il lavoro fatto con le mani, la cura per i dettagli, la bellezza nelle cose semplici. La parete blu petrolio racconta il mare del Gargano senza mostrarlo. Camera matrimoniale con cabina armadio, cassaforte, bagno privato en suite, angolo bar personale con macchinetta caffè, smart TV. Spazio, silenzio, e quella sensazione rara di essere ospiti attesi.
+        </p>
+
+        <!-- Stats -->
+        <div class="v2-room-stats">
+          <div>
+            <div class="v2-room-stat-label">Ospiti</div>
+            <div class="v2-room-stat-val v2-serif">2</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Superficie</div>
+            <div class="v2-room-stat-val v2-serif">22 m²</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Letto</div>
+            <div class="v2-room-stat-val v2-serif">King size</div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="v2-room-pricing v2-room-pricing--bottega" role="region" aria-label="Prezzi La Bottega">
+          <div>
+            <div class="v2-pricing-season-label v2-mono" data-i18n="price_low_season">OTT–GIU</div>
+            <div class="v2-pricing-price v2-serif"><span id="bottega-direct-low">€50</span><span>/notte</span></div>
+            <div class="v2-pricing-ota"><span id="bottega-ota-low">€68</span> su Booking <span id="bottega-saving-low" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
+          </div>
+          <div class="v2-pricing-divider">
+            <div class="v2-pricing-season-label v2-mono" data-i18n="price_high_season">LUG–SET</div>
+            <div class="v2-pricing-price v2-serif"><span id="bottega-direct-high">€90</span><span>/notte</span></div>
+            <div class="v2-pricing-ota"><span id="bottega-ota-high">€108</span> su Booking <span id="bottega-saving-high" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
+          </div>
+          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Verifica date</a>
+        </div>
+
+        <!-- Amenities -->
+        <div class="v2-amenities-title v2-label" data-i18n="cosa_troverai_title">Cosa troverai</div>
+        <div class="v2-amenities-grid">
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_king">Letto king size</span><span class="v2-amenity-desc" data-i18n="amenity_basics_desc">Asciugamani, lenzuola, sapone e carta igienica</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12a8 8 0 0116 0"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_bath">Bagno en suite</span><span class="v2-amenity-desc" data-i18n="amenity_bath_desc">Doccia, asciugacapelli, sapone e shampoo inclusi</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_tv">Smart TV</span><span class="v2-amenity-desc" data-i18n="amenity_tv_desc">Connessa alle principali piattaforme streaming</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 8.5a15 15 0 0121 0"/><path d="M5 12a11 11 0 0114 0"/><path d="M8.5 15.5a7 7 0 017 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_wifi">WiFi veloce</span><span class="v2-amenity-desc" data-i18n="amenity_wifi_desc">Connessione fibra, gratuita e illimitata</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_ac">Aria condizionata</span><span class="v2-amenity-desc" data-i18n="amenity_ac_desc">Split ductless silenzioso, anche come riscaldamento</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2zM18 22v-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_kitchen">Cucinotto attrezzato</span><span class="v2-amenity-desc" data-i18n="amenity_kitchen_desc">Frigorifero, moka, piatti e posate inclusi</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_checkin">Self check-in</span><span class="v2-amenity-desc" data-i18n="amenity_checkin_desc">Cassetta per le chiavi, arrivo flessibile</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 7h20"/><circle cx="12" cy="14" r="4"/><circle cx="6" cy="4.5" r=".5" fill="currentColor"/><circle cx="9" cy="4.5" r=".5" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_washer">Lavatrice</span><span class="v2-amenity-desc" data-i18n="amenity_washer_desc">A uso degli ospiti della struttura</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_luggage">Deposito bagagli</span><span class="v2-amenity-desc" data-i18n="amenity_luggage_desc">Prima del check-in e dopo il check-out</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v18h16V4a2 2 0 00-2-2z"/><path d="M14 2v20"/><circle cx="16" cy="12" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_entrance">Ingresso privato</span><span class="v2-amenity-desc" data-i18n="amenity_entrance_desc">Accesso diretto dalla strada</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12c0-3.3 2.7-6 6-6h2a4 4 0 010 8h-2M9 12H2M9 15l-2 5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_hairdryer">Asciugacapelli</span><span class="v2-amenity-desc" data-i18n="amenity_hairdryer_desc">Incluso nel bagno</span></div>
+          </div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_long_stay">Soggiorni lunghi</span><span class="v2-amenity-desc" data-i18n="amenity_long_stay_desc">Soggiorni oltre 28 giorni consentiti</span></div>
+          </div>
+        </div>
+
+        <div class="v2-room-cta">
+          <a href="prenota.html" class="v2-btn v2-btn--primary" data-i18n="room_check_avail">Verifica disponibilità</a>
+          <span class="v2-room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     LIGHTBOX
+     ══════════════════════════════════════════════════════════ -->
+<div class="v2-lightbox" id="v2-lightbox" role="dialog" aria-modal="true" aria-label="Foto ingrandita">
+  <button class="v2-lightbox-close" id="v2-lightbox-close" aria-label="Chiudi">&times;</button>
+  <button class="v2-lightbox-nav v2-lightbox-prev" id="v2-lightbox-prev" aria-label="Precedente">&#8249;</button>
+  <img src="" alt="Foto ingrandita" id="v2-lightbox-img"/>
+  <button class="v2-lightbox-nav v2-lightbox-next" id="v2-lightbox-next" aria-label="Successivo">&#8250;</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════ -->
+<footer class="v2-footer" role="contentinfo">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
+          <li><a href="../regole.html">Regole della Casa</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
+        <ul>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
+        <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
+          <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts — unchanged from original -->
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<!-- Pricing update from _data/prezzi.json — preserved verbatim from original -->
+<script>
+  fetch('/_data/prezzi.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (!data) return;
+      const m = data.ota_markup || 1.20;
+      const rooms = {
+        dimora:  { high: data.alta.dimora,  low: data.bassa.dimora },
+        bottega: { high: data.alta.bottega, low: data.bassa.bottega }
+      };
+      ['dimora', 'bottega'].forEach(room => {
+        ['high', 'low'].forEach(season => {
+          const direct = rooms[room][season];
+          const ota = Math.round(direct * m);
+          const saving = ota - direct;
+          const elOta    = document.getElementById(`${room}-ota-${season}`);
+          const elDirect = document.getElementById(`${room}-direct-${season}`);
+          const elSaving = document.getElementById(`${room}-saving-${season}`);
+          if (elOta)    elOta.innerHTML    = `€${ota}`;
+          if (elDirect) elDirect.innerHTML = `€${direct}`;
+          if (elSaving) elSaving.textContent = `−€${saving}`;
+        });
+      });
+    })
+    .catch(() => {});
+</script>
+
+<!-- Gallery + Lightbox + Nav toggle + Fade-in -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Gallery: thumbnail → main image swap ---- */
+  function initGallery(galleryId, mainId) {
+    var gallery = document.getElementById(galleryId);
+    var mainEl  = document.getElementById(mainId);
+    if (!gallery || !mainEl) return;
+
+    var thumbs = gallery.querySelectorAll('.v2-gallery-thumb');
+    var mainImg = mainEl.querySelector('img');
+    var currentIndex = 0;
+
+    function activate(idx) {
+      thumbs.forEach(function(t) { t.classList.remove('active'); });
+      thumbs[idx].classList.add('active');
+      currentIndex = idx;
+      var newSrc = thumbs[idx].dataset.src;
+      mainImg.style.opacity = '0';
+      setTimeout(function() {
+        mainImg.src = newSrc;
+        mainImg.style.opacity = '1';
+      }, 150);
+    }
+
+    thumbs.forEach(function(thumb, idx) {
+      thumb.addEventListener('click', function() { activate(idx); });
+    });
+
+    // Click main to open lightbox
+    mainEl.addEventListener('click', function() {
+      openLightbox(galleryId, currentIndex);
+    });
+    mainEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') openLightbox(galleryId, currentIndex);
+    });
+  }
+
+  initGallery('dimora-gallery',  'dimora-main');
+  initGallery('bottega-gallery', 'bottega-main');
+
+  /* ---- Lightbox ---- */
+  var allImages = {
+    'dimora-gallery': [
+      '../../foto-la-dimora/dimora-01-foto-principale.webp',
+      '../../foto-la-dimora/dimora-02-letto.webp',
+      '../../foto-la-dimora/dimora-03-letto.webp',
+      '../../foto-la-dimora/dimora-04-letto.webp',
+      '../../foto-la-dimora/dimora-05-bagno.webp',
+      '../../foto-la-dimora/dimora-06-cucinotto.webp',
+    ],
+    'bottega-gallery': [
+      '../../foto-la-bottega/bottega-01-foto%20principale.webp',
+      '../../foto-la-bottega/bottega-07-letto.webp',
+      '../../foto-la-bottega/bottega-02-doccia.webp',
+      '../../foto-la-bottega/bottega-03-bagno.webp',
+      '../../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp',
+      '../../foto-la-bottega/bottega-05-cucinotto.webp',
+    ]
+  };
+
+  var lightbox    = document.getElementById('v2-lightbox');
+  var lbImg       = document.getElementById('v2-lightbox-img');
+  var lbClose     = document.getElementById('v2-lightbox-close');
+  var lbPrev      = document.getElementById('v2-lightbox-prev');
+  var lbNext      = document.getElementById('v2-lightbox-next');
+  var lbGallery   = null;
+  var lbIndex     = 0;
+
+  function openLightbox(galleryId, idx) {
+    lbGallery = galleryId;
+    lbIndex   = idx;
+    lbImg.src = allImages[galleryId][idx];
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbStep(dir) {
+    var imgs = allImages[lbGallery];
+    lbIndex = (lbIndex + dir + imgs.length) % imgs.length;
+    lbImg.src = imgs[lbIndex];
+  }
+
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev)  lbPrev.addEventListener('click',  function() { lbStep(-1); });
+  if (lbNext)  lbNext.addEventListener('click',  function() { lbStep(1); });
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   lbStep(-1);
+    if (e.key === 'ArrowRight')  lbStep(1);
+  });
+
+  /* ---- Scroll fade-in ---- */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('v2-visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.v2-fade').forEach(function(el) { obs.observe(el); });
+  } else {
+    document.querySelectorAll('.v2-fade').forEach(function(el) { el.classList.add('v2-visible'); });
+  }
+
+}());
+</script>
+
+<!-- Sticky touchpoints -->
+<a class="v2-wa-pill"
+   href="https://wa.me/393334705574?text=Ciao!%20Ho%20visto%20le%20camere%20sul%20sito%20%E2%80%94%20sono%20interessato%2Fa%20a%20prenotare.%20Avete%20disponibilit%C3%A0%3F"
+   target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Scrivi su WhatsApp
+</a>
+
+<div class="v2-sticky-mobile" role="complementary" aria-label="Contatto rapido">
+  <a class="v2-smb-wa"
+     href="https://wa.me/393334705574?text=Ciao!%20Ho%20visto%20le%20camere%20%E2%80%94%20sono%20interessato%2Fa%20a%20prenotare.%20Avete%20disponibilit%C3%A0%3F"
+     target="_blank" rel="noopener" aria-label="Chiedi disponibilità su WhatsApp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chiedi disponibilità
+  </a>
+  <a class="v2-smb-book" href="prenota.html?open=1">Controlla le date</a>
+</div>
+
+</body>
+</html>

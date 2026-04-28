@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monte Sant'Angelo: entre lo sagrado y lo profano en el pueblo UNESCO | Casa e Bottega</title>
+<meta name="description" content="Monte Sant'Angelo, el magnífico pueblo UNESCO con el Santuario de San Miguel Arcángel."/>
+<meta property="og:title" content="Monte Sant'Angelo: entre lo sagrado y lo profano en el pueblo UNESCO | Casa e Bottega"/>
+<meta property="og:description" content="Monte Sant'Angelo, el magnífico pueblo UNESCO con el Santuario de San Miguel Arcángel."/>
+<meta property="og:image" content="https://www.casaebottegapuglia.it/foto-zona/Monte S.Angelo- basilica-santuario-san-michele.jpeg"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.casaebottegapuglia.it/es/blog-articolo-3.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Monte Sant'Angelo: entre lo sagrado y lo profano en el pueblo UNESCO | Casa e Bottega"/>
+<meta name="twitter:description" content="Monte Sant'Angelo, el magnífico pueblo UNESCO con el Santuario de San Miguel Arcángel."/>
+<meta name="twitter:image" content="https://www.casaebottegapuglia.it/foto-zona/Monte S.Angelo- basilica-santuario-san-michele.jpeg"/>
+<link rel="canonical" href="https://www.casaebottegapuglia.it/es/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog-articolo-3.html"/>
+<link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog-articolo-3.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style-v2.css"/>
+<style>
+.art-hero{background:var(--bone);padding:8rem 0 4rem;text-align:center;border-bottom:1px solid var(--paper);}
+.art-hero-cat{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:1.2rem;}
+.art-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:400;line-height:1.1;color:var(--ink);max-width:800px;margin:0 auto 1rem;letter-spacing:-.02em;}
+.art-hero-date{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--stone);}
+.art-body{max-width:720px;margin:0 auto;padding:4rem 1.5rem 5rem;}
+.art-hero-img{width:100%;max-height:480px;object-fit:cover;display:block;margin:0 0 3.5rem;}
+.art-body p{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.82;color:var(--stone);margin-bottom:1.5rem;}
+.art-body h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--ink);margin:2.5rem 0 1rem;}
+.art-body img{width:100%;height:auto;display:block;margin:2rem 0;}
+.art-body aside{border-left:3px solid var(--terracotta);background:var(--paper);padding:1.5rem 1.8rem;margin:2.5rem 0;}
+.art-cta{background:var(--petrolio);color:var(--bone);text-align:center;padding:4rem 1.5rem;}
+.art-cta p{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--bone);margin-bottom:1.2rem;}
+.art-cta a{display:inline-block;background:var(--bone);color:var(--ink);font-family:'Inter';font-size:.9rem;font-weight:500;padding:.85rem 2rem;text-decoration:none;}
+@media(max-width:768px){
+  .art-hero{padding:6rem 1rem 3rem;}
+  .art-hero h1{font-size:clamp(1.8rem,6vw,2.8rem);}
+  .art-body{padding:2.5rem 1rem 3.5rem;}
+  .art-hero-img{max-height:260px;}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+</head>
+<body>
+<header class="v2-header">
+  <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
+    <div class="v2-nav-inner">
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="camere.html" data-i18n="nav_rooms">Habitaciones</a>
+        <a href="prenota.html" data-i18n="nav_book">Reservar</a>
+        <a class="active" href="blog.html" data-i18n="nav_blog">Relatos</a>
+        <a href="contatti.html" data-i18n="nav_contact">Ubicación</a>
+      </div>
+      <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
+        Casa <em>e</em> Bottega
+      </a>
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+          <a href="blog-articolo-3.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../en/blog-articolo-3.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="../fr/blog-articolo-3.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a href="../de/blog-articolo-3.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../nl/blog-articolo-3.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a class="on" href="../es/blog-articolo-3.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Reservar · −20%</a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="camere.html" data-i18n="nav_rooms">Habitaciones</a>
+        <a href="prenota.html" data-i18n="nav_book">Reservar</a>
+        <a class="active" href="blog.html" data-i18n="nav_blog">Relatos</a>
+        <a href="contatti.html" data-i18n="nav_contact">Ubicación</a>
+  <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+    <a href="blog-articolo-3.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a href="../en/blog-articolo-3.html" hreflang="en" title="English" role="listitem">EN</a>
+    <a href="../fr/blog-articolo-3.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a href="../de/blog-articolo-3.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="../nl/blog-articolo-3.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a class="on" href="../es/blog-articolo-3.html" hreflang="es" title="Español" role="listitem">ES</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="art-hero">
+  <div class="v2-container">
+    <p class="art-hero-cat">Pueblos</p>
+    <h1>Monte Sant'Angelo: entre lo sagrado y lo profano en el pueblo UNESCO</h1>
+    <p class="art-hero-date">Enero 2026</p>
+  </div>
+</section>
+
+<!-- BODY -->
+<article>
+  <div class="art-body">
+    <img class="art-hero-img" src="../../foto-zona/Monte S.Angelo- basilica-santuario-san-michele.jpeg" alt="Monte Sant'Angelo, el pueblo UNESCO" loading="eager"/>
+    <p>A veinte minutos en coche de Casa e Bottega, encaramado en una colina como un nido de águila, está Monte Sant'Angelo. Uno de esos lugares que transforma la manera de estar en el mundo. No es solo un pueblo. Es una estratificación de historia, fe, piedra blanca y voces susurradas en las callejuelas. Es también el lugar donde la espiritualidad y lo profano se abrazan perfectamente, como solo el Mediodía sabe hacer.</p>
+    <h2>El Santuario de San Miguel Arcángel</h2>
+    <p>En el 490 d.C., un príncipe lombardo tuvo una visión. El arcángel Miguel se le apareció y lo guió hacia una cueva en el Monte Gargano. A partir de ese momento, el Santuario de San Miguel Arcángel se convirtió en uno de los tres principales lugares de peregrinación del cristianismo medieval, junto a Santiago de Compostela y Jerusalén.</p>
+    <h2>Las callejuelas blancas y los caruggi sin fin</h2>
+    <img src="../../foto-zona/Manfredonia.jpeg" alt="Manfredonia y el Golfo del Gargano"/>
+    <p>Una vez fuera del Santuario, os encontraréis dentro del pueblo real. Calles estrechas, blancas de cal, que parecen no acabar nunca. Los caruggi son tan estrechos que dos personas apenas pueden cruzarse. Es un laberinto hermoso, y os recomendamos perderos intencionalmente, girar sin mapa, bajar donde el instinto os lleve.</p>
+    <h2>El Castillo y la vista del Gargano entero</h2>
+    <p>En lo alto del pueblo está el Castillo Normando-Suabo. Desde sus murallas podéis ver casi todo el Gargano: el mar hacia Vieste al norte, la costa hacia Mattinata al sur, el Bosque Umbra hacia el interior.</p>
+    <h2>Los sabores de Monte Sant'Angelo</h2>
+    <p>Los panzerotti de Monte Sant'Angelo no son como los fritos en los paseos marítimos turísticos. Están rellenos de carne picada y ragù, fritos en aceite hirviendo, crujientes por fuera y blandos por dentro. Para cenar, buscad una trattoria: orecchiette con grelos, stracchella fresca con taralli crujientes, pulpo alla pignata.</p>
+    <h2>Monte Sant'Angelo entre peregrinación y turismo</h2>
+    <p>Lo que os llamará la atención es la mezcla de peregrinos auténticos y turistas de selfie. Algunos vienen por fe verdadera, otros por la foto con las vistas. Ambos contribuyen al encanto del lugar: un equilibrio precario y hermoso entre lo profano y lo sagrado.</p>
+  </div>
+</article>
+
+<!-- CTA -->
+<section class="art-cta">
+  <p>Reserva tu estancia en Manfredonia</p>
+  <a href="prenota.html">Descubrir las Habitaciones</a>
+</section>
+
+<footer class="v2-footer">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+      <div class="v2-footer-brand">
+        <a class="v2-nav-brand" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
+        <p style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;" data-i18n="footer_desc">A dos pasos del mar, en el corazón del Gargano.</p>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_pages">Páginas</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Habitaciones</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Reservar</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Relatos</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_follow">Síguenos</h4>
+        <ul>
+          <li><a href="#">Airbnb</a></li>
+          <li><a href="#">Booking.com</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4 data-i18n="footer_contact">Contacto</h4>
+        <ul>
+          <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">
+      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
+    </div>
+  </div>
+</footer>
+<a class="v2-wa-pill" href="https://wa.me/393334705574?text=Hola!%20He%20le%C3%ADdo%20un%20art%C3%ADculo%20del%20blog%20de%20Casa%20e%20Bottega%20%E2%80%94%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.815 0 00-3.48-8.413z"/></svg>
+  <span>Escribe en WhatsApp</span>
+</a>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+(function(){
+  var btn=document.getElementById('v2-menu-toggle');
+  var panel=document.getElementById('v2-nav-links');
+  if(!btn||!panel)return;
+  btn.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    panel.setAttribute('aria-hidden',!open);
+  });
+  document.addEventListener('click',function(e){
+    if(!panel.contains(e.target)&&!btn.contains(e.target)){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      panel.setAttribute('aria-hidden','true');
+    }
+  });
+})();
+</script>
+</body>
+</html>
