@@ -1,5 +1,5 @@
 [build]
-  command = "bash prepara-deploy.sh"
+  command = "npm install && bash prepara-deploy.sh"
   publish = "deploy"
 
 [functions]
@@ -9,6 +9,12 @@
   for = "/netlify/functions/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+# Cache-Control — dati CMS (nessuna cache: si aggiornano dal pannello admin)
+[[headers]]
+  for = "/_data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Cache-Control — static assets (immutable, 1 anno)
 [[headers]]

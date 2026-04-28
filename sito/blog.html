@@ -43,12 +43,7 @@
   text-align: center;
 }
 .blog-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../foto-zona/Manfredonia.webp') center 60%/cover no-repeat;
-  opacity: 0.06;
-  pointer-events: none;
+  display: none;
 }
 .blog-hero-inner {
   position: relative;
@@ -69,7 +64,7 @@
 }
 .blog-hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(3.2rem, 7vw, 6rem);
   font-weight: 300;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -699,7 +694,7 @@
       <!-- Article 11 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Borghi nascosti del Gargano" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="Il castello di Manfredonia visto dall'esterno" loading="lazy" src="../foto-zona/castello_Manfredonia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -715,7 +710,7 @@
       <!-- Article 12 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Manfredonia, porta del Gargano" loading="lazy" src="../foto-zona/Manfredonia.webp"/>
+          <img alt="Gargano visto dallo spazio, la forma dello sperone" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -725,6 +720,71 @@
           <h3 class="blog-card-title" data-i18n="blog_article12_title">Come muoversi nel Gargano senza sembrare un turista: la guida che non esiste da nessuna altra parte</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article12_excerpt">Quando partire per evitare il traffico della Foresta Umbra. A che ora arrivare alle spiagge più belle. Quali strade secondarie usare. Tutto quello che sappiamo dopo trent'anni vissuti qui.</p>
           <a class="blog-card-link" href="blog-articolo-12.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+
+      <!-- Article 13 -->
+      <article class="blog-card" data-cat="tradizioni">
+        <div class="blog-card-img">
+          <img alt="Processione della Settimana Santa a Manfredonia" loading="lazy" src="../foto-zona/tresoldibasilica_siponto.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--tradizioni" data-i18n="blog_article13_cat">Tradizioni</span>
+            <span class="blog-date-tag" data-i18n="blog_article13_date">Aprile 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article13_title">La Settimana Santa a Manfredonia: processioni, silenzio e devozione popolare</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article13_excerpt">Le confraternite in processione, i Misteri portati a spalla, il rito del Venerdì Santo che si ripete da secoli. Una tradizione viva che pochissimi turisti hanno la fortuna di vedere.</p>
+          <a class="blog-card-link" href="blog-articolo-13.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Article 14 -->
+      <article class="blog-card" data-cat="mare">
+        <div class="blog-card-img">
+          <img alt="Baia delle Zagare e le calette del Gargano a maggio" loading="lazy" src="../foto-zona/scogliera.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article14_cat">Mare</span>
+            <span class="blog-date-tag" data-i18n="blog_article14_date">Maggio 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article14_title">Dove fare il bagno sul Gargano a maggio e giugno (prima della folla)</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article14_excerpt">Baia delle Zagare, le calette di Mattinata, le cale raggiungibili solo a piedi. I posti dove i locali si tuffano quando il mare è già perfetto e le spiagge sono ancora vuote.</p>
+          <a class="blog-card-link" href="blog-articolo-14.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Article 15 -->
+      <article class="blog-card" data-cat="cibo">
+        <div class="blog-card-img">
+          <img alt="Vino del Gargano, Nero di Troia e cantine artigianali" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--cibo" data-i18n="blog_article15_cat">Cibo &amp; Vino</span>
+            <span class="blog-date-tag" data-i18n="blog_article15_date">Aprile 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article15_title">Il vino del Gargano: Nero di Troia, Bombino e i piccoli produttori che non trovi al supermercato</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article15_excerpt">Una gita tra le vigne dell'entroterra, i produttori artigianali che vinificano ancora in piccole quantità e gli abbinamenti giusti con la cucina locale. Il Gargano da bere.</p>
+          <a class="blog-card-link" href="blog-articolo-15.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Article 16 -->
+      <article class="blog-card" data-cat="borghi">
+        <div class="blog-card-img">
+          <img alt="Mattinata, borgo bianco tra la montagna e il mare del Gargano" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--borghi" data-i18n="blog_article16_cat">Borghi</span>
+            <span class="blog-date-tag" data-i18n="blog_article16_date">Marzo 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article16_title">Mattinata: il paese bianco tra la montagna e il mare che non è ancora stato scoperto</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article16_excerpt">Di giorno è un paese contadino con le case imbiancate a calce. Di sera le sue calette diventano tra le più belle del Gargano. Mattinata è ancora un segreto, e noi ve lo raccontiamo.</p>
+          <a class="blog-card-link" href="blog-articolo-16.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
@@ -745,15 +805,22 @@
 </section>
 
 <!-- ══ FOOTER v2 ═══════════════════════════════════════════════════ -->
-<footer class="v2-footer">
+<footer class="v2-footer" role="contentinfo">
   <div class="v2-container">
     <div class="v2-footer-grid">
-      <div class="v2-footer-brand">
-        <a class="v2-nav-brand" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
-        <p style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;" data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+
+      <!-- Brand -->
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">
+          A due passi dal mare, nel cuore del Gargano.
+          Una casa, due camere, una famiglia che vi apre la porta.
+        </p>
       </div>
+
+      <!-- Pagine -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_pages">Pagine</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
         <ul>
           <li><a href="index.html" data-i18n="nav_home">Home</a></li>
           <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
@@ -762,27 +829,36 @@
           <li><a href="regole.html">Regole della Casa</a></li>
         </ul>
       </div>
+
+      <!-- Seguici -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_follow">Seguici</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
         <ul>
-          <li><a href="#">Airbnb</a></li>
-          <li><a href="#">Booking.com</a></li>
-          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
         </ul>
       </div>
+
+      <!-- Contatti -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_contact">Contatti</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
         <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
           <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
         </ul>
       </div>
+
     </div>
+
     <div class="v2-footer-bottom">
-      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
     </div>
   </div>
 </footer>
+
 
 <!-- ══ STICKY WA ═══════════════════════════════════════════════════ -->
 <a class="v2-wa-pill"
@@ -842,45 +918,6 @@
   }
 
 })();
-</script>
-
-
-<script>
-/* ---- Mobile nav toggle (standalone) ---- */
-(function () {
-  var toggle   = document.getElementById('v2-menu-toggle');
-  var navLinks = document.getElementById('v2-nav-links');
-  var navEl    = document.querySelector('.v2-nav');
-
-  function setNavHeight() {
-    if (navEl) {
-      var h = navEl.getBoundingClientRect().height;
-      if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-    }
-  }
-  requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
-  window.addEventListener('resize', setNavHeight);
-  window.addEventListener('load', setNavHeight);
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      setNavHeight();
-      var open = navLinks.classList.toggle('v2-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
-      var spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
-}());
 </script>
 </body>
 </html>

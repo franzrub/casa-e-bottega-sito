@@ -1367,7 +1367,7 @@
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
         <div class="pren-guarantee-title">Cancellazione chiara</div>
-        <p class="pren-guarantee-body">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo. Nessuna sorpresa, nessuna penale nascosta.</p>
+        <p class="pren-guarantee-body">Rimborso totale se cancelli almeno 30 giorni prima dell'arrivo. Nessuna sorpresa, nessuna penale nascosta.</p>
       </div>
     </div>
   </div>
@@ -1507,10 +1507,10 @@
             </div>
           </div>
           <p id="v2-step1-error" class="v2-bm-error-panel">Seleziona check-in e check-out per continuare.</p>
-          <button class="v2-bm-stay-cta" id="v2-step1-next-panel">
+          <button class="v2-bm-stay-cta" id="v2-step1-next-panel" data-i18n="book_next_step">
             Avanti: scegli camera →
           </button>
-          <p class="v2-bm-stay-note">Soggiorno massimo 29 giorni (locazione turistica). Per soggiorni più lunghi <a href="contatti.html" style="color:var(--petrolio)">contattaci</a>.</p>
+          <p class="v2-bm-stay-note"><span data-i18n="book_stay_max">Soggiorno massimo 29 giorni (locazione turistica). Per soggiorni più lunghi</span> <a href="contatti.html" style="color:var(--petrolio)" data-i18n="book_contact_us">contattaci</a>.</p>
         </div>
 
       </div>
@@ -1531,7 +1531,7 @@
           <!-- Form -->
           <div class="v2-bm-form-side">
             <form class="v2-modal-form" id="booking-form">
-              <p style="font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin:0 0 1.2rem; opacity:0.7;">I tuoi dati</p>
+              <p style="font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin:0 0 1.2rem; opacity:0.7;" data-i18n="book_your_data">I tuoi dati</p>
               <div class="form-row">
                 <div class="form-group">
                   <label class="required" data-i18n="book_name" for="guest-name">Nome e Cognome</label>
@@ -1581,7 +1581,7 @@
               <!-- Cancellation note -->
               <div class="v2-cancel-note" style="margin-top:1.2rem;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/></svg>
-                <span data-i18n="book_cancel_policy">Rimborso totale se cancelli almeno 20 giorni prima dell'arrivo. Nessuna penale nascosta.</span>
+                <span data-i18n="book_cancel_policy">Rimborso totale se cancelli almeno 30 giorni prima dell'arrivo. Nessuna penale nascosta.</span>
               </div>
 
               <!-- Submit (hidden — button lives in sidebar) -->
@@ -1601,10 +1601,7 @@
               <span id="modal-rate-label">—</span>
               <span id="modal-nights-total">—</span>
             </div>
-            <div class="v2-bm-summary-line">
-              <span>Pulizie finali</span>
-              <span>€25</span>
-            </div>
+
             <div class="v2-bm-summary-total">
               <div class="v2-bm-summary-total-label">Totale</div>
               <div class="v2-bm-summary-ota" id="modal-total-ota"></div>
@@ -1641,7 +1638,7 @@
     <div class="v2-bm-nav" id="v2-bm-nav">
       <a class="v2-bm-nav-wa" href="https://wa.me/393334705574?text=Ciao!%20Vorrei%20prenotare%20Casa%20e%20Bottega." target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Prenota via WhatsApp
+        <span data-i18n="book_wa_cta">Prenota via WhatsApp</span>
       </a>
       <div style="display:flex; gap:0.6rem; align-items:center;">
         <button class="v2-bm-nav-back" id="v2-bm-back" style="display:none;">← Indietro</button>
@@ -1654,44 +1651,60 @@
 <!-- END MODAL -->
 
 <!-- ══ FOOTER v2 ══════════════════════════════════════════════════ -->
-<footer class="v2-footer">
+<footer class="v2-footer" role="contentinfo">
   <div class="v2-container">
     <div class="v2-footer-grid">
-      <div class="v2-footer-brand">
-        <a class="v2-nav-logo" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
-        <p data-i18n="footer_desc" style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;">A due passi dal mare, nel cuore del Gargano.</p>
+
+      <!-- Brand -->
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">
+          A due passi dal mare, nel cuore del Gargano.
+          Una casa, due camere, una famiglia che vi apre la porta.
+        </p>
       </div>
+
+      <!-- Pagine -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_pages">Pagine</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
         <ul>
-          <li><a data-i18n="nav_home" href="index.html">Home</a></li>
-          <li><a data-i18n="nav_rooms" href="camere.html">Le Camere</a></li>
-          <li><a data-i18n="nav_book" href="prenota.html">Prenota</a></li>
-          <li><a data-i18n="nav_blog" href="blog.html">Racconti</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
           <li><a href="regole.html">Regole della Casa</a></li>
         </ul>
       </div>
+
+      <!-- Seguici -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_follow">Seguici</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
         <ul>
-          <li><a href="#">Airbnb</a></li>
-          <li><a href="#">Booking.com</a></li>
-          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
         </ul>
       </div>
+
+      <!-- Contatti -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_contact">Contatti</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
         <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
           <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
         </ul>
       </div>
+
     </div>
+
     <div class="v2-footer-bottom">
-      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
     </div>
   </div>
 </footer>
+
 
 <!-- ══ STICKY TOUCHPOINTS ══════════════════════════════════════════ -->
 <a class="v2-wa-pill"
@@ -1769,12 +1782,13 @@
     if (!grid) return;
     var ci = document.getElementById('search-checkin').value;
     var co = document.getElementById('search-checkout').value;
-    if (typeof ROOMS === 'undefined' || !ci || !co) {
-      grid.innerHTML = '<p style="font-family:Inter,sans-serif;color:var(--stone);padding:1rem;">Seleziona prima le date.</p>';
+    var _ROOMS = window.ROOMS;
+    if (typeof _ROOMS === 'undefined' || !ci || !co) {
+      grid.innerHTML = '<p style="font-family:Inter,sans-serif;color:var(--stone);padding:1rem;">' + (typeof t === 'function' ? t('book_select_dates') : 'Seleziona prima le date.') + '</p>';
       return;
     }
     var html = '';
-    ROOMS.forEach(function(room) {
+    _ROOMS.forEach(function(room) {
       var avail = (typeof checkAvailability === 'function') ? checkAvailability(room.id, ci, co) : true;
       var pricing = (typeof calcPricing === 'function') ? calcPricing(room, ci, co) : null;
       var totalDirect = pricing ? pricing.totalDirect : '—';
@@ -1787,18 +1801,18 @@
       var selectBtn = avail
         ? '<button class="v2-bm-select-btn" onclick="window._selectRoom(\'' + room.id + '\')">' +
           (typeof t === 'function' ? t('book_select') : 'Seleziona') + '</button>'
-        : '<span class="v2-bm-room-unavail">Non disponibile in queste date</span>';
+        : '<span class="v2-bm-room-unavail">' + (typeof t === 'function' ? t('book_unavailable') : 'Non disponibile in queste date') + '</span>';
       html += '<div class="v2-bm-room-card' + (avail ? '' : ' unavailable') + '">' +
-        '<div class="v2-bm-room-img"><img src="' + imgSrc + '" alt="' + room.name + '" loading="lazy"/></div>' +
+        '<div class="v2-bm-room-img"><img src="' + imgSrc + '" alt="' + (typeof t === 'function' ? t(room.nameKey) : room.name) + '" loading="lazy"/></div>' +
         '<div class="v2-bm-room-body">' +
-          '<div class="v2-bm-room-name">' + room.name + '</div>' +
-          '<div class="v2-bm-room-tagline">' + room.tagline + '</div>' +
+          '<div class="v2-bm-room-name">' + (typeof t === 'function' ? t(room.nameKey) : room.name) + '</div>' +
+          '<div class="v2-bm-room-tagline">' + (typeof t === 'function' ? t(room.taglineKey) : room.tagline) + '</div>' +
           '<div class="v2-bm-room-pricing">' +
             '<div class="v2-bm-room-price-block">' +
               (totalOTA ? '<div class="v2-bm-room-ota">Booking: €' + totalOTA + '</div>' : '') +
               '<div class="v2-bm-room-direct">€' + totalDirect + '</div>' +
-              '<div class="v2-bm-room-direct-sub">' + nights + ' ' + (nights === 1 ? 'notte' : 'notti') + '</div>' +
-              (savings ? '<div class="v2-bm-room-savings-badge">risparmi €' + savings + '</div>' : '') +
+              '<div class="v2-bm-room-direct-sub">' + nights + ' ' + (nights === 1 ? (typeof t === 'function' ? t('book_night') : 'notte') : (typeof t === 'function' ? t('book_nights') : 'notti')) + '</div>' +
+              (savings ? '<div class="v2-bm-room-savings-badge">' + (typeof t === 'function' ? t('book_savings_badge') : 'risparmi €') + savings + '</div>' : '') +
             '</div>' +
             selectBtn +
           '</div>' +
@@ -1941,6 +1955,24 @@
   window.v2CloseBooking = closeModal;
   window.v2GotoStep = gotoStep;
 
+  /* ── auto-open if URL contains ?open=1 ── */
+  /* Use 'load' event (fires after defer scripts + images) to guarantee
+     all listeners are wired and browser form-restore is complete */
+  if (window.location.search.indexOf('open=1') !== -1) {
+    window.addEventListener('load', function() {
+      var ciEl = document.getElementById('search-checkin');
+      var coEl = document.getElementById('search-checkout');
+      if (ciEl) ciEl.value = '';
+      if (coEl) coEl.value = '';
+      // Small rAF delay to let any sync post-load code settle
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          openModal(1);
+        });
+      });
+    });
+  }
+
 })();
 </script>
 
@@ -2048,7 +2080,7 @@
       let totalOTA = Math.round(totalDirect * OTA_MARKUP);
       let discountLabel = '';
       if (nights >= 7) {
-        discountLabel = `-${Math.round(WEEKLY_DISCOUNT * 100)}% ${t('price_weekly')}`;
+        discountLabel = `-${Math.round(WEEKLY_DISCOUNT * 100)}% ${typeof t === 'function' ? t('price_weekly') : 'sconto settimanale'}`;
         totalDirect = Math.round(totalDirect * (1 - WEEKLY_DISCOUNT));
       }
       return { nights, totalDirect, totalOTA, savings: totalOTA - totalDirect, discountLabel };
@@ -2100,10 +2132,10 @@
       document.getElementById('modal-meta').textContent         = `${formatDate(ci)} → ${formatDate(co)} · ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'} · ${guestsCount} ospit${guestsCount === 1 ? 'e' : 'i'}`;
       document.getElementById('modal-rate-label').textContent   = `€${pricePerNight} × ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'}`;
       document.getElementById('modal-nights-total').textContent = `€${pricing.totalDirect}`;
-      document.getElementById('modal-total-ota').textContent    = `€${pricing.totalOTA + 25}`;
-      document.getElementById('modal-total-direct').textContent = `€${pricing.totalDirect + 25}`;
+      document.getElementById('modal-total-ota').textContent    = `€${pricing.totalOTA}`;
+      document.getElementById('modal-total-direct').textContent = `€${pricing.totalDirect}`;
       document.getElementById('modal-savings').textContent      =
-        `Risparmi €${pricing.savings} rispetto a Booking`;
+        (typeof t === 'function' ? t('book_you_save') : 'Risparmi') + ` €${pricing.savings} ` + (typeof t === 'function' ? t('book_savings_vs') : 'rispetto a Booking');
 
       // Show form, hide success
       document.getElementById('booking-form-section').style.display = 'block';
@@ -2359,45 +2391,6 @@
     setTimeout(() => { renderMiniCal(); }, 8000);
 
   })();
-</script>
-
-
-<script>
-/* ---- Mobile nav toggle (standalone) ---- */
-(function () {
-  var toggle   = document.getElementById('v2-menu-toggle');
-  var navLinks = document.getElementById('v2-nav-links');
-  var navEl    = document.querySelector('.v2-nav');
-
-  function setNavHeight() {
-    if (navEl) {
-      var h = navEl.getBoundingClientRect().height;
-      if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-    }
-  }
-  requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
-  window.addEventListener('resize', setNavHeight);
-  window.addEventListener('load', setNavHeight);
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      setNavHeight();
-      var open = navLinks.classList.toggle('v2-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
-      var spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
-}());
 </script>
 </body>
 </html>

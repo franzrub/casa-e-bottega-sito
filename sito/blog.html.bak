@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Récits du Gargano | Casa e Bottega Manfredonia</title>
-<meta content="Récits du Gargano: lieux, saveurs et histoires de Puglia. Le blog de Casa e Bottega Manfredonia." name="description"/>
-<meta content="blog Gargano, récits Manfredonia, que faire Gargano, itinéraires Puglia, villages Gargano" name="keywords"/>
-<meta content="Récits du Gargano | Casa e Bottega Manfredonia" property="og:title"/>
-<meta content="Récits du Gargano: lieux, saveurs et histoires de Puglia. Le blog de Casa e Bottega Manfredonia." property="og:description"/>
+<title>Cosa Vedere nel Gargano | Guide e Itinerari – Casa e Bottega</title>
+<meta content="Guide pratiche, itinerari e consigli locali sul Gargano e Manfredonia. Scritti da chi ci vive. Scopri dove andare, cosa mangiare e come muoverti in Puglia." name="description"/>
+<meta content="blog Gargano, racconti Manfredonia, cosa fare Gargano, itinerari Puglia, borghi Gargano" name="keywords"/>
+<meta content="Cosa Vedere nel Gargano | Guide e Itinerari – Casa e Bottega" property="og:title"/>
+<meta content="Guide pratiche, itinerari e consigli locali sul Gargano e Manfredonia. Scritti da chi ci vive. Scopri dove andare, cosa mangiare e come muoverti in Puglia." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="https://www.casaebottegapuglia.it/fr/blog.html" property="og:url"/>
-<meta content="fr_FR" property="og:locale"/>
+<meta content="https://www.casaebottegapuglia.it/blog.html" property="og:url"/>
+<meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Récits du Gargano | Casa e Bottega Manfredonia" name="twitter:title"/>
-<meta content="Histoires, lieux et saveurs de la Puglia. Récits authentiques du Gargano." name="twitter:description"/>
+<meta content="Cosa Vedere nel Gargano | Guide e Itinerari – Casa e Bottega" name="twitter:title"/>
+<meta content="Guide e itinerari sul Gargano scritti da chi ci vive. Cosa vedere, dove mangiare, come muoversi in Puglia." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.jpeg" name="twitter:image"/>
-<link href="https://www.casaebottegapuglia.it/fr/blog.html" rel="canonical"/>
+<link href="https://www.casaebottegapuglia.it/blog.html" rel="canonical"/>
 <link href="https://www.casaebottegapuglia.it/blog.html" hreflang="it" rel="alternate"/>
 <link href="https://www.casaebottegapuglia.it/en/blog.html" hreflang="en" rel="alternate"/>
 <link href="https://www.casaebottegapuglia.it/fr/blog.html" hreflang="fr" rel="alternate"/>
@@ -27,8 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
-<link href="../css/style-v2.css" rel="stylesheet"/>
-
+<link href="css/style-v2.css?v=2" rel="stylesheet"/>
 <style>
 /* ============================================================
    BLOG v2 — page-specific styles
@@ -44,7 +43,12 @@
   text-align: center;
 }
 .blog-hero::before {
-  display: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../foto-zona/Manfredonia.webp') center 60%/cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
 }
 .blog-hero-inner {
   position: relative;
@@ -65,7 +69,7 @@
 }
 .blog-hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
   font-weight: 300;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -431,16 +435,16 @@
   .blog-card:nth-child(2n) { border-right: none; }
 }
 </style>
-<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png"/>
 </head>
 <body>
 
 <!-- ══ NAV v2 ══════════════════════════════════════════════════════ -->
 <header>
-  <nav class="v2-nav" role="navigation" aria-label="Navigation principale">
+  <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
     <div class="v2-nav-inner">
 
       <!-- Left: nav links (desktop) -->
@@ -459,15 +463,15 @@
 
       <!-- Right: lang + CTA (desktop) + hamburger -->
       <div class="v2-nav-right">
-        <div class="v2-nav-lang" role="list" aria-label="Choisir la langue">
-          <a href="../../blog.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-          <a href="../../en/blog.html" hreflang="en" title="English" role="listitem">EN</a>
-          <a class="on" href="blog.html" hreflang="fr" title="Français" role="listitem">FR</a>
-          <a href="../../de/blog.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-          <a href="../../nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-          <a href="../../es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
+        <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+          <a class="on" href="blog.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="en/blog.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="fr/blog.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a href="de/blog.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Réserver · −20%</a>
+        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span>
           <span></span>
@@ -487,13 +491,13 @@
         <a class="active" href="blog.html" data-i18n="nav_blog">Racconti</a>
         <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
   <!-- Language switcher -->
-  <div class="v2-nav-lang" role="list" aria-label="Choisir la langue">
-    <a href="../../blog.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a href="../../en/blog.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a class="on" href="blog.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../../de/blog.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a href="../../nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a href="../../es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
+  <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+    <a class="on" href="blog.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a href="en/blog.html" hreflang="en" title="English" role="listitem">EN</a>
+    <a href="fr/blog.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a href="de/blog.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a href="es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
   </div>
 </div>
 
@@ -501,9 +505,9 @@
 <section class="blog-hero">
   <div class="v2-container">
     <div class="blog-hero-inner">
-      <span class="blog-hero-label">Du Gargano, écrit par des locaux</span>
-      <h1>Récits<br/><em>du Gargano.</em></h1>
-      <p class="blog-hero-sub">Histoires, lieux et saveurs de la terre entre mer et montagne. Des guides écrits par ceux qui y vivent, pas ceux qui y sont passés une fois.</p>
+      <span class="blog-hero-label">Dal Gargano, scritto da chi ci vive</span>
+      <h1>Racconti<br/><em>dal Gargano.</em></h1>
+      <p class="blog-hero-sub">Storie, luoghi e sapori dalla terra tra il mare e la montagna. Guide scritte da chi abita qui, non da chi ci è passato una volta.</p>
     </div>
   </div>
 </section>
@@ -511,10 +515,10 @@
 <!-- ══ FEATURED ARTICLE ════════════════════════════════════════════ -->
 <section class="blog-featured">
   <div class="v2-container">
-    <span class="blog-featured-label">À la une</span>
+    <span class="blog-featured-label">In evidenza</span>
     <a href="blog-articolo-1.html" class="blog-featured-grid" style="text-decoration:none; color:inherit; display:grid;">
       <div class="blog-featured-img">
-        <img src="../../foto-zona/Manfredonia.webp" alt="Manfredonia panorama" loading="eager"/>
+        <img src="../foto-zona/Manfredonia.webp" alt="Manfredonia panorama" loading="eager"/>
       </div>
       <div class="blog-featured-body">
         <div class="blog-featured-eyebrow">
@@ -523,7 +527,7 @@
         </div>
         <h2 class="blog-featured-title" data-i18n="blog_article1_title">Cinque cose da fare a Manfredonia che non trovi su TripAdvisor</h2>
         <p class="blog-featured-excerpt" data-i18n="blog_article1_excerpt">Il Castello Svevo-Angioino al tramonto, la Basilica paleocristiana di Siponto, il mercato del pesce all'alba, un aperitivo sul lungomare e il tramonto sul Golfo.</p>
-        <span class="blog-read-link">Lire la suite <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <span class="blog-read-link">Leggi tutto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </div>
     </a>
   </div>
@@ -532,7 +536,7 @@
 <!-- ══ FILTER BAR ══════════════════════════════════════════════════ -->
 <div class="blog-filter-bar">
   <div class="v2-container">
-    <div class="blog-filter-inner" role="group" aria-label="Filtrer par catégorie">
+    <div class="blog-filter-inner" role="group" aria-label="Filtra per categoria">
       <button class="blog-filter-btn active" data-cat="all" data-i18n="blog_cat_all">Tutti</button>
       <button class="blog-filter-btn" data-cat="mare" data-i18n="blog_cat_mare">Mare</button>
       <button class="blog-filter-btn" data-cat="borghi" data-i18n="blog_cat_borghi">Borghi</button>
@@ -551,7 +555,7 @@
       <!-- Article 2 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Spiaggia del Gargano d'inverno" loading="lazy" src="../../foto-zona/Foto spiaggia.webp"/>
+          <img alt="Spiaggia del Gargano d'inverno" loading="lazy" src="../foto-zona/Foto spiaggia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -560,14 +564,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article2_title">Il Gargano fuori stagione: silenzio, luce e mare d'inverno</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article2_excerpt">Quando i turisti se ne vanno, il Gargano si rivela. Spiagge deserte, tramonti senza filtro, e quel silenzio che è impossibile trovare d'estate.</p>
-          <a class="blog-card-link" href="blog-articolo-2.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-2.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 3 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Monte Sant'Angelo" loading="lazy" src="../../foto-zona/Monte S.Angelo- basilica-santuario-san-michele.webp"/>
+          <img alt="Monte Sant'Angelo" loading="lazy" src="../foto-zona/Monte S.Angelo- basilica-santuario-san-michele.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -576,14 +580,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article3_title">Monte Sant'Angelo: tra sacro e profano nel borgo UNESCO</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article3_excerpt">Un pellegrinaggio laico tra vicoli di pietra bianca, il Santuario di San Michele e i panzerotti più buoni della Puglia.</p>
-          <a class="blog-card-link" href="blog-articolo-3.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-3.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 4 -->
       <article class="blog-card" data-cat="tradizioni">
         <div class="blog-card-img">
-          <img alt="Basilica di Siponto, installazione Tresoldi" loading="lazy" src="../../foto-zona/tresoldibasilica_siponto.webp"/>
+          <img alt="Basilica di Siponto, installazione Tresoldi" loading="lazy" src="../foto-zona/tresoldibasilica_siponto.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -592,14 +596,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article4_title">Siponto: dove l'arte contemporanea incontra le pietre antiche</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article4_excerpt">L'installazione di Edoardo Tresoldi sulla basilica paleocristiana è un dialogo tra passato e presente che toglie il fiato. A pochi minuti da casa nostra.</p>
-          <a class="blog-card-link" href="blog-articolo-4.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-4.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 5 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Sapori autentici del Gargano" loading="lazy" src="../../foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
+          <img alt="Sapori autentici del Gargano" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -608,14 +612,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article5_title">Cosa si mangia a Manfredonia: guida ai sapori autentici del Gargano</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article5_excerpt">Dalla ciambotta ai panzerotti, dal caciocavallo podolico al pane di Monte Sant'Angelo. Una guida golosa per chi vuole mangiare come un locale.</p>
-          <a class="blog-card-link" href="blog-articolo-5.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-5.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 6 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Gargano visto dall'alto" loading="lazy" src="../../foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="Gargano visto dall'alto" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -624,14 +628,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article6_title">Una settimana nel Gargano: itinerario completo da Manfredonia</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article6_excerpt">Sette giorni tra mare, borghi, foreste e sapori. Da Vieste a Peschici, dalla Foresta Umbra a Mattinata, tutto partendo da casa nostra.</p>
-          <a class="blog-card-link" href="blog-articolo-6.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-6.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 7 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Vieste, borgo sul mare del Gargano" loading="lazy" src="../../foto-zona/gargano_vieste.webp"/>
+          <img alt="Vieste, borgo sul mare del Gargano" loading="lazy" src="../foto-zona/gargano_vieste.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -640,14 +644,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article7_title">Vieste: il borgo arroccato sul mare più bello del Gargano</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article7_excerpt">Vicoli bianchi che scendono a picco sul mare, la Punta di San Francesco, il Pizzomunno e le grotte marine. Vieste è una di quelle mete che si vogliono tenere segrete.</p>
-          <a class="blog-card-link" href="blog-articolo-7.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-7.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 8 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Scogliere del Gargano" loading="lazy" src="../../foto-zona/scogliera.webp"/>
+          <img alt="Scogliere del Gargano" loading="lazy" src="../foto-zona/scogliera.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -656,14 +660,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article8_title">Le scogliere del Gargano: dove il mare è ancora selvaggio</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article8_excerpt">Calette nascoste, acque trasparenti e rocce bianche di calcare. Una guida per chi vuole trovare il mare del Gargano lontano dagli ombrelloni.</p>
-          <a class="blog-card-link" href="blog-articolo-8.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-8.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 9 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Centro storico di Manfredonia" loading="lazy" src="../../foto-zona/Manfredonia-Gargano-Apulien-Italien-12.webp"/>
+          <img alt="Centro storico di Manfredonia" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-12.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -672,14 +676,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article9_title">Manfredonia lenta: il diario di una vacanza senza fretta</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article9_excerpt">Svegliarsi tardi, fare colazione sul balcone, perdersi nel centro storico, mangiare pesce fresco al porto. Cos'è una vera vacanza a Manfredonia.</p>
-          <a class="blog-card-link" href="blog-articolo-9.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-9.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 10 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Sapori autentici di Manfredonia" loading="lazy" src="../../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
+          <img alt="Sapori autentici di Manfredonia" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -688,14 +692,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article10_title">Dove mangiano le persone del posto a Manfredonia (non dove vi mandano le guide)</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article10_excerpt">Tre trattorie senza insegna, un panificio che apre alle 5 del mattino e un bar dove i pescatori fanno colazione alle 6. I posti che Francesco frequenta da trent'anni.</p>
-          <a class="blog-card-link" href="blog-articolo-11.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-11.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 11 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Il castello di Manfredonia" loading="lazy" src="../../foto-zona/castello_Manfredonia.webp"/>
+          <img alt="Borghi nascosti del Gargano" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -704,14 +708,14 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article11_title">I tre paesi del Gargano che i turisti non vedono mai, e perché vale la pena perdersi lì</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article11_excerpt">Non Vieste, non Peschici. Tre borghi nell'entroterra dove il tempo si è fermato, i vecchi giocano a carte davanti alla chiesa e la pasta viene ancora fatta a mano ogni mattina.</p>
-          <a class="blog-card-link" href="blog-articolo-10.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-10.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
       <!-- Article 12 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Gargano visto dallo spazio, la forma dello sperone" loading="lazy" src="../../foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="Manfredonia, porta del Gargano" loading="lazy" src="../foto-zona/Manfredonia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -720,71 +724,7 @@
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article12_title">Come muoversi nel Gargano senza sembrare un turista: la guida che non esiste da nessuna altra parte</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article12_excerpt">Quando partire per evitare il traffico della Foresta Umbra. A che ora arrivare alle spiagge più belle. Quali strade secondarie usare. Tutto quello che sappiamo dopo trent'anni vissuti qui.</p>
-          <a class="blog-card-link" href="blog-articolo-12.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </article>
-
-      <!-- Article 13 -->
-      <article class="blog-card" data-cat="tradizioni">
-        <div class="blog-card-img">
-          <img alt="Procession de la Semaine Sainte à Manfredonia" loading="lazy" src="../../foto-zona/tresoldibasilica_siponto.webp"/>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-cat-tag blog-cat-tag--tradizioni" data-i18n="blog_article13_cat">Traditions</span>
-            <span class="blog-date-tag" data-i18n="blog_article13_date">Avril 2026</span>
-          </div>
-          <h3 class="blog-card-title" data-i18n="blog_article13_title">La Semaine Sainte à Manfredonia : processions, silence et dévotion populaire</h3>
-          <p class="blog-card-excerpt" data-i18n="blog_article13_excerpt">Les confréries en procession, les Mystères portés sur les épaules, le rite du Vendredi Saint répété depuis des siècles. Une tradition vivante que très peu de touristes ont la chance de voir.</p>
-          <a class="blog-card-link" href="blog-articolo-13.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </article>
-
-      <!-- Article 14 -->
-      <article class="blog-card" data-cat="mare">
-        <div class="blog-card-img">
-          <img alt="Baia delle Zagare et les criques du Gargano en mai" loading="lazy" src="../../foto-zona/scogliera.webp"/>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article14_cat">Mer</span>
-            <span class="blog-date-tag" data-i18n="blog_article14_date">Mai 2026</span>
-          </div>
-          <h3 class="blog-card-title" data-i18n="blog_article14_title">Où se baigner dans le Gargano en mai et juin (avant la foule)</h3>
-          <p class="blog-card-excerpt" data-i18n="blog_article14_excerpt">Baia delle Zagare, les criques de Mattinata, les anses accessibles uniquement à pied. Les endroits où les locaux plongent quand la mer est déjà parfaite et les plages encore vides.</p>
-          <a class="blog-card-link" href="blog-articolo-14.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </article>
-
-      <!-- Article 15 -->
-      <article class="blog-card" data-cat="cibo">
-        <div class="blog-card-img">
-          <img alt="Vin du Gargano, Nero di Troia et producteurs artisanaux" loading="lazy" src="../../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-cat-tag blog-cat-tag--cibo" data-i18n="blog_article15_cat">Cuisine &amp; Vin</span>
-            <span class="blog-date-tag" data-i18n="blog_article15_date">Avril 2026</span>
-          </div>
-          <h3 class="blog-card-title" data-i18n="blog_article15_title">Le vin du Gargano : Nero di Troia, Bombino et les petits producteurs que vous ne trouverez pas au supermarché</h3>
-          <p class="blog-card-excerpt" data-i18n="blog_article15_excerpt">Une escapade dans les vignes de l'arrière-pays, des producteurs artisanaux qui vinifient encore en petites quantités et les bons accords avec la cuisine locale. Le Gargano à boire.</p>
-          <a class="blog-card-link" href="blog-articolo-15.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </article>
-
-      <!-- Article 16 -->
-      <article class="blog-card" data-cat="borghi">
-        <div class="blog-card-img">
-          <img alt="Mattinata, village blanc entre montagne et mer dans le Gargano" loading="lazy" src="../../foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span class="blog-cat-tag blog-cat-tag--borghi" data-i18n="blog_article16_cat">Villages</span>
-            <span class="blog-date-tag" data-i18n="blog_article16_date">Mars 2026</span>
-          </div>
-          <h3 class="blog-card-title" data-i18n="blog_article16_title">Mattinata : le village blanc entre montagne et mer qui n'a pas encore été découvert</h3>
-          <p class="blog-card-excerpt" data-i18n="blog_article16_excerpt">Le jour, c'est un village paysan aux maisons blanchies à la chaux. Le soir, ses criques deviennent parmi les plus belles du Gargano. Mattinata est encore un secret, et nous allons vous le raconter.</p>
-          <a class="blog-card-link" href="blog-articolo-16.html">Lire la suite <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="blog-card-link" href="blog-articolo-12.html">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
@@ -796,31 +736,24 @@
 <section class="blog-callout">
   <div class="v2-container">
     <div class="blog-callout-inner">
-      <span class="blog-callout-label">Séjournez avec nous</span>
-      <h2 class="blog-callout-title">Vivez le Gargano<br/><em>de l'intérieur.</em></h2>
-      <p class="blog-callout-sub">Casa e Bottega est à 300 m de la mer, dans le centre historique de Manfredonia. En réservant directement, économisez 20 % par rapport à Booking et Airbnb.</p>
-      <a href="prenota.html" class="blog-callout-cta">Vérifier les disponibilités →</a>
+      <span class="blog-callout-label">Soggiorna con noi</span>
+      <h2 class="blog-callout-title">Vivi il Gargano<br/><em>da dentro.</em></h2>
+      <p class="blog-callout-sub">Casa e Bottega è a 300 m dal mare, nel centro storico di Manfredonia. Prenotando direttamente risparmi il 20% rispetto a Booking e Airbnb.</p>
+      <a href="prenota.html" class="blog-callout-cta">Controlla disponibilità →</a>
     </div>
   </div>
 </section>
 
 <!-- ══ FOOTER v2 ═══════════════════════════════════════════════════ -->
-<footer class="v2-footer" role="contentinfo">
+<footer class="v2-footer">
   <div class="v2-container">
     <div class="v2-footer-grid">
-
-      <!-- Brand -->
-      <div>
-        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
-        <p class="v2-footer-tagline" data-i18n="footer_desc">
-          A due passi dal mare, nel cuore del Gargano.
-          Una casa, due camere, una famiglia che vi apre la porta.
-        </p>
+      <div class="v2-footer-brand">
+        <a class="v2-nav-brand" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
+        <p style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;" data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
       </div>
-
-      <!-- Pagine -->
       <div class="v2-footer-col">
-        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
+        <h4 data-i18n="footer_pages">Pagine</h4>
         <ul>
           <li><a href="index.html" data-i18n="nav_home">Home</a></li>
           <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
@@ -829,32 +762,24 @@
           <li><a href="regole.html">Regole della Casa</a></li>
         </ul>
       </div>
-
-      <!-- Seguici -->
       <div class="v2-footer-col">
-        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
+        <h4 data-i18n="footer_follow">Seguici</h4>
         <ul>
-          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
-          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
-          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+          <li><a href="#">Airbnb</a></li>
+          <li><a href="#">Booking.com</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
         </ul>
       </div>
-
-      <!-- Contatti -->
       <div class="v2-footer-col">
-        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
+        <h4 data-i18n="footer_contact">Contatti</h4>
         <ul>
-          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
           <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
+          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
         </ul>
       </div>
-
     </div>
-
     <div class="v2-footer-bottom">
-      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
-      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
+      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
     </div>
   </div>
 </footer>
@@ -862,14 +787,14 @@
 <!-- ══ STICKY WA ═══════════════════════════════════════════════════ -->
 <a class="v2-wa-pill"
    href="https://wa.me/393334705574?text=Ciao!%20Sto%20leggendo%20il%20blog%20di%20Casa%20e%20Bottega%20%E2%80%94%20vorrei%20informazioni%20su%20un%20soggiorno%20a%20Manfredonia."
-   target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
+   target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.815 0 00-3.48-8.413z"/></svg>
   <span>Scrivi su WhatsApp</span>
 </a>
 
 <!-- ══ SCRIPTS ══════════════════════════════════════════════════════ -->
-<script src="../js/i18n.js" defer></script>
-<script src="../js/main.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
 <script>
 (function() {
   'use strict';
@@ -917,6 +842,45 @@
   }
 
 })();
+</script>
+
+
+<script>
+/* ---- Mobile nav toggle (standalone) ---- */
+(function () {
+  var toggle   = document.getElementById('v2-menu-toggle');
+  var navLinks = document.getElementById('v2-nav-links');
+  var navEl    = document.querySelector('.v2-nav');
+
+  function setNavHeight() {
+    if (navEl) {
+      var h = navEl.getBoundingClientRect().height;
+      if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+    }
+  }
+  requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
+  window.addEventListener('resize', setNavHeight);
+  window.addEventListener('load', setNavHeight);
+
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function () {
+      setNavHeight();
+      var open = navLinks.classList.toggle('v2-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
+      var spans = toggle.querySelectorAll('span');
+      if (open) {
+        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+        spans[1].style.opacity   = '0';
+        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity   = '';
+        spans[2].style.transform = '';
+      }
+    });
+  }
+}());
 </script>
 </body>
 </html>

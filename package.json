@@ -1,0 +1,11 @@
+{
+  "name": "casa-e-bottega-sito",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "terser": "^5.31.0"
+  },
+  "scripts": {
+    "build": "bash prepara-deploy.sh"
+  }
+}

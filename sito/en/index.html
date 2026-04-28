@@ -148,21 +148,6 @@
       </div>
 
 <!-- Mobile nav panel -->
-<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobile menu" aria-hidden="true">
-  <a class="active" href="index.html" data-i18n="nav_home">Home</a>
-  <a href="camere.html" data-i18n="nav_rooms">Le Camere</a>
-  <a href="prenota.html" data-i18n="nav_book">Prenota</a>
-  <a href="blog.html" data-i18n="nav_blog">Racconti</a>
-  <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
-  <div class="v2-nav-lang" role="list" aria-label="Select language">
-    <a href="../index.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a class="on" href="../en/index.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a href="../fr/index.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../de/index.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a href="../nl/index.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
-  </div>
-</div>
 
       <!-- Centre: brand -->
       <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
@@ -179,7 +164,7 @@
           <a href="../nl/index.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;" data-i18n="hero_cta_book">
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">
           Prenota · −20%
         </a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
@@ -193,6 +178,24 @@
   </nav>
 </header>
 
+<!-- Mobile nav panel — lives OUTSIDE <nav> so backdrop-filter doesn't trap position:fixed -->
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobile menu" aria-hidden="true">
+  <a class="active" href="index.html" data-i18n="nav_home">Home</a>
+  <a href="camere.html" data-i18n="nav_rooms">The Rooms</a>
+  <a href="prenota.html" data-i18n="nav_book">Book</a>
+  <a href="blog.html" data-i18n="nav_blog">Stories</a>
+  <a href="contatti.html" data-i18n="nav_contact">Location</a>
+  <!-- Language switcher -->
+  <div class="v2-nav-lang" role="list" aria-label="Select language">
+    <a href="../index.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+    <a href="index.html" class="on" class="on" hreflang="en" title="English" role="listitem">EN</a>
+    <a href="../fr/index.html" hreflang="fr" title="Français" role="listitem">FR</a>
+    <a href="../de/index.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+    <a href="../nl/index.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+    <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════════════════
      HERO — two-column editorial
      ══════════════════════════════════════════════════════════ -->
@@ -204,19 +207,19 @@
 
     <div>
       <h1 class="v2-hero-title">
-        A due passi<br>
-        <em>dal mare.</em>
+        A stone's throw<br>
+        <em>from the sea.</em>
       </h1>
       <p class="v2-hero-tagline">
         300 m from the sea · Gargano · Puglia
       </p>
       <div class="v2-hero-ctas">
-        <a href="prenota.html" class="v2-btn v2-btn--primary">
-          Verifica le date
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary">
+          Check availability
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
         <a href="camere.html" class="v2-btn--ghost">
-          Scopri le camere
+          Discover the rooms
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
       </div>
@@ -254,9 +257,9 @@
     <div class="v2-hero-editorial-mark">MMXXVI · N° 01 · MANFREDONIA</div>
     <!-- Price tag -->
     <div class="v2-hero-price-tag">
-      <div class="v2-hero-price-tag-label">Tariffa diretta</div>
-      <div class="v2-hero-price-tag-num v2-serif">da €50<span>/notte</span></div>
-      <div class="v2-hero-price-tag-note">−20% rispetto a Booking e Airbnb</div>
+      <div class="v2-hero-price-tag-label" data-i18n="price_tag_label">Tariffa diretta</div>
+      <div class="v2-hero-price-tag-num v2-serif" data-i18n-html="price_tag_num">da €60<span>/notte</span></div>
+      <div class="v2-hero-price-tag-note" data-i18n="price_tag_note">−20% rispetto a Booking e Airbnb</div>
     </div>
   </div>
 
@@ -279,7 +282,6 @@
             width="800" height="1000"
           />
         </div>
-        <div class="v2-story-img-caption">L'esterno · Via Gargano, 13</div>
       </div>
 
       <!-- Text -->
@@ -288,7 +290,7 @@
           <span class="v2-label v2-label-dot" data-i18n="about_subtitle">La nostra storia</span>
         </div>
 
-        <h2 class="v2-story-headline" id="v2-story-heading">
+        <h2 class="v2-story-headline" id="v2-story-heading" data-i18n-html="about_headline">
           Era la bottega<br>
           <em>di un calzolaio.</em><br>
           È rimasta<br>quello che era.
@@ -304,7 +306,7 @@
           <p data-i18n="about_p2">
             Abbiamo rinnovato tutto, ma abbiamo lasciato intatta l'anima.
           </p>
-          <p data-i18n="about_p3">
+          <p style="display:none">
             Siamo una famiglia di Manfredonia. Viviamo a pochi passi.
             Se avete bisogno di qualcosa — un consiglio su dove mangiare il pesce fresco,
             come arrivare alle grotte di Vieste — ci siamo.
@@ -315,18 +317,19 @@
         <div class="v2-story-hosts">
           <div class="v2-host-avatars" aria-hidden="true">
             <div class="v2-host-avatar">N</div>
+            <div class="v2-host-avatar">G</div>
             <div class="v2-host-avatar">F</div>
           </div>
           <div>
             <div class="v2-label">I vostri host</div>
-            <div class="v2-host-name">Nicoletta <span>&amp;</span> Francesco</div>
+            <div class="v2-host-name">Nicoletta, Giovanni <span>&amp;</span> Francesco</div>
           </div>
           <a href="https://wa.me/393334705574?text=Ciao%20Nicoletta!%20Vorrei%20sapere%20se%20avete%20disponibilit%C3%A0.%20Grazie!"
              class="v2-ulink"
              style="margin-left:auto;"
              target="_blank" rel="noopener"
-             aria-label="Scrivi a Nicoletta su WhatsApp">
-            Scrivi a Nicoletta
+             aria-label="Scrivici su WhatsApp">
+            Scrivici
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
           </a>
         </div>
@@ -480,50 +483,254 @@
 
       <!-- Stylised map -->
       <div class="v2-map-container" role="img" aria-label="Mappa stilizzata di Manfredonia con posizione Casa e Bottega">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Background -->
-          <rect x="0" y="0" width="400" height="400" fill="#ede4d3"/>
-          <!-- Sea (north) -->
-          <path d="M0 130 Q 100 108 200 148 T 400 138 L 400 0 L 0 0 Z" fill="#1f4a4a" opacity="0.07"/>
-          <path d="M0 152 Q 100 132 200 168 T 400 160 L 400 0 L 0 0 Z" fill="#1f4a4a" opacity="0.11"/>
-          <!-- Street grid -->
-          <g stroke="#1a1613" stroke-width="0.5" fill="none" opacity="0.22">
-            <path d="M30 200 L 370 212"/>
-            <path d="M40 242 L 360 254"/>
-            <path d="M50 284 L 350 296"/>
-            <path d="M90 178 L 110 370"/>
-            <path d="M175 168 L 195 370"/>
-            <path d="M260 175 L 280 370"/>
-            <path d="M330 185 L 345 370"/>
+        <style>
+          @keyframes v2-map-pulse {
+            0%   { r: 8;  opacity: 0.6; }
+            70%  { r: 28; opacity: 0; }
+            100% { r: 28; opacity: 0; }
+          }
+          @keyframes v2-map-dash {
+            from { stroke-dashoffset: 0; }
+            to   { stroke-dashoffset: -18; }
+          }
+          .v2-map-pulse { animation: v2-map-pulse 2.6s ease-out infinite; }
+          .v2-map-dash  { animation: v2-map-dash 1.4s linear infinite; }
+        </style>
+        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="v2-sea" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#a8c8c4" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#4a9090" stop-opacity="0.65"/>
+            </linearGradient>
+            <pattern id="v2-hatch" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)">
+              <line x1="0" y1="7" x2="14" y2="7" stroke="#1f5a5a" stroke-width="0.4" opacity="0.28"/>
+            </pattern>
+          </defs>
+
+          <!-- BACKGROUND -->
+          <rect width="600" height="600" fill="#f0e9dc"/>
+
+          <!-- GRID -->
+          <g stroke="#1a1613" stroke-width="0.35" opacity="0.06">
+            <line x1="50"  y1="0" x2="50"  y2="600"/>
+            <line x1="100" y1="0" x2="100" y2="600"/>
+            <line x1="150" y1="0" x2="150" y2="600"/>
+            <line x1="200" y1="0" x2="200" y2="600"/>
+            <line x1="250" y1="0" x2="250" y2="600"/>
+            <line x1="300" y1="0" x2="300" y2="600"/>
+            <line x1="350" y1="0" x2="350" y2="600"/>
+            <line x1="400" y1="0" x2="400" y2="600"/>
+            <line x1="450" y1="0" x2="450" y2="600"/>
+            <line x1="500" y1="0" x2="500" y2="600"/>
+            <line x1="550" y1="0" x2="550" y2="600"/>
+            <line x1="0" y1="50"  x2="600" y2="50"/>
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="150" x2="600" y2="150"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="0" y1="250" x2="600" y2="250"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+            <line x1="0" y1="350" x2="600" y2="350"/>
+            <line x1="0" y1="400" x2="600" y2="400"/>
+            <line x1="0" y1="450" x2="600" y2="450"/>
+            <line x1="0" y1="500" x2="600" y2="500"/>
+            <line x1="0" y1="550" x2="600" y2="550"/>
           </g>
-          <!-- Glow halo around pin -->
-          <circle cx="200" cy="215" r="44" fill="#b0553a" opacity="0.09"/>
-          <circle cx="200" cy="215" r="24" fill="#b0553a" opacity="0.16"/>
-          <!-- Pin dot -->
-          <circle cx="200" cy="215" r="7" fill="#b0553a"/>
-          <!-- Label -->
-          <text x="214" y="210" font-family="Cormorant Garamond, serif" font-style="italic" font-size="14" fill="#1a1613">Casa e Bottega</text>
-          <!-- Sea label -->
-          <text x="44" y="72" font-family="ui-monospace, monospace" font-size="8.5" fill="#1f4a4a" letter-spacing="2.5" text-transform="uppercase">MARE ADRIATICO</text>
-          <!-- Area labels -->
-          <text x="162" y="204" font-family="ui-monospace, monospace" font-size="7.5" fill="#9a8f80" letter-spacing="1.2">CENTRO STORICO</text>
-          <text x="24" y="185" font-family="ui-monospace, monospace" font-size="7.5" fill="#9a8f80" letter-spacing="1.2">LUNGOMARE</text>
-          <!-- Compass rose -->
-          <g transform="translate(356 52)">
-            <circle r="16" fill="none" stroke="#1a1613" stroke-width="0.7"/>
-            <path d="M0 -12 L 3 0 L 0 12 L -3 0 Z" fill="#1a1613"/>
-            <text x="0" y="-20" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1a1613">N</text>
+
+          <!-- SEA -->
+          <path d="M 450 0 C 449 55, 448 115, 447 175 C 446 225, 445 270, 443 310 C 440 350, 433 378, 420 405 C 407 430, 390 448, 374 468 C 358 488, 345 510, 341 535 C 337 558, 340 580, 344 600 L 600 600 L 600 0 Z" fill="url(#v2-sea)"/>
+          <path d="M 450 0 C 449 55, 448 115, 447 175 C 446 225, 445 270, 443 310 C 440 350, 433 378, 420 405 C 407 430, 390 448, 374 468 C 358 488, 345 510, 341 535 C 337 558, 340 580, 344 600 L 600 600 L 600 0 Z" fill="url(#v2-hatch)"/>
+          <path d="M 505 0 C 503 80,500 180,495 270 C 490 350,484 415,472 475 C 460 525,444 563,418 590 L 600 600 L 600 0 Z" fill="#1f5a5a" opacity="0.08"/>
+          <!-- Sand fringe -->
+          <path d="M 432 0 C 431 55,430 125,429 190 C 428 245,427 290,425 332 C 422 372,416 400,406 424 C 396 446,382 464,368 482" fill="none" stroke="#d4b896" stroke-width="7" opacity="0.5"/>
+          <!-- Coastline stroke -->
+          <path d="M 450 0 C 449 55, 448 115, 447 175 C 446 225, 445 270, 443 310 C 440 350, 433 378, 420 405 C 407 430, 390 448, 374 468 C 358 488, 345 510, 341 535" fill="none" stroke="#2a7070" stroke-width="1.8" opacity="0.45"/>
+
+          <!-- PORTO -->
+          <path d="M 368 488 L 405 510 L 408 536 L 378 548 L 348 528 L 340 504 Z" fill="#1f5a5a" opacity="0.16"/>
+          <rect x="360" y="533" width="24" height="5" rx="1" fill="#1f5a5a" opacity="0.22" transform="rotate(32,372,535)"/>
+          <text x="375" y="552" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7.5" fill="#1f5a5a" letter-spacing="1.5" opacity="0.65" transform="rotate(28,375,552)">PORTO</text>
+
+          <!-- STREET GRID — major N-S -->
+          <g stroke="#c4b59e" stroke-width="2.4" fill="none">
+            <line x1="100" y1="20" x2="100" y2="575"/>
+            <line x1="150" y1="18" x2="150" y2="572"/>
+            <line x1="200" y1="16" x2="200" y2="568"/>
+            <line x1="250" y1="14" x2="250" y2="562"/>
+            <!-- Via Gargano — terracotta -->
+            <line x1="350" y1="12" x2="350" y2="555" stroke="#b0553a" stroke-width="3.2"/>
+            <line x1="400" y1="8"  x2="400" y2="460"/>
+          </g>
+
+          <!-- Lungomare -->
+          <path d="M 425 10 C 425 65,424 145,423 215 C 422 272,421 320,419 360 C 416 394,408 420,396 442" fill="none" stroke="#a89880" stroke-width="4" opacity="0.9"/>
+
+          <!-- Major E-W streets -->
+          <g stroke="#c4b59e" stroke-width="2.4" fill="none">
+            <line x1="92"  y1="50"  x2="422" y2="50"/>
+            <line x1="90"  y1="100" x2="422" y2="100"/>
+            <line x1="88"  y1="150" x2="422" y2="150"/>
+            <line x1="86"  y1="200" x2="422" y2="200"/>
+            <line x1="84"  y1="250" x2="422" y2="249"/>
+            <line x1="82"  y1="300" x2="422" y2="299"/>
+            <line x1="80"  y1="350" x2="418" y2="348"/>
+            <line x1="78"  y1="400" x2="408" y2="396"/>
+            <line x1="76"  y1="450" x2="388" y2="444"/>
+            <line x1="76"  y1="500" x2="360" y2="492"/>
+            <line x1="78"  y1="550" x2="343" y2="543"/>
+          </g>
+
+          <!-- Minor N-S streets -->
+          <g stroke="#c4b59e" stroke-width="1.1" fill="none" opacity="0.55">
+            <line x1="75"  y1="22" x2="75"  y2="576"/>
+            <line x1="125" y1="18" x2="125" y2="572"/>
+            <line x1="175" y1="16" x2="175" y2="568"/>
+            <line x1="225" y1="14" x2="225" y2="563"/>
+            <line x1="275" y1="12" x2="275" y2="557"/>
+            <line x1="325" y1="10" x2="325" y2="528"/>
+            <line x1="375" y1="8"  x2="375" y2="485"/>
+            <line x1="415" y1="8"  x2="415" y2="445"/>
+          </g>
+
+          <!-- Minor E-W streets -->
+          <g stroke="#c4b59e" stroke-width="1.1" fill="none" opacity="0.55">
+            <line x1="90"  y1="25"  x2="423" y2="25"/>
+            <line x1="88"  y1="75"  x2="423" y2="75"/>
+            <line x1="86"  y1="125" x2="422" y2="125"/>
+            <line x1="84"  y1="175" x2="422" y2="174"/>
+            <line x1="82"  y1="225" x2="422" y2="224"/>
+            <line x1="80"  y1="275" x2="421" y2="273"/>
+            <line x1="78"  y1="325" x2="416" y2="322"/>
+            <line x1="76"  y1="375" x2="406" y2="371"/>
+            <line x1="76"  y1="425" x2="392" y2="419"/>
+            <line x1="76"  y1="475" x2="367" y2="468"/>
+            <line x1="78"  y1="525" x2="344" y2="517"/>
+          </g>
+
+          <!-- City block fills -->
+          <g fill="#1a1613" opacity="0.036">
+            <rect x="77"  y="27"  width="45" height="45"/><rect x="77"  y="77"  width="45" height="45"/><rect x="77"  y="127" width="45" height="45"/><rect x="77"  y="177" width="45" height="45"/><rect x="77"  y="227" width="45" height="45"/><rect x="77"  y="277" width="45" height="45"/><rect x="77"  y="327" width="45" height="45"/><rect x="77"  y="377" width="45" height="45"/><rect x="77"  y="427" width="45" height="45"/><rect x="77"  y="477" width="45" height="40"/><rect x="77"  y="527" width="45" height="28"/>
+            <rect x="127" y="27"  width="45" height="45"/><rect x="127" y="77"  width="45" height="45"/><rect x="127" y="127" width="45" height="45"/><rect x="127" y="177" width="45" height="45"/><rect x="127" y="227" width="45" height="45"/><rect x="127" y="277" width="45" height="45"/><rect x="127" y="327" width="45" height="45"/><rect x="127" y="377" width="45" height="45"/><rect x="127" y="427" width="45" height="45"/><rect x="127" y="477" width="45" height="38"/>
+            <rect x="177" y="27"  width="45" height="45"/><rect x="177" y="77"  width="45" height="45"/><rect x="177" y="127" width="45" height="45"/><rect x="177" y="177" width="45" height="45"/><rect x="177" y="227" width="45" height="45"/><rect x="177" y="277" width="45" height="45"/><rect x="177" y="327" width="45" height="45"/><rect x="177" y="377" width="45" height="45"/><rect x="177" y="427" width="45" height="40"/>
+            <rect x="227" y="27"  width="45" height="45"/><rect x="227" y="77"  width="45" height="45"/><rect x="227" y="127" width="45" height="45"/><rect x="227" y="177" width="45" height="45"/><rect x="227" y="227" width="45" height="45"/><rect x="227" y="327" width="45" height="45"/><rect x="227" y="377" width="45" height="44"/>
+            <rect x="277" y="27"  width="45" height="45"/><rect x="277" y="77"  width="45" height="45"/><rect x="277" y="127" width="45" height="45"/><rect x="277" y="177" width="45" height="45"/><rect x="277" y="227" width="45" height="45"/><rect x="277" y="277" width="45" height="45"/><rect x="277" y="327" width="44" height="44"/><rect x="277" y="377" width="42" height="42"/>
+            <rect x="327" y="27"  width="45" height="45"/><rect x="327" y="77"  width="45" height="45"/><rect x="327" y="127" width="45" height="45"/><rect x="327" y="177" width="45" height="45"/><rect x="327" y="227" width="45" height="45"/><rect x="327" y="277" width="44" height="43"/>
+            <rect x="377" y="27"  width="35" height="45"/><rect x="377" y="77"  width="35" height="45"/><rect x="377" y="127" width="35" height="45"/><rect x="377" y="177" width="34" height="45"/><rect x="377" y="227" width="32" height="44"/>
+          </g>
+
+          <!-- CASTELLO SVEVO -->
+          <g transform="translate(420, 405)">
+            <rect x="-18" y="-16" width="36" height="26" rx="1.5" fill="#9a8f80" opacity="0.42"/>
+            <rect x="-18" y="-24" width="9"  height="10" rx="1" fill="#9a8f80" opacity="0.46"/>
+            <rect x="-5"  y="-24" width="9"  height="10" rx="1" fill="#9a8f80" opacity="0.46"/>
+            <rect x="9"   y="-24" width="9"  height="10" rx="1" fill="#9a8f80" opacity="0.46"/>
+            <rect x="-22" y="-20" width="7" height="30" rx="1" fill="#9a8f80" opacity="0.30"/>
+            <rect x="15"  y="-20" width="7" height="30" rx="1" fill="#9a8f80" opacity="0.30"/>
+          </g>
+          <rect x="378" y="417" width="84" height="13" rx="2" fill="#f0e9dc" opacity="0.88"/>
+          <text x="420" y="427" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="8" fill="#6b6358" letter-spacing="1">CASTELLO SVEVO</text>
+
+          <!-- 500m arc -->
+          <circle cx="350" cy="300" r="250" fill="none" stroke="#6b6358" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.18"/>
+          <text x="558" y="337" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7" fill="#6b6358" opacity="0.45" transform="rotate(90,558,337)">500 m</text>
+
+          <!-- CENTRO STORICO -->
+          <rect x="118" y="332" width="210" height="194" rx="6" fill="#b0553a" opacity="0.045"/>
+          <rect x="118" y="332" width="210" height="194" rx="6" fill="none" stroke="#b0553a" stroke-width="1" stroke-dasharray="5 4" opacity="0.22"/>
+          <text x="222" y="480" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="9" fill="#6b6358" letter-spacing="2" opacity="0.80">CENTRO STORICO</text>
+
+          <!-- 450m arc -->
+          <circle cx="350" cy="300" r="225" fill="none" stroke="#6b6358" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.14"/>
+
+          <!-- VIA GARGANO label -->
+          <rect x="253" y="273" width="92" height="13" rx="2" fill="#f0e9dc" opacity="0.93"/>
+          <text x="299" y="283" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="8" fill="#b0553a" letter-spacing="1.2">VIA GARGANO</text>
+
+          <!-- LUNGOMARE label -->
+          <text x="432" y="95" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="start" font-size="8" fill="#6b6358" letter-spacing="1.5" opacity="0.85" transform="rotate(90,432,95)">LUNGOMARE</text>
+
+          <!-- 300m DISTANCE LINE + annotations -->
+          <line x1="352" y1="300" x2="448" y2="300" stroke="#b0553a" stroke-width="1.4" stroke-dasharray="4 3" class="v2-map-dash" opacity="0.9"/>
+          <line x1="352" y1="292" x2="352" y2="308" stroke="#b0553a" stroke-width="1.4" opacity="0.9"/>
+          <line x1="448" y1="292" x2="448" y2="308" stroke="#b0553a" stroke-width="1.4" opacity="0.9"/>
+          <!-- Label "300m" -->
+          <rect x="370" y="281" width="48" height="13" rx="2" fill="#f0e9dc" opacity="0.96"/>
+          <text x="394" y="291" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="8" fill="#b0553a" letter-spacing="0.5" font-weight="500">300 m</text>
+          <!-- Label "4 min a piedi" -->
+          <rect x="363" y="308" width="62" height="13" rx="2" fill="#f0e9dc" opacity="0.90"/>
+          <text x="394" y="318" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7.5" fill="#6b6358" letter-spacing="0.3">4 min a piedi</text>
+
+          <!-- PIN — Casa e Bottega at (350, 300) on Via Gargano -->
+          <circle cx="350" cy="300" r="8" fill="#b0553a" opacity="0" class="v2-map-pulse"/>
+          <circle cx="350" cy="300" r="16" fill="#b0553a" opacity="0.10"/>
+          <path d="M 350 280 C 342 280 335 287 335 295 C 335 306 350 321 350 321 C 350 321 365 306 365 295 C 365 287 358 280 350 280 Z" fill="#b0553a"/>
+          <circle cx="350" cy="295" r="5.5" fill="#f0e9dc"/>
+          <!-- Label card -->
+          <rect x="274" y="325" width="152" height="34" rx="3" fill="#1a1613" opacity="0.94"/>
+          <text x="350" y="338" font-family="'Cormorant Garamond', Georgia, serif" text-anchor="middle" font-size="13" fill="#f5efe6" letter-spacing="0.3" font-style="italic">Casa e Bottega</text>
+          <text x="350" y="352" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7.5" fill="#9a8f80" letter-spacing="1">Via Gargano, 13 · Manfredonia</text>
+
+          <!-- SEA LABELS -->
+          <text x="580" y="190" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="9" fill="#1f5a5a" letter-spacing="2.5" opacity="0.60" transform="rotate(90,580,190)">MARE ADRIATICO</text>
+          <text x="545" y="370" font-family="'Cormorant Garamond', Georgia, serif" text-anchor="middle" font-size="15" fill="#1f5a5a" opacity="0.40" font-style="italic">Golfo di</text>
+          <text x="545" y="388" font-family="'Cormorant Garamond', Georgia, serif" text-anchor="middle" font-size="15" fill="#1f5a5a" opacity="0.40" font-style="italic">Manfredonia</text>
+          <!-- Depth curves -->
+          <path d="M 508 20 C 524 110,528 220,518 310" fill="none" stroke="#1f5a5a" stroke-width="0.6" opacity="0.14"/>
+          <path d="M 542 10 C 560 120,565 250,550 360" fill="none" stroke="#1f5a5a" stroke-width="0.5" opacity="0.10"/>
+
+          <!-- PROMONTORIO DEL GARGANO hint -->
+          <path d="M 0 0 C 80 15,130 55,108 110 C 88 165,30 170,0 145 Z" fill="#1a1613" opacity="0.028"/>
+          <text x="26" y="52" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" fill="#6b6358" letter-spacing="0.8" opacity="0.60" transform="rotate(-10,26,52)">PROMONTORIO</text>
+          <text x="26" y="63" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" fill="#6b6358" letter-spacing="0.8" opacity="0.60" transform="rotate(-10,26,63)">DEL GARGANO</text>
+
+          <!-- LEGEND — top-left to avoid overlap with Centro Storico zone -->
+          <g transform="translate(22, 22)">
+            <rect width="138" height="88" rx="3" fill="#f0e9dc" stroke="#c4b59e" stroke-width="0.8" opacity="0.97"/>
+            <circle cx="16" cy="17" r="6" fill="#b0553a"/>
+            <circle cx="16" cy="17" r="2.5" fill="#f0e9dc"/>
+            <text x="30" y="21" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" fill="#1a1613">Casa e Bottega</text>
+            <line x1="8" y1="38" x2="25" y2="38" stroke="#b0553a" stroke-width="2.8"/>
+            <text x="30" y="42" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" fill="#1a1613">Via Gargano</text>
+            <line x1="8" y1="58" x2="25" y2="58" stroke="#a89880" stroke-width="3.5"/>
+            <text x="30" y="62" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" fill="#1a1613">Lungomare</text>
+            <line x1="8" y1="78" x2="25" y2="78" stroke="#b0553a" stroke-width="1.3" stroke-dasharray="3.5 2.5"/>
+            <text x="30" y="82" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" fill="#1a1613">Dist. al mare</text>
+          </g>
+
+          <!-- COMPASS ROSE -->
+          <g transform="translate(552, 48)">
+            <circle r="26" fill="#f0e9dc" stroke="#1a1613" stroke-width="0.9" opacity="0.93"/>
+            <circle r="2" fill="#1a1613" opacity="0.45"/>
+            <line x1="0" y1="-22" x2="0" y2="-15" stroke="#1a1613" stroke-width="1.2" opacity="0.5"/>
+            <line x1="0"  y1="15" x2="0"  y2="22" stroke="#1a1613" stroke-width="1.2" opacity="0.5"/>
+            <line x1="-22" y1="0" x2="-15" y2="0" stroke="#1a1613" stroke-width="1.2" opacity="0.5"/>
+            <line x1="15"  y1="0" x2="22"  y2="0" stroke="#1a1613" stroke-width="1.2" opacity="0.5"/>
+            <path d="M 0 -18 L 5 0 L 0 4 L -5 0 Z" fill="#1a1613"/>
+            <path d="M 0 18 L 5 0 L 0 -4 L -5 0 Z" fill="#1a1613" opacity="0.16"/>
+            <text x="0" y="-30" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="11" fill="#1a1613" font-weight="500">N</text>
+          </g>
+
+          <!-- SCALE BAR -->
+          <g transform="translate(22, 570)">
+            <rect x="-4" y="-14" width="114" height="24" rx="2" fill="#f0e9dc" opacity="0.88"/>
+            <rect x="0" y="-4" width="50" height="8" fill="#6b6358" opacity="0.5"/>
+            <rect x="50" y="-4" width="50" height="8" fill="#6b6358" opacity="0.22"/>
+            <line x1="0"   y1="-6" x2="0"   y2="6" stroke="#6b6358" stroke-width="1.2"/>
+            <line x1="50"  y1="-5" x2="50"  y2="5" stroke="#6b6358" stroke-width="0.8"/>
+            <line x1="100" y1="-6" x2="100" y2="6" stroke="#6b6358" stroke-width="1.2"/>
+            <text x="0"   y="-10" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7" fill="#6b6358">0</text>
+            <text x="50"  y="-10" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7" fill="#6b6358">100m</text>
+            <text x="100" y="-10" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7" fill="#6b6358">200m</text>
           </g>
         </svg>
-        <a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9"
-           class="v2-map-link"
-           target="_blank"
-           rel="noopener"
-           aria-label="Apri Casa e Bottega in Google Maps">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Via Gargano 13 · Google Maps
-        </a>
       </div>
+      <a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9"
+         class="v2-map-link"
+         target="_blank"
+         rel="noopener"
+         aria-label="Apri Casa e Bottega in Google Maps">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Via Gargano, 13 · Manfredonia · Apri in Google Maps
+      </a>
 
     </div>
   </div>
@@ -588,12 +795,12 @@
   <div class="v2-container">
 
     <div class="v2-booking-cta-header v2-fade">
-      <div class="v2-label v2-label-dot" style="display:inline-flex; margin-bottom:20px;">Prenotazione diretta</div>
+      <div class="v2-label v2-label-dot" style="display:inline-flex; margin-bottom:20px;" data-i18n="direct_label">Prenotazione diretta</div>
       <h2 class="v2-booking-cta-headline" id="v2-booking-heading">
-        Prenotando qui<br>
-        <em>risparmiate il 20%.</em>
+        <span data-i18n="direct_headline_1">Prenotando qui</span><br>
+        <em data-i18n="direct_headline_2">risparmiate il 20%.</em>
       </h2>
-      <p class="v2-booking-cta-body">
+      <p class="v2-booking-cta-body" data-i18n="direct_body">
         Nessuna commissione, nessun intermediario. Stai prenotando con la famiglia
         che ti accoglierà alla porta.
       </p>
@@ -605,55 +812,55 @@
         <!-- Header row -->
         <div role="columnheader" aria-label="Voce"></div>
         <div class="v2-bt-col-head" role="columnheader">
-          <div class="v2-bt-col-label v2-bt-col-label--primary v2-mono">Qui · Diretto</div>
+          <div class="v2-bt-col-label v2-bt-col-label--primary v2-mono" data-i18n="direct_col_here">Qui · Diretto</div>
           <div class="v2-bt-col-name v2-serif">Casa e Bottega</div>
         </div>
         <div class="v2-bt-col-head--alt" role="columnheader">
-          <div class="v2-bt-col-label v2-bt-col-label--alt v2-mono">Altrove</div>
+          <div class="v2-bt-col-label v2-bt-col-label--alt v2-mono" data-i18n="direct_col_elsewhere">Altrove</div>
           <div class="v2-bt-col-name v2-bt-col-name--alt v2-serif">Booking · Airbnb</div>
         </div>
 
         <!-- Row: Prezzo -->
         <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label">Prezzo</span>
+          <span class="v2-label" data-i18n="direct_row_price">Prezzo</span>
         </div>
         <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span>−20% sempre garantito
+          <span class="v2-bt-check">✓</span><span data-i18n="direct_price_us">20% in meno, sempre garantito</span>
         </div>
-        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Commissioni incluse</div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_price_them">Commissioni incluse nel prezzo</div>
 
         <!-- Row: Assistenza -->
         <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label">Assistenza</span>
+          <span class="v2-label" data-i18n="direct_row_assist">Assistenza</span>
         </div>
         <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span>WhatsApp con Nicoletta
+          <span class="v2-bt-check">✓</span><span data-i18n="direct_assist_us">Risposta su WhatsApp in pochi minuti</span>
         </div>
-        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Call center / bot</div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_assist_them">Call center o chatbot</div>
 
         <!-- Row: Cancellazione -->
         <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label">Cancellazione</span>
+          <span class="v2-label" data-i18n="direct_row_cancel">Cancellazione</span>
         </div>
         <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span>Rimborso fino a 20 gg prima
+          <span class="v2-bt-check">✓</span><span data-i18n="direct_cancel_us">Gratuita fino a 20 giorni prima</span>
         </div>
-        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell">Dipende dalla tariffa</div>
+        <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_cancel_them">Dipende dalla tariffa scelta</div>
 
         <!-- Row: L'ospite -->
         <div class="v2-bt-cell v2-bt-cell--label" role="rowheader">
-          <span class="v2-label">L'ospite</span>
+          <span class="v2-label" data-i18n="direct_row_guest">L'ospite</span>
         </div>
         <div class="v2-bt-cell v2-bt-cell--primary" role="cell">
-          <span class="v2-bt-check">✓</span>Un nome, una storia
+          <span class="v2-bt-check">✓</span><span data-i18n="direct_guest_us">Un nome, una storia</span>
         </div>
-        <div class="v2-bt-cell v2-bt-cell--alt" role="cell">Un numero di prenotazione</div>
+        <div class="v2-bt-cell v2-bt-cell--alt" role="cell" data-i18n="direct_guest_them">Un numero di prenotazione</div>
 
       </div>
 
       <div class="v2-booking-table-cta">
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:18px 32px;">
-          Prenota ora · Risparmia 20%
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:18px 32px;">
+          <span data-i18n="direct_cta">Prenota ora · Risparmia 20%</span>
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
         </a>
       </div>
@@ -696,8 +903,8 @@
       <div class="v2-footer-col">
         <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
         <ul>
-          <li><a href="https://www.booking.com" rel="noopener" target="_blank">Booking.com</a></li>
-          <li><a href="https://www.airbnb.it" rel="noopener" target="_blank">Airbnb</a></li>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
           <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
         </ul>
       </div>
@@ -753,7 +960,7 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Scrivi, ti rispondiamo subito
   </a>
-  <a class="v2-smb-book" href="prenota.html">
+  <a class="v2-smb-book" href="prenota.html?open=1">
     Prenota: risparmi il 20%
   </a>
 </div>
@@ -846,27 +1053,7 @@
   // Initialise count display
   if (countEl) countEl.textContent = '01 / ' + pad(reviews.length);
 
-  /* ---- Mobile nav toggle ---- */
-  var toggle   = document.getElementById('v2-menu-toggle');
-  var navLinks = document.getElementById('v2-nav-links');
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      var open = navLinks.classList.toggle('v2-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      // Animate hamburger to X
-      var spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
+  
 
   /* ---- Scroll fade-in ---- */
   if ('IntersectionObserver' in window) {

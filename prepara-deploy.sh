@@ -37,9 +37,25 @@ for lang in en fr de nl es; do
   fi
 done
 
-# 5. Correggi percorsi nel main.js per deploy
+# 5. Correggi percorsi nel main.js per deploy e minifica
 sed -i.bak "s|\.\./foto-homepage/|./foto-homepage/|g" js/main.js
 rm -f js/main.js.bak
+
+# Minifica main.js → main.min.js (richiede terser: npm install -g terser)
+if command -v terser &> /dev/null || command -v npx &> /dev/null; then
+  echo "⚡ Minificazione main.js..."
+  npx terser js/main.js --compress --mangle --output js/main.min.js
+  # Aggiorna il riferimento in tutti gli HTML
+  for f in *.html; do sed -i.bak 's|js/main\.js|js/main.min.js|g' "$f"; rm -f "${f}.bak"; done
+  for lang in en fr de nl es de; do
+    if [ -d "$lang" ]; then
+      for f in "$lang"/*.html; do sed -i.bak 's|js/main\.js|js/main.min.js|g' "$f"; rm -f "${f}.bak"; done
+    fi
+  done
+  echo "   main.js → main.min.js ($(wc -c < js/main.min.js) bytes)"
+else
+  echo "⚠️  terser non trovato — main.js non minificato. Installa con: npm install -g terser"
+fi
 
 # 6. Genera manifesto immagini hero
 # Ordine manuale: 1.webp (TV/Netflix) spostata in ultima posizione per prima impressione elegante

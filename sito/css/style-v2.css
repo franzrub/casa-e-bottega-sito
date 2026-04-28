@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -39,6 +40,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 400; }
@@ -405,11 +407,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* Proof strip at the bottom of hero left */
 .v2-hero-proof {
-  margin-top: 60px;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding-top: 30px;
+  padding-top: 28px;
   border-top: 1px solid var(--line);
 }
 
@@ -422,6 +424,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-size: 20px;
   color: var(--stone);
   vertical-align: baseline;
+}
+.v2-hero-proof a {
+  transition: opacity 180ms ease;
+}
+.v2-hero-proof a:hover {
+  opacity: 0.72;
+}
+.v2-hero-proof a .v2-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 /* Right image column */
@@ -549,6 +562,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .v2-host-avatars {
   display: flex;
+  flex-shrink: 0;
+  min-width: calc(48px + 48px - 14px + 48px - 14px); /* 3 cerchi con overlap */
 }
 
 .v2-host-avatar {
@@ -566,7 +581,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .v2-host-avatar:first-child {
   background: var(--petrolio);
+  z-index: 2;
+}
+.v2-host-avatar:nth-child(2) {
+  background: var(--petrolio);
+  margin-left: -14px;
   z-index: 1;
+  filter: brightness(0.8);
 }
 .v2-host-avatar:last-child {
   background: var(--terracotta);
@@ -781,20 +802,24 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .v2-map-link {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: var(--bone);
-  padding: 10px 14px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
-  border-radius: 2px;
-  transition: background 180ms ease;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--stone);
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease;
 }
-.v2-map-link:hover { background: var(--paper-2); }
+.v2-map-link:hover {
+  background: var(--bone);
+  color: var(--ink);
+}
 
 /* ============================================================
    REVIEWS
@@ -1133,13 +1158,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 12px;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  padding: 16px 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
   transition: background 180ms ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 44px;
 }
 .v2-smb-wa {
   color: var(--bone);
@@ -1263,7 +1292,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     min-height: 300px;
   }
   .v2-hero-left {
-    padding: 48px 24px 40px;
+    padding: 48px 24px 20px;
     order: 2;
   }
   .v2-hero-right { order: 1; }
@@ -1319,11 +1348,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
   .v2-rooms-headline { font-size: clamp(40px, 12vw, 68px); }
 
-  .v2-booking-table { grid-template-columns: 100px 1fr 1fr; }
+  .v2-booking-table { grid-template-columns: 90px 1fr 1fr; }
   .v2-booking-table-wrap { padding: 24px 16px; }
   .v2-bt-col-head, .v2-bt-col-head--alt { padding: 16px 16px 16px 0; }
   .v2-bt-cell--primary { padding-right: 16px; }
   .v2-bt-cell--alt { padding-left: 16px; }
+  .v2-bt-cell--label { font-size: 10px; word-break: break-word; overflow-wrap: break-word; padding-right: 8px; }
 
   .v2-footer-grid { grid-template-columns: 1fr; }
   .v2-footer-brand { font-size: 28px; }

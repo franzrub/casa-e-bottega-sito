@@ -39,7 +39,7 @@
   font-weight: 300;
   letter-spacing: -0.015em;
   line-height: 0.95;
-  font-size: clamp(56px, 8vw, 120px);
+  font-size: clamp(3.2rem, 7vw, 6rem);
   margin-bottom: 28px;
 }
 .v2-camere-intro-headline em { font-style: italic; color: var(--terracotta); }
@@ -398,7 +398,7 @@
           <a href="nl/camere.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="es/camere.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span>
           <span></span>
@@ -435,26 +435,27 @@
      ══════════════════════════════════════════════════════════ -->
 <section class="v2-camere-intro">
   <div class="v2-container">
-    <div class="v2-label v2-label-dot" style="display:inline-flex;margin-bottom:24px;" data-i18n="rooms_subtitle">Le camere</div>
-    <h1 class="v2-camere-intro-headline" data-i18n="rooms_title">
+    <div class="v2-label v2-label-dot" style="display:inline-flex;align-items:center;margin-bottom:24px;" data-i18n="rooms_subtitle">Le camere</div>
+    <h1 class="v2-camere-intro-headline" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Camere a Manfredonia · Casa e Bottega</h1>
+    <h2 class="v2-camere-intro-headline" data-i18n="rooms_title">
       Due stanze,<br><em>un'anima sola.</em>
-    </h1>
+    </h2>
     <p class="v2-camere-intro-quote">
-      "Scegliere Casa e Bottega significa scegliere un'accoglienza fatta a mano,
-      come le scarpe che il nonno calzolaio cuciva su misura, una ad una, con cura e senza fretta."
+      "Scegliere Casa e Bottega significa scegliere un'accoglienza fatta a mano.
+      Due stanze curate nei dettagli, nel cuore del Gargano."
     </p>
     <div class="v2-camere-pillars">
       <div>
-        <div class="v2-camere-pillar-name">Cura nei dettagli</div>
-        <p class="v2-camere-pillar-desc">Come la suola di una scarpa su misura, ogni elemento è scelto con intenzione.</p>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_craft_name">Cura nei dettagli</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_craft_desc">Come la suola di una scarpa su misura, ogni elemento è scelto con intenzione.</p>
       </div>
       <div>
-        <div class="v2-camere-pillar-name">Persone reali</div>
-        <p class="v2-camere-pillar-desc">Nicoletta e Francesco vivono a pochi passi. Non un call center. Una famiglia.</p>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_people_name">Persone reali</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_people_desc">Nicoletta, Giovanni e Francesco vivono a pochi passi. Non un call center.</p>
       </div>
       <div>
-        <div class="v2-camere-pillar-name">Storie vere</div>
-        <p class="v2-camere-pillar-desc">Questa casa era la bottega del nonno calzolaio. L'anima è rimasta intatta.</p>
+        <div class="v2-camere-pillar-name" data-i18n="pillar_story_name">Storie vere</div>
+        <p class="v2-camere-pillar-desc" data-i18n="pillar_story_desc">Questa casa era la bottega del nonno calzolaio. L'anima è rimasta intatta.</p>
       </div>
     </div>
   </div>
@@ -497,12 +498,14 @@
       <!-- Info -->
       <div class="v2-room-info">
         <div class="v2-room-num">Camera N° 01 · 28 m²</div>
-        <h2 class="v2-room-name v2-room-name--dimora" id="v2-dimora-heading">
+        <h3 class="v2-room-name v2-room-name--dimora" id="v2-dimora-heading">
           La <em>Dimora</em>
-        </h2>
+        </h3>
         <p class="v2-room-tagline" data-i18n="room_dimora_tagline">Intima, silenziosa, ci si sente a casa.</p>
         <p class="v2-room-desc" data-i18n="room_dimora_desc">
-          La Dimora è il cuore della casa, spaziosa, silenziosa, avvolta da una luce morbida che filtra dalla finestra sul vicolo antico di Manfredonia. Soffitti alti, letto matrimoniale king size con biancheria di qualità, smart TV con Netflix, angolo scrivania per chi non riesce a staccare del tutto. Tutto è essenziale, niente è superfluo. È la camera in cui ci si sente a casa, forse perché lo è davvero.
+          28 metri quadri con soffitti alti e luce morbida che filtra dal vicolo. Letto king size, bagno privato, cucina elettrica attrezzata, aria condizionata, pareti insonorizzate. Smart TV, WiFi fibra, angolo scrivania.
+
+          Tutto quello che serve. Niente di superfluo.
         </p>
 
         <!-- Stats -->
@@ -638,12 +641,14 @@
       <!-- Info -->
       <div class="v2-room-info">
         <div class="v2-room-num">Camera N° 02 · 22 m²</div>
-        <h2 class="v2-room-name v2-room-name--bottega" id="v2-bottega-heading">
+        <h3 class="v2-room-name v2-room-name--bottega" id="v2-bottega-heading">
           La <em>Bottega</em>
-        </h2>
+        </h3>
         <p class="v2-room-tagline" data-i18n="room_bottega_tagline">Curata nei dettagli, artigianale, ospitalità attesa.</p>
         <p class="v2-room-desc" data-i18n="room_bottega_desc">
-          La Bottega prende il nome dall'anima di questa casa: il lavoro fatto con le mani, la cura per i dettagli, la bellezza nelle cose semplici. La parete blu petrolio racconta il mare del Gargano senza mostrarlo. Camera matrimoniale con cabina armadio, cassaforte, bagno privato en suite, angolo bar personale con macchinetta caffè, smart TV. Spazio, silenzio, e quella sensazione rara di essere ospiti attesi.
+          22 metri quadri con la parete blu petrolio che dà il carattere alla stanza. Letto king size, bagno privato en suite, cucina elettrica attrezzata, aria condizionata, pareti insonorizzate. Smart TV, WiFi fibra, cabina armadio con cassaforte.
+
+          Spazio, silenzio, tutto al proprio posto.
         </p>
 
         <!-- Stats -->
@@ -775,8 +780,8 @@
       <div class="v2-footer-col">
         <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
         <ul>
-          <li><a href="https://www.booking.com" rel="noopener" target="_blank">Booking.com</a></li>
-          <li><a href="https://www.airbnb.it" rel="noopener" target="_blank">Airbnb</a></li>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
           <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
         </ul>
       </div>
@@ -934,49 +939,6 @@
     if (e.key === 'ArrowRight')  lbStep(1);
   });
 
-    /* ---- Mobile nav toggle ---- */
-  var toggle   = document.getElementById('v2-menu-toggle');
-  var navLinks = document.getElementById('v2-nav-links');
-  var navEl    = document.querySelector('.v2-nav');
-
-  function setNavHeight() {
-    if (navEl) {
-      var h = navEl.getBoundingClientRect().height;
-      if (h > 0) {
-        document.documentElement.style.setProperty('--nav-h', h + 'px');
-      }
-    }
-  }
-  // Run after first paint to ensure layout is complete
-  requestAnimationFrame(function () {
-    requestAnimationFrame(setNavHeight);
-  });
-  window.addEventListener('resize', setNavHeight);
-  window.addEventListener('load', setNavHeight);
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      if (navEl) {
-        var h = navEl.getBoundingClientRect().height;
-        if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-      }
-      var open = navLinks.classList.toggle('v2-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
-      // Animate hamburger to X
-      var spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
-
   /* ---- Scroll fade-in ---- */
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
@@ -1007,7 +969,7 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Chiedi disponibilità
   </a>
-  <a class="v2-smb-book" href="prenota.html">Controlla le date</a>
+  <a class="v2-smb-book" href="prenota.html?open=1">Controlla le date</a>
 </div>
 
 </body>

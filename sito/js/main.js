@@ -37,10 +37,10 @@ let PRICING = {
     marzo:     { dimora: 60, bottega: 50 },
     aprile:    { dimora: 60, bottega: 50 },
     maggio:    { dimora: 60, bottega: 50 },
-    giugno:    { dimora: 60, bottega: 50 },
+    giugno:    { dimora: 80, bottega: 74 },
     luglio:    { dimora: 100, bottega: 90 },
-    agosto:    { dimora: 100, bottega: 90 },
-    settembre: { dimora: 100, bottega: 90 },
+    agosto:    { dimora: 110, bottega: 100 },
+    settembre: { dimora: 110, bottega: 100 },
     ottobre:   { dimora: 60, bottega: 50 },
     novembre:  { dimora: 60, bottega: 50 },
     dicembre:  { dimora: 60, bottega: 50 }
@@ -187,12 +187,37 @@ function initBookingFlow() {
 
   if (!searchBtn || !checkinInput || !checkoutInput) return;
 
+  // Mostra errore inline sotto il form invece di alert()
+  function showBookingError(msg) {
+    const errEl = document.getElementById('v2-step1-error');
+    if (errEl) {
+      errEl.textContent = msg;
+      errEl.classList.add('show');
+      errEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+  function clearBookingError() {
+    const errEl = document.getElementById('v2-step1-error');
+    if (errEl) errEl.classList.remove('show');
+  }
+
+  // Evidenzia campo con errore
+  function markFieldError(input, hasError) {
+    input.style.borderColor = hasError ? '#E24B4A' : '';
+    input.style.outline = hasError ? '2px solid rgba(226,75,74,0.25)' : '';
+  }
+
   searchBtn.addEventListener('click', () => {
     const checkin = checkinInput.value;
     const checkout = checkoutInput.value;
+    clearBookingError();
+    markFieldError(checkinInput, false);
+    markFieldError(checkoutInput, false);
 
     if (!checkin || !checkout) {
-      alert('Seleziona entrambe le date');
+      showBookingError('Seleziona la data di check-in e di check-out per continuare.');
+      markFieldError(checkinInput, !checkin);
+      markFieldError(checkoutInput, !checkout);
       return;
     }
 
@@ -200,9 +225,12 @@ function initBookingFlow() {
     const endDate = new Date(checkout);
 
     if (endDate <= startDate) {
-      alert('La data di checkout deve essere dopo il check-in');
+      showBookingError('La data di check-out deve essere successiva al check-in.');
+      markFieldError(checkoutInput, true);
       return;
     }
+
+    clearBookingError();
 
     // Store in booking state
     bookingState.checkin = checkin;
@@ -389,7 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function t(key) {
     const lang = translations[currentLang] || translations.it;
-    return lang[key] || translations.it[key] || key;
+    const val = lang[key];
+    if (val !== undefined) return val;
+    const itVal = translations.it[key];
+    if (itVal !== undefined) return itVal;
+    return key;
   }
 
   function setLang(lang) {
@@ -407,6 +439,11 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         el.textContent = text;
       }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      el.innerHTML = t(key);
     });
 
     document.querySelectorAll('.lang-switcher button, .lang-switcher a.lang-btn').forEach(btn => {
@@ -435,12 +472,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setLang(currentLang);
 
-  // --- Header Scroll ---
+  // --- Header Scroll (throttled a ~100ms per non degradare INP) ---
   const header = document.querySelector('.site-header');
   if (header) {
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          header.classList.toggle('scrolled', window.scrollY > 50);
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // --- Sticky bar mobile: visibile solo dopo la hero (IntersectionObserver, zero scroll jank) ---
+  const stickyBar = document.querySelector('.v2-sticky-mobile');
+  const heroSection = document.querySelector('.v2-hero');
+  if (stickyBar && heroSection) {
+    stickyBar.style.transition = 'opacity 240ms ease, transform 240ms ease';
+    stickyBar.style.opacity = '0';
+    stickyBar.style.transform = 'translateY(8px)';
+    stickyBar.style.pointerEvents = 'none';
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      const isHeroVisible = entry.isIntersecting;
+      stickyBar.style.opacity = isHeroVisible ? '0' : '1';
+      stickyBar.style.transform = isHeroVisible ? 'translateY(8px)' : 'translateY(0)';
+      stickyBar.style.pointerEvents = isHeroVisible ? 'none' : 'auto';
+    }, { threshold: 0.1 });
+    heroObserver.observe(heroSection);
   }
 
   // --- Mobile Menu ---
@@ -1006,10 +1067,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let currentSlide = 0;
       let heroInterval = null;
 
+      // Cache nodi slides e dots — evita querySelectorAll ripetuto ad ogni frame (INP)
+      const cachedSlides = Array.from(heroCarousel.querySelectorAll('.hero-bg'));
+      const cachedDots = heroDots ? Array.from(heroDots.querySelectorAll('.hero-dot')) : [];
+
       // Lazy-load a slide by resolving its data-bg into a real background-image
       function loadSlide(idx) {
-        const slides = heroCarousel.querySelectorAll('.hero-bg');
-        const s = slides[idx];
+        const s = cachedSlides[idx];
         if (s && s.dataset.bg) {
           s.style.backgroundImage = `url('${s.dataset.bg}')`;
           delete s.dataset.bg;
@@ -1017,32 +1081,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function goToSlide(index) {
-        const slides = heroCarousel.querySelectorAll('.hero-bg');
-        const dots = heroDots ? heroDots.querySelectorAll('.hero-dot') : [];
         // Load current slide and pre-fetch the next one
         loadSlide(index);
-        loadSlide((index + 1) % slides.length);
-        slides.forEach(s => s.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
+        loadSlide((index + 1) % cachedSlides.length);
+        cachedSlides.forEach(s => s.classList.remove('active'));
+        cachedDots.forEach(d => d.classList.remove('active'));
         currentSlide = index;
-        if (slides[currentSlide]) slides[currentSlide].classList.add('active');
-        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        if (cachedSlides[currentSlide]) cachedSlides[currentSlide].classList.add('active');
+        if (cachedDots[currentSlide]) cachedDots[currentSlide].classList.add('active');
       }
 
       function nextSlide() {
-        const slides = heroCarousel.querySelectorAll('.hero-bg');
-        goToSlide((currentSlide + 1) % slides.length);
+        goToSlide((currentSlide + 1) % cachedSlides.length);
       }
 
-      // Auto-play every 6 seconds (only if more than 1 image)
+      // Auto-play ogni 6 secondi (solo se più di 1 immagine)
       if (imageFiles.length > 1) {
         heroInterval = setInterval(nextSlide, 6000);
 
-        // Pause on hover
-        heroCarousel.closest('.hero').addEventListener('mouseenter', () => clearInterval(heroInterval));
-        heroCarousel.closest('.hero').addEventListener('mouseleave', () => {
-          heroInterval = setInterval(nextSlide, 6000);
-        });
+        // Pausa su hover — passive per non bloccare lo scroll
+        const heroEl = heroCarousel.closest('.hero');
+        if (heroEl) {
+          heroEl.addEventListener('mouseenter', () => clearInterval(heroInterval), { passive: true });
+          heroEl.addEventListener('mouseleave', () => {
+            heroInterval = setInterval(nextSlide, 6000);
+          }, { passive: true });
+        }
       }
     }
 
@@ -1096,4 +1160,122 @@ document.addEventListener('DOMContentLoaded', () => {
      Already handled inside initCarousel: slides after index 0
      use data-bg and load on demand
      ============================================ */
+
+  /* ============================================
+     REVIEWS CAROUSEL + MOBILE NAV + FADE-IN
+     Spostato da inline script nel body a qui (defer)
+     ============================================ */
+  (function () {
+    'use strict';
+
+    /* ---- Reviews carousel ---- */
+    var reviews = [
+      { text: "La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi. Consigliatissimo.", author: "Luca", meta: "Italia · Giugno · Booking" },
+      { text: "L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons!", author: "Céline & François", meta: "Francia · Agosto · Airbnb" },
+      { text: "A partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente.", author: "Molaro", meta: "Italia · Luglio · Booking" },
+      { text: "Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe.", author: "Moni", meta: "Germania · Luglio · Airbnb" },
+      { text: "Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!", author: "Giacomo", meta: "Italia · Settembre · Booking" },
+      { text: "Appartamento curato e pulito. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano.", author: "Bozidarka", meta: "Italia · Giugno · Airbnb" },
+      { text: "Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.", author: "Valentina", meta: "Italia · Novembre · Booking" }
+    ];
+
+    var idx = 0;
+    var textEl   = document.getElementById('v2-review-text');
+    var authorEl = document.getElementById('v2-review-author');
+    var metaEl   = document.getElementById('v2-review-meta');
+    var countEl  = document.getElementById('v2-review-count');
+    var prevBtn  = document.getElementById('v2-review-prev');
+    var nextBtn  = document.getElementById('v2-review-next');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function showReview(i) {
+      idx = (i + reviews.length) % reviews.length;
+      if (!textEl) return;
+      textEl.style.opacity   = '0';
+      authorEl.style.opacity = '0';
+      setTimeout(function () {
+        textEl.textContent   = reviews[idx].text;
+        authorEl.textContent = reviews[idx].author;
+        metaEl.textContent   = reviews[idx].meta;
+        countEl.textContent  = pad(idx + 1) + ' / ' + pad(reviews.length);
+        textEl.style.opacity   = '1';
+        authorEl.style.opacity = '1';
+      }, 180);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { showReview(idx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { showReview(idx + 1); });
+
+    var autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
+    var carousel = document.getElementById('v2-reviews-carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); }, { passive: true });
+      carousel.addEventListener('mouseleave', function () {
+        autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
+      }, { passive: true });
+    }
+    if (countEl) countEl.textContent = '01 / ' + pad(reviews.length);
+
+    /* ---- Mobile nav toggle ---- */
+    var toggle   = document.getElementById('v2-menu-toggle');
+    var navLinks = document.getElementById('v2-nav-links');
+    var navEl    = document.querySelector('.v2-nav');
+
+    function setNavHeight() {
+      if (navEl) {
+        var h = navEl.getBoundingClientRect().height;
+        if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+      }
+    }
+    requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
+
+    // Debounce resize — evita layout thrashing su ogni pixel di resize
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setNavHeight, 150);
+    }, { passive: true });
+    window.addEventListener('load', setNavHeight, { passive: true });
+
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', function () {
+        if (navEl) {
+          var h = navEl.getBoundingClientRect().height;
+          if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+        }
+        var open = navLinks.classList.toggle('v2-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
+        var spans = toggle.querySelectorAll('span');
+        if (open) {
+          spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+          spans[1].style.opacity   = '0';
+          spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity   = '';
+          spans[2].style.transform = '';
+        }
+      });
+    }
+
+    /* ---- Scroll fade-in ---- */
+    if ('IntersectionObserver' in window) {
+      var fadeEls = document.querySelectorAll('.v2-fade');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('v2-visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      fadeEls.forEach(function (el) { observer.observe(el); });
+    } else {
+      document.querySelectorAll('.v2-fade').forEach(function (el) { el.classList.add('v2-visible'); });
+    }
+
+  }());
+
 });

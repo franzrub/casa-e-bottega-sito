@@ -43,12 +43,7 @@
   overflow: hidden;
 }
 .cont-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../foto-spazi-comuni/esterno.webp') center 40%/cover no-repeat;
-  opacity: 0.08;
-  pointer-events: none;
+  display: none;
 }
 .cont-hero-inner {
   position: relative;
@@ -71,8 +66,8 @@
 }
 .cont-hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 400;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -536,8 +531,8 @@
   <div class="v2-container">
     <div class="cont-hero-inner">
       <span class="cont-hero-label">Via Gargano 13, Manfredonia</span>
-      <h1>Dove<br/><em>trovarci.</em></h1>
-      <p class="cont-hero-sub">Nel cuore del centro storico, a 300 metri dal mare. Di giorno il quartiere è vivo; la sera diventa silenziosa e riposante.</p>
+      <h1 data-i18n-html="contact_hero_title">Dove<br/><em>trovarci.</em></h1>
+      <p class="cont-hero-sub">Alle porte del centro storico, a 300 metri dal mare. Di giorno il quartiere è vivo; la sera diventa silenziosa e riposante.</p>
     </div>
   </div>
 </section>
@@ -606,27 +601,27 @@
 
           <div class="cont-form-group">
             <label data-i18n="contact_form_name">Nome</label>
-            <input name="name" type="text" required placeholder="Il tuo nome"/>
+            <input name="name" type="text" required placeholder="es. Mario Rossi"/>
           </div>
           <div class="cont-form-group">
             <label data-i18n="contact_form_email">Email</label>
-            <input name="email" type="email" required placeholder="nome@esempio.com"/>
+            <input name="email" type="email" required placeholder="es. mario@email.com"/>
           </div>
           <div class="cont-form-group">
-            <label data-i18n="contact_form_phone">Telefono / WhatsApp</label>
+            <label data-i18n="contact_form_phone">WhatsApp o telefono <span style="font-weight:400;opacity:0.6;">(per risponderti prima)</span></label>
             <input name="phone" type="tel" required
               inputmode="numeric"
               pattern="[+\d\s\-\(\)]{6,20}"
               title="Inserisci un numero di telefono valido"
-              placeholder="+39 333 000 0000"/>
+              placeholder="es. +39 333 123 4567"/>
           </div>
           <div class="cont-form-group">
             <label data-i18n="contact_form_dates">Date soggiorno</label>
-            <input name="dates" type="text" placeholder="es. 15–20 luglio"/>
+            <input name="dates" type="text" placeholder="es. 10-15 agosto 2026"/>
           </div>
           <div class="cont-form-group">
             <label data-i18n="contact_form_message">Messaggio</label>
-            <textarea name="message" rows="3" required placeholder="Scrivi qui…"></textarea>
+            <textarea name="message" rows="3" required placeholder="Raccontaci di te: quante persone siete, cosa vorreste fare al Gargano..."></textarea>
           </div>
           <button class="cont-form-submit" type="submit" data-i18n="contact_form_submit">Invia messaggio</button>
         </form>
@@ -698,46 +693,60 @@
 </section>
 
 <!-- ══ FOOTER v2 ════════════════════════════════════════════════════ -->
-<footer class="v2-footer">
+<footer class="v2-footer" role="contentinfo">
   <div class="v2-container">
     <div class="v2-footer-grid">
-      <div class="v2-footer-brand">
-        <a class="v2-nav-brand" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
-        <p data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+
+      <!-- Brand -->
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">
+          A due passi dal mare, nel cuore del Gargano.
+          Una casa, due camere, una famiglia che vi apre la porta.
+        </p>
       </div>
+
+      <!-- Pagine -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_pages">Pagine</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
         <ul>
-          <li><a data-i18n="nav_home" href="index.html">Home</a></li>
-          <li><a data-i18n="nav_rooms" href="camere.html">Le Camere</a></li>
-          <li><a data-i18n="nav_book" href="prenota.html">Prenota</a></li>
-          <li><a data-i18n="nav_blog" href="blog.html">Racconti</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
           <li><a href="regole.html">Regole della Casa</a></li>
         </ul>
       </div>
+
+      <!-- Seguici -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_follow">Seguici</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
         <ul>
-          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
-          <li><a href="https://www.airbnb.it/h/casaebottega2" rel="noopener" target="_blank">Airbnb · La Bottega</a></li>
           <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
           <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
         </ul>
       </div>
+
+      <!-- Contatti -->
       <div class="v2-footer-col">
-        <h4 data-i18n="footer_contact">Contatti</h4>
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
         <ul>
-          <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
           <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
-          <li><a href="contatti.html" data-i18n="nav_contact">Dove siamo</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
         </ul>
       </div>
+
     </div>
+
     <div class="v2-footer-bottom">
-      <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
     </div>
   </div>
 </footer>
+
 
 <!-- ══ WHATSAPP PILL ════════════════════════════════════════════════ -->
 <a class="v2-wa-pill"
@@ -767,44 +776,6 @@
     });
   }
 })();
-</script>
-
-<script>
-/* ---- Mobile nav toggle (standalone) ---- */
-(function () {
-  var toggle   = document.getElementById('v2-menu-toggle');
-  var navLinks = document.getElementById('v2-nav-links');
-  var navEl    = document.querySelector('.v2-nav');
-
-  function setNavHeight() {
-    if (navEl) {
-      var h = navEl.getBoundingClientRect().height;
-      if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-    }
-  }
-  requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
-  window.addEventListener('resize', setNavHeight);
-  window.addEventListener('load', setNavHeight);
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', function () {
-      setNavHeight();
-      var open = navLinks.classList.toggle('v2-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
-      var spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-        spans[1].style.opacity   = '0';
-        spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity   = '';
-        spans[2].style.transform = '';
-      }
-    });
-  }
-}());
 </script>
 </body>
 </html>
