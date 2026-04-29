@@ -1,7 +1,7 @@
 # Casa e Bottega B&B — Contesto del Progetto
 
 ## Panoramica
-Sito statico per il B&B "Casa e Bottega" (Matera). Deploy su Netlify.
+Sito statico per il B&B "Casa e Bottega" (Manfredonia, Via Gargano 13). Deploy su Netlify.
 
 ## Struttura cartelle
 ```

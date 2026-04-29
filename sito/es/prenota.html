@@ -49,24 +49,17 @@
 }
 .pren-hero-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--terracotta);
   margin-bottom: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.pren-hero-label::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--terracotta);
-}
+.pren-hero-label::before { content: none; }
 .pren-hero h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3.2rem, 7vw, 6rem);
@@ -1299,14 +1292,19 @@
         <a class="active" href="prenota.html" data-i18n="nav_book">Prenota</a>
         <a href="blog.html" data-i18n="nav_blog">Racconti</a>
         <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
-  <!-- Language switcher -->
-  <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
-    <a href="prenota.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a href="../en/prenota.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a href="../fr/prenota.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../de/prenota.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a href="../nl/prenota.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a class="on" href="../es/prenota.html" hreflang="es" title="Español" role="listitem">ES</a>
+  <!-- Language switcher mobile dropdown -->
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">
+      ES
+    </button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+    <a href="prenota.html" hreflang="it" title="Italiano">IT — Italiano</a>
+    <a href="../en/prenota.html" hreflang="en" title="English">EN — English</a>
+    <a href="../fr/prenota.html" hreflang="fr" title="Français">FR — Français</a>
+    <a href="../de/prenota.html" hreflang="de" title="Deutsch">DE — Deutsch</a>
+    <a href="../nl/prenota.html" hreflang="nl" title="Nederlands">NL — Nederlands</a>
+    <a class="on" href="../es/prenota.html" hreflang="es" title="Español">ES — Español</a>
+    </div>
   </div>
 </div>
 
@@ -1316,7 +1314,7 @@
     <div class="pren-hero-inner">
       <span class="pren-hero-label">Reserva directa — sin comisión</span>
       <h1>Reserva<br/><em>tu estancia.</em></h1>
-      <p class="pren-hero-sub">Desde 50 €/noche, un 20% menos que Booking y Airbnb. Tres pasos: fechas, habitación, confirmación.</p>
+      <p class="pren-hero-sub">Tres pasos: fechas, habitación, confirmación. Un 20% menos que Booking y Airbnb.</p>
       <div class="pren-hero-badges">
         <span class="pren-hero-badge"><strong>9,8</strong> / 10 Booking</span>
         <span class="pren-hero-badge">·</span>
@@ -2011,22 +2009,36 @@
       }
     ];
 
-    let OTA_MARKUP = 1.20;
-    const HIGH_MONTHS = [6, 7, 8];
+    let OTA_MARKUP = 1.25;
     let WEEKLY_DISCOUNT = 0.10;
     let MONTHLY_DISCOUNT = 0.20;
+
+    const MONTH_KEYS = ['gennaio','febbraio','marzo','aprile','maggio','giugno',
+                        'luglio','agosto','settembre','ottobre','novembre','dicembre'];
+
+    let MESI_PREZZI = {
+      gennaio:  { dimora: 60, bottega: 50 },
+      febbraio: { dimora: 60, bottega: 50 },
+      marzo:    { dimora: 60, bottega: 50 },
+      aprile:   { dimora: 60, bottega: 50 },
+      maggio:   { dimora: 60, bottega: 50 },
+      giugno:   { dimora: 80, bottega: 74 },
+      luglio:   { dimora: 100, bottega: 90 },
+      agosto:   { dimora: 110, bottega: 100 },
+      settembre:{ dimora: 110, bottega: 100 },
+      ottobre:  { dimora: 60, bottega: 50 },
+      novembre: { dimora: 60, bottega: 50 },
+      dicembre: { dimora: 60, bottega: 50 }
+    };
 
     fetch('/_data/prezzi.json')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data) return;
         OTA_MARKUP       = data.ota_markup       || OTA_MARKUP;
-        WEEKLY_DISCOUNT  = data.weekly_discount   || WEEKLY_DISCOUNT;
-        MONTHLY_DISCOUNT = data.monthly_discount  || MONTHLY_DISCOUNT;
-        const dimora  = ROOMS.find(r => r.id === 'dimora');
-        const bottega = ROOMS.find(r => r.id === 'bottega');
-        if (dimora)  dimora.prices  = { high: data.alta.dimora,  low: data.bassa.dimora };
-        if (bottega) bottega.prices = { high: data.alta.bottega, low: data.bassa.bottega };
+        WEEKLY_DISCOUNT  = data.weekly_discount  || WEEKLY_DISCOUNT;
+        MONTHLY_DISCOUNT = data.monthly_discount || MONTHLY_DISCOUNT;
+        if (data.mesi_prezzi) MESI_PREZZI = data.mesi_prezzi;
       })
       .catch(() => {});
 
@@ -2061,10 +2073,11 @@
       });
     }
 
-    function isHigh(month) { return HIGH_MONTHS.includes(month); }
-
     function getPrice(room, month) {
-      return isHigh(month) ? room.prices.high : room.prices.low;
+      var key  = MONTH_KEYS[month];
+      var mese = MESI_PREZZI[key];
+      if (mese && mese[room.id] != null) return mese[room.id];
+      return room.prices ? (room.prices.high || room.prices.low || 60) : 60;
     }
 
     function calcPricing(room, checkinStr, checkoutStr) {

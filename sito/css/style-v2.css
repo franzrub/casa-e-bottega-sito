@@ -581,17 +581,25 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .v2-host-avatar:first-child {
   background: var(--petrolio);
-  z-index: 2;
+  z-index: 3;
 }
 .v2-host-avatar:nth-child(2) {
   background: var(--petrolio);
   margin-left: -14px;
+  z-index: 2;
+  filter: brightness(0.85);
+}
+.v2-host-avatar:nth-child(3) {
+  background: var(--petrolio);
+  margin-left: -14px;
   z-index: 1;
-  filter: brightness(0.8);
+  filter: brightness(0.7);
 }
 .v2-host-avatar:last-child {
   background: var(--terracotta);
   margin-left: -14px;
+  z-index: 0;
+  filter: none;
 }
 
 .v2-host-name {
@@ -1272,10 +1280,68 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .v2-nav-links a:hover,
   .v2-nav-links a.active { color: var(--ink); }
   .v2-nav-links a.active::after { display: none; }
+  /* Language switcher mobile — dropdown */
   .v2-nav-lang {
-    padding: 16px var(--pad-x);
+    display: none; /* la versione flat è nascosta su mobile */
+  }
+  .v2-nav-lang-mobile {
+    padding: 4px var(--pad-x) 16px;
     width: 100%;
-    justify-content: flex-start;
+    position: relative;
+  }
+  .v2-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--stone);
+    background: none;
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  .v2-lang-toggle::after {
+    content: '▾';
+    margin-left: auto;
+    font-size: 10px;
+    transition: transform 200ms ease;
+  }
+  .v2-lang-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+  .v2-lang-dropdown {
+    display: none;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-top: none;
+    background: var(--bone);
+  }
+  .v2-lang-dropdown.v2-open {
+    display: flex;
+  }
+  .v2-lang-dropdown a {
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--stone);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .v2-lang-dropdown a:last-child {
+    border-bottom: none;
+  }
+  .v2-lang-dropdown a.on {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .v2-lang-dropdown a:hover {
+    color: var(--ink);
+    background: var(--paper);
   }
 
   .v2-nav-right .v2-btn { display: none; }

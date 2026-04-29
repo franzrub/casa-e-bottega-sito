@@ -28,6 +28,14 @@
 <style>
 /* ── camere.html page-specific styles ───────────────────────── */
 
+/* Hero label — allineato al blog (terracotta, JetBrains Mono) */
+.v2-camere-intro .v2-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--terracotta);
+}
+.v2-camere-intro .v2-label-dot::before { content: none; }
+
 /* Page intro */
 .v2-camere-intro {
   text-align: center;
@@ -44,11 +52,12 @@
 }
 .v2-camere-intro-headline em { font-style: italic; color: var(--terracotta); }
 .v2-camere-intro-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(18px, 2vw, 22px);
-  color: var(--ink-2);
-  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.7;
   max-width: 640px;
   margin: 0 auto 60px;
 }
@@ -417,13 +426,19 @@
   <a href="prenota.html" data-i18n="nav_book">Prenota</a>
   <a href="blog.html" data-i18n="nav_blog">Racconti</a>
   <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
-  <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
-    <a href="../camere.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a href="../en/camere.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a href="../fr/camere.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../de/camere.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a class="on" href="../nl/camere.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a href="../es/camere.html" hreflang="es" title="Español" role="listitem">ES</a>
+    <!-- Language switcher mobile dropdown -->
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">
+      NL
+    </button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+    <a href="../camere.html" hreflang="it" title="Italiano">IT — Italiano</a>
+    <a href="../en/camere.html" hreflang="en" title="English">EN — English</a>
+    <a href="../fr/camere.html" hreflang="fr" title="Français">FR — Français</a>
+    <a href="../de/camere.html" hreflang="de" title="Deutsch">DE — Deutsch</a>
+    <a class="on" href="../nl/camere.html" hreflang="nl" title="Nederlands">NL — Nederlands</a>
+    <a href="../es/camere.html" hreflang="es" title="Español">ES — Español</a>
+    </div>
   </div>
 </div>
 
@@ -804,23 +819,26 @@
   fetch('/_data/prezzi.json')
     .then(r => r.ok ? r.json() : null)
     .then(data => {
-      if (!data) return;
-      const m = data.ota_markup || 1.20;
-      const rooms = {
-        dimora:  { high: data.alta.dimora,  low: data.bassa.dimora },
-        bottega: { high: data.alta.bottega, low: data.bassa.bottega }
-      };
-      ['dimora', 'bottega'].forEach(room => {
-        ['high', 'low'].forEach(season => {
-          const direct = rooms[room][season];
-          const ota = Math.round(direct * m);
-          const saving = ota - direct;
-          const elOta    = document.getElementById(`${room}-ota-${season}`);
-          const elDirect = document.getElementById(`${room}-direct-${season}`);
-          const elSaving = document.getElementById(`${room}-saving-${season}`);
-          if (elOta)    elOta.innerHTML    = `€${ota}`;
-          if (elDirect) elDirect.innerHTML = `€${direct}`;
-          if (elSaving) elSaving.textContent = `−€${saving}`;
+      if (!data || !data.mesi_prezzi) return;
+      var m  = data.ota_markup || 1.25;
+      var mp = data.mesi_prezzi;
+      var highKeys = ['giugno','luglio','agosto','settembre'];
+      var lowKeys  = ['gennaio','febbraio','marzo','aprile','maggio','ottobre','novembre','dicembre'];
+      ['dimora','bottega'].forEach(function(room) {
+        var highVals = highKeys.map(function(k) { return mp[k] && mp[k][room] != null ? mp[k][room] : 0; });
+        var lowVals  = lowKeys.map(function(k)  { return mp[k] && mp[k][room] != null ? mp[k][room] : 0; }).filter(function(v){ return v > 0; });
+        var highDirect = Math.max.apply(null, highVals);
+        var lowDirect  = Math.min.apply(null, lowVals);
+        [['high', highDirect], ['low', lowDirect]].forEach(function(pair) {
+          var season = pair[0], direct = pair[1];
+          var ota    = Math.round(direct * m);
+          var saving = ota - direct;
+          var elOta    = document.getElementById(room + '-ota-'    + season);
+          var elDirect = document.getElementById(room + '-direct-' + season);
+          var elSaving = document.getElementById(room + '-saving-' + season);
+          if (elOta)    elOta.innerHTML    = '€' + ota;
+          if (elDirect) elDirect.innerHTML = '€' + direct;
+          if (elSaving) elSaving.textContent = '−€' + saving;
         });
       });
     })

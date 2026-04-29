@@ -1247,6 +1247,24 @@ document.addEventListener('DOMContentLoaded', () => {
         var open = navLinks.classList.toggle('v2-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
+        /* Blocca scroll body — iOS Safari richiede position:fixed */
+        if (open) {
+          var scrollY = window.scrollY;
+          document.body.style.position = 'fixed';
+          document.body.style.top      = '-' + scrollY + 'px';
+          document.body.style.left     = '0';
+          document.body.style.right    = '0';
+          document.body.style.overflow = 'hidden';
+          document.body.dataset.scrollY = scrollY;
+        } else {
+          var savedY = parseInt(document.body.dataset.scrollY || '0', 10);
+          document.body.style.position = '';
+          document.body.style.top      = '';
+          document.body.style.left     = '';
+          document.body.style.right    = '';
+          document.body.style.overflow = '';
+          window.scrollTo(0, savedY);
+        }
         var spans = toggle.querySelectorAll('span');
         if (open) {
           spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
@@ -1258,6 +1276,23 @@ document.addEventListener('DOMContentLoaded', () => {
           spans[2].style.transform = '';
         }
       });
+    }
+
+    /* ---- Mobile language dropdown ---- */
+    var langToggle   = document.getElementById('v2-lang-toggle');
+    var langDropdown = document.getElementById('v2-lang-dropdown');
+    if (langToggle && langDropdown) {
+      langToggle.addEventListener('click', function () {
+        var open = langDropdown.classList.toggle('v2-open');
+        langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // chiude il dropdown quando si chiude il menu hamburger
+      if (toggle && navLinks) {
+        toggle.addEventListener('click', function () {
+          langDropdown.classList.remove('v2-open');
+          if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
+        });
+      }
     }
 
     /* ---- Scroll fade-in ---- */

@@ -53,7 +53,7 @@
 }
 .blog-hero-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--terracotta);
@@ -487,13 +487,19 @@
         <a class="active" href="blog.html" data-i18n="nav_blog">Racconti</a>
         <a href="contatti.html" data-i18n="nav_contact">Posizione</a>
   <!-- Language switcher -->
-  <div class="v2-nav-lang" role="list" aria-label="Select language">
-    <a href="../../blog.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a class="on" href="blog.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a href="../../fr/blog.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../../de/blog.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a href="../../nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a href="../../es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
+    <!-- Language switcher mobile dropdown -->
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">
+      EN
+    </button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+    <a href="../../blog.html" hreflang="it" title="Italiano">IT — Italiano</a>
+    <a class="on" href="blog.html" hreflang="en" title="English">EN — English</a>
+    <a href="../../fr/blog.html" hreflang="fr" title="Français">FR — Français</a>
+    <a href="../../de/blog.html" hreflang="de" title="Deutsch">DE — Deutsch</a>
+    <a href="../../nl/blog.html" hreflang="nl" title="Nederlands">NL — Nederlands</a>
+    <a href="../../es/blog.html" hreflang="es" title="Español">ES — Español</a>
+    </div>
   </div>
 </div>
 

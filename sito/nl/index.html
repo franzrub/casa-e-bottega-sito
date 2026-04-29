@@ -186,13 +186,18 @@
   <a href="blog.html" data-i18n="nav_blog">Verhalen</a>
   <a href="contatti.html" data-i18n="nav_contact">Locatie</a>
   <!-- Language switcher -->
-  <div class="v2-nav-lang" role="list" aria-label="Select language">
-    <a href="../index.html" hreflang="it" title="Italiano" role="listitem">IT</a>
-    <a href="../en/index.html" hreflang="en" title="English" role="listitem">EN</a>
-    <a href="../fr/index.html" hreflang="fr" title="Français" role="listitem">FR</a>
-    <a href="../de/index.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
-    <a href="index.html" class="on" hreflang="nl" title="Nederlands" role="listitem">NL</a>
-    <a href="../es/index.html" hreflang="es" title="Español" role="listitem">ES</a>
+    <!-- Language switcher mobile dropdown -->
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">
+      NL
+    </button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+    <a href="../index.html" hreflang="it" title="Italiano">IT — Italiano</a>
+    <a href="../en/index.html" hreflang="en" title="English">EN — English</a>
+    <a href="../fr/index.html" hreflang="fr" title="Français">FR — Français</a>
+    <a href="../de/index.html" hreflang="de" title="Deutsch">DE — Deutsch</a>
+    <a href="../es/index.html" hreflang="es" title="Español">ES — Español</a>
+    </div>
   </div>
 </div>
 
@@ -291,9 +296,9 @@
         </div>
 
         <h2 class="v2-story-headline" id="v2-story-heading" data-i18n-html="about_headline">
-          Era la bottega<br>
-          <em>di un calzolaio.</em><br>
-          È rimasta<br>quello che era.
+          Het was de werkplaats<br>
+          <em>van een schoenmaker.</em><br>
+          Nu is het<br>uw thuis.
         </h2>
 
         <div class="v2-story-body">
@@ -476,7 +481,7 @@
           </div>
           <div class="v2-place-dist-row" role="listitem">
             <span class="v2-place-dist-name v2-serif">Isole Tremiti</span>
-            <span class="v2-place-dist-time">traghetto da Molo di Ponente - Manfredonia</span>
+            <span class="v2-place-dist-time">traghetto da Molo di Ponente</span>
           </div>
         </div>
       </div>
@@ -496,7 +501,7 @@
           .v2-map-pulse { animation: v2-map-pulse 2.6s ease-out infinite; }
           .v2-map-dash  { animation: v2-map-dash 1.4s linear infinite; }
         </style>
-        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;display:block;">
+        <svg viewBox="80 120 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;display:block;">
           <defs>
             <linearGradient id="v2-sea" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#a8c8c4" stop-opacity="0.3"/>
@@ -557,7 +562,7 @@
             <line x1="200" y1="16" x2="200" y2="568"/>
             <line x1="250" y1="14" x2="250" y2="562"/>
             <!-- Via Gargano — terracotta -->
-            <line x1="350" y1="12" x2="350" y2="555" stroke="#b0553a" stroke-width="3.2"/>
+            <line x1="350" y1="12" x2="350" y2="381" stroke="#b0553a" stroke-width="3.2"/>
             <line x1="400" y1="8"  x2="400" y2="460"/>
           </g>
 
@@ -646,15 +651,15 @@
           <text x="299" y="283" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="8" fill="#b0553a" letter-spacing="1.2">VIA GARGANO</text>
 
           <!-- LUNGOMARE label -->
-          <text x="432" y="95" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="start" font-size="8" fill="#6b6358" letter-spacing="1.5" opacity="0.85" transform="rotate(90,432,95)">LUNGOMARE</text>
+          <text x="432" y="195" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="start" font-size="8" fill="#6b6358" letter-spacing="1.5" opacity="0.85" transform="rotate(90,432,195)">LUNGOMARE</text>
 
           <!-- 300m DISTANCE LINE + annotations -->
           <line x1="352" y1="300" x2="448" y2="300" stroke="#b0553a" stroke-width="1.4" stroke-dasharray="4 3" class="v2-map-dash" opacity="0.9"/>
           <line x1="352" y1="292" x2="352" y2="308" stroke="#b0553a" stroke-width="1.4" opacity="0.9"/>
           <line x1="448" y1="292" x2="448" y2="308" stroke="#b0553a" stroke-width="1.4" opacity="0.9"/>
           <!-- Label "300m" -->
-          <rect x="370" y="281" width="48" height="13" rx="2" fill="#f0e9dc" opacity="0.96"/>
-          <text x="394" y="291" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="8" fill="#b0553a" letter-spacing="0.5" font-weight="500">300 m</text>
+          <rect x="364" y="279" width="60" height="15" rx="2" fill="#f0e9dc" opacity="0.96"/>
+          <text x="394" y="291" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="10" fill="#b0553a" letter-spacing="0.5" font-weight="500">300 m</text>
           <!-- Label "4 min a piedi" -->
           <rect x="363" y="308" width="62" height="13" rx="2" fill="#f0e9dc" opacity="0.90"/>
           <text x="394" y="318" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7.5" fill="#6b6358" letter-spacing="0.3">4 min a piedi</text>
@@ -665,9 +670,9 @@
           <path d="M 350 280 C 342 280 335 287 335 295 C 335 306 350 321 350 321 C 350 321 365 306 365 295 C 365 287 358 280 350 280 Z" fill="#b0553a"/>
           <circle cx="350" cy="295" r="5.5" fill="#f0e9dc"/>
           <!-- Label card -->
-          <rect x="274" y="325" width="152" height="34" rx="3" fill="#1a1613" opacity="0.94"/>
-          <text x="350" y="338" font-family="'Cormorant Garamond', Georgia, serif" text-anchor="middle" font-size="13" fill="#f5efe6" letter-spacing="0.3" font-style="italic">Casa e Bottega</text>
-          <text x="350" y="352" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="7.5" fill="#9a8f80" letter-spacing="1">Via Gargano, 13 · Manfredonia</text>
+          <rect x="264" y="325" width="172" height="30" rx="3" fill="#1a1613" opacity="0.94"/>
+          <text x="350" y="345" font-family="'Cormorant Garamond', Georgia, serif" text-anchor="middle" font-size="18" fill="#f5efe6" letter-spacing="0.5" font-style="italic">Casa e Bottega</text>
+
 
           <!-- SEA LABELS -->
           <text x="580" y="190" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" font-size="9" fill="#1f5a5a" letter-spacing="2.5" opacity="0.60" transform="rotate(90,580,190)">MARE ADRIATICO</text>
@@ -683,7 +688,7 @@
           <text x="26" y="63" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7" fill="#6b6358" letter-spacing="0.8" opacity="0.60" transform="rotate(-10,26,63)">DEL GARGANO</text>
 
           <!-- LEGEND — top-left to avoid overlap with Centro Storico zone -->
-          <g transform="translate(22, 22)">
+          <g transform="translate(90, 130)">
             <rect width="138" height="88" rx="3" fill="#f0e9dc" stroke="#c4b59e" stroke-width="0.8" opacity="0.97"/>
             <circle cx="16" cy="17" r="6" fill="#b0553a"/>
             <circle cx="16" cy="17" r="2.5" fill="#f0e9dc"/>
@@ -697,7 +702,7 @@
           </g>
 
           <!-- COMPASS ROSE -->
-          <g transform="translate(552, 48)">
+          <g transform="translate(470, 138)">
             <circle r="26" fill="#f0e9dc" stroke="#1a1613" stroke-width="0.9" opacity="0.93"/>
             <circle r="2" fill="#1a1613" opacity="0.45"/>
             <line x1="0" y1="-22" x2="0" y2="-15" stroke="#1a1613" stroke-width="1.2" opacity="0.5"/>
@@ -710,7 +715,7 @@
           </g>
 
           <!-- SCALE BAR -->
-          <g transform="translate(22, 570)">
+          <g transform="translate(90, 522)">
             <rect x="-4" y="-14" width="114" height="24" rx="2" fill="#f0e9dc" opacity="0.88"/>
             <rect x="0" y="-4" width="50" height="8" fill="#6b6358" opacity="0.5"/>
             <rect x="50" y="-4" width="50" height="8" fill="#6b6358" opacity="0.22"/>
