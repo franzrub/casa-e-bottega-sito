@@ -763,6 +763,17 @@
   border-radius: 2px;
   white-space: nowrap;
 }
+.v2-bm-room-discount-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--petrolio);
+  background: rgba(31,74,74,0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-bottom: 0.15rem;
+  display: inline-block;
+}
 .v2-bm-room-unavail {
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
@@ -874,6 +885,18 @@
   color: var(--bone);
   line-height: 1;
   margin-bottom: 0.25rem;
+}
+/* weekly discount badge in summary sidebar */
+.v2-bm-summary-discount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(31,74,74,0.85);
+  background: rgba(31,74,74,0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  text-align: right;
+  display: block;
+  margin-bottom: 0.2rem;
 }
 /* inline savings text below price */
 .v2-bm-summary-savings {
@@ -1273,7 +1296,7 @@
           <a href="../nl/prenota.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="../es/prenota.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:10px 18px; font-size:11px;">Prenota · −20%</a>
+        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Book now</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span>
           <span></span>
@@ -1603,6 +1626,7 @@
             <div class="v2-bm-summary-total">
               <div class="v2-bm-summary-total-label">Total</div>
               <div class="v2-bm-summary-ota" id="modal-total-ota"></div>
+              <div class="v2-bm-summary-discount" id="modal-discount-label"></div>
               <div class="v2-bm-summary-direct" id="modal-total-direct">—</div>
               <span class="v2-bm-summary-savings" id="modal-savings"></span>
             </div>
@@ -1790,7 +1814,8 @@
       var pricing = (typeof calcPricing === 'function') ? calcPricing(room, ci, co) : null;
       var totalDirect = pricing ? pricing.totalDirect : '—';
       var totalOTA    = pricing ? pricing.totalOTA : null;
-      var savings     = pricing ? pricing.savings : null;
+      var savings        = pricing ? pricing.savings : null;
+      var discountLabel  = pricing ? pricing.discountLabel : '';
       var nights      = pricing ? pricing.nights : '—';
       var imgSrc      = room.id === 'dimora'
         ? '../../foto-la-dimora/dimora-01-foto-principale.jpeg'
@@ -1807,6 +1832,7 @@
           '<div class="v2-bm-room-pricing">' +
             '<div class="v2-bm-room-price-block">' +
               (totalOTA ? '<div class="v2-bm-room-ota">Booking: €' + totalOTA + '</div>' : '') +
+              (discountLabel ? '<div class="v2-bm-room-discount-label">' + discountLabel + '</div>' : '') +
               '<div class="v2-bm-room-direct">€' + totalDirect + '</div>' +
               '<div class="v2-bm-room-direct-sub">' + nights + ' ' + (nights === 1 ? (typeof t === 'function' ? t('book_night') : 'notte') : (typeof t === 'function' ? t('book_nights') : 'notti')) + '</div>' +
               (savings ? '<div class="v2-bm-room-savings-badge">' + (typeof t === 'function' ? t('book_savings_badge') : 'risparmi €') + savings + '</div>' : '') +
@@ -2145,6 +2171,11 @@
       document.getElementById('modal-rate-label').textContent   = `€${pricePerNight} × ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'}`;
       document.getElementById('modal-nights-total').textContent = `€${pricing.totalDirect}`;
       document.getElementById('modal-total-ota').textContent    = `€${pricing.totalOTA}`;
+      var discountEl = document.getElementById('modal-discount-label');
+      if (discountEl) {
+        discountEl.textContent = pricing.discountLabel || '';
+        discountEl.style.display = pricing.discountLabel ? '' : 'none';
+      }
       document.getElementById('modal-total-direct').textContent = `€${pricing.totalDirect}`;
       document.getElementById('modal-savings').textContent      =
         (typeof t === 'function' ? t('book_you_save') : 'Risparmi') + ` €${pricing.savings} ` + (typeof t === 'function' ? t('book_savings_vs') : 'rispetto a Booking');
