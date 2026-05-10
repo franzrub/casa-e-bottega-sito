@@ -1,0 +1,144 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "foto-homepage"
+public_folder: "/foto-homepage"
+
+locale: it
+
+collections:
+  - name: "prezzi"
+    label: "💶 Prezzi"
+    files:
+      - label: "Prezzi camere"
+        name: "prezzi"
+        file: "sito/_data/prezzi.json"
+        fields:
+          - label: "📅 Prezzi per mese"
+            name: "mesi_prezzi"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Gennaio"
+                name: "gennaio"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Febbraio"
+                name: "febbraio"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Marzo"
+                name: "marzo"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Aprile"
+                name: "aprile"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Maggio"
+                name: "maggio"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Giugno"
+                name: "giugno"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Luglio"
+                name: "luglio"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Agosto"
+                name: "agosto"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Settembre"
+                name: "settembre"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Ottobre"
+                name: "ottobre"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Novembre"
+                name: "novembre"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+              - label: "Dicembre"
+                name: "dicembre"
+                widget: "object"
+                fields:
+                  - { label: "La Dimora (€/notte)", name: "dimora", widget: "number", value_type: "int" }
+                  - { label: "La Bottega (€/notte)", name: "bottega", widget: "number", value_type: "int" }
+          - { label: "Maggiorazione OTA (es. 1.30 = +30%)", name: "ota_markup", widget: "number", value_type: "float" }
+          - { label: "Sconto 7+ notti (es. 0.10 = 10%)", name: "weekly_discount", widget: "number", value_type: "float" }
+          - { label: "Sconto 30+ notti (es. 0.20 = 20%)", name: "monthly_discount", widget: "number", value_type: "float" }
+
+  - name: "testi"
+    label: "✏️ Testi"
+    files:
+      - label: "Testi camere e chi siamo"
+        name: "testi"
+        file: "sito/_data/testi.json"
+        fields:
+          - { label: "Descrizione La Dimora", name: "dimora", widget: "text" }
+          - { label: "Descrizione La Bottega", name: "bottega", widget: "text" }
+          - { label: "Chi siamo", name: "chi_siamo", widget: "text" }
+
+  - name: "regole"
+    label: "📋 Regole della Casa"
+    files:
+      - label: "Regole della Casa"
+        name: "regole"
+        file: "sito/_data/regole.json"
+        fields:
+          - label: "Sezioni regole"
+            name: "sections"
+            widget: "list"
+            label_singular: "Regola"
+            fields:
+              - { label: "Icona (emoji)", name: "icon", widget: "string", default: "📌" }
+              - { label: "Titolo", name: "title", widget: "string" }
+              - { label: "Testo", name: "text", widget: "text" }
+          - { label: "Testo contatti emergenza", name: "contatti_emergenza", widget: "text" }
+
+  - name: "blog"
+    label: "📝 Articoli Blog"
+    folder: "sito/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Itinerari", "Borghi", "Mare", "Cibo e Vino", "Tradizioni", "Esperienze"]
+      - { label: "Descrizione breve (SEO)", name: "description", widget: "text" }
+      - { label: "Immagine di copertina", name: "image", widget: "image", required: false }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }

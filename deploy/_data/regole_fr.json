@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "icon": "🕐",
+      "title": "Enregistrement et départ",
+      "text": "L'enregistrement est disponible à partir de 15h00. Le départ doit avoir lieu avant 11h30."
+    },
+    {
+      "icon": "👥",
+      "title": "Clients",
+      "text": "Le nombre de clients ne peut pas dépasser le nombre indiqué au moment de la réservation. Les visiteurs externes ne sont pas autorisés sans communication préalable avec les gestionnaires."
+    },
+    {
+      "icon": "🤫",
+      "title": "Calme et respect des voisins",
+      "text": "Veuillez maintenir un ton modéré après 23h00 et avant 8h00, par respect pour les autres clients et les résidents locaux."
+    },
+    {
+      "icon": "🚬",
+      "title": "Tabagisme",
+      "text": "Il est strictement interdit de fumer à l'intérieur des appartements. Le tabagisme est autorisé exclusivement dans les zones extérieures désignées."
+    },
+    {
+      "icon": "🐾",
+      "title": "Animaux domestiques",
+      "text": "Les animaux domestiques ne sont pas autorisés, sauf accord préalable écrit avec les gestionnaires."
+    },
+    {
+      "icon": "❌",
+      "title": "Annulation",
+      "text": "L'annulation est gratuite jusqu'à 20 jours avant l'enregistrement. Au-delà de cette date, la caution sera retenue. En cas de non-présentation, le montant total du séjour sera facturé."
+    }
+  ],
+  "contatti_emergenza": "Pour toute nécessité pendant votre séjour, contactez-nous à bookings@casaebottegapuglia.it ou sur WhatsApp au +39 333 470 5574."
+}

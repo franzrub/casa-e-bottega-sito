@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "icon": "🕐",
+      "title": "Check-in en uitchecken",
+      "text": "Check-in is mogelijk vanaf 15:00 uur. Uitchecken moet om 11:30 uur zijn afgerond."
+    },
+    {
+      "icon": "👥",
+      "title": "Gasten",
+      "text": "Het aantal gasten mag niet hoger zijn dan het aantal dat is opgegeven bij de boeking. Externe bezoekers zijn niet toegestaan zonder voorafgaande communicatie met de managers."
+    },
+    {
+      "icon": "🤫",
+      "title": "Rustige uren en buurtrespect",
+      "text": "Gelieve na 23:00 uur en vóór 08:00 uur uw geluidsniveau gematigd te houden, ter wille van andere gasten en plaatselijke bewoners."
+    },
+    {
+      "icon": "🚬",
+      "title": "Roken",
+      "text": "Roken in de appartementen is streng verboden. Roken is uitsluitend in aangewezen buitenruimtes toegestaan."
+    },
+    {
+      "icon": "🐾",
+      "title": "Huisdieren",
+      "text": "Huisdieren zijn niet toegestaan, tenzij er een schriftelijke overeenkomst met de managers is."
+    },
+    {
+      "icon": "❌",
+      "title": "Annulering",
+      "text": "Annulering is gratis tot 20 dagen voor de aankomst. Na deze datum wordt de borg ingehouden. In geval van no-show wordt het volledige verblijfbedrag in rekening gebracht."
+    }
+  ],
+  "contatti_emergenza": "Neem voor alle behoeften tijdens uw verblijf contact met ons op via bookings@casaebottegapuglia.it of via WhatsApp op +39 333 470 5574."
+}

@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "icon": "🕐",
+      "title": "Entrada y salida",
+      "text": "El check-in está disponible a partir de las 15:00. El check-out debe realizarse antes de las 11:30."
+    },
+    {
+      "icon": "👥",
+      "title": "Huéspedes",
+      "text": "El número de huéspedes no puede exceder el número indicado en el momento de la reserva. No se permiten visitantes externos sin comunicación previa con los administradores."
+    },
+    {
+      "icon": "🤫",
+      "title": "Quietud y respeto a los vecinos",
+      "text": "Por favor, mantenga un tono de voz moderado después de las 23:00 y antes de las 8:00, en respeto a otros huéspedes y residentes locales."
+    },
+    {
+      "icon": "🚬",
+      "title": "Fumador",
+      "text": "Está strictamente prohibido fumar dentro de los apartamentos. Solo se permite fumar en las áreas exteriores designadas."
+    },
+    {
+      "icon": "🐾",
+      "title": "Mascotas",
+      "text": "No se permiten mascotas, excepto por acuerdo previo por escrito con los administradores."
+    },
+    {
+      "icon": "❌",
+      "title": "Cancelación",
+      "text": "La cancelación es gratuita hasta 20 días antes de la entrada. Pasada esa fecha, se retendrá la fianza. En caso de no presentarse, se cobrará el monto total de la estancia."
+    }
+  ],
+  "contatti_emergenza": "Para cualquier necesidad durante su estancia, contáctenos en bookings@casaebottegapuglia.it o en WhatsApp al +39 333 470 5574."
+}

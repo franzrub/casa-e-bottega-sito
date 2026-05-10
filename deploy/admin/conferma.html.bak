@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invia Ricevuta — Casa e Bottega Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #F5F0E8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .header .logo {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #C8A96E;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 1.6rem;
+      color: #1B4F72;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 0.88rem;
+      color: #999;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 36px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #C8A96E;
+      font-weight: bold;
+      margin-bottom: 14px;
+      margin-top: 28px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #f0ebe0;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    .field {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      color: #333;
+      background: #fdfcfa;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #C8A96E;
+    }
+    textarea { resize: vertical; min-height: 70px; }
+
+    .row { display: flex; gap: 12px; }
+    .row .field { flex: 1; }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 28px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-send {
+      background: #1B4F72;
+      color: white;
+    }
+    .btn-send:hover { background: #154060; transform: translateY(-1px); }
+    .btn-send:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: none;
+      text-align: center;
+    }
+    .status.success {
+      background: #eaf6ee;
+      color: #2d7a4f;
+      border: 1px solid #b7e0c5;
+    }
+    .status.error {
+      background: #fdf0f0;
+      color: #c0392b;
+      border: 1px solid #f5c6c6;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: #C8A96E;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .tip {
+      font-size: 0.78rem;
+      color: #bbb;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Casa e Bottega</div>
+    <h1>Invia Ricevuta</h1>
+    <p>Compila i dati e invia la conferma/ricevuta all'ospite</p>
+  </div>
+
+  <div class="card">
+
+    <div class="section-title">👤 Ospite</div>
+
+    <div class="field">
+      <label for="r-name">Nome e cognome *</label>
+      <input type="text" id="r-name" placeholder="es. Mario Rossi" required>
+    </div>
+    <div class="field">
+      <label for="r-email">Email ospite *</label>
+      <input type="email" id="r-email" placeholder="es. mario@email.com" required>
+    </div>
+
+    <div class="section-title">🛏 Soggiorno</div>
+
+    <div class="field">
+      <label for="r-room">Camera</label>
+      <select id="r-room">
+        <option value="La Dimora">La Dimora</option>
+        <option value="La Bottega">La Bottega</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="r-checkin">Check-in *</label>
+        <input type="date" id="r-checkin" required>
+      </div>
+      <div class="field">
+        <label for="r-checkout">Check-out *</label>
+        <input type="date" id="r-checkout" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="r-nights">Notti</label>
+        <input type="number" id="r-nights" min="1" max="29" placeholder="auto">
+        <p class="tip">Lascia vuoto per calcolo automatico</p>
+      </div>
+      <div class="field">
+        <label for="r-guests">Ospiti</label>
+        <input type="number" id="r-guests" min="1" max="4" value="2">
+      </div>
+    </div>
+
+    <div class="section-title">💳 Pagamento</div>
+
+    <div class="row">
+      <div class="field">
+        <label for="r-amount">Importo pagato (€) *</label>
+        <input type="number" id="r-amount" min="0" step="0.01" placeholder="es. 350" required>
+      </div>
+      <div class="field">
+        <label for="r-method">Metodo</label>
+        <select id="r-method">
+          <option value="PayPal">PayPal</option>
+          <option value="Bonifico">Bonifico bancario</option>
+          <option value="Contanti">Contanti</option>
+          <option value="Carta">Carta di credito</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="r-note">Note aggiuntive (opzionale)</label>
+      <textarea id="r-note" placeholder="es. caparra, saldo, informazioni check-in…"></textarea>
+    </div>
+
+    <button class="btn btn-send" id="btn-send">✉️ Invia ricevuta all'ospite</button>
+    <div class="status" id="status-msg"></div>
+
+  </div>
+
+  <a href="/admin" class="back-link">← Torna al pannello CMS</a>
+
+  <script>
+    // Auto-calcola notti al cambio date
+    const checkinEl  = document.getElementById('r-checkin');
+    const checkoutEl = document.getElementById('r-checkout');
+    const nightsEl   = document.getElementById('r-nights');
+
+    function calcNights() {
+      if (!checkinEl.value || !checkoutEl.value) return;
+      const ci = new Date(checkinEl.value);
+      const co = new Date(checkoutEl.value);
+      const n  = Math.round((co - ci) / 86400000);
+      if (n > 0) nightsEl.value = n;
+    }
+    checkinEl.addEventListener('change', calcNights);
+    checkoutEl.addEventListener('change', calcNights);
+
+    // Formatta data italiana
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      const [y, m, d] = iso.split('-');
+      return `${d}/${m}/${y}`;
+    }
+
+    document.getElementById('btn-send').addEventListener('click', async function() {
+      const name     = document.getElementById('r-name').value.trim();
+      const email    = document.getElementById('r-email').value.trim();
+      const room     = document.getElementById('r-room').value;
+      const checkin  = checkinEl.value;
+      const checkout = checkoutEl.value;
+      const nights   = nightsEl.value || Math.round((new Date(checkout) - new Date(checkin)) / 86400000);
+      const guests   = document.getElementById('r-guests').value;
+      const amount   = document.getElementById('r-amount').value;
+      const method   = document.getElementById('r-method').value;
+      const note     = document.getElementById('r-note').value.trim();
+
+      // Validazione base
+      if (!name || !email || !checkin || !checkout || !amount) {
+        showStatus('Compila tutti i campi obbligatori (*).', 'error');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        showStatus('Inserisci un indirizzo email valido.', 'error');
+        return;
+      }
+
+      const btn = document.getElementById('btn-send');
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso…';
+
+      try {
+        const res = await fetch('/.netlify/functions/send-receipt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name, email, room,
+            checkin:  fmtDate(checkin),
+            checkout: fmtDate(checkout),
+            nights, guests, amount, method, note
+          })
+        });
+
+        if (res.ok) {
+          showStatus(`✅ Ricevuta inviata a ${email}`, 'success');
+          btn.textContent = '✉️ Invia ricevuta all\'ospite';
+          btn.disabled = false;
+        } else {
+          throw new Error('Risposta non ok dal server');
+        }
+      } catch (err) {
+        showStatus('Errore durante l\'invio. Riprova o controlla i log Netlify.', 'error');
+        btn.textContent = '✉️ Invia ricevuta all\'ospite';
+        btn.disabled = false;
+      }
+    });
+
+    function showStatus(msg, type) {
+      const el = document.getElementById('status-msg');
+      el.textContent = msg;
+      el.className = `status ${type}`;
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 6000);
+    }
+  </script>
+
+</body>
+</html>
