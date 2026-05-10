@@ -57,6 +57,38 @@ else
   echo "⚠️  terser non trovato — main.js non minificato. Installa con: npm install -g terser"
 fi
 
+# Minifica i18n.js → i18n.min.js
+if command -v terser &> /dev/null || command -v npx &> /dev/null; then
+  echo "⚡ Minificazione i18n.js..."
+  npx terser js/i18n.js --compress --mangle --output js/i18n.min.js
+  # Aggiorna il riferimento in tutti gli HTML (root + sottocartelle lingua)
+  for f in *.html; do sed -i.bak 's|js/i18n\.js|js/i18n.min.js|g' "$f"; rm -f "${f}.bak"; done
+  for lang in en fr de nl es; do
+    if [ -d "$lang" ]; then
+      for f in "$lang"/*.html; do sed -i.bak 's|js/i18n\.js|js/i18n.min.js|g' "$f"; rm -f "${f}.bak"; done
+    fi
+  done
+  echo "   i18n.js → i18n.min.js ($(wc -c < js/i18n.min.js) bytes)"
+else
+  echo "⚠️  terser non trovato — i18n.js non minificato."
+fi
+
+# Minifica style-v2.css → style-v2.min.css (richiede clean-css-cli: npm install -g clean-css-cli)
+if command -v cleancss &> /dev/null || command -v npx &> /dev/null; then
+  echo "⚡ Minificazione style-v2.css..."
+  npx clean-css-cli -o css/style-v2.min.css css/style-v2.css
+  # Aggiorna il riferimento in tutti gli HTML (root + sottocartelle lingua)
+  for f in *.html; do sed -i.bak 's|css/style-v2\.css|css/style-v2.min.css|g' "$f"; rm -f "${f}.bak"; done
+  for lang in en fr de nl es; do
+    if [ -d "$lang" ]; then
+      for f in "$lang"/*.html; do sed -i.bak 's|css/style-v2\.css|css/style-v2.min.css|g' "$f"; rm -f "${f}.bak"; done
+    fi
+  done
+  echo "   style-v2.css → style-v2.min.css ($(wc -c < css/style-v2.min.css) bytes)"
+else
+  echo "⚠️  clean-css-cli non trovato — style-v2.css non minificato. Installa con: npm install -g clean-css-cli"
+fi
+
 # 6. Genera manifesto immagini hero
 # Ordine manuale: 1.webp (TV/Netflix) spostata in ultima posizione per prima impressione elegante
 echo "📸 Generazione manifest foto-homepage (ordine personalizzato)..."

@@ -9,11 +9,11 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/index.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/index.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/index.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/"/>
   </url>
   <url>
@@ -70,45 +70,244 @@
   </url>
 
   <!-- ── LINGUE ── -->
-  <url><loc>https://www.casaebottegapuglia.it/en/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/en/</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/en/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/en/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/en/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/en/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <url><loc>https://www.casaebottegapuglia.it/fr/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/fr/</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/fr/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/fr/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/fr/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/fr/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <url><loc>https://www.casaebottegapuglia.it/de/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/de/</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/de/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/de/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/de/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/de/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <url><loc>https://www.casaebottegapuglia.it/nl/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/nl/</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/nl/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/nl/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/nl/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/nl/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <url><loc>https://www.casaebottegapuglia.it/es/index.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.casaebottegapuglia.it/es/</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/es/camere.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/es/prenota.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/es/contatti.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casaebottegapuglia.it/es/blog.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <!-- ── ARTICOLI BLOG (solo IT) ── -->
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-1.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-2.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-3.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-4.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-5.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-6.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-7.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-8.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.casaebottegapuglia.it/blog-articolo-9.html</loc><lastmod>2026-03-13</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <!-- ── ARTICOLI BLOG (IT + traduzioni, con hreflang) ── -->
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/cosa-fare-manfredonia/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/cosa-fare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/cosa-fare-manfredonia/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/gargano-fuori-stagione/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/gargano-fuori-stagione/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/gargano-fuori-stagione/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/monte-santangelo/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/monte-santangelo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/monte-santangelo/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/basilica-siponto-tresoldi/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/basilica-siponto-tresoldi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/basilica-siponto-tresoldi/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/cosa-mangiare-manfredonia/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/cosa-mangiare-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/cosa-mangiare-manfredonia/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/settimana-nel-gargano/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/settimana-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/settimana-nel-gargano/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/vieste-borgo-sul-mare/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/vieste-borgo-sul-mare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/vieste-borgo-sul-mare/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/scogliere-calette-gargano/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/scogliere-calette-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/scogliere-calette-gargano/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/manfredonia-lenta/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/manfredonia-lenta/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/manfredonia-lenta/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/dove-mangiano-i-locali-manfredonia/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/dove-mangiano-i-locali-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/dove-mangiano-i-locali-manfredonia/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/borghi-nascosti-gargano/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/borghi-nascosti-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/borghi-nascosti-gargano/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/muoversi-nel-gargano/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/muoversi-nel-gargano/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/muoversi-nel-gargano/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/settimana-santa-manfredonia/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/settimana-santa-manfredonia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/settimana-santa-manfredonia/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/bagno-gargano-maggio-giugno/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/bagno-gargano-maggio-giugno/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/bagno-gargano-maggio-giugno/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/vino-gargano-nero-troia/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/vino-gargano-nero-troia/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/vino-gargano-nero-troia/"/>
+  </url>
+  <url>
+    <loc>https://www.casaebottegapuglia.it/blog/mattinata-borgo-bianco/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaebottegapuglia.it/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaebottegapuglia.it/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaebottegapuglia.it/en/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.casaebottegapuglia.it/de/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.casaebottegapuglia.it/fr/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.casaebottegapuglia.it/nl/blog/mattinata-borgo-bianco/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.casaebottegapuglia.it/es/blog/mattinata-borgo-bianco/"/>
+  </url>
 
 </urlset>

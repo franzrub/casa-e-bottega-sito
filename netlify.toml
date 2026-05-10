@@ -54,48 +54,448 @@
     Cache-Control = "public, max-age=3600, must-revalidate"
 
 # ============================================================
-# BLOG — URL REWRITING & REDIRECT 301
+# BLOG — REDIRECT 301 legacy: blog-articolo-N.html → /blog/[slug]/
+# Questi redirect gestiscono la compatibilità SEO per i vecchi URL.
+# Le nuove URL canoniche sono sito/blog/[slug]/index.html (senza redirect).
 # ============================================================
-# STEP 1 — Rewrite: /blog/:slug → /blog-articolo.html (200, URL pulita nel browser)
-# Netlify serve il file esistente prima di applicare la regola:
-# /blog/slug.md viene servito direttamente; /blog/slug (senza estensione)
-# non esiste → cade qui e viene servito il template JS.
-[[redirects]]
-  from   = "/blog/:slug"
-  to     = "/blog-articolo.html"
-  status = 200
 
-# STEP 2 — Redirect 301 universale: vecchi URL parametrici → nuovi URL puliti
-# Cattura tutti i ?slug= indipendentemente dal valore
+# Articolo 1 — Cosa fare a Manfredonia
 [[redirects]]
-  from   = "/blog-articolo.html"
-  to     = "/blog/:slug"
+  from   = "/blog-articolo-1.html"
+  to     = "/blog/cosa-fare-manfredonia/"
   status = 301
-  query  = {slug = ":slug"}
+  force  = false
 
-# Compatibilità legacy: se qualcuno accedesse direttamente al vecchio
-# blog-articolo-6.html numerico → redirect alla URL clean
+# Articolo 2 — Gargano fuori stagione
+[[redirects]]
+  from   = "/blog-articolo-2.html"
+  to     = "/blog/gargano-fuori-stagione/"
+  status = 301
+  force  = false
+
+# Articolo 3 — Monte Sant'Angelo
+[[redirects]]
+  from   = "/blog-articolo-3.html"
+  to     = "/blog/monte-santangelo/"
+  status = 301
+  force  = false
+
+# Articolo 4 — Basilica di Siponto / Tresoldi
+[[redirects]]
+  from   = "/blog-articolo-4.html"
+  to     = "/blog/basilica-siponto-tresoldi/"
+  status = 301
+  force  = false
+
+# Articolo 5 — Cosa mangiare a Manfredonia
+[[redirects]]
+  from   = "/blog-articolo-5.html"
+  to     = "/blog/cosa-mangiare-manfredonia/"
+  status = 301
+  force  = false
+
+# Articolo 6 — Settimana nel Gargano
 [[redirects]]
   from   = "/blog-articolo-6.html"
-  to     = "/blog/settimana-nel-gargano"
+  to     = "/blog/settimana-nel-gargano/"
   status = 301
   force  = false
 
-# Redirect articoli 10-12 → URL pulite
+# Articolo 7 — Vieste borgo sul mare
+[[redirects]]
+  from   = "/blog-articolo-7.html"
+  to     = "/blog/vieste-borgo-sul-mare/"
+  status = 301
+  force  = false
+
+# Articolo 8 — Scogliere e calette del Gargano
+[[redirects]]
+  from   = "/blog-articolo-8.html"
+  to     = "/blog/scogliere-calette-gargano/"
+  status = 301
+  force  = false
+
+# Articolo 9 — Manfredonia lenta
+[[redirects]]
+  from   = "/blog-articolo-9.html"
+  to     = "/blog/manfredonia-lenta/"
+  status = 301
+  force  = false
+
+# Articolo 10 — Dove mangiano i locali a Manfredonia
 [[redirects]]
   from   = "/blog-articolo-10.html"
-  to     = "/blog/dove-mangiano-i-locali-manfredonia"
+  to     = "/blog/dove-mangiano-i-locali-manfredonia/"
   status = 301
   force  = false
 
+# Articolo 11 — Borghi nascosti del Gargano
 [[redirects]]
   from   = "/blog-articolo-11.html"
-  to     = "/blog/borghi-nascosti-gargano"
+  to     = "/blog/borghi-nascosti-gargano/"
   status = 301
   force  = false
 
+# Articolo 12 — Muoversi nel Gargano
 [[redirects]]
   from   = "/blog-articolo-12.html"
-  to     = "/blog/muoversi-nel-gargano"
+  to     = "/blog/muoversi-nel-gargano/"
   status = 301
   force  = false
+
+# Articolo 13 — Settimana Santa a Manfredonia
+[[redirects]]
+  from   = "/blog-articolo-13.html"
+  to     = "/blog/settimana-santa-manfredonia/"
+  status = 301
+  force  = false
+
+# Articolo 14 — Bagno nel Gargano a maggio e giugno
+[[redirects]]
+  from   = "/blog-articolo-14.html"
+  to     = "/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+  force  = false
+
+# Articolo 15 — Vino del Gargano / Nero di Troia
+[[redirects]]
+  from   = "/blog-articolo-15.html"
+  to     = "/blog/vino-gargano-nero-troia/"
+  status = 301
+  force  = false
+
+# Articolo 16 — Mattinata borgo bianco
+[[redirects]]
+  from   = "/blog-articolo-16.html"
+  to     = "/blog/mattinata-borgo-bianco/"
+  status = 301
+  force  = false
+
+# ============================================================
+# Redirect legacy per versioni tradotte (en, de, fr, nl, es)
+# ============================================================
+
+[[redirects]]
+  from   = "/en/blog-articolo-1.html"
+  to     = "/en/blog/cosa-fare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-2.html"
+  to     = "/en/blog/gargano-fuori-stagione/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-3.html"
+  to     = "/en/blog/monte-santangelo/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-4.html"
+  to     = "/en/blog/basilica-siponto-tresoldi/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-5.html"
+  to     = "/en/blog/cosa-mangiare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-6.html"
+  to     = "/en/blog/settimana-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-7.html"
+  to     = "/en/blog/vieste-borgo-sul-mare/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-8.html"
+  to     = "/en/blog/scogliere-calette-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-9.html"
+  to     = "/en/blog/manfredonia-lenta/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-10.html"
+  to     = "/en/blog/dove-mangiano-i-locali-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-11.html"
+  to     = "/en/blog/borghi-nascosti-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-12.html"
+  to     = "/en/blog/muoversi-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-13.html"
+  to     = "/en/blog/settimana-santa-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-14.html"
+  to     = "/en/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-15.html"
+  to     = "/en/blog/vino-gargano-nero-troia/"
+  status = 301
+[[redirects]]
+  from   = "/en/blog-articolo-16.html"
+  to     = "/en/blog/mattinata-borgo-bianco/"
+  status = 301
+
+[[redirects]]
+  from   = "/de/blog-articolo-1.html"
+  to     = "/de/blog/cosa-fare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-2.html"
+  to     = "/de/blog/gargano-fuori-stagione/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-3.html"
+  to     = "/de/blog/monte-santangelo/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-4.html"
+  to     = "/de/blog/basilica-siponto-tresoldi/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-5.html"
+  to     = "/de/blog/cosa-mangiare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-6.html"
+  to     = "/de/blog/settimana-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-7.html"
+  to     = "/de/blog/vieste-borgo-sul-mare/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-8.html"
+  to     = "/de/blog/scogliere-calette-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-9.html"
+  to     = "/de/blog/manfredonia-lenta/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-10.html"
+  to     = "/de/blog/dove-mangiano-i-locali-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-11.html"
+  to     = "/de/blog/borghi-nascosti-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-12.html"
+  to     = "/de/blog/muoversi-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-13.html"
+  to     = "/de/blog/settimana-santa-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-14.html"
+  to     = "/de/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-15.html"
+  to     = "/de/blog/vino-gargano-nero-troia/"
+  status = 301
+[[redirects]]
+  from   = "/de/blog-articolo-16.html"
+  to     = "/de/blog/mattinata-borgo-bianco/"
+  status = 301
+
+[[redirects]]
+  from   = "/fr/blog-articolo-1.html"
+  to     = "/fr/blog/cosa-fare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-2.html"
+  to     = "/fr/blog/gargano-fuori-stagione/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-3.html"
+  to     = "/fr/blog/monte-santangelo/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-4.html"
+  to     = "/fr/blog/basilica-siponto-tresoldi/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-5.html"
+  to     = "/fr/blog/cosa-mangiare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-6.html"
+  to     = "/fr/blog/settimana-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-7.html"
+  to     = "/fr/blog/vieste-borgo-sul-mare/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-8.html"
+  to     = "/fr/blog/scogliere-calette-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-9.html"
+  to     = "/fr/blog/manfredonia-lenta/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-10.html"
+  to     = "/fr/blog/dove-mangiano-i-locali-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-11.html"
+  to     = "/fr/blog/borghi-nascosti-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-12.html"
+  to     = "/fr/blog/muoversi-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-13.html"
+  to     = "/fr/blog/settimana-santa-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-14.html"
+  to     = "/fr/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-15.html"
+  to     = "/fr/blog/vino-gargano-nero-troia/"
+  status = 301
+[[redirects]]
+  from   = "/fr/blog-articolo-16.html"
+  to     = "/fr/blog/mattinata-borgo-bianco/"
+  status = 301
+
+[[redirects]]
+  from   = "/nl/blog-articolo-1.html"
+  to     = "/nl/blog/cosa-fare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-2.html"
+  to     = "/nl/blog/gargano-fuori-stagione/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-3.html"
+  to     = "/nl/blog/monte-santangelo/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-4.html"
+  to     = "/nl/blog/basilica-siponto-tresoldi/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-5.html"
+  to     = "/nl/blog/cosa-mangiare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-6.html"
+  to     = "/nl/blog/settimana-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-7.html"
+  to     = "/nl/blog/vieste-borgo-sul-mare/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-8.html"
+  to     = "/nl/blog/scogliere-calette-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-9.html"
+  to     = "/nl/blog/manfredonia-lenta/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-10.html"
+  to     = "/nl/blog/dove-mangiano-i-locali-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-11.html"
+  to     = "/nl/blog/borghi-nascosti-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-12.html"
+  to     = "/nl/blog/muoversi-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-13.html"
+  to     = "/nl/blog/settimana-santa-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-14.html"
+  to     = "/nl/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-15.html"
+  to     = "/nl/blog/vino-gargano-nero-troia/"
+  status = 301
+[[redirects]]
+  from   = "/nl/blog-articolo-16.html"
+  to     = "/nl/blog/mattinata-borgo-bianco/"
+  status = 301
+
+[[redirects]]
+  from   = "/es/blog-articolo-1.html"
+  to     = "/es/blog/cosa-fare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-2.html"
+  to     = "/es/blog/gargano-fuori-stagione/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-3.html"
+  to     = "/es/blog/monte-santangelo/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-4.html"
+  to     = "/es/blog/basilica-siponto-tresoldi/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-5.html"
+  to     = "/es/blog/cosa-mangiare-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-6.html"
+  to     = "/es/blog/settimana-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-7.html"
+  to     = "/es/blog/vieste-borgo-sul-mare/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-8.html"
+  to     = "/es/blog/scogliere-calette-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-9.html"
+  to     = "/es/blog/manfredonia-lenta/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-10.html"
+  to     = "/es/blog/dove-mangiano-i-locali-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-11.html"
+  to     = "/es/blog/borghi-nascosti-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-12.html"
+  to     = "/es/blog/muoversi-nel-gargano/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-13.html"
+  to     = "/es/blog/settimana-santa-manfredonia/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-14.html"
+  to     = "/es/blog/bagno-gargano-maggio-giugno/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-15.html"
+  to     = "/es/blog/vino-gargano-nero-troia/"
+  status = 301
+[[redirects]]
+  from   = "/es/blog-articolo-16.html"
+  to     = "/es/blog/mattinata-borgo-bianco/"
+  status = 301

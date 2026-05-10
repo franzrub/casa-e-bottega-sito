@@ -120,6 +120,18 @@ La hero della pagina blog NON deve avere immagine di sfondo. Fix applicato via C
 }
 ```
 
+## Minificazione CSS e JS
+
+`prepara-deploy.sh` genera automaticamente i file `.min` durante il deploy. **Non modificare manualmente i file `.min` in `sito/`** — vengono sovrascritti ad ogni deploy.
+
+- `sito/js/main.js` → `deploy/js/main.min.js` (via terser)
+- `sito/js/i18n.js` → `deploy/js/i18n.min.js` (via terser)
+- `sito/css/style-v2.css` → `deploy/css/style-v2.min.css` (via clean-css-cli)
+
+I file `.min` già presenti in `sito/` sono residui storici e vengono ignorati dallo script (che rigenera tutto in `deploy/`). Se si modifica `style-v2.css` o `i18n.js`, basta rieseguire `./prepara-deploy.sh` — nessun passo manuale aggiuntivo.
+
+Dipendenze richieste (già installate globalmente o via npx): `terser`, `clean-css-cli`.
+
 ## Debug — consigli pratici
 - **Sempre controllare la console del browser** prima di speculare sulla causa di un bug
 - `ReferenceError: t is not defined` → stai usando `t()` fuori dallo scope di `main.js`
