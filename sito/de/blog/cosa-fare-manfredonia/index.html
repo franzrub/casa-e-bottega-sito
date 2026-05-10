@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../css/style-v2.min.css"/>
+<link rel="stylesheet" href="/css/style-v2.min.css"/>
 <style>
 .art-hero{background:var(--bone);padding:8rem 0 4rem;text-align:center;border-bottom:1px solid var(--paper);}
 .art-hero-cat{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:1.2rem;}
@@ -40,6 +40,11 @@
 .art-cta{background:var(--petrolio);color:var(--bone);text-align:center;padding:4rem 1.5rem;}
 .art-cta p{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--bone);margin-bottom:1.2rem;}
 .art-cta a{display:inline-block;background:var(--bone);color:var(--ink);font-family:'Inter';font-size:.9rem;font-weight:500;padding:.85rem 2rem;text-decoration:none;}
+.art-faq{margin:3rem 0;}
+.art-faq-item{border-top:1px solid var(--paper);padding:1.4rem 0;}
+.art-faq-item:last-child{border-bottom:1px solid var(--paper);}
+.art-faq-q{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;color:var(--ink);margin-bottom:.6rem;}
+.art-faq-a{font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.75;color:var(--stone);margin:0;}
 @media(max-width:768px){
   .art-hero{padding:6rem 1rem 3rem;}
   .art-hero h1{font-size:clamp(1.8rem,6vw,2.8rem);}
@@ -47,23 +52,23 @@
   .art-hero-img{max-height:260px;}
 }
 </style>
-<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
 </head>
 <body>
 <header class="v2-header">
   <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
     <div class="v2-nav-inner">
       <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
-        <a href="index.html" data-i18n="nav_home">Start</a>
-        <a href="camere.html" data-i18n="nav_rooms">Zimmer</a>
-        <a href="prenota.html" data-i18n="nav_book">Buchen</a>
-        <a class="active" href="blog.html" data-i18n="nav_blog">Berichte</a>
-        <a href="contatti.html" data-i18n="nav_contact">Lage</a>
+        <a href="/de/index.html" data-i18n="nav_home">Start</a>
+        <a href="/de/camere.html" data-i18n="nav_rooms">Zimmer</a>
+        <a href="/de/prenota.html" data-i18n="nav_book">Buchen</a>
+        <a class="active" href="/de/blog.html" data-i18n="nav_blog">Berichte</a>
+        <a href="/de/contatti.html" data-i18n="nav_contact">Lage</a>
       </div>
-      <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
+      <a class="v2-nav-brand" href="/de/index.html" aria-label="Casa e Bottega — Home">
         Casa <em>e</em> Bottega
       </a>
       <div class="v2-nav-right">
@@ -75,7 +80,7 @@
           <a href="/nl/blog/cosa-fare-manfredonia/" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="/es/blog/cosa-fare-manfredonia/" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Jetzt buchen</a>
+        <a href="/de/prenota.html" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Jetzt buchen</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -84,11 +89,11 @@
   </nav>
 </header>
 <div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Menu mobile" aria-hidden="true">
-        <a href="index.html" data-i18n="nav_home">Start</a>
-        <a href="camere.html" data-i18n="nav_rooms">Zimmer</a>
-        <a href="prenota.html" data-i18n="nav_book">Buchen</a>
-        <a class="active" href="blog.html" data-i18n="nav_blog">Berichte</a>
-        <a href="contatti.html" data-i18n="nav_contact">Lage</a>
+        <a href="/de/index.html" data-i18n="nav_home">Start</a>
+        <a href="/de/camere.html" data-i18n="nav_rooms">Zimmer</a>
+        <a href="/de/prenota.html" data-i18n="nav_book">Buchen</a>
+        <a class="active" href="/de/blog.html" data-i18n="nav_blog">Berichte</a>
+        <a href="/de/contatti.html" data-i18n="nav_contact">Lage</a>
     <!-- Language switcher mobile dropdown -->
   <div class="v2-nav-lang-mobile">
     <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">
@@ -117,42 +122,104 @@
 <!-- BODY -->
 <article>
   <div class="art-body">
-    <img class="art-hero-img" src="../../foto-zona/Manfredonia.jpeg" alt="Manfredonia Panorama" loading="eager"/>
-    <p>Manfredonia ist kein Halt, sondern ein Ausgangspunkt. Es ist das Tor zum Gargano, der erste Atemzug von Meer und Stein, der Sie begrüßt, wenn Sie aus der Ebene kommen. Aber die meisten Reisenden fahren durch, ohne anzuhalten. Ein Fehler. Hier sind fünf Dinge, die es hier wert sind, getan zu werden, und die Ihnen kein Reiseführer verrät.</p>
+    <img class="art-hero-img" src="/foto-zona/Manfredonia.jpeg" alt="Manfredonia Panorama über den Golf" loading="eager"/>
+
+    <p>Manfredonia ist kein Halt, sondern ein Ausgangspunkt. Es ist das Tor zum Gargano, der erste Atemzug von Meer und Stein, der Sie begrüßt, wenn Sie aus der apulischen Ebene kommen. Die meisten Reisenden fahren durch, ohne anzuhalten, die Augen bereits auf Vieste oder Peschici gerichtet. Ein Fehler. Manfredonia hat eine eigene, klare Identität — eine echte Stadt mit einem der aktivsten Fischereihäfen der Adria, Denkmälern, die kaum jemand kennt, und einem Licht über dem Golf, das sich jede Stunde des Tages verändert.</p>
+
+    <p>Diese fünf Dinge werden Sie in keinem offiziellen Reiseführer finden. Wir wissen sie, weil wir hier leben.</p>
+
     <h2>1. Die Schwäbisch-Angevinische Burg beim Sonnenuntergang</h2>
-    <p>Besuchen Sie die Burg nicht morgens wie alle anderen. Gehen Sie eine Stunde vor Sonnenuntergang, wenn das Licht bernsteinfarben wird und der Golf sich rosa färbt. Das Nationalmuseum des Gargano im Inneren lohnt sich — die daunischen Stelen sind weltweit einzigartig — aber es ist der Spaziergang entlang der Mauern in der Dämmerung, den Sie mit sich tragen werden.</p>
-    <h2>2. Die frühchristliche Basilika von Siponto</h2>
-    <img src="../../foto-zona/tresoldibasilica_siponto.jpeg" alt="Basilika von Siponto mit Tresoldi-Installation"/>
-    <p>Wenige Minuten vom Zentrum entfernt, zwischen Olivenbäumen, finden Sie eine Basilika aus dem 5. Jahrhundert. Die echte Überraschung ist jedoch darüber: die Installation von Edoardo Tresoldi, eine Kathedrale aus Drahtgeflecht, die das Volumen der ursprünglichen Kirche rekonstruiert. Nachts beleuchtet ist es ein fast mystisches Erlebnis. Tagsüber ist der Kontrast zwischen altem Stein und transparentem Metall pure Architektur.</p>
+    <p>Besuchen Sie die Burg nicht morgens wie alle anderen. Gehen Sie eine Stunde vor Sonnenuntergang, wenn das Licht bernsteinfarben wird und sich der Golf von Manfredonia rosa und orange färbt. Die Burg wurde im 13. Jahrhundert von König Manfred von Schwaben begonnen — demselben, der der Stadt ihren Namen gab — und von Karl I. von Anjou vollendet. Das Bauwerk ist imposant, mit zylindrischen Türmen und einem Wassergraben, in dem heute gepflegte Gärten angelegt sind.</p>
+    <p>Im Inneren befindet sich das Nationalmuseum des Gargano, das einen Besuch wert ist. Die daunischen Stelen sind weltweit einzigartige Fundstücke: Kalksteinplatten mit eingeritzten stilisierten Menschenfiguren aus der Eisenzeit. Es gibt nirgendwo sonst in Italien vergleichbare Objekte — und dennoch wissen die meisten Touristen nicht einmal von ihrer Existenz.</p>
+    <aside>
+      <strong>Praktischer Hinweis:</strong> das Museum ist montags geschlossen. An anderen Tagen öffnet es morgens und nachmittags mit einer Mittagspause. Prüfen Sie die aktuellen Öffnungszeiten auf der Website des Polo Museale della Puglia vor Ihrem Besuch.
+    </aside>
+
+    <h2>2. Die frühchristliche Basilika von Siponto und die Tresoldi-Installation</h2>
+    <img src="/foto-zona/tresoldibasilica_siponto.jpeg" alt="Basilika von Siponto mit Tresoldi-Drahtgeflecht-Installation"/>
+    <p>Drei Kilometer vom Zentrum Manfredonias entfernt, an der SS89 Richtung Foggia, erwartet Sie eines der außergewöhnlichsten Erlebnisse des gesamten Gargano. Die frühchristliche Basilika von Siponto stammt aus dem 5. Jahrhundert — erbaut auf dem Gelände des alten Bischofssitzes der römischen Stadt Siponto, nach einem Erdbeben im Jahr 1223 verlassen. Jahrhundertelang blieb sie verschüttet, bevor sie durch Ausgrabungen teilweise freigelegt wurde.</p>
+    <p>Die eigentliche Überraschung befindet sich darüber: Im Jahr 2016 rekonstruierte der Künstler Edoardo Tresoldi das Volumen der ursprünglichen Kirche mit einer Drahtgeflecht-Struktur, transparent wie ein Geist. Die Kathedrale aus Eisendraht erhebt sich in den Himmel, lässt Licht und Wind passieren und schafft einen unmöglichen Dialog zwischen dem 5. und dem 21. Jahrhundert. Nachts beleuchtet ist sie kaum in Worte zu fassen. Tagsüber ist der Kontrast zwischen altem Stein und gewichtslosem Metall Architektur in ihrer reinsten Form.</p>
+    <aside>
+      <strong>Anreise:</strong> mit dem Auto über die SS89 Richtung Foggia, Ausfahrt Siponto. Zu Fuß vom Zentrum Manfredonias sind es etwa 40 Minuten entlang der Küstenstraße — im Sommer anspruchsvoll. Mit dem Fahrrad ist es die ideale Strecke.
+    </aside>
+
     <h2>3. Der Fischmarkt am Hafen, früh am Morgen</h2>
-    <p>Stehen Sie früh auf, um sechs, spätestens sieben Uhr. Am Hafen von Manfredonia entladen Fischer den Nachtfang und ein Ritual, das sich seit Jahrhunderten wiederholt, beginnt. Dies ist kein Touristenmarkt: hier kaufen die Großmütter ein. Rote Garnelen, Oktopus, Meerbarbe, Muscheln. Der Lärm, die Gerüche, die Stimmen im Dialekt. Das ist der authentische Gargano, bevor der Rest der Welt aufwacht.</p>
-    <h2>4. Aperitif an der Strandpromenade</h2>
-    <p>Die Strandpromenade von Manfredonia ist lang, großzügig und außerhalb der Saison unglaublich leer. Wählen Sie eine Bar mit Tischen mit Blick auf den Golf, bestellen Sie einen Spritz oder einen Primitivo di Manduria und beobachten Sie, wie die Sonne hinter dem Vorgebirge untergeht. Keine Hast. Keine Warteliste. Nur das Rauschen der Wellen und das sich verändernde Licht.</p>
-    <h2>5. Sonnenuntergang über dem Golf, vom alten Pier</h2>
-    <p>Der letzte Rat ist der einfachste. Gehen Sie bis zur Spitze des alten Piers. Nehmen Sie etwas Brot und ein Stück Käse mit, wenn Sie möchten. Setzen Sie sich auf die warmen Steine und beobachten Sie, wie die Sonne in den Golf sinkt. Mehr braucht es nicht. Das ist Manfredonia, das sich selbst erzählt.</p>
+    <p>Stehen Sie früh auf. Um sechs, spätestens sieben Uhr. Am Fischereihafen von Manfredonia — einem der wichtigsten an der südlichen Adria — entladen Fischer den Nachtfang, und ein seit Jahrhunderten nahezu unverändertes Ritual beginnt.</p>
+    <p>Dies ist kein Touristenmarkt: hier kaufen Großmütter ein, kommen Restaurantbesitzer, holen Köche aus den Trattorien des Hinterlandes von Monte Sant'Angelo oder Rignano Garganico ihren Einkauf. Rote Garnelen vom Gargano, Oktopus, Meerbarbe, Venusmuscheln, Kaisergranaten. Das Klappern der Plastikkisten, Stimmen im Foggiano-Dialekt, der salzige Geruch des Hafens im Morgengrauen. Das ist der authentische Gargano, bevor der Rest der Welt erwacht.</p>
+    <p>Wenn Sie etwas kaufen möchten, bringen Sie Bargeld mit und verzichten Sie auf Preisverhandlungen — die Preise sind bereits fair.</p>
+
+    <h2>4. Aperitif an der Strandpromenade beim Sonnenuntergang</h2>
+    <p>Die Strandpromenade von Manfredonia ist lang, großzügig und von echtem städtischem Leben geprägt. Sie hat nicht die Mondänität von Vieste oder den Glamour mancher nordadriatischen Badeorte, aber etwas Selteneres: Es ist ein Ort, an den die Menschen wirklich gehen — nicht um gesehen zu werden.</p>
+    <p>Am Abend — besonders im Frühling und im September — spazieren Familien mit Kindern, alte Männer spielen Karten vor Bars, Jugendliche sitzen auf der Mauer. Wählen Sie eine Bar mit Tischen zum Golf hin, bestellen Sie einen Primitivo di Manduria oder einen Aperol und beobachten Sie, wie die Sonne hinter dem Gargano-Vorgebirge untergeht. Keine Warteliste. Keine unerträgliche Musik. Nur das Rauschen der Wellen und das sich verändernde Licht.</p>
+    <aside>
+      <strong>Nicht verpassen:</strong> im Sommer servieren manche Lokale an der Promenade die <em>farrata</em>, die gastronomische Spezialität Manfredonias: ein herzhaftes Gebäck gefüllt mit Schafskäse-Ricotta, Dinkel und Majoran. Es gibt sie nur hier.
+    </aside>
+
+    <h2>5. Sonnenuntergang vom alten Pier</h2>
+    <p>Der letzte Tipp ist der einfachste — und vielleicht der beste. Laufen Sie bis zur Spitze des alten Piers, jenseits des Yachthafens. Es ist keine Reservierung nötig, kein Eintrittsgeld. Bringen Sie nur etwas Brot, ein Stück Käse oder Oliven mit — all das finden Sie in jedem Lebensmittelladen im Zentrum.</p>
+    <p>Setzen Sie sich auf die warmen Kalksteine und schauen Sie zu, wie die Sonne in den Golf versinkt. Im Norden färbt sich das Gargano-Vorgebirge rot. Im Süden verschwindet die Tavoliere-Ebene im Dunst. Die Burg im Hintergrund. Die Fischerboote, die zurückkehren. Das ist Manfredonia, das sich selbst erzählt — ohne jede Fremdhilfe.</p>
+
+    <h2>Manfredonia als Basis für den Gargano</h2>
+    <p>Etwas, das viele Besucher erst nach ihrer Ankunft entdecken: Manfredonia ist geografisch die beste Ausgangslage, um den gesamten Gargano zu erkunden. Die Stadt liegt etwa 45 Minuten von Vieste entfernt, 30 Minuten von Monte Sant'Angelo und dem Heiligtum des Erzengels Michael (UNESCO-Welterbe), 1 Stunde vom Umbra-Wald und Peschici sowie 1,5 Stunden von den Tremiti-Inseln (per Fähre ab Vieste).</p>
+    <p>Es gibt reichlich kostenlose Parkplätze am Stadtrand, Supermärkte, Apotheken und deutlich günstigere Preise als in den touristischeren Küstenorten. Wer eine Woche im Gargano plant, für den ist <a href="/de/camere.html">ein Zimmer in Manfredonia</a> statt nächtlichem Ortswechsel oft die klügere Wahl — wirtschaftlich wie logistisch.</p>
+
+    <h2>Wann sollte man Manfredonia besuchen?</h2>
+    <p>Die besten Reisezeiträume sind Mai–Juni und September–Oktober. Das Meer ist bereits warm (oder noch warm), die Strände sind ohne endlose Liegestuhlreihen besucht, Restaurants haben freie Plätze und die Preise sind vernünftig. Juli und August sind sehr belebt — die Strandpromenade verändert ihr Gesicht, der Hafen erwacht — aber die Stille, die Manfredonia besonders macht, verschwindet.</p>
+    <p>Im Winter liegt eine besondere Lichtstimmung über dem Golf, die Preise sinken stark, und die Stadt kehrt zu ihrem eigenen Rhythmus zurück. Wer es mag, außerhalb der Saison zu reisen, wird in Manfredonia im Winter eine echte Entdeckung machen. <a href="/de/blog/gargano-fuori-stagione/">Wir haben darüber geschrieben</a>.</p>
+
+    <!-- FAQ -->
+    <h2>Häufig gestellte Fragen zu Manfredonia</h2>
+    <div class="art-faq">
+
+      <div class="art-faq-item">
+        <p class="art-faq-q">Was kann man an einem Tag in Manfredonia sehen?</p>
+        <p class="art-faq-a">An einem Tag schafft man die Schwäbisch-Angevinische Burg mit dem Nationalmuseum des Gargano, die Basilika von Siponto mit der Tresoldi-Installation und die Strandpromenade beim Sonnenuntergang. Wer früh aufsteht, sollte auch den Fischmarkt am Hafen nicht verpassen — ein Erlebnis für sich.</p>
+      </div>
+
+      <div class="art-faq-item">
+        <p class="art-faq-q">Ist Manfredonia eine gute Basis für den Gargano?</p>
+        <p class="art-faq-a">Ja, wahrscheinlich die beste. 45 Minuten nach Vieste, 30 Minuten nach Monte Sant'Angelo, 1 Stunde zum Umbra-Wald. Alle Einrichtungen vorhanden, einfaches Parken und günstigere Preise als an der touristischeren Küste.</p>
+      </div>
+
+      <div class="art-faq-item">
+        <p class="art-faq-q">Wann ist die beste Zeit, Manfredonia zu besuchen?</p>
+        <p class="art-faq-a">Mai–Juni und September–Oktober sind ideal: warmes Meer, freie Strände, Restaurantplätze verfügbar. Juli und August sind sehr voll. Im Winter gibt es außergewöhnliches Licht und sehr niedrige Preise.</p>
+      </div>
+
+      <div class="art-faq-item">
+        <p class="art-faq-q">Wie kommt man nach Manfredonia?</p>
+        <p class="art-faq-a">Mit dem Auto über die A14, Ausfahrt Foggia, dann SS89 (ca. 45 Minuten). Mit dem Zug bis Foggia, dann Bus der Ferrovie del Gargano. Der nächste Flughafen ist Foggia (45 Minuten), gefolgt von Bari (2 Stunden).</p>
+      </div>
+
+      <div class="art-faq-item">
+        <p class="art-faq-q">Ist die Tresoldi-Basilika immer zugänglich?</p>
+        <p class="art-faq-a">Der Außenbereich mit der Drahtgeflecht-Struktur ist immer zugänglich. Das Innere der frühchristlichen Basilika hat saisonale Öffnungszeiten. Sie liegt an der SS89, etwa 3 km vom Zentrum entfernt, gut mit Auto oder Fahrrad erreichbar.</p>
+      </div>
+
+    </div>
   </div>
 </article>
 
 <!-- CTA -->
 <section class="art-cta">
   <p>Buchen Sie Ihren Aufenthalt in Manfredonia</p>
-  <a href="prenota.html">Zimmer entdecken</a>
+  <a href="/de/prenota.html">Zimmer entdecken</a>
 </section>
 
 <footer class="v2-footer">
   <div class="v2-container">
     <div class="v2-footer-grid">
       <div class="v2-footer-brand">
-        <a class="v2-nav-brand" href="index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
+        <a class="v2-nav-brand" href="/de/index.html" style="color:var(--bone);">Casa <em>e</em> Bottega</a>
         <p style="margin-top:0.8rem; font-size:0.88rem; color:rgba(245,239,230,0.55); line-height:1.6;" data-i18n="footer_desc">Zwei Schritte vom Meer, im Herzen des Gargano.</p>
       </div>
       <div class="v2-footer-col">
         <h4 data-i18n="footer_pages">Seiten</h4>
         <ul>
-          <li><a href="index.html" data-i18n="nav_home">Start</a></li>
-          <li><a href="camere.html" data-i18n="nav_rooms">Zimmer</a></li>
-          <li><a href="prenota.html" data-i18n="nav_book">Buchen</a></li>
-          <li><a href="blog.html" data-i18n="nav_blog">Berichte</a></li>
+          <li><a href="/de/index.html" data-i18n="nav_home">Start</a></li>
+          <li><a href="/de/camere.html" data-i18n="nav_rooms">Zimmer</a></li>
+          <li><a href="/de/prenota.html" data-i18n="nav_book">Buchen</a></li>
+          <li><a href="/de/blog.html" data-i18n="nav_blog">Berichte</a></li>
         </ul>
       </div>
       <div class="v2-footer-col">
@@ -180,26 +247,7 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.815 0 00-3.48-8.413z"/></svg>
   <span>WhatsApp schreiben</span>
 </a>
-<script src="../js/i18n.min.js?v=20260428" defer></script>
-<script src="../js/main.js?v=20260428" defer></script>
-<script>
-(function(){
-  var btn=document.getElementById('v2-menu-toggle');
-  var panel=document.getElementById('v2-nav-links');
-  if(!btn||!panel)return;
-  btn.addEventListener('click',function(){
-    var open=panel.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open);
-    panel.setAttribute('aria-hidden',!open);
-  });
-  document.addEventListener('click',function(e){
-    if(!panel.contains(e.target)&&!btn.contains(e.target)){
-      panel.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-      panel.setAttribute('aria-hidden','true');
-    }
-  });
-})();
-</script>
+<script src="/js/i18n.min.js?v=20260501" defer></script>
+<script src="/js/main.js?v=20260501" defer></script>
 </body>
 </html>
