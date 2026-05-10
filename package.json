@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "terser": "^5.31.0"
+    "terser": "^5.31.0",
+    "clean-css-cli": "^5.6.3"
   },
   "scripts": {
     "build": "bash prepara-deploy.sh"
