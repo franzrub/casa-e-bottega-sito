@@ -19,7 +19,9 @@
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/en/index.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
 <!-- ▶ CWV FIX: preload hero LCP image (browser la scarica prima del CSS) -->
-<link rel="preload" href="../../foto-homepage/2.webp" as="image" fetchpriority="high"/>
+<link rel="preload" href="../../foto-homepage/2.webp" as="image" fetchpriority="high"
+  imagesrcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
+  imagesizes="(max-width: 900px) 100vw, 50vw"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- ▶ Design v2 fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (editorial labels) -->
@@ -253,6 +255,8 @@
     <div class="v2-hero-right-img v2-grain">
       <img
         src="../../foto-homepage/2.webp"
+        srcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
+        sizes="(max-width: 900px) 100vw, 50vw"
         alt="La Bottega — Casa e Bottega, Manfredonia"
         fetchpriority="high"
         width="900" height="1200"
@@ -282,6 +286,8 @@
         <div class="v2-img-frame" style="aspect-ratio:4/5;">
           <img
             src="../../foto-la-bottega/bottega-01-foto principale.webp"
+            srcset="../../foto-la-bottega/bottega-01-foto-principale-md.webp 800w, ../../foto-la-bottega/bottega-01-foto principale.webp 3024w"
+            sizes="(max-width: 900px) 50vw, 40vw"
             alt="Esterno Casa e Bottega, Via Gargano 13, Manfredonia"
             loading="lazy"
             width="800" height="1000"
@@ -371,6 +377,8 @@
         <div class="v2-room-card-img">
           <img
             src="../../foto-la-dimora/dimora-01-foto-principale.webp"
+            srcset="../../foto-la-dimora/dimora-01-foto-principale-md.webp 1240w, ../../foto-la-dimora/dimora-01-foto-principale.webp 4032w"
+            sizes="(max-width: 900px) 50vw, 40vw"
             alt="La Dimora — Camera principale, Casa e Bottega"
             loading="lazy"
             width="800" height="1000"
@@ -405,6 +413,8 @@
         <div class="v2-room-card-img">
           <img
             src="../../foto-homepage/2.webp"
+            srcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
+            sizes="(max-width: 900px) 50vw, 40vw"
             alt="La Bottega — Camera design, Casa e Bottega"
             loading="lazy"
             width="800" height="1000"
@@ -819,7 +829,8 @@
       <div class="v2-booking-table" role="table" aria-label="Confronto prenotazione diretta vs OTA">
 
         <!-- Header row -->
-        <div role="columnheader" aria-label="Voce"></div>
+        <div role="row" style="display:contents;">
+          <div role="columnheader" aria-label="Voce"></div>
         <div class="v2-bt-col-head" role="columnheader">
           <div class="v2-bt-col-label v2-bt-col-label--primary v2-mono" data-i18n="direct_col_here">Qui · Diretto</div>
           <div class="v2-bt-col-name v2-serif">Casa e Bottega</div>
@@ -827,50 +838,61 @@
         <div class="v2-bt-col-head--alt" role="columnheader">
           <div class="v2-bt-col-label v2-bt-col-label--alt v2-mono" data-i18n="direct_col_elsewhere">Altrove</div>
           <div class="v2-bt-col-name v2-bt-col-name--alt v2-serif">Booking · Airbnb</div>
+          </div>
         </div>
 
         <!-- Row: Prezzo -->
-        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label" data-i18n="direct_row_price">Prezzo</span>
-        </div>
-        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span><span data-i18n="direct_price_us">20% in meno, sempre garantito</span>
+        <div role="row" style="display:contents;">
+          <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+            <span class="v2-label" data-i18n="direct_row_price">Prezzo</span>
+          </div>
+          <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+            <span class="v2-bt-check">✓</span><span data-i18n="direct_price_us">20% in meno, sempre garantito</span>
+          </div>
         </div>
         <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_price_them">Commissioni incluse nel prezzo</div>
 
         <!-- Row: Assistenza -->
-        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label" data-i18n="direct_row_assist">Assistenza</span>
-        </div>
-        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span><span data-i18n="direct_assist_us">Risposta su WhatsApp in pochi minuti</span>
+        <div role="row" style="display:contents;">
+          <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+            <span class="v2-label" data-i18n="direct_row_assist">Assistenza</span>
+          </div>
+          <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+            <span class="v2-bt-check">✓</span><span data-i18n="direct_assist_us">Risposta su WhatsApp in pochi minuti</span>
+          </div>
         </div>
         <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_assist_them">Call center o chatbot</div>
 
         <!-- Row: Check-in -->
-        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label" data-i18n="direct_row_checkin">Check-in</span>
-        </div>
-        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span><span data-i18n="direct_checkin_us">Flessibile</span>
+        <div role="row" style="display:contents;">
+          <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+            <span class="v2-label" data-i18n="direct_row_checkin">Check-in</span>
+          </div>
+          <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+            <span class="v2-bt-check">✓</span><span data-i18n="direct_checkin_us">Flessibile</span>
+          </div>
         </div>
         <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_checkin_them">Orari standard della struttura</div>
 
         <!-- Row: Cancellazione -->
-        <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
-          <span class="v2-label" data-i18n="direct_row_cancel">Cancellazione</span>
-        </div>
-        <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
-          <span class="v2-bt-check">✓</span><span data-i18n="direct_cancel_us">Gratuita fino a 20 giorni prima</span>
+        <div role="row" style="display:contents;">
+          <div class="v2-bt-cell v2-bt-cell--label v2-bt-cell--bordered" role="rowheader">
+            <span class="v2-label" data-i18n="direct_row_cancel">Cancellazione</span>
+          </div>
+          <div class="v2-bt-cell v2-bt-cell--primary v2-bt-cell--bordered" role="cell">
+            <span class="v2-bt-check">✓</span><span data-i18n="direct_cancel_us">Gratuita fino a 20 giorni prima</span>
+          </div>
         </div>
         <div class="v2-bt-cell v2-bt-cell--alt v2-bt-cell--bordered" role="cell" data-i18n="direct_cancel_them">Dipende dalla tariffa scelta</div>
 
         <!-- Row: L'ospite -->
-        <div class="v2-bt-cell v2-bt-cell--label" role="rowheader">
-          <span class="v2-label" data-i18n="direct_row_guest">L'ospite</span>
-        </div>
-        <div class="v2-bt-cell v2-bt-cell--primary" role="cell">
-          <span class="v2-bt-check">✓</span><span data-i18n="direct_guest_us">Un nome, una storia</span>
+        <div role="row" style="display:contents;">
+          <div class="v2-bt-cell v2-bt-cell--label" role="rowheader">
+            <span class="v2-label" data-i18n="direct_row_guest">L'ospite</span>
+          </div>
+          <div class="v2-bt-cell v2-bt-cell--primary" role="cell">
+            <span class="v2-bt-check">✓</span><span data-i18n="direct_guest_us">Un nome, una storia</span>
+          </div>
         </div>
         <div class="v2-bt-cell v2-bt-cell--alt" role="cell" data-i18n="direct_guest_them">Un numero di prenotazione</div>
 

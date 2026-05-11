@@ -422,7 +422,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .v2-hero-proof-num sup {
   font-size: 20px;
-  color: var(--stone);
+  color: #6b6358; /* scurito da --stone per contrasto 4.5:1 su --bone */
   vertical-align: baseline;
 }
 .v2-hero-proof a {
@@ -496,11 +496,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .v2-hero-price-tag-num span {
   font-size: 14px;
-  color: var(--stone);
+  color: #6b6358; /* scurito da --stone per contrasto 4.5:1 su --bone */
 }
 .v2-hero-price-tag-note {
   font-size: 12px;
-  color: var(--stone-2);
+  color: #4a4540; /* scurito da --stone-2 per contrasto 4.5:1 su --bone */
   margin-top: 6px;
 }
 
