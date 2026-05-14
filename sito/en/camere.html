@@ -246,6 +246,19 @@
   padding-left: 24px;
 }
 
+/* Pricing: nuova struttura — tagline + CTA */
+.v2-room-pricing { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.v2-pricing-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
 /* Amenities */
 .v2-amenities-title {
   font-size: 11px;
@@ -538,17 +551,8 @@
 
         <!-- Pricing -->
         <div class="v2-room-pricing v2-room-pricing--dimora" role="region" aria-label="Prezzi La Dimora">
-          <div>
-            <div class="v2-pricing-season-label v2-mono" data-i18n="price_low_season">OTT–GIU</div>
-            <div class="v2-pricing-price v2-serif"><span id="dimora-direct-low">€60</span><span>/notte</span></div>
-            <div class="v2-pricing-ota"><span id="dimora-ota-low">€78</span> su Booking <span id="dimora-saving-low" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
-          </div>
-          <div class="v2-pricing-divider">
-            <div class="v2-pricing-season-label v2-mono" data-i18n="price_high_season">LUG–SET</div>
-            <div class="v2-pricing-price v2-serif"><span id="dimora-direct-high">€100</span><span>/notte</span></div>
-            <div class="v2-pricing-ota"><span id="dimora-ota-high">€120</span> su Booking <span id="dimora-saving-high" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€20</span></div>
-          </div>
-          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Verifica date</a>
+          <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
+          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
         </div>
 
         <!-- Amenities -->
@@ -679,17 +683,8 @@
 
         <!-- Pricing -->
         <div class="v2-room-pricing v2-room-pricing--bottega" role="region" aria-label="Prezzi La Bottega">
-          <div>
-            <div class="v2-pricing-season-label v2-mono" data-i18n="price_low_season">OTT–GIU</div>
-            <div class="v2-pricing-price v2-serif"><span id="bottega-direct-low">€50</span><span>/notte</span></div>
-            <div class="v2-pricing-ota"><span id="bottega-ota-low">€68</span> su Booking <span id="bottega-saving-low" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
-          </div>
-          <div class="v2-pricing-divider">
-            <div class="v2-pricing-season-label v2-mono" data-i18n="price_high_season">LUG–SET</div>
-            <div class="v2-pricing-price v2-serif"><span id="bottega-direct-high">€90</span><span>/notte</span></div>
-            <div class="v2-pricing-ota"><span id="bottega-ota-high">€108</span> su Booking <span id="bottega-saving-high" style="text-decoration:none;opacity:1;color:rgba(245,239,230,0.8);">−€18</span></div>
-          </div>
-          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Verifica date</a>
+          <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
+          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
         </div>
 
         <!-- Amenities -->
@@ -799,7 +794,7 @@
         <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
         <ul>
           <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
-          <li><a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a></li>
+          <li><a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a></li>
           <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
         </ul>
       </div>

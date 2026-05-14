@@ -5,9 +5,9 @@
   Chiamata dalla pagina /admin/conferma.html per inviare
   all'ospite una email di conferma prenotazione / ricevuta di pagamento.
 
-  Stesse variabili d'ambiente degli altri mailer:
-    GMAIL_USER          → il tuo Gmail
-    GMAIL_APP_PASSWORD  → App Password Gmail (16 caratteri)
+  Variabili d'ambiente da configurare su Netlify:
+    SMTP_USER     → booking@casaebottegapuglia.it
+    SMTP_PASSWORD → password della casella OVH/Zimbra
 */
 
 const tls = require('tls');
@@ -92,11 +92,11 @@ exports.handler = async function(event) {
     return { statusCode: 405, body: 'Method not allowed' };
   }
 
-  const GMAIL_USER         = process.env.GMAIL_USER;
-  const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
+  const SMTP_USER     = process.env.SMTP_USER;
+  const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
 
-  if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
-    console.error('[send-receipt] Credenziali Gmail mancanti');
+  if (!SMTP_USER || !SMTP_PASSWORD) {
+    console.error('[send-receipt] SMTP_USER o SMTP_PASSWORD mancanti');
     return { statusCode: 500, body: JSON.stringify({ ok: false, error: 'email config missing' }) };
   }
 
@@ -209,7 +209,7 @@ exports.handler = async function(event) {
     <div class="info-box">
       <strong>Casa e Bottega</strong><br>
       Manfredonia (FG), Puglia<br>
-      📧 <a href="mailto:bookings@casaebottegapuglia.it">bookings@casaebottegapuglia.it</a><br>
+      📧 <a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a><br>
       🌐 <a href="https://casaebottegapuglia.it">casaebottegapuglia.it</a>
     </div>
 
@@ -223,11 +223,11 @@ exports.handler = async function(event) {
 
   try {
     await smtpSend({
-      host: 'smtp.gmail.com',
+      host: 'ssl0.ovh.net',
       port: 465,
-      user: GMAIL_USER,
-      pass: GMAIL_APP_PASSWORD,
-      from: GMAIL_USER,
+      user: SMTP_USER,
+      pass: SMTP_PASSWORD,
+      from: SMTP_USER,
       to: email,
       subject,
       html

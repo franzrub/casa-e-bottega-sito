@@ -120,6 +120,41 @@ La hero della pagina blog NON deve avere immagine di sfondo. Fix applicato via C
 }
 ```
 
+### Struttura URL blog — IMPORTANTE
+
+Il blog ha due set di file. **Lavorare SEMPRE e SOLO sui file canonici slug:**
+
+```
+sito/blog/slug-articolo/index.html   ← CANONICI (Google li indicizza, modificare questi)
+sito/blog-articolo-N.html            ← OBSOLETI (Netlify li reindirizza via 301, non toccare)
+```
+
+I file `blog-articolo-N.html` esistono ancora in `sito/` ma sono dead end SEO: Netlify li reindirizza ai nuovi slug con 301. Qualsiasi modifica a quei file è lavoro sprecato. Se serve lavorare sui contenuti del blog (link interni, SEO, testi), identificare il file corrispondente in `sito/blog/slug/index.html`.
+
+I 18 articoli canonici sono in:
+```
+sito/blog/settimana-nel-gargano/
+sito/blog/spiagge-gargano-manfredonia-vieste/
+sito/blog/bagno-gargano-maggio-giugno/
+sito/blog/mattinata-borgo-bianco/
+sito/blog/vieste-borgo-sul-mare/
+sito/blog/monte-santangelo/
+sito/blog/basilica-siponto-tresoldi/
+sito/blog/scogliere-calette-gargano/
+sito/blog/borghi-nascosti-gargano/
+sito/blog/muoversi-nel-gargano/
+sito/blog/cosa-fare-manfredonia/
+sito/blog/cosa-mangiare-manfredonia/
+sito/blog/dove-mangiano-i-locali-manfredonia/
+sito/blog/vino-gargano-nero-troia/
+sito/blog/locali-gargano/
+sito/blog/manfredonia-lenta/
+sito/blog/gargano-fuori-stagione/
+sito/blog/settimana-santa-manfredonia/
+```
+
+Link relativi tra articoli slug: `../altro-slug/` (es. da `settimana-nel-gargano/` a Vieste: `href="../vieste-borgo-sul-mare/"`)
+
 ## Minificazione CSS e JS
 
 `prepara-deploy.sh` genera automaticamente i file `.min` durante il deploy. **Non modificare manualmente i file `.min` in `sito/`** — vengono sovrascritti ad ogni deploy.
