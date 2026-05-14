@@ -112,19 +112,29 @@ exports.handler = async function(event, context) {
   try {
     const result = { dimora: new Set(), bottega: new Set() };
 
+    // Traccia la sorgente di ogni data bloccata (per debug)
+    // sources[room][date] = ['airbnb', 'booking', 'sheets'] (può avere più sorgenti)
+    const sources = { dimora: {}, bottega: {} };
+    function addDate(room, date, source) {
+      result[room].add(date);
+      if (!sources[room][date]) sources[room][date] = [];
+      if (!sources[room][date].includes(source)) sources[room][date].push(source);
+    }
+
     // 1. Fetch tutti i feed iCal IN PARALLELO (evita timeout su Netlify)
     const icalTasks = [];
     for (const room of ['dimora', 'bottega']) {
       for (const url of FEEDS[room]) {
+        const source = url.includes('airbnb') ? 'airbnb' : 'booking';
         icalTasks.push(
           fetchUrl(url)
             .then(icsText => {
               const dates = parseICS(icsText);
-              dates.forEach(d => result[room].add(d));
-              console.log(`[ical] ${room}/${url.includes('airbnb') ? 'airbnb' : 'booking'}: ${dates.length} dates`);
+              dates.forEach(d => addDate(room, d, source));
+              console.log(`[ical] ${room}/${source}: ${dates.length} dates`);
             })
             .catch(err => {
-              console.warn(`[ical] ${room}/${url.includes('airbnb') ? 'airbnb' : 'booking'} failed: ${err.message}`);
+              console.warn(`[ical] ${room}/${source} failed: ${err.message}`);
             })
         );
       }
@@ -134,8 +144,8 @@ exports.handler = async function(event, context) {
     const sheetTask = fetchUrl(SHEETS_CSV_URL)
       .then(csvText => {
         const manual = parseSheetCSV(csvText);
-        manual.dimora.forEach(d  => result.dimora.add(d));
-        manual.bottega.forEach(d => result.bottega.add(d));
+        manual.dimora.forEach(d  => addDate('dimora',  d, 'sheets'));
+        manual.bottega.forEach(d => addDate('bottega', d, 'sheets'));
         console.log(`[sheets] dimora:${manual.dimora.length} bottega:${manual.bottega.length} manual dates loaded`);
       })
       .catch(err => {
@@ -145,12 +155,25 @@ exports.handler = async function(event, context) {
     // Aspetta che tutti i fetch completino (o falliscano) entro il timeout
     await Promise.allSettled([...icalTasks, sheetTask]);
 
+    // Costruisce oggetto sources leggibile solo per le date future (evita payload enorme)
+    const today = new Date().toISOString().slice(0, 10);
+    const futureSources = { dimora: {}, bottega: {} };
+    for (const room of ['dimora', 'bottega']) {
+      for (const [date, srcs] of Object.entries(sources[room])) {
+        if (date >= today) futureSources[room][date] = srcs;
+      }
+    }
+
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        dimora:  [...result.dimora].sort(),
-        bottega: [...result.bottega].sort()
+        dimora:   [...result.dimora].sort(),
+        bottega:  [...result.bottega].sort(),
+        // Campo di debug: per ogni data futura bloccata indica da dove viene
+        // Esempio: { dimora: { "2026-06-02": ["airbnb"] }, bottega: {} }
+        _sources: futureSources,
+        _generatedAt: new Date().toISOString()
       })
     };
 

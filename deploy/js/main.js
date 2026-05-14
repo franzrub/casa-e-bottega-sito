@@ -854,12 +854,14 @@ function parseICS(icsText) {
     const startMatch = event.match(/DTSTART;?[^:]*:(\d{8})/);
     const endMatch = event.match(/DTEND;?[^:]*:(\d{8})/);
     if (startMatch && endMatch) {
-      const start = startMatch[1];
-      const end = endMatch[1];
-      const startDate = new Date(start.slice(0,4), parseInt(start.slice(4,6))-1, parseInt(start.slice(6,8)));
-      const endDate = new Date(end.slice(0,4), parseInt(end.slice(4,6))-1, parseInt(end.slice(6,8)));
-      for (let d = new Date(startDate); d < endDate; d.setDate(d.getDate() + 1)) {
-        dates.push(d.toISOString().slice(0, 10));
+      const s = startMatch[1], e = endMatch[1];
+      // Usa Date.UTC per evitare shift timezone: in Italia (UTC+2) new Date(y,m,d)
+      // crea mezzanotte locale → toISOString() darebbe il giorno precedente in UTC
+      let d = Date.UTC(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+      const end = Date.UTC(+e.slice(0,4), +e.slice(4,6)-1, +e.slice(6,8));
+      while (d < end) {
+        dates.push(new Date(d).toISOString().slice(0, 10));
+        d += 86400000; // +1 giorno in ms (sicuro in UTC, nessun problema DST)
       }
     }
   });
@@ -903,16 +905,16 @@ async function loadCalendarData() {
   // Demo data fallback (solo se nessuna data reale né manuale disponibile)
   if (bookedDates.dimora.size === 0) {
     const now = new Date();
+    const y = now.getFullYear(), m = String(now.getMonth() + 1).padStart(2, '0');
     [3,4,5,6,7,15,16,17,18,19].forEach(i => {
-      const d = new Date(now.getFullYear(), now.getMonth(), i);
-      bookedDates.dimora.add(d.toISOString().slice(0, 10));
+      bookedDates.dimora.add(`${y}-${m}-${String(i).padStart(2, '0')}`);
     });
   }
   if (bookedDates.bottega.size === 0) {
     const now = new Date();
+    const y = now.getFullYear(), m = String(now.getMonth() + 1).padStart(2, '0');
     [5,6,7,8,9,22,23,24,25,26].forEach(i => {
-      const d = new Date(now.getFullYear(), now.getMonth(), i);
-      bookedDates.bottega.add(d.toISOString().slice(0, 10));
+      bookedDates.bottega.add(`${y}-${m}-${String(i).padStart(2, '0')}`);
     });
   }
 
@@ -949,7 +951,10 @@ function renderCalendar() {
   }
 
   const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
-  const today = new Date().toISOString().slice(0, 10);
+  // Usa ora locale (non UTC) per evitare che a mezzanotte in Italia
+  // toISOString() restituisca la data del giorno precedente
+  const _todayNow = new Date();
+  const today = `${_todayNow.getFullYear()}-${String(_todayNow.getMonth()+1).padStart(2,'0')}-${String(_todayNow.getDate()).padStart(2,'0')}`;
 
   for (let d = 1; d <= daysInMonth; d++) {
     const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;

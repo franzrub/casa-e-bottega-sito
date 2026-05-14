@@ -2350,7 +2350,9 @@
       const _nowCal = new Date();
       const _minCal = new Date(_nowCal);
       if (_nowCal.getHours() >= 21) _minCal.setDate(_minCal.getDate() + 1);
-      const today = _minCal.toISOString().slice(0, 10);
+      // Usa metodi locali (non toISOString/UTC) per evitare che a mezzanotte in Italia
+      // toISOString() restituisca la data del giorno precedente
+      const today = `${_minCal.getFullYear()}-${String(_minCal.getMonth()+1).padStart(2,'0')}-${String(_minCal.getDate()).padStart(2,'0')}`;
 
       for (let d = 1; d <= daysInMonth; d++) {
         const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
