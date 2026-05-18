@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%</title>
-<meta content="Prenota direttamente Casa e Bottega e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." name="description"/>
-<meta content="prenota casa vacanze Manfredonia, prenotazione Gargano, camera centro storico Manfredonia, soggiorno Puglia, locazione turistica" name="keywords"/>
-<meta content="Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%" property="og:title"/>
-<meta content="Prenota direttamente Casa e Bottega e risparmi il 20% su Booking e Airbnb. Check-in autonomo, 300 m dal mare, Gargano. Disponibilità immediata — nessuna commissione." property="og:description"/>
+<title>Book a Holiday Home in Manfredonia | Direct Discount –20%</title>
+<meta content="Book Casa e Bottega directly and save 20% vs Booking and Airbnb. Self check-in, 300 m from the sea, Gargano. Immediate availability — no commission." name="description"/>
+<meta content="book holiday home Manfredonia, booking Gargano, room historic centre Manfredonia, stay Puglia, tourist rental" name="keywords"/>
+<meta content="Book a Holiday Home in Manfredonia | Direct Discount –20%" property="og:title"/>
+<meta content="Book Casa e Bottega directly and save 20% vs Booking and Airbnb. Self check-in, 300 m from the sea, Gargano. Immediate availability — no commission." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="https://www.casaebottegapuglia.it/prenota.html" property="og:url"/>
-<meta content="it_IT" property="og:locale"/>
+<meta content="https://www.casaebottegapuglia.it/en/prenota.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Prenota Casa Vacanze a Manfredonia | Sconto Diretto –20%" name="twitter:title"/>
-<meta content="Prenota diretto e risparmi il 20% su Booking e Airbnb. 300 m dal mare, Manfredonia, Gargano." name="twitter:description"/>
+<meta content="Book a Holiday Home in Manfredonia | Direct Discount –20%" name="twitter:title"/>
+<meta content="Book directly and save 20% vs Booking and Airbnb. 300 m from the sea, Manfredonia, Gargano." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
-<link href="https://www.casaebottegapuglia.it/prenota.html" rel="canonical"/>
+<link href="https://www.casaebottegapuglia.it/en/prenota.html" rel="canonical"/>
 <link href="https://www.casaebottegapuglia.it/prenota.html" hreflang="it" rel="alternate"/>
 <link href="https://www.casaebottegapuglia.it/en/prenota.html" hreflang="en" rel="alternate"/>
 <link href="https://www.casaebottegapuglia.it/fr/prenota.html" hreflang="fr" rel="alternate"/>
@@ -38,7 +38,7 @@
 .pren-hero {
   background: var(--bone);
   color: var(--ink);
-  padding: 8rem 0 6rem;
+  padding: 8rem 0 0;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -47,20 +47,33 @@
   position: relative;
   max-width: 820px;
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 .pren-hero-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--terracotta);
-  margin-bottom: 1.6rem;
-  display: flex;
+  color: var(--petrolio);
+  margin-bottom: 1.8rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.45);
 }
-.pren-hero-label::before { content: none; }
+.pren-hero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4a9b6f;
+  box-shadow: 0 0 0 3px rgba(74,155,111,0.2);
+  flex-shrink: 0;
+  display: inline-block;
+}
 .pren-hero h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3.2rem, 7vw, 6rem);
@@ -68,11 +81,11 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 .pren-hero h1 em {
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--petrolio);
 }
 .pren-hero-sub {
   font-family: 'Inter', sans-serif;
@@ -80,22 +93,74 @@
   line-height: 1.7;
   color: var(--stone);
   max-width: 520px;
-  margin: 0 auto 2.8rem;
+  margin: 0 auto 2rem;
 }
-.pren-hero-badges {
+.pren-hero-sub strong { color: var(--petrolio); font-weight: 600; }
+.pren-hero-cta-row {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 3rem;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-.pren-hero-badge {
+.pren-hero-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.35);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.pren-hero-wa:hover { background: rgba(255,255,255,0.7); }
+
+/* ── Trust Strip ──────────────────────────────────────── */
+.pren-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  margin-top: 2.8rem;
+}
+.pren-trust-cell {
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--line);
+  text-align: left;
+}
+.pren-trust-cell:last-child { border-right: none; }
+.pren-trust-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  color: var(--stone);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 5px;
 }
+.pren-trust-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.pren-trust-value small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: var(--stone);
+  font-weight: 400;
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+
+/* legacy – nascosto */
+.pren-hero-badges { display: none; }
 .pren-hero-badge strong {
   color: var(--ink);
   font-weight: 500;
@@ -103,44 +168,161 @@
 
 /* ── Guarantees ───────────────────────────────────────── */
 .pren-guarantees {
-  background: var(--paper);
-  padding: 4.5rem 0;
+  background: var(--bone);
+  padding: 5rem 0 0;
 }
 .pren-guarantees-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
   margin-top: 2.8rem;
 }
 .pren-guarantee-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 20px;
+  padding: 2.2rem 2.4rem 2rem;
+  background: var(--paper);
 }
-.pren-guarantee-icon {
-  width: 36px;
-  height: 36px;
+.pren-guarantee-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.8rem;
+  line-height: 1;
   color: var(--petrolio);
-  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  padding-top: 2px;
 }
+.pren-guarantee-content { display: flex; flex-direction: column; gap: 0; }
+.pren-guarantee-icon { display: none; }
 .pren-guarantee-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 500;
   color: var(--ink);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.55rem;
+  line-height: 1.15;
 }
+.pren-guarantee-title em { font-style: italic; color: var(--petrolio); }
 .pren-guarantee-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   line-height: 1.65;
-  color: var(--stone);
+  color: var(--stone-2);
+  margin-bottom: 0.8rem;
 }
+.pren-guarantee-body strong { color: var(--ink); font-weight: 600; }
+.pren-guarantee-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--petrolio);
+}
+
+/* ── Testimonial + Legal ──────────────────────────────── */
+.pren-trust-foot {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+.pren-quote {
+  padding: 2.4rem 2.8rem;
+  background: var(--petrolio);
+  color: var(--bone);
+  position: relative;
+}
+.pren-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 5rem;
+  line-height: 0.6;
+  color: rgba(245,239,230,0.25);
+  position: absolute;
+  top: 16px;
+  left: 20px;
+}
+.pren-quote blockquote {
+  margin: 1.4rem 0 0 2.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--bone);
+  letter-spacing: -0.005em;
+}
+.pren-quote-who {
+  margin-top: 1rem;
+  padding-left: 2.2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,239,230,0.6);
+}
+.pren-quote-who strong { color: var(--bone); font-weight: 500; }
+
+.pren-legal {
+  padding: 2rem 2.2rem;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.pren-legal h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+.pren-legal p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--stone-2);
+  margin: 0;
+}
+.pren-legal p strong { color: var(--ink); }
+.pren-legal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pren-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+  background: rgba(255,255,255,0.55);
+}
+.pren-pill.ok { color: var(--petrolio); border-color: rgba(31,74,74,0.25); }
 
 /* ── Come funziona ────────────────────────────────────── */
 .pren-how {
   background: var(--bone);
-  padding: 5rem 0;
+  padding: 2.5rem 0;
 }
 .pren-how-steps {
   display: grid;
@@ -664,11 +846,11 @@
   display: inline-block;
 }
 .v2-bm-cal-wrap .mini-cal-legend-dot.avail {
-  background: rgba(26,22,19,0.08);
-  border: 1px solid rgba(154,143,128,0.3);
+  /* Rispecchia il colore dei giorni disponibili (ink scuro) — chiaramente distinto dall'occupato */
+  background: var(--ink);
 }
 .v2-bm-cal-wrap .mini-cal-legend-dot.booked {
-  background: rgba(154,143,128,0.2);
+  background: rgba(154,143,128,0.35);
 }
 .v2-bm-cal-wrap .cal-selection-hint {
   font-family: 'Inter', sans-serif;
@@ -1190,7 +1372,11 @@
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 900px) {
-  .pren-guarantees-grid { grid-template-columns: repeat(2, 1fr); }
+  .pren-trust-strip { grid-template-columns: repeat(2, 1fr); }
+  .pren-trust-cell:nth-child(2) { border-right: none; }
+  .pren-trust-cell:nth-child(3) { border-top: 1px solid var(--line); }
+  .pren-trust-cell:nth-child(4) { border-top: 1px solid var(--line); }
+  .pren-trust-foot { grid-template-columns: 1fr; }
   .pren-how-steps { grid-template-columns: 1fr; gap: 2rem; }
   .v2-bm-step1-grid { grid-template-columns: 1fr; }
   .v2-bm-stay-panel { position: static; }
@@ -1200,7 +1386,11 @@
 }
 @media (max-width: 640px) {
   .pren-guarantees-grid { grid-template-columns: 1fr; }
-  .pren-hero { padding: 5rem 0 4rem; }
+  .pren-guarantee-item { grid-template-columns: 40px 1fr; gap: 14px; padding: 1.6rem 1.4rem; }
+  .pren-trust-strip { grid-template-columns: repeat(2, 1fr); }
+  .pren-trust-foot { grid-template-columns: 1fr; }
+  .pren-hero { padding: 5rem 0 0; }
+  .pren-hero-cta-row { flex-direction: column; align-items: center; }
   .v2-bm-card { max-height: 100vh; border-radius: 0; }
   .v2-bm-overlay { padding: 0; align-items: flex-end; }
   .v2-bm-rail-label { display: none; }
@@ -1220,42 +1410,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Conviene prenotare direttamente su Casa e Bottega?",
+      "name": "Is it worth booking directly on Casa e Bottega?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì, prenotando direttamente su casaebottegapuglia.it risparmi il 20% rispetto al prezzo su Booking.com o Airbnb. La tariffa diretta è la più conveniente disponibile."
+        "text": "Yes, by booking directly on casaebottegapuglia.it you save 20% compared to Booking.com or Airbnb. The direct rate is the most competitive available."
       }
     },
     {
       "@type": "Question",
-      "name": "Quali metodi di pagamento accetta Casa e Bottega?",
+      "name": "What payment methods does Casa e Bottega accept?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Casa e Bottega accetta pagamenti tramite PayPal oppure in contanti/carta al momento del soggiorno. Per prenotazioni dirette sono disponibili entrambe le opzioni."
+        "text": "Casa e Bottega accepts payments via PayPal or cash/card at the time of the stay. Both options are available for direct bookings."
       }
     },
     {
       "@type": "Question",
-      "name": "Posso portare bambini a Casa e Bottega?",
+      "name": "Can I bring children to Casa e Bottega?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Casa e Bottega ospita fino a 2 persone per camera. Per La Dimora è disponibile un letto extra su richiesta. Contattaci per maggiori informazioni sulle esigenze specifiche."
+        "text": "Casa e Bottega accommodates up to 2 people per room. An extra bed is available on request for La Dimora. Contact us for more information about specific needs."
       }
     },
     {
       "@type": "Question",
-      "name": "Quanto costa una notte a Casa e Bottega Manfredonia?",
+      "name": "How much does one night at Casa e Bottega Manfredonia cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le tariffe variano in base alla stagione e alla camera. Prenotando direttamente si risparmia il 20% rispetto ai portali OTA. Consulta il calendario disponibilità per vedere i prezzi aggiornati."
+        "text": "Rates vary by season and room. By booking directly you save 20% compared to OTA platforms. Check the availability calendar to see updated prices."
       }
     },
     {
       "@type": "Question",
-      "name": "È possibile annullare la prenotazione?",
+      "name": "Is it possible to cancel the booking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le condizioni di cancellazione vengono comunicate al momento della prenotazione. Scrivi a booking@casaebottegapuglia.it per informazioni sulle politiche di cancellazione."
+        "text": "Cancellation conditions are communicated at the time of booking. Write to booking@casaebottegapuglia.it for information on cancellation policies."
       }
     }
   ]
@@ -1270,7 +1460,7 @@
 
 <!-- ══ NAV v2 ══════════════════════════════════════════════════════ -->
 <header>
-  <nav class="v2-nav" role="navigation" aria-label="Main navigation">
+  <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
     <div class="v2-nav-inner">
 
       <!-- Left: nav links (desktop) -->
@@ -1290,14 +1480,14 @@
       <!-- Right: lang + CTA (desktop) + hamburger -->
       <div class="v2-nav-right">
         <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
-          <a href="prenota.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../prenota.html" hreflang="it" title="Italiano" role="listitem">IT</a>
           <a class="on" href="../en/prenota.html" hreflang="en" title="English" role="listitem">EN</a>
           <a href="../fr/prenota.html" hreflang="fr" title="Français" role="listitem">FR</a>
           <a href="../de/prenota.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
           <a href="../nl/prenota.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="../es/prenota.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Book now</a>
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Prenota ora</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span>
           <span></span>
@@ -1310,7 +1500,7 @@
 </header>
 
 <!-- Mobile nav panel — lives OUTSIDE <nav> so backdrop-filter doesn't trap position:fixed -->
-<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobile menu" aria-hidden="true">
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Menu mobile" aria-hidden="true">
         <a href="index.html" data-i18n="nav_home">Home</a>
         <a href="camere.html" data-i18n="nav_rooms">Le Camere</a>
         <a class="active" href="prenota.html" data-i18n="nav_book">Prenota</a>
@@ -1322,7 +1512,7 @@
       EN
     </button>
     <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
-    <a href="prenota.html" hreflang="it" title="Italiano">IT — Italiano</a>
+    <a href="../prenota.html" hreflang="it" title="Italiano">IT — Italiano</a>
     <a class="on" href="../en/prenota.html" hreflang="en" title="English">EN — English</a>
     <a href="../fr/prenota.html" hreflang="fr" title="Français">FR — Français</a>
     <a href="../de/prenota.html" hreflang="de" title="Deutsch">DE — Deutsch</a>
@@ -1336,19 +1526,39 @@
 <section class="pren-hero">
   <div class="v2-container">
     <div class="pren-hero-inner">
-      <span class="pren-hero-label">Direct booking — no commission</span>
+      <span class="pren-hero-label">
+        <span class="pren-hero-dot"></span>
+        Direct booking · No intermediaries
+      </span>
       <h1>Book<br/><em>your stay.</em></h1>
-      <p class="pren-hero-sub">Three steps: dates, room, confirm. 20% less than Booking and Airbnb.</p>
-      <div class="pren-hero-badges">
-        <span class="pren-hero-badge"><strong>9,8</strong> / 10 Booking</span>
-        <span class="pren-hero-badge">·</span>
-        <span class="pren-hero-badge">Airbnb <strong>Superhost</strong></span>
-        <span class="pren-hero-badge">·</span>
-        <span class="pren-hero-badge"><strong>300 m</strong> dal mare</span>
+      <p class="pren-hero-sub">Three steps — dates, room, confirmation — directly with us. At least <strong>20% less</strong> compared to Booking and Airbnb, taxes included.</p>
+      <div class="pren-hero-cta-row">
+        <button class="v2-btn v2-btn--primary" id="v2-open-booking" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
+          Start your booking →
+        </button>
+        <a href="https://wa.me/393334705574" class="pren-hero-wa" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Talk to Nicoletta
+        </a>
       </div>
-      <button class="v2-btn v2-btn--primary" id="v2-open-booking" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
-        Start booking →
-      </button>
+    </div>
+  </div>
+  <div class="pren-trust-strip">
+    <div class="pren-trust-cell">
+      <div class="pren-trust-label">Reviews</div>
+      <div class="pren-trust-value">9.8 <small>/ 10 · 47 guests</small></div>
+    </div>
+    <div class="pren-trust-cell">
+      <div class="pren-trust-label">Recognition</div>
+      <div class="pren-trust-value">Superhost <small>since 2023</small></div>
+    </div>
+    <div class="pren-trust-cell">
+      <div class="pren-trust-label">Distance to the sea</div>
+      <div class="pren-trust-value">300 m <small>on foot</small></div>
+    </div>
+    <div class="pren-trust-cell">
+      <div class="pren-trust-label">Check-in</div>
+      <div class="pren-trust-value">Self-service <small>24 / 7</small></div>
     </div>
   </div>
 </section>
@@ -1356,40 +1566,62 @@
 <!-- ══ GUARANTEES ══════════════════════════════════════════════════ -->
 <section class="pren-guarantees">
   <div class="v2-container">
-    <span class="pren-section-label">Why book direct</span>
-    <h2 class="pren-section-title">Our guarantees<br/><em style="font-style:italic; font-weight:300;">Casa e Bottega.</em></h2>
+    <span class="pren-section-label">Why book directly</span>
+    <h2 class="pren-section-title">Four promises, <em style="font-style:italic; font-weight:300;">written right here.</em></h2>
     <div class="pren-guarantees-grid">
       <div class="pren-guarantee-item">
-        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <div class="pren-guarantee-title">Secure payment</div>
-        <p class="pren-guarantee-body">Certified PayPal or direct agreement with the owner. Your data doesn't pass through third-party platforms. Zero hidden fees.</p>
+        <div class="pren-guarantee-num">01</div>
+        <div class="pren-guarantee-content">
+          <div class="pren-guarantee-title">Certified <em>payment.</em></div>
+          <p class="pren-guarantee-body">Payment with buyer protection or bank transfer to Nicoletta's account. No intermediary platform.</p>
+          <div class="pren-guarantee-tag">SSL · 3D-Secure · GDPR</div>
+        </div>
       </div>
       <div class="pren-guarantee-item">
-        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-        </svg>
-        <div class="pren-guarantee-title">Direct support</div>
-        <p class="pren-guarantee-body">Message Nicoletta on WhatsApp and get a reply within minutes — not hours. A real person who knows your room.</p>
+        <div class="pren-guarantee-num">02</div>
+        <div class="pren-guarantee-content">
+          <div class="pren-guarantee-title">A real <em>person.</em></div>
+          <p class="pren-guarantee-body">Message us on WhatsApp and receive a reply within <strong>15 minutes</strong> (8:00–22:00, Italian time). Same team from booking to your return home.</p>
+          <a href="https://wa.me/393334705574" class="pren-guarantee-tag" target="_blank" rel="noopener" style="text-decoration:none;">+39 333 470 5574 ↗</a>
+        </div>
       </div>
       <div class="pren-guarantee-item">
-        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
-          <line x1="7" y1="7" x2="7.01" y2="7"/>
-        </svg>
-        <div class="pren-guarantee-title">Best price guaranteed</div>
-        <p class="pren-guarantee-body">The direct price is always at least 20% less than Booking.com and Airbnb. If you find a lower price, we'll match it.</p>
+        <div class="pren-guarantee-num">03</div>
+        <div class="pren-guarantee-content">
+          <div class="pren-guarantee-title">Fair <em>price.</em></div>
+          <p class="pren-guarantee-body">Always <strong>–20%</strong> compared to Booking.com and Airbnb, verifiable comparison on the platforms.</p>
+        </div>
       </div>
       <div class="pren-guarantee-item">
-        <svg class="pren-guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <div class="pren-guarantee-title">Clear cancellation</div>
-        <p class="pren-guarantee-body">Full refund if you cancel at least 30 days before arrival. No surprises, no hidden penalties.</p>
+        <div class="pren-guarantee-num">04</div>
+        <div class="pren-guarantee-content">
+          <div class="pren-guarantee-title">Clear <em>cancellation.</em></div>
+          <p class="pren-guarantee-body"><strong>100%</strong> refund up to 30 days before check-in. Between 29 and 7 days: 50%. Under 7 days: no refund.</p>
+          <a href="regole.html" class="pren-guarantee-tag" style="text-decoration:none;">Full policy at checkout ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial + Legal foot -->
+    <div class="pren-trust-foot">
+      <div class="pren-quote">
+        <span class="pren-quote-mark">"</span>
+        <blockquote>
+          We booked directly with Nicoletta after a WhatsApp message. Reply in a few minutes, fair price, genuine hospitality. We'll be back.
+        </blockquote>
+        <div class="pren-quote-who">
+          <strong>Marta &amp; Tobias</strong> · Berlino · Settembre 2025
+        </div>
+      </div>
+      <div class="pren-legal">
+        <div>
+          <h4>Documents at a glance</h4>
+          <p>Operatore turistico autorizzato — <strong>Licenza IT071029C200088044</strong>. Locazione turistica, soggiorno fino a 29 notti. Tassa di soggiorno pagata a parte.</p>
+        </div>
+        <div class="pren-legal-pills">
+          <span class="pren-pill">GDPR</span>
+          <span class="pren-pill">CIN visible</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1404,22 +1636,22 @@
       <div class="pren-how-step">
         <div class="pren-how-num">01</div>
         <div class="pren-how-step-title">Choose your dates</div>
-        <p class="pren-how-step-body">Open the calendar, click your arrival date then departure. Occupied days are crossed out — only free dates are clickable. You can also select a room to check availability.</p>
+        <p class="pren-how-step-body">Open the calendar, click the arrival date then the departure date. Booked days are crossed out — only available dates are clickable. You can also select the room to check availability.</p>
       </div>
       <div class="pren-how-step">
         <div class="pren-how-num">02</div>
         <div class="pren-how-step-title">Choose your room</div>
-        <p class="pren-how-step-body">See rooms available for your dates with the direct price and comparison with Booking and Airbnb. Choose the one for you — La Dimora or La Bottega.</p>
+        <p class="pren-how-step-body">See rooms available for your chosen period with the direct price and comparison with Booking and Airbnb. Choose the one that suits you — La Dimora or La Bottega.</p>
       </div>
       <div class="pren-how-step">
         <div class="pren-how-num">03</div>
         <div class="pren-how-step-title">Confirm and pay</div>
-        <p class="pren-how-step-body">Enter your details, choose payment method (PayPal or direct with host) and submit. Receive confirmation within a few hours — or message Nicoletta on WhatsApp if you prefer to speak to a person.</p>
+        <p class="pren-how-step-body">Inserisci i tuoi dati, scegli il metodo di pagamento (PayPal o diretto con l'host) e invia. Ricevi una conferma entro poche ore — o scrivi a Nicoletta su WhatsApp se preferisci parlare con una persona.</p>
       </div>
     </div>
     <div style="margin-top: 3rem; text-align: center;">
       <button class="v2-btn v2-btn--primary" id="v2-open-booking-2" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
-        Start booking →
+        Start your booking →
       </button>
     </div>
   </div>
@@ -1435,7 +1667,7 @@
 <div id="max-nights-error" aria-hidden="true"></div>
 
 <!-- ══ BOOKING MODAL v2 ════════════════════════════════════════════ -->
-<div class="v2-bm-overlay" id="v2-bm-overlay" role="dialog" aria-modal="true" aria-label="Prenotazione">
+<div class="v2-bm-overlay" id="v2-bm-overlay" role="dialog" aria-modal="true" aria-label="Booking">
   <div class="v2-bm-card">
 
     <!-- Header -->
@@ -1483,7 +1715,7 @@
             <button class="mini-cal-tab active" data-room="dimora">La Dimora</button>
             <button class="mini-cal-tab" data-room="bottega">La Bottega</button>
           </div>
-          <div class="cal-selection-hint" id="cal-hint">Click a day to set check-in</div>
+          <div class="cal-selection-hint" id="cal-hint">Clicca un giorno per impostare il check-in</div>
           <div class="mini-cal-header">
             <button class="mini-cal-nav" id="mini-cal-prev">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -1507,12 +1739,12 @@
             <div class="v2-bm-date-box">
               <span class="v2-bm-date-box-lbl">Check-in</span>
               <span class="v2-bm-date-box-val" id="v2-display-checkin">—</span>
-              <span class="v2-bm-date-box-sub" id="v2-sub-checkin">from 15:00</span>
+              <span class="v2-bm-date-box-sub" id="v2-sub-checkin">from 3:00 PM</span>
             </div>
             <div class="v2-bm-date-box">
               <span class="v2-bm-date-box-lbl">Check-out</span>
               <span class="v2-bm-date-box-val" id="v2-display-checkout">—</span>
-              <span class="v2-bm-date-box-sub" id="v2-sub-checkout">by 11:00</span>
+              <span class="v2-bm-date-box-sub" id="v2-sub-checkout">by 11:00 AM</span>
             </div>
           </div>
           <div class="v2-bm-nights-row">
@@ -1528,11 +1760,11 @@
               <span class="v2-bm-guests-word">guests</span>
             </div>
           </div>
-          <p id="v2-step1-error" class="v2-bm-error-panel">Select check-in and check-out to continue.</p>
+          <p id="v2-step1-error" class="v2-bm-error-panel">Please select check-in and check-out dates to continue.</p>
           <button class="v2-bm-stay-cta" id="v2-step1-next-panel" data-i18n="book_next_step">
-            Avanti: scegli camera →
+            Next: choose room →
           </button>
-          <p class="v2-bm-stay-note"><span data-i18n="book_stay_max">Soggiorno massimo 29 giorni (locazione turistica). Per soggiorni più lunghi</span> <a href="contatti.html" style="color:var(--petrolio)" data-i18n="book_contact_us">contattaci</a>.</p>
+          <p class="v2-bm-stay-note"><span data-i18n="book_stay_max">Maximum stay 29 nights (tourist rental). For longer stays</span> <a href="contatti.html" style="color:var(--petrolio)" data-i18n="book_contact_us">contact us</a>.</p>
         </div>
 
       </div>
@@ -1553,14 +1785,14 @@
           <!-- Form -->
           <div class="v2-bm-form-side">
             <form class="v2-modal-form" id="booking-form">
-              <p style="font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin:0 0 1.2rem; opacity:0.7;" data-i18n="book_your_data">I tuoi dati</p>
+              <p style="font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin:0 0 1.2rem; opacity:0.7;" data-i18n="book_your_data">Your details</p>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="required" data-i18n="book_name" for="guest-name">Nome e Cognome</label>
+                  <label class="required" data-i18n="book_name" for="guest-name">Full Name</label>
                   <input id="guest-name" name="name" required type="text" autocomplete="name" placeholder="Maria Rossi"/>
                 </div>
                 <div class="form-group">
-                  <label class="required" data-i18n="book_phone" for="guest-phone">Telefono · WhatsApp</label>
+                  <label class="required" data-i18n="book_phone" for="guest-phone">Phone · WhatsApp</label>
                   <input id="guest-phone" inputmode="numeric" name="phone" required type="tel" autocomplete="tel" placeholder="+39 333 000 0000"/>
                 </div>
               </div>
@@ -1569,20 +1801,20 @@
                 <input id="guest-email" name="email" required type="email" autocomplete="email" placeholder="tu@email.it"/>
               </div>
               <div class="form-group">
-                <label data-i18n="book_message" for="guest-message">Note o richieste (opzionale)</label>
-                <textarea id="guest-message" name="message" placeholder="Arrivo in tarda serata, consigli per ristoranti…"></textarea>
+                <label data-i18n="book_message" for="guest-message">Notes or requests (optional)</label>
+                <textarea id="guest-message" name="message" placeholder="Late arrival, restaurant recommendations…"></textarea>
               </div>
 
               <!-- Payment -->
               <div class="v2-payment-section">
-                <span class="v2-payment-label" data-i18n="book_payment_title">Metodo di pagamento</span>
+                <span class="v2-payment-label" data-i18n="book_payment_title">Payment method</span>
                 <div class="payment-cards-grid">
                   <label class="payment-option-card selected" id="pay-card-paypal">
                     <input checked name="pay-method" type="radio" value="paypal"/>
                     <div class="pay-card-inner">
                       <div class="pay-card-text">
                         <div class="pay-title" data-i18n="book_pay_paypal">PayPal</div>
-                        <div class="pay-desc" data-i18n="book_pay_paypal_desc">Pagamento sicuro online</div>
+                        <div class="pay-desc" data-i18n="book_pay_paypal_desc">Secure online payment</div>
                       </div>
                       <svg class="pay-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
@@ -1592,7 +1824,7 @@
                     <div class="pay-card-inner">
                       <div class="pay-card-text">
                         <div class="pay-title" data-i18n="book_pay_offline">Offline</div>
-                        <div class="pay-desc" data-i18n="book_pay_offline_desc">Bonifico · accordo diretto</div>
+                        <div class="pay-desc" data-i18n="book_pay_offline_desc">Bank transfer · direct arrangement</div>
                       </div>
                       <svg class="pay-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
@@ -1646,22 +1878,36 @@
 
       <!-- Success -->
       <div class="booking-success-msg" id="booking-success">
-        <div class="success-icon">✓</div>
-        <h3 data-i18n="book_success_title" id="success-title">Richiesta inviata!</h3>
-        <p data-i18n="book_success_msg" id="success-message">Riceverai una conferma via email entro poche ore. Per qualsiasi necessità siamo subito disponibili su WhatsApp.</p>
-        <a class="btn-success-wa" href="https://wa.me/393334705574?text=Ciao%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
+        <div class="success-icon" id="success-icon">✓</div>
+        <h3 id="success-title">Richiesta inviata!</h3>
+        <p id="success-message" style="margin-bottom:1rem;"></p>
+        <div id="success-next-steps" style="
+          background: var(--paper);
+          border-left: 3px solid var(--petrolio);
+          padding: 0.9rem 1.1rem;
+          border-radius: 0 3px 3px 0;
+          text-align: left;
+          font-family: 'Inter', sans-serif;
+          font-size: 0.85rem;
+          color: var(--petrolio);
+          line-height: 1.6;
+          margin-bottom: 1.4rem;
+          max-width: 340px;
+          width: 100%;
+        "></div>
+        <a class="btn-success-wa" id="success-wa-link" href="https://wa.me/393334705574?text=Hi%20Nicoletta%2C%20I%20just%20sent%20a%20booking%20request%20from%20the%20website.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span data-i18n="book_success_wa">Scrivici su WhatsApp</span>
+          <span id="success-wa-text">Write to us on WhatsApp</span>
         </a>
-        <a class="v2-btn" data-i18n="book_back_home" href="index.html" style="display:inline-block; margin-top:0.5rem; width:100%; max-width:340px; text-align:center; text-decoration:none; background:transparent; border:1px solid rgba(154,143,128,0.5); color:var(--ink);">Torna alla home</a>
+        <a class="v2-btn" href="index.html" style="display:inline-block; margin-top:0.5rem; width:100%; max-width:340px; text-align:center; text-decoration:none; background:transparent; border:1px solid rgba(154,143,128,0.5); color:var(--ink);">Back to home</a>
       </div>
     </div>
 
     <!-- Modal nav bar (bottom) -->
     <div class="v2-bm-nav" id="v2-bm-nav">
-      <a class="v2-bm-nav-wa" href="https://wa.me/393334705574?text=Ciao!%20Vorrei%20prenotare%20Casa%20e%20Bottega." target="_blank" rel="noopener">
+      <a class="v2-bm-nav-wa" href="https://wa.me/393334705574?text=Hello!%20I%20would%20like%20to%20book%20Casa%20e%20Bottega." target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-i18n="book_wa_cta">Prenota via WhatsApp</span>
+        <span data-i18n="book_wa_cta">Book via WhatsApp</span>
       </a>
       <div style="display:flex; gap:0.6rem; align-items:center;">
         <button class="v2-bm-nav-back" id="v2-bm-back" style="display:none;">← Back</button>
@@ -1695,7 +1941,7 @@
           <li><a href="camere.html" data-i18n="nav_rooms">Le Camere</a></li>
           <li><a href="prenota.html" data-i18n="nav_book">Prenota</a></li>
           <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
-          <li><a href="regole.html">Regole della Casa</a></li>
+          <li><a href="regole.html">House Rules</a></li>
         </ul>
       </div>
 
@@ -1728,9 +1974,10 @@
   </div>
 </footer>
 
+
 <!-- ══ STICKY TOUCHPOINTS ══════════════════════════════════════════ -->
 <a class="v2-wa-pill"
-   href="https://wa.me/393334705574?text=Ciao!%20Sto%20cercando%20di%20completare%20una%20prenotazione%20sul%20vostro%20sito.%20Potete%20aiutarmi%3F"
+   href="https://wa.me/393334705574?text=Hello!%20I%20am%20trying%20to%20complete%20a%20booking%20on%20your%20website.%20Can%20you%20help%3F"
    target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>Questions? Write here</span>
@@ -1806,18 +2053,18 @@
     var co = document.getElementById('search-checkout').value;
     var _ROOMS = window.ROOMS;
     if (typeof _ROOMS === 'undefined' || !ci || !co) {
-      grid.innerHTML = '<p style="font-family:Inter,sans-serif;color:var(--stone);padding:1rem;">' + (typeof t === 'function' ? t('book_select_dates') : 'Seleziona prima le date.') + '</p>';
+      grid.innerHTML = '<p style="font-family:Inter,sans-serif;color:var(--stone);padding:1rem;">' + (typeof t === 'function' ? t('book_select_dates') : 'Please select dates first.') + '</p>';
       return;
     }
     var html = '';
     _ROOMS.forEach(function(room) {
       var avail = (typeof checkAvailability === 'function') ? checkAvailability(room.id, ci, co) : true;
       var pricing = (typeof calcPricing === 'function') ? calcPricing(room, ci, co) : null;
-      var totalDirect = pricing ? pricing.totalDirect : '—';
-      var totalOTA    = pricing ? pricing.totalOTA : null;
+      var totalDirect    = pricing ? pricing.totalDirect : '—';
+      var totalOTA       = pricing ? pricing.totalOTA : null;
       var savings        = pricing ? pricing.savings : null;
+      var nights         = pricing ? pricing.nights : '—';
       var discountLabel  = pricing ? pricing.discountLabel : '';
-      var nights      = pricing ? pricing.nights : '—';
       var imgSrc      = room.id === 'dimora'
         ? '../../foto-la-dimora/dimora-01-foto-principale.jpeg'
         : '../../foto-la-bottega/bottega-01-foto%20principale.webp';
@@ -2040,9 +2287,11 @@
     let WEEKLY_DISCOUNT = 0.10;
     let MONTHLY_DISCOUNT = 0.20;
 
+    // Chiavi mesi in ordine (0 = gennaio, 11 = dicembre) — usate per tradurre getMonth()
     const MONTH_KEYS = ['gennaio','febbraio','marzo','aprile','maggio','giugno',
                         'luglio','agosto','settembre','ottobre','novembre','dicembre'];
 
+    // Mappa prezzi mensili — fallback hardcoded; sovrascritta dal fetch
     let MESI_PREZZI = {
       gennaio:  { dimora: 60, bottega: 50 },
       febbraio: { dimora: 60, bottega: 50 },
@@ -2101,9 +2350,11 @@
     }
 
     function getPrice(room, month) {
+      // month è 0-indexed (0 = gennaio, 11 = dicembre)
       var key  = MONTH_KEYS[month];
       var mese = MESI_PREZZI[key];
       if (mese && mese[room.id] != null) return mese[room.id];
+      // fallback ai prezzi hardcoded nella definizione camera
       return room.prices ? (room.prices.high || room.prices.low || 60) : 60;
     }
 
@@ -2168,8 +2419,8 @@
       const guestsCount = parseInt(document.getElementById('search-guests').value) || 2;
       const pricePerNight = pricing.nights > 0 ? Math.round(pricing.totalDirect / pricing.nights) : 0;
       document.getElementById('modal-room-name').textContent    = t(room.nameKey) || room.name;
-      document.getElementById('modal-meta').textContent         = `${formatDate(ci)} → ${formatDate(co)} · ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'} · ${guestsCount} ospit${guestsCount === 1 ? 'e' : 'i'}`;
-      document.getElementById('modal-rate-label').textContent   = `€${pricePerNight} × ${pricing.nights} nott${pricing.nights === 1 ? 'e' : 'i'}`;
+      document.getElementById('modal-meta').textContent         = `${formatDate(ci)} → ${formatDate(co)} · ${pricing.nights} night${pricing.nights === 1 ? '' : 's'} · ${guestsCount} guest${guestsCount === 1 ? '' : 's'}`;
+      document.getElementById('modal-rate-label').textContent   = `€${pricePerNight} × ${pricing.nights} night${pricing.nights === 1 ? '' : 's'}`;
       document.getElementById('modal-nights-total').textContent = `€${pricing.totalDirect}`;
       document.getElementById('modal-total-ota').textContent    = `€${pricing.totalOTA}`;
       var discountEl = document.getElementById('modal-discount-label');
@@ -2208,7 +2459,7 @@
 
       const phoneClean = phone.replace(/[\s\-\(\)]/g, '');
       if (!/^[+\d]{6,20}$/.test(phoneClean)) {
-        document.getElementById('guest-phone').setCustomValidity('Inserisci un numero di telefono valido.');
+        document.getElementById('guest-phone').setCustomValidity('Please enter a valid phone number.');
         document.getElementById('guest-phone').reportValidity();
         return;
       }
@@ -2216,7 +2467,7 @@
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if (!emailRegex.test(email)) {
-        document.getElementById('guest-email').setCustomValidity('Inserisci un indirizzo email valido.');
+        document.getElementById('guest-email').setCustomValidity('Please enter a valid email address.');
         document.getElementById('guest-email').reportValidity();
         return;
       }
@@ -2228,12 +2479,12 @@
       const submitBtn = document.querySelector('.v2-bm-submit-area button.active');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Invio in corso…';
+        submitBtn.textContent = 'Sending…';
       }
       const sidebarConfirmBtn = document.getElementById('btn-sidebar-confirm');
       if (sidebarConfirmBtn) {
         sidebarConfirmBtn.disabled = true;
-        sidebarConfirmBtn.textContent = 'Invio in corso…';
+        sidebarConfirmBtn.textContent = 'Sending…';
       }
 
       try {
@@ -2255,19 +2506,36 @@
         console.warn('[booking] send-booking error:', err.message);
       }
 
-      showSuccess(method);
+      showSuccess(method, name);
     });
 
-    function showSuccess(method) {
+    function showSuccess(method, guestName) {
+      var firstName = guestName ? guestName.split(' ')[0] : '';
+      var greeting  = firstName ? 'Thank you, <strong>' + firstName + '</strong>!' : 'Thank you, see you soon!';
+
+      document.getElementById('success-title').innerHTML = greeting;
+
       if (method === 'paypal') {
-        document.getElementById('success-title').textContent = 'Richiesta inviata!';
         document.getElementById('success-message').innerHTML =
-          'Abbiamo ricevuto la tua richiesta. Ti invieremo via email un <strong>link PayPal</strong> per completare il pagamento e confermare la prenotazione.';
+          'We have received your request. We will send you shortly a <strong>payment link</strong> by email to complete and confirm your stay.';
+        document.getElementById('success-next-steps').innerHTML =
+          '📩 Check your email — the payment link arrives within a few minutes.<br>' +
+          'In the meantime you can message us on WhatsApp for any questions.';
       } else {
-        document.getElementById('success-title').textContent = 'Richiesta inviata!';
         document.getElementById('success-message').innerHTML =
-          'Abbiamo ricevuto la tua richiesta. Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità e accordarci sul pagamento.';
+          'We have received your request. We will confirm availability within <strong>24 hours</strong> by email or WhatsApp.';
+        document.getElementById('success-next-steps').innerHTML =
+          '🏦 In the email we sent you, you will find the IBAN for the bank transfer.<br>' +
+          'Alternatively you can pay in <strong>cash on arrival</strong> — message us on WhatsApp to confirm.';
       }
+
+      // Aggiorna link WhatsApp con nome ospite
+      var waLink = document.getElementById('success-wa-link');
+      if (waLink && firstName) {
+        var waMsg = encodeURIComponent('Hi Nicoletta, I just sent a booking request from the website. I am ' + guestName + '.');
+        waLink.href = 'https://wa.me/393334705574?text=' + waMsg;
+      }
+
       document.getElementById('booking-form-section').style.display = 'none';
       document.getElementById('booking-success').classList.add('active');
       document.getElementById('booking-success').style.display = 'block';
@@ -2297,21 +2565,27 @@
       const hintEl = document.getElementById('cal-hint');
       if (!hintEl) return;
       const lang = localStorage.getItem('ceb_lang') || 'it';
+      // Usa le traduzioni disponibili (translations è globale, caricato da i18n.js)
+      const tr = (typeof translations !== 'undefined') ? (translations[lang] || translations.it) : translations && translations.it;
+      const locale = (tr && tr.cal_locale) || 'it-IT';
+
       if (!miniCalCheckin && !miniCalCheckout) {
-        hintEl.textContent = 'Clicca un giorno per impostare il check-in';
+        hintEl.textContent = (tr && tr.cal_hint_start) || 'Clicca un giorno per impostare il check-in';
         hintEl.style.color = '';
       } else if (miniCalCheckin && !miniCalCheckout) {
         const d = new Date(miniCalCheckin);
-        const fmt = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        hintEl.textContent = `Check-in: ${fmt} — ora clicca il giorno di check-out`;
+        const fmt = d.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const tpl = (tr && tr.cal_hint_checkin) || 'Check-in: {date} — clicca il giorno di check-out';
+        hintEl.textContent = tpl.replace('{date}', fmt);
         hintEl.style.color = 'var(--petrolio)';
       } else {
         const ci = new Date(miniCalCheckin);
         const co = new Date(miniCalCheckout);
         const nights = Math.ceil((co - ci) / (1000 * 60 * 60 * 24));
-        const fmtCI = ci.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        const fmtCO = co.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        hintEl.textContent = `${fmtCI} → ${fmtCO} · ${nights} notti selezionate ✓`;
+        const fmtCI = ci.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const fmtCO = co.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const tpl = (tr && tr.cal_hint_selected) || '{from} → {to} · {n} notti selezionate ✓';
+        hintEl.textContent = tpl.replace('{from}', fmtCI).replace('{to}', fmtCO).replace('{n}', nights);
         hintEl.style.color = 'var(--petrolio)';
       }
     }
@@ -2345,7 +2619,19 @@
       const _nowCal = new Date();
       const _minCal = new Date(_nowCal);
       if (_nowCal.getHours() >= 21) _minCal.setDate(_minCal.getDate() + 1);
-      const today = _minCal.toISOString().slice(0, 10);
+      // Usa metodi locali (non toISOString/UTC) per evitare che a mezzanotte in Italia
+      // toISOString() restituisca la data del giorno precedente
+      const today = `${_minCal.getFullYear()}-${String(_minCal.getMonth()+1).padStart(2,'0')}-${String(_minCal.getDate()).padStart(2,'0')}`;
+
+      // Quando l'utente ha scelto il check-in e sta scegliendo il check-out,
+      // la PRIMA data occupata dopo il check-in deve essere SELEZIONABILE come checkout:
+      // l'ospite esce la mattina di quel giorno, il nuovo ospite arriva il pomeriggio.
+      // Tutte le date successive alla prima occupata restano bloccate.
+      let firstBlockedAfterCheckin = null;
+      if (miniCalCheckin && !miniCalCheckout && typeof bookedDates !== 'undefined' && bookedDates[miniCalRoom]) {
+        const allBooked = [...bookedDates[miniCalRoom]].filter(d => d > miniCalCheckin).sort();
+        firstBlockedAfterCheckin = allBooked[0] || null;
+      }
 
       for (let d = 1; d <= daysInMonth; d++) {
         const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
@@ -2354,8 +2640,13 @@
         const isToday    = ds === today;
         const isDisabledBeforeCheckin = miniCalCheckin && !miniCalCheckout && ds <= miniCalCheckin;
 
+        // Primo giorno occupato dopo il check-in: cliccabile come checkout (ospite esce la mattina)
+        const isSelectableCheckout = ds === firstBlockedAfterCheckin;
+        // Giorni dopo la prima data occupata: bloccati (sovrapposizione con prenotazione esistente)
+        const isAfterFirstBlocked  = firstBlockedAfterCheckin && ds > firstBlockedAfterCheckin;
+
         let cls = 'mini-cal-day';
-        if (isPast || isBooked) {
+        if (isPast || (isBooked && !isSelectableCheckout) || isAfterFirstBlocked) {
           cls += ' booked';
         } else if (isDisabledBeforeCheckin) {
           cls += ' available cal-disabled-before-checkin';
@@ -2367,7 +2658,7 @@
         }
         if (isToday) cls += ' today';
 
-        const isClickable = !isPast && !isBooked && !isDisabledBeforeCheckin;
+        const isClickable = !isPast && (!isBooked || isSelectableCheckout) && !isDisabledBeforeCheckin && !isAfterFirstBlocked;
         const dataAttr    = isClickable ? ` data-date="${ds}"` : '';
         html += `<div class="${cls}"${dataAttr}>${d}</div>`;
       }

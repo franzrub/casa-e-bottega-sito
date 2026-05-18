@@ -664,11 +664,11 @@
   display: inline-block;
 }
 .v2-bm-cal-wrap .mini-cal-legend-dot.avail {
-  background: rgba(26,22,19,0.08);
-  border: 1px solid rgba(154,143,128,0.3);
+  /* Rispecchia il colore dei giorni disponibili (ink scuro) — chiaramente distinto dall'occupato */
+  background: var(--ink);
 }
 .v2-bm-cal-wrap .mini-cal-legend-dot.booked {
-  background: rgba(154,143,128,0.2);
+  background: rgba(154,143,128,0.35);
 }
 .v2-bm-cal-wrap .cal-selection-hint {
   font-family: 'Inter', sans-serif;
@@ -1646,14 +1646,28 @@
 
       <!-- Success -->
       <div class="booking-success-msg" id="booking-success">
-        <div class="success-icon">✓</div>
-        <h3 data-i18n="book_success_title" id="success-title">Richiesta inviata!</h3>
-        <p data-i18n="book_success_msg" id="success-message">Riceverai una conferma via email entro poche ore. Per qualsiasi necessità siamo subito disponibili su WhatsApp.</p>
-        <a class="btn-success-wa" href="https://wa.me/393334705574?text=Ciao%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
+        <div class="success-icon" id="success-icon">✓</div>
+        <h3 id="success-title">Richiesta inviata!</h3>
+        <p id="success-message" style="margin-bottom:1rem;"></p>
+        <div id="success-next-steps" style="
+          background: var(--paper);
+          border-left: 3px solid var(--petrolio);
+          padding: 0.9rem 1.1rem;
+          border-radius: 0 3px 3px 0;
+          text-align: left;
+          font-family: 'Inter', sans-serif;
+          font-size: 0.85rem;
+          color: var(--petrolio);
+          line-height: 1.6;
+          margin-bottom: 1.4rem;
+          max-width: 340px;
+          width: 100%;
+        "></div>
+        <a class="btn-success-wa" id="success-wa-link" href="https://wa.me/393334705574?text=Ciao%20Nicoletta%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span data-i18n="book_success_wa">Scrivici su WhatsApp</span>
+          <span id="success-wa-text">Scrivici su WhatsApp</span>
         </a>
-        <a class="v2-btn" data-i18n="book_back_home" href="index.html" style="display:inline-block; margin-top:0.5rem; width:100%; max-width:340px; text-align:center; text-decoration:none; background:transparent; border:1px solid rgba(154,143,128,0.5); color:var(--ink);">Torna alla home</a>
+        <a class="v2-btn" href="index.html" style="display:inline-block; margin-top:0.5rem; width:100%; max-width:340px; text-align:center; text-decoration:none; background:transparent; border:1px solid rgba(154,143,128,0.5); color:var(--ink);">Torna alla home</a>
       </div>
     </div>
 
@@ -2260,19 +2274,36 @@
         console.warn('[booking] send-booking error:', err.message);
       }
 
-      showSuccess(method);
+      showSuccess(method, name);
     });
 
-    function showSuccess(method) {
+    function showSuccess(method, guestName) {
+      var firstName = guestName ? guestName.split(' ')[0] : '';
+      var greeting  = firstName ? 'Grazie, <strong>' + firstName + '</strong>!' : 'Grazie, a presto!';
+
+      document.getElementById('success-title').innerHTML = greeting;
+
       if (method === 'paypal') {
-        document.getElementById('success-title').textContent = 'Richiesta inviata!';
         document.getElementById('success-message').innerHTML =
-          'Abbiamo ricevuto la tua richiesta. Ti invieremo via email un <strong>link PayPal</strong> per completare il pagamento e confermare la prenotazione.';
+          'Abbiamo ricevuto la tua richiesta. Ti mandiamo a breve un <strong>link di pagamento</strong> via email per completare e confermare il soggiorno.';
+        document.getElementById('success-next-steps').innerHTML =
+          '📩 Controlla la tua email — il link di pagamento arriva entro pochi minuti.<br>' +
+          'Nel frattempo puoi scriverci su WhatsApp per qualsiasi domanda.';
       } else {
-        document.getElementById('success-title').textContent = 'Richiesta inviata!';
         document.getElementById('success-message').innerHTML =
-          'Abbiamo ricevuto la tua richiesta. Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità e accordarci sul pagamento.';
+          'Abbiamo ricevuto la tua richiesta. Ti confermiamo la disponibilità entro <strong>24 ore</strong> via email o WhatsApp.';
+        document.getElementById('success-next-steps').innerHTML =
+          '🏦 Nell\'email che ti abbiamo inviato trovi l\'IBAN per il bonifico.<br>' +
+          'In alternativa puoi pagare in <strong>contanti all\'arrivo</strong> — scrivici su WhatsApp per confermare.';
       }
+
+      // Aggiorna link WhatsApp con nome ospite
+      var waLink = document.getElementById('success-wa-link');
+      if (waLink && firstName) {
+        var waMsg = encodeURIComponent('Ciao Nicoletta, ho appena inviato una richiesta di prenotazione dal sito. Sono ' + guestName + '.');
+        waLink.href = 'https://wa.me/393334705574?text=' + waMsg;
+      }
+
       document.getElementById('booking-form-section').style.display = 'none';
       document.getElementById('booking-success').classList.add('active');
       document.getElementById('booking-success').style.display = 'block';
@@ -2302,21 +2333,27 @@
       const hintEl = document.getElementById('cal-hint');
       if (!hintEl) return;
       const lang = localStorage.getItem('ceb_lang') || 'it';
+      // Usa le traduzioni disponibili (translations è globale, caricato da i18n.js)
+      const tr = (typeof translations !== 'undefined') ? (translations[lang] || translations.it) : translations && translations.it;
+      const locale = (tr && tr.cal_locale) || 'it-IT';
+
       if (!miniCalCheckin && !miniCalCheckout) {
-        hintEl.textContent = 'Clicca un giorno per impostare il check-in';
+        hintEl.textContent = (tr && tr.cal_hint_start) || 'Clicca un giorno per impostare il check-in';
         hintEl.style.color = '';
       } else if (miniCalCheckin && !miniCalCheckout) {
         const d = new Date(miniCalCheckin);
-        const fmt = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        hintEl.textContent = `Check-in: ${fmt} — ora clicca il giorno di check-out`;
+        const fmt = d.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const tpl = (tr && tr.cal_hint_checkin) || 'Check-in: {date} — clicca il giorno di check-out';
+        hintEl.textContent = tpl.replace('{date}', fmt);
         hintEl.style.color = 'var(--petrolio)';
       } else {
         const ci = new Date(miniCalCheckin);
         const co = new Date(miniCalCheckout);
         const nights = Math.ceil((co - ci) / (1000 * 60 * 60 * 24));
-        const fmtCI = ci.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        const fmtCO = co.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
-        hintEl.textContent = `${fmtCI} → ${fmtCO} · ${nights} notti selezionate ✓`;
+        const fmtCI = ci.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const fmtCO = co.toLocaleDateString(locale, { day: 'numeric', month: 'long' });
+        const tpl = (tr && tr.cal_hint_selected) || '{from} → {to} · {n} notti selezionate ✓';
+        hintEl.textContent = tpl.replace('{from}', fmtCI).replace('{to}', fmtCO).replace('{n}', nights);
         hintEl.style.color = 'var(--petrolio)';
       }
     }
@@ -2354,6 +2391,16 @@
       // toISOString() restituisca la data del giorno precedente
       const today = `${_minCal.getFullYear()}-${String(_minCal.getMonth()+1).padStart(2,'0')}-${String(_minCal.getDate()).padStart(2,'0')}`;
 
+      // Quando l'utente ha scelto il check-in e sta scegliendo il check-out,
+      // la PRIMA data occupata dopo il check-in deve essere SELEZIONABILE come checkout:
+      // l'ospite esce la mattina di quel giorno, il nuovo ospite arriva il pomeriggio.
+      // Tutte le date successive alla prima occupata restano bloccate.
+      let firstBlockedAfterCheckin = null;
+      if (miniCalCheckin && !miniCalCheckout && typeof bookedDates !== 'undefined' && bookedDates[miniCalRoom]) {
+        const allBooked = [...bookedDates[miniCalRoom]].filter(d => d > miniCalCheckin).sort();
+        firstBlockedAfterCheckin = allBooked[0] || null;
+      }
+
       for (let d = 1; d <= daysInMonth; d++) {
         const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
         const isBooked   = (typeof bookedDates !== 'undefined') && bookedDates[miniCalRoom] && bookedDates[miniCalRoom].has(ds);
@@ -2361,8 +2408,13 @@
         const isToday    = ds === today;
         const isDisabledBeforeCheckin = miniCalCheckin && !miniCalCheckout && ds <= miniCalCheckin;
 
+        // Primo giorno occupato dopo il check-in: cliccabile come checkout (ospite esce la mattina)
+        const isSelectableCheckout = ds === firstBlockedAfterCheckin;
+        // Giorni dopo la prima data occupata: bloccati (sovrapposizione con prenotazione esistente)
+        const isAfterFirstBlocked  = firstBlockedAfterCheckin && ds > firstBlockedAfterCheckin;
+
         let cls = 'mini-cal-day';
-        if (isPast || isBooked) {
+        if (isPast || (isBooked && !isSelectableCheckout) || isAfterFirstBlocked) {
           cls += ' booked';
         } else if (isDisabledBeforeCheckin) {
           cls += ' available cal-disabled-before-checkin';
@@ -2374,7 +2426,7 @@
         }
         if (isToday) cls += ' today';
 
-        const isClickable = !isPast && !isBooked && !isDisabledBeforeCheckin;
+        const isClickable = !isPast && (!isBooked || isSelectableCheckout) && !isDisabledBeforeCheckin && !isAfterFirstBlocked;
         const dataAttr    = isClickable ? ` data-date="${ds}"` : '';
         html += `<div class="${cls}"${dataAttr}>${d}</div>`;
       }

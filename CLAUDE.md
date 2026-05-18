@@ -12,11 +12,12 @@ casa-e-bottega-sito/
 └── netlify.toml   ← publish = "deploy"
 ```
 
-**Workflow obbligatorio:**
+**Workflow:**
 1. Modifica i file in `sito/`
-2. Esegui `./prepara-deploy.sh` per copiare in `deploy/`
-3. Test locale: `cd deploy && python3 -m http.server 8080` → hard refresh con Cmd+Shift+R
-4. Deploy: push su git → Netlify fa il deploy automatico
+2. Il deploy avviene tramite push su GitHub da terminale (gestito dall'utente)
+3. Netlify fa il deploy automatico dal branch principale
+
+**⛔ NON suggerire mai `./prepara-deploy.sh`** — l'utente fa il push direttamente da terminale e non usa questo script.
 
 ## Regola fondamentale
 **`sito/index.html` (versione IT) è sempre il source of truth** per struttura, componenti e logica. Qualsiasi modifica a layout o funzionalità va prima applicata lì, poi replicata nelle versioni tradotte.

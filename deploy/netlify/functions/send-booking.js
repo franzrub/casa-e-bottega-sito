@@ -125,143 +125,419 @@ exports.handler = async function(event) {
     method   = '—'
   } = data;
 
-  const methodLabel = method === 'paypal' ? '💳 PayPal' : '🏦 Pagamento offline';
-  const ricevuta = formatTs(new Date().toISOString());
+  const phoneClean  = phone.replace(/[\s\-\(\)]/g, '');
+  const phoneWa     = phoneClean.replace(/^\+/, '');
+  const firstName   = name.split(' ')[0] || name;
+  const methodLabel = method === 'paypal' ? '💳 PayPal' : '🏦 Bonifico / Contanti all\'arrivo';
+  const ricevuta    = formatTs(new Date().toISOString());
 
-  const subjectHost  = `🛎 Nuova prenotazione da ${name} — Casa e Bottega`;
+  const subjectHost  = `🛎 Nuova prenotazione — ${name} | Casa e Bottega`;
   const subjectGuest = method === 'paypal'
-    ? `✅ Richiesta ricevuta — ti invieremo il link PayPal | Casa e Bottega`
-    : `✅ Richiesta ricevuta — ti contatteremo presto | Casa e Bottega`;
+    ? `Richiesta ricevuta — ti mandiamo il link di pagamento | Casa e Bottega`
+    : `Richiesta ricevuta — a presto! | Casa e Bottega`;
 
-  // ─── Email all'ospite ─────────────────────────────────────────────
-  const htmlGuest = `
-<!DOCTYPE html>
-<html>
+  // ══════════════════════════════════════════════════════════════════
+  //  EMAIL ALL'OSPITE
+  // ══════════════════════════════════════════════════════════════════
+  const htmlGuest = `<!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="utf-8">
-  <style>
-    body { font-family: Georgia, serif; background: #F5F0E8; margin: 0; padding: 20px; }
-    .card { max-width: 560px; margin: 0 auto; background: white; border-radius: 8px;
-            padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-    .logo { font-size: 1.1rem; font-weight: bold; color: #C8A96E; letter-spacing: 0.08em;
-            text-transform: uppercase; margin-bottom: 4px; }
-    h2 { color: #1B4F72; font-size: 1.4rem; margin: 0 0 8px; }
-    .subtitle { color: #999; font-size: 0.85rem; margin: 0 0 24px;
-                border-bottom: 2px solid #C8A96E; padding-bottom: 12px; }
-    .intro { font-size: 0.98rem; color: #444; line-height: 1.6; margin-bottom: 24px; }
-    .section { margin-bottom: 20px; }
-    .section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
-                     color: #C8A96E; margin-bottom: 10px; font-weight: bold; }
-    .field { margin-bottom: 10px; display: flex; gap: 8px; }
-    .label { font-size: 0.8rem; color: #999; min-width: 100px; flex-shrink: 0; }
-    .value { font-size: 0.95rem; color: #333; }
-    .value.big { font-size: 1.3rem; font-weight: bold; color: #1B4F72; }
-    .info-box { background: #f9f7f2; border-left: 3px solid #C8A96E;
-                padding: 12px 16px; border-radius: 0 4px 4px 0;
-                font-size: 0.9rem; color: #555; line-height: 1.6; margin-bottom: 24px; }
-    .footer { margin-top: 24px; font-size: 0.78rem; color: #bbb; text-align: center;
-              border-top: 1px solid #f0ebe0; padding-top: 16px; }
-    a { color: #1B4F72; }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Casa e Bottega — Richiesta ricevuta</title>
 </head>
-<body>
-  <div class="card">
-    <div class="logo">Casa e Bottega</div>
-    <h2>Abbiamo ricevuto la tua richiesta!</h2>
-    <p class="subtitle">Manfredonia, Puglia · ${ricevuta}</p>
+<body style="margin:0;padding:0;background:#F5F0E8;font-family:Georgia,'Times New Roman',serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5F0E8;">
+<tr><td align="center" style="padding:32px 16px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px;">
 
-    <p class="intro">
-      Caro/a <strong>${name}</strong>, grazie per aver scelto Casa e Bottega.<br>
-      La tua richiesta di soggiorno è stata ricevuta correttamente.
+  <!-- ── HEADER ── -->
+  <tr><td style="background:#1F4A4A;padding:28px 36px;border-radius:4px 4px 0 0;">
+    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td style="vertical-align:middle;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.45);margin-bottom:5px;">Manfredonia · Gargano · Puglia</div>
+        <div style="font-family:Georgia,serif;font-size:24px;font-weight:normal;color:#F5F0E8;letter-spacing:0.02em;">Casa <em>e</em> Bottega</div>
+      </td>
+      <td align="right" style="vertical-align:middle;">
+        <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center"
+          style="width:52px;height:52px;border-radius:50%;border:2px solid rgba(200,169,110,0.55);
+                 font-family:Georgia,serif;font-size:14px;font-weight:bold;color:#C8A96E;
+                 text-align:center;vertical-align:middle;line-height:48px;">
+          C&amp;B
+        </td></tr></table>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- ── BANNER NEXT STEP ── -->
+  <tr><td style="background:${method === 'paypal' ? '#EEF8E8' : '#EAF0F8'};
+                 border-left:4px solid ${method === 'paypal' ? '#5a8a30' : '#1F4A4A'};
+                 padding:14px 36px;">
+    <p style="font-family:Arial,sans-serif;font-size:13px;margin:0;
+              color:${method === 'paypal' ? '#3a7a18' : '#1F4A4A'};font-weight:600;line-height:1.5;">
       ${method === 'paypal'
-        ? `Ti invieremo a breve un <strong>link PayPal</strong> per completare il pagamento e confermare definitivamente la prenotazione.`
-        : `Ti contatteremo entro <strong>24 ore</strong> per confermare la disponibilità e accordarci sul pagamento.`
-      }
+        ? '📩 Ti mandiamo a breve il link PayPal per completare il pagamento.'
+        : '📋 Ti confermiamo la disponibilità entro 24 ore via email o WhatsApp.'}
+    </p>
+  </td></tr>
+
+  <!-- ── BODY ── -->
+  <tr><td style="background:#FFFFFF;padding:36px 36px 28px;border-radius:0 0 4px 4px;">
+
+    <!-- Greeting -->
+    <p style="font-family:Georgia,serif;font-size:20px;color:#1A1612;margin:0 0 6px;font-weight:normal;">
+      Ciao <strong>${name}</strong>,
+    </p>
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:#555;line-height:1.75;margin:0 0 30px;">
+      grazie per aver scelto Casa e Bottega — siamo felici di averti ospite a Manfredonia!<br>
+      Ho ricevuto la tua richiesta.
+      ${method === 'paypal'
+        ? 'Ti invio a breve il link PayPal per completare il pagamento e confermare definitivamente il soggiorno.'
+        : 'Puoi pagare tramite bonifico (trovi i dati qui sotto) o in contanti all\'arrivo — scrivimi su WhatsApp per confermare.'}
     </p>
 
-    <div class="section">
-      <div class="section-title">🛏 Riepilogo richiesta</div>
-      <div class="field"><span class="label">Camera</span><span class="value">${room}</span></div>
-      <div class="field"><span class="label">Check-in</span><span class="value">${checkin}</span></div>
-      <div class="field"><span class="label">Check-out</span><span class="value">${checkout}</span></div>
-      <div class="field"><span class="label">Notti</span><span class="value">${nights}</span></div>
-      <div class="field"><span class="label">Ospiti</span><span class="value">${guests}</span></div>
-      ${discount ? `<div class="field"><span class="label">Sconto</span><span class="value">${discount}</span></div>` : ''}
-      <div class="field"><span class="label">Totale stimato</span><span class="value big">€${total}</span></div>
-      <div class="field"><span class="label">Pagamento</span><span class="value">${methodLabel}</span></div>
+    <!-- Riepilogo soggiorno -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:14px;">
+      🛏 Riepilogo soggiorno
     </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+      <tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Camera</td>
+          <td style="font-family:Georgia,serif;font-size:15px;color:#1A1612;">${room}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Check-in</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#333;">
+            ${checkin}
+            <span style="color:#AAA;font-size:11px;"> · dalle 15:00</span>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Check-out</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#333;">
+            ${checkout}
+            <span style="color:#AAA;font-size:11px;"> · entro le 11:00</span>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Notti · Ospiti</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#333;">
+            ${nights} nott${nights == 1 ? 'e' : 'i'} · ${guests} ospit${guests == 1 ? 'e' : 'i'}
+          </td>
+        </tr></table>
+      </td></tr>
+      ${discount ? `<tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Sconto</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#5a8a30;">${discount}</td>
+        </tr></table>
+      </td></tr>` : ''}
+      <tr><td style="border-top:1px solid #EEE9E0;border-bottom:2px solid #EEE9E0;padding:12px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Totale stimato</td>
+          <td style="font-family:Georgia,serif;font-size:24px;color:#1F4A4A;font-weight:bold;">€${total}</td>
+        </tr></table>
+      </td></tr>
+    </table>
 
-    <div class="info-box">
-      📍 <strong>Dove siamo:</strong> Manfredonia (FG), Puglia<br>
-      📧 <a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a><br>
-      🌐 <a href="https://casaebottegapuglia.it">casaebottegapuglia.it</a>
+    ${method === 'offline' ? `
+    <!-- Dati per il bonifico -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:14px;">
+      🏦 Dati per il bonifico
     </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+    <tr><td style="background:#F5F0E8;padding:20px 24px;border-radius:4px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#999;width:110px;padding-bottom:8px;">Intestatario</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#1A1612;font-weight:600;padding-bottom:8px;">La Torre Nicoletta</td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#999;width:110px;padding-bottom:8px;">IBAN</td>
+          <td style="font-family:'Courier New',Courier,monospace;font-size:13px;color:#1A1612;
+                     letter-spacing:0.05em;padding-bottom:8px;">IT65 R360 8105 1382 5842 8558 440</td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#999;">Causale</td>
+          <td style="font-family:Arial,sans-serif;font-size:13px;color:#555;">
+            Prenotazione ${room} — ${checkin}
+          </td>
+        </tr>
+      </table>
+      <p style="font-family:Arial,sans-serif;font-size:12px;color:#888;margin:14px 0 0;line-height:1.65;
+                border-top:1px solid #E8E2D8;padding-top:12px;">
+        In alternativa puoi pagare in <strong style="color:#555;">contanti all'arrivo</strong>.
+        Scrivimi su WhatsApp per confermare — così organizziamo tutto al meglio.
+      </p>
+    </td></tr>
+    </table>
+    ` : ''}
 
-    <div class="footer">
-      Hai inviato questa richiesta dal sito casaebottegapuglia.it.<br>
+    <!-- Note del check-in -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:14px;">
+      🔑 Note per il check-in
+    </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+    <tr><td style="background:#F5F0E8;padding:18px 24px;border-radius:4px;">
+      <p style="font-family:Arial,sans-serif;font-size:14px;color:#444;margin:0;line-height:1.75;">
+        Il check-in è a partire dalle <strong>15:00</strong>.
+        Sentiamoci pure nei giorni precedenti: se la camera fosse pronta prima, sarò felice di accoglierti in anticipo.<br><br>
+        Al vostro arrivo troverete in casa bagnoschiuma, cialde per il caffè e altri oggetti di cortesia.
+        Ricordate di portare un documento d'identità per la registrazione obbligatoria.<br><br>
+        <em style="font-size:12px;color:#888;">Nota: per i non residenti è prevista la tassa di soggiorno di €&nbsp;1,50 a notte per persona.</em>
+      </p>
+    </td></tr>
+    </table>
+
+    <!-- Come raggiungerci -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:14px;">
+      📍 Come raggiungerci
+    </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
+      <tr><td style="border-top:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Indirizzo</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;color:#333;">Via Gargano 13, Manfredonia (FG)</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #EEE9E0;border-bottom:1px solid #EEE9E0;padding:9px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-family:Arial,sans-serif;font-size:11px;color:#AAA;width:120px;">Google Maps</td>
+          <td style="font-family:Arial,sans-serif;font-size:14px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Via+Gargano+13%2C+Manfredonia+FG"
+               style="color:#1F4A4A;text-decoration:none;font-weight:600;">
+              Apri il percorso →
+            </a>
+          </td>
+        </tr></table>
+      </td></tr>
+    </table>
+
+    <!-- WhatsApp CTA -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
+    <tr><td align="center">
+      <a href="https://wa.me/393334705574?text=Ciao%20Nicoletta%2C%20ho%20appena%20inviato%20una%20richiesta%20di%20prenotazione%20dal%20sito."
+         style="display:inline-block;background:#25D366;color:#fff;font-family:Arial,sans-serif;
+                font-size:13px;font-weight:700;text-decoration:none;padding:14px 32px;
+                border-radius:3px;letter-spacing:0.04em;">
+        💬 Scrivici su WhatsApp
+      </a>
+    </td></tr>
+    </table>
+
+    <!-- Firma -->
+    <p style="font-family:Georgia,serif;font-size:15px;color:#888;line-height:1.7;margin:0 0 2px;">A presto,</p>
+    <p style="font-family:Georgia,serif;font-size:15px;color:#1A1612;margin:0;">
+      <em>Casa e Bottega</em>
+    </p>
+
+  </td></tr>
+
+  <!-- ── FOOTER ── -->
+  <tr><td style="padding:20px 36px;text-align:center;">
+    <p style="font-family:Arial,sans-serif;font-size:11px;color:#B8B0A6;margin:0;line-height:1.7;">
+      Hai inviato questa richiesta dal sito
+      <a href="https://casaebottegapuglia.it" style="color:#B8B0A6;">casaebottegapuglia.it</a><br>
       Se non sei stato tu, ignora questa email.
-    </div>
-  </div>
+    </p>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
 </body>
 </html>`;
 
-  // ─── Email all'host ────────────────────────────────────────────────
-  const html = `
-<!DOCTYPE html>
-<html>
+  // ══════════════════════════════════════════════════════════════════
+  //  EMAIL ALL'HOST
+  // ══════════════════════════════════════════════════════════════════
+  const html = `<!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="utf-8">
-  <style>
-    body { font-family: Georgia, serif; background: #F5F0E8; margin: 0; padding: 20px; }
-    .card { max-width: 560px; margin: 0 auto; background: white; border-radius: 8px;
-            padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-    h2 { color: #1B4F72; font-size: 1.4rem; margin: 0 0 8px; }
-    .subtitle { color: #999; font-size: 0.85rem; margin: 0 0 24px;
-                border-bottom: 2px solid #C8A96E; padding-bottom: 12px; }
-    .section { margin-bottom: 20px; }
-    .section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
-                     color: #C8A96E; margin-bottom: 10px; font-weight: bold; }
-    .field { margin-bottom: 10px; display: flex; gap: 8px; }
-    .label { font-size: 0.8rem; color: #999; min-width: 100px; flex-shrink: 0; }
-    .value { font-size: 0.95rem; color: #333; }
-    .value.big { font-size: 1.4rem; font-weight: bold; color: #1B4F72; }
-    .value.method { font-size: 1rem; }
-    .note-box { background: #f9f7f2; border-left: 3px solid #C8A96E;
-                padding: 10px 14px; border-radius: 0 4px 4px 0; font-size: 0.9rem; color: #555; }
-    .footer { margin-top: 24px; font-size: 0.78rem; color: #bbb; text-align: center;
-              border-top: 1px solid #f0ebe0; padding-top: 16px; }
-    a { color: #1B4F72; }
-  </style>
+  <title>Casa e Bottega — Nuova prenotazione</title>
 </head>
-<body>
-  <div class="card">
-    <h2>Nuova richiesta di prenotazione</h2>
-    <p class="subtitle">casaebottegapuglia.it · ${ricevuta}</p>
+<body style="margin:0;padding:0;background:#F5F0E8;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5F0E8;">
+<tr><td align="center" style="padding:32px 16px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
 
-    <div class="section">
-      <div class="section-title">🛏 Soggiorno</div>
-      <div class="field"><span class="label">Camera</span><span class="value">${room}</span></div>
-      <div class="field"><span class="label">Check-in</span><span class="value">${checkin}</span></div>
-      <div class="field"><span class="label">Check-out</span><span class="value">${checkout}</span></div>
-      <div class="field"><span class="label">Notti</span><span class="value">${nights}</span></div>
-      <div class="field"><span class="label">Ospiti</span><span class="value">${guests}</span></div>
-      ${discount ? `<div class="field"><span class="label">Sconto</span><span class="value">${discount}</span></div>` : ''}
-      <div class="field"><span class="label">Totale</span><span class="value big">€${total}</span></div>
-      <div class="field"><span class="label">Pagamento</span><span class="value method">${methodLabel}</span></div>
-    </div>
+  <!-- ── HEADER ── -->
+  <tr><td style="background:#1F4A4A;padding:24px 32px;border-radius:4px 4px 0 0;">
+    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td style="vertical-align:middle;">
+        <div style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.2em;
+                    text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:4px;">
+          Casa e Bottega
+        </div>
+        <div style="font-family:Georgia,serif;font-size:20px;color:#F5F0E8;">
+          🛎 Nuova richiesta di prenotazione
+        </div>
+        <div style="font-family:Arial,sans-serif;font-size:11px;color:rgba(245,240,232,0.45);margin-top:4px;">
+          ${ricevuta}
+        </div>
+      </td>
+      <td align="right" style="vertical-align:middle;">
+        <table cellpadding="0" cellspacing="0" border="0"><tr><td align="center"
+          style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(200,169,110,0.5);
+                 font-family:Georgia,serif;font-size:13px;font-weight:bold;color:#C8A96E;
+                 text-align:center;line-height:44px;">
+          C&amp;B
+        </td></tr></table>
+      </td>
+    </tr></table>
+  </td></tr>
 
-    <div class="section">
-      <div class="section-title">👤 Ospite</div>
-      <div class="field"><span class="label">Nome</span><span class="value">${name}</span></div>
-      <div class="field"><span class="label">Telefono</span><span class="value"><a href="tel:${phone}">${phone}</a></span></div>
-      <div class="field"><span class="label">Email</span><span class="value"><a href="mailto:${email}">${email}</a></span></div>
-      ${message ? `<div class="field" style="flex-direction:column; gap:4px;"><span class="label">Note</span><div class="note-box">${message.replace(/\n/g, '<br>')}</div></div>` : ''}
-    </div>
+  <!-- ── AZIONE RICHIESTA ── -->
+  <tr><td style="background:${method === 'paypal' ? '#FFF8E8' : '#EAF2FF'};
+                 border-left:4px solid ${method === 'paypal' ? '#C8A96E' : '#1F4A4A'};
+                 padding:14px 32px;">
+    <p style="font-family:Arial,sans-serif;font-size:13px;margin:0;font-weight:700;
+              color:${method === 'paypal' ? '#8a6820' : '#1F4A4A'};">
+      ${method === 'paypal'
+        ? '💳 Invia il link PayPal a ' + email
+        : '📋 Conferma disponibilità → blocca le date su Booking e Airbnb'}
+    </p>
+  </td></tr>
 
-    <div class="footer">
-      Gestisci le prenotazioni su <a href="https://app.netlify.com">Netlify</a>
-    </div>
-  </div>
+  <!-- ── BODY ── -->
+  <tr><td style="background:#FFFFFF;padding:28px 32px 24px;border-radius:0 0 4px 4px;">
+
+    <!-- Soggiorno -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:12px;">Soggiorno</div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Camera</td>
+          <td style="font-family:Georgia,serif;font-size:15px;color:#1A1612;">${room}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Check-in</td>
+          <td style="font-size:14px;color:#333;">${checkin}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Check-out</td>
+          <td style="font-size:14px;color:#333;">${checkout}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Notti · Ospiti</td>
+          <td style="font-size:14px;color:#333;">${nights} notti · ${guests} ospiti</td>
+        </tr></table>
+      </td></tr>
+      ${discount ? `<tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Sconto</td>
+          <td style="font-size:14px;color:#5a8a30;">${discount}</td>
+        </tr></table>
+      </td></tr>` : ''}
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Pagamento</td>
+          <td style="font-size:14px;color:#333;">${methodLabel}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;border-bottom:2px solid #F0EAE0;padding:10px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Totale</td>
+          <td style="font-family:Georgia,serif;font-size:24px;color:#1F4A4A;font-weight:bold;">€${total}</td>
+        </tr></table>
+      </td></tr>
+    </table>
+
+    <!-- Ospite -->
+    <div style="font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;
+                text-transform:uppercase;color:#C8A96E;margin-bottom:12px;">Ospite</div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Nome</td>
+          <td style="font-size:14px;color:#1A1612;font-weight:600;">${name}</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Telefono</td>
+          <td style="font-size:14px;">
+            <a href="https://wa.me/${phoneWa}" style="color:#25D366;font-weight:600;text-decoration:none;">
+              📱 ${phone}
+            </a>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="border-top:1px solid #F0EAE0;border-bottom:1px solid #F0EAE0;padding:8px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;">Email</td>
+          <td style="font-size:14px;">
+            <a href="mailto:${email}" style="color:#1F4A4A;text-decoration:none;">${email}</a>
+          </td>
+        </tr></table>
+      </td></tr>
+      ${message ? `<tr><td style="border-bottom:1px solid #F0EAE0;padding:10px 0;">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:11px;color:#AAA;width:110px;vertical-align:top;padding-top:2px;">Note</td>
+          <td style="font-size:13px;color:#555;font-style:italic;background:#F9F6F1;
+                     padding:10px 14px;border-radius:3px;border-left:2px solid #C8A96E;">
+            ${message.replace(/\n/g, '<br>')}
+          </td>
+        </tr></table>
+      </td></tr>` : ''}
+    </table>
+
+    <!-- Pulsanti azione rapida -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center" style="padding:4px;">
+        <a href="https://wa.me/${phoneWa}?text=Ciao%20${encodeURIComponent(firstName)}%2C%20ho%20ricevuto%20la%20tua%20richiesta%20per%20Casa%20e%20Bottega."
+           style="display:inline-block;background:#25D366;color:#fff;font-size:12px;font-weight:700;
+                  text-decoration:none;padding:11px 20px;border-radius:3px;font-family:Arial,sans-serif;
+                  letter-spacing:0.04em;">
+          📱 WhatsApp
+        </a>
+      </td>
+      <td align="center" style="padding:4px;">
+        <a href="mailto:${email}?subject=Conferma prenotazione Casa e Bottega&body=Ciao ${encodeURIComponent(firstName)},"
+           style="display:inline-block;background:#1F4A4A;color:#fff;font-size:12px;font-weight:700;
+                  text-decoration:none;padding:11px 20px;border-radius:3px;font-family:Arial,sans-serif;
+                  letter-spacing:0.04em;">
+          ✉ Rispondi per email
+        </a>
+      </td>
+    </tr>
+    </table>
+
+  </td></tr>
+
+  <!-- ── FOOTER ── -->
+  <tr><td style="padding:18px 32px;text-align:center;">
+    <p style="font-family:Arial,sans-serif;font-size:11px;color:#B8B0A6;margin:0;line-height:1.7;">
+      Casa e Bottega · Via Gargano 13, Manfredonia ·
+      <a href="mailto:booking@casaebottegapuglia.it" style="color:#B8B0A6;">
+        booking@casaebottegapuglia.it
+      </a>
+    </p>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
 </body>
 </html>`;
 
