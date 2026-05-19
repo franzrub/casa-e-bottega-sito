@@ -14,8 +14,14 @@ casa-e-bottega-sito/
 
 **Workflow:**
 1. Modifica i file in `sito/`
-2. Il deploy avviene tramite push su GitHub da terminale (gestito dall'utente)
-3. Netlify fa il deploy automatico dal branch principale
+2. Copia **sempre** il file modificato anche in `deploy/` (stessa struttura di cartelle)
+3. Il deploy avviene tramite push su GitHub da terminale (gestito dall'utente)
+4. Netlify fa il deploy automatico dal branch principale **dalla cartella `deploy/`**
+
+**⚠️ REGOLA CRITICA — DOPPIA COPIA OBBLIGATORIA:**
+- `sito/` = usato per visualizzazione in locale
+- `deploy/` = quello che Netlify pubblica online
+- **Ogni modifica a qualsiasi file HTML/CSS/JS va copiata in ENTRAMBE le cartelle.** Se si modifica solo `sito/`, il sito live resta invariato. Se si dimentica `deploy/`, il lavoro non va online.
 
 **⛔ NON suggerire mai `./prepara-deploy.sh`** — l'utente fa il push direttamente da terminale e non usa questo script.
 
