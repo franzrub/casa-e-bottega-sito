@@ -2566,7 +2566,7 @@
       if (!hintEl) return;
       const lang = localStorage.getItem('ceb_lang') || 'it';
       // Usa le traduzioni disponibili (translations è globale, caricato da i18n.js)
-      const tr = (typeof translations !== 'undefined') ? (translations[lang] || translations.it) : translations && translations.it;
+      const tr = (typeof translations !== 'undefined') ? (translations[lang] || translations.it) : null;
       const locale = (tr && tr.cal_locale) || 'it-IT';
 
       if (!miniCalCheckin && !miniCalCheckout) {
