@@ -1,215 +1,240 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hausregeln | Casa e Bottega Manfredonia</title>
-  <meta name="description" content="Hausregeln und Aufenthaltsbedingungen in Casa e Bottega, Manfredonia.">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .rule-card {
-      background: white;
-      border-radius: 10px;
-      padding: 28px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      border-top: 3px solid #C8A96E;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .rule-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    .rule-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .rule-title {
-      font-size: 1.05rem;
-      font-weight: bold;
-      color: #1B4F72;
-      margin-bottom: 10px;
-      font-family: Georgia, serif;
-    }
-    .rule-text {
-      font-size: 0.92rem;
-      color: #555;
-      line-height: 1.7;
-    }
-    .emergency-box {
-      background: #1B4F72;
-      color: white;
-      border-radius: 10px;
-      padding: 28px 32px;
-      margin-top: 40px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .emergency-icon {
-      font-size: 2.2rem;
-      flex-shrink: 0;
-    }
-    .emergency-text {
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    .emergency-text a {
-      color: #C8A96E;
-      text-decoration: none;
-    }
-    .emergency-text a:hover { text-decoration: underline; }
-    .rules-loading {
-      text-align: center;
-      color: #999;
-      padding: 60px 0;
-      font-size: 0.95rem;
-    }
-    @media (max-width: 600px) {
-      .emergency-box { flex-direction: column; text-align: center; }
-      .rules-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hausregeln | Casa e Bottega Manfredonia</title>
+<meta content="Hausregeln für Casa e Bottega in Manfredonia. Check-in, Check-out, Stornierung, Rauchen, Haustiere und Notfallkontakte." name="description"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link href="https://www.casaebottegapuglia.it/de/regole.html" rel="canonical"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/></noscript>
+<link href="../css/style-v2.min.css?v=2" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+
+<style>
+.reg-hero {background: var(--bone);padding: 8rem 0 5rem;text-align: center;}
+.reg-hero-label {font-family: 'JetBrains Mono', monospace;font-size: 0.72rem;letter-spacing: 0.2em;text-transform: uppercase;color: var(--petrolio);margin-bottom: 1.6rem;display: inline-flex;align-items: center;gap: 10px;padding: 7px 16px;border: 1px solid var(--line);border-radius: 999px;background: rgba(255,255,255,0.45);}
+.reg-hero h1 {font-family: 'Cormorant Garamond', serif;font-size: clamp(2.8rem, 6vw, 5rem);font-weight: 300;line-height: 1;letter-spacing: -0.02em;color: var(--ink);margin: 0 0 1.4rem;}
+.reg-hero h1 em {font-style: italic;color: var(--petrolio);}
+.reg-hero-sub {font-family: 'Inter', sans-serif;font-size: 1rem;line-height: 1.7;color: var(--stone);max-width: 480px;margin: 0 auto;}
+.reg-section {background: var(--paper);padding: 5rem 0;}
+.reg-section-label {font-family: 'JetBrains Mono', monospace;font-size: 0.7rem;letter-spacing: 0.18em;text-transform: uppercase;color: var(--petrolio);display: block;margin-bottom: 0.4rem;}
+.reg-section-title {font-family: 'Cormorant Garamond', serif;font-size: clamp(1.8rem, 3vw, 2.4rem);font-weight: 300;color: var(--ink);letter-spacing: -0.01em;margin: 0 0 2.8rem;}
+.reg-section-title em {font-style: italic;color: var(--petrolio);}
+.reg-grid {display: grid;grid-template-columns: repeat(2, 1fr);gap: 1px;background: var(--line);border: 1px solid var(--line);border-radius: 4px;overflow: hidden;}
+.reg-card {background: var(--bone);padding: 2.2rem 2.4rem;display: grid;grid-template-columns: 2.4rem 1fr;gap: 1.2rem;align-items: start;}
+.reg-card-icon {font-size: 1.5rem;line-height: 1;padding-top: 2px;}
+.reg-card-title {font-family: 'Cormorant Garamond', serif;font-size: 1.25rem;font-weight: 500;color: var(--ink);letter-spacing: -0.01em;margin-bottom: 0.5rem;line-height: 1.15;}
+.reg-card-body {font-family: 'Inter', sans-serif;font-size: 0.88rem;line-height: 1.68;color: var(--stone-2);margin: 0;}
+.reg-card-body strong {color: var(--ink);font-weight: 600;}
+.reg-emergency {margin-top: 1.5rem;padding: 2rem 2.4rem;background: var(--petrolio);color: var(--bone);border-radius: 4px;display: flex;align-items: flex-start;gap: 1.4rem;}
+.reg-emergency-icon {font-size: 1.6rem;flex-shrink: 0;padding-top: 2px;}
+.reg-emergency-label {font-family: 'JetBrains Mono', monospace;font-size: 0.62rem;letter-spacing: 0.18em;text-transform: uppercase;color: rgba(245,239,230,0.6);margin-bottom: 6px;}
+.reg-emergency-text {font-family: 'Inter', sans-serif;font-size: 0.9rem;line-height: 1.65;color: rgba(245,239,230,0.9);margin: 0;}
+.reg-emergency-text a {color: var(--bone);font-weight: 500;text-decoration: underline;text-underline-offset: 3px;}
+.reg-cta {background: var(--bone);padding: 5rem 0;text-align: center;}
+.reg-cta h2 {font-family: 'Cormorant Garamond', serif;font-size: clamp(2rem, 4vw, 3rem);font-weight: 300;color: var(--ink);line-height: 1.1;margin: 0 0 1rem;}
+.reg-cta h2 em {font-style: italic;color: var(--petrolio);}
+.reg-cta p {font-family: 'Inter', sans-serif;font-size: 0.95rem;color: var(--stone);max-width: 440px;margin: 0 auto 2rem;line-height: 1.65;}
+@media (max-width: 700px) {.reg-grid {grid-template-columns: 1fr;}.reg-card {grid-template-columns: 2rem 1fr;gap: 0.9rem;padding: 1.6rem 1.4rem;}.reg-emergency {flex-direction: column;gap: 0.8rem;}.reg-hero {padding: 5rem 0 3.5rem;}}
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <nav class="nav-wrapper">
-      <a href="index.html" class="nav-logo">Casa <span>e</span> Bottega</a>
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
-        <li><a href="camere.html" data-i18n="nav_rooms">Zimmer</a></li>
-        <li><a href="prenota.html" data-i18n="nav_book">Buchen</a></li>
-        <li><a href="blog.html" data-i18n="nav_blog">Geschichten</a></li>
-        <li><a href="contatti.html" data-i18n="nav_contact">Standort</a></li>
-        <li>
-          <div class="lang-switcher">
-            <a class="lang-btn" href="regole.html" hreflang="it" title="Italiano">IT</a>
-            <a class="lang-btn" href="../en/regole.html" hreflang="en" title="English">EN</a>
-            <a class="lang-btn" href="../fr/regole.html" hreflang="fr" title="Français">FR</a>
-            <a class="lang-btn active" href="../de/regole.html" hreflang="de" title="Deutsch">DE</a>
-            <a class="lang-btn" href="../nl/regole.html" hreflang="nl" title="Nederlands">NL</a>
-            <a class="lang-btn" href="../es/regole.html" hreflang="es" title="Español">ES</a>
-          </div>
-        </li>
-      </ul>
-      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </nav>
-  </header>
+<header>
+  <nav class="v2-nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="v2-nav-inner">
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="camere.html" data-i18n="nav_rooms">Zimmer</a>
+        <a href="prenota.html" data-i18n="nav_book">Buchen</a>
+        <a href="blog.html" data-i18n="nav_blog">Geschichten</a>
+        <a href="contatti.html" data-i18n="nav_contact">Standort</a>
+      </div>
+      <a class="v2-nav-brand" href="index.html" aria-label="Casa e Bottega — Home">
+        Casa <em>e</em> Bottega
+      </a>
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Sprache wählen">
+          <a href="../regole.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../en/regole.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="../fr/regole.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a class="on" href="regole.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../nl/regole.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="../es/regole.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;">Jetzt buchen</a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
 
-  <div class="page-header">
-    <div class="container">
-      <p class="section-subtitle">Aufenthalt</p>
-      <h1>Hausregeln</h1>
-      <p>Alles, was Sie für einen ruhigen und respektvollen Aufenthalt wissen müssen.</p>
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Mobiles Menü" aria-hidden="true">
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="camere.html" data-i18n="nav_rooms">Zimmer</a>
+  <a href="prenota.html" data-i18n="nav_book">Buchen</a>
+  <a href="blog.html" data-i18n="nav_blog">Geschichten</a>
+  <a href="contatti.html" data-i18n="nav_contact">Standort</a>
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">DE</button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+      <a href="../regole.html" hreflang="it">IT — Italiano</a>
+      <a href="../en/regole.html" hreflang="en">EN — English</a>
+      <a href="../fr/regole.html" hreflang="fr">FR — Français</a>
+      <a class="on" href="regole.html" hreflang="de">DE — Deutsch</a>
+      <a href="../nl/regole.html" hreflang="nl">NL — Nederlands</a>
+      <a href="../es/regole.html" hreflang="es">ES — Español</a>
     </div>
   </div>
+</div>
 
-  <section class="section section-light">
-    <div class="container">
+<section class="reg-hero">
+  <div class="v2-container">
+    <span class="reg-hero-label">Aufenthalt · Casa e Bottega</span>
+    <h1>Haus<br/><em>Regeln.</em></h1>
+    <p class="reg-hero-sub">Alles, was Sie über einen ruhigen und respektvollen Aufenthalt wissen müssen — klar geschrieben, ohne Überraschungen.</p>
+  </div>
+</section>
 
-      <div id="rules-container">
-        <div class="rules-loading">Regeln werden geladen…</div>
+<section class="reg-section">
+  <div class="v2-container">
+    <span class="reg-section-label">Die Regeln</span>
+    <h2 class="reg-section-title">Ein angenehmer Aufenthalt <em>für alle.</em></h2>
+
+    <div class="reg-grid">
+      <div class="reg-card">
+        <div class="reg-card-icon">🕐</div>
+        <div>
+          <div class="reg-card-title">Check-in und Check-out</div>
+          <p class="reg-card-body">Der Check-in ist ab <strong>15:00 Uhr</strong> möglich. Der Check-out muss bis <strong>11:30 Uhr</strong> erfolgen.</p>
+        </div>
       </div>
 
+      <div class="reg-card">
+        <div class="reg-card-icon">👥</div>
+        <div>
+          <div class="reg-card-title">Gäste</div>
+          <p class="reg-card-body">Die Anzahl der Gäste darf die bei der Buchung angegebene Anzahl nicht überschreiten. Externe Besucher sind nicht ohne vorherige Mitteilung erlaubt.</p>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-card-icon">🤫</div>
+        <div>
+          <div class="reg-card-title">Ruhe und Respekt für Nachbarn</div>
+          <p class="reg-card-body">Bitte halten Sie nach <strong>23:00 Uhr</strong> und vor <strong>8:00 Uhr</strong> eine angemessene Lautstärke, um andere Gäste und Bewohner zu respektieren.</p>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-card-icon">🚬</div>
+        <div>
+          <div class="reg-card-title">Rauchen</div>
+          <p class="reg-card-body">Das Rauchen in den Wohnungen ist <strong>verboten</strong>. Rauchen ist nur in ausgewiesenen Außenbereichen gestattet.</p>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-card-icon">🐾</div>
+        <div>
+          <div class="reg-card-title">Haustiere</div>
+          <p class="reg-card-body">Haustiere sind nicht erlaubt, es sei denn, es liegt eine <strong>schriftliche Vereinbarung mit der Verwaltung</strong> vor.</p>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-card-icon">❌</div>
+        <div>
+          <div class="reg-card-title">Stornierung</div>
+          <p class="reg-card-body">Kostenlose Stornierung bis <strong>30 Tage</strong> vor dem Check-in. Zwischen 29 und 7 Tagen: <strong>50% Rückerstattung</strong>. Unter 7 Tagen: keine Rückerstattung.</p>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
-          <p data-i18n="footer_desc">Nur wenige Schritte vom Meer entfernt, im Herzen des Gargano.</p>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer_pages">Seiten</h4>
-          <ul>
-            <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
-            <li><a href="camere.html" data-i18n="nav_rooms">Zimmer</a></li>
-            <li><a href="prenota.html" data-i18n="nav_book">Buchen</a></li>
-            <li><a href="blog.html" data-i18n="nav_blog">Geschichten</a></li>
-            <li><a href="regole.html">Hausregeln</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer_follow">Folgen Sie uns</h4>
-          <ul>
-            <li><a href="#">Airbnb</a></li>
-            <li><a href="#">Booking.com</a></li>
-            <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer_contact">Kontakt</h4>
-          <ul>
-            <li><a href="https://wa.me/393334705574">WhatsApp</a></li>
-            <li><a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+    <div class="reg-emergency">
+      <div class="reg-emergency-icon">📞</div>
+      <div>
+        <div class="reg-emergency-label">Notfallkontakte</div>
+        <p class="reg-emergency-text">Bei Fragen während Ihres Aufenthalts kontaktieren Sie uns unter <a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a> oder per WhatsApp unter <a href="https://wa.me/393334705574">+39 333 470 5574</a>.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="../js/main.min.js?v=20260428"></script>
-  <script>
-    fetch('/../_data/regole_de.json')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data) {
-          document.getElementById('rules-container').innerHTML =
-            '<p style="color:#999;text-align:center;">Regeln sind derzeit nicht verfügbar.</p>';
-          return;
-        }
+<section class="reg-cta">
+  <div class="v2-container">
+    <h2>Bereit zu <em>buchen?</em></h2>
+    <p>Buchen Sie direkt bei uns und sparen Sie mindestens 20% im Vergleich zu Booking und Airbnb.</p>
+    <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
+      Jetzt buchen →
+    </a>
+  </div>
+</section>
 
-        const sections = data.sections || [];
-        const emergenza = data.contatti_emergenza || '';
+<footer class="v2-footer" role="contentinfo">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">
+          Nur wenige Schritte vom Meer entfernt, im Herzen des Gargano.
+          Ein Zuhause, zwei Zimmer, eine Familie, die Ihnen die Tür öffnet.
+        </p>
+      </div>
 
-        let html = '<div class="rules-grid">';
-        sections.forEach(s => {
-          html += `
-            <div class="rule-card">
-              <span class="rule-icon">${s.icon || '📌'}</span>
-              <div class="rule-title">${s.title}</div>
-              <div class="rule-text">${s.text.replace(/\n/g, '<br>')}</div>
-            </div>`;
-        });
-        html += '</div>';
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Seiten</span>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="camere.html" data-i18n="nav_rooms">Zimmer</a></li>
+          <li><a href="prenota.html" data-i18n="nav_book">Buchen</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Geschichten</a></li>
+          <li><a href="regole.html">Hausregeln</a></li>
+        </ul>
+      </div>
 
-        if (emergenza) {
-          // E-Mails und Telefonnummern im Notfalltext anklickbar machen
-          const linkified = emergenza
-            .replace(/(bookings@[\w.]+)/g, '<a href="mailto:$1">$1</a>')
-            .replace(/(\+39[\s\d]+)/g, '<a href="tel:$1">$1</a>');
-          html += `
-            <div class="emergency-box">
-              <div class="emergency-icon">📞</div>
-              <div class="emergency-text">${linkified}</div>
-            </div>`;
-        }
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Folgen Sie uns</span>
+        <ul>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+        </ul>
+      </div>
 
-        document.getElementById('rules-container').innerHTML = html;
-      })
-      .catch(() => {
-        document.getElementById('rules-container').innerHTML =
-          '<p style="color:#999;text-align:center;">Fehler beim Laden der Regeln.</p>';
-      });
-  </script>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Kontakt</span>
+        <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
+          <li><a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span>
+    </div>
+  </div>
+</footer>
 
+<a class="v2-wa-pill" href="https://wa.me/393334705574?text=Hallo!%20Ich%20möchte%20Informationen%20über%20Casa%20e%20Bottega%20in%20Manfredonia." target="_blank" rel="noopener" aria-label="Schreiben Sie uns auf WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>Auf WhatsApp schreiben</span>
+</a>
+
+<script src="../js/i18n.min.js?v=20260428" defer></script>
+<script src="../js/main.js?v=20260428" defer></script>
 </body>
 </html>
