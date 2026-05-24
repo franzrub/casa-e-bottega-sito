@@ -19,15 +19,24 @@
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/de/index.html" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
 <!-- ▶ CWV FIX: preload hero LCP image (browser la scarica prima del CSS) -->
-<link rel="preload" href="../foto-homepage/2.webp" as="image" fetchpriority="high"
-  imagesrcset="../foto-homepage/2-md.webp 1400w, ../foto-homepage/2.webp 2207w"
+<link rel="preload" href="../../foto-homepage/2.webp" as="image" fetchpriority="high"
+  imagesrcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
   imagesizes="(max-width: 900px) 100vw, 50vw"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- ▶ Design v2 fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (editorial labels) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
-<link href="../css/style-v2.min.css" rel="stylesheet"/>
+<link href="../css/style-v2.min.css?v=2" rel="stylesheet"/>
 <!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
+<!-- Structured Data: WebSite (sitelinks signal) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Casa e Bottega",
+  "url": "https://www.casaebottegapuglia.it/"
+}
+</script>
 <!-- Structured Data -->
 <script type="application/ld+json">
   {
@@ -123,6 +132,75 @@
     ]
   }
   </script>
+<!-- Structured Data: Reviews individuali (rich results stelline) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BedAndBreakfast",
+  "@id": "https://www.casaebottegapuglia.it/#bb",
+  "name": "Casa e Bottega",
+  "url": "https://www.casaebottegapuglia.it/",
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Luca" },
+      "reviewBody": "La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi. Consigliatissimo.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "10", "bestRating": "10" },
+      "datePublished": "2025-06-15",
+      "publisher": { "@type": "Organization", "name": "Booking.com" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Céline & François" },
+      "reviewBody": "L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons!",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2025-08-10",
+      "publisher": { "@type": "Organization", "name": "Airbnb" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Molaro" },
+      "reviewBody": "A partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "10", "bestRating": "10" },
+      "datePublished": "2025-07-20",
+      "publisher": { "@type": "Organization", "name": "Booking.com" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Moni" },
+      "reviewBody": "Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2024-07-15",
+      "publisher": { "@type": "Organization", "name": "Airbnb" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Giacomo" },
+      "reviewBody": "Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!",
+      "reviewRating": { "@type": "Rating", "ratingValue": "10", "bestRating": "10" },
+      "datePublished": "2024-09-10",
+      "publisher": { "@type": "Organization", "name": "Booking.com" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Bozidarka" },
+      "reviewBody": "Appartamento curato e pulito. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2024-06-20",
+      "publisher": { "@type": "Organization", "name": "Airbnb" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Valentina" },
+      "reviewBody": "Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "10", "bestRating": "10" },
+      "datePublished": "2024-11-15",
+      "publisher": { "@type": "Organization", "name": "Booking.com" }
+    }
+  ]
+}
+</script>
+
 <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
@@ -213,7 +291,7 @@
   <div class="v2-hero-left">
 
     <div>
-      <h1 class="v2-hero-title">
+      <h1 class="v2-hero-title" style="font-size: clamp(44px, 5.2vw, 84px)">
         Nur einen Steinwurf<br>
         <em>vom Meer.</em>
       </h1>
@@ -254,8 +332,8 @@
   <div class="v2-hero-right" aria-hidden="true">
     <div class="v2-hero-right-img v2-grain">
       <img
-        src="../foto-homepage/2.webp"
-        srcset="../foto-homepage/2-md.webp 1400w, ../foto-homepage/2.webp 2207w"
+        src="../../foto-homepage/2.webp"
+        srcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
         sizes="(max-width: 900px) 100vw, 50vw"
         alt="La Bottega — Casa e Bottega, Manfredonia"
         fetchpriority="high"
@@ -284,8 +362,8 @@
       <div>
         <div class="v2-img-frame" style="aspect-ratio:4/5;">
           <img
-            src="../foto-la-bottega/bottega-01-foto principale.webp"
-            srcset="../foto-la-bottega/bottega-01-foto-principale-md.webp 800w, ../foto-la-bottega/bottega-01-foto principale.webp 3024w"
+            src="../../foto-la-bottega/bottega-01-foto principale.webp"
+            srcset="../../foto-la-bottega/bottega-01-foto-principale-md.webp 800w, ../../foto-la-bottega/bottega-01-foto principale.webp 3024w"
             sizes="(max-width: 900px) 50vw, 40vw"
             alt="Esterno Casa e Bottega, Via Gargano 13, Manfredonia"
             loading="lazy"
@@ -375,8 +453,8 @@
       <a class="v2-room-card v2-fade" href="camere.html#dimora" aria-label="Scopri La Dimora">
         <div class="v2-room-card-img">
           <img
-            src="../foto-la-dimora/dimora-01-foto-principale.webp"
-            srcset="../foto-la-dimora/dimora-01-foto-principale-md.webp 1240w, ../foto-la-dimora/dimora-01-foto-principale.webp 4032w"
+            src="../../foto-la-dimora/dimora-01-foto-principale.webp"
+            srcset="../../foto-la-dimora/dimora-01-foto-principale-md.webp 1240w, ../../foto-la-dimora/dimora-01-foto-principale.webp 4032w"
             sizes="(max-width: 900px) 50vw, 40vw"
             alt="La Dimora — Camera principale, Casa e Bottega"
             loading="lazy"
@@ -407,8 +485,8 @@
       <a class="v2-room-card v2-fade" href="camere.html#bottega" aria-label="Scopri La Bottega">
         <div class="v2-room-card-img">
           <img
-            src="../foto-homepage/2.webp"
-            srcset="../foto-homepage/2-md.webp 1400w, ../foto-homepage/2.webp 2207w"
+            src="../../foto-homepage/2.webp"
+            srcset="../../foto-homepage/2-md.webp 1400w, ../../foto-homepage/2.webp 2207w"
             sizes="(max-width: 900px) 50vw, 40vw"
             alt="La Bottega — Camera design, Casa e Bottega"
             loading="lazy"
@@ -469,7 +547,7 @@
             <span class="v2-place-dist-time">2 min a piedi</span>
           </div>
           <div class="v2-place-dist-row" role="listitem">
-            <span class="v2-place-dist-name v2-serif">Porto turistico</span>
+            <span class="v2-place-dist-name v2-serif">Castello Svevo Angioino</span>
             <span class="v2-place-dist-time">6 min a piedi</span>
           </div>
           <div class="v2-place-dist-row" role="listitem">
@@ -963,7 +1041,7 @@
      SCRIPTS (unchanged — i18n + main.js)
      ══════════════════════════════════════════════════════════ -->
 <script src="../js/i18n.min.js?v=20260428" defer></script>
-<script src="../js/main.min.js?v=20260428" defer></script>
+<script src="../js/main.js?v=20260428" defer></script>
 
 <!-- ══════════════════════════════════════════════════════════
      STICKY TOUCHPOINTS
