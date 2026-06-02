@@ -1227,10 +1227,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var navLinks = document.getElementById('v2-nav-links');
     var navEl    = document.querySelector('.v2-nav');
 
+    var _navHSet = false;
     function setNavHeight() {
       if (navEl) {
         var h = navEl.getBoundingClientRect().height;
-        if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+        if (h > 0) {
+          document.documentElement.style.setProperty('--nav-h', h + 'px');
+          _navHSet = true;
+        }
       }
     }
     requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
@@ -1239,16 +1243,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(setNavHeight, 150);
+      resizeTimer = setTimeout(function() { _navHSet = false; setNavHeight(); }, 150);
     }, { passive: true });
     window.addEventListener('load', setNavHeight, { passive: true });
 
     if (toggle && navLinks) {
       toggle.addEventListener('click', function () {
-        if (navEl) {
-          var h = navEl.getBoundingClientRect().height;
-          if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-        }
+        // --nav-h già impostato da setNavHeight (load/resize): nessun reflow al click
+        if (!_navHSet) setNavHeight();
         var open = navLinks.classList.toggle('v2-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');

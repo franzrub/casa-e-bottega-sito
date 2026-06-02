@@ -20,16 +20,14 @@
 <link href="https://www.casaebottegapuglia.it/" rel="canonical"/><link href="https://www.casaebottegapuglia.it/" hreflang="it" rel="alternate"/><link href="https://www.casaebottegapuglia.it/en/index.html" hreflang="en" rel="alternate"/><link href="https://www.casaebottegapuglia.it/fr/index.html" hreflang="fr" rel="alternate"/><link href="https://www.casaebottegapuglia.it/de/index.html" hreflang="de" rel="alternate"/><link href="https://www.casaebottegapuglia.it/nl/index.html" hreflang="nl" rel="alternate"/><link href="https://www.casaebottegapuglia.it/es/index.html" hreflang="es" rel="alternate"/><link href="https://www.casaebottegapuglia.it/" hreflang="x-default" rel="alternate"/>
 <!-- ▶ CWV FIX: preload hero LCP image (browser la scarica prima del CSS) -->
 <link rel="preload" href="/foto-homepage/2.webp" as="image" fetchpriority="high"
-  imagesrcset="/foto-homepage/2-md.webp 1400w, /foto-homepage/2.webp 2207w"
-  imagesizes="(max-width: 900px) 100vw, 50vw"/>
+  imagesrcset="/foto-homepage/2-sm.webp 700w, /foto-homepage/2-md.webp 1400w, /foto-homepage/2.webp 2207w"
+  imagesizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 50vw"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- ▶ Design v2 fonts: non-blocking load (evita render-blocking su mobile) -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/></noscript>
 <link href="css/style-v2.min.css?v=2" rel="stylesheet"/>
-<!-- Netlify Identity Widget: intercetta recovery_token e reindirizza a /admin/ -->
-<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
   // Intercetta recovery/invite token e reindirizza a /admin/ dove il widget li gestisce
   var hash = window.location.hash || '';
@@ -403,8 +401,8 @@
     <div class="v2-hero-right-img v2-grain">
       <img
         src="../foto-homepage/2.webp"
-        srcset="../foto-homepage/2-md.webp 1400w, ../foto-homepage/2.webp 2207w"
-        sizes="(max-width: 900px) 100vw, 50vw"
+        srcset="../foto-homepage/2-sm.webp 700w, ../foto-homepage/2-md.webp 1400w, ../foto-homepage/2.webp 2207w"
+        sizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 50vw"
         alt="La Bottega — Casa e Bottega, Manfredonia"
         fetchpriority="high"
         width="900" height="1200"
@@ -433,8 +431,8 @@
         <div class="v2-img-frame" style="aspect-ratio:4/5;">
           <img
             src="../foto-la-bottega/bottega-01-foto principale.webp"
-            srcset="../foto-la-bottega/bottega-01-foto-principale-md.webp 800w, ../foto-la-bottega/bottega-01-foto principale.webp 3024w"
-            sizes="(max-width: 900px) 50vw, 40vw"
+            srcset="../foto-la-bottega/bottega-01-foto-principale-sm.webp 400w, ../foto-la-bottega/bottega-01-foto-principale-md.webp 800w, ../foto-la-bottega/bottega-01-foto principale.webp 3024w"
+            sizes="(max-width: 480px) 50vw, (max-width: 900px) 50vw, 40vw"
             alt="Esterno Casa e Bottega, Via Gargano 13, Manfredonia"
             loading="lazy"
             width="800" height="1000"
@@ -519,8 +517,8 @@
         <div class="v2-room-card-img">
           <img
             src="../foto-la-dimora/dimora-01-foto-principale.webp"
-            srcset="../foto-la-dimora/dimora-01-foto-principale-md.webp 1240w, ../foto-la-dimora/dimora-01-foto-principale.webp 4032w"
-            sizes="(max-width: 900px) 50vw, 40vw"
+            srcset="../foto-la-dimora/dimora-01-foto-principale-sm.webp 640w, ../foto-la-dimora/dimora-01-foto-principale-md.webp 1240w, ../foto-la-dimora/dimora-01-foto-principale.webp 4032w"
+            sizes="(max-width: 480px) 50vw, (max-width: 900px) 50vw, 40vw"
             alt="La Dimora — Camera principale, Casa e Bottega"
             loading="lazy"
             width="800" height="1000"
@@ -634,16 +632,24 @@
       <div class="v2-map-container" role="img" aria-label="Mappa stilizzata di Manfredonia con posizione Casa e Bottega">
         <style>
           @keyframes v2-map-pulse {
-            0%   { r: 8;  opacity: 0.6; }
-            70%  { r: 28; opacity: 0; }
-            100% { r: 28; opacity: 0; }
+            0%   { transform: scale(1);   opacity: 0.6; }
+            70%  { transform: scale(3.5); opacity: 0; }
+            100% { transform: scale(3.5); opacity: 0; }
           }
           @keyframes v2-map-dash {
-            from { stroke-dashoffset: 0; }
-            to   { stroke-dashoffset: -18; }
+            0%, 100% { opacity: 0.35; }
+            50%      { opacity: 0.9; }
           }
-          .v2-map-pulse { animation: v2-map-pulse 2.6s ease-out infinite; }
-          .v2-map-dash  { animation: v2-map-dash 1.4s linear infinite; }
+          .v2-map-pulse {
+            animation: v2-map-pulse 2.6s ease-out infinite;
+            transform-box: fill-box;
+            transform-origin: center;
+            will-change: transform, opacity;
+          }
+          .v2-map-dash  {
+            animation: v2-map-dash 1.4s ease-in-out infinite;
+            will-change: opacity;
+          }
         </style>
         <svg viewBox="80 120 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;display:block;">
           <defs>
