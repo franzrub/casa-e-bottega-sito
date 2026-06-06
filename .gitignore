@@ -1,5 +1,7 @@
 # File di sistema macOS
-
-# File di sistema macOS
 .DS_Store
 **/.DS_Store
+
+# Backup files
+*.bak
+**/*.bak

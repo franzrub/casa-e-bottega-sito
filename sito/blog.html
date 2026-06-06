@@ -8,14 +8,14 @@
 <meta content="blog Gargano, racconti Manfredonia, cosa fare Gargano, itinerari Puglia, borghi Gargano" name="keywords"/>
 <meta content="Cosa Vedere nel Gargano | Guide e Itinerari – Casa e Bottega" property="og:title"/>
 <meta content="Guide pratiche, itinerari e consigli locali sul Gargano e Manfredonia. Scritti da chi ci vive. Scopri dove andare, cosa mangiare e come muoverti in Puglia." property="og:description"/>
-<meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.jpeg" property="og:image"/>
+<meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.webp" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.casaebottegapuglia.it/blog.html" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Cosa Vedere nel Gargano | Guide e Itinerari – Casa e Bottega" name="twitter:title"/>
 <meta content="Guide e itinerari sul Gargano scritti da chi ci vive. Cosa vedere, dove mangiare, come muoversi in Puglia." name="twitter:description"/>
-<meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.jpeg" name="twitter:image"/>
+<meta content="https://www.casaebottegapuglia.it/foto-zona/Manfredonia.webp" name="twitter:image"/>
 <link href="https://www.casaebottegapuglia.it/blog.html" rel="canonical"/>
 <link href="https://www.casaebottegapuglia.it/blog.html" hreflang="it" rel="alternate"/>
 <link href="https://www.casaebottegapuglia.it/en/blog.html" hreflang="en" rel="alternate"/>
@@ -266,6 +266,12 @@
   display: flex;
   flex-direction: column;
   transition: background 0.2s;
+  position: relative;
+}
+.blog-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 .blog-card:nth-child(3n) { border-right: none; }
 .blog-card:hover { background: var(--paper); }
@@ -517,17 +523,17 @@
 <section class="blog-featured">
   <div class="v2-container">
     <span class="blog-featured-label">In evidenza</span>
-    <a href="/blog/cosa-fare-manfredonia/" class="blog-featured-grid" style="text-decoration:none; color:inherit; display:grid;">
+    <a href="/blog/spiagge-gargano-manfredonia-vieste/" class="blog-featured-grid" style="text-decoration:none; color:inherit; display:grid;">
       <div class="blog-featured-img">
-        <img src="../foto-zona/Manfredonia.webp" alt="Manfredonia panorama" loading="eager"/>
+        <img src="../foto-zona/vignanotica-2.webp" alt="La spiaggia di Vignanotica, una delle più belle del Gargano" loading="eager"/>
       </div>
       <div class="blog-featured-body">
         <div class="blog-featured-eyebrow">
-          <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article1_cat">Itinerari</span>
-          <span class="blog-date-tag" data-i18n="blog_article1_date">Marzo 2026</span>
+          <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article18_cat">Itinerari</span>
+          <span class="blog-date-tag" data-i18n="blog_article18_date">Marzo 2026</span>
         </div>
-        <h2 class="blog-featured-title" data-i18n="blog_article1_title">Cinque cose da fare a Manfredonia che non trovi su TripAdvisor</h2>
-        <p class="blog-featured-excerpt" data-i18n="blog_article1_excerpt">Il Castello Svevo-Angioino al tramonto, la Basilica paleocristiana di Siponto, il mercato del pesce all'alba, un aperitivo sul lungomare e il tramonto sul Golfo.</p>
+        <h2 class="blog-featured-title" data-i18n="blog_article18_title">Cinque cose da fare a Manfredonia che non trovi su TripAdvisor</h2>
+        <p class="blog-featured-excerpt" data-i18n="blog_article18_excerpt">Il Castello Svevo-Angioino al tramonto, la Basilica paleocristiana di Siponto, il mercato del pesce all'alba, un aperitivo sul lungomare e il tramonto sul Golfo.</p>
         <span class="blog-read-link">Leggi tutto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </div>
     </a>
@@ -552,6 +558,38 @@
 <section class="blog-grid-section">
   <div class="v2-container">
     <div class="blog-grid" id="blog-grid">
+
+      <!-- Article 25 — Spiagge e lidi (più recente) -->
+      <article class="blog-card" data-cat="mare">
+        <div class="blog-card-img">
+          <img alt="La costa del Gargano nei pressi di Mattinatella, con acque turchesi" loading="lazy" src="../foto-zona/mattinatella.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article25_cat">Mare</span>
+            <span class="blog-date-tag" data-i18n="blog_article25_date">Giugno 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article25_title">Spiagge e lidi vicino Manfredonia: dove fare il bagno nel Gargano</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article25_excerpt">Da Acqua di Cristo a Vignanotica, passando per Mattinata e Mattinatella. Spiagge libere, lidi attrezzati, parcheggi e consigli pratici per ogni tipo di vacanza.</p>
+          <a class="blog-card-link" href="/blog/spiagge-lidi-manfredonia/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Article 24 — Manfredonia tre giorni -->
+      <article class="blog-card" data-cat="itinerari">
+        <div class="blog-card-img">
+          <img alt="Il centro storico e il lungomare di Manfredonia" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-12.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article24_cat">Itinerari</span>
+            <span class="blog-date-tag" data-i18n="blog_article24_date">Giugno 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article24_title">Manfredonia in 3 giorni: cosa fare, dove andare e come organizzarsi</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article24_excerpt">Il castello, il mercato del pesce, le spiagge di Mattinata, Monte Sant'Angelo e la Basilica di Tresoldi. Un itinerario pensato da chi vive qui.</p>
+          <a class="blog-card-link" href="/blog/manfredonia-tre-giorni/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
 
       <!-- Article 23 — Giro in barca (più recente) -->
       <article class="blog-card" data-cat="mare">
@@ -843,18 +881,18 @@
       </article>
 
       <!-- Article 18 -->
-      <article class="blog-card" data-cat="mare">
+      <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Vignanotica, una delle spiagge più belle del Gargano" loading="lazy" src="../foto-zona/vignanotica-2.webp"/>
+          <img alt="Il castello svevo di Manfredonia, simbolo della città" loading="lazy" src="../foto-zona/castello_Manfredonia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article18_cat">Mare</span>
-            <span class="blog-date-tag" data-i18n="blog_article18_date">Agosto 2025</span>
+            <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article1_cat">Itinerari</span>
+            <span class="blog-date-tag" data-i18n="blog_article1_date">Marzo 2026</span>
           </div>
-          <h3 class="blog-card-title" data-i18n="blog_article18_title">Spiagge del Gargano da Manfredonia a Vieste: la guida di chi ci vive</h3>
-          <p class="blog-card-excerpt" data-i18n="blog_article18_excerpt">Acqua di Cristo, le calette di Mattinata, Vignanotica, Baia di San Felice, le insenature nascoste prima di Vieste. Un viaggio lungo tutta la costa garganica.</p>
-          <a class="blog-card-link" href="/blog/spiagge-gargano-manfredonia-vieste/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <h3 class="blog-card-title" data-i18n="blog_article1_title">Cinque cose da fare a Manfredonia che non trovi su TripAdvisor</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article1_excerpt">Il Castello Svevo-Angioino al tramonto, la Basilica paleocristiana di Siponto, il mercato del pesce all'alba, un aperitivo sul lungomare e il tramonto sul Golfo.</p>
+          <a class="blog-card-link" href="/blog/cosa-fare-manfredonia/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </article>
 
