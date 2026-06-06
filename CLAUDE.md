@@ -138,7 +138,7 @@ sito/blog-articolo-N.html            ← OBSOLETI (Netlify li reindirizza via 30
 
 I file `blog-articolo-N.html` esistono ancora in `sito/` ma sono dead end SEO: Netlify li reindirizza ai nuovi slug con 301. Qualsiasi modifica a quei file è lavoro sprecato. Se serve lavorare sui contenuti del blog (link interni, SEO, testi), identificare il file corrispondente in `sito/blog/slug/index.html`.
 
-I 18 articoli canonici sono in:
+I 20 articoli canonici sono in:
 ```
 sito/blog/settimana-nel-gargano/
 sito/blog/spiagge-gargano-manfredonia-vieste/
@@ -158,6 +158,8 @@ sito/blog/locali-gargano/
 sito/blog/manfredonia-lenta/
 sito/blog/gargano-fuori-stagione/
 sito/blog/settimana-santa-manfredonia/
+sito/blog/peschici-borgo-sul-mare/
+sito/blog/giro-in-barca-gargano/
 ```
 
 Link relativi tra articoli slug: `../altro-slug/` (es. da `settimana-nel-gargano/` a Vieste: `href="../vieste-borgo-sul-mare/"`)

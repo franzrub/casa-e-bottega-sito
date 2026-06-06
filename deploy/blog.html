@@ -354,7 +354,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: url('./foto-la-dimora/dimora-01-foto-principale.jpeg') center/cover no-repeat;
+  background: url('../foto-la-dimora/dimora-01-foto-principale.jpeg') center/cover no-repeat;
   opacity: 0.08;
   pointer-events: none;
 }
@@ -467,7 +467,7 @@
           <a href="nl/blog.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
           <a href="es/blog.html" hreflang="es" title="Español" role="listitem">ES</a>
         </div>
-        <a href="prenota.html" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Prenota ora</a>
+        <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:12px 20px; font-size:12px; min-height:44px; display:inline-flex; align-items:center;" data-i18n="hero_cta_book">Prenota ora</a>
         <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
           <span></span>
           <span></span>
@@ -519,12 +519,12 @@
     <span class="blog-featured-label">In evidenza</span>
     <a href="/blog/cosa-fare-manfredonia/" class="blog-featured-grid" style="text-decoration:none; color:inherit; display:grid;">
       <div class="blog-featured-img">
-        <img src="./foto-zona/Manfredonia.webp" alt="Manfredonia panorama" loading="eager"/>
+        <img src="../foto-zona/Manfredonia.webp" alt="Manfredonia panorama" loading="eager"/>
       </div>
       <div class="blog-featured-body">
         <div class="blog-featured-eyebrow">
           <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article1_cat">Itinerari</span>
-          <span class="blog-date-tag" data-i18n="blog_article1_date">Maggio 2026</span>
+          <span class="blog-date-tag" data-i18n="blog_article1_date">Marzo 2026</span>
         </div>
         <h2 class="blog-featured-title" data-i18n="blog_article1_title">Cinque cose da fare a Manfredonia che non trovi su TripAdvisor</h2>
         <p class="blog-featured-excerpt" data-i18n="blog_article1_excerpt">Il Castello Svevo-Angioino al tramonto, la Basilica paleocristiana di Siponto, il mercato del pesce all'alba, un aperitivo sul lungomare e il tramonto sul Golfo.</p>
@@ -553,10 +553,42 @@
   <div class="v2-container">
     <div class="blog-grid" id="blog-grid">
 
+      <!-- Article 23 — Giro in barca (più recente) -->
+      <article class="blog-card" data-cat="mare">
+        <div class="blog-card-img">
+          <img alt="Scogliere del Gargano viste dal mare" loading="lazy" src="../foto-zona/scogliera.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article23_cat">Mare</span>
+            <span class="blog-date-tag" data-i18n="blog_article23_date">Giugno 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article23_title">Giro in barca nel Gargano: la costa che non esiste dalla strada</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article23_excerpt">Grotte marine senza nome, calette raggiungibili solo a nuoto, archi di roccia scolpiti dal mare. Come scegliere tra escursione collettiva, gommone e gozzo privato.</p>
+          <a class="blog-card-link" href="/blog/giro-in-barca-gargano/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Article 22 — Peschici -->
+      <article class="blog-card" data-cat="borghi">
+        <div class="blog-card-img">
+          <img alt="Peschici, borgo sul mare del Gargano" loading="lazy" src="../foto-zona/peschici.webp"/>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-cat-tag blog-cat-tag--borghi" data-i18n="blog_article22_cat">Borghi</span>
+            <span class="blog-date-tag" data-i18n="blog_article22_date">Maggio 2026</span>
+          </div>
+          <h3 class="blog-card-title" data-i18n="blog_article22_title">Peschici: il borgo sul mare dove il tempo si conta in tramontane</h3>
+          <p class="blog-card-excerpt" data-i18n="blog_article22_excerpt">Vicoli che finiscono sul mare, trabucchi aggrappati alla scogliera, il Trabucco Monte Pucci per un pranzo dimenticato. Peschici vista dall'interno, non dalla spiaggia.</p>
+          <a class="blog-card-link" href="/blog/peschici-borgo-sul-mare/">Leggi tutto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+
       <!-- Article 2 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Spiaggia del Gargano d'inverno" loading="lazy" src="./foto-zona/Foto spiaggia.webp"/>
+          <img alt="Spiaggia del Gargano d'inverno" loading="lazy" src="../foto-zona/Foto spiaggia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -572,7 +604,7 @@
       <!-- Article 3 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Monte Sant'Angelo" loading="lazy" src="./foto-zona/Monte S.Angelo- basilica-santuario-san-michele.webp"/>
+          <img alt="Monte Sant'Angelo" loading="lazy" src="../foto-zona/Monte S.Angelo- basilica-santuario-san-michele.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -588,7 +620,7 @@
       <!-- Article 4 -->
       <article class="blog-card" data-cat="tradizioni">
         <div class="blog-card-img">
-          <img alt="Basilica di Siponto, installazione Tresoldi" loading="lazy" src="./foto-zona/tresoldibasilica_siponto.webp"/>
+          <img alt="Basilica di Siponto, installazione Tresoldi" loading="lazy" src="../foto-zona/tresoldibasilica_siponto.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -604,7 +636,7 @@
       <!-- Article 5 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Sapori autentici del Gargano" loading="lazy" src="./foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
+          <img alt="Sapori autentici del Gargano" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -620,12 +652,12 @@
       <!-- Article 6 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Gargano visto dall'alto" loading="lazy" src="./foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="Gargano visto dall'alto" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article6_cat">Itinerari</span>
-            <span class="blog-date-tag" data-i18n="blog_article6_date">Marzo 2026</span>
+            <span class="blog-date-tag" data-i18n="blog_article6_date">Febbraio 2026</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article6_title">Una settimana nel Gargano: itinerario completo da Manfredonia</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article6_excerpt">Sette giorni tra mare, borghi, foreste e sapori. Da Vieste a Peschici, dalla Foresta Umbra a Mattinata, tutto partendo da casa nostra.</p>
@@ -636,7 +668,7 @@
       <!-- Article 7 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Vieste, borgo sul mare del Gargano" loading="lazy" src="./foto-zona/gargano_vieste.webp"/>
+          <img alt="Vieste, borgo sul mare del Gargano" loading="lazy" src="../foto-zona/vieste.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -652,12 +684,12 @@
       <!-- Article 8 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Scogliere del Gargano" loading="lazy" src="./foto-zona/scogliera.webp"/>
+          <img alt="Scogliere del Gargano" loading="lazy" src="../foto-zona/scogliera.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article8_cat">Mare</span>
-            <span class="blog-date-tag" data-i18n="blog_article8_date">Febbraio 2026</span>
+            <span class="blog-date-tag" data-i18n="blog_article8_date">Gennaio 2026</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article8_title">Le scogliere del Gargano: dove il mare è ancora selvaggio</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article8_excerpt">Calette nascoste, acque trasparenti e rocce bianche di calcare. Una guida per chi vuole trovare il mare del Gargano lontano dagli ombrelloni.</p>
@@ -668,7 +700,7 @@
       <!-- Article 9 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Centro storico di Manfredonia" loading="lazy" src="./foto-zona/Manfredonia-Gargano-Apulien-Italien-12.webp"/>
+          <img alt="Centro storico di Manfredonia" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-12.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -684,12 +716,12 @@
       <!-- Article 10 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Sapori autentici di Manfredonia" loading="lazy" src="./foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
+          <img alt="Sapori autentici di Manfredonia" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--cibo" data-i18n="blog_article10_cat">Cibo &amp; Vino</span>
-            <span class="blog-date-tag" data-i18n="blog_article10_date">Gennaio 2026</span>
+            <span class="blog-date-tag" data-i18n="blog_article10_date">Dicembre 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article10_title">Dove mangiano le persone del posto a Manfredonia (non dove vi mandano le guide)</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article10_excerpt">Tre trattorie senza insegna, un panificio che apre alle 5 del mattino e un bar dove i pescatori fanno colazione alle 6. I posti che Francesco frequenta da trent'anni.</p>
@@ -700,7 +732,7 @@
       <!-- Article 11 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Il castello di Manfredonia visto dall'esterno" loading="lazy" src="./foto-zona/castello_Manfredonia.webp"/>
+          <img alt="Il castello di Manfredonia visto dall'esterno" loading="lazy" src="../foto-zona/castello_Manfredonia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -716,12 +748,12 @@
       <!-- Article 12 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="Gargano visto dallo spazio, la forma dello sperone" loading="lazy" src="./foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="Gargano visto dallo spazio, la forma dello sperone" loading="lazy" src="../foto-zona/Gargano_dallo_spazio.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article12_cat">Itinerari</span>
-            <span class="blog-date-tag" data-i18n="blog_article12_date">Dicembre 2025</span>
+            <span class="blog-date-tag" data-i18n="blog_article12_date">Novembre 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article12_title">Come muoversi nel Gargano senza sembrare un turista: la guida che non esiste da nessuna altra parte</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article12_excerpt">Quando partire per evitare il traffico della Foresta Umbra. A che ora arrivare alle spiagge più belle. Quali strade secondarie usare. Tutto quello che sappiamo dopo trent'anni vissuti qui.</p>
@@ -733,7 +765,7 @@
       <!-- Article 13 -->
       <article class="blog-card" data-cat="tradizioni">
         <div class="blog-card-img">
-          <img alt="Processione della Settimana Santa a Manfredonia" loading="lazy" src="./foto-zona/tresoldibasilica_siponto.webp"/>
+          <img alt="Processione della Settimana Santa a Manfredonia" loading="lazy" src="../foto-zona/tresoldibasilica_siponto.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -749,12 +781,12 @@
       <!-- Article 14 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Baia delle Zagare e le calette del Gargano a maggio" loading="lazy" src="./foto-zona/scogliera.webp"/>
+          <img alt="Baia delle Zagare e le calette del Gargano a maggio" loading="lazy" src="../foto-zona/scogliera.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article14_cat">Mare</span>
-            <span class="blog-date-tag" data-i18n="blog_article14_date">Novembre 2025</span>
+            <span class="blog-date-tag" data-i18n="blog_article14_date">Ottobre 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article14_title">Dove fare il bagno sul Gargano a maggio e giugno (prima della folla)</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article14_excerpt">Baia delle Zagare, le calette di Mattinata, le cale raggiungibili solo a piedi. I posti dove i locali si tuffano quando il mare è già perfetto e le spiagge sono ancora vuote.</p>
@@ -765,7 +797,7 @@
       <!-- Article 15 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Vino del Gargano, Nero di Troia e cantine artigianali" loading="lazy" src="./foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
+          <img alt="Vino del Gargano, Nero di Troia e cantine artigianali" loading="lazy" src="../foto-zona/Manfredonia-Gargano-Apulien-Italien-10.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -781,12 +813,12 @@
       <!-- Article 16 -->
       <article class="blog-card" data-cat="borghi">
         <div class="blog-card-img">
-          <img alt="Mattinata, borgo bianco tra la montagna e il mare del Gargano" loading="lazy" src="./foto-zona/Manfredonia-Gargano-Apulien-Italien-5.webp"/>
+          <img alt="Mattinata, borgo bianco tra la montagna e il mare del Gargano" loading="lazy" src="../foto-zona/mattinatella.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--borghi" data-i18n="blog_article16_cat">Borghi</span>
-            <span class="blog-date-tag" data-i18n="blog_article16_date">Ottobre 2025</span>
+            <span class="blog-date-tag" data-i18n="blog_article16_date">Settembre 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article16_title">Mattinata: il paese bianco tra la montagna e il mare che non è ancora stato scoperto</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article16_excerpt">Di giorno è un paese contadino con le case imbiancate a calce. Di sera le sue calette diventano tra le più belle del Gargano. Mattinata è ancora un segreto, e noi ve lo raccontiamo.</p>
@@ -797,7 +829,7 @@
       <!-- Article 17 -->
       <article class="blog-card" data-cat="cibo">
         <div class="blog-card-img">
-          <img alt="Bar, trattorie e locali del Gargano consigliati da chi ci abita" loading="lazy" src="./foto-zona/Manfredonia.webp"/>
+          <img alt="Bar, trattorie e locali del Gargano consigliati da chi ci abita" loading="lazy" src="../foto-zona/Manfredonia.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -813,12 +845,12 @@
       <!-- Article 18 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Le spiagge del Gargano da Manfredonia a Vieste con scogliere bianche e mare turchese" loading="lazy" src="./foto-zona/gargano_vieste.webp"/>
+          <img alt="Le spiagge del Gargano da Manfredonia a Vieste con scogliere bianche e mare turchese" loading="lazy" src="../foto-zona/gargano_vieste.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--mare" data-i18n="blog_article18_cat">Mare</span>
-            <span class="blog-date-tag" data-i18n="blog_article18_date">Settembre 2025</span>
+            <span class="blog-date-tag" data-i18n="blog_article18_date">Agosto 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article18_title">Spiagge del Gargano da Manfredonia a Vieste: la guida di chi ci vive</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article18_excerpt">Acqua di Cristo, le calette di Mattinata, Vignanotica, Baia di San Felice, le insenature nascoste prima di Vieste. Un viaggio lungo tutta la costa garganica.</p>
@@ -829,7 +861,7 @@
       <!-- Article 19 -->
       <article class="blog-card" data-cat="mare">
         <div class="blog-card-img">
-          <img alt="Le scogliere dell'Adriatico verso le Isole Tremiti" loading="lazy" src="./foto-zona/scogliera.webp"/>
+          <img alt="Le scogliere dell'Adriatico verso le Isole Tremiti" loading="lazy" src="../foto-zona/gargano_vieste.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
@@ -845,12 +877,12 @@
       <!-- Article 20 -->
       <article class="blog-card" data-cat="itinerari">
         <div class="blog-card-img">
-          <img alt="La Foresta Umbra del Gargano con i suoi faggi secolari" loading="lazy" src="./foto-zona/Gargano_dallo_spazio.webp"/>
+          <img alt="La Foresta Umbra del Gargano con i suoi faggi secolari" loading="lazy" src="../foto-zona/foresta-umbra.webp"/>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article20_cat">Itinerari</span>
-            <span class="blog-date-tag" data-i18n="blog_article20_date">Agosto 2025</span>
+            <span class="blog-date-tag" data-i18n="blog_article20_date">Luglio 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article20_title">Foresta Umbra: il bosco antico dove i daini ti vengono incontro</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article20_excerpt">10.000 ettari di faggi e querce che sopravvivono dall'Era Glaciale, daini semi-selvatici nelle radure, e-bike da noleggiare e silenzio totale a un'ora da Manfredonia.</p>
@@ -867,7 +899,7 @@
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-cat-tag blog-cat-tag--itinerari" data-i18n="blog_article21_cat">Itinerari</span>
-            <span class="blog-date-tag" data-i18n="blog_article21_date">Maggio 2026</span>
+            <span class="blog-date-tag" data-i18n="blog_article21_date">Luglio 2025</span>
           </div>
           <h3 class="blog-card-title" data-i18n="blog_article21_title">Weekend al Gargano: cosa fare in 2 giorni</h3>
           <p class="blog-card-excerpt" data-i18n="blog_article21_excerpt">Sabato: Manfredonia, Siponto e la spiaggia. Domenica: Monte Sant&#39;Angelo e Foresta Umbra, oppure Vieste. Itinerario pratico per chi ha solo un weekend.</p>
@@ -957,7 +989,7 @@
 
 <!-- ══ SCRIPTS ══════════════════════════════════════════════════════ -->
 <script src="js/i18n.min.js?v=20260428" defer></script>
-<script src="js/main.min.js?v=20260428" defer></script>
+<script src="js/main.js?v=20260428" defer></script>
 <script>
 (function() {
   'use strict';
