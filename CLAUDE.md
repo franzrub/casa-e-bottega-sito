@@ -37,6 +37,7 @@ sito/
 ├── blog.html
 ├── prenota.html
 ├── contatti.html
+├── casa-sul-mare.html ← pagina appartamento partner (solo IT, linkata da homepage e footer)
 ├── blog-articolo-*.html
 ├── en/index.html      ← EN
 ├── de/index.html      ← DE
@@ -138,7 +139,7 @@ sito/blog-articolo-N.html            ← OBSOLETI (Netlify li reindirizza via 30
 
 I file `blog-articolo-N.html` esistono ancora in `sito/` ma sono dead end SEO: Netlify li reindirizza ai nuovi slug con 301. Qualsiasi modifica a quei file è lavoro sprecato. Se serve lavorare sui contenuti del blog (link interni, SEO, testi), identificare il file corrispondente in `sito/blog/slug/index.html`.
 
-I 20 articoli canonici sono in:
+I 25 articoli canonici sono in:
 ```
 sito/blog/settimana-nel-gargano/
 sito/blog/spiagge-gargano-manfredonia-vieste/
@@ -160,21 +161,33 @@ sito/blog/gargano-fuori-stagione/
 sito/blog/settimana-santa-manfredonia/
 sito/blog/peschici-borgo-sul-mare/
 sito/blog/giro-in-barca-gargano/
+sito/blog/foresta-umbra/
+sito/blog/weekend-gargano/
+sito/blog/manfredonia-tre-giorni/
+sito/blog/spiagge-lidi-manfredonia/
+sito/blog/isole-tremiti/
 ```
 
 Link relativi tra articoli slug: `../altro-slug/` (es. da `settimana-nel-gargano/` a Vieste: `href="../vieste-borgo-sul-mare/"`)
 
 ## Minificazione CSS e JS
 
-`prepara-deploy.sh` genera automaticamente i file `.min` durante il deploy. **Non modificare manualmente i file `.min` in `sito/`** — vengono sovrascritti ad ogni deploy.
+**Non modificare manualmente i file `.min` in `sito/`** — sono residui storici ignorati.
 
-- `sito/js/main.js` → `deploy/js/main.min.js` (via terser)
-- `sito/js/i18n.js` → `deploy/js/i18n.min.js` (via terser)
-- `sito/css/style-v2.css` → `deploy/css/style-v2.min.css` (via clean-css-cli)
+I file minificati in `deploy/` vanno rigenerati manualmente ogni volta che si modifica `i18n.js`, `main.js` o `style-v2.css`:
 
-I file `.min` già presenti in `sito/` sono residui storici e vengono ignorati dallo script (che rigenera tutto in `deploy/`). Se si modifica `style-v2.css` o `i18n.js`, basta rieseguire `./prepara-deploy.sh` — nessun passo manuale aggiuntivo.
+```bash
+# Rigenera i18n.min.js dopo ogni modifica a i18n.js (aggiunta articoli, nuove traduzioni)
+npx terser sito/js/i18n.js --compress --mangle -o deploy/js/i18n.min.js
 
-Dipendenze richieste (già installate globalmente o via npx): `terser`, `clean-css-cli`.
+# Rigenera main.min.js dopo ogni modifica a main.js
+npx terser sito/js/main.js --compress --mangle -o deploy/js/main.min.js
+
+# Rigenera style-v2.min.css dopo ogni modifica al CSS
+npx clean-css-cli sito/css/style-v2.css -o deploy/css/style-v2.min.css
+```
+
+⚠️ **Se dimentichi di rigenerare `i18n.min.js` dopo aver aggiunto articoli o traduzioni, il sito live mostrerà le chiavi i18n come testo letterale** (es. `blog_article25_title` invece del titolo vero).
 
 ## Debug — consigli pratici
 - **Sempre controllare la console del browser** prima di speculare sulla causa di un bug

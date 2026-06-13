@@ -47,7 +47,11 @@
     }
     @media (max-width: 768px) {
       .container { padding: 0 24px; }
-      .top-nav { padding: 16px 24px; }
+      .top-nav { padding: 12px 20px; }
+      .top-nav .logo { font-size: 17px; }
+      .top-nav .logo span { display: none; }
+      .top-nav-right { display: none; }
+      .page-title { display: none; }
     }
 
     /* ── PAGE TITLE ──────────────────────────────────── */
@@ -109,7 +113,8 @@
       .gallery-carousel {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 38vw);
+        grid-template-rows: 58vw;
+        grid-auto-rows: 38vw;
         gap: 6px;
         margin-left: -24px;
         margin-right: -24px;
@@ -157,14 +162,12 @@
 
     /* ── MAIN LAYOUT ─────────────────────────────────── */
     .main-layout {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: start;
+      display: block;
+      max-width: 760px;
+      margin: 0 auto;
     }
     @media (max-width: 900px) {
-      .main-layout { grid-template-columns: 1fr; gap: 40px; }
-      .booking-widget { order: -1; }
+      .main-layout { max-width: 100%; }
     }
 
     /* ── LISTING INFO ────────────────────────────────── */
@@ -190,6 +193,7 @@
       border-radius: 12px;
       margin-bottom: 28px;
       align-items: center;
+      justify-content: center;
     }
     .badge-item {
       display: flex;
@@ -598,6 +602,9 @@
       cursor: pointer;
     }
     .lightbox-counter { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px; }
+    @media (max-width: 768px) {
+      footer { padding: 20px 24px !important; }
+    }
   </style>
 </head>
 <body>
@@ -608,7 +615,7 @@
     ★ Casa sul mare ★
     <span>Manfredonia, Puglia</span>
   </div>
-  <div style="display:flex;gap:20px;font-size:14px;color:#444;">
+  <div class="top-nav-right" style="display:flex;gap:20px;font-size:14px;color:#444;">
     <a href="#reviews" style="font-weight:500;">★ 5,0 · <u>30 recensioni</u></a>
     <a href="https://www.airbnb.it/rooms/47367976" target="_blank" style="font-weight:600;color:#FF385C;">Vedi su Airbnb →</a>
   </div>
@@ -807,12 +814,15 @@
 
       <hr class="divider">
 
-      <!-- Calendario placeholder -->
-      <h2 class="section-title" id="calendar">Seleziona la data di check-in</h2>
-      <p style="font-size:14px;color:#717171;margin-bottom:16px;">Aggiungi le date del tuo viaggio per conoscere il prezzo esatto</p>
-      <div style="background:#f7f7f7;border-radius:12px;padding:24px;text-align:center;color:#717171;font-size:14px;">
-        📅 Per visualizzare il calendario e prenotare, visita la pagina su Airbnb.<br>
-        <a href="https://www.airbnb.it/rooms/47367976" target="_blank" style="color:#FF385C;font-weight:600;text-decoration:underline;margin-top:8px;display:inline-block;">Vai al calendario su Airbnb →</a>
+      <!-- Prenotazione diretta -->
+      <h2 class="section-title" id="calendar">Prenota direttamente e risparmia il 20%</h2>
+      <p style="font-size:14px;color:#717171;margin-bottom:16px;">Prenotando direttamente con noi risparmi il <strong>20%</strong> rispetto ad Airbnb. Contattaci per conoscere disponibilità e prezzo: rispondiamo entro un'ora.</p>
+      <div style="background:#fff;border:1px solid #ddd;border-radius:16px;padding:24px;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#E31C5F;margin-bottom:6px;">Sconto del 20% sulla prenotazione diretta</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:18px;">📞 +39 333 470 5574</div>
+        <a href="tel:+393334705574" class="widget-btn" style="display:block;text-align:center;text-decoration:none;margin-bottom:10px;">Chiama ora</a>
+        <a href="https://wa.me/393334705574" target="_blank" style="display:block;text-align:center;text-decoration:none;padding:14px;border-radius:8px;background:#25D366;color:#fff;font-size:16px;font-weight:600;margin-bottom:14px;">💬 Scrivi su WhatsApp</a>
+        <a href="https://www.airbnb.it/rooms/47367976" target="_blank" class="widget-airbnb-link">Oppure prenota su Airbnb →</a>
       </div>
 
       <hr class="divider">
@@ -970,7 +980,7 @@
           <div style="font-size:14px;color:#444;">⚡ Risponde entro un'ora</div>
         </div>
         <div style="margin-top:16px;">
-          <a href="https://www.airbnb.it/rooms/47367976" target="_blank" style="display:inline-block;padding:12px 24px;border:1px solid #222;border-radius:8px;font-size:14px;font-weight:600;color:#222;text-decoration:none;">Invia un messaggio all'host</a>
+          <a href="https://wa.me/393334705574" target="_blank" style="display:inline-block;padding:12px 24px;border:1px solid #222;border-radius:8px;font-size:14px;font-weight:600;color:#222;text-decoration:none;">Invia un messaggio all'host</a>
         </div>
       </div>
 
@@ -1007,44 +1017,6 @@
     </div>
     <!-- / left -->
 
-    <!-- Right: booking widget -->
-    <div class="booking-widget">
-      <div class="widget-card">
-        <div class="widget-header">
-          Aggiungi le date per conoscere i prezzi
-          <small>Disponibilità verificata su Airbnb</small>
-        </div>
-        <div class="date-grid">
-          <div class="date-cell">
-            <label>CHECK-IN</label>
-            <input type="text" placeholder="Aggiungi una data">
-          </div>
-          <div class="date-cell">
-            <label>CHECK-OUT</label>
-            <input type="text" placeholder="Aggiungi una data">
-          </div>
-        </div>
-        <div class="guests-row">
-          <div>
-            <label>OSPITI</label>
-            <span>1 ospite</span>
-          </div>
-          <span>∨</span>
-        </div>
-        <a href="https://www.airbnb.it/rooms/47367976" target="_blank" class="widget-btn" style="display:block;text-align:center;text-decoration:none;">Controlla la disponibilità</a>
-        <div class="widget-note">Non ti verranno addebitati importi per ora</div>
-        <a href="https://www.airbnb.it/rooms/47367976" target="_blank" class="widget-airbnb-link">
-          🏠 Prenota su Airbnb
-        </a>
-      </div>
-
-      <!-- Mini map on sidebar -->
-      <div style="margin-top:20px;font-size:13px;color:#717171;line-height:1.6;">
-        <strong style="color:#222;">📍 Manfredonia, Puglia</strong><br>
-        A 100m dal mare · A 200m dal centro storico<br>
-        Parcheggio gratuito disponibile nelle vie limitrofe
-      </div>
-    </div>
 
   </div>
   <!-- / main layout -->
