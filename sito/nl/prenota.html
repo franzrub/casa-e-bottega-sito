@@ -65,14 +65,10 @@
   border-radius: 999px;
   background: rgba(255,255,255,0.45);
 }
-.pren-hero-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #4a9b6f;
-  box-shadow: 0 0 0 3px rgba(74,155,111,0.2);
+.pren-hero-check {
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
-  display: inline-block;
 }
 .pren-hero h1 {
   font-family: 'Cormorant Garamond', serif;
@@ -796,6 +792,11 @@
   text-decoration: line-through;
   background: none;
 }
+.v2-bm-cal-wrap .mini-cal-day.past {
+  color: rgba(154,143,128,0.28);
+  background: none;
+  cursor: default;
+}
 .v2-bm-cal-wrap .mini-cal-day.empty {
   background: none;
 }
@@ -880,7 +881,7 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 .v2-bm-room-img {
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   overflow: hidden;
 }
 .v2-bm-room-img img {
@@ -957,6 +958,8 @@
   margin-bottom: 0.15rem;
   display: inline-block;
 }
+.v2-bm-room-card.unavailable { opacity: 0.5; }
+.v2-bm-room-card.unavailable .v2-bm-room-img img { filter: grayscale(0.5); }
 .v2-bm-room-unavail {
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
@@ -1235,7 +1238,7 @@
   padding: 1rem;
   border: none;
   border-radius: 3px;
-  background: #6b7c3a;
+  background: var(--petrolio);
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 0.78rem;
@@ -1246,7 +1249,7 @@
   transition: background 0.2s, transform 0.15s;
   margin-bottom: 0.7rem;
 }
-.btn-sidebar-confirm:hover { background: #5a6930; transform: translateY(-1px); }
+.btn-sidebar-confirm:hover { background: var(--ink); transform: translateY(-1px); }
 .btn-sidebar-confirm:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
 .btn-sidebar-back {
   display: block;
@@ -1385,6 +1388,8 @@
   .v2-bm-summary-side { position: static; }
 }
 @media (max-width: 640px) {
+  .v2-bm-stay-cta { position: sticky; bottom: 10px; box-shadow: 0 8px 24px rgba(26,22,19,0.20); }
+  .btn-sidebar-confirm { position: sticky; bottom: 10px; box-shadow: 0 8px 24px rgba(26,22,19,0.20); }
   .pren-guarantees-grid { grid-template-columns: 1fr; }
   .pren-guarantee-item { grid-template-columns: 40px 1fr; gap: 14px; padding: 1.6rem 1.4rem; }
   .pren-trust-strip { grid-template-columns: repeat(2, 1fr); }
@@ -1394,6 +1399,7 @@
   .v2-bm-card { max-height: 100vh; border-radius: 0; }
   .v2-bm-overlay { padding: 0; align-items: flex-end; }
   .v2-bm-rail-label { display: none; }
+  .v2-bm-rail-sublabel { display: none; }
   .v2-modal-form .form-row { grid-template-columns: 1fr; }
 }
 
@@ -1527,11 +1533,11 @@
   <div class="v2-container">
     <div class="pren-hero-inner">
       <span class="pren-hero-label">
-        <span class="pren-hero-dot"></span>
+        <svg class="pren-hero-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
         Directe boeking · Geen tussenpersoon
       </span>
       <h1>Boek<br/><em>uw verblijf.</em></h1>
-      <p class="pren-hero-sub">Drie stappen — datums, kamer, bevestiging — rechtstreeks bij ons. Minstens <strong>20% goedkoper</strong> dan Booking en Airbnb, inclusief belasting.</p>
+      <p class="pren-hero-sub">Drie stappen: datums, kamer, bevestiging. Rechtstreeks bij ons geboekt, minstens <strong>20% goedkoper</strong> dan Booking en Airbnb, inclusief belasting.</p>
       <div class="pren-hero-cta-row">
         <button class="v2-btn v2-btn--primary" id="v2-open-booking" style="font-size:12px; padding:16px 36px; letter-spacing:0.1em;">
           Boeking starten →
@@ -1616,7 +1622,7 @@
       <div class="pren-legal">
         <div>
           <h4>Documenten in het kort</h4>
-          <p>Operatore turistico autorizzato — <strong>Licenza IT071029C200088044</strong>. Locazione turistica, soggiorno fino a 29 notti. Tassa di soggiorno pagata a parte.</p>
+          <p>Erkende toeristische exploitant — <strong>Vergunning IT071029C200088044</strong>. Toeristische verhuur, verblijf tot 29 nachten. Toeristenbelasting apart te betalen.</p>
         </div>
         <div class="pren-legal-pills">
           <span class="pren-pill">GDPR</span>
@@ -1720,7 +1726,7 @@
             <button class="mini-cal-nav" id="mini-cal-prev">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <span id="mini-cal-title">Aprile 2026</span>
+            <span id="mini-cal-title">April 2026</span>
             <button class="mini-cal-nav" id="mini-cal-next">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
@@ -1879,7 +1885,7 @@
       <!-- Success -->
       <div class="booking-success-msg" id="booking-success">
         <div class="success-icon" id="success-icon">✓</div>
-        <h3 id="success-title">Richiesta inviata!</h3>
+        <h3 id="success-title">Aanvraag verzonden!</h3>
         <p id="success-message" style="margin-bottom:1rem;"></p>
         <div id="success-next-steps" style="
           background: var(--paper);
@@ -1984,7 +1990,7 @@
 </a>
 
 <!-- ══ SCRIPTS ═════════════════════════════════════════════════════ -->
-<script src="../js/i18n.min.js?v=20260428" defer></script>
+<script src="../js/i18n.min.js?v=20260618" defer></script>
 <script src="../js/main.js?v=20260428" defer></script>
 <script>
 /* ============================================================
@@ -1998,14 +2004,32 @@
   var v2GuestsCount = 2;
 
   /* ── open / close ── */
+  var _lastFocused = null;
+  function _modalFocusables() {
+    var ov = document.getElementById('v2-bm-overlay');
+    var sel = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    return Array.prototype.slice.call(ov.querySelectorAll(sel)).filter(function(el){ return el.offsetParent !== null; });
+  }
+  function _trapTab(e) {
+    var ov = document.getElementById('v2-bm-overlay');
+    if (!ov.classList.contains('open')) return;
+    var nodes = _modalFocusables();
+    if (!nodes.length) return;
+    var first = nodes[0], last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
   function openModal(step) {
+    _lastFocused = document.activeElement;
     document.getElementById('v2-bm-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
     gotoStep(step || 1);
+    setTimeout(function(){ var n = _modalFocusables(); if (n.length) n[0].focus(); }, 60);
   }
   function closeModal() {
     document.getElementById('v2-bm-overlay').classList.remove('open');
     document.body.style.overflow = '';
+    if (_lastFocused && typeof _lastFocused.focus === 'function') _lastFocused.focus();
   }
 
   /* ── step navigation ── */
@@ -2066,7 +2090,7 @@
       var nights         = pricing ? pricing.nights : '—';
       var discountLabel  = pricing ? pricing.discountLabel : '';
       var imgSrc      = room.id === 'dimora'
-        ? '../../foto-la-dimora/dimora-01-foto-principale.jpeg'
+        ? '../../foto-la-dimora/dimora-01-foto-principale.webp'
         : '../../foto-la-bottega/bottega-01-foto%20principale.webp';
       var selectBtn = avail
         ? '<button class="v2-bm-select-btn" onclick="window._selectRoom(\'' + room.id + '\')">' +
@@ -2079,11 +2103,11 @@
           '<div class="v2-bm-room-tagline">' + (typeof t === 'function' ? t(room.taglineKey) : room.tagline) + '</div>' +
           '<div class="v2-bm-room-pricing">' +
             '<div class="v2-bm-room-price-block">' +
-              (totalOTA ? '<div class="v2-bm-room-ota">Booking: €' + totalOTA + '</div>' : '') +
-              (discountLabel ? '<div class="v2-bm-room-discount-label">' + discountLabel + '</div>' : '') +
+              (avail && totalOTA ? '<div class="v2-bm-room-ota">Booking: €' + totalOTA + '</div>' : '') +
+              (avail && discountLabel ? '<div class="v2-bm-room-discount-label">' + discountLabel + '</div>' : '') +
               '<div class="v2-bm-room-direct">€' + totalDirect + '</div>' +
               '<div class="v2-bm-room-direct-sub">' + nights + ' ' + (nights === 1 ? (typeof t === 'function' ? t('book_night') : 'notte') : (typeof t === 'function' ? t('book_nights') : 'notti')) + '</div>' +
-              (savings ? '<div class="v2-bm-room-savings-badge">' + (typeof t === 'function' ? t('book_savings_badge') : 'risparmi €') + savings + '</div>' : '') +
+              (avail && savings ? '<div class="v2-bm-room-savings-badge">' + (typeof t === 'function' ? t('book_savings_badge') : 'risparmi €') + savings + '</div>' : '') +
             '</div>' +
             selectBtn +
           '</div>' +
@@ -2125,6 +2149,36 @@
     }
   }
 
+  /* ── guests: nota letto extra (max 2 per camera) ── */
+  var _EXTRABED = {
+    it: ['Massimo 2 ospiti per camera. Per un letto singolo aggiuntivo', 'scrivici su WhatsApp'],
+    en: ['Maximum 2 guests per room. For an extra single bed', 'message us on WhatsApp'],
+    de: ['Maximal 2 Gäste pro Zimmer. Für ein zusätzliches Einzelbett', 'schreib uns auf WhatsApp'],
+    fr: ['Maximum 2 personnes par chambre. Pour un lit simple supplémentaire', 'écrivez-nous sur WhatsApp'],
+    nl: ['Maximaal 2 gasten per kamer. Voor een extra eenpersoonsbed', 'stuur ons een WhatsApp'],
+    es: ['Máximo 2 huéspedes por habitación. Para una cama individual adicional', 'escríbenos por WhatsApp']
+  };
+  function _showExtraBedNote() {
+    var row = document.querySelector('.v2-bm-guests-row');
+    if (!row) return;
+    var lang = (document.documentElement.lang || 'it').slice(0,2);
+    if (!_EXTRABED[lang]) lang = 'it';
+    var txt = _EXTRABED[lang];
+    var note = document.getElementById('v2-extrabed-note');
+    if (!note) {
+      note = document.createElement('p');
+      note.id = 'v2-extrabed-note';
+      note.style.cssText = 'font-family:Inter,sans-serif;font-size:0.75rem;color:var(--stone);line-height:1.5;margin:0.7rem 0 0;';
+      row.appendChild(note);
+    }
+    var wa = 'https://wa.me/393334705574?text=' + encodeURIComponent('Ciao Nicoletta, vorrei prenotare con un letto singolo aggiuntivo (3 ospiti). Potete aiutarmi?');
+    note.innerHTML = txt[0] + ' <a href="' + wa + '" target="_blank" rel="noopener" style="color:var(--petrolio);font-weight:600;text-decoration:underline;">' + txt[1] + '</a>.';
+  }
+  function _hideExtraBedNote() {
+    var note = document.getElementById('v2-extrabed-note');
+    if (note) note.remove();
+  }
+
   /* ── wire CTAs ── */
   document.addEventListener('DOMContentLoaded', function() {
     var openBtn    = document.getElementById('v2-open-booking');
@@ -2140,7 +2194,7 @@
     if (openBtnNav) openBtnNav.addEventListener('click', function() { openModal(1); });
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (overlay)  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); if (e.key === 'Tab') _trapTab(e); });
 
     // Back
     if (backBtn) backBtn.addEventListener('click', function() { gotoStep(currentStep - 1); });
@@ -2169,10 +2223,11 @@
     var minusBtn = document.getElementById('v2-guests-minus');
     var plusBtn  = document.getElementById('v2-guests-plus');
     if (minusBtn) minusBtn.addEventListener('click', function() {
-      if (v2GuestsCount > 1) { v2GuestsCount--; syncGuestsToInput(); }
+      if (v2GuestsCount > 1) { v2GuestsCount--; syncGuestsToInput(); _hideExtraBedNote(); }
     });
     if (plusBtn) plusBtn.addEventListener('click', function() {
-      if (v2GuestsCount < 4) { v2GuestsCount++; syncGuestsToInput(); }
+      if (v2GuestsCount < 2) { v2GuestsCount++; syncGuestsToInput(); _hideExtraBedNote(); }
+      else { _showExtraBedNote(); }
     });
     syncGuestsToInput();
 
@@ -2263,7 +2318,7 @@
         tagline: 'Intima, silenziosa, ci si sente a casa',
         descKey: 'room_dimora_short',
         desc: 'Spaziosa, silenziosa, avvolta da luce morbida, la camera in cui ci si sente a casa.',
-        image: '../../foto-la-dimora/dimora-01-foto-principale.jpeg',
+        image: '../../foto-la-dimora/dimora-01-foto-principale.webp',
         extraBed: true,
         amenities: [],
         prices: { high: 100, low: 60 }
@@ -2487,8 +2542,9 @@
         sidebarConfirmBtn.textContent = 'Wordt verzonden…';
       }
 
+      let _bookingOk = false;
       try {
-        await fetch('/.netlify/functions/send-booking', {
+        const _res = await fetch('/.netlify/functions/send-booking', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -2502,12 +2558,77 @@
             name, phone, email, message, method
           })
         });
+        _bookingOk = !!(_res && _res.ok);
       } catch (err) {
         console.warn('[booking] send-booking error:', err.message);
       }
 
-      showSuccess(method, name);
+      if (_bookingOk) {
+        showSuccess(method, name);
+      } else {
+        showBookingError(method, name);
+      }
     });
+
+    function showBookingError(method, guestName) {
+      var sb = document.getElementById('btn-sidebar-confirm');
+      if (sb) { sb.disabled = false; sb.textContent = 'Riprova'; }
+      var act = document.querySelector('.v2-bm-submit-area button.active');
+      if (act) { act.disabled = false; }
+      var r = ROOMS.find(function(x){ return x.id === state.selectedRoom; });
+      var rn = (typeof t === 'function' && r) ? (t(r.nameKey) || r.name) : (r ? r.name : '');
+      var msg = 'Ciao Nicoletta, ho provato a prenotare dal sito ma c\'e stato un problema tecnico. '
+        + 'Dettagli: ' + rn + ', ' + formatDate(state.checkin) + ' -> ' + formatDate(state.checkout)
+        + ', ' + state.nights + ' notti, ' + state.guests + ' ospiti. Nome: ' + (guestName || '') + '.';
+      var wa = 'https://wa.me/393334705574?text=' + encodeURIComponent(msg);
+      var box = document.getElementById('booking-error-box');
+      if (!box) {
+        box = document.createElement('div');
+        box.id = 'booking-error-box';
+        box.style.cssText = 'margin-top:1rem;padding:0.9rem 1rem;border-radius:3px;background:rgba(193,102,71,0.15);border:1px solid rgba(193,102,71,0.45);font-family:Inter,sans-serif;font-size:0.82rem;color:var(--bone);line-height:1.55;';
+        var cta = document.querySelector('.v2-bm-sidebar-cta');
+        if (cta && cta.parentNode) cta.parentNode.insertBefore(box, cta);
+      }
+      box.innerHTML = 'Invio non riuscito. Riprova tra poco, oppure '
+        + '<a href="' + wa + '" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;font-weight:600;">inviaci la richiesta su WhatsApp</a>'
+        + ' \u2014 bastano pochi secondi.';
+    }
+
+    var _DEPOSIT = {
+      it: { msg: "Abbiamo ricevuto la tua richiesta. Per bloccare le date versa subito la caparra del 20%; il saldo lo pagherai in struttura.", steps: "Caparra (20%): €{dep}  ·  Saldo all'arrivo: €{bal}", pay: "Paga la caparra €{dep}" },
+      en: { msg: "We've received your request. To lock in your dates, pay the 20% deposit now; you'll settle the balance at the property.", steps: "Deposit (20%): €{dep}  ·  Balance on arrival: €{bal}", pay: "Pay deposit €{dep}" },
+      de: { msg: "Wir haben Ihre Anfrage erhalten. Um die Daten zu sichern, zahlen Sie jetzt die Anzahlung von 20 %; den Restbetrag begleichen Sie vor Ort.", steps: "Anzahlung (20 %): €{dep}  ·  Restbetrag bei Ankunft: €{bal}", pay: "Anzahlung zahlen €{dep}" },
+      fr: { msg: "Nous avons bien reçu votre demande. Pour bloquer vos dates, réglez maintenant l'acompte de 20 % ; le solde se paie sur place.", steps: "Acompte (20 %) : €{dep}  ·  Solde à l'arrivée : €{bal}", pay: "Payer l'acompte €{dep}" },
+      nl: { msg: "We hebben je aanvraag ontvangen. Betaal nu de aanbetaling van 20% om je data vast te leggen; het restbedrag betaal je op locatie.", steps: "Aanbetaling (20%): €{dep}  ·  Restbedrag bij aankomst: €{bal}", pay: "Aanbetaling betalen €{dep}" },
+      es: { msg: "Hemos recibido tu solicitud. Para bloquear tus fechas, paga ahora el depósito del 20%; el resto lo abonarás en el alojamiento.", steps: "Depósito (20%): €{dep}  ·  Resto a la llegada: €{bal}", pay: "Pagar el depósito €{dep}" }
+    };
+    function _showDeposit() {
+      var total = parseFloat(state.totalDirect) || 0;
+      if (total <= 0) return;
+      var dep = Math.round(total * 0.2 * 100) / 100;
+      var bal = Math.round((total - dep) * 100) / 100;
+      function fmt(n){ return (Math.round(n * 100) % 100 === 0) ? String(Math.round(n)) : n.toFixed(2); }
+      var depStr = fmt(dep), balStr = fmt(bal);
+      var lang = (document.documentElement.lang || 'it').slice(0,2);
+      if (!_DEPOSIT[lang]) lang = 'it';
+      var d = _DEPOSIT[lang];
+      var url = 'https://paypal.me/Casaebottega13/' + depStr + 'EUR';
+      var sm = document.getElementById('success-message');
+      if (sm) sm.innerHTML = d.msg;
+      var ns = document.getElementById('success-next-steps');
+      if (ns) ns.innerHTML = d.steps.replace('{dep}', depStr).replace('{bal}', balStr);
+      var wa = document.getElementById('success-wa-link');
+      var pay = document.getElementById('success-paypal-link');
+      if (!pay && wa && wa.parentNode) {
+        pay = document.createElement('a');
+        pay.id = 'success-paypal-link';
+        pay.target = '_blank';
+        pay.rel = 'noopener';
+        pay.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;max-width:340px;margin:0 auto 0.6rem;padding:0.95rem 2rem;background:#0070ba;color:#fff;border-radius:2px;font-family:Inter,sans-serif;font-size:0.95rem;font-weight:600;text-decoration:none;';
+        wa.parentNode.insertBefore(pay, wa);
+      }
+      if (pay) { pay.href = url; pay.textContent = d.pay.replace('{dep}', depStr); }
+    }
 
     function showSuccess(method, guestName) {
       var firstName = guestName ? guestName.split(' ')[0] : '';
@@ -2536,6 +2657,7 @@
         waLink.href = 'https://wa.me/393334705574?text=' + waMsg;
       }
 
+      if (method === 'paypal') { _showDeposit(); }
       document.getElementById('booking-form-section').style.display = 'none';
       document.getElementById('booking-success').classList.add('active');
       document.getElementById('booking-success').style.display = 'block';
@@ -2646,7 +2768,9 @@
         const isAfterFirstBlocked  = firstBlockedAfterCheckin && ds > firstBlockedAfterCheckin;
 
         let cls = 'mini-cal-day';
-        if (isPast || (isBooked && !isSelectableCheckout) || isAfterFirstBlocked) {
+        if (isPast) {
+          cls += ' past';
+        } else if ((isBooked && !isSelectableCheckout) || isAfterFirstBlocked) {
           cls += ' booked';
         } else if (isDisabledBeforeCheckin) {
           cls += ' available cal-disabled-before-checkin';

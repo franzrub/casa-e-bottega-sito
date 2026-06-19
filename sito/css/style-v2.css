@@ -99,6 +99,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--stone-2);
 }
 
+.v2-label-dot {
+  display: inline-flex;
+  align-items: center;
+}
+
 .v2-label-dot::before {
   content: '';
   display: inline-block;
@@ -107,8 +112,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 50%;
   background: var(--terracotta);
   margin-right: 10px;
-  vertical-align: middle;
-  transform: translateY(-1px);
+  flex: 0 0 auto;
 }
 
 /* ---- Layout ----------------------------------------------- */

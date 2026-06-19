@@ -334,29 +334,39 @@
 }
 .v2-lightbox-close {
   position: absolute;
-  top: 24px; right: 32px;
-  font-size: 32px;
+  top: 16px; right: 16px;
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px;
+  line-height: 1;
   color: var(--bone);
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
-  background: none;
+  background: rgba(0,0,0,0.35);
   border: none;
+  border-radius: 50%;
   font-family: inherit;
+  z-index: 210;
+  -webkit-tap-highlight-color: transparent;
   transition: opacity 180ms ease;
 }
 .v2-lightbox-close:hover { opacity: 1; }
 .v2-lightbox-nav {
   position: absolute;
   top: 50%; transform: translateY(-50%);
+  min-width: 48px; min-height: 48px;
+  display: flex; align-items: center; justify-content: center;
   font-size: 40px;
   color: var(--bone);
-  opacity: 0.6;
+  opacity: 0.7;
   cursor: pointer;
   background: none;
   border: none;
   font-family: 'Cormorant Garamond', serif;
   transition: opacity 180ms ease;
   padding: 0 20px;
+  z-index: 210;
+  -webkit-tap-highlight-color: transparent;
 }
 .v2-lightbox-nav:hover { opacity: 1; }
 .v2-lightbox-prev { left: 20px; }
@@ -641,17 +651,20 @@
           <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-07-letto.webp" aria-label="La Bottega, Letto" role="listitem">
             <img src="../foto-la-bottega/bottega-07-letto.webp" alt="Letto king size della camera La Bottega" loading="lazy"/>
           </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-06-finestra.webp" aria-label="La Bottega, Camera e finestra" role="listitem">
+            <img src="../foto-la-bottega/bottega-06-finestra.webp" alt="Camera con finestra e aria condizionata, La Bottega" loading="lazy"/>
+          </button>
           <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-02-doccia.webp" aria-label="La Bottega, Doccia" role="listitem">
             <img src="../foto-la-bottega/bottega-02-doccia.webp" alt="Doccia bagno en suite camera La Bottega" loading="lazy"/>
           </button>
           <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-03-bagno.webp" aria-label="La Bottega, Bagno" role="listitem">
             <img src="../foto-la-bottega/bottega-03-bagno.webp" alt="Bagno en suite camera La Bottega" loading="lazy"/>
           </button>
-          <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" aria-label="La Bottega, Armadio" role="listitem">
-            <img src="../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" alt="Armadio e cassaforte camera La Bottega" loading="lazy"/>
-          </button>
           <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-05-cucinotto.webp" aria-label="La Bottega, Cucinotto" role="listitem">
             <img src="../foto-la-bottega/bottega-05-cucinotto.webp" alt="Cucinotto angolo cottura camera La Bottega" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" aria-label="La Bottega, Angolo caffè" role="listitem">
+            <img src="../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp" alt="Angolo caffè con macchina espresso, La Bottega" loading="lazy"/>
           </button>
         </div>
         <div class="v2-gallery-main" id="bottega-main" aria-label="Foto principale La Bottega" tabindex="0" role="img">
@@ -814,7 +827,7 @@
 </footer>
 
 <!-- Scripts — unchanged from original -->
-<script src="js/i18n.min.js?v=20260428" defer></script>
+<script src="js/i18n.min.js?v=20260618" defer></script>
 <script src="js/main.js?v=20260428" defer></script>
 
 
@@ -849,13 +862,31 @@
       thumb.addEventListener('click', function() { activate(idx); });
     });
 
-    // Click main to open lightbox
+    // Click main to open lightbox (ignora se e' uno swipe)
+    var swiped = false;
     mainEl.addEventListener('click', function() {
+      if (swiped) { swiped = false; return; }
       openLightbox(galleryId, currentIndex);
     });
     mainEl.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') openLightbox(galleryId, currentIndex);
     });
+
+    // Swipe sulla foto principale (mobile): scorri le foto
+    var gsX = 0, gsY = 0;
+    mainEl.addEventListener('touchstart', function(e) {
+      if (e.touches.length !== 1) return;
+      gsX = e.touches[0].clientX; gsY = e.touches[0].clientY;
+    }, { passive: true });
+    mainEl.addEventListener('touchend', function(e) {
+      var t = e.changedTouches[0];
+      var dx = t.clientX - gsX, dy = t.clientY - gsY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        swiped = true;
+        var n = thumbs.length;
+        activate((currentIndex + (dx < 0 ? 1 : -1) + n) % n);
+      }
+    }, { passive: true });
   }
 
   initGallery('dimora-gallery',  'dimora-main');
@@ -874,10 +905,11 @@
     'bottega-gallery': [
       '../foto-la-bottega/bottega-01-foto%20principale.webp',
       '../foto-la-bottega/bottega-07-letto.webp',
+      '../foto-la-bottega/bottega-06-finestra.webp',
       '../foto-la-bottega/bottega-02-doccia.webp',
       '../foto-la-bottega/bottega-03-bagno.webp',
-      '../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp',
       '../foto-la-bottega/bottega-05-cucinotto.webp',
+      '../foto-la-bottega/bottega-04-armadio%20e%20cassaforte.webp',
     ]
   };
 
@@ -923,6 +955,24 @@
     if (e.key === 'ArrowLeft')   lbStep(-1);
     if (e.key === 'ArrowRight')  lbStep(1);
   });
+
+  // Swipe nel lightbox (mobile): sinistra/destra = cambia foto, giu' = chiudi
+  if (lightbox) {
+    var lbX = 0, lbY = 0;
+    lightbox.addEventListener('touchstart', function(e) {
+      if (e.touches.length !== 1) return;
+      lbX = e.touches[0].clientX; lbY = e.touches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function(e) {
+      var t = e.changedTouches[0];
+      var dx = t.clientX - lbX, dy = t.clientY - lbY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        lbStep(dx < 0 ? 1 : -1);
+      } else if (dy > 80 && Math.abs(dy) > Math.abs(dx)) {
+        closeLightbox();
+      }
+    }, { passive: true });
+  }
 
   /* ---- Scroll fade-in ---- */
   if ('IntersectionObserver' in window) {
