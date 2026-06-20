@@ -189,6 +189,40 @@ npx clean-css-cli sito/css/style-v2.css -o deploy/css/style-v2.min.css
 
 ⚠️ **Se dimentichi di rigenerare `i18n.min.js` dopo aver aggiunto articoli o traduzioni, il sito live mostrerà le chiavi i18n come testo letterale** (es. `blog_article25_title` invece del titolo vero).
 
+### Cache-buster `?v=` — OBBLIGATORIO dopo aver rigenerato un `.min`
+I file in `deploy/js/*` e `deploy/css/*` hanno `Cache-Control: immutable, max-age=1 anno` (vedi `netlify.toml`). Significa che browser e CDN servono **la versione vecchia** finché l'URL resta identico, anche dopo il push.
+
+Ogni volta che rigeneri `i18n.min.js`, `main.min.js` o `style-v2.min.css`, **devi bumpare la stringa `?v=…`** del relativo riferimento in **tutte** le pagine HTML, altrimenti le modifiche non vanno live per i visitatori (e per Google).
+
+```bash
+# Esempio: bump di i18n.min.js a una nuova versione (es. data odierna)
+python3 - <<'PY'
+import glob, re
+NEW = "20260620"  # cambia in YYYYMMDD
+for base in ("sito","deploy"):
+    for fp in glob.glob(f"{base}/**/*.html", recursive=True):
+        s = open(fp, encoding="utf-8").read()
+        n = re.sub(r'i18n\.min\.js\?v=[0-9]+', f'i18n.min.js?v={NEW}', s)
+        if n != s: open(fp,"w",encoding="utf-8").write(n)
+PY
+```
+
+## Git — `index.lock` bloccato
+Errore tipico al commit/push:
+```
+fatal: Unable to create '.git/index.lock': File exists.
+Another git process seems to be running in this repository...
+```
+È un lock rimasto da un processo git precedente interrotto (spesso un commit annullato o un editor chiuso male). Soluzione: rimuovi il file lock e riprova.
+
+```bash
+cd ~/Documents/casa-e-bottega-sito
+rm -f .git/index.lock
+git add -A && git commit -m "..." && git push origin main
+```
+
+⚠️ Rimuovi `index.lock` solo se sei sicuro che **non** ci sia un'operazione git davvero in corso (nessun commit/merge/rebase attivo in un altro terminale). Se il file è a 0 byte ed è vecchio, è quasi sempre uno stale lock sicuro da eliminare.
+
 ## Debug — consigli pratici
 - **Sempre controllare la console del browser** prima di speculare sulla causa di un bug
 - `ReferenceError: t is not defined` → stai usando `t()` fuori dallo scope di `main.js`
