@@ -1027,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroCarousel = document.getElementById('hero-carousel');
   const heroDots = document.getElementById('hero-dots');
   if (heroCarousel) {
-    // Determine base path: ./foto-homepage/ for deploy, ./foto-homepage/ for sito/
+    // Determine base path: ./foto-homepage/ for deploy, ../foto-homepage/ for sito/
     const basePath = document.querySelector('.hero-bg')
       ? document.querySelector('.hero-bg').style.backgroundImage.replace(/url\(['"]?/, '').replace(/[^/]*['"]?\)/, '')
       : './foto-homepage/';
@@ -1227,10 +1227,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var navLinks = document.getElementById('v2-nav-links');
     var navEl    = document.querySelector('.v2-nav');
 
+    var _navHSet = false;
     function setNavHeight() {
       if (navEl) {
         var h = navEl.getBoundingClientRect().height;
-        if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
+        if (h > 0) {
+          document.documentElement.style.setProperty('--nav-h', h + 'px');
+          _navHSet = true;
+        }
       }
     }
     requestAnimationFrame(function () { requestAnimationFrame(setNavHeight); });
@@ -1239,16 +1243,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(setNavHeight, 150);
+      resizeTimer = setTimeout(function() { _navHSet = false; setNavHeight(); }, 150);
     }, { passive: true });
     window.addEventListener('load', setNavHeight, { passive: true });
 
     if (toggle && navLinks) {
       toggle.addEventListener('click', function () {
-        if (navEl) {
-          var h = navEl.getBoundingClientRect().height;
-          if (h > 0) document.documentElement.style.setProperty('--nav-h', h + 'px');
-        }
+        // --nav-h già impostato da setNavHeight (load/resize): nessun reflow al click
+        if (!_navHSet) setNavHeight();
         var open = navLinks.classList.toggle('v2-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         navLinks.setAttribute('aria-hidden', open ? 'false' : 'true');
@@ -1319,3 +1321,142 @@ document.addEventListener('DOMContentLoaded', () => {
   }());
 
 });
+
+/* ============================================================
+   Suggerimento lingua (prima visita) — banner discreto
+   ------------------------------------------------------------
+   - La lingua resta determinata SOLO dall'URL (vedi sopra).
+   - Questo blocco NON forza nulla: se la lingua del browser è
+     supportata ed è diversa da quella della pagina, propone un
+     banner verso la pagina equivalente (presa dai link hreflang).
+   - La scelta/chiusura viene ricordata in localStorage, quindi
+     non riappare. Non intrappola chi vuole un'altra lingua.
+   - Blocco autonomo: nessuna dipendenza dallo scope di main.js,
+     identico in sito/ e deploy/.
+   ============================================================ */
+(function () {
+  var SUPPORTED = ['it', 'en', 'fr', 'de', 'nl', 'es'];
+  var DISMISS_KEY = 'ceb_lang_suggest_dismissed';
+
+  // Testi nella lingua SUGGERITA (così l'utente li capisce)
+  var MSG = {
+    en: { text: 'This page is also available in English.', cta: 'View in English', close: 'Dismiss' },
+    fr: { text: 'Cette page est aussi disponible en français.', cta: 'Voir en français', close: 'Fermer' },
+    de: { text: 'Diese Seite ist auch auf Deutsch verfügbar.', cta: 'Auf Deutsch ansehen', close: 'Schließen' },
+    nl: { text: 'Deze pagina is ook in het Nederlands beschikbaar.', cta: 'Bekijk in het Nederlands', close: 'Sluiten' },
+    es: { text: 'Esta página también está disponible en español.', cta: 'Ver en español', close: 'Cerrar' },
+    it: { text: 'Questa pagina è disponibile anche in italiano.', cta: 'Vedi in italiano', close: 'Chiudi' }
+  };
+
+  // Lingua della pagina = primo segmento del path se è un codice lingua.
+  // Funziona a qualsiasi profondità (/de/, /de/blog/slug/, ...), così il
+  // banner non compare per errore sulle pagine tradotte interne.
+  function currentLang() {
+    var seg = (window.location.pathname.split('/').filter(Boolean)[0] || '').toLowerCase();
+    return SUPPORTED.indexOf(seg) !== -1 && seg !== 'it' ? seg : 'it';
+  }
+
+  // Prima lingua del browser che è supportata dal sito
+  function preferredLang() {
+    var langs = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || ''];
+    for (var i = 0; i < langs.length; i++) {
+      var code = (langs[i] || '').slice(0, 2).toLowerCase();
+      if (SUPPORTED.indexOf(code) !== -1) return code;
+    }
+    return null;
+  }
+
+  // URL della pagina equivalente nella lingua target.
+  // Sorgente robusta: <link rel="alternate" hreflang> (URL assoluti);
+  // fallback: ancore del selettore lingua (path relativi → risolti).
+  function targetHref(lang) {
+    var l = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    if (l && l.href) return l.href;
+    var a = document.querySelector('a[hreflang="' + lang + '"]');
+    if (a && a.getAttribute('href')) return a.href;
+    return null;
+  }
+
+  function injectStyles() {
+    if (document.getElementById('lang-suggest-style')) return;
+    var css =
+      '.lang-suggest-bar{position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);' +
+      'z-index:9999;display:flex;align-items:center;gap:14px;max-width:calc(100vw - 32px);' +
+      'padding:12px 14px 12px 18px;background:#1f4a4a;color:#f5efe6;border-radius:10px;' +
+      "box-shadow:0 10px 30px rgba(26,22,19,.28);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;" +
+      'font-size:14.5px;line-height:1.35;opacity:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s ease}' +
+      '.lang-suggest-bar.is-visible{transform:translate(-50%,0);opacity:1}' +
+      '.lang-suggest-text{flex:1 1 auto}' +
+      '.lang-suggest-cta{flex:0 0 auto;white-space:nowrap;background:#f5efe6;color:#1f4a4a;' +
+      'text-decoration:none;font-weight:600;padding:7px 14px;border-radius:7px;transition:background .2s ease}' +
+      '.lang-suggest-cta:hover{background:#fff}' +
+      '.lang-suggest-close{flex:0 0 auto;background:transparent;border:0;color:#f5efe6;cursor:pointer;' +
+      'font-size:22px;line-height:1;padding:2px 6px;border-radius:6px;opacity:.8;transition:opacity .2s ease}' +
+      '.lang-suggest-close:hover{opacity:1}' +
+      '@media(max-width:520px){.lang-suggest-bar{left:16px;right:16px;bottom:16px;transform:translateY(140%);' +
+      'flex-wrap:wrap}.lang-suggest-bar.is-visible{transform:translateY(0)}.lang-suggest-text{flex:1 1 100%}}';
+    var style = document.createElement('style');
+    style.id = 'lang-suggest-style';
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  function remember() {
+    try { localStorage.setItem(DISMISS_KEY, '1'); } catch (e) {}
+  }
+
+  function init() {
+    try { if (localStorage.getItem(DISMISS_KEY)) return; } catch (e) {}
+
+    var cur = currentLang();
+    var pref = preferredLang();
+    if (!pref || pref === cur) return;
+
+    var href = targetHref(pref);
+    if (!href) return;
+
+    var msg = MSG[pref] || MSG.en;
+    injectStyles();
+
+    var bar = document.createElement('div');
+    bar.className = 'lang-suggest-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Language suggestion');
+
+    var span = document.createElement('span');
+    span.className = 'lang-suggest-text';
+    span.textContent = msg.text;
+
+    var link = document.createElement('a');
+    link.className = 'lang-suggest-cta';
+    link.href = href;
+    link.setAttribute('lang', pref);
+    link.textContent = msg.cta;
+    link.addEventListener('click', remember);
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'lang-suggest-close';
+    btn.setAttribute('aria-label', msg.close);
+    btn.innerHTML = '&times;';
+    btn.addEventListener('click', function () {
+      remember();
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    });
+
+    bar.appendChild(span);
+    bar.appendChild(link);
+    bar.appendChild(btn);
+    document.body.appendChild(bar);
+
+    requestAnimationFrame(function () { bar.classList.add('is-visible'); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());

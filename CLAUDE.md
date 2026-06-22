@@ -25,6 +25,29 @@ casa-e-bottega-sito/
 
 **⛔ NON suggerire mai `./prepara-deploy.sh`** — l'utente fa il push direttamente da terminale e non usa questo script.
 
+## ✅ GATE PRE-DEPLOY — `predeploy-check.sh` (OBBLIGATORIO)
+Prima di dichiarare qualsiasi lavoro "pronto per il deploy" o di suggerire un push,
+**eseguire sempre il gate ed eseguire il report all'utente:**
+
+```bash
+cd ~/Documents/casa-e-bottega-sito && ./predeploy-check.sh
+```
+
+Il gate controlla SOLO cose oggettive (non giudica design né testi):
+- link interni rotti nell'artefatto pubblicato (`deploy/`)
+- parità `sito/` ⇄ `deploy/` (regola della doppia copia)
+- chiavi `data-i18n` usate ma non definite in `i18n.js`
+- file `.min` referenziati ma più vecchi del sorgente (rigenerazione dimenticata)
+- cache-buster `?v=` incoerenti tra le pagine
+
+Regole per l'agente:
+1. **Se il gate esce con codice ≠ 0 (FAIL), NON dichiarare il lavoro pronto.** Sistema i FAIL, poi ri-esegui finché è verde (o spiega all'utente perché un FAIL è accettabile).
+2. Riporta sempre l'output del gate all'utente in modo sintetico (quanti FAIL/WARN e quali).
+3. Il gate è il "verify" del loop: è lui a decidere se il lavoro è finito, non l'autovalutazione dell'agente.
+4. Usa `./predeploy-check.sh --strict` per far fallire anche sui WARN quando serve una pulizia completa.
+
+> Questo è l'unico gate autorizzato. Non reintrodurre controlli manuali ad-hoc al posto suo: se serve un nuovo controllo, aggiungilo dentro `predeploy-check.sh`.
+
 ## Regola fondamentale
 **`sito/index.html` (versione IT) è sempre il source of truth** per struttura, componenti e logica. Qualsiasi modifica a layout o funzionalità va prima applicata lì, poi replicata nelle versioni tradotte.
 

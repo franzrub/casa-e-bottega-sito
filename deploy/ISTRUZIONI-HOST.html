@@ -38,8 +38,8 @@ casa-e-bottega-sito/<br>
 │&nbsp;&nbsp; ├── blog-articolo-1.html &nbsp; ← Primo articolo blog<br>
 │&nbsp;&nbsp; ├── contatti.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Pagina Contatti<br>
 │&nbsp;&nbsp; ├── css/style.css &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Stile grafico<br>
-│&nbsp;&nbsp; ├── js/i18n.min.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Traduzioni multilingua<br>
-│&nbsp;&nbsp; └── js/main.min.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Funzionalità e prezzi<br>
+│&nbsp;&nbsp; ├── js/i18n.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Traduzioni multilingua<br>
+│&nbsp;&nbsp; └── js/main.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Funzionalità e prezzi<br>
 ├── foto-la-dimora/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Foto camera La Dimora<br>
 ├── foto-la-bottega/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Foto camera La Bottega<br>
 ├── foto-spazi-comuni/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← Ingresso, corridoio, esterno<br>
@@ -73,7 +73,7 @@ casa-e-bottega-sito/<br>
     ├── foto-zona/<br>
     └── loghi-e-badge/<br>
     </div>
-    In pratica: copia il contenuto di <code>sito/</code> nella cartella, poi copia dentro anche tutte le cartelle foto. I file HTML usano <code>./foto-la-dimora/</code> come percorso — dovrai cambiare tutti i <code>../</code> in <code>./</code> nei file HTML (cerca e sostituisci <code>./foto-</code> con <code>./foto-</code> e <code>./loghi-</code> con <code>./loghi-</code>).
+    In pratica: copia il contenuto di <code>sito/</code> nella cartella, poi copia dentro anche tutte le cartelle foto. I file HTML usano <code>../foto-la-dimora/</code> come percorso — dovrai cambiare tutti i <code>../</code> in <code>./</code> nei file HTML (cerca e sostituisci <code>../foto-</code> con <code>./foto-</code> e <code>../loghi-</code> con <code>./loghi-</code>).
   </li>
   <li>Trascina la cartella <code>deploy/</code> nell'area di upload di Netlify. Il sito sarà online in pochi secondi con un URL tipo <code>casaebottega.netlify.app</code></li>
   <li>Per collegare il dominio personalizzato: vai su <strong>Site settings → Domain management → Add custom domain</strong> e segui il punto 3 di questa guida</li>
@@ -217,9 +217,9 @@ Tipo: MX   Host: @   Valore: ALT2.ASPMX.L.GOOGLE.COM   Priorità: 5</pre>
 <pre>&lt;p&gt;Questo è il nuovo testo aggiornato.&lt;/p&gt;</pre>
 
 <h3>b) Testi multilingua (traduzioni)</h3>
-<p>Le traduzioni sono nel file <code>js/i18n.min.js</code>. Ogni lingua ha la sua sezione. Per aggiornare una traduzione:</p>
+<p>Le traduzioni sono nel file <code>js/i18n.js</code>. Ogni lingua ha la sua sezione. Per aggiornare una traduzione:</p>
 <ol>
-  <li>Apri <code>js/i18n.min.js</code></li>
+  <li>Apri <code>js/i18n.js</code></li>
   <li>Cerca la chiave del testo (es. <code>about_p1</code>)</li>
   <li>Modifica il testo tra le virgolette per ogni lingua</li>
   <li>Salva il file</li>
@@ -231,7 +231,7 @@ Tipo: MX   Host: @   Valore: ALT2.ASPMX.L.GOOGLE.COM   Priorità: 5</pre>
 
 <!-- ============================================ -->
 <h2>6. Come aggiornare i prezzi</h2>
-<p>I prezzi sono configurati nel file <code>js/main.min.js</code>, nella sezione <code>PRICING</code> in cima al file:</p>
+<p>I prezzi sono configurati nel file <code>js/main.js</code>, nella sezione <code>PRICING</code> in cima al file:</p>
 <pre>
 const PRICING = {
   dimora: { high: 100, low: 60 },   // La Dimora: alta/bassa stagione
@@ -288,7 +288,7 @@ const PRICING = {
 
 <!-- ============================================ -->
 <h2>9. Come aggiornare i link iCal (calendario)</h2>
-<p>I link iCal servono per sincronizzare la disponibilità da Airbnb e Booking.com. Si trovano nel file <code>js/main.min.js</code>, nella sezione <code>icalFeeds</code>:</p>
+<p>I link iCal servono per sincronizzare la disponibilità da Airbnb e Booking.com. Si trovano nel file <code>js/main.js</code>, nella sezione <code>icalFeeds</code>:</p>
 <pre>
 const icalFeeds = {
   dimora: [
@@ -305,7 +305,7 @@ const icalFeeds = {
 <ol>
   <li>Vai su Airbnb → Calendario → Esporta calendario → Copia il link .ics</li>
   <li>Vai su Booking.com → Calendario → Esporta → Copia il link .ics</li>
-  <li>Sostituisci i link vecchi con quelli nuovi nel file <code>js/main.min.js</code></li>
+  <li>Sostituisci i link vecchi con quelli nuovi nel file <code>js/main.js</code></li>
 </ol>
 
 <!-- ============================================ -->

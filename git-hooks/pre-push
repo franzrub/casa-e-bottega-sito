@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# ============================================================
+# pre-push — GATE automatico Casa e Bottega
+# Esegue predeploy-check.sh prima di ogni push e BLOCCA il push
+# se il gate fallisce (link rotti, parità sito/deploy, i18n, .min, ?v=).
+# Bypass d'emergenza:  git push --no-verify
+# ============================================================
+cd "$(git rev-parse --show-toplevel)" || exit 1
+echo "▶ pre-push: eseguo predeploy-check.sh..."
+if [ ! -x ./predeploy-check.sh ]; then
+  echo "⚠ predeploy-check.sh non trovato o non eseguibile — push consentito senza gate."
+  exit 0
+fi
+./predeploy-check.sh
+status=$?
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "✖ PUSH BLOCCATO dal gate. Sistema i FAIL e riprova."
+  echo "  (emergenza: git push --no-verify)"
+  exit 1
+fi
+echo "✔ Gate superato — push consentito."
+exit 0
