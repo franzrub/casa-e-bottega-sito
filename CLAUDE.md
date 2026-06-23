@@ -8,6 +8,7 @@ Sito statico per il B&B "Casa e Bottega" (Manfredonia, Via Gargano 13). Deploy s
 casa-e-bottega-sito/
 ├── sito/          ← SOURCE OF TRUTH (modifica sempre qui)
 ├── deploy/        ← cartella di deploy (generata da prepara-deploy.sh)
+├── docs/          ← documentazione di progetto (strategia SEO, report, prototipi — NON pubblicata)
 ├── prepara-deploy.sh
 └── netlify.toml   ← publish = "deploy"
 ```
