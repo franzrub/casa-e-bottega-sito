@@ -395,6 +395,164 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "@id": "https://www.casaebottegapuglia.it/#bb",
+  "name": "Casa e Bottega",
+  "url": "https://www.casaebottegapuglia.it/",
+  "telephone": "+39 333 470 5574",
+  "email": "booking@casaebottegapuglia.it",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Gargano, 13",
+    "addressLocality": "Manfredonia",
+    "addressRegion": "FG",
+    "postalCode": "71043",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.6264,
+    "longitude": 15.9133
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.8",
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingCount": "50",
+    "reviewCount": "50"
+  },
+  "numberOfRooms": 2,
+  "containsPlace": [
+    {
+      "@type": "HotelRoom",
+      "@id": "https://www.casaebottegapuglia.it/#room-dimora",
+      "name": "La Dimora",
+      "description": "Camera spaziosa e luminosa con letto king size e bagno privato en suite, 28 m², nel centro storico di Manfredonia a 300 m dal mare.",
+      "image": "https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.webp",
+      "bed": {
+        "@type": "BedDetails",
+        "typeOfBed": "King size",
+        "numberOfBeds": 1
+      },
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 2,
+        "unitText": "persone"
+      },
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 28,
+        "unitCode": "MTK"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "WiFi gratuito",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Aria condizionata",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Bagno privato en suite",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Angolo cottura / macchina del caffè",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Smart TV",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Check-in autonomo",
+          "value": true
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "70",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.casaebottegapuglia.it/prenota.html"
+      }
+    },
+    {
+      "@type": "HotelRoom",
+      "@id": "https://www.casaebottegapuglia.it/#room-bottega",
+      "name": "La Bottega",
+      "description": "Camera dal carattere artigianale con parete blu petrolio e bagno privato en suite, 22 m², nel cuore del centro storico di Manfredonia.",
+      "image": "https://www.casaebottegapuglia.it/foto-la-bottega/bottega-01-foto%20principale.webp",
+      "bed": {
+        "@type": "BedDetails",
+        "typeOfBed": "Double",
+        "numberOfBeds": 1
+      },
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 2,
+        "unitText": "persone"
+      },
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 22,
+        "unitCode": "MTK"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "WiFi gratuito",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Aria condizionata",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Bagno privato en suite",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Angolo cottura / macchina del caffè",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Smart TV",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Check-in autonomo",
+          "value": true
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "60",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.casaebottegapuglia.it/prenota.html"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -562,7 +720,7 @@
         <!-- Pricing -->
         <div class="v2-room-pricing v2-room-pricing--dimora" role="region" aria-label="Prezzi La Dimora">
           <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
-          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
+          <a href="prenota.html?open=1" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
         </div>
 
         <!-- Amenities -->
@@ -621,7 +779,7 @@
         </div>
 
         <div class="v2-room-cta">
-          <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" data-i18n="room_check_avail">Verifica disponibilità</a>
+          <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" data-i18n="hero_cta_book">Réserver</a>
           <span class="v2-room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</span>
         </div>
       </div>
@@ -697,7 +855,7 @@
         <!-- Pricing -->
         <div class="v2-room-pricing v2-room-pricing--bottega" role="region" aria-label="Prezzi La Bottega">
           <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
-          <a href="prenota.html" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
+          <a href="prenota.html?open=1" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
         </div>
 
         <!-- Amenities -->
@@ -754,7 +912,7 @@
         </div>
 
         <div class="v2-room-cta">
-          <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" data-i18n="room_check_avail">Verifica disponibilità</a>
+          <a href="prenota.html?open=1" class="v2-btn v2-btn--primary" data-i18n="hero_cta_book">Réserver</a>
           <span class="v2-room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</span>
         </div>
       </div>
