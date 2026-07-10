@@ -22,7 +22,7 @@ class PersonDetector:
 
     def detect(self, image_bytes: bytes) -> DetectionResult:
         image = Image.open(BytesIO(image_bytes)).convert("RGB")
-        results = self.model.predict(image, device=self.device, verbose=False)
+        results = self.model.predict(image, device=self.device, conf=min(self.confidence_threshold, 0.05), verbose=False)
 
         best_confidence = 0.0
         for result in results:
