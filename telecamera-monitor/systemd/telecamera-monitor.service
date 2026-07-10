@@ -1,0 +1,13 @@
+[Unit]
+Description=Telecamera Monitor - rilevamento persone e alert Telegram
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__PROJECT_DIR__
+ExecStart=__VENV_PYTHON_PATH__ monitor.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
