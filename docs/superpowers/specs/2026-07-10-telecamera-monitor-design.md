@@ -78,8 +78,9 @@ Cosa cambia:
 
 - `EZVIZ_APP_KEY`, `EZVIZ_APP_SECRET` — credenziali app da EZVIZ Open Platform
 - `EZVIZ_DEVICE_SERIAL` — numero seriale del dispositivo
-- `EZVIZ_VERIFICATION_CODE` — codice di verifica del dispositivo (etichetta fisica o app)
 - `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` — credenziali bot Telegram
+
+Il codice di verifica del dispositivo (etichetta fisica o app) serve solo per l'operazione una tantum di collegamento della telecamera all'account developer (vedi "Setup richiesto" sotto) — non è usato dalle chiamate API a runtime, quindi non è una variabile `.env`.
 - `POLL_INTERVAL_SECONDS` (default 15)
 - `DETECTION_CONFIDENCE_THRESHOLD` (default 0.5)
 - `ALERT_COOLDOWN_SECONDS` (default 300)
