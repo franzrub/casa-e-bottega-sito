@@ -1,6 +1,7 @@
 [Unit]
 Description=Telecamera Monitor - rilevamento persone e alert Telegram
 After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple

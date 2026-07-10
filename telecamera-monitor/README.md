@@ -41,6 +41,9 @@ cp .env.example .env
 I log vengono scritti in `telecamera-monitor.log` nella cartella del progetto.
 Premi Ctrl+C per fermare.
 
+Al primo avvio viene scaricato automaticamente il modello YOLOv8n (~6MB): è
+necessaria una connessione internet attiva.
+
 ## 5. Avvio automatico su macOS (LaunchAgent)
 
 ```bash

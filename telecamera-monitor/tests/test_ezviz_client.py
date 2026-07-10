@@ -1,6 +1,7 @@
 from unittest.mock import Mock, patch
 
 import pytest
+import requests
 
 from ezviz_client import EzvizClient, EzvizDeviceOfflineError, EzvizRateLimitError
 
@@ -79,3 +80,12 @@ def test_get_snapshot_refreshes_token_on_expiry(mock_post, mock_get):
 
     assert result == b"fake-jpeg-bytes"
     assert mock_post.call_count == 4
+
+
+@patch("ezviz_client.requests.get")
+@patch("ezviz_client.requests.post")
+def test_get_snapshot_raises_offline_error_on_network_failure(mock_post, mock_get):
+    mock_post.side_effect = requests.exceptions.ConnectionError("simulated network failure")
+
+    with pytest.raises(EzvizDeviceOfflineError):
+        make_client().get_snapshot()

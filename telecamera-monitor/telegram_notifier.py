@@ -15,10 +15,11 @@ class TelegramNotifier:
             url,
             data={"chat_id": self.chat_id, "caption": message},
             files={"photo": ("snapshot.jpg", image_bytes, "image/jpeg")},
+            timeout=10,
         )
         response.raise_for_status()
 
     def send_text(self, message: str) -> None:
         url = f"{self.api_base}/bot{self.bot_token}/sendMessage"
-        response = requests.post(url, data={"chat_id": self.chat_id, "text": message})
+        response = requests.post(url, data={"chat_id": self.chat_id, "text": message}, timeout=10)
         response.raise_for_status()

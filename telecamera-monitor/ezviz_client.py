@@ -28,10 +28,14 @@ class EzvizClient:
         self._token_expires_at = 0.0
 
     def _fetch_token(self) -> None:
-        response = requests.post(
-            f"{self.base_url}/token/get",
-            data={"appKey": self.app_key, "appSecret": self.app_secret},
-        )
+        try:
+            response = requests.post(
+                f"{self.base_url}/token/get",
+                data={"appKey": self.app_key, "appSecret": self.app_secret},
+                timeout=10,
+            )
+        except requests.exceptions.RequestException as exc:
+            raise EzvizDeviceOfflineError(f"Errore di rete durante l'autenticazione EZVIZ: {exc}") from exc
         data = response.json()
         if data.get("code") != "200":
             raise EzvizError(f"Errore autenticazione EZVIZ: {data.get('code')} {data.get('msg')}")
@@ -43,10 +47,14 @@ class EzvizClient:
             self._fetch_token()
 
     def _capture(self) -> dict:
-        response = requests.post(
-            f"{self.base_url}/device/capture",
-            data={"accessToken": self._access_token, "deviceSerial": self.device_serial},
-        )
+        try:
+            response = requests.post(
+                f"{self.base_url}/device/capture",
+                data={"accessToken": self._access_token, "deviceSerial": self.device_serial},
+                timeout=10,
+            )
+        except requests.exceptions.RequestException as exc:
+            raise EzvizDeviceOfflineError(f"Errore di rete durante la cattura EZVIZ: {exc}") from exc
         return response.json()
 
     def get_snapshot(self) -> bytes:
@@ -66,6 +74,9 @@ class EzvizClient:
             raise EzvizError(f"Errore cattura EZVIZ: {code} {data.get('msg')}")
 
         pic_url = data["data"]["picUrl"]
-        image_response = requests.get(pic_url)
+        try:
+            image_response = requests.get(pic_url, timeout=10)
+        except requests.exceptions.RequestException as exc:
+            raise EzvizDeviceOfflineError(f"Errore di rete durante il download dello snapshot: {exc}") from exc
         image_response.raise_for_status()
         return image_response.content
