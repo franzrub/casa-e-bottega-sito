@@ -12,3 +12,12 @@
 /foto-casa-con-vista/*.jpeg
 /foto-casa-con-vista/*.jpg
 /foto-casa-con-vista/*.JPG
+
+# telecamera-monitor project
+.env
+.venv/
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+yolov8n.pt
