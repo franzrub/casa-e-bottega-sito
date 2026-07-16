@@ -27,7 +27,7 @@
 <!-- ▶ Design v2 fonts: non-blocking load (evita render-blocking su mobile) -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/></noscript>
-<link href="css/style-v2.min.css?v=2" rel="stylesheet"/>
+<link href="css/style-v2.min.css?v=5" rel="stylesheet"/>
 <script>
   // Intercetta recovery/invite token e reindirizza a /admin/ dove il widget li gestisce
   var hash = window.location.hash || '';
@@ -369,13 +369,13 @@
   <div class="v2-hero-left">
 
     <div>
-      <h1 class="v2-hero-title">
+      <p class="v2-hero-title">
         A due passi<br>
         <em>dal mare.</em>
-      </h1>
-      <p class="v2-hero-tagline">
-        Casa vacanze in stile B&amp;B alle porte del centro storico di Manfredonia · 300 m dal mare
       </p>
+      <h1 class="v2-hero-tagline">
+        Casa vacanze in stile B&amp;B alle porte del centro storico di Manfredonia · 300 m dal mare
+      </h1>
       <div class="v2-hero-ctas">
         <a href="prenota.html?open=1" class="v2-btn v2-btn--primary">
           Verifica le date
@@ -623,7 +623,7 @@
         </p>
 
         <p class="v2-place-body" data-i18n-html="map_guides" style="margin-top:14px;">
-          Vuoi scoprire cosa vedere nei dintorni? Leggi le nostre <a href="blog.html">guide sul Gargano</a> o scopri <a href="contatti.html">come arrivare e dove parcheggiare</a>. Tra le più utili: l'<a href="blog/settimana-nel-gargano/">itinerario nel Gargano in 7 giorni</a>, <a href="blog/muoversi-nel-gargano/">come muoversi e le distanze</a>, <a href="blog/isole-tremiti/">le Isole Tremiti in traghetto</a>, <a href="blog/spiagge-gargano-manfredonia-vieste/">le spiagge da Manfredonia a Vieste</a> e <a href="blog/mattinata-borgo-bianco/">Mattinata, il borgo bianco del Gargano</a>.
+          Vuoi scoprire cosa vedere nei dintorni? Leggi le nostre <a href="blog.html">guide sul Gargano</a> o scopri <a href="contatti.html">come arrivare e dove parcheggiare</a>. Tra le più utili: l'<a href="blog/settimana-nel-gargano/">itinerario nel Gargano in 7 giorni</a>, <a href="blog/muoversi-nel-gargano/">come muoversi e le distanze</a>, <a href="blog/isole-tremiti/">le Isole Tremiti in traghetto</a>, <a href="blog/spiagge-gargano-manfredonia-vieste/">le spiagge da Manfredonia a Vieste</a> e <a href="blog/mattinata-borgo-bianco/">Mattinata, il borgo bianco del Gargano</a>. E se restate in città: <a href="blog/spiagge-lidi-manfredonia/">le spiagge e i lidi di Manfredonia</a> e la <a href="blog/basilica-siponto-tresoldi/">basilica di Siponto con l'opera di Tresoldi</a>.
         </p>
 
         <div class="v2-place-distances" role="list" aria-label="Distanze dai principali punti di interesse">
@@ -940,29 +940,36 @@
         </div>
       </div>
 
-      <!-- Right: review carousel -->
-      <div class="v2-fade" id="v2-reviews-carousel">
-        <div class="v2-review-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="v2-review-text" id="v2-review-text" aria-live="polite">
-          La stanza è studiata nei minimi particolari per offrire tutti i comfort.
-          Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi.
-          Consigliatissimo.
+      <!-- Right: muro recensioni (3 card statiche, SEO-friendly) -->
+      <div class="v2-fade v2-reviews-wall">
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Valentina</cite>
+            <span class="v2-review-card-src">Italia · Booking</span>
+          </footer>
         </blockquote>
-        <div class="v2-review-footer">
-          <div>
-            <div class="v2-review-author-name" id="v2-review-author">Luca</div>
-            <div class="v2-review-author-meta" id="v2-review-meta">Italia · Giugno · Booking</div>
-          </div>
-          <div class="v2-review-controls" aria-label="Naviga tra le recensioni">
-            <span class="v2-review-count" id="v2-review-count" aria-hidden="true">01 / 07</span>
-            <button class="v2-review-btn" id="v2-review-prev" aria-label="Recensione precedente">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="transform:rotate(180deg);"><path d="M7 5l5 5-5 5"/></svg>
-            </button>
-            <button class="v2-review-btn" id="v2-review-next" aria-label="Recensione successiva">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 5l5 5-5 5"/></svg>
-            </button>
-          </div>
-        </div>
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Extrêmement calme. Nous recommandons&nbsp;!</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Céline &amp; François</cite>
+            <span class="v2-review-card-src">Francia · Airbnb</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">Camera arredata splendidamente, completa di tutto! Proprietari gentilissimi e molto disponibili. Siamo stati benissimo!</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Giacomo</cite>
+            <span class="v2-review-card-src">Italia · Booking</span>
+          </footer>
+        </blockquote>
+
       </div>
 
     </div>
@@ -1139,8 +1146,8 @@
 <!-- ══════════════════════════════════════════════════════════
      SCRIPTS (unchanged — i18n + main.js)
      ══════════════════════════════════════════════════════════ -->
-<script src="js/i18n.min.js?v=20260703" defer></script>
-<script src="js/main.min.js?v=20260623" defer></script>
+<script src="js/i18n.min.js?v=2026071123" defer></script>
+<script src="js/main.min.js?v=20260712" defer></script>
 
 <!-- ══════════════════════════════════════════════════════════
      STICKY TOUCHPOINTS

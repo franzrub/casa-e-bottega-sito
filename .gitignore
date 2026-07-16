@@ -12,3 +12,6 @@
 /foto-casa-con-vista/*.jpeg
 /foto-casa-con-vista/*.jpg
 /foto-casa-con-vista/*.JPG
+
+# Config locale agente (non pubblicare)
+.claude/

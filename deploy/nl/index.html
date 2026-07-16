@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- ▶ Design v2 fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (editorial labels) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
-<link href="../css/style-v2.min.css?v=2" rel="stylesheet"/>
+<link href="../css/style-v2.min.css?v=5" rel="stylesheet"/>
 <!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
 <!-- Structured Data: WebSite (sitelinks signal) -->
 <script type="application/ld+json">
@@ -291,13 +291,13 @@
   <div class="v2-hero-left">
 
     <div>
-      <h1 class="v2-hero-title" style="font-size: clamp(48px, 6.2vw, 100px)">
+      <p class="v2-hero-title" style="font-size: clamp(48px, 6.2vw, 100px)">
         Op een steenworp<br>
         <em>van de zee.</em>
-      </h1>
-      <p class="v2-hero-tagline">
-        Vakantiehuis aan de rand van de oude binnenstad van Manfredonia · 300 m van de zee
       </p>
+      <h1 class="v2-hero-tagline">
+        Vakantiehuis in B&amp;B-stijl aan de rand van de oude binnenstad van Manfredonia · 300 m van de zee
+      </h1>
       <div class="v2-hero-ctas">
         <a href="prenota.html?open=1" class="v2-btn v2-btn--primary">
           Beschikbaarheid controleren
@@ -846,29 +846,36 @@
         </div>
       </div>
 
-      <!-- Right: review carousel -->
-      <div class="v2-fade" id="v2-reviews-carousel">
-        <div class="v2-review-quote-mark" aria-hidden="true">"</div>
-        <blockquote class="v2-review-text" id="v2-review-text" aria-live="polite">
-          La stanza è studiata nei minimi particolari per offrire tutti i comfort.
-          Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi.
-          Consigliatissimo.
+      <!-- Right: muro recensioni (3 card statiche, SEO-friendly) -->
+      <div class="v2-fade v2-reviews-wall">
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Valentina</cite>
+            <span class="v2-review-card-src">Italia · Booking</span>
+          </footer>
         </blockquote>
-        <div class="v2-review-footer">
-          <div>
-            <div class="v2-review-author-name" id="v2-review-author">Luca</div>
-            <div class="v2-review-author-meta" id="v2-review-meta">Italia · Giugno · Booking</div>
-          </div>
-          <div class="v2-review-controls" aria-label="Naviga tra le recensioni">
-            <span class="v2-review-count" id="v2-review-count" aria-hidden="true">01 / 07</span>
-            <button class="v2-review-btn" id="v2-review-prev" aria-label="Recensione precedente">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="transform:rotate(180deg);"><path d="M7 5l5 5-5 5"/></svg>
-            </button>
-            <button class="v2-review-btn" id="v2-review-next" aria-label="Recensione successiva">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 5l5 5-5 5"/></svg>
-            </button>
-          </div>
-        </div>
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Extrêmement calme. Nous recommandons&nbsp;!</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Céline &amp; François</cite>
+            <span class="v2-review-card-src">Francia · Airbnb</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="v2-review-card">
+          <span class="v2-review-card-mark" aria-hidden="true">"</span>
+          <p class="v2-review-card-quote">Camera arredata splendidamente, completa di tutto! Proprietari gentilissimi e molto disponibili. Siamo stati benissimo!</p>
+          <footer class="v2-review-card-meta">
+            <cite class="v2-review-card-author">Giacomo</cite>
+            <span class="v2-review-card-src">Italia · Booking</span>
+          </footer>
+        </blockquote>
+
       </div>
 
     </div>
@@ -1043,8 +1050,8 @@
 <!-- ══════════════════════════════════════════════════════════
      SCRIPTS (unchanged — i18n + main.js)
      ══════════════════════════════════════════════════════════ -->
-<script src="../js/i18n.min.js?v=20260703" defer></script>
-<script src="../js/main.min.js?v=20260623" defer></script>
+<script src="../js/i18n.min.js?v=2026071123" defer></script>
+<script src="../js/main.min.js?v=20260712" defer></script>
 
 <!-- ══════════════════════════════════════════════════════════
      STICKY TOUCHPOINTS
@@ -1078,94 +1085,12 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     INLINE JS — Review carousel + Nav toggle + Fade-in
+     INLINE JS — Scroll fade-in
      (No dependencies on external scripts — runs after DOM)
      ══════════════════════════════════════════════════════════ -->
 <script>
 (function () {
   'use strict';
-
-  /* ---- Reviews carousel ---- */
-  var reviews = [
-    {
-      text: "La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi. Consigliatissimo.",
-      author: "Luca",
-      meta: "Italia · Giugno · Booking"
-    },
-    {
-      text: "L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons!",
-      author: "Céline & François",
-      meta: "Francia · Agosto · Airbnb"
-    },
-    {
-      text: "A partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente.",
-      author: "Molaro",
-      meta: "Italia · Luglio · Booking"
-    },
-    {
-      text: "Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe.",
-      author: "Moni",
-      meta: "Germania · Luglio · Airbnb"
-    },
-    {
-      text: "Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!",
-      author: "Giacomo",
-      meta: "Italia · Settembre · Booking"
-    },
-    {
-      text: "Appartamento curato e pulito. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano.",
-      author: "Bozidarka",
-      meta: "Italia · Giugno · Airbnb"
-    },
-    {
-      text: "Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.",
-      author: "Valentina",
-      meta: "Italia · Novembre · Booking"
-    }
-  ];
-
-  var idx = 0;
-  var textEl   = document.getElementById('v2-review-text');
-  var authorEl = document.getElementById('v2-review-author');
-  var metaEl   = document.getElementById('v2-review-meta');
-  var countEl  = document.getElementById('v2-review-count');
-  var prevBtn  = document.getElementById('v2-review-prev');
-  var nextBtn  = document.getElementById('v2-review-next');
-
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-  function showReview(i) {
-    idx = (i + reviews.length) % reviews.length;
-    if (!textEl) return;
-    textEl.style.opacity   = '0';
-    authorEl.style.opacity = '0';
-    setTimeout(function () {
-      textEl.textContent   = reviews[idx].text;
-      authorEl.textContent = reviews[idx].author;
-      metaEl.textContent   = reviews[idx].meta;
-      countEl.textContent  = pad(idx + 1) + ' / ' + pad(reviews.length);
-      textEl.style.opacity   = '1';
-      authorEl.style.opacity = '1';
-    }, 180);
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', function () { showReview(idx - 1); });
-  if (nextBtn) nextBtn.addEventListener('click', function () { showReview(idx + 1); });
-
-  // Auto-advance every 7s
-  var autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
-  var carousel = document.getElementById('v2-reviews-carousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
-    carousel.addEventListener('mouseleave', function () {
-      autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
-    });
-  }
-
-  // Initialise count display
-  if (countEl) countEl.textContent = '01 / ' + pad(reviews.length);
-
-  
 
   /* ---- Scroll fade-in ---- */
   if ('IntersectionObserver' in window) {

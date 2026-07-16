@@ -1167,60 +1167,12 @@ document.addEventListener('DOMContentLoaded', () => {
      ============================================ */
 
   /* ============================================
-     REVIEWS CAROUSEL + MOBILE NAV + FADE-IN
-     Spostato da inline script nel body a qui (defer)
+     MOBILE NAV + FADE-IN
+     (Le recensioni sono ora card statiche in HTML — vedi sezione
+     .v2-reviews-wall — non più un carosello gestito da JS.)
      ============================================ */
   (function () {
     'use strict';
-
-    /* ---- Reviews carousel ---- */
-    var reviews = [
-      { text: "La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare. Nicoletta e Francesco molto cortesi. Consigliatissimo.", author: "Luca", meta: "Italia · Giugno · Booking" },
-      { text: "L'accueil a été fait par Nicoletta, une dame charmante. Excellente situation pour visiter le Gargano, à 5 min des plages. Literie confortable, extrêmement calme. Nous recommandons!", author: "Céline & François", meta: "Francia · Agosto · Airbnb" },
-      { text: "A partire dall'accoglienza dei proprietari. La camera è molto moderna, organizzata veramente bene. I proprietari sono gentilissimi e molto disponibili. Consiglio vivamente.", author: "Molaro", meta: "Italia · Luglio · Booking" },
-      { text: "Alles war super, schnelle Erreichbarkeit, flexibler Check in und out. Die Lage ist super gelegen, Strand und Einkaufsmöglichkeiten in direkter Nähe.", author: "Moni", meta: "Germania · Luglio · Airbnb" },
-      { text: "Camera arredata splendidamente, completa di tutto! Siamo stati benissimo!", author: "Giacomo", meta: "Italia · Settembre · Booking" },
-      { text: "Appartamento curato e pulito. In ottima posizione logistica per chi intende attraversare la Puglia senza tralasciare il Gargano.", author: "Bozidarka", meta: "Italia · Giugno · Airbnb" },
-      { text: "Piccola ma ben strutturata! C'è tutto quel che serve. Pulita e in posizione comoda per raggiungere il centro e il mare. Proprietari gentilissimi.", author: "Valentina", meta: "Italia · Novembre · Booking" }
-    ];
-
-    var idx = 0;
-    var textEl   = document.getElementById('v2-review-text');
-    var authorEl = document.getElementById('v2-review-author');
-    var metaEl   = document.getElementById('v2-review-meta');
-    var countEl  = document.getElementById('v2-review-count');
-    var prevBtn  = document.getElementById('v2-review-prev');
-    var nextBtn  = document.getElementById('v2-review-next');
-
-    function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-    function showReview(i) {
-      idx = (i + reviews.length) % reviews.length;
-      if (!textEl) return;
-      textEl.style.opacity   = '0';
-      authorEl.style.opacity = '0';
-      setTimeout(function () {
-        textEl.textContent   = reviews[idx].text;
-        authorEl.textContent = reviews[idx].author;
-        metaEl.textContent   = reviews[idx].meta;
-        countEl.textContent  = pad(idx + 1) + ' / ' + pad(reviews.length);
-        textEl.style.opacity   = '1';
-        authorEl.style.opacity = '1';
-      }, 180);
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', function () { showReview(idx - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { showReview(idx + 1); });
-
-    var autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
-    var carousel = document.getElementById('v2-reviews-carousel');
-    if (carousel) {
-      carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); }, { passive: true });
-      carousel.addEventListener('mouseleave', function () {
-        autoTimer = setInterval(function () { showReview(idx + 1); }, 7000);
-      }, { passive: true });
-    }
-    if (countEl) countEl.textContent = '01 / ' + pad(reviews.length);
 
     /* ---- Mobile nav toggle ---- */
     var toggle   = document.getElementById('v2-menu-toggle');
@@ -1395,7 +1347,10 @@ document.addEventListener('DOMContentLoaded', () => {
       '.lang-suggest-close{flex:0 0 auto;background:transparent;border:0;color:#f5efe6;cursor:pointer;' +
       'font-size:22px;line-height:1;padding:2px 6px;border-radius:6px;opacity:.8;transition:opacity .2s ease}' +
       '.lang-suggest-close:hover{opacity:1}' +
-      '@media(max-width:520px){.lang-suggest-bar{left:16px;right:16px;bottom:16px;transform:translateY(140%);' +
+      // Su mobile (≤900px) è presente la sticky bar in basso (~56px):
+      // il banner va posizionato sopra di essa per non sovrapporsi.
+      '@media(max-width:900px){.lang-suggest-bar{bottom:68px}}' +
+      '@media(max-width:520px){.lang-suggest-bar{left:16px;right:16px;bottom:68px;transform:translateY(180%);' +
       'flex-wrap:wrap}.lang-suggest-bar.is-visible{transform:translateY(0)}.lang-suggest-text{flex:1 1 100%}}';
     var style = document.createElement('style');
     style.id = 'lang-suggest-style';
@@ -1451,7 +1406,22 @@ document.addEventListener('DOMContentLoaded', () => {
     bar.appendChild(btn);
     document.body.appendChild(bar);
 
-    requestAnimationFrame(function () { bar.classList.add('is-visible'); });
+    // Comparsa solo dopo aver superato la hero: su mobile il banner è
+    // ancorato in basso e comparendo subito coprirebbe la CTA di primo
+    // impatto ("Verifica le date"). Aspettiamo il primo scroll oltre la hero.
+    function reveal() { bar.classList.add('is-visible'); }
+    var heroThreshold = Math.round(window.innerHeight * 0.6);
+    if (window.scrollY > heroThreshold) {
+      requestAnimationFrame(reveal);
+    } else {
+      var onScroll = function () {
+        if (window.scrollY > heroThreshold) {
+          window.removeEventListener('scroll', onScroll);
+          requestAnimationFrame(reveal);
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
   }
 
   if (document.readyState === 'loading') {
