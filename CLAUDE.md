@@ -49,6 +49,31 @@ Regole per l'agente:
 
 > Questo è l'unico gate autorizzato. Non reintrodurre controlli manuali ad-hoc al posto suo: se serve un nuovo controllo, aggiungilo dentro `predeploy-check.sh`.
 
+## Prezzi — fonte unica `_data/prezzi.json`
+
+`_data/prezzi.json` (`mesi_prezzi`) è la **fonte unica** dei prezzi: mese × camera.
+La usano sia il motore di prenotazione (`prenota.html`) sia il price tag dell'hero.
+
+**Regola: nessun prezzo scritto a mano nell'HTML deve contraddire questo file.**
+Un hero che prometteva "da €60" mentre ad agosto il booking chiedeva €110 veniva
+letto come prezzo civetta e spingeva il visitatore a prenotare su Booking
+(commissione 15-18%) invece che sul canale diretto.
+
+### Price tag hero — dinamico
+Il blocco `.v2-hero-price-tag-num` in `index.html` (tutte e 6 le lingue) mostra il
+**minimo del mese in corso fra tutte le camere**. La logica è in fondo a
+`sito/js/main.js` (IIFE "PREZZO HERO DINAMICO") e vale per tutte le lingue perché
+sostituisce solo la cifra, lasciando intatti prefisso (`da` / `from` / `ab` / `dès`
+/ `vanaf` / `desde`) e suffisso (`/ notte`).
+
+- Il numero nell'HTML è **solo un fallback** (crawler senza JS, anti-flash).
+- Se cambi `prezzi.json`, aggiorna anche la mappa `FALLBACK` dentro `main.js`.
+- Il gate `predeploy-check.sh` (check 7) segnala in WARN se il fallback statico
+  non corrisponde più al minimo del mese corrente.
+
+⚠️ Se aggiungi una camera a `prezzi.json` con un prezzo più basso, l'hero lo
+mostrerà automaticamente: è voluto, "da" deve essere il minimo davvero prenotabile.
+
 ## Regola fondamentale
 **`sito/index.html` (versione IT) è sempre il source of truth** per struttura, componenti e logica. Qualsiasi modifica a layout o funzionalità va prima applicata lì, poi replicata nelle versioni tradotte.
 

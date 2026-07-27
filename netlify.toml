@@ -1111,6 +1111,6 @@
 # ============================================================
 [[redirects]]
   from   = "/blog-articolo"
-  to     = "/blog/"
+  to     = "/blog.html"
   status = 301
   force  = true

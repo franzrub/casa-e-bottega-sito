@@ -173,6 +173,42 @@ for f in HTML + deploy_html:
         WARN(f"stringa vietata 'Pulizie finali' reintrodotta in {f}")
 
 # ---------------------------------------------------------------------------
+# 7) PREZZO HERO ⇄ _data/prezzi.json
+#    Il price tag della homepage è dinamico (main.js legge prezzi.json), ma il
+#    valore scritto nell'HTML resta come fallback per crawler senza JS e per
+#    evitare il flash. Va tenuto allineato al minimo del mese in corso,
+#    altrimenti torna il problema che questo check esiste per prevenire:
+#    hero che promette un prezzo diverso da quello del motore di prenotazione.
+# ---------------------------------------------------------------------------
+import datetime, json as _json
+
+MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno',
+        'luglio','agosto','settembre','ottobre','novembre','dicembre']
+_prezzi_fp = os.path.join("deploy", "_data", "prezzi.json")
+if not os.path.exists(_prezzi_fp):
+    FAIL("manca deploy/_data/prezzi.json (fonte dei prezzi per hero e prenota)")
+else:
+    try:
+        _mesi = _json.load(open(_prezzi_fp, encoding="utf-8")).get("mesi_prezzi", {})
+    except Exception as e:
+        _mesi = {}
+        FAIL(f"deploy/_data/prezzi.json illeggibile: {e}")
+    _mese_ora = MESI[datetime.date.today().month - 1]
+    _tariffe = [v for v in (_mesi.get(_mese_ora) or {}).values()
+                if isinstance(v, (int, float)) and v > 0]
+    if not _tariffe:
+        FAIL(f"prezzi.json non ha tariffe valide per il mese in corso ({_mese_ora})")
+    else:
+        _atteso = int(min(_tariffe))
+        _rx_hero = re.compile(r'v2-hero-price-tag-num">[^<]*?€\s*(\d+)')
+        for f in HTML + deploy_html:
+            txt = open(f, encoding="utf-8", errors="replace").read()
+            for trovato in _rx_hero.findall(txt):
+                if int(trovato) != _atteso:
+                    WARN(f"prezzo hero statico disallineato in {f}: €{trovato} "
+                         f"ma il minimo di {_mese_ora} è €{_atteso} -> aggiorna il fallback nell'HTML")
+
+# ---------------------------------------------------------------------------
 # REPORT
 # ---------------------------------------------------------------------------
 print(f"\n{BOLD}{BLU}=== PREDEPLOY GATE — Casa e Bottega ==={RST}")

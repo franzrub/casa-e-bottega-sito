@@ -1430,3 +1430,85 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
   }
 }());
+
+/* ══════════════════════════════════════════════════════════════════
+   PREZZO HERO DINAMICO
+   ------------------------------------------------------------------
+   Il price tag della homepage mostra il prezzo minimo REALE del mese
+   in corso, letto dalla stessa fonte che alimenta prenota.html
+   (/_data/prezzi.json). Motivo: un hero che diceva "da €60" mentre il
+   motore di prenotazione chiedeva €110 ad agosto veniva letto come
+   prezzo civetta, e spingeva il visitatore a chiudere e prenotare su
+   Booking (dove i €110 sembrano onesti perché non c'è l'ancora bassa).
+   Leggendo dall'unica fonte, hero e booking non possono più divergere.
+   ══════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var MONTH_KEYS = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
+                    'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+  // Copia di sicurezza allineata a /_data/prezzi.json. Serve a due cose:
+  // 1) se il fetch fallisce (offline, CDN fredda) il prezzo resta corretto;
+  // 2) evita il flash del valore statico scritto nell'HTML, perché gira
+  //    prima che la rete risponda.
+  var FALLBACK = {
+    gennaio:   { dimora: 60,  bottega: 50 },
+    febbraio:  { dimora: 60,  bottega: 50 },
+    marzo:     { dimora: 60,  bottega: 50 },
+    aprile:    { dimora: 60,  bottega: 50 },
+    maggio:    { dimora: 60,  bottega: 50 },
+    giugno:    { dimora: 80,  bottega: 74 },
+    luglio:    { dimora: 100, bottega: 90 },
+    agosto:    { dimora: 110, bottega: 100 },
+    settembre: { dimora: 110, bottega: 100 },
+    ottobre:   { dimora: 60,  bottega: 50 },
+    novembre:  { dimora: 60,  bottega: 50 },
+    dicembre:  { dimora: 60,  bottega: 50 }
+  };
+
+  // Minimo fra tutte le camere del mese: il tag dice "da", quindi deve
+  // essere il prezzo più basso davvero prenotabile, non quello di una
+  // camera scelta a priori.
+  function minPrezzoMese(mesiPrezzi, monthIndex) {
+    var mese = mesiPrezzi && mesiPrezzi[MONTH_KEYS[monthIndex]];
+    if (!mese) return null;
+    var min = null;
+    for (var camera in mese) {
+      if (!Object.prototype.hasOwnProperty.call(mese, camera)) continue;
+      var p = Number(mese[camera]);
+      if (!isFinite(p) || p <= 0) continue;
+      if (min === null || p < min) min = p;
+    }
+    return min;
+  }
+
+  function render(mesiPrezzi) {
+    var el = document.querySelector('.v2-hero-price-tag-num');
+    if (!el) return;
+    var prezzo = minPrezzoMese(mesiPrezzi, new Date().getMonth());
+    if (prezzo === null) return;
+    // Sostituisce SOLO la cifra. Prefisso ("da" / "from" / "ab" / "dès" /
+    // "vanaf" / "desde") e suffisso ("/ notte") restano quelli della lingua
+    // della pagina: così la funzione è unica per tutte e sei le versioni.
+    var html = el.innerHTML;
+    var nuovo = html.replace(/€\s*\d+/, '€' + prezzo);
+    if (nuovo !== html) el.innerHTML = nuovo;
+  }
+
+  function init() {
+    if (!document.querySelector('.v2-hero-price-tag-num')) return;
+    render(FALLBACK);
+    if (typeof fetch !== 'function') return;
+    fetch('/_data/prezzi.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) { if (data && data.mesi_prezzi) render(data.mesi_prezzi); })
+      .catch(function () { /* resta il FALLBACK, già corretto */ });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());
