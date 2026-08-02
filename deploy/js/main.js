@@ -1512,3 +1512,83 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
   }
 }());
+
+/* ══════════════════════════════════════════════════════════════════
+   PREZZO CAMERE DINAMICO (pagina "Le Camere")
+   ------------------------------------------------------------------
+   Stessa logica dell'hero, ma per-camera. Il price tag di ogni stanza
+   (.v2-room-pricing--dimora / --bottega) e la riga "A partire da" della
+   tabella di confronto (.v2-cmp-price) mostrano il prezzo del MESE IN
+   CORSO letto da /_data/prezzi.json (fonte unica). Evita il prezzo
+   civetta: la pagina camere non può più promettere "da €60" mentre ad
+   agosto il booking chiede €110 (Dimora) / €100 (Bottega).
+   A differenza dell'hero (che mostra il minimo fra le camere), qui ogni
+   camera mostra il PROPRIO prezzo del mese.
+   ⚠️ La mappa FALLBACK qui sotto deve restare allineata a quella
+   dell'hero e a /_data/prezzi.json.
+   ══════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var MONTH_KEYS = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
+                    'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+  var FALLBACK = {
+    gennaio:   { dimora: 60,  bottega: 50 },
+    febbraio:  { dimora: 60,  bottega: 50 },
+    marzo:     { dimora: 60,  bottega: 50 },
+    aprile:    { dimora: 60,  bottega: 50 },
+    maggio:    { dimora: 60,  bottega: 50 },
+    giugno:    { dimora: 80,  bottega: 74 },
+    luglio:    { dimora: 100, bottega: 90 },
+    agosto:    { dimora: 110, bottega: 100 },
+    settembre: { dimora: 110, bottega: 100 },
+    ottobre:   { dimora: 60,  bottega: 50 },
+    novembre:  { dimora: 60,  bottega: 50 },
+    dicembre:  { dimora: 60,  bottega: 50 }
+  };
+
+  function prezzoMese(mesiPrezzi, monthIndex, room) {
+    var mese = mesiPrezzi && mesiPrezzi[MONTH_KEYS[monthIndex]];
+    if (!mese) return null;
+    var p = Number(mese[room]);
+    return (isFinite(p) && p > 0) ? p : null;
+  }
+
+  // Sostituisce SOLO la cifra dentro l'elemento, lasciando intatti
+  // prefisso/suffisso e markup (es. lo <span> "/ notte").
+  function setNum(el, prezzo) {
+    if (!el || prezzo === null) return;
+    var html = el.innerHTML;
+    var nuovo = html.replace(/€\s*\d+/, '€' + prezzo);
+    if (nuovo !== html) el.innerHTML = nuovo;
+  }
+
+  function render(mesiPrezzi) {
+    var m = new Date().getMonth();
+    var pDimora  = prezzoMese(mesiPrezzi, m, 'dimora');
+    var pBottega = prezzoMese(mesiPrezzi, m, 'bottega');
+    // Price tag di ciascuna camera
+    setNum(document.querySelector('.v2-room-pricing--dimora .v2-pricing-price'), pDimora);
+    setNum(document.querySelector('.v2-room-pricing--bottega .v2-pricing-price'), pBottega);
+    // Tabella di confronto: 1a colonna = Dimora, 2a = Bottega
+    var cmp = document.querySelectorAll('.v2-cmp-price');
+    if (cmp.length >= 2) { setNum(cmp[0], pDimora); setNum(cmp[1], pBottega); }
+  }
+
+  function init() {
+    if (!document.querySelector('.v2-room-pricing--dimora, .v2-room-pricing--bottega, .v2-cmp-price')) return;
+    render(FALLBACK);
+    if (typeof fetch !== 'function') return;
+    fetch('/_data/prezzi.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) { if (data && data.mesi_prezzi) render(data.mesi_prezzi); })
+      .catch(function () { /* resta il FALLBACK, già corretto */ });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());

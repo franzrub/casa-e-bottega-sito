@@ -1991,7 +1991,7 @@
 
 <!-- ══ SCRIPTS ═════════════════════════════════════════════════════ -->
 <script src="../js/i18n.min.js?v=20260722b" defer></script>
-<script src="../js/main.min.js?v=2026072702" defer></script>
+<script src="../js/main.min.js?v=2026080101" defer></script>
 <script>
 /* ============================================================
    v2 BOOKING MODAL CONTROLLER
@@ -2672,6 +2672,16 @@
     let miniCalCheckin  = null;
     let miniCalCheckout = null;
 
+    // Step 1: la camera non è ancora scelta. Un giorno è "occupato" solo se
+    // occupato in TUTTE le camere; se è libero in almeno una resta prenotabile.
+    // (Lo step 2 filtra poi le camere disponibili per l'intero periodo.)
+    function isDayFullyBooked(ds) {
+      if (typeof bookedDates === 'undefined') return false;
+      var rooms = Object.keys(bookedDates);
+      if (!rooms.length) return false;
+      return rooms.every(function (r) { return bookedDates[r] && bookedDates[r].has(ds); });
+    }
+
     const checkinEl  = document.getElementById('search-checkin');
     const checkoutEl = document.getElementById('search-checkout');
     const guestsEl   = document.getElementById('search-guests');
@@ -2749,15 +2759,22 @@
       // la PRIMA data occupata dopo il check-in deve essere SELEZIONABILE come checkout:
       // l'ospite esce la mattina di quel giorno, il nuovo ospite arriva il pomeriggio.
       // Tutte le date successive alla prima occupata restano bloccate.
+      // Prima data occupata in TUTTE le camere dopo il check-in: è il limite
+      // oltre cui il check-out non può estendersi (camera-agnostico allo step 1).
       let firstBlockedAfterCheckin = null;
-      if (miniCalCheckin && !miniCalCheckout && typeof bookedDates !== 'undefined' && bookedDates[miniCalRoom]) {
-        const allBooked = [...bookedDates[miniCalRoom]].filter(d => d > miniCalCheckin).sort();
-        firstBlockedAfterCheckin = allBooked[0] || null;
+      if (miniCalCheckin && !miniCalCheckout && typeof bookedDates !== 'undefined') {
+        var _rooms = Object.keys(bookedDates);
+        if (_rooms.length) {
+          var _cand = [...bookedDates[_rooms[0]]].filter(function (d) {
+            return d > miniCalCheckin && _rooms.every(function (r) { return bookedDates[r].has(d); });
+          }).sort();
+          firstBlockedAfterCheckin = _cand[0] || null;
+        }
       }
 
       for (let d = 1; d <= daysInMonth; d++) {
         const ds = `${miniCalYear}-${String(miniCalMonth + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-        const isBooked   = (typeof bookedDates !== 'undefined') && bookedDates[miniCalRoom] && bookedDates[miniCalRoom].has(ds);
+        const isBooked   = isDayFullyBooked(ds);
         const isPast     = ds < today;
         const isToday    = ds === today;
         const isDisabledBeforeCheckin = miniCalCheckin && !miniCalCheckout && ds <= miniCalCheckin;

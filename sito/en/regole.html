@@ -195,6 +195,23 @@
   .reg-emergency { flex-direction: column; gap: 0.8rem; }
   .reg-hero { padding: 5rem 0 3.5rem; }
 }
+
+/* ── Raccolta differenziata ──────────────────── */
+.reg-waste{background:var(--bone);border-top:1px solid var(--line);padding:5rem 0}
+.reg-waste-note{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:1.5rem 1.8rem;margin-bottom:2.4rem;font-family:'Inter',sans-serif;font-size:0.92rem;line-height:1.68;color:var(--stone-2)}
+.reg-waste-note strong{color:var(--ink);font-weight:600}
+.reg-waste-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.reg-waste-row{background:var(--bone);padding:1.5rem 1.9rem;display:grid;grid-template-columns:3rem 1fr;gap:1.4rem;align-items:center}
+.reg-waste-ic{width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.reg-waste-ic svg{width:1.45rem;height:1.45rem}
+.reg-waste-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--ink);line-height:1;margin-bottom:0.6rem;letter-spacing:-0.01em}
+.reg-waste-days{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;padding:5px 13px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.rw-organico .reg-waste-ic{background:#c3b394;color:#8a6d42}.rw-organico .reg-waste-days{color:#8a6d42}
+.rw-indiff .reg-waste-ic{background:#cbc8c1;color:#6f6d67}.rw-indiff .reg-waste-days{color:#6f6d67}
+.rw-vetro .reg-waste-ic{background:#a9c0a2;color:#557a52}.rw-vetro .reg-waste-days{color:#557a52}
+.rw-plastica .reg-waste-ic{background:#a6c0d0;color:#43647c}.rw-plastica .reg-waste-days{color:#43647c}
+.rw-carta .reg-waste-ic{background:#dcbb4f;color:#9e7d21}.rw-carta .reg-waste-days{color:#9e7d21}
+@media (max-width:700px){.reg-waste{padding:3.5rem 0}.reg-waste-row{padding:1.3rem 1.3rem;grid-template-columns:2.6rem 1fr;gap:1rem}.reg-waste-days{white-space:normal}}
 </style>
 </head>
 <body>
@@ -324,19 +341,26 @@
 
     </div>
 
-    <!-- Emergency box -->
-    <div class="reg-emergency">
-      <div class="reg-emergency-icon">📞</div>
-      <div>
-        <div class="reg-emergency-label">Emergency contacts</div>
-        <p class="reg-emergency-text">For any needs during your stay contact us at <a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a> or on WhatsApp at <a href="https://wa.me/393334705574">+39 333 470 5574</a>.</p>
-      </div>
-    </div>
+
 
   </div>
 </section>
 
 <!-- ══ CLOSING CTA ══════════════════════════════════════════════════ -->
+
+<!-- ══ RACCOLTA DIFFERENZIATA ══ -->
+<section class="reg-waste"><div class="v2-container">
+<span class="reg-section-label">During your stay</span>
+<h2 class="reg-section-title">Recycling <em>&amp; waste.</em></h2>
+<div class="reg-waste-note">Collection happens in the <strong>early morning</strong>. Each row below shows the <strong>evening to leave the bags outside</strong>, after dinner: they are collected the next morning. Example: glass goes out on <strong>Tuesday evening</strong> and is collected Wednesday morning.</div>
+<div class="reg-waste-list">
+<div class="reg-waste-row rw-organico"><div class="reg-waste-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="6.5"/><path d="M12 7.5C12 5 13.5 3.5 16 3.5"/></svg></div><div><div class="reg-waste-name">Organic waste</div><span class="reg-waste-days">Sunday · Tuesday · Friday evening</span></div></div>
+<div class="reg-waste-row rw-indiff"><div class="reg-waste-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M6 7l1 12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-12"/><path d="M10 11v6M14 11v6"/></svg></div><div><div class="reg-waste-name">General waste</div><span class="reg-waste-days">Monday evening</span></div></div>
+<div class="reg-waste-row rw-vetro"><div class="reg-waste-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v3l1.5 3v10a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V9L10 6z"/></svg></div><div><div class="reg-waste-name">Glass</div><span class="reg-waste-days">Tuesday evening</span></div></div>
+<div class="reg-waste-row rw-plastica"><div class="reg-waste-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 3h3M11 3v2.2M13 3v2.2M9.5 9c0-1.8 1-3.8 2.5-3.8s2.5 2 2.5 3.8v10a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1z"/></svg></div><div><div class="reg-waste-name">Plastic</div><span class="reg-waste-days">Wednesday evening</span></div></div>
+<div class="reg-waste-row rw-carta"><div class="reg-waste-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 12.5h6M9 15.5h6"/></svg></div><div><div class="reg-waste-name">Paper</div><span class="reg-waste-days">Thursday evening</span></div></div>
+</div>
+</div></section>
 <section class="reg-cta">
   <div class="v2-container">
     <h2>Ready to <em>book?</em></h2>
@@ -410,6 +434,6 @@
 </a>
 
 <script src="../js/i18n.min.js?v=20260722b" defer></script>
-<script src="../js/main.min.js?v=2026072702" defer></script>
+<script src="../js/main.min.js?v=2026080101" defer></script>
 </body>
 </html>

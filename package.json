@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "terser": "^5.31.0",
-    "clean-css-cli": "^5.6.3"
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.31.0"
   },
   "scripts": {
     "build": "bash prepara-deploy.sh"
+  },
+  "dependencies": {
+    "jsdom": "^30.0.1"
   }
 }
