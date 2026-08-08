@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <!-- ▶ Design v2 fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (editorial labels) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
-<link href="../css/style-v2.min.css?v=5" rel="stylesheet"/>
+<link href="../css/style-v2.min.css?v=7" rel="stylesheet"/>
 <!-- Netlify Identity: rimosso dalle pagine pubbliche — si trova solo in /admin/index.html -->
 <!-- Structured Data: WebSite (sitelinks signal) -->
 <script type="application/ld+json">
@@ -395,8 +395,8 @@
       <div>
         <div class="v2-img-frame" style="aspect-ratio:4/5;">
           <img
-            src="../../foto-la-dimora/dimora-04-letto.webp"
-            srcset="../../foto-la-dimora/dimora-04-letto-md.webp 800w, ../../foto-la-dimora/dimora-04-letto.webp 4032w"
+            src="../../foto-la-dimora/dimora-02-letto.webp"
+            srcset="../../foto-la-dimora/dimora-02-letto-md.webp 800w, ../../foto-la-dimora/dimora-02-letto.webp 4032w"
             sizes="(max-width: 900px) 50vw, 40vw"
             alt="Camera con angolo cottura, Casa e Bottega, Manfredonia"
             loading="lazy"
@@ -550,7 +550,7 @@
 
     <div style="margin-top:4rem; padding-top:2.5rem; border-top:1px solid #d9d0c4;">
       <p data-i18n="extra_space_label" style="text-align:center; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:#9e8e7e; margin-bottom:1.8rem;">Cerchi più spazio?</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:840px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1fr; gap:24px; max-width:400px; margin:0 auto;">
         <a href="../casa-sul-mare.html" style="text-decoration:none; color:inherit; display:block;">
           <div style="aspect-ratio:3/2; overflow:hidden; background:#e4d9c3;">
             <img src="/foto-casa-sul-mare/IMG_6946%20copy_11zon.webp" alt="Casa sul mare — appartamento intero a Manfredonia" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/>
@@ -558,7 +558,7 @@
           <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:23px; color:#1a1613; margin-top:14px;"><span data-i18n="extra_casa_mare_name">Casa sul mare</span> <span style="color:#1f4a4a;">→</span></div>
           <div data-i18n="extra_casa_mare_meta" style="font-size:12px; letter-spacing:0.03em; color:#6b6358; margin-top:4px;">Appartamento intero · 4 ospiti · 75 m²</div>
         </a>
-        <a href="../casa-con-vista.html" style="text-decoration:none; color:inherit; display:block;">
+        <a href="../casa-con-vista.html" style="text-decoration:none; color:inherit; display:none;">
           <div style="aspect-ratio:3/2; overflow:hidden; background:#e4d9c3;">
             <img src="/foto-casa-con-vista/foto-2.webp" alt="Casa con vista — appartamento sul Gargano" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/>
           </div>
@@ -871,7 +871,7 @@
          rel="noopener"
          aria-label="Apri Casa e Bottega in Google Maps">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        Via Gargano, 13 · Manfredonia · Apri in Google Maps
+        <span class="v2-map-link-addr">Via Gargano, 13 · Manfredonia · </span><span class="v2-map-link-cta">Apri in Google Maps</span>
       </a>
 
     </div>
@@ -1182,7 +1182,7 @@
           <li><a href="blog.html" data-i18n="nav_blog">Racconti</a></li>
           <li><a href="../regole.html" data-i18n="footer_rules">Regole della Casa</a></li>
           <li><a href="../casa-sul-mare.html" data-i18n="extra_casa_mare_name">Casa sul mare</a></li>
-          <li><a href="../casa-con-vista.html" data-i18n="extra_casa_vista_name">Casa con vista</a></li>
+          <li style="display:none"><a href="../casa-con-vista.html" data-i18n="extra_casa_vista_name">Casa con vista</a></li>
         </ul>
       </div>
 
@@ -1193,6 +1193,7 @@
           <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
           <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
           <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+          <li><a href="https://maps.apple.com/place?place-id=I198EC2CB0FE4658E&amp;address=Via+Gargano+13%2C+71043+Manfredonia+FG%2C+Italia&amp;coordinate=41.634708%2C15.923971&amp;name=Casa+e+Bottega&amp;_provider=9902" rel="noopener" target="_blank">Apple Maps</a></li>
         </ul>
       </div>
 

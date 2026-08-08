@@ -824,13 +824,24 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
-  color: var(--stone);
+  color: var(--stone-2);
   text-decoration: none;
   transition: background 180ms ease, color 180ms ease;
 }
-.v2-map-link:hover {
-  background: var(--bone);
-  color: var(--ink);
+.v2-map-link-cta {
+  color: var(--terracotta);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+@media (hover: hover) {
+  .v2-map-link:hover {
+    background: var(--bone);
+  }
+  .v2-map-link:hover .v2-map-link-cta {
+    text-decoration-thickness: 2px;
+  }
 }
 
 /* ============================================================
@@ -1417,4 +1428,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .v2-footer-brand { font-size: 28px; }
 
   .v2-reviews-grid { gap: 28px; }
+
+  /* Box prezzo hero: più a sinistra e più in basso su telefoni piccoli */
+  .v2-hero-price-tag { bottom: 20px; left: 16px; }
 }
