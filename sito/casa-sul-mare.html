@@ -139,6 +139,11 @@
         grid-column: 1 / 3;
         height: 58vw;
       }
+      /* Ultima foto: riquadro grande a tutta larghezza, chiude la galleria e riempie lo spazio */
+      .carousel-slide:last-child {
+        grid-column: 1 / 3;
+        grid-row: span 2;
+      }
       .carousel-slide img {
         width: 100%;
         height: 100%;
@@ -669,8 +674,14 @@
     <div class="carousel-slide" onclick="openLightbox(5)">
       <img src="foto-casa-sul-mare/IMG_0440 copy_11zon.webp" alt="Ingresso">
     </div>
+    <div class="carousel-slide" onclick="openLightbox(6)">
+      <img src="foto-casa-sul-mare/IMG_0448 copy.webp" alt="Corridoio con mappa del Gargano">
+    </div>
+    <div class="carousel-slide" onclick="openLightbox(7)">
+      <img src="foto-casa-sul-mare/IMG_0447 copy.webp" alt="Balcone con vista sulla via">
+    </div>
   </div>
-  <div class="carousel-counter" id="carousel-counter">1 / 6</div>
+  <div class="carousel-counter" id="carousel-counter">1 / 8</div>
 
   <!-- Gallery desktop grid (visibile solo su desktop) -->
   <div class="gallery" id="gallery">
@@ -1110,6 +1121,8 @@
     'foto-casa-sul-mare/IMG_0451 copy_11zon.webp',
     'foto-casa-sul-mare/IMG_0435 copy_11zon.webp',
     'foto-casa-sul-mare/IMG_0440 copy_11zon.webp',
+    'foto-casa-sul-mare/IMG_0448 copy.webp',
+    'foto-casa-sul-mare/IMG_0447 copy.webp',
   ];
 
   // Auto-load photos on page init
