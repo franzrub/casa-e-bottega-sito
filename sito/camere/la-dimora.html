@@ -1,51 +1,146 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>La Dimora | Camera a Casa Vacanze Manfredonia</title>
-<meta content="Scopri La Dimora, elegante camera in casa vacanze nel centro storico di Manfredonia con letto king size, bagno privato, WiFi e cucinotto. Ideale per lavorare da remoto." name="description"/>
-<meta content="La Dimora, camera Manfredonia, casa vacanze letto king size, affittacamere centro storico, cucinotto Manfredonia, camera remoto working" name="keywords"/>
-<meta content="La Dimora | Camera a Casa Vacanze Manfredonia" property="og:title"/>
-<meta content="Scopri La Dimora, elegante camera in casa vacanze nel centro storico di Manfredonia con letto king size, bagno privato, WiFi e cucinotto. Ideale per lavorare da remoto." property="og:description"/>
+<title>La Dimora | Locazione turistica nel centro storico di Manfredonia</title>
+<meta content="Scopri La Dimora: 28 m² di luce e silenzio nel centro storico di Manfredonia, a 300 m dal mare. Letto king size, bagno privato, cucinotto, WiFi fibra. Prenota diretto e risparmi il 20%." name="description"/>
+<meta content="La Dimora, camera Manfredonia, locazione turistica letto king size, affittacamere centro storico, cucinotto Manfredonia, camera working from home" name="keywords"/>
+<meta content="La Dimora | Locazione turistica a Manfredonia" property="og:title"/>
+<meta content="28 m² di luce e silenzio nel centro storico di Manfredonia, a 300 m dal mare. Letto king size, bagno privato, cucinotto, WiFi fibra. Prenota diretto: –20% rispetto a Booking e Airbnb." property="og:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="https://www.casaebottegapuglia.it/camere/la-dimora.html" property="og:url"/>
+<meta content="https://www.casaebottegapuglia.it/camere/la-dimora" property="og:url"/>
 <meta content="it_IT" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="La Dimora | Camera a Casa Vacanze Manfredonia" name="twitter:title"/>
-<meta content="Camera elegante nel centro storico di Manfredonia con letto king size, bagno privato e cucinotto." name="twitter:description"/>
+<meta content="La Dimora | Locazione turistica a Manfredonia" name="twitter:title"/>
+<meta content="28 m² di luce e silenzio nel centro storico di Manfredonia, a 300 m dal mare. Letto king size, bagno privato, cucinotto, WiFi fibra." name="twitter:description"/>
 <meta content="https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg" name="twitter:image"/>
-<link href="https://www.casaebottegapuglia.it/camere/la-dimora.html" rel="canonical"/>
-<link href="../css/style.css" rel="stylesheet"/>
-<!-- Schema.org: HotelRoom -->
+<link href="https://www.casaebottegapuglia.it/camere/la-dimora" rel="canonical"/>
+<link href="https://www.casaebottegapuglia.it/camere/la-dimora" hreflang="it" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/en/camere" hreflang="en" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/fr/camere" hreflang="fr" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/de/camere" hreflang="de" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/nl/camere" hreflang="nl" rel="alternate"/>
+<link href="https://www.casaebottegapuglia.it/es/camere" hreflang="es" rel="alternate"/>
+<link rel="preload" href="../foto-la-dimora/dimora-01-foto-principale.webp" as="image" fetchpriority="high"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link href="../css/style-v2.min.css?v=8" rel="stylesheet"/>
+<style>
+/* ── La Dimora page-specific styles ── */
+.v2-room-detail-section { padding: 80px 0 60px; }
+.v2-room-detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.v2-room-gallery {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+}
+.v2-gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.v2-gallery-thumb {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper-2);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 180ms ease;
+  flex-shrink: 0;
+}
+.v2-gallery-thumb.active { border-color: var(--ink); }
+.v2-gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 400ms ease; }
+.v2-gallery-thumb:hover img { transform: scale(1.05); }
+.v2-gallery-main {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--paper-2);
+  position: relative;
+  cursor: zoom-in;
+}
+.v2-gallery-main img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 300ms ease; }
+.v2-room-info { padding-top: 20px; }
+.v2-room-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 12px; }
+.v2-room-name { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; letter-spacing: -0.015em; line-height: 0.92; font-size: clamp(56px, 7vw, 96px); margin-bottom: 16px; }
+.v2-room-name em { font-style: italic; color: var(--terracotta); }
+.v2-room-tagline { font-size: 17px; color: var(--ink-2); line-height: 1.6; margin-bottom: 20px; }
+.v2-room-desc { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 36px; max-width: 500px; }
+.v2-room-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.v2-room-stat-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var(--stone-2); margin-bottom: 4px; }
+.v2-room-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1; }
+.v2-room-pricing { background: var(--ink); color: var(--bone); padding: 28px 32px; margin-bottom: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.v2-pricing-season-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+.v2-pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500; line-height: 1; }
+.v2-pricing-price span { font-size: 14px; opacity: 0.7; font-family: 'Inter', sans-serif; }
+.v2-pricing-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; font-weight: 300; line-height: 1.45; margin: 0; flex: 1; min-width: 200px; }
+.v2-room-review { margin: 4px 0 28px; padding: 22px 26px; background: var(--bone); border: 1px solid var(--line); border-left: 3px solid var(--terracotta); }
+.v2-room-review p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0 0 12px; }
+.v2-room-review footer { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--stone-2); }
+.v2-stars { color: var(--terracotta); letter-spacing: 2px; margin-right: 8px; }
+.v2-amenities-title { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--stone-2); margin-bottom: 20px; }
+.v2-amenities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 24px; margin-bottom: 32px; }
+.v2-amenity-item { display: flex; gap: 12px; align-items: flex-start; }
+.v2-amenity-icon { width: 18px; height: 18px; margin-top: 2px; color: var(--stone-2); flex-shrink: 0; }
+.v2-amenity-name { font-size: 13px; font-weight: 500; display: block; line-height: 1.3; }
+.v2-amenity-desc { font-size: 11px; color: var(--stone-2); margin-top: 2px; line-height: 1.4; display: block; }
+.v2-room-cta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.v2-room-microcopy { font-size: 12px; color: var(--stone-2); letter-spacing: 0.04em; }
+.v2-breadcrumb { padding: 12px 0; font-size: 13px; color: var(--stone-2); border-bottom: 1px solid var(--line); }
+.v2-breadcrumb a { color: var(--stone-2); text-decoration: none; }
+.v2-breadcrumb a:hover { color: var(--ink); }
+.v2-breadcrumb span { margin: 0 6px; }
+.v2-crosslink { text-align: center; padding: 60px 0; background: var(--paper); border-top: 1px solid var(--line); }
+.v2-crosslink p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--stone-2); margin-bottom: 24px; font-style: italic; }
+.v2-crosslink-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+/* Lightbox */
+.v2-lightbox { display: none; position: fixed; inset: 0; background: rgba(26,22,19,0.95); z-index: 200; align-items: center; justify-content: center; padding: 40px; }
+.v2-lightbox.open { display: flex; }
+.v2-lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; display: block; }
+.v2-lightbox-close { position: absolute; top: 16px; right: 16px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 34px; line-height: 1; color: var(--bone); opacity: 0.9; cursor: pointer; background: rgba(0,0,0,0.35); border: none; border-radius: 50%; font-family: inherit; z-index: 210; transition: opacity 180ms ease; }
+.v2-lightbox-close:hover { opacity: 1; }
+.v2-lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); min-width: 48px; min-height: 48px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--bone); opacity: 0.7; cursor: pointer; background: none; border: none; font-family: 'Cormorant Garamond', serif; transition: opacity 180ms ease; padding: 0 20px; z-index: 210; }
+.v2-lightbox-nav:hover { opacity: 1; }
+.v2-lightbox-prev { left: 20px; }
+.v2-lightbox-next { right: 20px; }
+@media (max-width: 1024px) {
+  .v2-room-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+  .v2-room-gallery { grid-template-columns: 64px 1fr; }
+}
+@media (max-width: 680px) {
+  .v2-room-gallery { grid-template-columns: 1fr; }
+  .v2-gallery-thumbs { flex-direction: row; overflow-x: auto; }
+  .v2-gallery-thumb { width: 64px; flex-shrink: 0; }
+  .v2-amenities-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2-room-stats { grid-template-columns: repeat(3, 1fr); }
+  .v2-room-pricing { flex-direction: column; }
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HotelRoom",
   "name": "La Dimora",
-  "description": "Camera spaziosa e silenziosa in casa vacanze nel centro storico di Manfredonia, con letto king size, bagno privato, WiFi fibra, cucinotto attrezzato e spazio di lavoro dedicato.",
-  "url": "https://www.casaebottegapuglia.it/camere/la-dimora.html",
+  "description": "Camera di 28 m² nel centro storico di Manfredonia, a 300 m dal mare Adriatico. Letto king size, bagno privato, cucinotto attrezzato, WiFi fibra. Parte della locazione turistica Casa e Bottega.",
+  "url": "https://www.casaebottegapuglia.it/camere/la-dimora",
   "image": "https://www.casaebottegapuglia.it/foto-la-dimora/dimora-01-foto-principale.jpeg",
-  "occupancy": {
-    "@type": "QuantitativeValue",
-    "maxValue": 3,
-    "minValue": 1
-  },
-  "bed": {
-    "@type": "BedDetails",
-    "numberOfBeds": 1,
-    "typeOfBed": "KingBed"
-  },
+  "occupancy": { "@type": "QuantitativeValue", "maxValue": 2, "minValue": 1 },
+  "bed": { "@type": "BedDetails", "numberOfBeds": 1, "typeOfBed": "KingBed" },
+  "floorSize": { "@type": "QuantitativeValue", "value": 28, "unitCode": "MTK" },
   "amenityFeature": [
     {"@type": "LocationFeatureSpecification", "name": "Letto king size", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Bagno privato", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "WiFi fibra", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Smart TV con Netflix", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Aria condizionata", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Cucinotto attrezzato", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Spazio di lavoro", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Self check-in", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Letto aggiuntivo su richiesta", "value": true}
   ],
@@ -65,20 +160,9 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
-    "priceSpecification": [
-      {
-        "@type": "UnitPriceSpecification",
-        "price": "60",
-        "priceCurrency": "EUR",
-        "name": "Bassa stagione (Ott–Giu)"
-      },
-      {
-        "@type": "UnitPriceSpecification",
-        "price": "100",
-        "priceCurrency": "EUR",
-        "name": "Alta stagione (Lug–Set)"
-      }
-    ]
+    "price": "60",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.casaebottegapuglia.it/prenota.html"
   }
 }
 </script>
@@ -88,365 +172,485 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png"/>
 </head>
 <body>
-<!-- HEADER -->
-<header class="site-header">
-<nav class="nav-wrapper">
-<a class="nav-logo" href="../index.html">Casa <span>e</span> Bottega</a>
-<ul class="nav-links">
-<li><a data-i18n="nav_home" href="../index.html">Home</a></li>
-<li><a class="active" data-i18n="nav_rooms" href="../camere.html">Le Camere</a></li>
-<li><a data-i18n="nav_book" href="../prenota.html">Prenota</a></li>
-<li><a data-i18n="nav_blog" href="../blog.html">Racconti</a></li>
-<li><a data-i18n="nav_contact" href="../contatti.html">Contatti</a></li>
-<li>
-<div class="lang-switcher">
-<a class="lang-btn active" href="../camere/la-dimora.html" hreflang="it" title="Italiano">IT</a>
-<a class="lang-btn" href="../en/camere.html" hreflang="en" title="English">EN</a>
-<a class="lang-btn" href="../fr/camere.html" hreflang="fr" title="Français">FR</a>
-<a class="lang-btn" href="../de/camere.html" hreflang="de" title="Deutsch">DE</a>
-<a class="lang-btn" href="../nl/camere.html" hreflang="nl" title="Nederlands">NL</a>
-<a class="lang-btn" href="../es/camere.html" hreflang="es" title="Español">ES</a>
-</div>
-</li>
-</ul>
-<button aria-label="Menu" class="menu-toggle"><span></span><span></span><span></span></button>
-</nav>
+
+<a class="v2-skip" href="#site-main">Vai al contenuto principale</a>
+
+<!-- NAV -->
+<header>
+  <nav class="v2-nav" role="navigation" aria-label="Navigazione principale">
+    <div class="v2-nav-inner">
+      <div class="v2-nav-links-desktop" id="v2-nav-links-desktop">
+        <a href="../index.html" data-i18n="nav_home">Home</a>
+        <a class="active" href="../camere.html" data-i18n="nav_rooms">Le Camere</a>
+        <a href="../prenota.html" data-i18n="nav_book">Prenota</a>
+        <a href="../blog.html" data-i18n="nav_blog">Racconti</a>
+        <a href="../contatti.html" data-i18n="nav_contact">Contatti</a>
+      </div>
+      <a class="v2-nav-brand" href="../index.html" aria-label="Casa e Bottega — Home">Casa <em>e</em> Bottega</a>
+      <div class="v2-nav-right">
+        <div class="v2-nav-lang" role="list" aria-label="Seleziona lingua">
+          <a class="on" href="la-dimora.html" hreflang="it" title="Italiano" role="listitem">IT</a>
+          <a href="../en/camere.html" hreflang="en" title="English" role="listitem">EN</a>
+          <a href="../fr/camere.html" hreflang="fr" title="Français" role="listitem">FR</a>
+          <a href="../de/camere.html" hreflang="de" title="Deutsch" role="listitem">DE</a>
+          <a href="../nl/camere.html" hreflang="nl" title="Nederlands" role="listitem">NL</a>
+          <a href="../es/camere.html" hreflang="es" title="Español" role="listitem">ES</a>
+        </div>
+        <a href="../prenota.html?open=1" class="v2-btn v2-btn--primary" style="padding:12px 20px;font-size:12px;min-height:44px;display:inline-flex;align-items:center;" data-i18n="hero_cta_book">Prenota ora</a>
+        <button class="v2-menu-toggle" id="v2-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="v2-nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<!-- BREADCRUMB -->
-<div style="background: var(--calce); border-bottom: 1px solid rgba(0,0,0,0.07); padding: 0.6rem 0; font-size: 0.85rem;">
-<div class="container" style="color: var(--testo-muted);">
-<a href="../index.html" style="color: var(--testo-muted);">Home</a>
-<span style="margin: 0 0.5rem;">›</span>
-<a href="../camere.html" style="color: var(--testo-muted);">Le Camere</a>
-<span style="margin: 0 0.5rem;">›</span>
-<span style="color: var(--testo);">La Dimora</span>
-</div>
+<div class="v2-nav-links" id="v2-nav-links" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+  <a href="../index.html" data-i18n="nav_home">Home</a>
+  <a class="active" href="../camere.html" data-i18n="nav_rooms">Le Camere</a>
+  <a href="../prenota.html" data-i18n="nav_book">Prenota</a>
+  <a href="../blog.html" data-i18n="nav_blog">Racconti</a>
+  <a href="../contatti.html" data-i18n="nav_contact">Contatti</a>
+  <div class="v2-nav-lang-mobile">
+    <button class="v2-lang-toggle" id="v2-lang-toggle" aria-expanded="false" aria-controls="v2-lang-dropdown">IT</button>
+    <div class="v2-lang-dropdown" id="v2-lang-dropdown" role="list">
+      <a class="on" href="la-dimora.html" hreflang="it">IT — Italiano</a>
+      <a href="../en/camere.html" hreflang="en">EN — English</a>
+      <a href="../fr/camere.html" hreflang="fr">FR — Français</a>
+      <a href="../de/camere.html" hreflang="de">DE — Deutsch</a>
+      <a href="../nl/camere.html" hreflang="nl">NL — Nederlands</a>
+      <a href="../es/camere.html" hreflang="es">ES — Español</a>
+    </div>
+  </div>
 </div>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-<div class="container">
-<h1>Camera La Dimora: Casa Vacanze nel centro storico di Manfredonia</h1>
-<p>Intima, silenziosa, ci si sente a casa</p>
-</div>
+<main id="site-main">
+
+<!-- BREADCRUMB -->
+<div class="v2-breadcrumb">
+  <div class="v2-container">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../camere.html">Le Camere</a>
+    <span>›</span>
+    La Dimora
+  </div>
 </div>
 
 <!-- ROOM DETAIL -->
-<section class="room-detail" id="dimora">
-<div class="container">
-<div class="room-detail-grid">
-<div class="room-gallery">
-<div class="gallery-main">
-<img
-  alt="La Dimora, vista principale della camera in casa vacanze nel centro storico di Manfredonia"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-01-foto-principale.webp"
-/>
-</div>
-<div class="gallery-thumb">
-<img
-  alt="La Dimora, letto king size con biancheria di qualità"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-02-letto.webp"
-/>
-</div>
-<div class="gallery-thumb">
-<img
-  alt="La Dimora, camera spaziosa con soffitti alti"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-03-letto.webp"
-/>
-</div>
-<div class="gallery-thumb">
-<img
-  alt="La Dimora, dettaglio camera con luce naturale"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-04-letto.webp"
-/>
-</div>
-<div class="gallery-thumb">
-<img
-  alt="La Dimora, bagno privato con doccia e asciugacapelli"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-05-bagno.webp"
-/>
-</div>
-<div class="gallery-thumb">
-<img
-  alt="La Dimora, cucinotto attrezzato con frigorifero e moka"
-  data-lightbox=""
-  src="../foto-la-dimora/dimora-06-cucinotto.webp"
-/>
-</div>
-<button aria-label="Foto precedente" class="gallery-nav gallery-prev">‹</button>
-<button aria-label="Foto successiva" class="gallery-nav gallery-next">›</button>
-<div class="gallery-dots"></div>
-</div>
+<section class="v2-room-detail-section" aria-labelledby="v2-dimora-heading">
+  <div class="v2-container">
 
-<div class="room-info">
-<h2 data-i18n="room_dimora_name">La Dimora</h2>
-<p class="room-tagline" data-i18n="room_dimora_tagline">Intima, silenziosa, ci si sente a casa</p>
-<p class="room-description" data-i18n="room_dimora_desc">La Dimora è il cuore della casa, spaziosa, silenziosa, avvolta da una luce morbida che filtra dalla finestra sul vicolo antico di Manfredonia. Soffitti alti, letto matrimoniale king size con biancheria di qualità, smart TV con Netflix, angolo scrivania per chi non riesce a staccare del tutto. Tutto è essenziale, niente è superfluo. È la camera in cui ci si sente a casa, forse perché lo è davvero.</p>
+    <!-- SEO H1 visually hidden -->
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
+      La Dimora — Locazione turistica nel centro storico di Manfredonia
+    </h1>
 
-<!-- ARRICCHIMENTO SEO LOCALE -->
-<p class="room-description" style="margin-top: 1rem;">Situata a pochi passi dal Castello Svevo-Angioino e dal mare, la nostra struttura è il punto di partenza ideale per esplorare le spiagge di Siponto e la natura del Gargano. Perfetta anche per soggiorni lunghi grazie al cucinotto attrezzato.</p>
+    <div class="v2-room-detail-grid v2-fade">
 
-<div class="cosa-troverai">
-<h3 class="cosa-troverai-title" data-i18n="cosa_troverai_title">Cosa troverai</h3>
-<div class="amenity-detail-grid">
+      <!-- GALLERY -->
+      <div class="v2-room-gallery" id="dimora-gallery">
+        <div class="v2-gallery-thumbs" role="list" aria-label="Miniature La Dimora">
+          <button class="v2-gallery-thumb active" data-src="../foto-la-dimora/dimora-01-foto-principale.webp" aria-label="La Dimora, Vista principale" role="listitem">
+            <img src="../foto-la-dimora/dimora-01-foto-principale.webp" alt="La Dimora — camera matrimoniale, locazione turistica Casa e Bottega Manfredonia" loading="eager"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-02-letto.webp" aria-label="La Dimora, Letto" role="listitem">
+            <img src="../foto-la-dimora/dimora-02-letto.webp" alt="Letto king size camera La Dimora" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-03-letto.webp" aria-label="La Dimora, Camera" role="listitem">
+            <img src="../foto-la-dimora/dimora-03-letto.webp" alt="Vista camera La Dimora con soffitti alti" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-04-letto.webp" aria-label="La Dimora, Dettaglio" role="listitem">
+            <img src="../foto-la-dimora/dimora-04-letto.webp" alt="Dettaglio camera La Dimora con luce naturale" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-05-bagno.webp" aria-label="La Dimora, Bagno" role="listitem">
+            <img src="../foto-la-dimora/dimora-05-bagno.webp" alt="Bagno privato camera La Dimora" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-06-cucinotto.webp" aria-label="La Dimora, Cucinotto" role="listitem">
+            <img src="../foto-la-dimora/dimora-06-cucinotto.webp" alt="Cucinotto attrezzato camera La Dimora" loading="lazy"/>
+          </button>
+          <button class="v2-gallery-thumb" data-src="../foto-la-dimora/dimora-07-camera.webp" aria-label="La Dimora, Vista camera" role="listitem">
+            <img src="../foto-la-dimora/dimora-07-camera.webp" alt="Vista camera La Dimora con armadio e letto king size" loading="lazy"/>
+          </button>
+        </div>
+        <div class="v2-gallery-main" id="dimora-main" aria-label="Foto principale La Dimora" tabindex="0" role="img">
+          <img src="../foto-la-dimora/dimora-01-foto-principale.webp" alt="La Dimora — Vista principale" fetchpriority="high"/>
+        </div>
+      </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"></path><path d="M2 14h20"></path><path d="M7 14V9h4v5"></path><path d="M13 14V9h4v5"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_king">Letto king size</strong>
-<span data-i18n="amenity_basics_desc">Asciugamani, lenzuola, sapone e carta igienica</span>
-</div>
-</div>
+      <!-- INFO -->
+      <div class="v2-room-info">
+        <div class="v2-room-num">Camera N° 01 · 28 m²</div>
+        <h2 class="v2-room-name" id="v2-dimora-heading">
+          La <em>Dimora</em>
+        </h2>
+        <p class="v2-room-tagline" data-i18n="room_dimora_tagline">Intima, silenziosa, ci si sente a casa.</p>
+        <p class="v2-room-desc" data-i18n="room_dimora_desc">
+          28 metri quadri con soffitti alti e luce morbida che filtra dal vicolo. Letto king size, bagno privato, cucina elettrica attrezzata, aria condizionata, pareti insonorizzate. Smart TV, WiFi fibra, angolo scrivania. Tutto quello che serve. Niente di superfluo.
+        </p>
+        <p class="v2-room-desc" style="margin-top:-20px;">
+          Situata a pochi passi dal Castello Svevo-Angioino e dal mare, è il punto di partenza ideale per esplorare le spiagge di Siponto e la natura del Gargano.
+        </p>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M4 12a8 8 0 0116 0"></path><line x1="12" x2="12" y1="12" y2="21"></line><line x1="8" x2="8" y1="17" y2="21"></line><line x1="16" x2="16" y1="17" y2="21"></line><line x1="10" x2="10" y1="15" y2="17"></line><line x1="14" x2="14" y1="15" y2="17"></line></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_bath">Bagno privato</strong>
-<span data-i18n="amenity_bath_desc">Doccia, asciugacapelli, sapone e shampoo inclusi</span>
-</div>
-</div>
+        <!-- STATS -->
+        <div class="v2-room-stats">
+          <div>
+            <div class="v2-room-stat-label">Ospiti</div>
+            <div class="v2-room-stat-val v2-serif">2</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Superficie</div>
+            <div class="v2-room-stat-val v2-serif">28 m²</div>
+          </div>
+          <div>
+            <div class="v2-room-stat-label">Letto</div>
+            <div class="v2-room-stat-val v2-serif">King size</div>
+          </div>
+        </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="14" rx="2" width="20" x="2" y="4"></rect><path d="M8 20h8"></path><path d="M12 18v2"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_tv">Smart TV</strong>
-<span data-i18n="amenity_tv_desc">Connessa alle principali piattaforme streaming</span>
-</div>
-</div>
+        <!-- PRICING -->
+        <div class="v2-room-pricing" role="region" aria-label="Prezzi La Dimora">
+          <div>
+            <div class="v2-pricing-season-label">Tariffa diretta</div>
+            <div class="v2-pricing-price">€<span id="js-dimora-price">60</span><span> / notte</span></div>
+            <div style="font-size:11px;opacity:0.65;margin-top:5px;font-family:'Inter',sans-serif;" id="js-dimora-season-note">in base alla stagione</div>
+          </div>
+          <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
+          <a href="../prenota.html?open=1" class="v2-btn" style="background:var(--bone);color:var(--ink);flex-shrink:0;" data-i18n="room_check_avail">Controlla le date disponibili</a>
+        </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M1.5 8.5a15 15 0 0121 0"></path><path d="M5 12a11 11 0 0114 0"></path><path d="M8.5 15.5a7 7 0 017 0"></path><circle cx="12" cy="19" fill="currentColor" r="1"></circle></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_wifi">WiFi veloce</strong>
-<span data-i18n="amenity_wifi_desc">Connessione fibra, gratuita e illimitata</span>
-</div>
-</div>
+        <!-- REVIEW -->
+        <blockquote class="v2-room-review v2-fade">
+          <p>"La stanza è studiata nei minimi particolari per offrire tutti i comfort. Ottima posizione vicino al lungomare."</p>
+          <footer><span class="v2-stars" aria-hidden="true">★★★★★</span>Luca · Booking.com</footer>
+        </blockquote>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><line x1="12" x2="12" y1="2" y2="22"></line><line x1="2" x2="22" y1="12" y2="12"></line><path d="m20 16-4-4 4-4"></path><path d="m4 8 4 4-4 4"></path><path d="m16 4-4 4-4-4"></path><path d="m8 20 4-4 4 4"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_ac">Aria condizionata</strong>
-<span data-i18n="amenity_ac_desc">Split ductless silenzioso, anche come riscaldamento</span>
-</div>
-</div>
+        <!-- AMENITIES -->
+        <div class="v2-amenities-title v2-label" data-i18n="cosa_troverai_title">Cosa troverai</div>
+        <div class="v2-amenities-grid">
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_heating">Riscaldamento</strong>
-<span data-i18n="amenity_heating_desc">Sistema split ductless silenzioso</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_king">Letto king size</span><span class="v2-amenity-desc" data-i18n="amenity_basics_desc">Asciugamani, lenzuola, sapone e carta igienica</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2z"></path><path d="M18 22v-3"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_kitchen">Cucinotto attrezzato</strong>
-<span data-i18n="amenity_kitchen_desc">Frigorifero, moka, piatti e posate inclusi</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12a8 8 0 0116 0"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="8" y1="17" x2="8" y2="21"/><line x1="16" y1="17" x2="16" y2="21"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_bath">Bagno privato</span><span class="v2-amenity-desc" data-i18n="amenity_bath_desc">Doccia, asciugacapelli, sapone e shampoo inclusi</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="14" rx="2" width="20" x="2" y="3"></rect><path d="M1 19h22"></path><path d="M9 19l1.5-2h3L15 19"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_desk">Spazio di lavoro dedicato</strong>
-<span data-i18n="amenity_desk_desc">Perfetto per chi lavora da remoto</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_tv">Smart TV</span><span class="v2-amenity-desc" data-i18n="amenity_tv_desc">Connessa alle principali piattaforme streaming</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="M21 2l-9.6 9.6"></path><path d="M15.5 7.5l3 3L22 7l-3-3"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_checkin">Self check-in</strong>
-<span data-i18n="amenity_checkin_desc">Cassetta per le chiavi, arrivo flessibile in autonomia</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 8.5a15 15 0 0121 0"/><path d="M5 12a11 11 0 0114 0"/><path d="M8.5 15.5a7 7 0 017 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_wifi">WiFi veloce</span><span class="v2-amenity-desc" data-i18n="amenity_wifi_desc">Connessione fibra, gratuita e illimitata</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="20" rx="2" width="20" x="2" y="2"></rect><path d="M2 7h20"></path><circle cx="12" cy="14" r="4"></circle><path d="M9.5 11.5a4 4 0 015 0"></path><circle cx="6" cy="4.5" fill="currentColor" r=".5"></circle><circle cx="9" cy="4.5" fill="currentColor" r=".5"></circle></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_washer">Lavatrice</strong>
-<span data-i18n="amenity_washer_desc">A uso degli ospiti della struttura</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_ac">Aria condizionata</span><span class="v2-amenity-desc" data-i18n="amenity_ac_desc">Split ductless silenzioso, anche come riscaldamento</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="15" rx="2" width="20" x="2" y="7"></rect><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path><line x1="12" x2="12" y1="12" y2="16"></line><line x1="10" x2="14" y1="14" y2="14"></line></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_luggage">Deposito bagagli</strong>
-<span data-i18n="amenity_luggage_desc">Disponibile prima del check-in e dopo il check-out</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h1a2 2 0 002-2zM18 22v-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_kitchen">Cucinotto attrezzato</span><span class="v2-amenity-desc" data-i18n="amenity_kitchen_desc">Frigorifero, moka, piatti e posate inclusi</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M14 2H6a2 2 0 00-2 2v18h16V4a2 2 0 00-2-2z"></path><path d="M14 2v20"></path><circle cx="16" cy="12" fill="currentColor" r="1"></circle></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_entrance">Ingresso privato</strong>
-<span data-i18n="amenity_entrance_desc">Accesso indipendente direttamente dalla strada</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M1 19h22M9 19l1.5-2h3L15 19"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_desk">Spazio di lavoro</span><span class="v2-amenity-desc" data-i18n="amenity_desk_desc">Perfetto per chi lavora da remoto</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M9 12c0-3.3 2.7-6 6-6h2a4 4 0 010 8h-2"></path><path d="M9 12H2"></path><path d="M9 15l-2 5"></path><path d="M15 4c2 .5 3.5 2 3.5 4"></path><path d="M17 6l3-1"></path><path d="M18 9l2.5.5"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_hairdryer">Asciugacapelli</strong>
-<span data-i18n="amenity_hairdryer_desc">Incluso nel bagno</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_checkin">Self check-in</span><span class="v2-amenity-desc" data-i18n="amenity_checkin_desc">Cassetta per le chiavi, arrivo flessibile in autonomia</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M7 5h10l1 9H6L7 5z"></path><rect height="6" rx="2" width="16" x="4" y="14"></rect><path d="M9.5 5V3.5a1.5 1.5 0 013 0V5"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_soap">Shampoo e sapone per il corpo</strong>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 7h20"/><circle cx="12" cy="14" r="4"/><circle cx="6" cy="4.5" r=".5" fill="currentColor"/><circle cx="9" cy="4.5" r=".5" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_washer">Lavatrice</span><span class="v2-amenity-desc" data-i18n="amenity_washer_desc">A uso degli ospiti della struttura</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_long_stay">Soggiorni lunghi</strong>
-<span data-i18n="amenity_long_stay_desc">Soggiorni oltre 28 giorni consentiti</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_luggage">Deposito bagagli</span><span class="v2-amenity-desc" data-i18n="amenity_luggage_desc">Prima del check-in e dopo il check-out</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.89L15 14"></path><rect height="12" rx="2" width="12" x="3" y="6"></rect></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_camera">Telecamera esterna</strong>
-<span data-i18n="amenity_camera_desc">1 telecamera sulla porta di ingresso</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v18h16V4a2 2 0 00-2-2z"/><path d="M14 2v20"/><circle cx="16" cy="12" r="1" fill="currentColor"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_entrance">Ingresso privato</span><span class="v2-amenity-desc" data-i18n="amenity_entrance_desc">Accesso diretto dalla strada</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M15 6.5V3a1 1 0 00-1-1h-2a1 1 0 00-1 1v3.5"></path><path d="M9 6h6"></path><path d="M17 6s2 1.5 2 4"></path><rect height="12" rx="2" width="8" x="7" y="10"></rect><line x1="11" x2="11" y1="14" y2="18"></line></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_extinguisher">Estintore</strong>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_heating">Riscaldamento</span><span class="v2-amenity-desc" data-i18n="amenity_heating_desc">Sistema split ductless silenzioso</span></div>
+          </div>
 
-<div class="amenity-detail-item">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M12 8v8"></path><path d="M8 12h8"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_first_aid">Kit di primo soccorso</strong>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 12c0-3.3 2.7-6 6-6h2a4 4 0 010 8h-2M9 12H2M9 15l-2 5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_hairdryer">Asciugacapelli</span><span class="v2-amenity-desc" data-i18n="amenity_hairdryer_desc">Incluso nel bagno</span></div>
+          </div>
 
-<!-- Solo La Dimora -->
-<div class="amenity-detail-item amenity-detail-item--extra-bed">
-<span class="amenity-det-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"></path><path d="M2 14h20"></path><path d="M7 14V9h4v5"></path><path d="M13 14V9h4v5"></path></svg></span>
-<div class="amenity-det-text">
-<strong data-i18n="amenity_extra_bed">Letto aggiuntivo su richiesta</strong>
-<span data-i18n="amenity_extra_bed_desc">Disponibile su richiesta, solo per La Dimora</span>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 5h10l1 9H6L7 5z"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M9.5 5V3.5a1.5 1.5 0 013 0V5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_soap">Shampoo e sapone</span><span class="v2-amenity-desc">Per il corpo, inclusi</span></div>
+          </div>
 
-</div><!-- /amenity-detail-grid -->
-</div><!-- /cosa-troverai -->
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_long_stay">Soggiorni lunghi</span><span class="v2-amenity-desc" data-i18n="amenity_long_stay_desc">Soggiorni oltre 28 giorni consentiti</span></div>
+          </div>
 
-<div class="price-comparison-table">
-<div class="pct-head">
-<div class="pct-head-cell"></div>
-<div class="pct-head-cell">
-<span class="pct-season-icon">☀️</span>
-<span class="pct-season-name" data-i18n="price_high_season">Lug–Set</span>
-</div>
-<div class="pct-head-cell">
-<span class="pct-season-icon">🍂</span>
-<span class="pct-season-name" data-i18n="price_low_season">Ott–Giu</span>
-</div>
-</div>
-<div class="pct-row pct-ota-row">
-<div class="pct-row-label">Booking · Airbnb</div>
-<div class="pct-price-cell"><span class="pct-amount" id="dimora-ota-high">€120<small>/notte</small></span></div>
-<div class="pct-price-cell"><span class="pct-amount" id="dimora-ota-low">€78<small>/notte</small></span></div>
-</div>
-<div class="pct-row pct-direct-row">
-<div class="pct-row-label" data-i18n="price_direct_col">🏠 Prenota diretto</div>
-<div class="pct-price-cell">
-<span class="pct-amount" id="dimora-direct-high">€100<small>/notte</small></span>
-<span class="pct-saving" id="dimora-saving-high">–€20</span>
-</div>
-<div class="pct-price-cell">
-<span class="pct-amount" id="dimora-direct-low">€60<small>/notte</small></span>
-<span class="pct-saving" id="dimora-saving-low">–€18</span>
-</div>
-</div>
-</div>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.89L15 14"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_camera">Telecamera esterna</span><span class="v2-amenity-desc" data-i18n="amenity_camera_desc">1 telecamera sulla porta d'ingresso</span></div>
+          </div>
 
-<p class="room-price" data-i18n="room_capacity">2 ospiti</p>
-<a class="btn btn-primary" data-i18n="room_check_avail" href="../prenota.html">Verifica disponibilità</a>
-<p class="room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</p>
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 6.5V3a1 1 0 00-1-1h-2a1 1 0 00-1 1v3.5M9 6h6M17 6s2 1.5 2 4"/><rect x="7" y="10" width="8" height="12" rx="2"/><line x1="11" y1="14" x2="11" y2="18"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_extinguisher">Estintore</span><span class="v2-amenity-desc">Kit di primo soccorso incluso</span></div>
+          </div>
 
-</div><!-- /room-info -->
-</div><!-- /room-detail-grid -->
-</div><!-- /container -->
+          <!-- Dimora-only -->
+          <div class="v2-amenity-item">
+            <svg class="v2-amenity-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 20V8a2 2 0 012-2h16a2 2 0 012 2v12"/><path d="M2 14h20"/><path d="M7 14V9h4v5"/><path d="M13 14V9h4v5"/></svg>
+            <div><span class="v2-amenity-name" data-i18n="amenity_extra_bed">Letto aggiuntivo</span><span class="v2-amenity-desc" data-i18n="amenity_extra_bed_desc">Disponibile su richiesta, solo per La Dimora</span></div>
+          </div>
+
+        </div><!-- /amenities-grid -->
+
+        <div class="v2-room-cta">
+          <a href="../prenota.html?open=1" class="v2-btn v2-btn--primary" data-i18n="hero_cta_book">Prenota ora</a>
+          <span class="v2-room-microcopy" data-i18n="room_microcopy">Struttura premiata 9,8/10 Booking.com 2026</span>
+        </div>
+
+      </div><!-- /room-info -->
+    </div><!-- /room-detail-grid -->
+  </div><!-- /container -->
 </section>
 
-<!-- ALTRA CAMERA CTA -->
-<section class="section section-warm" style="padding: 2.5rem 0;">
-<div class="container" style="text-align: center;">
-<p style="color: var(--testo-light); margin-bottom: 1rem;">Vuoi scoprire anche l'altra camera?</p>
-<a class="btn btn-outline" href="la-bottega.html">Scopri La Bottega</a>
-&nbsp;
-<a class="btn btn-primary" href="../prenota.html">Prenota ora</a>
+<!-- CROSS-LINK -->
+<div class="v2-crosslink">
+  <div class="v2-container">
+    <p>Vuoi scoprire anche l'altra camera?</p>
+    <div class="v2-crosslink-btns">
+      <a href="la-bottega.html" class="v2-btn--ghost">Scopri La Bottega</a>
+      <a href="../prenota.html?open=1" class="v2-btn v2-btn--primary">Controlla le date disponibili</a>
+    </div>
+  </div>
 </div>
+
+<!-- DOVE SIAMO -->
+<section class="v2-section v2-section--tight" style="background:var(--paper);" aria-labelledby="v2-cloc-heading">
+  <div class="v2-container">
+    <div class="v2-fade" style="max-width:720px;">
+      <span class="v2-label v2-label-dot">Dove siamo</span>
+      <h2 id="v2-cloc-heading" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(30px,4.5vw,52px);line-height:1.05;color:var(--ink);margin:16px 0 18px;">A 300 m dal mare,<br><em style="font-style:italic;color:var(--petrolio);">nel centro storico.</em></h2>
+      <p style="font-size:15px;line-height:1.7;color:var(--stone-2);max-width:560px;margin:0 0 20px;">Dal portone siete in un vicolo del centro storico; tre minuti e siete sul lungomare di Manfredonia, porta del Gargano.</p>
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.02em;color:var(--ink);margin-bottom:22px;">Spiaggia 4 min · Centro storico 3 min · Castello Svevo 6 min · Lungomare 3 min</div>
+      <a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" class="v2-map-link" target="_blank" rel="noopener" aria-label="Apri Casa e Bottega in Google Maps"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Via Gargano 13 · Manfredonia · Apri in Google Maps</a>
+    </div>
+  </div>
 </section>
+
+</main>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-<button aria-label="Chiudi" class="lightbox-close">×</button>
-<button aria-label="Precedente" class="lightbox-nav lightbox-prev">‹</button>
-<img alt="Foto ingrandita camera La Dimora, Casa Vacanze Manfredonia" src=""/>
-<button aria-label="Successivo" class="lightbox-nav lightbox-next">›</button>
+<div class="v2-lightbox" id="v2-lightbox" role="dialog" aria-modal="true" aria-label="Foto ingrandita">
+  <button class="v2-lightbox-close" id="v2-lightbox-close" aria-label="Chiudi">&times;</button>
+  <button class="v2-lightbox-nav v2-lightbox-prev" id="v2-lightbox-prev" aria-label="Precedente">&#8249;</button>
+  <img src="" alt="Foto ingrandita" id="v2-lightbox-img"/>
+  <button class="v2-lightbox-nav v2-lightbox-next" id="v2-lightbox-next" aria-label="Successivo">&#8250;</button>
 </div>
 
 <!-- FOOTER -->
-<footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a class="nav-logo" href="../index.html" style="color: #F5F0E8; font-size: 1.4rem;">Casa <span style="color: #C8A96E;">e</span> Bottega</a>
-<p data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_pages">Pagine</h4>
-<ul>
-<li><a data-i18n="nav_home" href="../index.html">Home</a></li>
-<li><a data-i18n="nav_rooms" href="../camere.html">Le Camere</a></li>
-<li><a data-i18n="nav_book" href="../prenota.html">Prenota</a></li>
-<li><a data-i18n="nav_blog" href="../blog.html">Racconti</a></li>
-<li><a href="../regole.html">Regole della Casa</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_follow">Seguici</h4>
-<ul>
-<li><a href="#">Airbnb</a></li>
-<li><a href="#">Booking.com</a></li>
-<li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9">Google Maps</a></li>
-<li><a href="https://maps.apple.com/place?place-id=I198EC2CB0FE4658E&amp;address=Via+Gargano+13%2C+71043+Manfredonia+FG%2C+Italia&amp;coordinate=41.634708%2C15.923971&amp;name=Casa+e+Bottega&amp;_provider=9902" rel="noopener" target="_blank">Apple Maps</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 data-i18n="footer_contact">Contatti</h4>
-<ul>
-<li><a href="https://wa.me/393334705574">WhatsApp</a></li>
-<li><a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Casa e Bottega, Manfredonia · IT071029C200088044 · <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
-</div>
-</div>
+<footer class="v2-footer" role="contentinfo">
+  <div class="v2-container">
+    <div class="v2-footer-grid">
+      <div>
+        <div class="v2-footer-brand">Casa <em>e</em> Bottega</div>
+        <p class="v2-footer-tagline" data-i18n="footer_desc">A due passi dal mare, nel cuore del Gargano.</p>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_pages">Pagine</span>
+        <ul>
+          <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="../camere.html" data-i18n="nav_rooms">Le Camere</a></li>
+          <li><a href="../prenota.html" data-i18n="nav_book">Prenota</a></li>
+          <li><a href="../blog.html" data-i18n="nav_blog">Racconti</a></li>
+          <li><a href="../regole.html">Regole della Casa</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_follow">Seguici</span>
+        <ul>
+          <li><a href="https://www.booking.com/Share-5rpSCP" rel="noopener" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.airbnb.it/h/casaebottega" rel="noopener" target="_blank">Airbnb · La Dimora</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Google Maps</a></li>
+          <li><a href="https://maps.apple.com/place?place-id=I198EC2CB0FE4658E&address=Via+Gargano+13%2C+71043+Manfredonia+FG%2C+Italia&coordinate=41.634708%2C15.923971&name=Casa+e+Bottega&_provider=9902" rel="noopener" target="_blank">Apple Maps</a></li>
+        </ul>
+      </div>
+      <div class="v2-footer-col">
+        <span class="v2-footer-col-label" data-i18n="footer_contact">Contatti</span>
+        <ul>
+          <li><a href="https://wa.me/393334705574" rel="noopener" target="_blank">WhatsApp: +39 333 470 5574</a></li>
+          <li><a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a></li>
+          <li><a href="https://maps.app.goo.gl/EauCxt8Y6ft89DPH9" rel="noopener" target="_blank">Via Gargano, 13 · Manfredonia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">
+      <span>© 2026 Casa e Bottega · Manfredonia · IT071029C200088044</span>
+      <span data-i18n="footer_rights">Tutti i diritti riservati.</span>
+    </div>
+  </div>
 </footer>
-<script src="../js/i18n.min.js?v=20260809"></script>
-<script src="../js/main.min.js?v=2026080101"></script>
+
+<!-- Scripts -->
+<script src="../js/i18n.min.js?v=20260816" defer></script>
+<script src="../js/main.min.js?v=2026080101" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Prezzi per mese (tariffe dirette) ── */
+  var PREZZI = {
+    dimora:  [60,60,60,60,60,80,100,110,110,60,60,60],
+    bottega: [50,50,50,50,50,74, 90,100,100,50,50,50]
+  };
+  var MESI_IT = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  var m = new Date().getMonth();
+  var priceEl = document.getElementById('js-dimora-price');
+  var noteEl  = document.getElementById('js-dimora-season-note');
+  if (priceEl) priceEl.textContent = PREZZI.dimora[m];
+  if (noteEl)  noteEl.textContent  = MESI_IT[m];
+
+  /* ── Gallery ── */
+  var gallery = document.getElementById('dimora-gallery');
+  var mainEl  = document.getElementById('dimora-main');
+  if (gallery && mainEl) {
+    var thumbs   = gallery.querySelectorAll('.v2-gallery-thumb');
+    var mainImg  = mainEl.querySelector('img');
+    var curIdx   = 0;
+
+    function activate(idx) {
+      thumbs.forEach(function(t) { t.classList.remove('active'); });
+      thumbs[idx].classList.add('active');
+      curIdx = idx;
+      mainImg.style.opacity = '0';
+      setTimeout(function() {
+        mainImg.src = thumbs[idx].dataset.src;
+        mainImg.style.opacity = '1';
+      }, 150);
+    }
+    thumbs.forEach(function(t, i) { t.addEventListener('click', function() { activate(i); }); });
+
+    var swiped = false;
+    mainEl.addEventListener('click', function() {
+      if (swiped) { swiped = false; return; }
+      openLightbox(curIdx);
+    });
+    mainEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') openLightbox(curIdx);
+    });
+    var gsX = 0, gsY = 0;
+    mainEl.addEventListener('touchstart', function(e) {
+      if (e.touches.length !== 1) return;
+      gsX = e.touches[0].clientX; gsY = e.touches[0].clientY;
+    }, { passive: true });
+    mainEl.addEventListener('touchend', function(e) {
+      var t = e.changedTouches[0];
+      var dx = t.clientX - gsX, dy = t.clientY - gsY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        swiped = true;
+        activate((curIdx + (dx < 0 ? 1 : -1) + thumbs.length) % thumbs.length);
+      }
+    }, { passive: true });
+  }
+
+  /* ── Lightbox ── */
+  var IMAGES = [
+    '../foto-la-dimora/dimora-01-foto-principale.webp',
+    '../foto-la-dimora/dimora-02-letto.webp',
+    '../foto-la-dimora/dimora-03-letto.webp',
+    '../foto-la-dimora/dimora-04-letto.webp',
+    '../foto-la-dimora/dimora-05-bagno.webp',
+    '../foto-la-dimora/dimora-06-cucinotto.webp',
+    '../foto-la-dimora/dimora-07-camera.webp'
+  ];
+  var lb     = document.getElementById('v2-lightbox');
+  var lbImg  = document.getElementById('v2-lightbox-img');
+  var lbClose = document.getElementById('v2-lightbox-close');
+  var lbPrev  = document.getElementById('v2-lightbox-prev');
+  var lbNext  = document.getElementById('v2-lightbox-next');
+  var lbIdx   = 0;
+
+  function openLightbox(idx) {
+    lbIdx = idx;
+    lbImg.src = IMAGES[idx];
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+  function closeLightbox() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function lbStep(dir) { lbIdx = (lbIdx + dir + IMAGES.length) % IMAGES.length; lbImg.src = IMAGES[lbIdx]; }
+
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev)  lbPrev.addEventListener('click',  function() { lbStep(-1); });
+  if (lbNext)  lbNext.addEventListener('click',  function() { lbStep(1); });
+  if (lb) lb.addEventListener('click', function(e) { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', function(e) {
+    if (!lb || !lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  lbStep(-1);
+    if (e.key === 'ArrowRight') lbStep(1);
+  });
+  if (lb) {
+    var lbX = 0, lbY = 0;
+    lb.addEventListener('touchstart', function(e) {
+      if (e.touches.length !== 1) return;
+      lbX = e.touches[0].clientX; lbY = e.touches[0].clientY;
+    }, { passive: true });
+    lb.addEventListener('touchend', function(e) {
+      var t = e.changedTouches[0];
+      var dx = t.clientX - lbX, dy = t.clientY - lbY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) lbStep(dx < 0 ? 1 : -1);
+      else if (dy > 80 && Math.abs(dy) > Math.abs(dx)) closeLightbox();
+    }, { passive: true });
+  }
+
+  /* ── Scroll fade-in ── */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('v2-visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.v2-fade').forEach(function(el) { obs.observe(el); });
+  } else {
+    document.querySelectorAll('.v2-fade').forEach(function(el) { el.classList.add('v2-visible'); });
+  }
+
+}());
+</script>
+
+<!-- WhatsApp sticky -->
+<a class="v2-wa-pill" href="https://wa.me/393334705574?text=Ciao!%20Ho%20visto%20La%20Dimora%20sul%20sito%20%E2%80%94%20sono%20interessato%2Fa%20a%20prenotare.%20Avete%20disponibilit%C3%A0%3F" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Scrivi su WhatsApp
+</a>
+
+<div class="v2-sticky-mobile" role="complementary" aria-label="Contatto rapido">
+  <a class="v2-smb-wa" href="https://wa.me/393334705574?text=Ciao!%20Ho%20visto%20La%20Dimora%20%E2%80%94%20sono%20interessato%2Fa%20a%20prenotare.%20Avete%20disponibilit%C3%A0%3F" target="_blank" rel="noopener" aria-label="Chiedi disponibilità su WhatsApp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chiedi disponibilità
+  </a>
+  <a class="v2-smb-book" href="../prenota.html?open=1">Controlla le date</a>
+</div>
+
 </body>
 </html>
