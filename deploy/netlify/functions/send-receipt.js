@@ -210,7 +210,7 @@ exports.handler = async function(event) {
       <strong>Casa e Bottega</strong><br>
       Manfredonia (FG), Puglia<br>
       📧 <a href="mailto:booking@casaebottegapuglia.it">booking@casaebottegapuglia.it</a><br>
-      🌐 <a href="https://www.casaebottegapuglia.it">casaebottegapuglia.it</a>
+      🌐 <a href="https://casaebottegapuglia.it">casaebottegapuglia.it</a>
     </div>
 
     <div class="footer">

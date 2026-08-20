@@ -348,7 +348,7 @@ exports.handler = async function(event) {
   <tr><td style="padding:20px 36px;text-align:center;">
     <p style="font-family:Arial,sans-serif;font-size:11px;color:#B8B0A6;margin:0;line-height:1.7;">
       Hai inviato questa richiesta dal sito
-      <a href="https://www.casaebottegapuglia.it" style="color:#B8B0A6;">casaebottegapuglia.it</a><br>
+      <a href="https://casaebottegapuglia.it" style="color:#B8B0A6;">casaebottegapuglia.it</a><br>
       Se non sei stato tu, ignora questa email.
     </p>
   </td></tr>

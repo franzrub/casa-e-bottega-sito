@@ -1027,10 +1027,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroCarousel = document.getElementById('hero-carousel');
   const heroDots = document.getElementById('hero-dots');
   if (heroCarousel) {
-    // Determine base path: ./foto-homepage/ for deploy, ../foto-homepage/ for sito/
+    // Determine base path: ./foto-homepage/ for deploy, ./foto-homepage/ for sito/
     const basePath = document.querySelector('.hero-bg')
       ? document.querySelector('.hero-bg').style.backgroundImage.replace(/url\(['"]?/, '').replace(/[^/]*['"]?\)/, '')
-      : '../foto-homepage/';
+      : './foto-homepage/';
 
     // Fallback images if manifest is not available
     // Nota: 1.webp (TV con Netflix) spostata in ultima posizione
