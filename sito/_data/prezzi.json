@@ -9,8 +9,8 @@
       "bottega": 50
     },
     "dicembre": {
-      "dimora": 60,
-      "bottega": 50
+      "dimora": 55,
+      "bottega": 48
     },
     "marzo": {
       "dimora": 60,
@@ -25,30 +25,37 @@
       "bottega": 90
     },
     "ottobre": {
-      "dimora": 60,
-      "bottega": 50
+      "dimora": 65,
+      "bottega": 55
     },
     "giugno": {
       "dimora": 80,
       "bottega": 74
     },
     "novembre": {
-      "dimora": 60,
-      "bottega": 50
+      "dimora": 55,
+      "bottega": 48
     },
     "maggio": {
       "dimora": 60,
       "bottega": 50
     },
     "settembre": {
-      "dimora": 110,
-      "bottega": 100
+      "dimora": 90,
+      "bottega": 80
     },
     "aprile": {
       "dimora": 60,
       "bottega": 50
     }
   },
+  "date_overrides": [
+    { "from": "2026-09-01", "to": "2026-09-14", "dimora": 100, "bottega": 90, "label": "Alta stagione settembre" },
+    { "from": "2026-09-15", "to": "2026-09-30", "dimora": 75, "bottega": 65, "label": "Bassa settembre" },
+    { "from": "2026-12-05", "to": "2026-12-08", "dimora": 75, "bottega": 65, "label": "Ponte Immacolata" },
+    { "from": "2026-12-24", "to": "2026-12-26", "dimora": 70, "bottega": 60, "label": "Natale" },
+    { "from": "2026-12-30", "to": "2027-01-02", "dimora": 90, "bottega": 80, "label": "Capodanno" }
+  ],
   "ota_markup": 1.25,
   "weekly_discount": 0.1,
   "monthly_discount": 0.2

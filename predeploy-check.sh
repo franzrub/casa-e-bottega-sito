@@ -189,15 +189,27 @@ if not os.path.exists(_prezzi_fp):
     FAIL("manca deploy/_data/prezzi.json (fonte dei prezzi per hero e prenota)")
 else:
     try:
-        _mesi = _json.load(open(_prezzi_fp, encoding="utf-8")).get("mesi_prezzi", {})
+        _data_prezzi = _json.load(open(_prezzi_fp, encoding="utf-8"))
+        _mesi = _data_prezzi.get("mesi_prezzi", {})
+        _overrides = _data_prezzi.get("date_overrides", []) or []
     except Exception as e:
-        _mesi = {}
+        _mesi, _overrides = {}, []
         FAIL(f"deploy/_data/prezzi.json illeggibile: {e}")
-    _mese_ora = MESI[datetime.date.today().month - 1]
-    _tariffe = [v for v in (_mesi.get(_mese_ora) or {}).values()
-                if isinstance(v, (int, float)) and v > 0]
+    _oggi = datetime.date.today()
+    _iso_oggi = _oggi.isoformat()
+    _mese_ora = MESI[_oggi.month - 1]
+    # Stessa regola del runtime (main.js): un override attivo OGGI ha la
+    # precedenza sul prezzo del mese. Confronto lessicografico su stringhe ISO.
+    _fonte, _label = (_mesi.get(_mese_ora) or {}), _mese_ora
+    for _o in _overrides:
+        if isinstance(_o, dict) and str(_o.get("from","")) <= _iso_oggi <= str(_o.get("to","")):
+            _fonte = _o
+            _label = f"override '{_o.get('label', _o.get('from'))}'"
+            break
+    _tariffe = [v for k, v in _fonte.items()
+                if k in ("dimora", "bottega") and isinstance(v, (int, float)) and v > 0]
     if not _tariffe:
-        FAIL(f"prezzi.json non ha tariffe valide per il mese in corso ({_mese_ora})")
+        FAIL(f"prezzi.json non ha tariffe valide per oggi ({_label})")
     else:
         _atteso = int(min(_tariffe))
         _rx_hero = re.compile(r'v2-hero-price-tag-num">[^<]*?€\s*(\d+)')
@@ -206,7 +218,7 @@ else:
             for trovato in _rx_hero.findall(txt):
                 if int(trovato) != _atteso:
                     WARN(f"prezzo hero statico disallineato in {f}: €{trovato} "
-                         f"ma il minimo di {_mese_ora} è €{_atteso} -> aggiorna il fallback nell'HTML")
+                         f"ma il minimo di oggi ({_label}) è €{_atteso} -> aggiorna il fallback nell'HTML")
 
 # ---------------------------------------------------------------------------
 # REPORT

@@ -1992,7 +1992,7 @@
 
 <!-- ══ SCRIPTS ═════════════════════════════════════════════════════ -->
 <script src="js/i18n.min.js?v=20260816" defer></script>
-<script src="js/main.min.js?v=2026080101" defer></script>
+<script src="js/main.min.js?v=2026090401" defer></script>
 <script>
 /* ============================================================
    v2 BOOKING MODAL CONTROLLER
@@ -2357,11 +2357,23 @@
       giugno:   { dimora: 80, bottega: 74 },
       luglio:   { dimora: 100, bottega: 90 },
       agosto:   { dimora: 110, bottega: 100 },
-      settembre:{ dimora: 110, bottega: 100 },
-      ottobre:  { dimora: 60, bottega: 50 },
-      novembre: { dimora: 60, bottega: 50 },
-      dicembre: { dimora: 60, bottega: 50 }
+      settembre:{ dimora: 90, bottega: 80 },
+      ottobre:  { dimora: 65, bottega: 55 },
+      novembre: { dimora: 55, bottega: 48 },
+      dicembre: { dimora: 55, bottega: 48 }
     };
+
+    // Override per fascia di date (from/to inclusi) — hanno la precedenza sul
+    // prezzo del mese. Fallback hardcoded allineato a _data/prezzi.json;
+    // sovrascritto dal fetch. Ogni notte è valutata singolarmente, così un
+    // soggiorno a cavallo di un confine compone i prezzi correttamente.
+    let DATE_OVERRIDES = [
+      { from: '2026-09-01', to: '2026-09-14', dimora: 100, bottega: 90, label: 'Alta stagione settembre' },
+      { from: '2026-09-15', to: '2026-09-30', dimora: 75,  bottega: 65, label: 'Bassa settembre' },
+      { from: '2026-12-05', to: '2026-12-08', dimora: 75,  bottega: 65, label: 'Ponte Immacolata' },
+      { from: '2026-12-24', to: '2026-12-26', dimora: 70,  bottega: 60, label: 'Natale' },
+      { from: '2026-12-30', to: '2027-01-02', dimora: 90,  bottega: 80, label: 'Capodanno' }
+    ];
 
     fetch('/_data/prezzi.json')
       .then(r => r.ok ? r.json() : null)
@@ -2371,6 +2383,7 @@
         WEEKLY_DISCOUNT  = data.weekly_discount  || WEEKLY_DISCOUNT;
         MONTHLY_DISCOUNT = data.monthly_discount || MONTHLY_DISCOUNT;
         if (data.mesi_prezzi) MESI_PREZZI = data.mesi_prezzi;
+        if (Array.isArray(data.date_overrides)) DATE_OVERRIDES = data.date_overrides;
       })
       .catch(() => {});
 
@@ -2405,9 +2418,30 @@
       });
     }
 
-    function getPrice(room, month) {
-      // month è 0-indexed (0 = gennaio, 11 = dicembre)
-      var key  = MONTH_KEYS[month];
+    // ISO YYYY-MM-DD di una data, usando gli stessi getter locali di getMonth()
+    function isoLocal(d) {
+      var y = d.getFullYear();
+      var m = ('0' + (d.getMonth() + 1)).slice(-2);
+      var day = ('0' + d.getDate()).slice(-2);
+      return y + '-' + m + '-' + day;
+    }
+
+    // Override attivo per una data (from/to inclusi). Confronto lessicografico
+    // su stringhe ISO = confronto cronologico. Primo match vince.
+    function overrideForDate(iso) {
+      if (!Array.isArray(DATE_OVERRIDES)) return null;
+      for (var i = 0; i < DATE_OVERRIDES.length; i++) {
+        var o = DATE_OVERRIDES[i];
+        if (o && o.from <= iso && iso <= o.to) return o;
+      }
+      return null;
+    }
+
+    function getPrice(room, date) {
+      // Un override di data ha la precedenza sul prezzo del mese.
+      var ov = overrideForDate(isoLocal(date));
+      if (ov && ov[room.id] != null) return Number(ov[room.id]);
+      var key  = MONTH_KEYS[date.getMonth()];
       var mese = MESI_PREZZI[key];
       if (mese && mese[room.id] != null) return mese[room.id];
       // fallback ai prezzi hardcoded nella definizione camera
@@ -2421,7 +2455,7 @@
       if (nights <= 0) return null;
       let totalDirect = 0;
       for (let d = new Date(start); d < end; d.setDate(d.getDate() + 1)) {
-        totalDirect += getPrice(room, d.getMonth());
+        totalDirect += getPrice(room, d);
       }
       let totalOTA = Math.round(totalDirect * OTA_MARKUP);
       let discountLabel = '';

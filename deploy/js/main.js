@@ -40,10 +40,10 @@ let PRICING = {
     giugno:    { dimora: 80, bottega: 74 },
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
-    settembre: { dimora: 110, bottega: 100 },
-    ottobre:   { dimora: 60, bottega: 50 },
-    novembre:  { dimora: 60, bottega: 50 },
-    dicembre:  { dimora: 60, bottega: 50 }
+    settembre: { dimora: 90, bottega: 80 },
+    ottobre:   { dimora: 65, bottega: 55 },
+    novembre:  { dimora: 55, bottega: 48 },
+    dicembre:  { dimora: 55, bottega: 48 }
   },
   otaMarkup: 1.25,        // allineato al valore in prezzi.json
   weeklyDiscount: 0.10,
@@ -1027,10 +1027,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroCarousel = document.getElementById('hero-carousel');
   const heroDots = document.getElementById('hero-dots');
   if (heroCarousel) {
-    // Determine base path: ./foto-homepage/ for deploy, ./foto-homepage/ for sito/
+    // Determine base path: ./foto-homepage/ for deploy, ../foto-homepage/ for sito/
     const basePath = document.querySelector('.hero-bg')
       ? document.querySelector('.hero-bg').style.backgroundImage.replace(/url\(['"]?/, '').replace(/[^/]*['"]?\)/, '')
-      : './foto-homepage/';
+      : '../foto-homepage/';
 
     // Fallback images if manifest is not available
     // Nota: 1.webp (TV con Netflix) spostata in ultima posizione
@@ -1461,32 +1461,61 @@ document.addEventListener('DOMContentLoaded', () => {
     giugno:    { dimora: 80,  bottega: 74 },
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
-    settembre: { dimora: 110, bottega: 100 },
-    ottobre:   { dimora: 60,  bottega: 50 },
-    novembre:  { dimora: 60,  bottega: 50 },
-    dicembre:  { dimora: 60,  bottega: 50 }
+    settembre: { dimora: 90,  bottega: 80 },
+    ottobre:   { dimora: 65,  bottega: 55 },
+    novembre:  { dimora: 55,  bottega: 48 },
+    dicembre:  { dimora: 55,  bottega: 48 }
   };
 
-  // Minimo fra tutte le camere del mese: il tag dice "da", quindi deve
-  // essere il prezzo più basso davvero prenotabile, non quello di una
-  // camera scelta a priori.
-  function minPrezzoMese(mesiPrezzi, monthIndex) {
-    var mese = mesiPrezzi && mesiPrezzi[MONTH_KEYS[monthIndex]];
-    if (!mese) return null;
-    var min = null;
-    for (var camera in mese) {
-      if (!Object.prototype.hasOwnProperty.call(mese, camera)) continue;
-      var p = Number(mese[camera]);
-      if (!isFinite(p) || p <= 0) continue;
-      if (min === null || p < min) min = p;
+  // Override per fascia di date — precedenza sul mese. Fallback allineato a
+  // /_data/prezzi.json: serve anche offline, così il tag resta veritiero
+  // (niente flash del prezzo del mese quando oggi è coperto da un override).
+  var FALLBACK_OVERRIDES = [
+    { from: '2026-09-01', to: '2026-09-14', dimora: 100, bottega: 90 },
+    { from: '2026-09-15', to: '2026-09-30', dimora: 75,  bottega: 65 },
+    { from: '2026-12-05', to: '2026-12-08', dimora: 75,  bottega: 65 },
+    { from: '2026-12-24', to: '2026-12-26', dimora: 70,  bottega: 60 },
+    { from: '2026-12-30', to: '2027-01-02', dimora: 90,  bottega: 80 }
+  ];
+
+  function isoToday() {
+    var d = new Date();
+    return d.getFullYear() + '-' +
+           ('0' + (d.getMonth() + 1)).slice(-2) + '-' +
+           ('0' + d.getDate()).slice(-2);
+  }
+
+  // Override attivo oggi (from/to inclusi). Confronto lessicografico su ISO.
+  function overrideOggi(overrides) {
+    if (!Array.isArray(overrides)) return null;
+    var iso = isoToday();
+    for (var i = 0; i < overrides.length; i++) {
+      var o = overrides[i];
+      if (o && o.from <= iso && iso <= o.to) return o;
     }
+    return null;
+  }
+
+  // Minimo fra le camere per OGGI: se c'è un override attivo oggi vince lui,
+  // altrimenti il prezzo del mese. Il tag dice "da", quindi è il prezzo più
+  // basso davvero prenotabile oggi.
+  function minPrezzoOggi(mesiPrezzi, overrides) {
+    var ov = overrideOggi(overrides);
+    var fonte = ov || (mesiPrezzi && mesiPrezzi[MONTH_KEYS[new Date().getMonth()]]);
+    if (!fonte) return null;
+    var min = null;
+    ['dimora', 'bottega'].forEach(function (camera) {
+      var p = Number(fonte[camera]);
+      if (!isFinite(p) || p <= 0) return;
+      if (min === null || p < min) min = p;
+    });
     return min;
   }
 
-  function render(mesiPrezzi) {
+  function render(mesiPrezzi, overrides) {
     var el = document.querySelector('.v2-hero-price-tag-num');
     if (!el) return;
-    var prezzo = minPrezzoMese(mesiPrezzi, new Date().getMonth());
+    var prezzo = minPrezzoOggi(mesiPrezzi, overrides);
     if (prezzo === null) return;
     // Sostituisce SOLO la cifra. Prefisso ("da" / "from" / "ab" / "dès" /
     // "vanaf" / "desde") e suffisso ("/ notte") restano quelli della lingua
@@ -1498,11 +1527,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function init() {
     if (!document.querySelector('.v2-hero-price-tag-num')) return;
-    render(FALLBACK);
+    render(FALLBACK, FALLBACK_OVERRIDES);
     if (typeof fetch !== 'function') return;
     fetch('/_data/prezzi.json')
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) { if (data && data.mesi_prezzi) render(data.mesi_prezzi); })
+      .then(function (data) { if (data && data.mesi_prezzi) render(data.mesi_prezzi, data.date_overrides); })
       .catch(function () { /* resta il FALLBACK, già corretto */ });
   }
 
@@ -1542,10 +1571,10 @@ document.addEventListener('DOMContentLoaded', () => {
     giugno:    { dimora: 80,  bottega: 74 },
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
-    settembre: { dimora: 110, bottega: 100 },
-    ottobre:   { dimora: 60,  bottega: 50 },
-    novembre:  { dimora: 60,  bottega: 50 },
-    dicembre:  { dimora: 60,  bottega: 50 }
+    settembre: { dimora: 90,  bottega: 80 },
+    ottobre:   { dimora: 65,  bottega: 55 },
+    novembre:  { dimora: 55,  bottega: 48 },
+    dicembre:  { dimora: 55,  bottega: 48 }
   };
 
   function prezzoMese(mesiPrezzi, monthIndex, room) {
