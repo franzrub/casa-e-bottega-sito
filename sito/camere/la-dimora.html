@@ -79,7 +79,7 @@
 .v2-room-pricing { background: var(--ink); color: var(--bone); padding: 28px 32px; margin-bottom: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
 .v2-pricing-season-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
 .v2-pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500; line-height: 1; }
-.v2-pricing-price span { font-size: 14px; opacity: 0.7; font-family: 'Inter', sans-serif; }
+.v2-pricing-price > span:last-child { font-size: 14px; opacity: 0.7; font-family: 'Inter', sans-serif; }
 .v2-pricing-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; font-weight: 300; line-height: 1.45; margin: 0; flex: 1; min-width: 200px; }
 .v2-room-review { margin: 4px 0 28px; padding: 22px 26px; background: var(--bone); border: 1px solid var(--line); border-left: 3px solid var(--terracotta); }
 .v2-room-review p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0 0 12px; }
@@ -160,7 +160,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
-    "price": "60",
+    "price": "65",
     "availability": "https://schema.org/InStock",
     "url": "https://www.casaebottegapuglia.it/prenota.html"
   }
@@ -312,7 +312,7 @@
         <div class="v2-room-pricing" role="region" aria-label="Prezzi La Dimora">
           <div>
             <div class="v2-pricing-season-label">Tariffa diretta</div>
-            <div class="v2-pricing-price">€<span id="js-dimora-price">60</span><span> / notte</span></div>
+            <div class="v2-pricing-price">€<span id="js-dimora-price">65</span><span> / notte</span></div>
             <div style="font-size:11px;opacity:0.65;margin-top:5px;font-family:'Inter',sans-serif;" id="js-dimora-season-note">in base alla stagione</div>
           </div>
           <p class="v2-pricing-tagline" data-i18n="price_direct_advantage">Sempre almeno il 20% in meno rispetto a Booking e Airbnb</p>
@@ -511,23 +511,48 @@
 
 <!-- Scripts -->
 <script src="../js/i18n.min.js?v=20260816" defer></script>
-<script src="../js/main.min.js?v=2026090401" defer></script>
+<script src="../js/main.min.js?v=2026100501" defer></script>
 
 <script>
 (function () {
   'use strict';
 
-  /* ── Prezzi per mese (tariffe dirette) ── */
-  var PREZZI = {
-    dimora:  [60,60,60,60,60,80,100,110,110,60,60,60],
-    bottega: [50,50,50,50,50,74, 90,100,100,50,50,50]
-  };
+  /* ── Prezzo di oggi: stessa fonte e stessa logica del motore di prenotazione ──
+     /_data/prezzi.json (mesi_prezzi + date_overrides). Il valore nell'HTML è solo
+     un fallback per crawler senza JS; la mappa FALLBACK qui sotto va tenuta
+     allineata al JSON (lo verifica predeploy-check.sh). */
+  var ROOM = 'dimora';
   var MESI_IT = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-  var m = new Date().getMonth();
+  var FALLBACK = {
+    gennaio: 60, febbraio: 60, marzo: 60, aprile: 60, maggio: 60, giugno: 80,
+    luglio: 100, agosto: 110, settembre: 90, ottobre: 65, novembre: 65, dicembre: 65
+  };
   var priceEl = document.getElementById('js-dimora-price');
   var noteEl  = document.getElementById('js-dimora-season-note');
-  if (priceEl) priceEl.textContent = PREZZI.dimora[m];
-  if (noteEl)  noteEl.textContent  = MESI_IT[m];
+  function isoOggi() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function applica(mesi, overrides) {
+    var iso = isoOggi(), ov = null, i;
+    if (Array.isArray(overrides)) {
+      for (i = 0; i < overrides.length; i++) {
+        if (overrides[i] && overrides[i].from <= iso && iso <= overrides[i].to) { ov = overrides[i]; break; }
+      }
+    }
+    var key = MESI_IT[new Date().getMonth()];
+    var p = ov && ov[ROOM] != null ? Number(ov[ROOM]) : (mesi && mesi[key] != null ? Number(typeof mesi[key] === 'object' ? mesi[key][ROOM] : mesi[key]) : null);
+    if (!isFinite(p) || p <= 0) return;
+    if (priceEl) priceEl.textContent = p;
+    if (noteEl)  noteEl.textContent  = ov && ov.label ? ov.label : key;
+  }
+  applica(FALLBACK, null);
+  if (typeof fetch === 'function') {
+    fetch('/_data/prezzi.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && d.mesi_prezzi) applica(d.mesi_prezzi, d.date_overrides); })
+      .catch(function () { /* resta il FALLBACK */ });
+  }
 
   /* ── Gallery ── */
   var gallery = document.getElementById('dimora-gallery');

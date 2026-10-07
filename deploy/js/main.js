@@ -41,9 +41,9 @@ let PRICING = {
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
     settembre: { dimora: 90, bottega: 80 },
-    ottobre:   { dimora: 65, bottega: 55 },
-    novembre:  { dimora: 55, bottega: 48 },
-    dicembre:  { dimora: 55, bottega: 48 }
+    ottobre:   { dimora: 65, bottega: 60 },
+    novembre:  { dimora: 65, bottega: 60 },
+    dicembre:  { dimora: 65, bottega: 60 }
   },
   otaMarkup: 1.25,        // allineato al valore in prezzi.json
   weeklyDiscount: 0.10,
@@ -1462,9 +1462,9 @@ document.addEventListener('DOMContentLoaded', () => {
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
     settembre: { dimora: 90,  bottega: 80 },
-    ottobre:   { dimora: 65,  bottega: 55 },
-    novembre:  { dimora: 55,  bottega: 48 },
-    dicembre:  { dimora: 55,  bottega: 48 }
+    ottobre:   { dimora: 65,  bottega: 60 },
+    novembre:  { dimora: 65,  bottega: 60 },
+    dicembre:  { dimora: 65,  bottega: 60 }
   };
 
   // Override per fascia di date — precedenza sul mese. Fallback allineato a
@@ -1474,7 +1474,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { from: '2026-09-01', to: '2026-09-14', dimora: 100, bottega: 90 },
     { from: '2026-09-15', to: '2026-09-30', dimora: 75,  bottega: 65 },
     { from: '2026-12-05', to: '2026-12-08', dimora: 75,  bottega: 65 },
-    { from: '2026-12-24', to: '2026-12-26', dimora: 70,  bottega: 60 },
+    { from: '2026-12-24', to: '2026-12-26', dimora: 90,  bottega: 80 },
     { from: '2026-12-30', to: '2027-01-02', dimora: 90,  bottega: 80 }
   ];
 
@@ -1572,9 +1572,9 @@ document.addEventListener('DOMContentLoaded', () => {
     luglio:    { dimora: 100, bottega: 90 },
     agosto:    { dimora: 110, bottega: 100 },
     settembre: { dimora: 90,  bottega: 80 },
-    ottobre:   { dimora: 65,  bottega: 55 },
-    novembre:  { dimora: 55,  bottega: 48 },
-    dicembre:  { dimora: 55,  bottega: 48 }
+    ottobre:   { dimora: 65,  bottega: 60 },
+    novembre:  { dimora: 65,  bottega: 60 },
+    dicembre:  { dimora: 65,  bottega: 60 }
   };
 
   function prezzoMese(mesiPrezzi, monthIndex, room) {
