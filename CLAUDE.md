@@ -98,6 +98,10 @@ Le pagine interne tradotte (camere, blog, prenota, contatti) si trovano dentro o
 
 **Attenzione ai link interni nelle pagine tradotte:** usare path relativi senza `../` (es. `camere.html`, non `../camere.html`), altrimenti si risale alla root e si atterra sulla versione IT.
 
+Negli articoli tradotti (`xx/blog/slug/index.html`) i link assoluti devono avere il prefisso lingua: `/en/prenota.html`, mai `/prenota.html`. Il 27 ottobre 2026 `manfredonia-tre-giorni` e `spiagge-lidi-manfredonia` (nav, CTA e footer), `locali-gargano` e `isole-tremiti` (link Home) in EN/DE/FR/NL/ES, più `en/blog/is-manfredonia-worth-visiting` (`/blog.html`), puntavano alle pagine IT: corretti, compresi i bottoni di prenotazione. Controllo rapido: `grep -rlE 'href="/(index|camere|contatti|prenota|blog|regole)\.html' sito/{en,de,fr,nl,es}` deve restituire solo i `blog-articolo-N`.
+
+**Link interni verso le camere (27 ottobre 2026).** Un paragrafo `<p data-cb-link>` prima delle FAQ in 6 articoli × 6 lingue: `cosa-fare-manfredonia`, `manfredonia-lenta` e `weekend-gargano` linkano `manfredonia-tre-giorni`; `monte-santangelo` e `settimana-nel-gargano` linkano `san-giovanni-rotondo-padre-pio`; quasi tutti linkano le camere (IT verso `/camere/la-dimora.html` e `/camere/la-bottega.html` o `/camere.html`, le altre lingue verso `/xx/camere.html`, perché le schede camera esistono solo in IT). Fatti usati: centro storico, 300 m dal mare, San Giovanni Rotondo a circa 40 minuti. Il CTA finale degli articoli IT dice ancora "Scopri le Camere" ma porta a `/prenota.html`: non toccato, da decidere.
+
 ## Navigazione mobile (hamburger)
 
 ### Struttura HTML della nav
